@@ -1,0 +1,44 @@
+{
+    "indexes": {
+      "SPX": [
+        {"time": "2025-08-08", "open": 5445, "high": 5470, "low": 5420, "close": 5460},
+        {"time": "2025-08-11", "open": 5462, "high": 5480, "low": 5450, "close": 5475},
+        {"time": "2025-08-12", "open": 5470, "high": 5488, "low": 5460, "close": 5482},
+        {"time": "2025-08-13", "open": 5483, "high": 5510, "low": 5475, "close": 5502},
+        {"time": "2025-08-14", "open": 5500, "high": 5525, "low": 5490, "close": 5518}
+      ],
+      "NDX": [
+        {"time": "2025-08-08", "open": 19400, "high": 19520, "low": 19320, "close": 19480},
+        {"time": "2025-08-11", "open": 19490, "high": 19600, "low": 19420, "close": 19560},
+        {"time": "2025-08-12", "open": 19555, "high": 19680, "low": 19500, "close": 19640},
+        {"time": "2025-08-13", "open": 19642, "high": 19790, "low": 19630, "close": 19750},
+        {"time": "2025-08-14", "open": 19745, "high": 19860, "low": 19710, "close": 19810}
+      ],
+      "DJI": [
+        {"time": "2025-08-08", "open": 39200, "high": 39350, "low": 39120, "close": 39280},
+        {"time": "2025-08-11", "open": 39290, "high": 39410, "low": 39200, "close": 39370},
+        {"time": "2025-08-12", "open": 39360, "high": 39520, "low": 39310, "close": 39490},
+        {"time": "2025-08-13", "open": 39495, "high": 39680, "low": 39450, "close": 39620},
+        {"time": "2025-08-14", "open": 39610, "high": 39750, "low": 39580, "close": 39710}
+      ]
+    },
+    "headlines_today": [
+      {"title": "OPEC+ sticks to plan; Brent steadies above $80", "url": "#"},
+      {"title": "U.S. CPI eases; services inflation remains sticky", "url": "#"},
+      {"title": "China signals more infrastructure support; copper rallies", "url": "#"},
+      {"title": "10Y yields tick higher ahead of FOMC minutes", "url": "#"}
+    ],
+    "energy_weekly": [
+      {"name": "WTI Crude", "symbol": "WTI", "pct": 1.8},
+      {"name": "Brent", "symbol": "Brent", "pct": 2.1},
+      {"name": "Nat Gas", "symbol": "NG", "pct": -3.5},
+      {"name": "Gasoline RBOB", "symbol": "RBOB", "pct": 0.9},
+      {"name": "Heating Oil", "symbol": "HO", "pct": -0.7}
+    ],
+    "top_movers": [
+      {"symbol": "AAPL", "name": "Apple", "pct": 3.2, "series": [185.1,186.3,187.0,186.6,188.4,189.0]},
+      {"symbol": "TSLA", "name": "Tesla", "pct": -4.4, "series": [244.0,243.5,240.8,238.7,236.9,233.5]},
+      {"symbol": "XOM", "name": "Exxon", "pct": 2.6, "series": [113.2,113.8,114.9,115.0,115.4,116.1]},
+      {"symbol": "NVDA", "name": "NVIDIA", "pct": 1.9, "series": [120.4,121.0,122.2,121.9,122.8,123.6]}
+    ]
+  }

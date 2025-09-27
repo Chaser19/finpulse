@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block title %}Social • FinPulse{% endblock %}
+{% block content %}
+  <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+    <div>
+      <h1 class="h4 mb-1">Social Insights</h1>
+      <p class="text-muted mb-0">Aggregated bullish vs bearish sentiment by symbol.</p>
+    </div>
+    <a href="#" class="btn btn-sm btn-outline-secondary" id="refresh-sentiment">Refresh</a>
+  </div>
+
+  <div id="sentiment-list" class="row g-3"></div>
+  <div id="sentiment-empty" class="alert alert-light border d-none">No sentiment data found. Run <code>flask --app app ingest-social</code> first.</div>
+{% endblock %}
+
+{% block scripts %}
+  <script src="{{ url_for('static', filename='js/social-summary.js') }}"></script>
+{% endblock %}

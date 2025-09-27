@@ -1,0 +1,118 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="text-center mb-4">
+    <h1 class="display-6">Welcome to FinPulse</h1>
+    <p class="lead mt-2">Curated financial insights across industries and commodities.</p>
+  </div>
+
+  <!-- Macro + Market overview -->
+  <div class="row g-3 mb-4 align-items-stretch">
+    <div class="col-12 col-lg-6">
+      <div class="card shadow-sm h-100">
+        <div class="card-body macro-card">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+            <h2 class="h5 mb-0">Macro Trends</h2>
+            <span class="text-muted small macro-updated">Loading…</span>
+          </div>
+          <div id="macro-trends">
+            <div class="macro-block">
+              <h3 class="h6 text-uppercase text-muted mb-1">Inflation &amp; Policy</h3>
+              <ul class="list-unstyled macro-list mb-3" id="macro-inflation"></ul>
+            </div>
+            <div class="macro-block">
+              <h3 class="h6 text-uppercase text-muted mb-1">Growth &amp; Demand</h3>
+              <ul class="list-unstyled macro-list mb-3" id="macro-growth"></ul>
+            </div>
+            <div class="macro-block">
+              <h3 class="h6 text-uppercase text-muted mb-1">Commodities &amp; Energy</h3>
+              <ul class="list-unstyled macro-list mb-3" id="macro-commodities"></ul>
+            </div>
+            <div class="macro-block">
+              <h3 class="h6 text-uppercase text-muted mb-1">Geopolitics &amp; Risk</h3>
+              <ul class="list-unstyled macro-list" id="macro-geopolitics"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="card shadow-sm h-100 dashboard-half">
+        <div class="card-body">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <h2 class="h6 mb-0">Market heatmap</h2>
+          </div>
+          <div class="tradingview-widget-container tv-flex-fill">
+            <div id="tv-heatmap" class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+            {
+              "dataSource": "SPX500",
+              "grouping": "sector",
+              "blockSize": "market_cap_basic",
+              "blockColor": "change",
+              "colorTheme": "dark",
+              "locale": "en",
+              "width": "100%",
+              "height": "100%"
+            }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Market movers -->
+  <div class="row g-3 mb-4">
+    <div class="col-12">
+      <div class="card shadow-sm h-100 dashboard-half">
+        <div class="card-body">
+          <h2 class="h6 mb-3">Top movers today</h2>
+          <div class="tradingview-widget-container tv-flex-fill">
+            <div id="tv-hotlists" class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+            {
+              "colorTheme": "dark",
+              "dateRange": "1D",
+              "exchange": "US",
+              "showChart": true,
+              "locale": "en",
+              "width": "100%",
+              "height": "100%"
+            }
+            </script>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Index charts -->
+  <div class="row g-3">
+    <div class="col-12 col-md-4"><div class="card shadow-sm"><div class="card-body">
+      <span class="fw-semibold">S&amp;P 500 (SPY)</span>
+      <div id="chart-spx" style="width:100%;height:260px;"></div>
+    </div></div></div>
+
+    <div class="col-12 col-md-4"><div class="card shadow-sm"><div class="card-body">
+      <span class="fw-semibold">Nasdaq-100 (QQQ)</span>
+      <div id="chart-ndx" style="width:100%;height:260px;"></div>
+    </div></div></div>
+
+    <div class="col-12 col-md-4"><div class="card shadow-sm"><div class="card-body">
+      <span class="fw-semibold">Dow Jones (DIA)</span>
+      <div id="chart-dji" style="width:100%;height:260px;"></div>
+    </div></div></div>
+  </div>
+
+{% endblock %}
+
+{% block scripts %}
+  <!-- TradingView widgets library -->
+  <script src="https://s3.tradingview.com/tv.js"></script>
+
+  <!-- Macro trends script -->
+  <script src="{{ url_for('static', filename='js/macro-trends.js') }}"></script>
+  <!-- Mount TV charts for ETFs -->
+  <script src="{{ url_for('static', filename='js/tv-charts.js') }}"></script>
+  {# Social/Twitter scripts removed #}
+{% endblock %}

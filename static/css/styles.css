@@ -1,0 +1,392 @@
+/* === Motion tokens === */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* === Base theme === */
+body.theme-dark {
+  background-color: #0b0c0e;
+  color: #fff;
+  animation: fade-in 0.4s ease both;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255,255,255,0.75);
+  position: relative;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+  color: #fff;
+  opacity: 1;
+}
+.navbar-dark .navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(13,110,253,0) 0%, rgba(13,110,253,0.8) 50%, rgba(13,110,253,0) 100%);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.25s ease;
+}
+.navbar-dark .navbar-nav .nav-link:hover::after,
+.navbar-dark .navbar-nav .nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* === Dashboard cards === */
+.dashboard-half { 
+  min-height: 480px; /* ensures heatmap & movers cards are tall */
+}
+
+.dashboard-half .card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flex child that grows to fill card */
+.tv-flex-fill {
+  flex: 1 1 auto;
+  min-height: 360px;
+  height: 100%;
+  animation: fade-in-up 0.6s ease 0.2s both;
+}
+
+/* Force TradingView iframes to respect parent height */
+.tradingview-widget-container__widget {
+  height: 100% !important;
+}
+
+/* === Headlines list === */
+#headline-list .list-group-item {
+  background: #111;
+  color: #e5e7eb;
+  border-color: #2a2a2a;
+  animation: fade-in-right 0.45s ease both;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+#headline-list .list-group-item:hover {
+  background: #15171a;
+  transform: translateX(4px);
+}
+#headline-list .headline-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+#headline-list .headline-title {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  line-height: 1.4;
+}
+#headline-list .headline-title:hover,
+#headline-list .headline-title:focus-visible {
+  color: #f8f9fa;
+}
+#headline-list .headline-more {
+  color: #9ec5fe;
+  font-size: 0.875rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+#headline-list .headline-more:hover,
+#headline-list .headline-more:focus-visible {
+  color: #bcd3ff;
+}
+#headline-list .list-group-item:nth-child(1) { animation-delay: 0.05s; }
+#headline-list .list-group-item:nth-child(2) { animation-delay: 0.1s; }
+#headline-list .list-group-item:nth-child(3) { animation-delay: 0.15s; }
+#headline-list .list-group-item:nth-child(4) { animation-delay: 0.2s; }
+#headline-list .list-group-item:nth-child(5) { animation-delay: 0.25s; }
+#headline-list .list-group-item:nth-child(n+6) { animation-delay: 0.3s; }
+
+/* === Cards general === */
+.card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  animation: fade-in-up 0.6s ease both;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card .card-body {
+  background-color: #111;
+  color: #fff;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(13, 110, 253, 0.12);
+}
+
+/* === Social embeds === */
+.social-embed {
+  min-height: 360px;
+  animation: fade-in 0.8s ease 0.15s both;
+}
+
+/* === Sentiment bars === */
+.sentiment-bar {
+  display: flex;
+  height: 12px;
+  width: 100%;
+  background: #0f1113;
+  border: 1px solid #2a2a2a;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.sentiment-bar .sentiment-fill {
+  height: 100%;
+}
+.sentiment-bar .sentiment-fill.bull {
+  background: linear-gradient(90deg, rgba(34,197,94,0.8), rgba(34,197,94,1));
+}
+.sentiment-bar .sentiment-fill.neutral {
+  background: linear-gradient(90deg, rgba(148,163,184,0.6), rgba(148,163,184,0.9));
+}
+.sentiment-bar .sentiment-fill.bear {
+  background: linear-gradient(90deg, rgba(239,68,68,1), rgba(239,68,68,0.8));
+}
+
+.social-card .symbol-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.social-card .price-line {
+  font-size: 0.95rem;
+}
+
+.social-card .net-score-value {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.engagement-breakdown .badge {
+  font-weight: 500;
+}
+
+.badge-tier-high {
+  background: rgba(34, 197, 94, 0.15);
+  color: #34d399;
+}
+
+.badge-tier-medium {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+}
+
+.badge-tier-low {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5f5;
+}
+
+.badge-tier-total {
+  background: rgba(96, 165, 250, 0.1);
+  color: #7dd3fc;
+}
+
+.sparkline-container {
+  background: #0f1113;
+  border: 1px solid #1f242a;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.sparkline {
+  width: 100%;
+  height: 80px;
+}
+
+.sparkline-baseline {
+  stroke: rgba(148, 163, 184, 0.2);
+  stroke-width: 1;
+}
+
+.sparkline-line {
+  fill: none;
+  stroke-width: 2;
+}
+
+.sparkline-line.net-line {
+  stroke: rgba(59, 130, 246, 0.9);
+}
+
+.sparkline-line.volume-line {
+  stroke: rgba(16, 185, 129, 0.8);
+}
+
+.sparkline-legend {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+}
+
+.legend-dot.net {
+  background: rgba(59, 130, 246, 0.9);
+}
+
+.legend-dot.volume {
+  background: rgba(16, 185, 129, 0.8);
+}
+
+.top-posts-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.top-post-item {
+  background: #101317;
+  border: 1px solid #1f242a;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+}
+
+.top-post-link {
+  color: #e2e8f0;
+  text-decoration: none;
+}
+
+.top-post-link:hover {
+  text-decoration: underline;
+}
+
+.top-post-meta {
+  margin-top: 0.35rem;
+}
+
+.macro-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.macro-line {
+  padding-left: 1.25rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: #d1d5db;
+}
+
+.macro-line::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+}
+
+.macro-block + .macro-block {
+  margin-top: 1.5rem;
+}
+
+.macro-card {
+  min-height: 100%;
+}
+
+/* Scraped tweets list */
+#my-tweets.list-group .list-group-item,
+#my-tweets-page.list-group .list-group-item {
+  background: #111;
+  color: #e5e7eb;
+  border-color: #2a2a2a;
+}
+
+/* Muted text in dark theme */
+.text-muted {
+  color: rgba(255,255,255,0.6) !important;
+}
+
+/* === Dark card helper (for Curated filters) === */
+.card-dark {
+  background: #111;
+  color: #fff;
+  border: 1px solid #2a2a2a;
+  border-radius: 0.75rem;
+  animation: fade-in-up 0.6s ease both;
+}
+
+/* === Dark inputs / selects / checkboxes === */
+.theme-dark .form-label,
+.card-dark .form-label,
+.card-dark .form-check-label {
+  color: #e5e7eb;
+}
+
+.theme-dark .form-control,
+.theme-dark .form-select,
+.card-dark .form-control,
+.card-dark .form-select {
+  background-color: #0f1113;
+  color: #e5e7eb;
+  border: 1px solid #2a2a2a;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-dark .form-control::placeholder,
+.card-dark .form-control::placeholder {
+  color: rgba(229, 231, 235, 0.55);
+}
+
+.theme-dark .form-control:focus,
+.theme-dark .form-select:focus,
+.card-dark .form-control:focus,
+.card-dark .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+/* Checkboxes visible on dark + blue when checked */
+.theme-dark .form-check-input,
+.card-dark .form-check-input {
+  background-color: #0f1113;
+  border: 1px solid #4b5563;
+  box-shadow: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.theme-dark .form-check-input:checked,
+.card-dark .form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Inline checkboxes spacing (tags) */
+.card-dark .form-check-inline {
+  margin-right: 0.5rem;
+}

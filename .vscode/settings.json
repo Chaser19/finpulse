@@ -1,0 +1,4 @@
+{
+    "chatgpt.openOnStartup": true,
+    "python.defaultInterpreterPath": "/Users/chase/opt/anaconda3/envs/finpulse311/bin/python"
+}
