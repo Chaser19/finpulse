@@ -190,6 +190,110 @@ body.theme-dark {
   font-weight: 600;
 }
 
+.social-list-card .card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.social-symbol-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 1200px) {
+  .social-symbol-list {
+    max-height: calc(100vh - 260px);
+    overflow-y: auto;
+    padding-right: 0.25rem;
+  }
+}
+
+.social-symbol-item {
+  display: block;
+  width: 100%;
+  border: 1px solid #1f242a;
+  border-radius: 0.65rem;
+  background: #101317;
+  color: #e2e8f0;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-symbol-item:hover,
+.social-symbol-item:focus-visible {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: #141922;
+  transform: translateX(2px);
+  outline: none;
+}
+
+.social-symbol-item.active {
+  border-color: rgba(59, 130, 246, 0.9);
+  background: rgba(30, 41, 59, 0.9);
+  box-shadow: 0 12px 32px rgba(59, 130, 246, 0.15);
+}
+
+.social-symbol-item .symbol-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.social-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.social-detail-card .sentiment-section h6 {
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.price-chart {
+  background: #0f1113;
+  border: 1px solid #1f242a;
+  border-radius: 0.65rem;
+  padding: 0.75rem 0.9rem;
+}
+
+.price-chart-svg {
+  width: 100%;
+  height: 160px;
+}
+
+.price-chart-tv {
+  width: 100%;
+  height: 300px;
+}
+
+.price-chart-line {
+  fill: none;
+  stroke-width: 2.5;
+  stroke: rgba(148, 163, 184, 0.9);
+}
+
+.price-chart-line.up {
+  stroke: rgba(34, 197, 94, 0.9);
+  filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.35));
+}
+
+.price-chart-line.down {
+  stroke: rgba(239, 68, 68, 0.9);
+  filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.25));
+}
+
+.price-chart-baseline {
+  stroke: rgba(148, 163, 184, 0.2);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
 .engagement-breakdown .badge {
   font-weight: 500;
 }
@@ -318,6 +422,154 @@ body.theme-dark {
 
 .macro-card {
   min-height: 100%;
+}
+
+.macro-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.macro-section {
+  background: rgba(17, 24, 39, 0.65);
+  border: 1px solid rgba(59, 130, 246, 0.08);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.macro-metric-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 0.65rem;
+  background: rgba(15, 23, 42, 0.65);
+  color: #f1f5f9;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.macro-metric-link:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: rgba(30, 41, 59, 0.85);
+  color: #f8fafc;
+  text-decoration: none;
+}
+
+.macro-metric-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.macro-metric-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.macro-metric-summary {
+  font-size: 0.85rem;
+  color: #c7d2fe;
+}
+
+.macro-metric-chevron {
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+.macro-metric-link:hover .macro-metric-chevron {
+  color: #e0e7ff;
+}
+
+.macro-detail-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.macro-detail-item {
+  padding: 0.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.macro-detail-text p {
+  font-size: 0.95rem;
+}
+
+.macro-detail-slider {
+  display: flex;
+  gap: 0;
+  width: 100%;
+  transition: transform 0.35s ease;
+}
+
+.macro-detail-item[data-state="summary"] .macro-detail-slider {
+  transform: translateX(0);
+}
+
+.macro-detail-item[data-state="insight"] .macro-detail-slider {
+  transform: translateX(-100%);
+}
+
+.macro-detail-pane {
+  flex: 0 0 100%;
+  min-width: 100%;
+  padding: 0.25rem 0;
+}
+
+.macro-detail-pane + .macro-detail-pane {
+  padding-left: 0.25rem;
+}
+
+.macro-pane-insight {
+  background: rgba(12, 20, 32, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 0.65rem;
+  padding: 1rem;
+}
+
+.macro-insight-meta {
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  padding-top: 0.75rem;
+}
+
+.macro-insight-point p {
+  color: #e2e8f0;
+}
+
+.macro-insight-label {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.macro-insight-open {
+  font-size: 0.75rem;
+  padding: 0.35rem 0.65rem;
+}
+
+.macro-detail-item[data-has-insight="true"] .badge {
+  align-self: flex-end;
+}
+
+.macro-detail-chart {
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.macro-chart {
+  width: 100%;
+  display: block;
+  background: transparent;
+  border: none;
+  height: auto;
 }
 
 /* Scraped tweets list */

@@ -180,6 +180,9 @@ def create_app(test_config: dict | None = None) -> Flask:
         "SOCIAL_SCRAPE_MAX_POSTS": int(os.getenv("SOCIAL_SCRAPE_MAX_POSTS", "40")),
         "SOCIAL_SCRAPE_LOOKBACK_HOURS": int(os.getenv("SOCIAL_SCRAPE_LOOKBACK_HOURS", "12")),
         "SOCIAL_TWITTER_BEARER_TOKEN": os.getenv("SOCIAL_TWITTER_BEARER_TOKEN", ""),
+        "SOCIAL_FINNHUB_MAX_SYMBOLS": int(os.getenv("SOCIAL_FINNHUB_MAX_SYMBOLS", "25")),
+        "SOCIAL_FINNHUB_RESOLUTION": os.getenv("SOCIAL_FINNHUB_RESOLUTION", "30"),
+        "SOCIAL_FINNHUB_LOOKBACK_HOURS": int(os.getenv("SOCIAL_FINNHUB_LOOKBACK_HOURS", "24")),
         "FRED_API_KEY": os.getenv("FRED_API_KEY", ""),
         "EIA_API_KEY": os.getenv("EIA_API_KEY", ""),
     })
@@ -197,6 +200,14 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.cli.add_command(ingest_social_cmd, name="ingest-social")
     app.cli.add_command(diag_social_cmd, name="diag-social")
     app.cli.add_command(seed_social_history_cmd, name="seed-social-history")
+
+    # Warm macro trends cache so the dashboard loads instantly.
+    try:
+        from services.macro_trends import init_macro_trends_cache
+
+        init_macro_trends_cache(app)
+    except Exception as exc:  # pragma: no cover - defensive
+        app.logger.warning("Unable to initialise macro cache: %s", exc)
 
     return app
 

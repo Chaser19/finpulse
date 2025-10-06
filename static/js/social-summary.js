@@ -1,6 +1,12 @@
 // static/js/social-summary.js
 (function () {
   const SVG_NS = 'http://www.w3.org/2000/svg';
+  const state = {
+    payload: null,
+    selectedSymbol: null,
+  };
+
+  const tvMountTimers = new Map();
 
   async function jget(url) {
     try {
@@ -62,10 +68,130 @@
   }
 
   function formatChange(changePct, changeAbs) {
-    const pct = Number(changePct ?? 0);
-    const abs = Number(changeAbs ?? 0);
+    const pct = Number(changePct);
+    const abs = Number(changeAbs);
+    if (!Number.isFinite(pct) || !Number.isFinite(abs)) return '—';
     const sign = pct > 0 ? '+' : pct < 0 ? '' : '';
     return `${sign}${pct.toFixed(2)}% (${sign}${abs.toFixed(2)})`;
+  }
+
+  function describeResolution(resolution) {
+    if (!resolution) return null;
+    const num = Number(resolution);
+    if (Number.isFinite(num)) {
+      return `${Math.max(1, Math.round(num))}m`;
+    }
+    return String(resolution).toUpperCase();
+  }
+
+  function buildPriceChart(history) {
+    if (!history || history.length < 2) return null;
+
+    const width = 360;
+    const height = 160;
+    const paddingX = 16;
+    const paddingY = 18;
+    const step = (width - paddingX * 2) / (history.length - 1);
+
+    const closes = history.map((pt) => Number(pt.close ?? pt.price ?? pt.value ?? 0));
+    if (closes.some((v) => !Number.isFinite(v))) return null;
+
+    const minClose = Math.min(...closes);
+    const maxClose = Math.max(...closes);
+    const range = maxClose - minClose || 1;
+
+    const toY = (value) => {
+      const ratio = (value - minClose) / range;
+      return paddingY + (1 - ratio) * (height - paddingY * 2);
+    };
+
+    const svg = document.createElementNS(SVG_NS, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.classList.add('price-chart-svg');
+
+    const baseline = document.createElementNS(SVG_NS, 'line');
+    baseline.setAttribute('x1', String(paddingX));
+    baseline.setAttribute('y1', String(toY(closes[0])));
+    baseline.setAttribute('x2', String(width - paddingX));
+    baseline.setAttribute('y2', String(toY(closes[0])));
+    baseline.setAttribute('class', 'price-chart-baseline');
+    svg.appendChild(baseline);
+
+    const path = document.createElementNS(SVG_NS, 'path');
+    let d = '';
+    closes.forEach((val, idx) => {
+      const x = paddingX + idx * step;
+      const y = toY(val);
+      d += idx === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
+    });
+    path.setAttribute('d', d);
+    path.setAttribute('class', 'price-chart-line');
+    if (closes[closes.length - 1] >= closes[0]) {
+      path.classList.add('up');
+    } else {
+      path.classList.add('down');
+    }
+    svg.appendChild(path);
+
+    return svg;
+  }
+
+  function sanitizeId(sym) {
+    return String(sym || 'symbol').replace(/[^A-Za-z0-9_-]+/g, '_');
+  }
+
+  function mountTradingViewChart(container, symbol) {
+    if (!container || !symbol) return false;
+    const baseId = sanitizeId(symbol);
+    const containerId = `${baseId}-tv`;
+    container.id = containerId;
+
+    const mount = () => {
+      container.innerHTML = `<div id="${containerId}-inner" class="price-chart-tv"></div>`;
+      try {
+        // eslint-disable-next-line no-new
+        new window.TradingView.widget({
+          autosize: true,
+          symbol,
+          interval: '30',
+          timezone: 'Etc/UTC',
+          theme: 'dark',
+          style: '1',
+          locale: 'en',
+          hide_top_toolbar: true,
+          hide_legend: true,
+          withdateranges: false,
+          container_id: `${containerId}-inner`,
+          studies: [],
+        });
+      } catch (err) {
+        console.error('[social] TradingView mount failed', err);
+        container.innerHTML = '';
+      }
+    };
+
+    if (window.TradingView && typeof window.TradingView.widget === 'function') {
+      mount();
+      return true;
+    }
+
+    if (tvMountTimers.has(containerId)) return false;
+
+    let attempts = 0;
+    const timer = window.setInterval(() => {
+      attempts += 1;
+      if (window.TradingView && typeof window.TradingView.widget === 'function') {
+        clearInterval(timer);
+        tvMountTimers.delete(containerId);
+        mount();
+      } else if (attempts > 50) {
+        clearInterval(timer);
+        tvMountTimers.delete(containerId);
+      }
+    }, 100);
+    tvMountTimers.set(containerId, timer);
+    return false;
   }
 
   function buildSparkline(history) {
@@ -167,100 +293,240 @@
     });
   }
 
-  function renderList(payload) {
-    const root = document.getElementById('sentiment-list');
+  function renderSymbolDetail(sym) {
+    const detailRoot = document.getElementById('sentiment-detail');
     const empty = document.getElementById('sentiment-empty');
-    if (!root || !payload) return;
-    root.innerHTML = '';
+    if (!detailRoot) return;
+    detailRoot.innerHTML = '';
 
-    const symbols = payload.symbols || {};
-    const entries = Object.entries(symbols);
-    if (!entries.length) {
+    const payload = state.payload;
+    const symbolData = payload?.symbols?.[sym];
+    if (!payload || !sym || !symbolData) {
       empty?.classList.remove('d-none');
       return;
     }
+
+    empty?.classList.add('d-none');
+
+    const summary = symbolData.summary || {};
+    const price = symbolData.price || {};
+    const history = symbolData.history || payload.history?.[sym] || [];
+    const topPosts = summary.top_posts || [];
+    let priceHistory = Array.isArray(price.history) ? price.history : [];
+    if (!priceHistory.length && Array.isArray(history)) {
+      priceHistory = history
+        .map((entry) => ({
+          close: entry.close,
+          time: entry.timestamp || entry.time,
+        }))
+        .filter((pt) => Number.isFinite(Number(pt.close)));
+    }
+
+    const metrics = makeBar(summary);
+    const changePct = price.change_pct;
+    const changeAbs = price.change_abs;
+    const changeClass = changePct > 0 ? 'text-success' : changePct < 0 ? 'text-danger' : 'text-muted';
+    const breakdown = summary.engagement_breakdown || {};
+
+    const card = document.createElement('div');
+    card.className = 'card shadow-sm social-card social-detail-card';
+    card.innerHTML = `
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+          <div>
+            <div class="symbol-title">${sym}</div>
+            <div class="price-line">
+              $${formatNumber(price.close)} <span class="${changeClass}">${formatChange(changePct, changeAbs)}</span>
+            </div>
+          </div>
+          <div class="text-end">
+            <div class="net-score-value">${formatNumber(summary.net_score, 2)}</div>
+            <div class="text-muted small">Net Score</div>
+          </div>
+        </div>
+
+        <div class="price-chart mt-3">
+          <div class="price-chart-holder"></div>
+          <div class="price-chart-meta text-muted small mt-2"></div>
+        </div>
+
+        <div class="mt-4 sentiment-section">
+          <h6 class="text-muted fw-semibold mb-2">Sentiment Breakdown</h6>
+          <div class="sentiment-bar-wrap"></div>
+          <div class="text-muted small mt-2">
+            Bullish ${metrics.bullPct}% (${metrics.bullPosts}) · Neutral ${metrics.neutralPct}% (${metrics.neutralPosts}) · Bearish ${metrics.bearPct}% (${metrics.bearPosts})
+          </div>
+        </div>
+
+        <div class="engagement-breakdown mt-4 d-flex gap-2 flex-wrap">
+          <span class="badge badge-tier-high">High ${breakdown.high ?? 0}</span>
+          <span class="badge badge-tier-medium">Med ${breakdown.medium ?? 0}</span>
+          <span class="badge badge-tier-low">Low ${breakdown.low ?? 0}</span>
+          <span class="badge badge-tier-total">Posts ${metrics.total}</span>
+        </div>
+
+        <div class="sparkline-container mt-4">
+          <div class="sparkline-holder"></div>
+          <div class="sparkline-legend text-muted small"></div>
+        </div>
+
+        <div class="top-posts mt-4">
+          <h6 class="text-muted fw-semibold mb-2">Top Posts</h6>
+          <ul class="list-unstyled mb-0 top-posts-list"></ul>
+        </div>
+      </div>
+    `;
+
+    card.querySelector('.sentiment-bar-wrap')?.appendChild(metrics.wrap);
+
+    const chartHolder = card.querySelector('.price-chart-holder');
+    const chartWrap = card.querySelector('.price-chart');
+    const priceChart = buildPriceChart(priceHistory);
+    let chartMode = null;
+    if (priceChart && chartHolder) {
+      chartHolder.innerHTML = '';
+      chartHolder.appendChild(priceChart);
+      chartMode = 'inline';
+    } else if (chartHolder && price.tradingview_symbol) {
+      chartHolder.innerHTML = '';
+      mountTradingViewChart(chartHolder, price.tradingview_symbol);
+      chartMode = 'tradingview';
+    }
+    if (!chartMode) {
+      chartWrap?.classList.add('d-none');
+    } else {
+      chartWrap?.classList.remove('d-none');
+    }
+
+    const chartMeta = card.querySelector('.price-chart-meta');
+    if (chartMeta) {
+      if (!chartMode) {
+        chartMeta.textContent = '';
+      } else {
+        const parts = [];
+        const resolution = describeResolution(price.history_resolution);
+        const lookback = price.history_lookback_hours;
+        const updatedAt = price.timestamp ? new Date(Number(price.timestamp) * 1000) : null;
+        if (resolution) parts.push(`${resolution} bars`);
+        if (Number.isFinite(Number(lookback)) && lookback) parts.push(`~${lookback}h range`);
+        if (updatedAt && !Number.isNaN(updatedAt.getTime())) {
+          parts.push(`Updated ${updatedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`);
+        }
+        if (chartMode === 'inline') {
+          parts.push('Finnhub');
+        } else if (chartMode === 'tradingview') {
+          parts.push('TradingView');
+        }
+        chartMeta.textContent = parts.join(' • ');
+      }
+    }
+
+    const sparkHolder = card.querySelector('.sparkline-holder');
+    const spark = buildSparkline(history);
+    if (spark) {
+      sparkHolder?.appendChild(spark);
+    } else {
+      card.querySelector('.sparkline-container')?.classList.add('d-none');
+    }
+
+    const legend = card.querySelector('.sparkline-legend');
+    if (legend) {
+      legend.innerHTML = `
+        <span class="legend-dot net"></span> Net Score 
+        <span class="legend-dot volume"></span> Post Volume
+      `;
+    }
+
+    renderTopPosts(card.querySelector('.top-posts'), topPosts);
+    detailRoot.appendChild(card);
+  }
+
+  function setActiveSymbol(sym) {
+    state.selectedSymbol = sym;
+    const listRoot = document.getElementById('sentiment-list');
+    if (listRoot) {
+      listRoot.querySelectorAll('.social-symbol-item').forEach((node) => {
+        node.classList.toggle('active', node.dataset.symbol === sym);
+      });
+    }
+    renderSymbolDetail(sym);
+  }
+
+  function renderList(payload) {
+    const listRoot = document.getElementById('sentiment-list');
+    const empty = document.getElementById('sentiment-empty');
+    const count = document.getElementById('sentiment-list-count');
+    const detailRoot = document.getElementById('sentiment-detail');
+    if (!listRoot || !detailRoot) return;
+
+    listRoot.innerHTML = '';
+    detailRoot.innerHTML = '';
+    if (count) count.textContent = '';
+
+    if (!payload) {
+      empty?.classList.remove('d-none');
+      state.payload = null;
+      state.selectedSymbol = null;
+      return;
+    }
+
+    const symbols = payload.symbols || {};
+    const entries = Object.entries(symbols);
+    state.payload = payload;
+
+    if (!entries.length) {
+      empty?.classList.remove('d-none');
+      state.selectedSymbol = null;
+      return;
+    }
+
     empty?.classList.add('d-none');
 
     entries.sort((a, b) => (b[1]?.summary?.net_score || 0) - (a[1]?.summary?.net_score || 0));
 
+    if (!state.selectedSymbol || !symbols[state.selectedSymbol]) {
+      state.selectedSymbol = entries[0][0];
+    }
+
+    if (count) {
+      const label = entries.length === 1 ? 'symbol' : 'symbols';
+      count.textContent = `${entries.length} ${label}`;
+    }
+
+    const fragment = document.createDocumentFragment();
     entries.forEach(([sym, data]) => {
       const summary = data.summary || {};
       const price = data.price || {};
-      const history = data.history || payload.history?.[sym] || [];
-      const topPosts = summary.top_posts || [];
-
-      const metrics = makeBar(summary);
       const changePct = price.change_pct;
       const changeAbs = price.change_abs;
-      const changeClass = changePct > 0 ? 'text-success' : changePct < 0 ? 'text-danger' : 'text-muted';
-      const breakdown = summary.engagement_breakdown || {};
-
-      const col = document.createElement('div');
-      col.className = 'col-12 col-xl-4';
-      col.innerHTML = `
-        <div class="card shadow-sm h-100 social-card">
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
-              <div>
-                <div class="symbol-title">${sym}</div>
-                <div class="price-line">
-                  $${formatNumber(price.close)} <span class="${changeClass}">${formatChange(changePct, changeAbs)}</span>
-                </div>
-              </div>
-              <div class="text-end">
-                <div class="net-score-value">${formatNumber(summary.net_score, 2)}</div>
-                <div class="text-muted small">Net Score</div>
-              </div>
+      const changeClass = Number(changePct) > 0 ? 'text-success' : Number(changePct) < 0 ? 'text-danger' : 'text-muted';
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'social-symbol-item';
+      btn.dataset.symbol = sym;
+      btn.innerHTML = `
+        <div class="d-flex justify-content-between align-items-start gap-2">
+          <div>
+            <div class="symbol-title mb-1">${sym}</div>
+            <div class="text-muted small">Net ${formatNumber(summary.net_score, 2)}</div>
+          </div>
+          <div class="text-end">
+            <div class="price-line">
+              $${formatNumber(price.close)} <span class="${changeClass}">${formatChange(changePct, changeAbs)}</span>
             </div>
-
-            <div class="mt-3 sentiment-section">
-              <div class="sentiment-bar-wrap"></div>
-              <div class="text-muted small mt-1">
-                Bullish ${metrics.bullPct}% (${metrics.bullPosts}) · Neutral ${metrics.neutralPct}% (${metrics.neutralPosts}) · Bearish ${metrics.bearPct}% (${metrics.bearPosts})
-              </div>
-            </div>
-
-            <div class="engagement-breakdown mt-3 d-flex gap-2 flex-wrap">
-              <span class="badge badge-tier-high">High ${breakdown.high ?? 0}</span>
-              <span class="badge badge-tier-medium">Med ${breakdown.medium ?? 0}</span>
-              <span class="badge badge-tier-low">Low ${breakdown.low ?? 0}</span>
-              <span class="badge badge-tier-total">Posts ${metrics.total}</span>
-            </div>
-
-            <div class="sparkline-container mt-3">
-              <div class="sparkline-holder"></div>
-              <div class="sparkline-legend text-muted small">Net Score • Posts</div>
-            </div>
-
-            <div class="top-posts mt-4">
-              <h6 class="text-muted fw-semibold mb-2">Top Posts</h6>
-              <ul class="list-unstyled mb-0 top-posts-list"></ul>
-            </div>
+            <div class="text-muted small">Posts ${summary.posts ?? '—'}</div>
           </div>
         </div>
       `;
-
-      col.querySelector('.sentiment-bar-wrap')?.appendChild(metrics.wrap);
-
-      const sparkHolder = col.querySelector('.sparkline-holder');
-      const spark = buildSparkline(history);
-      if (spark) {
-        sparkHolder?.appendChild(spark);
-      } else {
-        col.querySelector('.sparkline-container')?.classList.add('d-none');
-      }
-
-      const legend = col.querySelector('.sparkline-legend');
-      if (legend) {
-        legend.innerHTML = `
-          <span class="legend-dot net"></span> Net Score 
-          <span class="legend-dot volume"></span> Post Volume
-        `;
-      }
-
-      renderTopPosts(col.querySelector('.top-posts'), topPosts);
-      root.appendChild(col);
+      btn.addEventListener('click', () => {
+        if (state.selectedSymbol === sym) return;
+        setActiveSymbol(sym);
+      });
+      fragment.appendChild(btn);
     });
+
+    listRoot.appendChild(fragment);
+    setActiveSymbol(state.selectedSymbol);
   }
 
   async function load() {

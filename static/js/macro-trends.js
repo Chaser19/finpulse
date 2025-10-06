@@ -1,26 +1,95 @@
 // static/js/macro-trends.js
 (function () {
   const TREND_ENDPOINT = '/api/macro/trends';
+  const CATEGORY_TARGETS = {
+    'job-market': 'macro-job-market',
+    inflation: 'macro-inflation',
+    'economic-activities': 'macro-economic-activities',
+  };
+
   const FALLBACK = {
     updated: new Date().toISOString(),
-    buckets: {
-      inflation: [
-        'Headline CPI cooled to 2.9% YoY while services inflation remains sticky.',
-        'Futures price in two 25bp cuts by year-end; Fed speakers stay data-dependent.',
-      ],
-      growth: [
-        'US ISM Manufacturing climbed above 50 for the first time in 18 months.',
-        'Global PMIs show mixed signals: eurozone stabilising, China demand still soft.',
-      ],
-      commodities: [
-        'Brent crude hovers near $85 as OPEC+ extends voluntary cuts into Q1.',
-        'Gold holds above $2,100 amid safe-haven flows and dovish USD tone.',
-      ],
-      geopolitics: [
-        'Middle East tensions keep shipping costs elevated; Red Sea detours persist.',
-        'US election rhetoric ramps up, adding policy uncertainty to fiscal outlook.',
-      ],
-    },
+    categories: [
+      {
+        id: 'job-market',
+        title: 'Job Market',
+        metrics: [
+          {
+            id: 'unemployment-rate',
+            name: 'Unemployment rate',
+            summary: 'Latest reading: 3.8%',
+            detail: 'Unemployment remains historically low with only a marginal uptick versus the prior month.',
+            delta: 'Change vs prior month: +0.1pp',
+          },
+          {
+            id: 'initial-jobless-claims',
+            name: 'Initial jobless claims',
+            summary: 'Trailing 4-week avg near 230k',
+            detail: 'Claims continue to hover near cycle lows, signalling a resilient labour market.',
+          },
+          {
+            id: 'nonfarm-payrolls',
+            name: 'Nonfarm payrolls',
+            summary: '+187k jobs added last print',
+            detail: 'Payroll growth cooled from the prior month but still outpaces pre-pandemic trend.',
+          },
+        ],
+      },
+      {
+        id: 'inflation',
+        title: 'Inflation',
+        metrics: [
+          {
+            id: 'cpi-yoy',
+            name: 'CPI (YoY)',
+            summary: '3.2% YoY',
+            detail: 'Headline CPI edged higher on energy while core services inflation stays sticky.',
+          },
+          {
+            id: 'core-cpi-yoy',
+            name: 'Core CPI (YoY)',
+            summary: '4.1% YoY',
+            detail: 'Core CPI eased modestly thanks to softer shelter and used car prices.',
+          },
+          {
+            id: 'ppi-mom',
+            name: 'PPI (MoM)',
+            summary: '+0.2% MoM',
+            detail: 'Producer prices climbed on higher goods costs while services categories softened.',
+          },
+        ],
+      },
+      {
+        id: 'economic-activities',
+        title: 'Economic Activities',
+        metrics: [
+          {
+            id: 'industrial-production',
+            name: 'Industrial production index',
+            summary: '103.9',
+            detail: 'Factory output and utilities production remain above the 2017 base-year average.',
+          },
+          {
+            id: 'retail-sales',
+            name: 'Retail sales (advance)',
+            summary: '$704B',
+            detail: 'Consumer spending is broad-based with goods and dining both contributing to growth.',
+          },
+          {
+            id: 'housing-starts',
+            name: 'Housing starts',
+            summary: '1,360k',
+            detail: 'Builders remain cautious as financing costs bite, leaving starts slightly softer.',
+          },
+          {
+            id: 'consumer-sentiment',
+            name: 'Consumer sentiment (UMich)',
+            summary: '68.0',
+            detail: 'Households remain watchful but steady as labour-market optimism offsets price concerns.',
+          },
+        ],
+      },
+    ],
   };
 
   async function fetchTrends() {
@@ -34,27 +103,63 @@
     }
   }
 
-  function renderBucket(rootId, items) {
-    const root = document.getElementById(rootId);
-    if (!root) return;
-    root.innerHTML = '';
-    (items || []).forEach((line) => {
-      const li = document.createElement('li');
-      li.className = 'macro-line';
-      li.textContent = line;
-      root.appendChild(li);
+  function truncate(text, maxLength) {
+    if (!text) return '';
+    const trimmed = String(text).trim().replace(/\s+/g, ' ');
+    if (trimmed.length <= maxLength) return trimmed;
+    return trimmed.slice(0, maxLength - 3) + '...';
+  }
+
+  function renderMetric(parent, detailBase, categoryId, metric) {
+    const metricId = metric.id || Math.random().toString(36).slice(2);
+    const link = document.createElement('a');
+    link.className = 'macro-metric-link';
+    link.href = `${detailBase}#${categoryId}-${metricId}`;
+    link.setAttribute('aria-label', `View ${metric.name || 'metric'} details`);
+
+    const textWrapper = document.createElement('div');
+    textWrapper.className = 'macro-metric-text';
+
+    const name = document.createElement('span');
+    name.className = 'macro-metric-name';
+    name.textContent = metric.name || 'Metric';
+    textWrapper.appendChild(name);
+
+    const summary = document.createElement('span');
+    summary.className = 'macro-metric-summary';
+    const summaryText = metric.summary || truncate(metric.detail, 80) || 'View full details';
+    summary.textContent = summaryText;
+    textWrapper.appendChild(summary);
+
+    const chevron = document.createElement('span');
+    chevron.className = 'macro-metric-chevron';
+    chevron.textContent = '>';
+
+    link.appendChild(textWrapper);
+    link.appendChild(chevron);
+
+    parent.appendChild(link);
+  }
+
+  function renderCategories(root, categories) {
+    const detailBase = root?.dataset?.detailUrl || '/macro-trends';
+    (categories || []).forEach((category) => {
+      const targetId = CATEGORY_TARGETS[category.id];
+      if (!targetId) return;
+      const container = document.getElementById(targetId);
+      if (!container) return;
+      container.innerHTML = '';
+      (category.metrics || []).forEach((metric) => renderMetric(container, detailBase, category.id, metric));
     });
   }
 
   function render(data) {
-    const buckets = data.buckets || {};
-    renderBucket('macro-inflation', buckets.inflation || FALLBACK.buckets.inflation);
-    renderBucket('macro-growth', buckets.growth || FALLBACK.buckets.growth);
-    renderBucket('macro-commodities', buckets.commodities || FALLBACK.buckets.commodities);
-    renderBucket('macro-geopolitics', buckets.geopolitics || FALLBACK.buckets.geopolitics);
+    const root = document.getElementById('macro-trends');
+    if (!root) return;
+    const categories = Array.isArray(data.categories) ? data.categories : FALLBACK.categories;
+    renderCategories(root, categories);
 
-    const container = document.getElementById('macro-trends');
-    const timestampNode = container ? document.querySelector('.macro-updated') : null;
+    const timestampNode = document.querySelector('.macro-updated');
     if (timestampNode) {
       const updated = data.updated || FALLBACK.updated;
       timestampNode.textContent = 'Updated ' + new Date(updated).toLocaleString();
@@ -62,6 +167,8 @@
   }
 
   document.addEventListener('DOMContentLoaded', async () => {
+    const root = document.getElementById('macro-trends');
+    if (!root) return;
     const data = await fetchTrends();
     render(data || FALLBACK);
   });

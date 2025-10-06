@@ -9,10 +9,26 @@
     <a href="#" class="btn btn-sm btn-outline-secondary" id="refresh-sentiment">Refresh</a>
   </div>
 
-  <div id="sentiment-list" class="row g-3"></div>
-  <div id="sentiment-empty" class="alert alert-light border d-none">No sentiment data found. Run <code>flask --app app ingest-social</code> first.</div>
+  <div class="row g-3 social-grid">
+    <div class="col-12 col-xl-4">
+      <div class="card shadow-sm h-100 social-list-card">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+            <h2 class="h6 mb-0">Symbols</h2>
+            <span class="text-muted small" id="sentiment-list-count"></span>
+          </div>
+          <div id="sentiment-list" class="social-symbol-list"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-xl-8">
+      <div id="sentiment-detail" class="social-detail"></div>
+      <div id="sentiment-empty" class="alert alert-light border d-none">No sentiment data found. Run <code>flask --app app ingest-social</code> first.</div>
+    </div>
+  </div>
 {% endblock %}
 
 {% block scripts %}
+  <script src="https://s3.tradingview.com/tv.js" defer></script>
   <script src="{{ url_for('static', filename='js/social-summary.js') }}"></script>
 {% endblock %}

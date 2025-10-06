@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block title %}Macro Trends · FinPulse{% endblock %}
+
+{% block content %}
+  <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2">
+    <div>
+      <h1 class="display-6 mb-1">Macro Trends</h1>
+      <p class="text-white-50 mb-0">Interactive dashboard tracking employment, inflation, and economic activity indicators.</p>
+    </div>
+    {% if macro_updated %}
+      <span class="text-muted small">Updated {{ macro_updated }}</span>
+    {% endif %}
+  </div>
+
+  <div class="row g-3">
+    {% for category in macro_categories %}
+      <section id="{{ category.id }}" class="col-12">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+              <h2 class="h5 mb-0">{{ category.title }}</h2>
+              <a class="btn btn-sm btn-outline-light" href="{{ url_for('web.index') }}#macro-trends">Back to overview</a>
+            </div>
+            <div class="macro-detail-list">
+              {% for metric in category.metrics %}
+                {% set insight = metric.insights or {} %}
+                <article id="{{ category.id }}-{{ metric.id }}" class="macro-detail-item" data-state="summary"{% if insight %} data-has-insight="true"{% endif %}>
+                  <div class="macro-detail-slider">
+                    <div class="macro-detail-pane macro-pane-summary">
+                      <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 mb-2">
+                        <div class="macro-detail-text flex-grow-1">
+                          <h3 class="h6 text-white mb-2">{{ metric.name }}</h3>
+                          <p class="mb-2 text-white-75">{{ metric.detail }}</p>
+                          {% if metric.delta %}
+                            <small class="text-white-50 d-block">{{ metric.delta }}</small>
+                          {% endif %}
+                        </div>
+                        <div class="d-flex flex-column align-items-end gap-2">
+                          {% if metric.summary %}
+                            <span class="badge bg-primary-subtle text-primary-emphasis">{{ metric.summary }}</span>
+                          {% endif %}
+                          {% if insight %}
+                            <button type="button"
+                                    class="btn btn-sm btn-outline-primary text-nowrap macro-insight-open"
+                                    aria-expanded="false"
+                                    aria-controls="{{ category.id }}-{{ metric.id }}-insight">
+                              Insights
+                            </button>
+                          {% endif %}
+                        </div>
+                      </div>
+
+                      {% if metric.history %}
+                        <div class="macro-detail-chart">
+                          <canvas class="macro-chart" data-history='{{ metric.history | tojson | safe }}' data-chart-height="180"></canvas>
+                        </div>
+                      {% endif %}
+                    </div>
+
+                    {% if insight %}
+                      <div class="macro-detail-pane macro-pane-insight" id="{{ category.id }}-{{ metric.id }}-insight" aria-hidden="true">
+                        <div class="d-flex align-items-start justify-content-between flex-wrap gap-3 mb-3">
+                          <div>
+                            <h3 class="h6 text-white mb-1">Insight: {{ metric.name }}</h3>
+                            {% if metric.summary %}
+                              <p class="text-white-50 small mb-0">Latest reading <span class="text-white">{{ metric.summary }}</span></p>
+                            {% endif %}
+                          </div>
+                          <button type="button" class="btn btn-sm btn-outline-light macro-insight-close" aria-label="Back to summary">
+                            Back
+                          </button>
+                        </div>
+
+                        {% if insight.overview %}
+                          <p class="text-white-75 mb-3">{{ insight.overview }}</p>
+                        {% endif %}
+
+                        <div class="macro-insight-meta text-white-75 small">
+                          {% if insight.high %}
+                            <div class="macro-insight-point mb-3">
+                              <span class="macro-insight-label text-uppercase text-primary-emphasis">Higher readings</span>
+                              <p class="mb-0">{{ insight.high }}</p>
+                            </div>
+                          {% endif %}
+                          {% if insight.low %}
+                            <div class="macro-insight-point mb-3">
+                              <span class="macro-insight-label text-uppercase text-info">Lower readings</span>
+                              <p class="mb-0">{{ insight.low }}</p>
+                            </div>
+                          {% endif %}
+                          {% if insight.range %}
+                            <div class="macro-insight-point">
+                              <span class="macro-insight-label text-uppercase text-white-50">Typical range</span>
+                              <p class="mb-0">{{ insight.range }}</p>
+                            </div>
+                          {% endif %}
+                        </div>
+                      </div>
+                    {% endif %}
+                  </div>
+                </article>
+                {% if not loop.last %}
+                  <hr class="border-secondary-subtle opacity-50 my-3">
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="{{ url_for('static', filename='js/macro-charts.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/macro-insights.js') }}"></script>
+{% endblock %}

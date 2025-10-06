@@ -1,7 +1,10 @@
 from __future__ import annotations
+from datetime import datetime
+
 from flask import Blueprint, current_app, render_template, request, redirect, url_for
 from services.news_repo import NewsRepo
 from urllib.parse import urlencode
+from services.macro_trends import get_macro_trends
 
 web_bp = Blueprint("web", __name__)
 
@@ -109,3 +112,29 @@ def social():
     handles = get_social_handles()
     scrape_user = get_scrape_user()
     return render_template("social.html", handles=handles, scrape_user=scrape_user)
+
+
+@web_bp.route("/macro-trends")
+def macro_trends():
+    cfg = current_app.config
+    data = get_macro_trends(
+        fred_api_key=cfg.get("FRED_API_KEY", ""),
+        eia_api_key=cfg.get("EIA_API_KEY", ""),
+    )
+
+    updated_raw = data.get("updated")
+    updated_display: str | None = None
+    if updated_raw:
+        try:
+            updated_dt = datetime.fromisoformat(updated_raw)
+            updated_display = updated_dt.strftime("%b %d, %Y %I:%M %p")
+        except ValueError:
+            updated_display = updated_raw
+
+    categories = data.get("categories") or []
+
+    return render_template(
+        "macro_trends.html",
+        macro_categories=categories,
+        macro_updated=updated_display,
+    )

@@ -11,37 +11,47 @@
       <div class="card shadow-sm h-100">
         <div class="card-body macro-card">
           <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
-            <h2 class="h5 mb-0">Macro Trends</h2>
+            <h2 class="h6 mb-0">Macro Trends</h2>
             <span class="text-muted small macro-updated">Loading…</span>
           </div>
-          <div id="macro-trends">
-            <div class="macro-block">
-              <h3 class="h6 text-uppercase text-muted mb-1">Inflation &amp; Policy</h3>
-              <ul class="list-unstyled macro-list mb-3" id="macro-inflation"></ul>
-            </div>
-            <div class="macro-block">
-              <h3 class="h6 text-uppercase text-muted mb-1">Growth &amp; Demand</h3>
-              <ul class="list-unstyled macro-list mb-3" id="macro-growth"></ul>
-            </div>
-            <div class="macro-block">
-              <h3 class="h6 text-uppercase text-muted mb-1">Commodities &amp; Energy</h3>
-              <ul class="list-unstyled macro-list mb-3" id="macro-commodities"></ul>
-            </div>
-            <div class="macro-block">
-              <h3 class="h6 text-uppercase text-muted mb-1">Geopolitics &amp; Risk</h3>
-              <ul class="list-unstyled macro-list" id="macro-geopolitics"></ul>
-            </div>
+          <div class="macro-grid" id="macro-trends" data-detail-url="{{ url_for('web.macro_trends') }}">
+            <section class="macro-section" data-category="job-market">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <h3 class="h6 text-uppercase text-muted mb-0">Job Market</h3>
+                <a class="btn btn-sm btn-outline-light" href="{{ url_for('web.macro_trends') }}#job-market">View details</a>
+              </div>
+              <div class="macro-list" id="macro-job-market"></div>
+            </section>
+
+            <section class="macro-section" data-category="inflation">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <h3 class="h6 text-uppercase text-muted mb-0">Inflation</h3>
+                <a class="btn btn-sm btn-outline-light" href="{{ url_for('web.macro_trends') }}#inflation">View details</a>
+              </div>
+              <div class="macro-list" id="macro-inflation"></div>
+            </section>
+
+            <section class="macro-section" data-category="economic-activities">
+              <div class="d-flex align-items-center justify-content-between mb-2">
+                <h3 class="h6 text-uppercase text-muted mb-0">Economic Activities</h3>
+                <a class="btn btn-sm btn-outline-light" href="{{ url_for('web.macro_trends') }}#economic-activities">View details</a>
+              </div>
+              <div class="macro-list" id="macro-economic-activities"></div>
+            </section>
+          </div>
+          <div class="text-end mt-3">
+            <a class="btn btn-outline-light btn-sm" href="{{ url_for('web.macro_trends') }}">Open macro dashboard</a>
           </div>
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6">
-      <div class="card shadow-sm h-100 dashboard-half">
-        <div class="card-body">
+    <div class="col-12 col-lg-6 d-flex flex-column gap-3">
+      <div class="card shadow-sm flex-fill dashboard-half">
+        <div class="card-body d-flex flex-column">
           <div class="d-flex align-items-center justify-content-between mb-2">
             <h2 class="h6 mb-0">Market heatmap</h2>
           </div>
-          <div class="tradingview-widget-container tv-flex-fill">
+          <div class="tradingview-widget-container tv-flex-fill flex-fill">
             <div id="tv-heatmap" class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
             {
@@ -58,16 +68,10 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Market movers -->
-  <div class="row g-3 mb-4">
-    <div class="col-12">
-      <div class="card shadow-sm h-100 dashboard-half">
-        <div class="card-body">
+      <div class="card shadow-sm flex-fill dashboard-half">
+        <div class="card-body d-flex flex-column">
           <h2 class="h6 mb-3">Top movers today</h2>
-          <div class="tradingview-widget-container tv-flex-fill">
+          <div class="tradingview-widget-container tv-flex-fill flex-fill">
             <div id="tv-hotlists" class="tradingview-widget-container__widget"></div>
             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
             {
