@@ -67,9 +67,12 @@
     if (!ctx) return;
 
     const rect = canvas.getBoundingClientRect();
+    const container = canvas.parentElement;
+    const containerWidth = container ? container.clientWidth : 0;
     const targetHeight = parseInt(canvas.dataset.chartHeight || '', 10) || 180;
-    const width = Math.max(rect.width || canvas.clientWidth || 260, 160);
-    const height = targetHeight;
+    const width = Math.max(containerWidth || rect.width || canvas.clientWidth || 260, 160);
+    const dynamicHeight = Math.round(width * 0.4);
+    const height = Math.max(targetHeight, dynamicHeight);
     const dpr = window.devicePixelRatio || 1;
 
     canvas.width = width * dpr;
@@ -195,6 +198,26 @@
     window.addEventListener('resize', () => {
       if (resizeFrame) cancelAnimationFrame(resizeFrame);
       resizeFrame = requestAnimationFrame(renderAll);
+    });
+
+    if ('ResizeObserver' in window) {
+      const observers = new Map();
+      canvases.forEach((canvas) => {
+        const container = canvas.parentElement;
+        if (!container || observers.has(container)) return;
+        const observer = new ResizeObserver(() => renderChart(canvas));
+        observer.observe(container);
+        observers.set(container, observer);
+      });
+    }
+
+    canvases.forEach((canvas) => {
+      const details = canvas.closest('details');
+      if (!details) return;
+      details.addEventListener('toggle', () => {
+        if (!details.open) return;
+        requestAnimationFrame(() => renderChart(canvas));
+      });
     });
   });
 })();

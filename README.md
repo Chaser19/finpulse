@@ -62,10 +62,10 @@ templates/layout.html
 Dark navbar + search; includes Bootstrap, global CSS/JS; sets page blocks.
 
 templates/index.html
-TradingView charts for SPY/QQQ/DIA; Headlines list; TradingView Stock Heatmap and Hotlists (Top Movers) widgets embedded responsively inside cards.
+Macro snapshot stack, TradingView Stock Heatmap, Hotlists (Top Movers), and homepage headlines.
 
 templates/news.html
-Category selector (“All” + categories), keyword search, cards for articles. Filters out any internal “System” entries so users only see real news.
+Category selector, quick “lenses” presets, trending tag chips, an “On the radar” category pulse, story clusters, and enriched article cards (credibility, read-time, sentiment, context links). Filters out any internal “System” entries so users only see real news.
 
 templates/social.html
 Embeds timelines from selected social media accounts (currently X/Twitter). Handles are configured via the SOCIAL_TWITTER_ACCOUNTS environment variable.
@@ -76,7 +76,7 @@ static/js/home.js
 Minimal JS that fetches /api/market/headlines and renders the homepage headlines list. (Heatmap and movers are now pure TradingView embeds and need no JS.)
 
 static/js/tv-charts.js
-Mounts three TradingView “advanced chart” widgets for AMEX:SPY, NASDAQ:QQQ, and AMEX:DIA.
+Legacy helper that mounted TradingView “advanced chart” widgets for AMEX:SPY, NASDAQ:QQQ, and AMEX:DIA (kept for reference; homepage now relies on heatmap + movers only).
 
 static/css/styles.css
 Dark theme, card styling, TradingView iframe sizing (fill parent), dark list items for headlines, and legible dark form controls for the News advanced filters.
@@ -91,6 +91,17 @@ The ingested news database (JSON array of article objects).
 
 .env
 API keys for news ingestion
+
+Macro trends data
+
+The Macro Trends dashboard pulls directly from FRED (employment, inflation, spending) and the EIA (energy). To serve live values instead of the bundled fallbacks:
+
+- Request free API keys from https://fred.stlouisfed.org/ and https://www.eia.gov/opendata/.
+- Add them to `.env` as `FRED_API_KEY=<your fred key>` and `EIA_API_KEY=<your eia key>`.
+- Start the Flask app (or run any CLI command); the cache warm-up in `create_app()` fetches all series and keeps them refreshed every 15 minutes.
+- Need to force a refresh without running the server? Execute `flask shell -c "from services.macro_trends import get_macro_trends; get_macro_trends(force_refresh=True)"`.
+
+Without keys the site continues to render using the curated fallback dataset, so development still works offline.
 
 Social feeds
 
@@ -152,12 +163,22 @@ Option B: venv
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
 
-# 2) Set keys (for news ingestion)
+# 2) Set keys (.env)
 cp .env.example .env  # if present, else create .env with keys
+# Required for live news:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY (see services/providers.py)
+# Optional for macro dashboard: FRED_API_KEY, EIA_API_KEY
+# Optional for social sentiment: SOCIAL_TWITTER_BEARER_TOKEN, SOCIAL_SCRAPE_SYMBOLS, etc.
 
-# 3) Ingest news
+# 3) Ingest / refresh data
 export FLASK_APP=app:create_app
+# News (required for fresh headlines and the /news page)
 flask ingest-news
+
+# Social sentiment (optional dashboard)
+# flask ingest-social
+
+# Macro trends (auto-refreshes). To force an immediate refresh:
+# flask shell -c "from services.macro_trends import get_macro_trends; get_macro_trends(force_refresh=True)"
 
 # 4) Serve
 python app.py

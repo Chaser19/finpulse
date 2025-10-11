@@ -23,6 +23,26 @@
     </div>
   </div>
 
+  {% if filter_presets %}
+    <div class="news-preset-bar d-flex flex-wrap align-items-center gap-2 mb-3">
+      <span class="text-white-50 small me-1">Quick lenses:</span>
+      {% for preset in filter_presets %}
+        <a href="{{ preset.href }}" class="btn btn-sm {% if preset.active %}btn-primary{% else %}btn-outline-light{% endif %}">
+          {{ preset.label }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if quick_tags %}
+    <div class="news-quick-tags d-flex flex-wrap align-items-center gap-2 mb-3">
+      <span class="text-white-50 small me-1">Trending tags:</span>
+      {% for tag in quick_tags %}
+        <a href="{{ tag.href }}" class="badge news-chip text-decoration-none">#{{ tag.tag }}</a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
   <div class="collapse mb-3 {% if selected_industries or selected_tags %}show{% endif %}" id="advancedFilters">
     <form class="card card-dark shadow-sm p-3" action="{{ url_for('web.news_list') }}" method="get">
       {% if active_tag %}<input type="hidden" name="tag" value="{{ active_tag }}">{% endif %}
@@ -69,6 +89,105 @@
     </form>
   </div>
 
+  {% if on_radar %}
+    <div class="card shadow-sm news-radar-card mb-4">
+      <div class="card-body">
+        <div class="d-flex align-items-start justify-content-between flex-wrap gap-2 mb-3">
+          <div>
+            <h2 class="h6 text-uppercase text-muted mb-1">On the radar</h2>
+            <p class="text-white-50 small mb-0">Sectors with the biggest news momentum right now</p>
+          </div>
+          <span class="text-white-50 small">Volume &amp; sentiment vs recent baseline</span>
+        </div>
+        <div class="news-radar-strip">
+          {% for radar in on_radar %}
+            <div class="news-radar-item news-radar-item-{{ radar.momentum_variant }} h-100 position-relative">
+              <div class="news-radar-topline d-flex align-items-start justify-content-between mb-2">
+                <div>
+                  <h3 class="h6 mb-1">{{ radar.category }}</h3>
+                  <span class="badge text-bg-{{ radar.tone_variant }} text-uppercase small">{{ radar.tone_label }}</span>
+                </div>
+                <div class="text-end">
+                  <span class="badge bg-primary-subtle text-primary-emphasis">{{ radar.count }} stories</span>
+                  <div class="text-white-50 small">{{ radar.share_display }} of list</div>
+                </div>
+              </div>
+              <div class="news-radar-metrics d-flex flex-wrap gap-2 mb-2">
+                <div class="news-radar-metric news-radar-metric-{{ radar.volume_trend }}">
+                  <span class="metric-label">Volume Δ</span>
+                  <span class="metric-value">{{ radar.volume_delta_display }}</span>
+                </div>
+                <div class="news-radar-metric news-radar-metric-{{ radar.sentiment_trend }}">
+                  <span class="metric-label">Sentiment</span>
+                  <span class="metric-value">{{ radar.sentiment_delta_display }}</span>
+                </div>
+                <div class="news-radar-metric news-radar-metric-neutral">
+                  <span class="metric-label">Avg tone</span>
+                  <span class="metric-value">{{ radar.sentiment_avg_display }}</span>
+                </div>
+              </div>
+              {% if radar.headline %}
+                <p class="text-white-50 small mb-2">{{ radar.headline | truncate(112, True) }}</p>
+              {% endif %}
+              {% if radar.top_tag_links %}
+                <div class="d-flex flex-wrap gap-1 mb-2">
+                  {% for tag in radar.top_tag_links %}
+                    <a href="{{ tag.href }}" class="badge news-chip text-decoration-none">#{{ tag.tag }}</a>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              <div class="text-white-50 small">Baseline share: {{ radar.baseline_share_display }}</div>
+              <a href="{{ radar.href }}" class="stretched-link"></a>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if story_clusters %}
+    <div class="mb-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
+        <h2 class="h6 text-uppercase text-muted mb-0">Story clusters</h2>
+        <span class="text-white-50 small">Top narratives in this view</span>
+      </div>
+      <div class="row g-3">
+        {% for cluster in story_clusters %}
+          <div class="col-12 col-lg-6">
+            <div class="card shadow-sm story-cluster-card h-100">
+              <div class="card-body">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                  <span class="badge bg-info-subtle text-info text-uppercase small">#{{ cluster.tag }}</span>
+                  <span class="text-white-50 small">{{ cluster.count }} mentions</span>
+                </div>
+                <h3 class="h5 mb-2">{{ cluster.primary.title }}</h3>
+                <p class="text-white-75 small mb-3">{{ cluster.primary.summary | default('') | truncate(160, True) }}</p>
+                {% if cluster.bullets %}
+                  <ul class="story-cluster-list mb-3">
+                    {% for bullet in cluster.bullets %}
+                      <li>
+                        <a href="{{ bullet.href }}" class="story-cluster-link" target="_blank" rel="noopener">{{ bullet.title }}</a>
+                        {% if bullet.summary %}
+                          <p class="text-white-50 small mb-0">{{ bullet.summary | truncate(110, True) }}</p>
+                        {% endif %}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+                <div class="d-flex flex-wrap gap-2">
+                  <a class="btn btn-sm btn-outline-light" href="{{ cluster.href }}">Explore #{{ cluster.tag }}</a>
+                  {% if cluster.primary.url %}
+                    <a class="btn btn-sm btn-primary" href="{{ cluster.primary.url }}" target="_blank" rel="noopener">Read lead story</a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+
   <div class="mb-3">
     <div class="row g-2">
       <div class="col-6 col-sm-4 col-md-3 col-lg-2">
@@ -111,26 +230,50 @@
     <p class="text-muted">Showing results for <strong>{{ q }}</strong>{% if active_tag %} in <strong>{{ active_tag }}</strong>{% endif %}.</p>
   {% endif %}
 
-  {% if items|length == 0 %}
+  {% if news_items|length == 0 %}
     <div class="alert alert-light border">No results. Try adjusting your search or filters.</div>
   {% endif %}
 
   <div class="row g-3">
-    {% for n in items if n.category != 'System' and not n.id.startswith('system:') %}
+    {% for n in news_items if n.category != 'System' and not n.id.startswith('system:') %}
       <div class="col-12 col-md-6 col-lg-4">
         <div class="card h-100 shadow-sm">
           <div class="card-body d-flex flex-column">
             <h3 class="h5 card-title">{{ n.title }}</h3>
+            <div class="news-meta-line mb-2">
+              <span class="badge news-credibility text-bg-{{ n.credibility.variant }}" title="{{ n.credibility.description }}">{{ n.credibility.label }}</span>
+              <span class="text-white-50 small">~{{ n.read_minutes }} min read</span>
+              <span class="sentiment-badge sentiment-{{ n.sentiment.variant }}">
+                <span class="sentiment-icon">{{ n.sentiment.icon }}</span>
+                {{ n.sentiment.label }}
+              </span>
+            </div>
             <p class="text-muted small mb-2">{{ n.source }} • {{ n.date }}{% if n.category %} • {{ n.category }}{% endif %}</p>
             <p class="card-text">{{ n.summary }}</p>
-            <div class="mt-auto pt-2">
-              {% for t in n.tags %}
-                <a href="{{ build_news_url(q='#' ~ t) }}" class="badge text-bg-light me-1 mb-1 text-decoration-none">#{{ t }}</a>
-              {% endfor %}
+            {% if n.context %}
+              <div class="news-context mt-3">
+                <div class="news-context-title">{{ n.context.title }}</div>
+                <p class="text-white-50 small mb-2">{{ n.context.insight }}</p>
+                {% if n.context.ticker %}
+                  <div class="news-context-pill">Ticker: {{ n.context.ticker }}</div>
+                {% endif %}
+                {% if n.context.actions %}
+                  <div class="news-context-actions d-flex flex-wrap gap-2 mt-2">
+                    {% for action in n.context.actions %}
+                      <a href="{{ action.href }}" class="btn btn-sm btn-outline-primary">{{ action.label }}</a>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            <div class="mt-auto pt-3">
+              <div class="d-flex flex-wrap gap-1 mb-2">
+                {% for t in n.tags %}
+                  <a href="{{ build_news_url(q='#' ~ t) }}" class="badge news-chip text-decoration-none">#{{ t }}</a>
+                {% endfor %}
+              </div>
               {% if n.url %}
-                <div class="mt-2">
-                  <a href="{{ n.url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener">Read more</a>
-                </div>
+                <a href="{{ n.url }}" class="btn btn-sm btn-outline-secondary" target="_blank" rel="noopener">Read full story</a>
               {% endif %}
             </div>
           </div>
