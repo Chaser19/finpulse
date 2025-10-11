@@ -103,42 +103,33 @@
     }
   }
 
-  function truncate(text, maxLength) {
-    if (!text) return '';
-    const trimmed = String(text).trim().replace(/\s+/g, ' ');
-    if (trimmed.length <= maxLength) return trimmed;
-    return trimmed.slice(0, maxLength - 3) + '...';
-  }
-
   function renderMetric(parent, detailBase, categoryId, metric) {
     const metricId = metric.id || Math.random().toString(36).slice(2);
+    const item = document.createElement('li');
+    item.className = 'macro-snapshot-item';
+
     const link = document.createElement('a');
-    link.className = 'macro-metric-link';
+    link.className = 'macro-snapshot-link';
     link.href = `${detailBase}#${categoryId}-${metricId}`;
     link.setAttribute('aria-label', `View ${metric.name || 'metric'} details`);
 
-    const textWrapper = document.createElement('div');
-    textWrapper.className = 'macro-metric-text';
+    const line = document.createElement('div');
+    line.className = 'macro-snapshot-line';
 
-    const name = document.createElement('span');
-    name.className = 'macro-metric-name';
-    name.textContent = metric.name || 'Metric';
-    textWrapper.appendChild(name);
+    const label = document.createElement('span');
+    label.className = 'macro-snapshot-label';
+    label.textContent = metric.name || 'Metric';
 
-    const summary = document.createElement('span');
-    summary.className = 'macro-metric-summary';
-    const summaryText = metric.summary || truncate(metric.detail, 80) || 'View full details';
-    summary.textContent = summaryText;
-    textWrapper.appendChild(summary);
+    const change = document.createElement('span');
+    change.className = 'macro-snapshot-delta';
+    change.textContent = metric.delta || metric.summary || '—';
 
-    const chevron = document.createElement('span');
-    chevron.className = 'macro-metric-chevron';
-    chevron.textContent = '>';
+    line.appendChild(label);
+    line.appendChild(change);
+    link.appendChild(line);
 
-    link.appendChild(textWrapper);
-    link.appendChild(chevron);
-
-    parent.appendChild(link);
+    item.appendChild(link);
+    parent.appendChild(item);
   }
 
   function renderCategories(root, categories) {
@@ -149,7 +140,8 @@
       const container = document.getElementById(targetId);
       if (!container) return;
       container.innerHTML = '';
-      (category.metrics || []).forEach((metric) => renderMetric(container, detailBase, category.id, metric));
+      const metrics = Array.isArray(category.metrics) ? category.metrics : [];
+      metrics.slice(0, 3).forEach((metric) => renderMetric(container, detailBase, category.id, metric));
     });
   }
 
