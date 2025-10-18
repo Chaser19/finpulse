@@ -191,13 +191,19 @@
     const canvases = Array.from(document.querySelectorAll('.macro-chart[data-history]'));
     if (!canvases.length) return;
 
-    const renderAll = () => canvases.forEach((canvas) => renderChart(canvas));
-    renderAll();
+    const renderVisible = () => {
+      canvases.forEach((canvas) => {
+        if (!canvas.offsetParent) return;
+        renderChart(canvas);
+      });
+    };
+
+    renderVisible();
 
     let resizeFrame = null;
     window.addEventListener('resize', () => {
       if (resizeFrame) cancelAnimationFrame(resizeFrame);
-      resizeFrame = requestAnimationFrame(renderAll);
+      resizeFrame = requestAnimationFrame(renderVisible);
     });
 
     if ('ResizeObserver' in window) {
@@ -205,18 +211,27 @@
       canvases.forEach((canvas) => {
         const container = canvas.parentElement;
         if (!container || observers.has(container)) return;
-        const observer = new ResizeObserver(() => renderChart(canvas));
+        const observer = new ResizeObserver(() => {
+          if (!canvas.offsetParent) return;
+          renderChart(canvas);
+        });
         observer.observe(container);
         observers.set(container, observer);
       });
     }
 
-    canvases.forEach((canvas) => {
-      const details = canvas.closest('details');
-      if (!details) return;
-      details.addEventListener('toggle', () => {
-        if (!details.open) return;
-        requestAnimationFrame(() => renderChart(canvas));
+    const tabTriggers = Array.from(document.querySelectorAll('[data-bs-toggle="tab"][data-category]'));
+    tabTriggers.forEach((trigger) => {
+      trigger.addEventListener('shown.bs.tab', (event) => {
+        const targetSelector = trigger.getAttribute('data-bs-target') || event.target?.getAttribute('data-bs-target');
+        if (!targetSelector) return;
+        const pane = document.querySelector(targetSelector);
+        if (!pane) return;
+        const paneCanvases = pane.querySelectorAll('.macro-chart[data-history]');
+        if (!paneCanvases.length) return;
+        requestAnimationFrame(() => {
+          paneCanvases.forEach((canvas) => renderChart(canvas));
+        });
       });
     });
   });

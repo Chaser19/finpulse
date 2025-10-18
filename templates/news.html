@@ -1,47 +1,79 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
-    <div>
-      <h1 class="h4 mb-0">News &amp; Insights</h1>
+  <section class="news-toolbar mb-4">
+    <div class="news-toolbar-primary">
+      <div>
+        <span class="news-kicker text-uppercase">News intelligence</span>
+        <div class="d-flex flex-wrap align-items-baseline gap-3">
+          <h1 class="h4 mb-0">News &amp; Insights</h1>
+          <div class="news-toolbar-meta d-flex flex-wrap align-items-center gap-3">
+            {% if news_refreshed %}
+              <span class="news-refresh text-white-50">Last refreshed {{ news_refreshed }}</span>
+            {% endif %}
+            <span class="news-count text-white-50">{{ news_total }} stories</span>
+          </div>
+        </div>
+      </div>
       {% if active_tag %}
-        <div class="mt-1">
+        <div class="news-active-category">
           <span class="badge bg-secondary">Category: {{ active_tag }}</span>
-          <a href="{{ build_news_url(tag=None) }}" class="btn btn-sm btn-link">Clear category</a>
+          <a href="{{ build_news_url(tag=None) }}" class="news-clear-link">Clear category</a>
         </div>
       {% endif %}
     </div>
-    <div class="d-flex gap-2 flex-wrap">
-      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#advancedFilters" aria-expanded="{{ 'true' if selected_industries or selected_tags else 'false' }}">Advanced Filters</button>
-      <form class="d-flex" action="{{ url_for('web.news_list') }}" method="get">
+    <div class="news-toolbar-controls">
+      <button class="btn btn-outline-secondary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#advancedFilters" aria-expanded="{{ 'true' if selected_industries or selected_tags else 'false' }}">Advanced filters</button>
+      <form class="news-search" action="{{ url_for('web.news_list') }}" method="get">
         {% if active_tag %}<input type="hidden" name="tag" value="{{ active_tag }}">{% endif %}
         {% for ind in selected_industries %}<input type="hidden" name="industries" value="{{ ind }}">{% endfor %}
         {% for t in selected_tags %}<input type="hidden" name="tags" value="{{ t }}">{% endfor %}
         <input type="hidden" name="tag_mode" value="{{ tag_mode }}">
-        <input class="form-control me-2" type="search" name="q" placeholder="Search title, summary, #tag" value="{{ q | default('') }}">
-        <button class="btn btn-primary" type="submit">Search</button>
+        <input class="form-control news-search-input" type="search" name="q" placeholder="Search title, summary, or #tag" value="{{ q | default('') }}">
+        <button class="btn btn-primary btn-sm" type="submit">Search</button>
       </form>
     </div>
-  </div>
-
-  {% if filter_presets %}
-    <div class="news-preset-bar d-flex flex-wrap align-items-center gap-2 mb-3">
-      <span class="text-white-50 small me-1">Quick lenses:</span>
-      {% for preset in filter_presets %}
-        <a href="{{ preset.href }}" class="btn btn-sm {% if preset.active %}btn-primary{% else %}btn-outline-light{% endif %}">
-          {{ preset.label }}
-        </a>
-      {% endfor %}
-    </div>
-  {% endif %}
-
-  {% if quick_tags %}
-    <div class="news-quick-tags d-flex flex-wrap align-items-center gap-2 mb-3">
-      <span class="text-white-50 small me-1">Trending tags:</span>
-      {% for tag in quick_tags %}
-        <a href="{{ tag.href }}" class="badge news-chip text-decoration-none">#{{ tag.tag }}</a>
-      {% endfor %}
-    </div>
-  {% endif %}
+    {% if filter_presets or quick_tags %}
+      <div class="news-inline-filters">
+        {% if filter_presets %}
+          <div class="news-filter-group">
+            <span class="news-filter-label text-white-50">Quick lenses:</span>
+            <div class="news-filter-chip-list">
+              {% for preset in filter_presets %}
+                <a href="{{ preset.href }}" class="news-filter-chip {% if preset.active %}active{% endif %}">{{ preset.label }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+        {% if quick_tags %}
+          <div class="news-filter-group">
+            <span class="news-filter-label text-white-50">Trending tags:</span>
+            <div class="news-filter-chip-list">
+              {% for tag in quick_tags %}
+                <a href="{{ tag.href }}" class="news-tag-chip">#{{ tag.tag }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if selected_industries or selected_tags or q %}
+      <div class="news-active-filters">
+        {% for s in selected_industries %}
+          <span class="news-active-chip">Industry: {{ s }}</span>
+        {% endfor %}
+        {% for t in selected_tags %}
+          <span class="news-active-chip">#{{ t.lstrip('#') }}</span>
+        {% endfor %}
+        {% if selected_tags %}
+          <span class="news-active-chip">Tag mode: {{ tag_mode }}</span>
+        {% endif %}
+        {% if q %}
+          <span class="news-active-chip">Search: {{ q }}</span>
+        {% endif %}
+        <a class="news-clear-link" href="{{ build_news_url(tag=active_tag, industries=None, tags=None, tag_mode=None, q=None) }}">Clear filters</a>
+      </div>
+    {% endif %}
+  </section>
 
   <div class="collapse mb-3 {% if selected_industries or selected_tags %}show{% endif %}" id="advancedFilters">
     <form class="card card-dark shadow-sm p-3" action="{{ url_for('web.news_list') }}" method="get">
@@ -230,26 +262,37 @@
     <p class="text-muted">Showing results for <strong>{{ q }}</strong>{% if active_tag %} in <strong>{{ active_tag }}</strong>{% endif %}.</p>
   {% endif %}
 
-  {% if news_items|length == 0 %}
+  {% if news_total == 0 %}
     <div class="alert alert-light border">No results. Try adjusting your search or filters.</div>
   {% endif %}
 
   <div class="row g-3">
-    {% for n in news_items if n.category != 'System' and not n.id.startswith('system:') %}
+    {% for n in news_items %}
       <div class="col-12 col-md-6 col-lg-4">
-        <div class="card h-100 shadow-sm">
+        <div class="card h-100 shadow-sm news-card">
           <div class="card-body d-flex flex-column">
-            <h3 class="h5 card-title">{{ n.title }}</h3>
-            <div class="news-meta-line mb-2">
+            <header class="news-card-header">
+              <div class="news-source">
+                <span class="news-source-avatar news-source-{{ n.credibility.variant }}">{{ n.source_initials }}</span>
+                <div class="news-source-text">
+                  <span class="news-source-name">{{ n.source_display }}</span>
+                  <span class="news-source-meta">{{ n.date }}{% if n.category %} · {{ n.category }}{% endif %}</span>
+                </div>
+              </div>
               <span class="badge news-credibility text-bg-{{ n.credibility.variant }}" title="{{ n.credibility.description }}">{{ n.credibility.label }}</span>
-              <span class="text-white-50 small">~{{ n.read_minutes }} min read</span>
-              <span class="sentiment-badge sentiment-{{ n.sentiment.variant }}">
+            </header>
+            <h3 class="news-card-title">{{ n.title }}</h3>
+            <p class="news-card-summary">{{ n.summary }}</p>
+            <div class="news-card-metrics">
+              <span class="news-meta-chip">
+                <svg class="news-meta-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7a1 1 0 0 1 1 1v3.17l2.12 2.12a1 1 0 0 1-1.41 1.41l-2.47-2.47A1 1 0 0 1 11 12V8a1 1 0 0 1 1-1Zm0-5a10 10 0 1 1-10 10A10 10 0 0 1 12 2Zm0 2a8 8 0 1 0 8 8a8 8 0 0 0-8-8Z"/></svg>
+                ~{{ n.read_minutes }} min read
+              </span>
+              <span class="news-meta-chip sentiment sentiment-{{ n.sentiment.variant }}">
                 <span class="sentiment-icon">{{ n.sentiment.icon }}</span>
                 {{ n.sentiment.label }}
               </span>
             </div>
-            <p class="text-muted small mb-2">{{ n.source }} • {{ n.date }}{% if n.category %} • {{ n.category }}{% endif %}</p>
-            <p class="card-text">{{ n.summary }}</p>
             {% if n.context %}
               <div class="news-context mt-3">
                 <div class="news-context-title">{{ n.context.title }}</div>
@@ -266,8 +309,8 @@
                 {% endif %}
               </div>
             {% endif %}
-            <div class="mt-auto pt-3">
-              <div class="d-flex flex-wrap gap-1 mb-2">
+            <div class="news-card-footer mt-auto pt-3">
+              <div class="news-tag-list">
                 {% for t in n.tags %}
                   <a href="{{ build_news_url(q='#' ~ t) }}" class="badge news-chip text-decoration-none">#{{ t }}</a>
                 {% endfor %}
