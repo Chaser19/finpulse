@@ -28,7 +28,7 @@
         {% for ind in selected_industries %}<input type="hidden" name="industries" value="{{ ind }}">{% endfor %}
         {% for t in selected_tags %}<input type="hidden" name="tags" value="{{ t }}">{% endfor %}
         <input type="hidden" name="tag_mode" value="{{ tag_mode }}">
-        <input class="form-control news-search-input" type="search" name="q" placeholder="Search title, summary, or #tag" value="{{ q | default('') }}">
+        <input class="form-control news-search-input" type="search" name="q" placeholder="Search title or #tag" value="{{ q | default('') }}">
         <button class="btn btn-primary btn-sm" type="submit">Search</button>
       </form>
     </div>

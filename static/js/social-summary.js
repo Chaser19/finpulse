@@ -6,6 +6,8 @@
     selectedSymbol: null,
   };
 
+  const numberFormatter = new Intl.NumberFormat('en-US');
+
   const tvMountTimers = new Map();
 
   async function jget(url) {
@@ -65,6 +67,16 @@
   function formatNumber(value, digits = 2) {
     if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
     return Number(value).toFixed(digits);
+  }
+
+  function formatInteger(value) {
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
+    return numberFormatter.format(Math.round(Number(value)));
+  }
+
+  function formatPercent(value) {
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
+    return `${Number(value).toFixed(0)}%`;
   }
 
   function formatChange(changePct, changeAbs) {
@@ -452,6 +464,49 @@
     renderSymbolDetail(sym);
   }
 
+  function renderMetrics(payload) {
+    const metricSymbols = document.getElementById('metric-symbols');
+    const metricPosts = document.getElementById('metric-posts');
+    const metricBullish = document.getElementById('metric-bullish');
+    const metricNetScore = document.getElementById('metric-net-score');
+
+    if (!payload || !payload.symbols) {
+      if (metricSymbols) metricSymbols.textContent = '—';
+      if (metricPosts) metricPosts.textContent = '—';
+      if (metricBullish) metricBullish.textContent = '—';
+      if (metricNetScore) metricNetScore.textContent = '—';
+      return;
+    }
+
+    const entries = Object.values(payload.symbols);
+    const totalSymbols = entries.length;
+    let totalPosts = 0;
+    let totalBullish = 0;
+    let netScoreSum = 0;
+    let netScoreCount = 0;
+
+    entries.forEach((entry) => {
+      const summary = entry?.summary || {};
+      const posts = Number(summary.posts ?? 0);
+      totalPosts += Number.isFinite(posts) ? posts : 0;
+      const bullPosts = Number(summary.bullish_posts ?? 0);
+      totalBullish += Number.isFinite(bullPosts) ? bullPosts : 0;
+      const netScore = Number(summary.net_score);
+      if (Number.isFinite(netScore)) {
+        netScoreSum += netScore;
+        netScoreCount += 1;
+      }
+    });
+
+    const avgNet = netScoreCount ? netScoreSum / netScoreCount : null;
+    const bullShare = totalPosts ? (totalBullish / totalPosts) * 100 : null;
+
+    if (metricSymbols) metricSymbols.textContent = formatInteger(totalSymbols);
+    if (metricPosts) metricPosts.textContent = formatInteger(totalPosts);
+    if (metricBullish) metricBullish.textContent = bullShare === null ? '—' : formatPercent(bullShare);
+    if (metricNetScore) metricNetScore.textContent = avgNet === null ? '—' : formatNumber(avgNet, 2);
+  }
+
   function renderList(payload) {
     const listRoot = document.getElementById('sentiment-list');
     const empty = document.getElementById('sentiment-empty');
@@ -467,6 +522,7 @@
       empty?.classList.remove('d-none');
       state.payload = null;
       state.selectedSymbol = null;
+      renderMetrics(null);
       return;
     }
 
@@ -477,8 +533,11 @@
     if (!entries.length) {
       empty?.classList.remove('d-none');
       state.selectedSymbol = null;
+      renderMetrics(null);
       return;
     }
+
+    renderMetrics(payload);
 
     empty?.classList.add('d-none');
 
