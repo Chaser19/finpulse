@@ -1,78 +1,72 @@
 // static/js/macro-insights.js
 (function () {
-  function toArray(nodeList) {
-    return Array.prototype.slice.call(nodeList || []);
+  let suppressHashUpdate = false;
+
+  function activateTab(categoryId) {
+    if (typeof bootstrap === 'undefined' || !categoryId) return null;
+    const trigger = document.querySelector(`[data-bs-toggle="tab"][data-category="${CSS.escape(categoryId)}"]`);
+    if (!trigger) return null;
+    const tab = bootstrap.Tab.getOrCreateInstance(trigger);
+    tab.show();
+    return trigger;
   }
 
-  function closeItem(item) {
-    if (!item) return;
-    item.setAttribute('data-state', 'summary');
-    const openBtn = item.querySelector('.macro-insight-open');
-    const pane = item.querySelector('.macro-pane-insight');
-    if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
-    if (pane) pane.setAttribute('aria-hidden', 'true');
+  function highlightMetric(metricId) {
+    const metric = document.getElementById(metricId);
+    if (!metric) return;
+    metric.classList.add('macro-metric-highlight');
+    metric.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => {
+      metric.classList.remove('macro-metric-highlight');
+    }, 1600);
   }
 
-  function openItem(item, items) {
-    if (!item) return;
-    (items || []).forEach((other) => {
-      if (other !== item) closeItem(other);
-    });
-    item.setAttribute('data-state', 'insight');
-    const openBtn = item.querySelector('.macro-insight-open');
-    const pane = item.querySelector('.macro-pane-insight');
-    if (openBtn) openBtn.setAttribute('aria-expanded', 'true');
-    if (pane) pane.setAttribute('aria-hidden', 'false');
+  function handleHashChange() {
+    const rawHash = window.location.hash || '';
+    const hash = rawHash.replace(/^#/, '');
+    if (!hash) return;
+
+    const metric = document.getElementById(hash);
+    if (metric) {
+      const category = metric.getAttribute('data-category') || hash.split('-')[0];
+      suppressHashUpdate = true;
+      const trigger = activateTab(category);
+      if (trigger) {
+        const once = () => {
+          highlightMetric(hash);
+          history.replaceState(null, '', `#${hash}`);
+          trigger.removeEventListener('shown.bs.tab', once);
+        };
+        trigger.addEventListener('shown.bs.tab', once);
+      } else {
+        highlightMetric(hash);
+        history.replaceState(null, '', `#${hash}`);
+        suppressHashUpdate = false;
+      }
+      return;
+    }
+
+    activateTab(hash);
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const items = toArray(document.querySelectorAll('.macro-detail-item[data-has-insight="true"]'));
-    if (!items.length) return;
+    if (typeof bootstrap === 'undefined') return;
+    const tabButtons = Array.from(document.querySelectorAll('[data-bs-toggle="tab"][data-category]'));
+    if (!tabButtons.length) return;
 
-    items.forEach((item) => {
-      const openBtn = item.querySelector('.macro-insight-open');
-      const closeBtn = item.querySelector('.macro-insight-close');
-      const pane = item.querySelector('.macro-pane-insight');
-
-      if (pane) pane.setAttribute('aria-hidden', 'true');
-
-      if (openBtn) {
-        openBtn.addEventListener('click', () => {
-          openItem(item, items);
-        });
-      }
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-          closeItem(item);
-          const openTrigger = item.querySelector('.macro-insight-open');
-          if (openTrigger) openTrigger.focus();
-        });
-      }
-
-      item.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && item.getAttribute('data-state') === 'insight') {
-          closeItem(item);
-          const openTrigger = item.querySelector('.macro-insight-open');
-          if (openTrigger) openTrigger.focus();
+    tabButtons.forEach((button) => {
+      button.addEventListener('shown.bs.tab', () => {
+        if (suppressHashUpdate) {
+          suppressHashUpdate = false;
+          return;
         }
+        const category = button.getAttribute('data-category');
+        if (!category) return;
+        history.replaceState(null, '', `#${category}`);
       });
     });
 
-    document.addEventListener('click', (event) => {
-      const target = event.target;
-      if (!target) return;
-      const openBtn = target.closest('.macro-insight-open');
-      const closeBtn = target.closest('.macro-insight-close');
-      if (openBtn || closeBtn) return; // handled already
-      const insightItem = target.closest('.macro-detail-item[data-has-insight="true"]');
-      if (!insightItem) {
-        items.forEach((item) => {
-          if (item.getAttribute('data-state') === 'insight') {
-            closeItem(item);
-          }
-        });
-      }
-    });
+    handleHashChange();
+    window.addEventListener('hashchange', handleHashChange);
   });
 })();

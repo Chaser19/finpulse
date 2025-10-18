@@ -1,9 +1,82 @@
 {% extends "layout.html" %}
 {% block content %}
-  <div class="text-center mb-4">
-    <h1 class="display-6">Welcome to FinPulse</h1>
-    <p class="lead mt-2">Curated financial insights across industries and commodities.</p>
-  </div>
+  <section class="hero-section mb-5">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-kicker">Institutional market intelligence</span>
+        <h1 class="hero-title">Monitor the pulse of the economy.</h1>
+        <p class="hero-subtitle">FinPulse unifies macro trends, curated newsflow, and social sentiment so investment teams can brief faster and act with conviction.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-lg" href="{{ url_for('web.macro_trends') }}">Explore dashboard</a>
+          <a class="btn btn-outline-light btn-lg" href="mailto:hello@finpulse.ai">Request demo</a>
+        </div>
+      </div>
+      <div class="hero-visual card highlight-card">
+        <div class="card-body">
+          <h2 class="h6 text-uppercase text-muted mb-3">Platform snapshot</h2>
+          <ul class="hero-signal-list">
+            <li>
+              <span class="signal-icon macro" aria-hidden="true"></span>
+              <div>
+                <strong>Macro radar</strong>
+                <small>40+ indicators tracking growth, inflation, and liquidity.</small>
+              </div>
+            </li>
+            <li>
+              <span class="signal-icon news" aria-hidden="true"></span>
+              <div>
+                <strong>Ranked newsfeed</strong>
+                <small>Credibility tiers, sentiment scoring, and narrative clusters.</small>
+              </div>
+            </li>
+            <li>
+              <span class="signal-icon social" aria-hidden="true"></span>
+              <div>
+                <strong>Social pulse</strong>
+                <small>Real-time chatter and synthetic history for coverage symbols.</small>
+              </div>
+            </li>
+          </ul>
+          <div class="hero-meta mt-4">
+            <span class="hero-meta-badge">Updated every 15 minutes</span>
+            <span class="hero-meta-badge">API &amp; CSV export</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero-pillars mb-5">
+    <div class="row g-3">
+      <div class="col-12 col-md-4">
+        <div class="hero-pillar card h-100">
+          <div class="card-body">
+            <div class="hero-pillar-icon macro" aria-hidden="true"></div>
+            <h3 class="hero-pillar-title">Macro dashboards</h3>
+            <p class="text-white-50 mb-0">Monitor employment, inflation, and activity trends with smart annotations and sparkline context.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="hero-pillar card h-100">
+          <div class="card-body">
+            <div class="hero-pillar-icon news" aria-hidden="true"></div>
+            <h3 class="hero-pillar-title">Signal-ranked news</h3>
+            <p class="text-white-50 mb-0">Surface the stories that matter with credibility labeling, sentiment tags, and ready-to-share briefs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4">
+        <div class="hero-pillar card h-100">
+          <div class="card-body">
+            <div class="hero-pillar-icon social" aria-hidden="true"></div>
+            <h3 class="hero-pillar-title">Social intelligence</h3>
+            <p class="text-white-50 mb-0">Quantify chatter momentum, net sentiment, and influencer activity across watchlist symbols.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Macro + Market overview -->
   <div class="row g-3 mb-4 align-items-stretch">

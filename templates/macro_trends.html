@@ -3,122 +3,131 @@
 {% block title %}Macro Trends · FinPulse{% endblock %}
 
 {% block content %}
-  <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 gap-2">
-    <div>
-      <h1 class="display-6 mb-1">Macro Trends</h1>
-      <p class="text-white-50 mb-0">Interactive dashboard tracking employment, inflation, and economic activity indicators.</p>
+  <section class="macro-hero mb-5">
+    <div class="macro-hero-head">
+      <div>
+        <span class="macro-kicker text-uppercase">Macro dashboard</span>
+        <h1 class="display-6 mb-2">Macro Trends</h1>
+        <p class="macro-hero-subtitle">Stay on top of growth, inflation, and activity signals with annotated charts and curated context.</p>
+      </div>
+      {% if macro_updated %}
+        <div class="macro-stamp">
+          <span class="macro-stamp-label">Last updated</span>
+          <span class="macro-stamp-value">{{ macro_updated }}</span>
+        </div>
+      {% endif %}
     </div>
-    {% if macro_updated %}
-      <span class="text-muted small">Updated {{ macro_updated }}</span>
-    {% endif %}
-  </div>
+    <p class="macro-hero-copy">Tabs group the core macro pillars. Each panel surfaces the latest datapoint, delta annotations, and an analyst callout so teams can brief in minutes.</p>
+  </section>
 
   {% if macro_categories %}
-    <div class="macro-overview-grid mb-4">
-      {% for category in macro_categories %}
-        {% set primary = category.metrics | first %}
-        <article class="macro-overview-card">
-          <div class="macro-overview-head">
-            <h2 class="h6 text-uppercase text-muted mb-1">{{ category.title }}</h2>
-            <a class="macro-overview-link text-white-50 small" href="#{{ category.id }}">Jump to detail</a>
-          </div>
-          <p class="macro-overview-tagline text-white-75 mb-1">
-            {% if primary %}
-              {{ primary.summary or primary.detail or "View the dashboard for full context." }}
-            {% else %}
-              Waiting on latest data…
-            {% endif %}
-          </p>
-          {% if primary and primary.delta %}
-            <span class="macro-overview-delta text-info small">{{ primary.delta }}</span>
-          {% endif %}
-        </article>
-      {% endfor %}
-    </div>
-  {% endif %}
+    <section class="macro-tabs">
+      <div class="macro-tabs-shell">
+        <ul class="macro-tablist nav nav-pills" id="macroTab" role="tablist">
+          {% for category in macro_categories %}
+            {% set primary = category.metrics | first %}
+            <li class="nav-item" role="presentation">
+              <button class="macro-tab-link {% if loop.first %}active{% endif %}" id="macro-tab-{{ category.id }}"
+                      data-bs-toggle="tab" data-bs-target="#macro-pane-{{ category.id }}" type="button" role="tab"
+                      aria-controls="macro-pane-{{ category.id }}" aria-selected="{{ 'true' if loop.first else 'false' }}"
+                      data-category="{{ category.id }}">
+                <span class="macro-tab-title">{{ category.title }}</span>
+                {% if primary %}
+                  <span class="macro-tab-subtext">{{ primary.summary or primary.detail or "Awaiting latest insight." }}</span>
+                {% endif %}
+              </button>
+            </li>
+          {% endfor %}
+        </ul>
 
-  <div class="row g-3">
-    {% for category in macro_categories %}
-      <section id="{{ category.id }}" class="col-12">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <div class="macro-category-header d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
-              <div>
-                <h2 class="h5 mb-1">{{ category.title }}</h2>
-                {% set primary = category.metrics | first %}
-                <p class="text-white-50 mb-0">
-                  {% if primary %}
-                    {{ primary.detail or primary.summary or "Latest update pending." }}
-                  {% else %}
-                    Latest update pending.
-                  {% endif %}
-                </p>
-              </div>
-              <a class="btn btn-sm btn-outline-light" href="{{ url_for('web.index') }}#macro-trends">Back to overview</a>
-            </div>
-            <div class="macro-detail-grid">
-              {% for metric in category.metrics %}
-                {% set insight = metric.insights or {} %}
-                <details id="{{ category.id }}-{{ metric.id }}" class="macro-detail-card">
-                  <summary class="macro-detail-summary">
-                    <div class="macro-detail-summary-text">
-                      <span class="macro-detail-name">{{ metric.name }}</span>
-                      <span class="macro-detail-highlight">
-                        {{ metric.summary or metric.detail or "View detail" }}
-                      </span>
-                    </div>
-                    <div class="macro-detail-summary-meta">
-                      {% if metric.delta %}
-                        <span class="macro-detail-delta">{{ metric.delta }}</span>
-                      {% endif %}
-                      <span class="macro-detail-chevron" aria-hidden="true">▾</span>
-                    </div>
-                  </summary>
-                  <div class="macro-detail-content">
-                    {% if metric.detail %}
-                      <p class="text-white-75">{{ metric.detail }}</p>
+        <div class="macro-tab-content tab-content">
+          {% for category in macro_categories %}
+            {% set primary = category.metrics | first %}
+            <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="macro-pane-{{ category.id }}" role="tabpanel" aria-labelledby="macro-tab-{{ category.id }}">
+              <section class="macro-category" data-category="{{ category.id }}" id="{{ category.id }}">
+                <header class="macro-category-header">
+                  <div>
+                    <h2 class="macro-category-title">{{ category.title }}</h2>
+                    {% if primary %}
+                      <p class="macro-category-lede">{{ primary.detail or primary.summary or "Latest update pending." }}</p>
                     {% endif %}
-                    {% if metric.history %}
-                      <div class="macro-detail-chart">
-                        <canvas class="macro-chart" data-history='{{ metric.history | tojson | safe }}' data-chart-height="160"></canvas>
-                      </div>
-                    {% endif %}
-                    {% if insight %}
-                      <div class="macro-insight-card">
-                        {% if insight.overview %}
-                          <p class="text-white-75 mb-3">{{ insight.overview }}</p>
+                  </div>
+                  <a class="btn btn-outline-light btn-sm" href="{{ url_for('web.index') }}#macro-trends">Back to overview</a>
+                </header>
+
+                <div class="macro-metric-grid">
+                  {% for metric in category.metrics %}
+                    {% set insight = metric.insights or {} %}
+                    <article class="macro-metric-card" id="{{ category.id }}-{{ metric.id }}" data-category="{{ category.id }}">
+                      <div class="macro-metric-head">
+                        <div>
+                          <span class="macro-metric-name">{{ metric.name }}</span>
+                          {% if metric.summary %}
+                            <p class="macro-metric-summary">{{ metric.summary }}</p>
+                          {% endif %}
+                        </div>
+                        {% if metric.delta %}
+                          <span class="macro-metric-delta">{{ metric.delta }}</span>
                         {% endif %}
-                        <div class="macro-insight-meta text-white-75 small">
-                          {% if insight.high %}
-                            <div class="macro-insight-point mb-3">
-                              <span class="macro-insight-label text-uppercase text-primary-emphasis">Higher readings</span>
-                              <p class="mb-0">{{ insight.high }}</p>
+                      </div>
+
+                      <div class="macro-metric-body">
+                        <div class="macro-metric-chart">
+                          {% if metric.history %}
+                            <canvas class="macro-chart" data-history='{{ metric.history | tojson | safe }}' data-chart-height="220"></canvas>
+                          {% else %}
+                            <div class="macro-chart-empty">Awaiting time series</div>
+                          {% endif %}
+                        </div>
+                        <div class="macro-metric-context">
+                          {% if metric.detail %}
+                            <div class="macro-callout">
+                              <span class="macro-callout-label">Why it matters</span>
+                              <p class="macro-callout-text">{{ metric.detail }}</p>
                             </div>
                           {% endif %}
-                          {% if insight.low %}
-                            <div class="macro-insight-point mb-3">
-                              <span class="macro-insight-label text-uppercase text-info">Lower readings</span>
-                              <p class="mb-0">{{ insight.low }}</p>
-                            </div>
-                          {% endif %}
-                          {% if insight.range %}
-                            <div class="macro-insight-point">
-                              <span class="macro-insight-label text-uppercase text-white-50">Typical range</span>
-                              <p class="mb-0">{{ insight.range }}</p>
+                          {% if insight %}
+                            <div class="macro-callout">
+                              <span class="macro-callout-label">Analyst lens</span>
+                              {% if insight.overview %}
+                                <p class="macro-callout-text">{{ insight.overview }}</p>
+                              {% endif %}
+                              <div class="macro-insight-grid">
+                                {% if insight.high %}
+                                  <div class="macro-insight-item">
+                                    <span class="macro-insight-label">Higher readings</span>
+                                    <p class="macro-insight-note">{{ insight.high }}</p>
+                                  </div>
+                                {% endif %}
+                                {% if insight.low %}
+                                  <div class="macro-insight-item">
+                                    <span class="macro-insight-label">Lower readings</span>
+                                    <p class="macro-insight-note">{{ insight.low }}</p>
+                                  </div>
+                                {% endif %}
+                                {% if insight.range %}
+                                  <div class="macro-insight-item">
+                                    <span class="macro-insight-label">Typical range</span>
+                                    <p class="macro-insight-note">{{ insight.range }}</p>
+                                  </div>
+                                {% endif %}
+                              </div>
                             </div>
                           {% endif %}
                         </div>
                       </div>
-                    {% endif %}
-                  </div>
-                </details>
-              {% endfor %}
+                    </article>
+                  {% endfor %}
+                </div>
+              </section>
             </div>
-          </div>
+          {% endfor %}
         </div>
-      </section>
-    {% endfor %}
-  </div>
+      </div>
+    </section>
+  {% else %}
+    <div class="alert alert-light border">Macro data has not been ingested yet. Run <code>flask --app app ingest-news</code> to populate the dashboard.</div>
+  {% endif %}
 {% endblock %}
 
 {% block scripts %}

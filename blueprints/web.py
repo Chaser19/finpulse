@@ -207,6 +207,11 @@ def prepare_article_data(article: Dict[str, Any]) -> Dict[str, Any]:
     sentiment = score_sentiment(f"{article.get('title', '')} {summary}")
     credibility = map_source_credibility(article.get("source"))
     context = derive_context(article.get("tags") or [])
+    source_name = (article.get("source") or "Unknown").strip()
+    source_words = [w for w in re.split(r"\s+", source_name) if w]
+    initials = "".join(word[0] for word in source_words[:2]).upper()
+    if not initials:
+        initials = source_name[:2].upper() or "FP"
     prepared = dict(article)
     prepared.update(
         {
@@ -215,6 +220,8 @@ def prepare_article_data(article: Dict[str, Any]) -> Dict[str, Any]:
             "credibility": credibility,
             "primary_tags": (article.get("tags") or [])[:3],
             "context": context,
+            "source_initials": initials,
+            "source_display": source_name or "Unknown",
         }
     )
     return prepared
@@ -615,9 +622,24 @@ def news_list():
             }
         )
 
+    display_items = [
+        article
+        for article in enriched_items
+        if article.get("category") != "System" and not str(article.get("id") or "").startswith("system:")
+    ]
+    visible_count = len(display_items)
+
+    refreshed_display: str | None = None
+    try:
+        refreshed_dt = datetime.fromtimestamp(r.path.stat().st_mtime)
+        refreshed_display = refreshed_dt.strftime("%b %d, %Y %I:%M %p")
+    except Exception:
+        refreshed_display = None
+
     return render_template(
         "news.html",
-        news_items=enriched_items,
+        news_items=display_items,
+        news_total=visible_count,
         active_tag=active_tag,
         q=q,
         categories=categories,
@@ -630,6 +652,7 @@ def news_list():
         on_radar=on_radar_entries,
         quick_tags=quick_tags,
         filter_presets=preset_links,
+        news_refreshed=refreshed_display,
     )
 
 @web_bp.route("/curated")
