@@ -23,6 +23,15 @@ KEYWORD_TAGS = {
     r"\b(equities|stocks|shares|equity)\b": "Equities",
     r"\b(treasuries|bonds|yields|yield)\b": "Rates",
     r"\b(fx|forex|currency|currencies|usd|eur|gbp|jpy|cny)\b": "FX",
+
+    # Policy / geopolitics
+    r"\b(sanction|sanctions)\b": "Sanctions",
+    r"\b(tariff|tariffs)\b": "Tariffs",
+    r"\b(fiscal|budget|deficit)\b": "Fiscal",
+    r"\b(regulation|regulatory|legislation|bill)\b": "Policy",
+    r"\b(congress|senate|parliament|white house)\b": "Government",
+    r"\b(election|elections|campaign)\b": "Elections",
+    r"\b(geopolitic|geopolitical|nato|conflict|war)\b": "Geopolitics",
 }
 
 # Simple ticker pattern: $TSLA, $AAPL, $BRNT etc.
