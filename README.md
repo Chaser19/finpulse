@@ -8,6 +8,8 @@ Early iterations fetched index OHLC, heatmap tiles, and movers from live market 
 
 I also hardened the ingest pipeline so a provider outage never breaks the site: provider calls are wrapped in try/except, invalid responses are ignored, and the file is only overwritten with valid JSON. A small “system meta row” (filtered out from the UI) records when ingestion last ran, which is useful during development.
 
+The ingestion layer now applies a finance-and-policy focus: articles must come from an allowlisted desk (Reuters, Bloomberg, WSJ, Politico, etc.) and match curated macro/markets or policy keyword sets before they’re kept. A new NewsAPI adapter supplements Marketaux, Finnhub, and Alpha Vantage so you can blend a second source of wire copy while still filtering out lifestyle or entertainment noise.
+
 ----
 
 File guide
@@ -165,7 +167,7 @@ pip install -r requirements.txt
 
 # 2) Set keys (.env)
 cp .env.example .env  # if present, else create .env with keys
-# Required for live news:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY (see services/providers.py)
+# Required for live news:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY / NEWSAPI_KEY (see services/providers.py)
 # Optional for macro dashboard: FRED_API_KEY, EIA_API_KEY
 # Optional for social sentiment: SOCIAL_TWITTER_BEARER_TOKEN, SOCIAL_SCRAPE_SYMBOLS, etc.
 

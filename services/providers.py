@@ -3,7 +3,7 @@ from __future__ import annotations
 import os, hashlib, re
 from datetime import datetime, timezone
 import requests
-from typing import List, Dict
+from typing import List, Dict, Any
 
 DATE_FMT = "%Y-%m-%d"
 
@@ -19,6 +19,10 @@ def _yyyy_mm_dd(iso: str) -> str:
 
 def _map_category(title: str, description: str) -> str:
     text = f"{title} {description}".lower()
+    if any(k in text for k in ["sanction", "tariff", "trade policy", "white house", "congress", "parliament", "fiscal", "budget", "legislation", "policy", "election", "senate", "house of representatives"]):
+        return "Policy"
+    if any(k in text for k in ["russia", "ukraine", "nato", "geopolitic", "conflict", "war", "israel", "china", "taiwan", "middle east"]):
+        return "Geopolitics"
     if any(k in text for k in ["opec", "brent", "wti", "crude", "refinery", "gasoline", "diesel"]):
         return "Oil"
     if any(k in text for k in ["inflation", "cpi", "ppi", "deflator", "core"]):
@@ -26,6 +30,134 @@ def _map_category(title: str, description: str) -> str:
     if any(k in text for k in ["copper", "aluminum", "nickel", "lme", "soy", "wheat", "corn", "commodit"]):
         return "Commodities"
     return "Markets"
+
+# NewsAPI configuration ------------------------------------------------------
+NEWSAPI_DEFAULT_PAGE_SIZE = 40
+
+NEWSAPI_REQUESTS: List[Dict[str, str]] = [
+    {
+        "label": "Markets",
+        "query": "markets OR equities OR earnings OR \"interest rates\" OR \"federal reserve\" OR treasury",
+        "domains": ",".join([
+            "reuters.com",
+            "bloomberg.com",
+            "wsj.com",
+            "ft.com",
+            "cnbc.com",
+            "marketwatch.com",
+            "financialpost.com",
+            "investing.com",
+            "seekingalpha.com",
+        ]),
+        "category": "Markets",
+    },
+    {
+        "label": "Policy",
+        "query": "geopolitics OR sanctions OR \"trade policy\" OR \"fiscal policy\" OR congress OR parliament OR regulation",
+        "domains": ",".join([
+            "reuters.com",
+            "bloomberg.com",
+            "politico.com",
+            "apnews.com",
+            "thehill.com",
+            "ft.com",
+            "washingtonpost.com",
+            "nytimes.com",
+        ]),
+        "category": "Policy",
+    },
+]
+
+def _newsapi_params(base: Dict[str, str], *, page_size: int) -> Dict[str, str]:
+    params = dict(base)
+    params["language"] = "en"
+    params["sortBy"] = "publishedAt"
+    params["pageSize"] = str(min(page_size, 100))
+    return params
+
+def _newsapi_tags(article: Dict[str, Any]) -> List[str]:
+    tags: List[str] = []
+    for field in ("title", "description", "content"):
+        text = article.get(field)
+        if not text:
+            continue
+        # Extract simple cashtags like $AAPL embedded in content
+        tags.extend(re.findall(r"\$[A-Z]{1,5}", text))
+    # Normalize without leading $
+    clean = []
+    for tag in tags:
+        tag = tag.strip()
+        if not tag:
+            continue
+        if tag.startswith("$"):
+            clean.append(tag[1:])
+        else:
+            clean.append(tag)
+    return list(dict.fromkeys(clean))
+
+def fetch_newsapi(*, page_size: int = NEWSAPI_DEFAULT_PAGE_SIZE) -> List[Dict]:
+    key = os.getenv("NEWSAPI_KEY")
+    if not key:
+        return []
+
+    base_url = "https://newsapi.org/v2/everything"
+    session = requests.Session()
+    items: List[Dict] = []
+    seen_ids: set[str] = set()
+
+    for request_cfg in NEWSAPI_REQUESTS:
+        params = _newsapi_params(
+            {
+                "q": request_cfg["query"],
+                "domains": request_cfg.get("domains", ""),
+            },
+            page_size=page_size,
+        )
+        params["apiKey"] = key
+
+        response = session.get(base_url, params=params, timeout=20)
+        response.raise_for_status()
+        payload = response.json() or {}
+        articles = payload.get("articles") or []
+
+        for art in articles:
+            if not isinstance(art, dict):
+                continue
+            url = art.get("url") or ""
+            title = art.get("title") or ""
+            if not url and not title:
+                continue
+
+            published = art.get("publishedAt") or ""
+            date = _yyyy_mm_dd(published)
+            source_info = art.get("source") or {}
+            if isinstance(source_info, dict):
+                src_name = source_info.get("name") or "NewsAPI"
+            else:
+                src_name = str(source_info) or "NewsAPI"
+
+            identifier = _mk_id("newsapi", url or title)
+            if identifier in seen_ids:
+                continue
+            seen_ids.add(identifier)
+
+            summary = art.get("description") or art.get("content") or ""
+            category = request_cfg.get("category") or _map_category(title, summary)
+
+            items.append(
+                {
+                    "id": identifier,
+                    "title": title,
+                    "summary": summary,
+                    "date": date,
+                    "source": f"NewsAPI: {src_name}",
+                    "url": url,
+                    "category": category,
+                    "tags": _newsapi_tags(art),
+                }
+            )
+
+    return items
 
 # --- Marketaux: Global finance/market news -----------------------------------
 def fetch_marketaux(

@@ -138,6 +138,18 @@ NEWS_FILTER_PRESETS: List[Dict[str, Any]] = [
     },
 ]
 
+THEME_DESCRIPTIONS: Dict[str, str] = {
+    "markets": "Broad market pulse & earnings",
+    "macro": "Growth, jobs, & economic signals",
+    "inflation": "Prices & rate expectations",
+    "rates": "Yield curve, credit, & funding costs",
+    "commodities": "Metals, ags, & materials flows",
+    "energy": "Supply, demand, & infrastructure",
+    "policy": "Fiscal moves, regulation & legislation",
+    "geopolitics": "Diplomacy, conflict, & global risk",
+    "finance": "Banking, deals, & capital markets",
+}
+
 def estimate_read_time(text: str) -> int:
     tokens = re.findall(r"\w+", text or "")
     if not tokens:
@@ -441,7 +453,15 @@ def index():
 @web_bp.route("/news")
 def news_list():
     r = repo()
-    categories = r.list_categories()
+    categories = [cat for cat in r.list_categories() if cat.lower() != "oil"]
+    theme_specs = [
+        {
+            "name": cat,
+            "description": THEME_DESCRIPTIONS.get(cat.lower(), "Focused view"),
+        }
+        for cat in categories
+        if cat != "System"
+    ]
 
     active_tag = request.args.get("tag")
     q = request.args.get("q", "").strip()
@@ -506,78 +526,155 @@ def news_list():
         context["actions"] = resolved
         article["context"] = context
 
-    story_clusters_raw = cluster_articles_by_tag(enriched_items, limit=2)
-    story_clusters = []
-    for cluster in story_clusters_raw:
-        primary = cluster["articles"][0]
-        related = cluster["articles"][1:4]
+    def collect_tag_stats(items: Iterable[Dict[str, Any]]) -> tuple[Counter[str], Dict[str, str], Counter[str], Counter[str]]:
+        counter: Counter[str] = Counter()
+        display: Dict[str, str] = {}
+        sentiment_sum: Counter[str] = Counter()
+        sentiment_hits: Counter[str] = Counter()
+        for item in items:
+            sentiment = item.get("sentiment") or {}
+            score = sentiment.get("score")
+            for tag in item.get("tags") or []:
+                if not tag:
+                    continue
+                slug = str(tag).lower().lstrip("#$")
+                if not slug:
+                    continue
+                counter[slug] += 1
+                display.setdefault(slug, str(tag).lstrip("#$"))
+                if isinstance(score, (int, float)):
+                    sentiment_sum[slug] += float(score)
+                    sentiment_hits[slug] += 1
+        return counter, display, sentiment_sum, sentiment_hits
+
+    def collect_tag_counts(items: Iterable[Dict[str, Any]]) -> Counter[str]:
+        counter: Counter[str] = Counter()
+        for item in items:
+            for tag in item.get("tags") or []:
+                slug = str(tag).lower().lstrip("#$")
+                if not slug:
+                    continue
+                counter[slug] += 1
+        return counter
+
+    def summarise_sentiment(score: float) -> tuple[str, str, str]:
+        if score >= 1.0:
+            return "Bullish skew", "success", "↑"
+        if score <= -1.0:
+            return "Bearish skew", "danger", "↓"
+        if score >= 0.35:
+            return "Positive tilt", "info", "↗"
+        if score <= -0.35:
+            return "Negative tilt", "warning", "↘"
+        return "Neutral balance", "secondary", "•"
+
+    def momentum_descriptor(delta: int) -> tuple[str, str]:
+        if delta > 1:
+            return "Heating up", "success"
+        if delta == 1:
+            return "Firming", "info"
+        if delta == 0:
+            return "Holding steady", "secondary"
+        if delta == -1:
+            return "Cooling", "warning"
+        return "Fading", "danger"
+
+    current_counts, tag_display, tag_sent_sum, tag_sent_hits = collect_tag_stats(enriched_items)
+    baseline_counts = collect_tag_counts(baseline_pool)
+
+    total_items = len(enriched_items) or 1
+    hot_tags: List[Dict[str, Any]] = []
+    for slug, count in current_counts.most_common(6):
+        baseline_count = baseline_counts.get(slug, 0)
+        delta = count - baseline_count
+        share = count / total_items
+        sentiment_avg = 0.0
+        if tag_sent_hits.get(slug):
+            sentiment_avg = tag_sent_sum[slug] / tag_sent_hits[slug]
+        sentiment_label, sentiment_variant, sentiment_icon = summarise_sentiment(sentiment_avg)
+        trend = "up" if delta > 0 else "down" if delta < 0 else "flat"
+        hot_tags.append(
+            {
+                "label": tag_display.get(slug, slug),
+                "href": build_news_url(q=f"#{tag_display.get(slug, slug)}"),
+                "share_display": f"{share * 100:.1f}%",
+                "delta_display": f"{delta:+d}",
+                "trend": trend,
+                "sentiment_label": sentiment_label,
+                "sentiment_variant": sentiment_variant,
+                "sentiment_icon": sentiment_icon,
+                "sentiment_score": f"{sentiment_avg:+.1f}",
+            }
+        )
+
+    narrative_clusters = cluster_articles_by_tag(enriched_items, limit=3)
+    narratives: List[Dict[str, Any]] = []
+    for cluster in narrative_clusters:
+        articles = cluster.get("articles") or []
+        if not articles:
+            continue
+        slug = cluster.get("slug") or str(cluster.get("tag", "")).lower()
+        count = cluster.get("count", len(articles))
+        baseline_count = baseline_counts.get(slug, 0)
+        delta = count - baseline_count
+        share = count / total_items
+        sentiment_sum = 0.0
+        sentiment_hits = 0
+        bullish = 0
+        bearish = 0
+        for art in articles:
+            sentiment = art.get("sentiment") or {}
+            score = sentiment.get("score")
+            if isinstance(score, (int, float)):
+                score_val = float(score)
+                sentiment_sum += score_val
+                sentiment_hits += 1
+                if score_val >= 1:
+                    bullish += 1
+                elif score_val <= -1:
+                    bearish += 1
+        avg_score = sentiment_sum / sentiment_hits if sentiment_hits else 0.0
+        sentiment_label, sentiment_variant, sentiment_icon = summarise_sentiment(avg_score)
+        momentum_label, momentum_variant = momentum_descriptor(delta)
+        trend = "up" if delta > 0 else "down" if delta < 0 else "flat"
+        primary = articles[0]
+        related = articles[1:4]
         cluster_href = build_news_url(q=f"#{cluster['tag']}")
-        bullets = []
-        for rel in related:
-            bullets.append(
-                {
-                    "title": rel.get("title"),
-                    "summary": rel.get("summary"),
-                    "href": rel.get("url") or cluster_href,
-                }
-            )
-        story_clusters.append(
+        headline_trend = (
+            "surges" if delta > 1 else "firms" if delta == 1 else "holds steady" if delta == 0 else "cools"
+        )
+        narrative_headline = f"{cluster['tag']} narrative {headline_trend}"
+        narratives.append(
             {
                 "tag": cluster["tag"],
-                "count": cluster["count"],
-                "primary": primary,
+                "headline": narrative_headline,
+                "count": count,
+                "share_display": f"{share * 100:.1f}%",
+                "delta_display": f"{delta:+d}",
+                "trend": trend,
+                "momentum_label": momentum_label,
+                "momentum_variant": momentum_variant,
+                "sentiment_label": sentiment_label,
+                "sentiment_variant": sentiment_variant,
+                "sentiment_icon": sentiment_icon,
+                "sentiment_score": f"{avg_score:+.1f}",
+                "bullish": bullish,
+                "bearish": bearish,
+                "lead": {
+                    "title": primary.get("title"),
+                    "summary": primary.get("summary"),
+                    "url": primary.get("url"),
+                },
+                "related": [
+                    {
+                        "title": rel.get("title"),
+                        "href": rel.get("url") or cluster_href,
+                    }
+                    for rel in related
+                ],
                 "href": cluster_href,
-                "bullets": bullets,
             }
         )
-
-    def classify_trend(delta: float, threshold: float) -> str:
-        if delta > threshold:
-            return "up"
-        if delta < -threshold:
-            return "down"
-        return "flat"
-
-    def describe_sentiment(avg: float, bullish: int, bearish: int, total: int) -> tuple[str, str]:
-        bull_ratio = (bullish / total) if total else 0.0
-        bear_ratio = (bearish / total) if total else 0.0
-        if avg >= 1.0 or bull_ratio >= 0.55:
-            return "Bullish momentum", "success"
-        if avg <= -1.0 or bear_ratio >= 0.55:
-            return "Bearish pressure", "danger"
-        if avg >= 0.4 or bull_ratio >= 0.4:
-            return "Positive tilt", "info"
-        if avg <= -0.4 or bear_ratio >= 0.4:
-            return "Negative tilt", "warning"
-        return "Mixed tone", "secondary"
-
-    on_radar_entries: List[Dict[str, Any]] = []
-    for entry in compute_on_radar(enriched_items, baseline_items=baseline_pool, limit=3):
-        entry = dict(entry)
-        entry["href"] = build_news_url(tag=entry["category"])
-        entry["share_display"] = f"{entry['share'] * 100:.1f}%"
-        entry["baseline_share_display"] = f"{entry['share_baseline'] * 100:.1f}%"
-        entry["sentiment_avg_display"] = f"{entry['sentiment_avg']:+.1f}"
-        entry["sentiment_delta_display"] = f"{entry['sentiment_delta']:+.1f}"
-        entry["volume_delta_display"] = f"{entry['volume_delta'] * 100:+.1f}pp"
-        volume_trend = classify_trend(entry["volume_delta"], 0.01)
-        sentiment_trend = classify_trend(entry["sentiment_delta"], 0.15)
-        entry["volume_trend"] = volume_trend
-        entry["sentiment_trend"] = sentiment_trend
-        entry["momentum_variant"] = volume_trend
-        tone_label, tone_variant = describe_sentiment(
-            entry["sentiment_avg"], entry["bullish"], entry["bearish"], entry["count"]
-        )
-        entry["tone_label"] = tone_label
-        entry["tone_variant"] = tone_variant
-        entry["top_tag_links"] = [
-            {
-                "tag": tag,
-                "href": build_news_url(q=f"#{tag}"),
-            }
-            for tag in entry.get("top_tags", [])
-        ]
-        on_radar_entries.append(entry)
 
     quick_tags = []
     for tag in compute_quick_tags(enriched_items, limit=8):
@@ -622,6 +719,26 @@ def news_list():
             }
         )
 
+    theme_cards: List[Dict[str, Any]] = [
+        {
+            "name": "All",
+            "description": "Full blended feed",
+            "href": build_news_url(tag=None),
+            "active": not bool(active_tag),
+        }
+    ]
+    for spec in theme_specs:
+        if spec["name"] == "System":
+            continue
+        theme_cards.append(
+            {
+                "name": spec["name"],
+                "description": spec.get("description", "Focused view"),
+                "href": build_news_url(tag=spec["name"]),
+                "active": active_tag == spec["name"],
+            }
+        )
+
     display_items = [
         article
         for article in enriched_items
@@ -648,11 +765,12 @@ def news_list():
         tag_mode=tag_mode,
         top_tags=top_tags,
         build_news_url=build_news_url,
-        story_clusters=story_clusters,
-        on_radar=on_radar_entries,
+        hot_tags=hot_tags,
+        narratives=narratives,
         quick_tags=quick_tags,
         filter_presets=preset_links,
         news_refreshed=refreshed_display,
+        theme_cards=theme_cards,
     )
 
 @web_bp.route("/curated")

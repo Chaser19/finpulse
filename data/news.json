@@ -1,33 +1,1513 @@
 [
   {
-    "id": "marketaux:e4c1b94de4feadb7",
-    "title": "TotalEnergies selected as operator of France’s largest renewable energy project",
-    "summary": "TotalEnergies has been selected by the state as operator of France’s largest renewable energy project.",
-    "date": "2025-09-24",
-    "source": "Marketaux: energyglobal.com",
-    "url": "https://www.energyglobal.com/wind/24092025/totalenergies-selected-as-operator-of-frances-largest-renewable-energy-project/",
+    "id": "finnhub:fd13ad92e7064003",
+    "title": "There’s one key piece of chart evidence missing to call for a stock-market correction",
+    "summary": "Despite concerns that a stock-market correction is imminent, repeating patterns of success by bulls show the uptrend is still intact — for now.",
+    "date": "2025-10-19",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/theres-one-key-piece-of-chart-evidence-missing-to-call-for-a-stock-market-correction-2304cf46",
     "category": "Markets",
     "tags": []
   },
   {
-    "id": "marketaux:36f73cf60a0f49e6",
-    "title": "Asas Makeen expects no financial impact from Idle Land Tax update",
-    "summary": "Asas Makeen Real Estate Development and Investment Co. , newly listed on the Nomu - Parallel Market, stated that all its land holdings are classified",
-    "date": "2025-09-24",
-    "source": "Marketaux: argaam.com",
-    "url": "https://www.argaam.com/en/article/articledetail/id/1845208",
+    "id": "alphav:a63748a338734d44",
+    "title": "Is the Stock Market Going to Crash in 2026? 2 Historically Flawless Indicators Paint a Clear Picture.",
+    "summary": "These stock market valuation metrics look ominous.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/is-the-stock-market-going-to-crash-in-2026-2-histo/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Economy - Monetary",
+      "Financial Markets"
+    ]
+  },
+  {
+    "id": "alphav:b57a26b72c95f250",
+    "title": "The Smartest Index ETF to Buy With $1,000 Right Now",
+    "summary": "You can make a strong argument that buying the S&P 500 index is a good choice today, but maybe you should consider some value stocks, too.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/the-smartest-index-etf-to-buy-with-1000-right-now/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Financial Markets",
+      "Equities",
+      "$ETF",
+      "$ETF"
+    ]
+  },
+  {
+    "id": "alphav:f91cae3d6a6578d5",
+    "title": "Amazon Is Backing This Genius Quantum Computing Leader",
+    "summary": "Seeing which company a big tech player is investing in is a wise move by investors.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/amazon-is-backing-this-genius-quantum-computing-le/",
+    "category": "Markets",
+    "tags": [
+      "Retail & Wholesale",
+      "Financial Markets",
+      "Real Estate & Construction",
+      "Technology"
+    ]
+  },
+  {
+    "id": "alphav:e1961a24839d0da5",
+    "title": "1 Vanguard ETF Could Turn $500 Per Month Into a $686,000 Portfolio That Pays $20,500 in Annual Dividend Income",
+    "summary": "Investing in this ETF could prove to be lucrative for patient investors.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/1-vanguard-index-fund-could-turn-500-per-month-int/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Financial Markets",
+      "$ETF",
+      "$ETF"
+    ]
+  },
+  {
+    "id": "alphav:fcf190bdf1978024",
+    "title": "Want Decades of Passive Income? Buy This ETF and Hold It Forever.",
+    "summary": "Contrary to a common assumption, not every investment forces you to make a major either/or trade-off. You can have (most of) the best of both worlds.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/want-decades-passive-income-buy-etf-hold-dgro/",
+    "category": "Markets",
+    "tags": [
+      "Life Sciences",
+      "Energy & Transportation",
+      "Technology",
+      "Finance",
+      "Economy - Monetary",
+      "Financial Markets"
+    ]
+  },
+  {
+    "id": "alphav:8eb2f2e481f97739",
+    "title": "Is Eaton Stock a Buy Now?",
+    "summary": "This electrical-focused industrial giant has taken shareholders on a roller-coaster ride this year.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/is-eaton-stock-a-buy-now/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Technology",
+      "Financial Markets"
+    ]
+  },
+  {
+    "id": "alphav:758c833aa444193a",
+    "title": "Is 2025 the Year to Invest in International Stocks?",
+    "summary": "These three ETFs provide exposure to international stocks.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/is-2025-the-year-to-invest-in-international-stocks/",
+    "category": "Markets",
+    "tags": [
+      "Financial Markets",
+      "Manufacturing",
+      "Equities"
+    ]
+  },
+  {
+    "id": "alphav:2f1648f6d7d15a84",
+    "title": "Warren Buffett Sells Apple Stock and Buys a Restaurant Stock Up Over 6,500% Since Its IPO",
+    "summary": "Why Domino's may deliver market-beating returns to the investment giant.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/warren-buffett-sells-apple-buys-restaurant-stock/",
+    "category": "Geopolitics",
+    "tags": [
+      "$IPO",
+      "Retail & Wholesale",
+      "Financial Markets",
+      "Earnings",
+      "Technology",
+      "Finance"
+    ]
+  },
+  {
+    "id": "alphav:16f63891d0061beb",
+    "title": "1 Vanguard ETF That Could Soar 39% Before the End of 2026, According to a Top Wall Street Analyst",
+    "summary": "This growth ETF has been a longtime winner.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/vanguard-etf-soar-39-percent-analyst-vug/",
+    "category": "Markets",
+    "tags": [
+      "Financial Markets",
+      "Manufacturing",
+      "Earnings",
+      "Technology",
+      "$GDP",
+      "$ETF"
+    ]
+  },
+  {
+    "id": "alphav:71a6e97207a8145d",
+    "title": "S&P Dow Jones Just Delivered Incredible News for Crypto Investors. But Is It a Game-Changer?",
+    "summary": "Could index investing be coming for crypto?",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/sp-dow-jones-just-delivered-incredible-news-for-cr/",
+    "category": "Markets",
+    "tags": [
+      "Finance",
+      "Blockchain",
+      "Financial Markets"
+    ]
+  },
+  {
+    "id": "alphav:923ee278481c7d6e",
+    "title": "This California-Based Company Could Be a Key Player for Growth Portfolios",
+    "summary": "An overemphasis on the risks may have brought this stock down to a valuation that's too cheap to ignore.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/this-california-based-company-could-be-a-key-playe/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Retail & Wholesale",
+      "Financial Markets",
+      "$GDP",
+      "$GDP"
+    ]
+  },
+  {
+    "id": "alphav:639e5c6708a85b8b",
+    "title": "2 Magnificent Stocks That Turned $100,000 Into $1 Million or More in 10 Years",
+    "summary": "Investors wish they spotted and capitalized on these opportunities a decade ago.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/2-magnificent-stocks-100000-1-million-10-years/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Financial Markets",
+      "Manufacturing",
+      "Equities"
+    ]
+  },
+  {
+    "id": "alphav:6dc6adf0ed86fc0d",
+    "title": "1 Reason Now Is a Great Time to Buy Berkshire Hathaway Stock",
+    "summary": "The market is worried about something it doesn't really need to be worried about.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/1-reason-now-is-a-great-time-to-buy-berkshire-hath/",
+    "category": "Markets",
+    "tags": [
+      "$IPO",
+      "Financial Markets",
+      "Manufacturing",
+      "Energy & Transportation",
+      "Technology",
+      "Finance"
+    ]
+  },
+  {
+    "id": "alphav:b950ff818e7624ec",
+    "title": "1 Top Growth Stock to Buy and Hold for the Next 10 Years",
+    "summary": "This company is primed to benefit from a multitrillion-dollar growth opportunity over the next decade.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/1-top-growth-stock-to-buy-and-hold-for-the-next-10/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Technology",
+      "Financial Markets",
+      "$GDP",
+      "$GDP"
+    ]
+  },
+  {
+    "id": "alphav:d7b38026bff9a766",
+    "title": "Prediction: This Data Center REIT Could Be a Top Dividend Play in the AI Era",
+    "summary": "Digital Realty Trust offers investors an attractive blend of growth and income.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/predict-data-center-reit-top-dividend-ai/",
+    "category": "Markets",
+    "tags": [
+      "Economy - Monetary",
+      "Financial Markets",
+      "Manufacturing",
+      "Real Estate & Construction",
+      "Technology",
+      "Economy - Macro"
+    ]
+  },
+  {
+    "id": "alphav:4d86a66e295ed626",
+    "title": "Is Nvidia Going to Plunge 40%  ( or More ) ? History Offers a Very Clear Answer.",
+    "summary": "Several notable experts have taken big bets against Nvidia stock.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/is-nvidia-going-to-plunge-40-or-more-history-offer/",
+    "category": "Markets",
+    "tags": [
+      "Retail & Wholesale",
+      "Financial Markets",
+      "Manufacturing"
+    ]
+  },
+  {
+    "id": "alphav:8c06ddacaffa6a0e",
+    "title": "The 5 Best-Performing S&P 500 Stocks of the Last Decade -- Including Nvidia and Broadcom",
+    "summary": "One of these stocks is up nearly 27,000% over the last 10 years!",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/the-5-best-performing-sp-500-stocks-of-last-decade/",
+    "category": "Markets",
+    "tags": [
+      "Financial Markets",
+      "Manufacturing",
+      "Earnings",
+      "Technology",
+      "Equities"
+    ]
+  },
+  {
+    "id": "alphav:01b385df419bb6ac",
+    "title": "Can Opendoor's New CEO 10X the Stock in 5 Years?",
+    "summary": "Investors have high hopes for the real estate disruptor, but can management execute?",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/can-opendoors-new-ceo-10x-the-stock-in-5-years/",
+    "category": "Markets",
+    "tags": [
+      "Technology",
+      "Financial Markets",
+      "$CEO",
+      "$CEO"
+    ]
+  },
+  {
+    "id": "alphav:fdfc11bf0457a41a",
+    "title": "Better Crypto Buy: Bitcoin vs. XRP",
+    "summary": "Many cryptocurrencies have made huge gains over the past several years, and Bitcoin and XRP have been two of the hottest.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/better-crypto-buy-bitcoin-vs-xrp/",
+    "category": "Markets",
+    "tags": [
+      "Economy - Monetary",
+      "Blockchain",
+      "Financial Markets",
+      "$XRP",
+      "$XRP"
+    ]
+  },
+  {
+    "id": "alphav:043a251aec0a1242",
+    "title": "Better Crypto to Buy and Hold: Solana vs. BNB",
+    "summary": "Which of these speculative cryptocurrencies has a brighter future?",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/better-crypto-to-buy-and-hold-solana-vs-bnb/",
+    "category": "Markets",
+    "tags": [
+      "Blockchain",
+      "Financial Markets",
+      "$BNB",
+      "$BNB"
+    ]
+  },
+  {
+    "id": "alphav:486a9623d7556399",
+    "title": "JPMorgan Chase Just Injected a Shot of Adrenaline into Quantum Computing Stocks",
+    "summary": "Quantum computing stocks have soared over the past year.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/jpmorgan-chase-just-injected-a-shot-of-adrenaline/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Technology",
+      "Financial Markets",
+      "Equities"
+    ]
+  },
+  {
+    "id": "alphav:ab1f8752b72c9041",
+    "title": "Here's Why Oct. 29 Could Be a Very Important Day for the Stock Market",
+    "summary": "Wall Street will be laser focused on Federal Reserve Chairman Jerome Powell at the end of this month.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/heres-why-oct-29-be-important-day-for-stock-market/",
+    "category": "Markets",
+    "tags": [
+      "Economy - Monetary",
+      "Financial Markets",
+      "Earnings",
+      "Finance",
+      "Fed"
+    ]
+  },
+  {
+    "id": "alphav:516dcc3992a1086f",
+    "title": "Will Buying The Trade Desk Stock Below $51 Make Investors Rich?",
+    "summary": "The adTech market is getting more competitive. That's not necessarily bad for The Trade Desk.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/will-buying-companyticker-below-price-make-investo/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Technology",
+      "Financial Markets"
+    ]
+  },
+  {
+    "id": "alphav:8f3835926f814a5b",
+    "title": "24% of Warren Buffett's $300 Billion Portfolio Is Invested in 3 Artificial Intelligence  ( AI )  Stocks, Including This Recent Purchase",
+    "summary": "Buffett isn't making any direct investments in AI, but finds his portfolio with lots of exposure to the technology.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/24-percent-of-buffetts-portfolio-in-3-ai-stocks/",
+    "category": "Geopolitics",
+    "tags": [
+      "Technology",
+      "Finance",
+      "Economy - Fiscal",
+      "Retail & Wholesale",
+      "Financial Markets",
+      "Manufacturing"
+    ]
+  },
+  {
+    "id": "alphav:e52758d03aacd452",
+    "title": "Aliens Are More Likely Than $200,000 Bitcoin In 2025, Polymarket Odds Say Aliens More Likely Than $200,000 Bitcoin? Polymarket Traders Place Their Bets on ET Over BTC",
+    "summary": "Prediction market Polymarket now gives higher odds of confirmed alien existence this year than Bitcoin ( CRYPTO: BTC ) reaching $200,000, a data quirk that's sparking debate across crypto and prediction circles.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Benzinga",
+    "url": "https://www.benzinga.com/crypto/cryptocurrency/25/10/48293391/aliens-more-likely-than-200000-bitcoin-polymarket-traders-place-their-bets-on-et-over-btc",
+    "category": "Markets",
+    "tags": [
+      "Financial Markets",
+      "$ET",
+      "$BTC",
+      "$ET",
+      "$BTC"
+    ]
+  },
+  {
+    "id": "alphav:50d7d7f00c2e2f0e",
+    "title": "The Newest Artificial Intelligence Stock Has Arrived -- and It Claims to Make Chips That Are 20x Faster Than Nvidia",
+    "summary": "A start-up called Cerebras claims its chips are more powerful than Nvidia's GPUs.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/the-newest-artificial-intelligence-stock-has-arriv/",
+    "category": "Markets",
+    "tags": [
+      "$IPO",
+      "Financial Markets",
+      "Manufacturing"
+    ]
+  },
+  {
+    "id": "alphav:f1b329d0a1a4fe50",
+    "title": "3 Growth Stocks Down 80% to 93% to Buy Right Now",
+    "summary": "These businesses are poised to grow over the long term.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/3-growth-stocks-down-80-to-93-to-buy-right-now/",
+    "category": "Markets",
+    "tags": [
+      "Earnings",
+      "Technology",
+      "Financial Markets",
+      "$GDP",
+      "Equities",
+      "$GDP"
+    ]
+  },
+  {
+    "id": "alphav:e9c8d894ec851eb0",
+    "title": "Top Wall Street analysts are upbeat on these 3 dividend-paying stocks",
+    "summary": "Here are three dividend-paying stocks, highlighted by Wall Street's top pros.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: CNBC",
+    "url": "https://www.cnbc.com/2025/10/19/top-wall-street-analysts-are-upbeat-on-these-3-dividend-paying-stocks.html",
+    "category": "Markets",
+    "tags": [
+      "Economy - Monetary",
+      "Financial Markets",
+      "Earnings",
+      "Energy & Transportation",
+      "Finance",
+      "Equities"
+    ]
+  },
+  {
+    "id": "alphav:dba1e436e753d594",
+    "title": "The Ultimate Growth Stock to Buy With $1,000 Right Now",
+    "summary": "Amazon looks like a great growth stock to invest in right now.",
+    "date": "2025-10-19",
+    "source": "Alpha Vantage: Motley Fool",
+    "url": "https://www.fool.com/investing/2025/10/19/the-ultimate-growth-stock-to-buy-with-1000-right-n/",
+    "category": "Markets",
+    "tags": [
+      "Retail & Wholesale",
+      "Financial Markets",
+      "Earnings",
+      "Technology",
+      "$GDP",
+      "$GDP"
+    ]
+  },
+  {
+    "id": "finnhub:a67cf4326f894c3c",
+    "title": "The stereotype is 'that women want or need relationships more,' but data shows it's men who are more likely to rush down the aisle",
+    "summary": "A new Kinsey Institute study finds 18.8% of men would rush marriage versus 13.7% of women.",
+    "date": "2025-10-18",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/new-data-men-are-more-likely-to-rush-down-the-aislenot-women.html",
     "category": "Markets",
     "tags": []
   },
   {
-    "id": "marketaux:b27e3ede0d7d230e",
-    "title": "Is your house pledged as collateral for a loan? Here's what you should know.",
-    "summary": "A loan against your home carries one of the greatest financial risks: If repayments falter, the very home pledged as security can be repossessed.",
-    "date": "2025-09-24",
-    "source": "Marketaux: livemint.com",
-    "url": "https://www.livemint.com/money/personal-finance/home-loan-house-collateral-housing-finance-credit-property-value-11758707544706.html",
+    "id": "finnhub:db05192f3933b8d9",
+    "title": "‘My family is having a crisis’: My mom added my brother to her mortgage. He stopped paying. How does she get him off it?",
+    "summary": "“He refuses to take their names off the mortgage without getting paid.”",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/my-family-is-having-a-crisis-my-mom-added-my-brother-to-her-mortgage-he-stopped-paying-how-does-she-get-him-off-it-960f55b0",
     "category": "Markets",
     "tags": []
+  },
+  {
+    "id": "finnhub:fb9a26441db858b5",
+    "title": "The No. 1 travel destination of 2026 is in the U.S., says new report",
+    "summary": "Get your ski gear ready.",
+    "date": "2025-10-18",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/the-no-1-travel-destination-of-2026-is-in-the-us-says-new-report.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:aefaa29ece7ba53b",
+    "title": "She won 30 scholarships and graduated from college debt-free—the 3 biggest mistakes she says to avoid to earn money for school",
+    "summary": "Carlynn Greene graduated debt-free. Now she coaches students to maximize their chances of winning scholarship money.",
+    "date": "2025-10-18",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/biggest-mistakes-to-avoid-when-applying-for-college-scholarships.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:76d28d8e78858311",
+    "title": "I retired in the No. 1 country Americans want to move to the most—I don't regret it: 'We save about $5,000 per month'",
+    "summary": "When he was 41, Alex Trias walked away from a high-paying law career. Now he lives in Portugal, the No. 1 country Americans want to move to the most. The early retiree shares the most life-changing lessons he's learned so far.",
+    "date": "2025-10-18",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/i-retired-in-the-no-1-country-americans-want-to-move-to-the-most-we-save-5000-a-month.html",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:edfccbc23ecab329",
+    "title": "Week in review: Strong bank earnings, bad loans, spinoff prep, and Dreamforce wrap",
+    "summary": "The market rebounded this week after seesawing on concerns about trade, the government shutdown, and credit.",
+    "date": "2025-10-18",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/week-in-review-strong-bank-earnings-bad-loans-spinoff-prep-and-dreamforce-wrap.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:3cdaea057952ccf8",
+    "title": "38-year-old quit his job, spent $50,000 to launch a company from his Bronx apartment—now billionaires wear his luxury coats",
+    "summary": "Norwegian Wool founder and CEO Michael Berkowitz started his luxury coat brand from his apartment. To this day, he still tests the company's products himself.",
+    "date": "2025-10-18",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/financier-quit-job-to-launch-norwegian-wool-billionaires-wear-his-luxury-coats.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:4cc3fd3c9a33773c",
+    "title": "This secret ingredient of the economy says things are OK — and no recession is brewing",
+    "summary": "When the economy shows sign of stress, one of the first things Americans strike from their budgets are frequent takeout dinners and restaurant reservations. It’s one of the best early warning signs of recession.",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/this-secret-ingredient-of-the-economy-says-things-are-ok-and-no-recession-is-brewing-246cb0d8",
+    "category": "Policy",
+    "tags": [
+      "$OK",
+      "$OK"
+    ]
+  },
+  {
+    "id": "finnhub:5360b12a4c0ccca4",
+    "title": "U.S. passport power plunges — and ‘worried’ Americans are searching for second passports and golden visas",
+    "summary": "Many Americans aren’t necessarily looking to move overseas. They’re looking for a Plan B.",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/u-s-passport-power-plunges-and-worried-americans-are-searching-for-second-passports-and-golden-visas-40d5bf87",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:c5fe691709609546",
+    "title": "Why EVs are still so expensive that they’re driving up the cost of all new cars",
+    "summary": "Drivers still largely pay a premium for electric vehicles, in part because they’re still costly for most companies to make.",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/why-evs-are-still-so-expensive-that-theyre-driving-up-the-cost-of-all-new-cars-8592e1ad",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:fb11979e8dcaef9f",
+    "title": "5 bubble-resistant tech stocks to guard your portfolio from an AI crash",
+    "summary": "At a time where some companies are seeing declining free cash flow due to AI spending, these five tech stocks are doing the opposite.",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/5-bubble-resistant-tech-stocks-to-guard-your-portfolio-from-an-ai-crash-86568516",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "finnhub:358c327e048f9e84",
+    "title": "Small caps are having a good year — but here’s why the S&P 500 will win in the end",
+    "summary": "After years of being the market’s forgotten children, small-cap stocks are back in the spotlight in 2025. But are they catching up to their older, richer S&P 500 siblings? Not a chance.",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/small-caps-are-having-a-good-year-but-heres-why-the-s-p-500-will-win-in-the-end-398f5404",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:50fbc7ce01ebd50f",
+    "title": "Will I have to pay taxes on my $4,700 military pension and Social Security benefit?",
+    "summary": "“Can I elect to have the taxes withheld through the Social Security Administration?”",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/will-i-have-to-pay-taxes-on-my-4-700-military-pension-and-social-security-benefit-a004ce84",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:667ddf1cfbb0f707",
+    "title": "Gold prices are so high, even central banks are feeling FOMO",
+    "summary": "Gold prices at record highs sounds like a broken record, but central banks have continued to buy more than they’re selling, even with prices for the precious metal at their highest levels ever.",
+    "date": "2025-10-18",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/gold-prices-are-so-high-even-central-banks-are-feeling-fomo-154b40f2",
+    "category": "Markets",
+    "tags": [
+      "$FOMO",
+      "$FOMO"
+    ]
+  },
+  {
+    "id": "finnhub:bf8ad117aaa9140a",
+    "title": "US succeeds in blocking global carbon tax on ships for now",
+    "summary": "Countries gathered at the International Maritime Organization’s London headquarters this week to decide on whether to make ships start paying for the more than 1 billion tonne of greenhouse gases they emit each year",
+    "date": "2025-10-18",
+    "source": "Finnhub: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-17/shipping-regulator-delays-decision-on-emissions-tax-by-one-year",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:d6da0b9520167575",
+    "title": "Oil posts third weekly decline on concerns over global glut",
+    "summary": "Oil prices drop as market heads into surplus, impacted by oversupply concerns, US-China tensions, and geopolitical factors.",
+    "date": "2025-10-18",
+    "source": "Finnhub: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-16/latest-oil-market-news-and-analysis-for-oct-17",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:d546e8d1d1b7d884",
+    "title": "US-China talks planned next week as Trump plays down tariffs",
+    "summary": "“He and I, and a delegation, will meet in Malaysia — probably a week from tomorrow, to prepare for the two presidents to meet,” Bessent said earlier at a White House event",
+    "date": "2025-10-18",
+    "source": "Finnhub: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-17/bessent-says-will-meet-china-s-he-in-malaysia-likely-next-week-mgv5w9hl",
+    "category": "Policy",
+    "tags": [
+      "Tariffs",
+      "Government",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:e1e58a71ef7f464b",
+    "title": "How Starboard could build value at Keurig Dr Pepper ahead of its JDE Peet deal",
+    "summary": "Starboard has taken a position in Keurig Dr Pepper and has held meetings with the company's management.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/how-starboard-could-build-value-at-keurig-dr-pepper-ahead-of-its-jde-peet-deal-.html",
+    "category": "Markets",
+    "tags": [
+      "$JDE",
+      "$JDE"
+    ]
+  },
+  {
+    "id": "newsapi:d01a501c53b857b7",
+    "title": "The 2 things parents need to do before giving kids a smartphone or social media, from a psychologist",
+    "summary": "Parents should start preparing kids for their first smartphone and social media access years in advance, says psychologist Jean Twenge. Here's her advice for how.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/psychologist-what-parents-must-do-before-giving-kids-smartphone.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:7be939b80518925e",
+    "title": "The alleged 'sweeping betrayal of trust' that rocked Zions bank and spooked Wall Street",
+    "summary": "Zions Bancorporation lost $1 billion of its valuation in a single day on Thursday after disclosing $60 million worth of loans it had made that were unlikely to be repaid.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/18/the-alleged-sweeping-betrayal-of-trust-that-rocked-zions-bank-and-spooked-wall-street.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:d2079702671b3b1b",
+    "title": "Crypto Miners Riding the AI Wave Are Leaving Bitcoin Behind",
+    "summary": "Shares of the large-scale computing outfits that make Bitcoin work are once again outperforming the original cryptocurrency, as more pivot to hybrid models built around artificial intelligence and high-performance computing.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/crypto-miners-riding-the-ai-wave-are-leaving-bitcoin-behind",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:358c327e048f9e84",
+    "title": "Small caps are having a good year — but here’s why the S&P 500 will win in the end",
+    "summary": "After years of being the market’s forgotten children, small-cap stocks are back in the spotlight in 2025. But are they catching up to their older, richer S...",
+    "date": "2025-10-18",
+    "source": "NewsAPI: MarketWatch",
+    "url": "https://www.marketwatch.com/story/small-caps-are-having-a-good-year-but-heres-why-the-s-p-500-will-win-in-the-end-398f5404",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "newsapi:ba6019659f9aa5ac",
+    "title": "Oil’s Long-Awaited Surplus Arrives on Billion-Barrel Flotilla",
+    "summary": "The best place to observe the shift taking place in global oil markets is at sea.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/oils-long-awaited-surplus-arrives-on-billion-barrel-flotilla",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:667ddf1cfbb0f707",
+    "title": "Gold prices are so high, even central banks are feeling FOMO",
+    "summary": "Gold prices at record highs sounds like a broken record, but central banks have continued to buy more than they’re selling, even with prices for the precious...",
+    "date": "2025-10-18",
+    "source": "NewsAPI: MarketWatch",
+    "url": "https://www.marketwatch.com/story/gold-prices-are-so-high-even-central-banks-are-feeling-fomo-154b40f2",
+    "category": "Markets",
+    "tags": [
+      "$FOMO",
+      "$FOMO"
+    ]
+  },
+  {
+    "id": "newsapi:d6da0b9520167575",
+    "title": "Oil posts third weekly decline on concerns over global glut",
+    "summary": "Oil prices drop as market heads into surplus, impacted by oversupply concerns, US-China tensions, and geopolitical factors.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-16/latest-oil-market-news-and-analysis-for-oct-17",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:d546e8d1d1b7d884",
+    "title": "US-China talks planned next week as Trump plays down tariffs",
+    "summary": "“He and I, and a delegation, will meet in Malaysia — probably a week from tomorrow, to prepare for the two presidents to meet,” Bessent said earlier at a White House event",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-17/bessent-says-will-meet-china-s-he-in-malaysia-likely-next-week-mgv5w9hl",
+    "category": "Markets",
+    "tags": [
+      "Tariffs",
+      "Government",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:86e34693a445fbfd",
+    "title": "Starmer’s China Woes Mean an ‘Unwieldy Mess’ Just Got Messier",
+    "summary": "When it comes to China, the EU tried gently to ‘de-risk’ without ‘de-coupling’. Donald Trump put America first and launched a full-on trade war. Until last week, the UK took an approach that looked a lot like muddling through.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/starmers-china-woes-mean-an-unwieldy-mess-just-got-messier",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:d821080f7f78d5c9",
+    "title": "How Trump Pressured Nations to Delay a Carbon Tax on Shipping",
+    "summary": "Environmentalists eager to curb planet-warming pollution from shipping had grown increasingly confident that countries would adopt the first-ever global tax on emissions this year.",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/how-trump-pressured-nations-to-delay-a-carbon-tax-on-shipping",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:22bb661baaf2b2c2",
+    "title": "Prince Andrew gives up royal titles over Epstein scandal",
+    "summary": "Prince Andrew has been banished from the royal whirl after emails emerged this week showing that he had remained in contact with the convicted sex offender Jeffrey Epstein longer than he previously admitted. The House of Windsor has finally moved to insulate …",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/prince-andrew-charles-epstein-chinese-spy-91c4bec9a5cf3de8fcb16f9c1fe52e60",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:bf8ad117aaa9140a",
+    "title": "US succeeds in blocking global carbon tax on ships for now",
+    "summary": "Countries gathered at the International Maritime Organization’s London headquarters this week to decide on whether to make ships start paying for the more than 1 billion tonne of greenhouse gases they emit each year",
+    "date": "2025-10-18",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-17/shipping-regulator-delays-decision-on-emissions-tax-by-one-year",
+    "category": "Policy",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:3bd16b3fc96069c2",
+    "title": "Jim Cramer expects companies to post 'better-than-expected' earnings reports despite skepticism",
+    "summary": "Cramer shares his \"gameplan\" looking ahead to next week's earnings, including Coca-Cola, Geo Aerospace, T-Mobile and more.",
+    "date": "2025-10-17",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/jim-cramer-expects-companies-to-post-better-than-expected-earnings.html",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:408bb7bba384ca3a",
+    "title": "Eli Lilly and Novo Nordisk stocks fall as Trump says he wants $150 price for GLP-1s",
+    "summary": "Eli Lilly and Novo Nordisk shares dropped after President Donald Trump said he wants a $150 price tag for GLP-1s.",
+    "date": "2025-10-17",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/eli-lilly-novo-nordisk-stock-trump-glp-1-prices.html",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$GLP",
+      "$GLP"
+    ]
+  },
+  {
+    "id": "finnhub:06d7d46b22f91e69",
+    "title": "This government shutdown could be the longest ever — maybe running until Thanksgiving. What might the economic damage be?",
+    "summary": "A MarketWatch poll finds that 47% of respondents say their No. 1 shutdown concern is the potential hit to the U.S. economy.",
+    "date": "2025-10-17",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/this-government-shutdown-could-be-the-longest-ever-maybe-running-until-thanksgiving-what-might-the-economic-damage-be-0bd7c46e",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:86d47951917e14d2",
+    "title": "FAA lets Boeing increase 737 Max production almost two years after near-catastrophic accident",
+    "summary": "The FAA had capped Boeing's production at 38 a month in early 2024 after a door plug blew out of a nearly new 737 Max 9.",
+    "date": "2025-10-17",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/boeing-737-max-production.html",
+    "category": "Markets",
+    "tags": [
+      "$FAA",
+      "$FAA"
+    ]
+  },
+  {
+    "id": "finnhub:bccbd7e0dc4d6a94",
+    "title": "Here’s what banks are looking at to spot economic trouble, as credit quality sparks concerns",
+    "summary": "Despite some fresh doubts about credit that banks addressed this week, the U.S. economy seems to be chugging along.",
+    "date": "2025-10-17",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/heres-what-banks-are-looking-at-to-spot-economic-trouble-as-credit-quality-sparks-concerns-0e72a32f",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:42de9a80e046b6e2",
+    "title": "‘Rocky IV’ star Dolph Lundgren shares the money mistake that made him more hands-on with his finances",
+    "summary": "The Swedish-born actor, who played the boxer Ivan Drago in ‘Rocky IV,’ has now gone into the vodka-making business and taken a more hands-on approach with his finances.",
+    "date": "2025-10-17",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/rocky-iv-star-dolph-lundgren-shares-the-money-mistake-that-made-him-more-hands-on-with-his-finances-ddf9bfdd",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$IV",
+      "$IV"
+    ]
+  },
+  {
+    "id": "finnhub:02534f3a2cf18ea5",
+    "title": "Honeywell prepares for the first part of its split into 3 companies. Here's what you get",
+    "summary": "Later this month, Honeywell will separate its Solstice Advanced Materials unit.",
+    "date": "2025-10-17",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/honeywell-gets-ready-for-the-first-part-of-its-split-into-3-companies-heres-what-you-get.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:4e02bc1cfe2e3229",
+    "title": "Can’t invest in SpaceX? Investors can buy this stock instead.",
+    "summary": "SpaceX may be the highest-profile name in the space industry, but analysts say launch rival Rocket Lab Corp. provides an alternative for investors who wish they could invest in Elon Musk’s privately held company.",
+    "date": "2025-10-17",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/cant-invest-in-spacex-investors-can-buy-this-stock-instead-a6c94479",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:8e957e9c73fef92e",
+    "title": "Oracle stock drops 7% as some skeptics question lofty AI targets",
+    "summary": "Oracle has become one of the biggest beneficiaries of the AI infrastructure boom, with its shares up 75% so far in 2025.",
+    "date": "2025-10-17",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/oracle-stock-drops-7percent-as-companys-ai-conference-brings-out-skeptics.html",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "finnhub:baba27e2bad20bf3",
+    "title": "Free returns are not a given anymore, as retailers deal with rising costs",
+    "summary": "A surge in product returns seen through the pandemic is leveling off as retailers’ generous return policies have become “harder to sustain,” a new report says.",
+    "date": "2025-10-17",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/free-returns-are-not-a-given-anymore-as-retailers-deal-with-rising-costs-c2e50de0",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:6767118f900a7bf5",
+    "title": "Want to stream every NBA game this season? It’s going to cost you nearly $1,000.",
+    "summary": "2025-26 NBA games will air on several new streaming services this year, including Amazon Prime and Peacock.",
+    "date": "2025-10-17",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/want-to-stream-every-nba-game-this-season-its-going-to-cost-you-nearly-1-000-e9683d57",
+    "category": "Markets",
+    "tags": [
+      "$NBA",
+      "$NBA"
+    ]
+  },
+  {
+    "id": "finnhub:5c0a63576bd000e6",
+    "title": "Dumbest stock market in history? It’s even worse than you imagined.",
+    "summary": "Missing out isn’t the only thing to fear.",
+    "date": "2025-10-17",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/dumbest-stock-market-in-history-its-even-worse-than-you-imagined-467c59bf",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:dbe3bde6d065a92a",
+    "title": "StoneX Expands Wealth Management Offering for Latin American Clients",
+    "summary": "NEW YORK, Oct. 17, 2025 (GLOBE NEWSWIRE) — StoneX Group Inc. (NASDAQ: SNEX), a global financial services firm connecting clients to the markets across asset classes and geographies, today announced it has completed its acquisition of Intercam Advisors, Inc. a…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/stonex-expands-wealth-management-offering-for-latin-american-clients",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:3bd16b3fc96069c2",
+    "title": "Jim Cramer expects companies to post 'better-than-expected' earnings reports despite skepticism",
+    "summary": "Cramer shares his \"gameplan\" looking ahead to next week's earnings, including Coca-Cola, Geo Aerospace, T-Mobile and more.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/jim-cramer-expects-companies-to-post-better-than-expected-earnings.html",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "newsapi:2fa70f5f27b8c248",
+    "title": "United Lithium Announces LOI to Acquire Uranium and Rare Earth Explorer Swedish Minerals AB, Creating a Diversified Nordic Strategic Metals Platform and Financing",
+    "summary": "VANCOUVER, British Columbia, Oct. 17, 2025 (GLOBE NEWSWIRE) — UNITED LITHIUM CORP. (“United” or the “Company”) (CSE: ULTH; OTCQX: ULTHF; FWB: 0UL)  is pleased to announce that it has entered into a binding Letter of Intent (“LOI”) with Swedish Minerals AB (“S…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/united-lithium-announces-loi-to-acquire-uranium-and-rare-earth-explorer-swedish-minerals-ab-creating-a-diversified-nordic-strategic-metals-platform-and-financing",
+    "category": "Markets",
+    "tags": [
+      "$LOI",
+      "$AB",
+      "$LOI",
+      "$AB"
+    ]
+  },
+  {
+    "id": "newsapi:64c5a605fbd685d8",
+    "title": "STEP Energy Services Ltd. Agrees to $5.50 Per Share Take Private Transaction With Funds Advised by ARC Financial Corp.",
+    "summary": "CALGARY, Alberta — Further to its news release of September 25, 2025 announcing receipt of a non-binding offer from ARC Financial Corp., STEP Energy Services Ltd. (“STEP” or the “Company”) (TSX: STEP) is pleased to announce that it has entered into a definiti…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/step-energy-services-ltd-agrees-to-5-50-per-share-take-private-transaction-with-funds-advised-by-arc-financial-corp",
+    "category": "Markets",
+    "tags": [
+      "$STEP",
+      "$ARC",
+      "$STEP",
+      "$ARC"
+    ]
+  },
+  {
+    "id": "newsapi:b869e7c90d9337e9",
+    "title": "This top TSX performer is up 190% this year. Can the gains keep rolling in?",
+    "summary": "The Week in Stocks: Why silver is in the spotlight, small-cap favourites and which stocks got a target price hike. Read on.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/investing/top-tsx-performer-up-190-gains-keep",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$TSX",
+      "$TSX"
+    ]
+  },
+  {
+    "id": "newsapi:418676a80598fa19",
+    "title": "$500 purple cables put this little-known company in the middle of the AI boom",
+    "summary": "Credo's stock has more than doubled this year after soaring 245% in 2024 as the AI boom makes its way downstream.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/500-purple-cables-put-credo-in-middle-of-the-ai-boom.html",
+    "category": "Markets",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:1ca8554ec164e82a",
+    "title": "UK’s Reeves Hints at Bigger Fiscal Buffer as Budget Takes Shape",
+    "summary": "UK Chancellor of the Exchequer Rachel Reeves gave the clearest signal yet that she will boost her wafer-thin fiscal buffer at next month’s budget to put the public finances on a more stable footing, as she laid out the broad contours of her policy plans in Wa…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/uks-reeves-hints-at-bigger-fiscal-buffer-as-budget-takes-shape",
+    "category": "Markets",
+    "tags": [
+      "Fiscal",
+      "$UK",
+      "$UK"
+    ]
+  },
+  {
+    "id": "newsapi:e3980527ce71aa65",
+    "title": "PIMCO Canada Corp. Announces Monthly Distributions for PIMCO Canada Exchange Traded Series",
+    "summary": "Not for distribution to United States newswire services or for dissemination in the United States TORONTO, Oct. 17, 2025 (GLOBE NEWSWIRE) — PIMCO Canada Corp. (“PIMCO Canada”) today announced the 2025 October cash distributions for the ETF series (“ETF Series…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/pimco-canada-corp-announces-monthly-distributions-for-pimco-canada-exchange-traded-series-59",
+    "category": "Markets",
+    "tags": [
+      "$PIMCO",
+      "$PIMCO"
+    ]
+  },
+  {
+    "id": "newsapi:ea5fbcd8c22109aa",
+    "title": "Granite REIT Declares Distribution for October 2025",
+    "summary": "TORONTO — Granite Real Estate Investment Trust (“Granite”) (TSX: GRT.UN / NYSE: GRP.U) announced today that its board of trustees has declared a distribution of CDN $0.2833 per unit for the month of October 2025. The distribution will be paid by Granite on No…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/granite-reit-declares-distribution-for-october-2025",
+    "category": "Markets",
+    "tags": [
+      "$REIT",
+      "$REIT"
+    ]
+  },
+  {
+    "id": "newsapi:b0f9ccbcd7aadabc",
+    "title": "Canada, U.S. markets move in opposite directions as gold prices weigh on the TSX",
+    "summary": "TORONTO — Canada’s main stock index finished 350 points lower on Friday, weighed down by losses in the basic materials sector, while U.S. markets saw gains. As Canadian and U.S. equity markets moved in opposite directions, Michael Greenberg, head of Americas …",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/canada-u-s-markets-move-in-opposite-directions-as-gold-prices-weigh-on-the-tsx",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$TSX",
+      "$TSX"
+    ]
+  },
+  {
+    "id": "newsapi:1bf5e09573395ebe",
+    "title": "With the TSX in 'rarefied territory,' is it time to get defensive?",
+    "summary": "Gold and Canada's big banks are behind the TSX's big push above 30,000, though earnings season may pose a hurdle. Find out more.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/investing/tsx-rarefied-territory-get-defensive",
+    "category": "Markets",
+    "tags": [
+      "$TSX",
+      "$TSX"
+    ]
+  },
+  {
+    "id": "newsapi:5cacb8d3babc87ec",
+    "title": "These industries are key to the TSX's next push above 30,000, though earnings season may pose a hurdle",
+    "summary": "Gold and Canada's big banks are behind the TSX's big push above 30,000, though earnings season may pose a hurdle. Find out more.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/investing/industries-tsx-push-above-30000-earnings-season",
+    "category": "Markets",
+    "tags": [
+      "$TSX",
+      "$TSX"
+    ]
+  },
+  {
+    "id": "newsapi:8e957e9c73fef92e",
+    "title": "Oracle stock drops 7% as some skeptics question lofty AI targets",
+    "summary": "Oracle has become one of the biggest beneficiaries of the AI infrastructure boom, with its shares up 75% so far in 2025.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/oracle-stock-drops-7percent-as-companys-ai-conference-brings-out-skeptics.html",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:b0389d3c2fae3e61",
+    "title": "‘The tide went out’: How a string of bad loans has bank investors hunting for hidden risks",
+    "summary": "Investors are focused on a specific type of lending made by banks to non-depository financial institutions, or NDFIs, as the source of possible contagion.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/ndfi-loan-exposure-bank-stocks.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:f105f57bef91d624",
+    "title": "Macklem says Canada’s jobs market is ‘soft’ despite September gain in positions",
+    "summary": "Bank of Canada governor says last month's gain only partially reversed a job loss of more than 100,000 in July and August. Keep reading here",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/news/economy/macklem-sees-soft-canada-labor-market-despite-september-gain",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:6ac40c0227934831",
+    "title": "Citi Appointed as Depositary Bank for POMDOCTOR LIMITED’s ADR Program",
+    "summary": "NEW YORK — Citi Issuer Services, acting through Citibank, N.A., has been appointed by POMDOCTOR LIMITED (POM), a Chinese online medical services platform, as Depositary Bank for its American Depositary Receipt (ADR) program. The American Depositary Shares (AD…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/citi-appointed-as-depositary-bank-for-pomdoctor-limiteds-adr-program",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$ADR",
+      "$ADR"
+    ]
+  },
+  {
+    "id": "newsapi:3544399f2ef9833b",
+    "title": "Ottawa says it can provide $12M loan to keep northern Ontario paper mill open",
+    "summary": "The federal government said Friday that it can provide a $12-million loan to help keep a northern Ontario paper mill from closing. Jobs Minister Patty Hajdu said in a letter to Kap Paper that the federal support would be an “exceptional” one-time measure to g…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/ottawa-says-it-can-provide-12m-loan-to-keep-northern-ontario-paper-mill-open",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:8b0c7625da38dd0b",
+    "title": "UK Finance Minister Rachel Reeves: November budget will respond to the global challenges we face",
+    "summary": "U.K. Chancellor Rachel Reeves cited the Russia-Ukraine conflict, the tensions in the Middle East, and the impact of global trade barriers as key challenges.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2025/10/17/uk-finance-minister-rachel-reeves-on-november-budget.html",
+    "category": "Markets",
+    "tags": [
+      "Fiscal",
+      "Geopolitics",
+      "$UK",
+      "$UK"
+    ]
+  },
+  {
+    "id": "newsapi:bede4a81ca3d7663",
+    "title": "Gold prices topped $4,300 this week. What’s driving the surge?",
+    "summary": "NEW YORK (AP) — As economic uncertainty deepens, the rush for gold continues — with prices for the precious metal topping $4,300 for the first time this week. The going price for New York spot closed at a record $4,326 per troy ounce on Thursday. Futures also…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/gold-prices-topped-4300-this-week-whats-driving-the-surge",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:ebb7cb0f110e6f97",
+    "title": "Thousands rally in Albanian capital against EU-backed court prosecuting Kosovo war veterans",
+    "summary": "Thousands protest in Tirana against the EU-backed court prosecuting Kosovo war veterans.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/albania-kosovo-war-veterans-kla-trial-hague-f82ff2fdceccbd915c107f84db6dddec",
+    "category": "Policy",
+    "tags": [
+      "Geopolitics",
+      "$EU",
+      "$EU"
+    ]
+  },
+  {
+    "id": "newsapi:9538e5016c0b8cba",
+    "title": "USA seizes survivors after strike on suspected drug-carrying vessel in Caribbean...",
+    "summary": "The U.S. has seized survivors after a strike on a suspected drug-carrying vessel in the Caribbean, the first since President Donald Trump began launching deadly attacks in the region this summer. That's according to a defense official and another person famil…",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/venezuela-drug-smuggling-pentagon-strike-12820c173da3de80c1a7a559c252c743",
+    "category": "Policy",
+    "tags": [
+      "$USA",
+      "$USA"
+    ]
+  },
+  {
+    "id": "newsapi:73a28a3ef341a0df",
+    "title": "Opinion - I won’t be marching this weekend — instead, I will be canceling subscriptions",
+    "summary": "Resisting with our money has to be the battle plan.",
+    "date": "2025-10-17",
+    "source": "NewsAPI: The Hill",
+    "url": "https://thehill.com/opinion/congress-blog/politics/5558406-boycott-trump-corporate-pressure/",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:d56238e716f2aac8",
+    "title": "Opinion - It’s been a bad year for Iran — Trump should keep pressing to make it worse",
+    "summary": "In December 2004, Jordan’s King Abdullah first warned the world of the emergence of a Sh’ia crescent that could destabilize the region’s Sunni states...",
+    "date": "2025-10-17",
+    "source": "NewsAPI: The Hill",
+    "url": "https://thehill.com/opinion/national-security/5559031-its-been-a-bad-year-for-iran-trump-should-keep-pressing-to-make-it-worse/",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:0b668a5ba2e1793f",
+    "title": "IMF sees ‘significant’ risks to global growth from US-China row",
+    "summary": "Economic activity in the Asia-Pacific region remains resilient despite bearing the brunt of US tariffs and facing elevated policy uncertainty",
+    "date": "2025-10-17",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-17/imf-sees-significant-risks-to-global-growth-from-us-china-row",
+    "category": "Policy",
+    "tags": [
+      "$GDP",
+      "Tariffs",
+      "$IMF",
+      "$US",
+      "$GDP",
+      "$IMF"
+    ]
+  },
+  {
+    "id": "newsapi:ebb1ce26d6b3d070",
+    "title": "Food assistance is safe through October but may be at risk if the shutdown continues",
+    "summary": "About 40 million people could see food assistance disappear next month if the federal government shutdown continues. The U.S. Department of Agriculture has told states not to send the companies that issue debit cards for the Supplemental Nutritional Assistanc…",
+    "date": "2025-10-16",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/shutdown-food-aid-snap-november-417bd9a473701b6334491c9e6e28a1c4",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:c661776c5516ca6b",
+    "title": "Safety advocates warn of surge in 3D-printed guns",
+    "summary": "Police in a handful of big cities have seen an increase in 3D printed guns over the last few years. That's leading gun-safety advocates, law enforcement, legislators and industry experts to seek early solutions to prevent the weapons from filling a void left …",
+    "date": "2025-10-16",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/ghost-guns-3d-printers-law-enforcement-0f22ec981a29a31d9a72d0f8b32d0b22",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:cfdef1aea03cc532",
+    "title": "These people will lose if Affordable Care Act health subsidies expire",
+    "summary": "Millions of Americans with Affordable Care Act marketplace health insurance will face higher costs next year if Congress doesn't extend enhanced premium tax credits that have made the plans more affordable. That prospect is forcing Americans to make difficult…",
+    "date": "2025-10-16",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/aca-credits-health-care-subsidies-government-shutdown-7f7a3609bf78dd7e43be9a041a090220",
+    "category": "Policy",
+    "tags": [
+      "Government"
+    ]
+  },
+  {
+    "id": "newsapi:b95610e5e1f080c5",
+    "title": "Americans spread shutdown blame across parties, AP-NORC poll shows",
+    "summary": "A new poll finds most Americans see the government shutdown as a significant problem as it drags on. The AP-NORC poll also finds there’s plenty of blame being cast on President Donald Trump as well as Republicans and Democrats in Congress. Leaders warn the sh…",
+    "date": "2025-10-16",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/poll-government-shutdown-blame-trump-republicans-democrats-12c01432bbb43746b6d8d32390c959f4",
+    "category": "Policy",
+    "tags": [
+      "Government",
+      "$AP",
+      "$NORC",
+      "$AP",
+      "$NORC"
+    ]
+  },
+  {
+    "id": "newsapi:aafe76350c488e04",
+    "title": "Oil rises as Trump says India will stop buying Russian supply",
+    "summary": "Brent traded above $62 a barrel after sliding 2.2% over the previous two sessions, while West Texas Intermediate was near $59",
+    "date": "2025-10-16",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-15/latest-oil-market-news-and-analysis-for-oct-16",
+    "category": "Policy",
+    "tags": [
+      "Oil"
+    ]
+  },
+  {
+    "id": "newsapi:015a191c52d866ca",
+    "title": "Senate Democrats ready to reject government funding bill again over health care",
+    "summary": "Senate Democrats are poised for the 10th time to reject a stopgap spending bill that would reopen the government. They are insisting they won’t back away from demands that Congress take up health care benefits. The repetition of votes on the funding bill has …",
+    "date": "2025-10-16",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/government-shutdown-trump-democrats-congress-02382f77ea1ba72896148555a75dc075",
+    "category": "Policy",
+    "tags": [
+      "Policy",
+      "Government"
+    ]
+  },
+  {
+    "id": "newsapi:a5f1a50c34fa8381",
+    "title": "Judge halts layoffs by Trump administration during government shutdown",
+    "summary": "A federal judge has temporarily blocked President Donald Trump’s administration from firing workers during the government shutdown, saying the human cost \"cannot be tolerated.” U.S. District Judge Susan Illston in San Francisco on Wednesday granted a temporar…",
+    "date": "2025-10-15",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/government-shutdown-layoffs-trump-unions-b312b3ca77cbdbc72e778ece3b2cbffc",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:87e6bd9e4b7a2471",
+    "title": "Cambodia urges fair process as US, UK pursue Prince Group's Chen Zhi in scam case",
+    "summary": "Cambodia's government says it hopes the U.S. and Britain have enough evidence in their pursuit of Cambodia’s Prince Holding Group and its Chairman Chen Zhi. The two governments on Tuesday jointly imposed sanctions after accusing the Cambodian conglomerate of …",
+    "date": "2025-10-15",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/cambodia-us-uk-online-scam-prince-chen-zhi-bbc3fae393003a16cda22efd5a2ada22",
+    "category": "Policy",
+    "tags": [
+      "Sanctions",
+      "$US",
+      "$UK",
+      "$US",
+      "$UK"
+    ]
+  },
+  {
+    "id": "newsapi:915dbb29841b0430",
+    "title": "Opinion - Hegseth’s call to ‘prepare for war’ comes not a moment too soon",
+    "summary": "In an attempt to cripple the U.S. America should assume it has little time left to prepare.",
+    "date": "2025-10-15",
+    "source": "NewsAPI: The Hill",
+    "url": "https://thehill.com/opinion/national-security/5554696-prepare-for-war-hegseth/",
+    "category": "Policy",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:6d7beb3425f83a81",
+    "title": "In shutdown, federal workers face financial strain and fear layoffs",
+    "summary": "Federal workers furloughed or working without pay are feeling the financial squeeze and fear being swept up in the Trump administration's layoffs. The fate of the federal workers is among several pressure points that could push lawmakers to agree to resolve t…",
+    "date": "2025-10-15",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/congress-federal-workers-shutdown-layoffs-5bef57b6c431830a9af84fbfcc59b324",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:6f303a23bb11a378",
+    "title": "Seth Moulton to seek Massachusetts Senate seat held by Ed Markey in generational fight",
+    "summary": "Markey is one of the oldest members of Congress.",
+    "date": "2025-10-15",
+    "source": "NewsAPI: Politico",
+    "url": "https://www.politico.com/news/2025/10/15/seth-moulton-ed-markey-senate-00608034",
+    "category": "Policy",
+    "tags": [
+      "Government"
+    ]
+  },
+  {
+    "id": "newsapi:f89450bb1cdbff41",
+    "title": "Chinese airlines file complaints over US plan to ban their flights over Russia",
+    "summary": "China’s biggest state-owned air carriers are protesting a U.S. proposal to bar them from flying over Russia when traveling to or from the U.S. The U.S. side has said such flights give Chinese airlines an unfair cost advantage over American carriers, which can…",
+    "date": "2025-10-15",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/china-airlines-us-russia-4fd97608e783852167ce0e9ce6702dcc",
+    "category": "Policy",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:3fce70db7762cbd6",
+    "title": "‘It’s revolting’: More Young Republican chat members out of jobs as condemnation intensifies",
+    "summary": "POLITICO report on private Telegram chat filled with racist slurs and tropes ignites debate from New York to Washington.",
+    "date": "2025-10-15",
+    "source": "NewsAPI: Politico",
+    "url": "https://www.politico.com/news/2025/10/14/its-revolting-more-young-republican-chat-members-out-of-jobs-as-condemnation-intensifies-00608791",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:5fb2e87103d7e34c",
+    "title": "D'Angelo death: Jamie Foxx, Maxwell, Jill Scott, Flea and more react",
+    "summary": "Celebrities have begun paying tribute to R&B and neo-soul icon D’Angelo. His death at age 51 was announced on Tuesday. He died after a prolonged battle with cancer, according to a statement from the family. Among those paying tribute include the actor Jamie F…",
+    "date": "2025-10-14",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/dangelo-death-jamie-foxx-maxwell-tributes-d39d84d1f9b50b520de0893b6f583b71",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:9b9af6326c5fb2f4",
+    "title": "Greece sees 2nd general strike this month as unions protest new labor law",
+    "summary": "Thousands of demonstrators have marched through Athens as labor unions call Greece's second general strike this month. The 24-hour strike on Tuesday disrupted ferry schedules to and from the Greek islands and public transport in the capital was running on a r…",
+    "date": "2025-10-14",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/greece-strike-labor-law-9ea3701f9a41282609ef514a14b29b4a",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:6be121d3fbe6559c",
+    "title": "Europe fights for AI independence to avoid becoming tech ‘Colony’",
+    "summary": "Europe’s push mirrors efforts around the world, from Canada to South Korea to the Middle East, where governments are frantically marshalling resources to avoid ceding too much of the AI market to the US and China",
+    "date": "2025-10-14",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2025-10-14/europe-aims-for-ai-independence-to-avoid-reliance-on-us-and-china",
+    "category": "Policy",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:6e9829564404e028",
+    "title": "Federal health workers targeted in weekend firings",
+    "summary": "Federal employees working on mental health services, disease outbreaks and disaster preparedness were among those hit by the Trump administration’s mass firings over the weekend. The president's government-wide reduction in force effort that began Friday is r…",
+    "date": "2025-10-14",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/trump-health-hhs-layoffs-rif-firings-cdc-813cb7d6df9e3f43ea929b09d103ec05",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:4ec73260fa1bead3",
+    "title": "North Carolina residents see $6.5B in medical debt erased",
+    "summary": "Officials say a North Carolina government initiative is eliminating over $6.5 billion in medical debt for more than 2.5 million residents. The totals released Monday exceed initial expectations for the effort announced last year. It offered hospitals extra Me…",
+    "date": "2025-10-13",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/north-carolina-medicaid-hospitals-medical-debt-a4c100691bf5bd3743b4e72354ec268b",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:44e637acf9b5413e",
+    "title": "Former Republican election official buys Dominion Voting — a target of 2020 conspiracy theories",
+    "summary": "Liberty Vote used to be KNOWiNK, and is based in St. Louis. Former St. Louis elections director Scott Leiendecker is the owner.",
+    "date": "2025-10-13",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/dominion-voting-liberty-vote-2020-conspiracy-theories-fed1e2d7f00b264bf5f8e01a106124f1",
+    "category": "Policy",
+    "tags": [
+      "Elections"
+    ]
+  },
+  {
+    "id": "newsapi:aa2678cc61fd8d5b",
+    "title": "Speaker Johnson warns government shutdown could be longest ever",
+    "summary": "Republican Speaker Mike Johnson predicts the federal government shutdown may become the longest in history. He says he “won’t negotiate” with Democrats until they hit pause on their health care demands and reopen the government. It's the 13th day of the shutd…",
+    "date": "2025-10-13",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/government-shutdown-trump-obamacare-republicans-democrats-b6b59cae2ec28b39e57fbb703704f46a",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:f610c8778f3046bf",
+    "title": "5 notable moments from Trump’s Knesset speech",
+    "summary": "President Trump addressed the Knesset in Israel on Monday as he visited the Middle East to mark the beginning of a peace accord to end the fighting in Gaza. ...",
+    "date": "2025-10-13",
+    "source": "NewsAPI: The Hill",
+    "url": "https://thehill.com/homenews/administration/5552710-trump-address-israel-knesset/",
+    "category": "Policy",
+    "tags": []
+  },
+  {
+    "id": "newsapi:bff06f32ed2017a6",
+    "title": "Trump urges Israel to seize chance for peace ahead of Egypt summit and presses for Netanyahu pardon",
+    "summary": "President Donald Trump has told Israeli lawmakers their country has no more to achieve on the battlefield and must work toward peace in the Middle East after two years of war against Hamas and skirmishes with Hezbollah and Iran. Trump…",
+    "date": "2025-10-13",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/trump-israel-hamas-war-ceasefire-hostages-egypt-6347e7da64f6c97b95109558096c0b6c",
+    "category": "Policy",
+    "tags": [
+      "Geopolitics"
+    ]
   },
   {
     "id": "finnhub:cc54c73b19459902",
@@ -113,21 +1593,6 @@
     ]
   },
   {
-    "id": "alphav:8c28ae2093c564ad",
-    "title": "Valour Launches Thirteen New ETPs on Spotlight Stock Market, Reaches 99 Listed ETPs and Further Bolsters the Largest Digital Asset ETP Selection Globally",
-    "summary": "Valour offers the largest selection of digital asset ETPs globally. Reaching 99 listed products further bolsters this leadership.",
-    "date": "2025-09-24",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/09/24/3155264/0/en/Valour-Launches-Thirteen-New-ETPs-on-Spotlight-Stock-Market-Reaches-99-Listed-ETPs-and-Further-Bolsters-the-Largest-Digital-Asset-ETP-Selection-Globally.html",
-    "category": "Markets",
-    "tags": [
-      "Blockchain",
-      "Financial Markets",
-      "$ETP",
-      "$ETP"
-    ]
-  },
-  {
     "id": "alphav:64695ee3d0698f6b",
     "title": "The Ultimate AI ETF Guide: 3 Funds to Fuel Your Portfolio",
     "summary": "These three exchange-traded funds can help investors profit from the AI boom.",
@@ -195,22 +1660,6 @@
     ]
   },
   {
-    "id": "alphav:fc75d057d848ebd1",
-    "title": "Virtune launches Virtune Crypto Altcoin Index ETP on Deutsche Börse Xetra in Germany",
-    "summary": "Frankfurt, 24th of September 2025 - Swedish regulated crypto asset manager Virtune launches the Virtune Crypto Altcoin Index ETP on Deutsche Börse Xetra, expanding its offering of physically backed crypto exchange-traded products in the German market.",
-    "date": "2025-09-24",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/09/24/3155254/0/en/Virtune-launches-Virtune-Crypto-Altcoin-Index-ETP-on-Deutsche-B%C3%B6rse-Xetra-in-Germany.html",
-    "category": "Markets",
-    "tags": [
-      "Finance",
-      "Blockchain",
-      "Financial Markets",
-      "$ETP",
-      "$ETP"
-    ]
-  },
-  {
     "id": "alphav:e45381c908e25e7b",
     "title": "Will the Fed Rate Cut Trigger Altcoin Season?",
     "summary": "Rate cuts could boost riskier assets like altcoins.",
@@ -274,21 +1723,6 @@
       "Earnings",
       "$AI",
       "$AI"
-    ]
-  },
-  {
-    "id": "alphav:9926956fcf1827f7",
-    "title": "Stock Market News for Sep 24, 2025",
-    "summary": "U.S. stock markets closed lower on Tuesday after a choppy session.",
-    "date": "2025-09-24",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2756080/stock-market-news-for-sep-24-2025",
-    "category": "Markets",
-    "tags": [
-      "Economy - Monetary",
-      "Retail & Wholesale",
-      "Financial Markets",
-      "Earnings"
     ]
   },
   {
@@ -462,20 +1896,6 @@
     ]
   },
   {
-    "id": "alphav:81f6836dcb534799",
-    "title": "Zacks Investment Ideas feature highlights: Intel, Advanced Micro Devices, Nvidia and Super Micro Computer",
-    "summary": "Intel surges as the U.S. government and Nvidia take stakes, fueling optimism in AI, data centers, and autonomous tech.",
-    "date": "2025-09-24",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2756079/zacks-investment-ideas-feature-highlights-intel-advanced-micro-devices-nvidia-and-super-micro-computer",
-    "category": "Markets",
-    "tags": [
-      "Technology",
-      "Financial Markets",
-      "Manufacturing"
-    ]
-  },
-  {
     "id": "alphav:86509a0c0cc0b446",
     "title": "Advisor To Trump Family's World Liberty Financial Opened A Bold 10x Long Bet On Avalanche - Here's How Much They Have Gained",
     "summary": "An advisor to the Trump family-backed cryptocurrency platform World Liberty Financial placed a risky long bet on Avalanche AVAX/USD following the announcement of the first publicly traded AVAX-focused treasury company.",
@@ -506,20 +1926,6 @@
       "Equities",
       "$CFO",
       "NASDAQ"
-    ]
-  },
-  {
-    "id": "alphav:4380918b9f096b2c",
-    "title": "Bitcoin whales offload 147K BTC in one month: Is $100K BTC price next?",
-    "summary": "Bitcoin whale distribution and a weakening technical structure could push BTC price into an extended sell-off toward $100,000.",
-    "date": "2025-09-24",
-    "source": "Alpha Vantage: Cointelegraph",
-    "url": "https://cointelegraph.com/news/bitcoin-whales-offload-147k-in-month-btc-price-100k-next",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "$BTC",
-      "$BTC"
     ]
   },
   {
@@ -811,7 +2217,9 @@
     "source": "Finnhub: MarketWatch",
     "url": "https://www.marketwatch.com/story/u-s-economy-still-struggling-to-adjust-to-tariffs-s-p-finds-and-theres-one-big-danger-sign-871a1a0d",
     "category": "Markets",
-    "tags": []
+    "tags": [
+      "Tariffs"
+    ]
   },
   {
     "id": "finnhub:a2ea53276fd088b8",
@@ -837,39 +2245,12 @@
     "tags": []
   },
   {
-    "id": "marketaux:4f0f7461538f861b",
-    "title": "EUR/USD Breaks Channel As Rate Cut Bets Ramp Up... Potential 370 Pip Rally Incoming?",
-    "summary": "EUR/USD finally got the catalyst it needed to break the channel that price had been holding since the back end of July.",
-    "date": "2025-09-05",
-    "source": "Marketaux: seekingalpha.com",
-    "url": "https://seekingalpha.com/article/4820120-eur-usd-breaks-channel-as-rate-cut-bets-ramp-up-potential-370-pip-rally-incoming",
-    "category": "Markets",
-    "tags": [
-      "$FX",
-      "$EUR",
-      "$USD",
-      "$FX",
-      "$EUR",
-      "$USD"
-    ]
-  },
-  {
     "id": "marketaux:e6a2ac79373e42bc",
     "title": "Case Studies In International Cannabis: What The World Can Teach Us",
     "summary": "A global look at cannabis legalization: case studies from Canada, Germany, Latin America, and Africa reveal diverse models, export ambitions, and lessons for U.S. policymakers.",
     "date": "2025-09-05",
     "source": "Marketaux: forbes.com",
     "url": "https://www.forbes.com/sites/roberthoban/2025/09/05/case-studies-in-international-cannabis-what-the-world-can-teach-us/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "marketaux:bec738fbf425e37f",
-    "title": "‘Lannie’ will bring rain showers, thunderstorms over North Luzon —Pagasa",
-    "summary": "The low pressure area (LPA) west of Luzon has turned into Tropical Depression (TD) Lannie, which is forecast to bring cloudy skies with scattered rains and thunderstorms over Northern Luzon areas, state weather bureau Pagasa said early Saturday morning.",
-    "date": "2025-09-05",
-    "source": "Marketaux: manilatimes.net",
-    "url": "https://www.manilatimes.net/2025/09/06/news/lannie-will-bring-rain-showers-thunderstorms-over-north-luzon-pagasa/2180010",
     "category": "Markets",
     "tags": []
   },
@@ -881,7 +2262,10 @@
     "source": "Finnhub: CNBC",
     "url": "https://www.cnbc.com/2025/09/05/senate-stock-tokenization-crypto-bill.html",
     "category": "Markets",
-    "tags": []
+    "tags": [
+      "Policy",
+      "Government"
+    ]
   },
   {
     "id": "finnhub:b59dbf1877fd144b",
@@ -924,7 +2308,8 @@
     "tags": [
       "$OPEC",
       "Oil",
-      "$OPEC"
+      "$OPEC",
+      "Geopolitics"
     ]
   },
   {
@@ -1012,7 +2397,9 @@
     "source": "Finnhub: MarketWatch",
     "url": "https://www.marketwatch.com/story/trump-promised-no-tax-on-social-security-in-his-one-big-beautiful-bill-act-this-democratic-bill-could-actually-do-it-c817ac50",
     "category": "Markets",
-    "tags": []
+    "tags": [
+      "Policy"
+    ]
   },
   {
     "id": "finnhub:92746dd27dc7d1c1",
@@ -1218,20 +2605,6 @@
     "tags": []
   },
   {
-    "id": "alphav:e0d20d027fa7f52e",
-    "title": "Rackspace Technology Reports Inducement Grants Under Nasdaq Listing Rule 5635 ( c )  ( 4 ) ",
-    "summary": "SAN ANTONIO, Sept. 05, 2025 ( GLOBE NEWSWIRE ) -- Rackspace Technology® ( NASDAQ: RXT ) , a global provider of hybrid cloud and AI solutions, today announced that on September 4, 2025, the Company granted inducement equity awards to Gajen Kandiah in connection with his appointment as the ...",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/09/05/3145560/0/en/Rackspace-Technology-Reports-Inducement-Grants-Under-Nasdaq-Listing-Rule-5635-c-4.html",
-    "category": "Markets",
-    "tags": [
-      "Technology",
-      "Financial Markets",
-      "Equities"
-    ]
-  },
-  {
     "id": "alphav:69892c8b1399bf6e",
     "title": "Easterly ROCMuni High Income Municipal Bond Fund f/k/a Principal Street High Income Municipal Fund Investors: Please contact the Portnoy Law Firm to recover your losses. September 22, 2025 Deadline to file Lead Plaintiff Motion.",
     "summary": "Investors can contact the law firm at no cost to learn more about recovering their losses",
@@ -1241,19 +2614,6 @@
     "category": "Markets",
     "tags": [
       "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:a192121ab8cb9c23",
-    "title": "Enovix Announces Completion of Warrant Dividend Program",
-    "summary": "Warrants Expired and Ceased Trading on Friday, August ...",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/09/05/3145564/0/en/Enovix-Announces-Completion-of-Warrant-Dividend-Program.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "Manufacturing"
     ]
   },
   {
@@ -1285,22 +2645,6 @@
       "Earnings",
       "Life Sciences",
       "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:795cd917f25742f6",
-    "title": "Nasdaq approves SOL Strategies listing for next week",
-    "summary": "The Canadian company makes inroads into US markets with a Nasdaq listing on Sept. 9, moving trading from its over-the-counter venture market.",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: Cointelegraph",
-    "url": "https://cointelegraph.com/news/nasdaq-sol-strategies-listing-shares",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Blockchain",
-      "Financial Markets",
-      "$SOL",
-      "$SOL"
     ]
   },
   {
@@ -1381,36 +2725,6 @@
     ]
   },
   {
-    "id": "alphav:4f1054198617d411",
-    "title": "China's biotech industry is gaining on the US. Can tariffs hold them back?",
-    "summary": "In the summer of 2015, a time when China's pharmaceutical market was in a phase of rapid expansion, a sudden regulatory change sent tremors through the industry: drug companies would need to audit the clinical trial data for all pending applications.",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: South China Morning Post",
-    "url": "https://www.scmp.com/economy/china-economy/article/3324487/chinas-biotech-industry-gaining-us-can-tariffs-hold-them-back",
-    "category": "Markets",
-    "tags": [
-      "Life Sciences",
-      "$IPO",
-      "Retail & Wholesale",
-      "Financial Markets",
-      "Earnings",
-      "Finance"
-    ]
-  },
-  {
-    "id": "alphav:d5ccdd07d3224384",
-    "title": "Northland Power Announces Retirement of John Brace and Appointment of Sébastien Clerc to Its Board of Directors",
-    "summary": "TORONTO, Sept. 05, 2025 ( GLOBE NEWSWIRE ) -- Northland Power Inc. ( \"Northland\" or the \"Company\" ) ( TSX: NPI ) today announced changes to the Company's Board of Directors ( \"Board\" ) following the retirement of John Brace, and the appointment of Sébastien Clerc, effective September 5, 2025.",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/09/05/3145561/0/en/Northland-Power-Announces-Retirement-of-John-Brace-and-Appointment-of-S%C3%A9bastien-Clerc-to-Its-Board-of-Directors.html",
-    "category": "Markets",
-    "tags": [
-      "$IPO",
-      "Financial Markets"
-    ]
-  },
-  {
     "id": "alphav:8e5dab03f20e2c64",
     "title": "Why American Eagle Outfitters Stock Soared 45% Higher This Week",
     "summary": "Two high-profile figures in the company's marketing campaigns helped lift results. an up-and-coming brand's success also contributed.",
@@ -1485,37 +2799,9 @@
     "tags": [
       "Finance",
       "Blockchain",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:78e9aefc3bc35f93",
-    "title": "Banking giants now forecast at least two interest rate cuts in 2025",
-    "summary": "Interest rate cuts are a bullish catalyst for crypto prices, as investors increase their risk appetite during times of credit expansion.",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: Cointelegraph",
-    "url": "https://cointelegraph.com/news/banking-giants-forecast-two-interest-rate-cuts-2025",
-    "category": "Markets",
-    "tags": [
-      "Economy - Monetary",
       "Financial Markets",
-      "Finance",
-      "Blockchain"
-    ]
-  },
-  {
-    "id": "alphav:bf2860c23980834c",
-    "title": "BLS Jobs for August: +22K, Unemployment +4.3%",
-    "summary": "The Unemployment Rate ticks up to +4.3%, the highest level since October 2021.",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2747582/bls-jobs-for-august-22k-unemployment-43",
-    "category": "Markets",
-    "tags": [
-      "Economy - Monetary",
-      "Financial Markets",
-      "$BLS",
-      "$BLS"
+      "Policy",
+      "Government"
     ]
   },
   {
@@ -1529,7 +2815,8 @@
     "tags": [
       "Earnings",
       "Financial Markets",
-      "Manufacturing"
+      "Manufacturing",
+      "Fiscal"
     ]
   },
   {
@@ -1546,22 +2833,6 @@
       "NASDAQ",
       "$CAPR",
       "$CAPR"
-    ]
-  },
-  {
-    "id": "alphav:5aef2dfc4ea3de87",
-    "title": "StablecoinX expands financing to $890M for Ethena's ENA treasury",
-    "summary": "TLGY and StablecoinX raised an additional $530 million in financing for its ENA strategy reserve.",
-    "date": "2025-09-05",
-    "source": "Alpha Vantage: Cointelegraph",
-    "url": "https://cointelegraph.com/news/tlgy-and-stablecoinx-secure-530m-pipe-as-ethena-s-usde-becomes-fastest-stablecoin-to-10b-supply",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Blockchain",
-      "Financial Markets",
-      "$ENA",
-      "$ENA"
     ]
   },
   {
@@ -1586,7 +2857,8 @@
     "url": "https://www.benzinga.com/pressreleases/25/09/g47534564/statement-by-marty-warren-national-director-of-the-united-steelworkers-union-on-new-federal-measur",
     "category": "Markets",
     "tags": [
-      "Financial Markets"
+      "Financial Markets",
+      "Tariffs"
     ]
   },
   {
@@ -1671,18 +2943,6 @@
     ]
   },
   {
-    "id": "system:last-updated",
-    "title": "FinPulse News — Last updated",
-    "summary": "Ingest completed at 2025-09-03 17:53 UTC",
-    "source": "FinPulse",
-    "date": "2025-09-03",
-    "category": "System",
-    "tags": [
-      "meta"
-    ],
-    "url": "#"
-  },
-  {
     "id": "marketaux:252baa7301555be7",
     "title": "Global Economic Tensions Rise as Amazon Pauses Fleet Redeployment, US Threatens Tariffs, and Iran Faces Nuclear Scrutiny",
     "summary": "Amazon (AMZN) has reportedly paused the redeployment of its delivery fleet, a decision stemming from an outcry over rising repair costs. The move, as reported",
@@ -1692,28 +2952,9 @@
     "category": "Markets",
     "tags": [
       "$US",
+      "Tariffs",
       "$US"
     ]
-  },
-  {
-    "id": "marketaux:d2151f3cec88cead",
-    "title": "Stock Spinoffs Relaunches: 18 New Articles, Updated Pages, and a Call for Reader Feedback",
-    "summary": "We’ve relaunched Stock Spinoffs with fresh coverage and updates — now we want your feedback to help build a stronger investor community.",
-    "date": "2025-09-03",
-    "source": "Marketaux: stockspinoffs.com",
-    "url": "https://www.stockspinoffs.com/2025/09/03/stock-spinoffs-relaunches-18-new-articles-updated-pages-and-a-call-for-reader-feedback/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "marketaux:c3c4bceda97c29b6",
-    "title": "New for 2025: The Ultimate Couch Potato Portfolio Guide",
-    "summary": "Should you ditch your advisor and invest in passive index funds? Find out whether couch-potato investing may be right for you.",
-    "date": "2025-09-03",
-    "source": "Marketaux: moneysense.ca",
-    "url": "https://www.moneysense.ca/save/investing/ultimate-couch-potato-portfolio-guide-overview/",
-    "category": "Markets",
-    "tags": []
   },
   {
     "id": "finnhub:701c11cc632fc4b9",
@@ -1913,7 +3154,8 @@
     "url": "https://www.marketwatch.com/story/fed-september-meeting-watch-can-lisa-cook-still-vote-and-will-trumps-new-nominee-be-on-the-board-8e9ac671",
     "category": "Markets",
     "tags": [
-      "Fed"
+      "Fed",
+      "Government"
     ]
   },
   {
@@ -1924,7 +3166,9 @@
     "source": "Finnhub: MarketWatch",
     "url": "https://www.marketwatch.com/story/tariff-triggered-price-hikes-upset-consumers-but-who-gets-the-blame-2dc8d454",
     "category": "Markets",
-    "tags": []
+    "tags": [
+      "Tariffs"
+    ]
   },
   {
     "id": "finnhub:b1e797fff0d91ede",
@@ -1966,7 +3210,8 @@
     "category": "Markets",
     "tags": [
       "Fed",
-      "Rates"
+      "Rates",
+      "Tariffs"
     ]
   },
   {
@@ -2022,6 +3267,7 @@
     "tags": [
       "Rates",
       "$CNBC",
+      "Tariffs",
       "$CNBC"
     ]
   },
@@ -2053,22 +3299,6 @@
     ]
   },
   {
-    "id": "marketaux:89e5c9dac5e77764",
-    "title": "Tesla gains after Saleforce's CEO joins the Optimus fan club (TSLA:NASDAQ)",
-    "summary": "Tesla gains after Saleforce's CEO joins the Optimus fan club",
-    "date": "2025-09-03",
-    "source": "Marketaux: seekingalpha.com",
-    "url": "https://seekingalpha.com/news/4491933-tesla-gains-after-saleforces-ceo-joins-the-optimus-fan-club",
-    "category": "Markets",
-    "tags": [
-      "$CEO",
-      "$TSLA",
-      "NASDAQ",
-      "$CEO",
-      "$TSLA"
-    ]
-  },
-  {
     "id": "finnhub:a286ae2bfa2e1ee8",
     "title": "Why Nvidia and these other chip stocks were just deemed hot plays for the rest of the year",
     "summary": "AI will continue to drive chip stocks and is “an area of relative certainty” against a changing geopolitical and economic backdrop, Cantor analysts say.",
@@ -2077,7 +3307,8 @@
     "url": "https://www.marketwatch.com/story/why-nvidia-and-these-other-chip-stocks-were-just-deemed-hot-plays-for-the-rest-of-the-year-ded47ba7",
     "category": "Markets",
     "tags": [
-      "Equities"
+      "Equities",
+      "Geopolitics"
     ]
   },
   {
@@ -2089,33 +3320,6 @@
     "url": "https://www.marketwatch.com/story/my-husband-died-last-year-but-i-only-received-250-from-social-security-can-i-get-more-under-the-new-law-fe4b8680",
     "category": "Markets",
     "tags": []
-  },
-  {
-    "id": "marketaux:714302179389c946",
-    "title": "PSN Top Guns Q2 2025",
-    "summary": "Q2 2025 PSN Top Guns: Global Markets Post Strong Returns Despite Volatility",
-    "date": "2025-09-03",
-    "source": "Marketaux: wealthmanagement.com",
-    "url": "https://www.wealthmanagement.com/investment-news/q2-2025-psn-top-guns-global-markets-post-strong-returns-despite-volatility",
-    "category": "Markets",
-    "tags": [
-      "$PSN",
-      "$PSN"
-    ]
-  },
-  {
-    "id": "marketaux:eb3207e62644f081",
-    "title": "Instagram launches app for iPad (META:NASDAQ)",
-    "summary": "Instagram launches its optimized iPad app for iPadOS 15.1+, offering enhanced features and layouts.",
-    "date": "2025-09-03",
-    "source": "Marketaux: seekingalpha.com",
-    "url": "https://seekingalpha.com/news/4491935-instagram-launches-app-for-ipad",
-    "category": "Markets",
-    "tags": [
-      "$META",
-      "NASDAQ",
-      "$META"
-    ]
   },
   {
     "id": "finnhub:a49f144c91c504b3",
@@ -2201,164 +3405,6 @@
     "tags": []
   },
   {
-    "id": "alphav:d8c27460fec0eac7",
-    "title": "LanzaTech Announces Reverse Stock Split as Part of Nasdaq Compliance Plan",
-    "summary": "CHICAGO, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- LanzaTech Global, Inc. ( \"LanzaTech\" or the \"Company\" ) ( NASDAQ: LNZA ) , a leading carbon capture and transformation company, today announced that it will implement a 1-for-100 reverse stock split ( the \"Reverse Stock Split\" ) of its issued and ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134166/0/en/LanzaTech-Announces-Reverse-Stock-Split-as-Part-of-Nasdaq-Compliance-Plan.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:ffe4ce0f72c0f338",
-    "title": "Abaxx Provides Q2 2025 Corporate Update",
-    "summary": "TORONTO, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Abaxx Technologies Inc. ( CBOE:ABXX ) ( OTCQX:ABXXF ) ( \"Abaxx\" or the \"Company\" ) , a financial software and market infrastructure company, majority shareholder of Abaxx Singapore Pte Ltd., the owner of Abaxx Commodity Exchange and Clearinghouse ( ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134162/0/en/Abaxx-Provides-Q2-2025-Corporate-Update.html",
-    "category": "Commodities",
-    "tags": [
-      "Economy - Monetary",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:45b121d045123eb2",
-    "title": "Brookfield Business Partners Announces Renewal of Normal Course Issuer Bids for Units and Exchangeable Shares",
-    "summary": "BROOKFIELD, News, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Brookfield Business Partners ( NYSE: BBU, BBUC. TSX: BBU.UN, BBUC ) today announced that the Toronto Stock Exchange ( \"TSX\" ) has accepted a notice filed by Brookfield Business Partners L.P. of its intention to renew its normal course issuer ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134155/0/en/Brookfield-Business-Partners-Announces-Renewal-of-Normal-Course-Issuer-Bids-for-Units-and-Exchangeable-Shares.html",
-    "category": "Markets",
-    "tags": [
-      "Economy - Monetary",
-      "Real Estate & Construction",
-      "Financial Markets",
-      "Equities"
-    ]
-  },
-  {
-    "id": "alphav:1215dd1cc99a7ed9",
-    "title": "Should SPDR S&P 600 Small Cap Value ETF  ( SLYV )  Be on Your Investing Radar?",
-    "summary": "Style Box ETF report for ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716148/should-spdr-sp-600-small-cap-value-etf-slyv-be-on-your-investing-radar",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "Manufacturing",
-      "Earnings",
-      "Finance",
-      "$SPDR",
-      "$ETF"
-    ]
-  },
-  {
-    "id": "alphav:6a05ce16aa08dab7",
-    "title": "Should SPDR S&P 400 Mid Cap Value ETF  ( MDYV )  Be on Your Investing Radar?",
-    "summary": "Style Box ETF report for ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716181/should-spdr-sp-400-mid-cap-value-etf-mdyv-be-on-your-investing-radar",
-    "category": "Markets",
-    "tags": [
-      "Retail & Wholesale",
-      "Financial Markets",
-      "Manufacturing",
-      "Earnings",
-      "Finance",
-      "$SPDR"
-    ]
-  },
-  {
-    "id": "alphav:d1f3ff39b502b650",
-    "title": "Should Janus Henderson Small Cap Growth Alpha ETF  ( JSML )  Be on Your Investing Radar?",
-    "summary": "Style Box ETF report for ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716180/should-janus-henderson-small-cap-growth-alpha-etf-jsml-be-on-your-investing-radar",
-    "category": "Markets",
-    "tags": [
-      "Life Sciences",
-      "Financial Markets",
-      "Earnings",
-      "Real Estate & Construction",
-      "Technology",
-      "Finance"
-    ]
-  },
-  {
-    "id": "alphav:0cf31d66c61df913",
-    "title": "Should Goldman Sachs ActiveBeta U.S. Large Cap Equity ETF  ( GSLC )  Be on Your Investing Radar?",
-    "summary": "Style Box ETF report for ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716178/should-goldman-sachs-activebeta-us-large-cap-equity-etf-gslc-be-on-your-investing-radar",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "Manufacturing",
-      "Technology",
-      "Finance",
-      "Equities",
-      "$ETF"
-    ]
-  },
-  {
-    "id": "alphav:9d6ff73b2d358926",
-    "title": "Should iShares Russell Mid-Cap ETF  ( IWR )  Be on Your Investing Radar?",
-    "summary": "Style Box ETF report for ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716179/should-ishares-russell-mid-cap-etf-iwr-be-on-your-investing-radar",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "Manufacturing",
-      "Energy & Transportation",
-      "Finance",
-      "$ETF",
-      "$IWR"
-    ]
-  },
-  {
-    "id": "alphav:7f0a86c5ea34f4ec",
-    "title": "OTC Markets Group Welcomes MÉLIUZ S.A. to OTCQX",
-    "summary": "NEW YORK, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- OTC Markets Group Inc. ( OTCQX: OTCM ) , operator of regulated markets for trading 12,000 U.S. and international securities, today announced MÉLIUZ S.A. ( OTCQX: MLIZY ) , the first Bitcoin Treasury Company in Brazil and Latin America fully dedicated ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134161/0/en/OTC-Markets-Group-Welcomes-M%C3%89LIUZ-S-A-to-OTCQX.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "$OTC",
-      "$OTCQX",
-      "$OTC",
-      "$OTCQX"
-    ]
-  },
-  {
-    "id": "alphav:ff290c842b899422",
-    "title": "Is Nuveen ESG Large-Cap Value ETF  ( NULV )  a Strong ETF Right Now?",
-    "summary": "Smart Beta ETF report for ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716183/is-nuveen-esg-large-cap-value-etf-nulv-a-strong-etf-right-now",
-    "category": "Markets",
-    "tags": [
-      "Life Sciences",
-      "Finance",
-      "Financial Markets",
-      "$ESG",
-      "$ETF",
-      "$NULV"
-    ]
-  },
-  {
     "id": "alphav:8cd2837d9d04899a",
     "title": "Which High-Conviction Stock Picks Are Set to Soar in the Coming Years? Amazon  ( AMZN )  Is One.",
     "summary": "These companies all have great long-term growth potential.",
@@ -2373,23 +3419,6 @@
       "Earnings",
       "Technology",
       "Finance"
-    ]
-  },
-  {
-    "id": "alphav:ff51ca22084a7752",
-    "title": "Is WisdomTree U.S. LargeCap Dividend ETF  ( DLN )  a Strong ETF Right Now?",
-    "summary": "Smart Beta ETF report for ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716182/is-wisdomtree-us-largecap-dividend-etf-dln-a-strong-etf-right-now",
-    "category": "Markets",
-    "tags": [
-      "Technology",
-      "Financial Markets",
-      "$ETF",
-      "$DLN",
-      "$ETF",
-      "$DLN"
     ]
   },
   {
@@ -2409,20 +3438,6 @@
     ]
   },
   {
-    "id": "alphav:0420de49b4e5470f",
-    "title": "Japan ETFs Rising: Here's Why",
-    "summary": "Nikkei 225's rally, fueled by U.S. rate cut hopes, trade truces, and Japan's pro-investment policies, is boosting demand for Japan-focused ETFs like EWJ and JPXN.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Zacks Commentary",
-    "url": "https://www.zacks.com/stock/news/2716060/japan-etfs-rising-heres-why",
-    "category": "Markets",
-    "tags": [
-      "Economy - Monetary",
-      "Finance",
-      "Financial Markets"
-    ]
-  },
-  {
     "id": "alphav:41c24008b7d863ca",
     "title": "MEXC Launches Cutting-Edge AI Trading Features to Empower Crypto Traders",
     "summary": "VICTORIA, Seychelles, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- MEXC, a leading global cryptocurrency exchange, has announced the official launch of a new suite of AI-powered features designed to reshape how users discover, analyze, and act on trading opportunities.",
@@ -2437,23 +3452,6 @@
       "$AI",
       "$MEXC",
       "$AI"
-    ]
-  },
-  {
-    "id": "alphav:d7f6ddb32abc21b3",
-    "title": "Top Win International  ( Nasdaq: SORA )  Raises USD 10m, with Wiselink Co., Ltd.  ( TW: 8932 )  Leading the Raise as the First Taiwanese Public Company to Invest in a Bitcoin Treasury Company",
-    "summary": "Top Win International ( Nasdaq: SORA ) Raises USD 10m, with Wiselink Co., Ltd. ( TW: 8932 ) Leading the Raise as the First Taiwanese Public Company to Invest in a Bitcoin Treasury Company",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134164/0/en/Top-Win-International-Nasdaq-SORA-Raises-USD-10m-with-Wiselink-Co-Ltd-TW-8932-Leading-the-Raise-as-the-First-Taiwanese-Public-Company-to-Invest-in-a-Bitcoin-Treasury-Company.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "$FX",
-      "$SORA",
-      "$USD",
-      "$TW",
-      "$FX"
     ]
   },
   {
@@ -2490,33 +3488,6 @@
     ]
   },
   {
-    "id": "alphav:4c05e1ab170e823c",
-    "title": "Eldorado Gold Announces Appointment of Christian Milau as President",
-    "summary": "VANCOUVER, British Columbia, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Eldorado Gold Corporation ( TSX: ELD ) ( NYSE: EGO ) ( \"Eldorado\" or the \"Company\" ) is pleased to announce that Christian Milau will be joining the Company as President, effective September 12, 2025.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134154/0/en/Eldorado-Gold-Announces-Appointment-of-Christian-Milau-as-President.html",
-    "category": "Markets",
-    "tags": [
-      "Energy & Transportation",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:cb9b657cf3e87e6d",
-    "title": "WiseLink Becomes First Taiwan-Listed Company To Invest in a Bitcoin Treasury Strategy",
-    "summary": "Executed through convertible notes, WiseLink says the deal comes as a \"golden window\" for Bitcoin as a capital strategy opens.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Decrypt.co",
-    "url": "https://decrypt.co/335413/wiselink-becomes-first-taiwan-listed-company-to-invest-in-a-bitcoin-treasury-strategy",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Economy - Monetary",
-      "Financial Markets"
-    ]
-  },
-  {
     "id": "alphav:dda8a1cd3e93e8c5",
     "title": "2 Warren Buffett Stocks to Buy Hand Over Fist and 1 to Avoid",
     "summary": "The Oracle of Omaha's investing strategies have stood the test of time.",
@@ -2531,51 +3502,6 @@
       "Finance",
       "Economy - Fiscal",
       "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:f097a806f8774c6b",
-    "title": "Bitcoin miners and AI firms compete for cheap sustainable energy",
-    "summary": "Bitcoin miners face rising competition from AI data centers for cheap energy, potentially driving a new wave of institutional investment, according to GoMining exec Jeremy Dreier.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Cointelegraph",
-    "url": "https://cointelegraph.com/news/bitcoin-miners-ai-energy-battle-institutional-investment",
-    "category": "Markets",
-    "tags": [
-      "Life Sciences",
-      "Financial Markets",
-      "Technology",
-      "Blockchain",
-      "$AI",
-      "$AI"
-    ]
-  },
-  {
-    "id": "alphav:3ab1af86682d42de",
-    "title": "Sol-Gel Reports Second Quarter 2025 Financial Results and Provides Corporate Updates",
-    "summary": "• Patient enrollment for our ongoing Phase-3 clinical trial of SGT-610 for Gorlin Syndrome has been completed.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134160/0/en/Sol-Gel-Reports-Second-Quarter-2025-Financial-Results-and-Provides-Corporate-Updates.html",
-    "category": "Commodities",
-    "tags": [
-      "Earnings",
-      "Life Sciences",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:cac146a2520d2782",
-    "title": "Next Hydrogen Reports Q2 2025 Financial Results",
-    "summary": "MISSISSAUGA, Ontario, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Next Hydrogen Solutions Inc. ( the \"Company\" or \"Next Hydrogen\" ) ( TSXV:NXH, OTC:NXHSF ) , a designer and manufacturer of electrolyzers, is pleased to report its financial results for the second quarter ended June 30, 2025.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134159/0/en/Next-Hydrogen-Reports-Q2-2025-Financial-Results.html",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Financial Markets",
-      "Economy - Macro"
     ]
   },
   {
@@ -2607,38 +3533,6 @@
       "Earnings",
       "Economy - Monetary",
       "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:b143c1b4fba06994",
-    "title": "SINTX Technologies Issues Business Update Following Strategic Realignment, Leadership Expansion, and SiNAPTIC Acquisition",
-    "summary": "Company Reinforces Commercialization Focus and Strategic Direction ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134158/30038/en/SINTX-Technologies-Issues-Business-Update-Following-Strategic-Realignment-Leadership-Expansion-and-SiNAPTIC-Acquisition.html",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Life Sciences",
-      "Financial Markets",
-      "$SINTX",
-      "$SINTX"
-    ]
-  },
-  {
-    "id": "alphav:cd555f8d7b54aa50",
-    "title": "CLEAR Expands CLEAR+ Enrollment to UK, Canadian, Australian & New Zealand Passport Holders",
-    "summary": "NEW YORK, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Today, CLEAR ( NYSE: YOU ) , the secure identity company, announced that travelers from the UK, Canada, Australia, and New Zealand can now enjoy the CLEAR+ experience in U.S. airports.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134141/0/en/CLEAR-Expands-CLEAR-Enrollment-to-UK-Canadian-Australian-New-Zealand-Passport-Holders.html",
-    "category": "Commodities",
-    "tags": [
-      "Financial Markets",
-      "$CLEAR",
-      "$UK",
-      "$CLEAR",
-      "$UK"
     ]
   },
   {
@@ -2718,64 +3612,6 @@
     "tags": []
   },
   {
-    "id": "alphav:6f17cdcf9bf3177b",
-    "title": "Catheter Precision, Inc. Announces Effectiveness of 1-for-19 Reverse Stock Split",
-    "summary": "FORT MILLS, S.C., Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Catheter Precision, Inc. ( NYSE American: VTAK ) , a US based medical device company focused on developing technologically advanced products for the cardiac electrophysiology market, announced today that its previously announced 1-for-19 ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134186/0/en/Catheter-Precision-Inc-Announces-Effectiveness-of-1-for-19-Reverse-Stock-Split.html",
-    "category": "Markets",
-    "tags": [
-      "Economy - Fiscal",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:788fbacfe43d0faf",
-    "title": "Partners Value Investments L.P. Announces Q2 2025 Interim Results",
-    "summary": "TORONTO, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Partners Value Investments L.P. ( the \"Partnership\", TSX: PVF.UN TSX: PVF.PR.U ) announced today its financial results for the six months ended June 30, 2025. All amounts are stated in U.S. dollars.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134177/0/en/Partners-Value-Investments-L-P-Announces-Q2-2025-Interim-Results.html",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Real Estate & Construction",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:0798d30615261077",
-    "title": "United Community Banks, Inc. Announces Redemption of All Oustanding Shares of 6.875% Series I Non-Cumulative Perpetual Preferred Stock",
-    "summary": "GREENVILLE, S.C., Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- United Community Banks, Inc. ( NYSE: UCB ) ( \"United\", the \"Company\" ) , is redeeming all outstanding shares of the Company's 6.875% Series I Non-Cumulative Perpetual Preferred Stock ( the \"Preferred Stock\" ) on September 15, 2025 ( the ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134171/34434/en/United-Community-Banks-Inc-Announces-Redemption-of-All-Oustanding-Shares-of-6-875-Series-I-Non-Cumulative-Perpetual-Preferred-Stock.html",
-    "category": "Markets",
-    "tags": [
-      "Technology",
-      "Financial Markets",
-      "Equities"
-    ]
-  },
-  {
-    "id": "alphav:cdcf514e8ff431ce",
-    "title": "SharpLink Reports Second Quarter 2025 Results; Now Holds 728,804 ETH in Total",
-    "summary": "MINNEAPOLIS, MN, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- SharpLink Gaming, Inc. ( Nasdaq: SBET ) ( \"SharpLink\" or the \"Company\" ) , one of the world's largest corporate holders of Ether ( \"ETH\" ) and prominent industry advocate of Ethereum adoption, today reported financial results for the quarter ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134188/0/en/SharpLink-Reports-Second-Quarter-2025-Results-Now-Holds-728-804-ETH-in-Total.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "Manufacturing",
-      "Earnings",
-      "Mergers & Acquisitions",
-      "Blockchain",
-      "$ETH"
-    ]
-  },
-  {
     "id": "alphav:93af43642e824677",
     "title": "Poised for Explosive Growth: Is Your Portfolio Ready for This ETF?",
     "summary": "Investing in the technology sector is a bold bet that today's largest companies will continue delivering outsized gains.",
@@ -2793,62 +3629,6 @@
     ]
   },
   {
-    "id": "alphav:46aecb98265a2fe0",
-    "title": "How would peace in Ukraine affect Bitcoin's price?",
-    "summary": "Discover how Ukraine peace talks could impact Bitcoin's price in 2025. Explore three scenarios ( ceasefire, shaky deal or escalation ) and their effects on BTC.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Cointelegraph",
-    "url": "https://cointelegraph.com/news/how-would-peace-in-ukraine-affect-bitcoin-price",
-    "category": "Markets",
-    "tags": [
-      "Economy - Monetary",
-      "Blockchain",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:a6fdd2cd25b72800",
-    "title": "Fundamental Global Inc. Declares Cash Dividend on Its 8.00% Cumulative Preferred Stock, Series A",
-    "summary": "Charlotte, NC, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Fundamental Global Inc. ( Nasdaq: FGNX ) ( the \"Company\" or \"FG Nexus\" ) today announced that it has declared a quarterly cash dividend on its 8.00% Cumulative Preferred Stock, Series A ( the \"Preferred Stock\" ) , for the period commencing on ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134173/0/en/Fundamental-Global-Inc-Declares-Cash-Dividend-on-Its-8-00-Cumulative-Preferred-Stock-Series-A.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "Earnings",
-      "Finance",
-      "Blockchain"
-    ]
-  },
-  {
-    "id": "alphav:2816e51a28914a62",
-    "title": "Partners Value Investments Inc. Announces Q2 2025 Interim Results",
-    "summary": "TORONTO, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Partners Value Investments Inc. ( the \"Company\", TSX: PVF.WT, PVF.PR.V, PVF.A ) announced today its financial results for the six months ended June 30, 2025. All amounts are stated in U.S. dollars.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134178/0/en/Partners-Value-Investments-Inc-Announces-Q2-2025-Interim-Results.html",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Real Estate & Construction",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:8dc14d3450340282",
-    "title": "Partners Value Split Corp. Announces 2025 Semi-Annual Results",
-    "summary": "TORONTO, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Partners Value Split Corp. ( the \"Company\", TSX: PVS.PR.G, PVS.PR.H, PVS.PR.J, PVS.PR.K, PVS.PR.L, PVS.PR.M ) announced today that the net asset value per unit was $157.55 as at June 30, 2025. All amounts are in U.S. dollars.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134176/0/en/Partners-Value-Split-Corp-Announces-2025-Semi-Annual-Results.html",
-    "category": "Markets",
-    "tags": [
-      "Real Estate & Construction",
-      "Financial Markets"
-    ]
-  },
-  {
     "id": "alphav:0e6012acdc97babb",
     "title": "How Investing Just $10 a Day Could Make You a Millionaire by Retirement",
     "summary": "Yes, $10 per day can really get you there -- but it will take a while.",
@@ -2862,78 +3642,6 @@
     ]
   },
   {
-    "id": "alphav:d74975e00258e23c",
-    "title": "180 Degree Capital Corp. and Mount Logan Capital Inc. Provide Update on Proposed Business Combination",
-    "summary": "As of August 14, 2025, in excess of 57% of the outstanding shares of 180 Degree Capital have been voted FOR the proposed Business Combination, and in excess of 50% of the outstanding shares of 180 Degree Capital have been voted FOR all other proposals scheduled to be considered at the August 22, ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134168/0/en/180-Degree-Capital-Corp-and-Mount-Logan-Capital-Inc-Provide-Update-on-Proposed-Business-Combination.html",
-    "category": "Markets",
-    "tags": [
-      "Mergers & Acquisitions",
-      "Technology",
-      "Financial Markets",
-      "Equities"
-    ]
-  },
-  {
-    "id": "alphav:e6e4046552a85c90",
-    "title": "Aecon Announces Renewal of Normal Course Issuer Bid",
-    "summary": "TORONTO, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Aecon Group Inc. ( TSX: ARE ) ( \"Aecon\" ) announced today receipt of regulatory approval from the Toronto Stock Exchange ( the \"TSX\" ) of its notice of intention to renew its normal course issuer bid ( the \"NCIB\" ) .",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134198/0/en/Aecon-Announces-Renewal-of-Normal-Course-Issuer-Bid.html",
-    "category": "Markets",
-    "tags": [
-      "Energy & Transportation",
-      "Technology",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:ddbea2076a4cd7a4",
-    "title": "OFA Group Launches Digital Asset Strategy to Transform Senior Housing and Mortgage Transactions",
-    "summary": "Initiative leverages blockchain technology and tokenization to enhance senior housing development and financing efficiency ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134194/0/en/OFA-Group-Launches-Digital-Asset-Strategy-to-Transform-Senior-Housing-and-Mortgage-Transactions.html",
-    "category": "Markets",
-    "tags": [
-      "Blockchain",
-      "Financial Markets",
-      "$OFA",
-      "$OFA"
-    ]
-  },
-  {
-    "id": "alphav:15950576374cea36",
-    "title": "Nexxen Seeks Authorization for New $20 Million Ordinary Share Repurchase Program",
-    "summary": "NEW YORK, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Nexxen International Ltd. ( NASDAQ: NEXN ) ( \"Nexxen\" or the \"Company\" ) , a global, flexible advertising technology platform with deep expertise in data and advanced TV, today announced that it is seeking authorization to initiate a new $20 million ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134174/0/en/Nexxen-Seeks-Authorization-for-New-20-Million-Ordinary-Share-Repurchase-Program.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:10243333f0f8bbc2",
-    "title": "Morning Minute: Another $700M+ Bitcoin TreasuryCo Is Born",
-    "summary": "ETH ETFs continue to see near-record inflows, and Hyperliquid is setting records in volume and fees.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: Decrypt.co",
-    "url": "https://decrypt.co/335445/morning-minute-another-700m-bitcoin-treasuryco-is-born",
-    "category": "Markets",
-    "tags": [
-      "Life Sciences",
-      "Financial Markets",
-      "Technology",
-      "Finance",
-      "Blockchain"
-    ]
-  },
-  {
     "id": "alphav:324532d4a6e3dbe3",
     "title": "Why Editas Medicine Stock Was Skyrocketing This Week",
     "summary": "The company's CEO made quite the encouraging statement regarding its immediate future.",
@@ -2944,20 +3652,6 @@
     "tags": [
       "Earnings",
       "Life Sciences",
-      "Financial Markets"
-    ]
-  },
-  {
-    "id": "alphav:30c96d4182b5a917",
-    "title": "Nano Labs Announces First Half of 2025 Financial Results",
-    "summary": "HONG KONG, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- Nano Labs Ltd ( Nasdaq: NA ) ( \"we,\" the \"Company\" or \"Nano Labs\" ) , a leading Web 3.0 infrastructure and product solution provider, today announced its unaudited financial results as of June 30, 2025 and for the first half of 2025 then ended.",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134187/0/en/Nano-Labs-Announces-First-Half-of-2025-Financial-Results.html",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Blockchain",
       "Financial Markets"
     ]
   },
@@ -2976,21 +3670,6 @@
     ]
   },
   {
-    "id": "alphav:d00b63d2c289edb5",
-    "title": "Plus Therapeutics Reports Stockholders' Equity in Excess of $2.5 million in Compliance with Nasdaq Equity Requirements",
-    "summary": "HOUSTON, Aug. 15, 2025 ( GLOBE NEWSWIRE ) -- ( Nasdaq: ) ( \"Plus\" or the \"Company\" ) , a clinical-stage pharmaceutical company developing targeted radiotherapeutics with advanced platform technologies for central nervous system ( CNS ) cancers, today announced it reported stockholders' equity of ...",
-    "date": "2025-08-15",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/15/3134170/0/en/Plus-Therapeutics-Reports-Stockholders-Equity-in-Excess-of-2-5-million-in-Compliance-with-Nasdaq-Equity-Requirements.html",
-    "category": "Markets",
-    "tags": [
-      "Earnings",
-      "Life Sciences",
-      "Financial Markets",
-      "Equities"
-    ]
-  },
-  {
     "id": "finnhub:e7a53f8f3c5ff6b6",
     "title": "Carbuyers rev up U.S. retail sales in effort to beat tariff price hikes. Economy is still growing.",
     "summary": "Sales at retailers rose solidly in July for the second month in a row, but the increase in spending appeared to be a double-edged sword: Americans are still confident enough in the economy to spend, but they are also paying more because of higher inflation.",
@@ -2999,7 +3678,8 @@
     "url": "https://www.marketwatch.com/story/carbuyers-rev-up-u-s-retail-sales-in-effort-to-beat-tariff-price-hikes-economy-is-still-growing-1de5ff8f",
     "category": "Inflation",
     "tags": [
-      "Inflation"
+      "Inflation",
+      "Tariffs"
     ]
   },
   {
@@ -3015,101 +3695,12 @@
     ]
   },
   {
-    "id": "marketaux:f8bc3ab9311586aa",
-    "title": "Liza Soberano opens up about abuse and traumatic childhood",
-    "summary": "MANILA, Philippines — Behind Liza Soberano’s angelic face and innocent smile that captured audiences when she first broke out in the entertainment scene was a traumatic childhood marked by abuse from her foster parent and her parents’ struggles with drugs and crime.",
-    "date": "2025-08-15",
-    "source": "Marketaux: manilatimes.net",
-    "url": "https://www.manilatimes.net/2025/08/15/entertainment-lifestyle/show-times/liza-soberano-opens-up-about-abuse-and-traumatic-childhood/2168652",
-    "category": "Inflation",
-    "tags": []
-  },
-  {
-    "id": "marketaux:c9a0daa5669b26b6",
-    "title": "Cloud seeding in focus as UAE readies for cooler weather",
-    "summary": "The programme generates 168–838 million cubic metres of additional rainfall annually, with 84–419 million cubic metres of usable water",
-    "date": "2025-08-15",
-    "source": "Marketaux: gulfbusiness.com",
-    "url": "https://gulfbusiness.com/cloud-seeding-in-focus-as-uae-readies-for-cooler-weather/",
-    "category": "Markets",
-    "tags": [
-      "$UAE",
-      "$UAE"
-    ]
-  },
-  {
-    "id": "marketaux:6d6260769adc501f",
-    "title": "RAK Properties H1 net profit jumps 80% on higher sales",
-    "summary": "RAK Properties’ share price has gained 26.3 per cent year-to-date, ending the first half at Dhs1.44, giving it a market capitalisation of Dhs4.32bn",
-    "date": "2025-08-15",
-    "source": "Marketaux: gulfbusiness.com",
-    "url": "https://gulfbusiness.com/rak-properties-h1-profit-jumps-80pc-on-high-sales/",
-    "category": "Markets",
-    "tags": [
-      "$RAK",
-      "$RAK"
-    ]
-  },
-  {
-    "id": "newsapi:85db5b18be1d0fb0",
-    "title": "Brisbane hotels posted record-high room rates in July",
-    "summary": "Boosted by the British and Irish Lions Tour, Brisbane’s hotel industry posted its highest monthly average daily rate (ADR) and revenue per available room (RevPAR) on record, according to preliminary data from CoStar. CoStar is a leading global provider of com…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Hospitality Net",
-    "url": "https://www.hospitalitynet.org/news/4128532.html",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:b185d5b183a2085e",
-    "title": "Cops cripple 'Susu Borneo' shoplifting gang operating in three states",
-    "summary": "MELAKA: Police have crippled a syndicate known as 'Susu Borneo' with the arrest of four members, including a woman, on suspicion of stealing infant formula and powdered coffee worth RM12,600 from mini markets in Melaka, Negri Sembilan and Pahang. Read full st…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: The Star Online",
-    "url": "https://www.thestar.com.my/news/nation/2025/08/14/cops-cripple-039susu-borneo039-shoplifting-gang-operating-in-three-states",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:d09b484228a7fa60",
-    "title": "KOEL unveils ethanol and isobutanol genset engines",
-    "summary": "The launch, timed around World Biofuel Day, underscores KOEL’s focus on clean power solutions and alignment with India’s energy diversification goals",
-    "date": "2025-08-14",
-    "source": "NewsAPI: BusinessLine",
-    "url": "https://www.thehindubusinessline.com/companies/koel-unveils-ethanol-and-isobutanol-genset-engines/article69932543.ece",
-    "category": "Inflation",
-    "tags": [
-      "$KOEL",
-      "$KOEL"
-    ]
-  },
-  {
     "id": "newsapi:8720eca17c78368e",
     "title": "Real Launches Agent BreakThru, a Free 8-Week Coaching Experience to Drive Agent Productivity and Elevate the Industry",
     "summary": "Featuring Jason Pantana and top coaches, Agent BreakThru delivers real strategies to help agents close more and market smarter—no matter their brokerage MIAMI — The Real Brokerage Inc. (NASDAQ: REAX), a leading real estate technology platform redefining the i…",
     "date": "2025-08-14",
     "source": "NewsAPI: Financial Post",
     "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/real-launches-agent-breakthru-a-free-8-week-coaching-experience-to-drive-agent-productivity-and-elevate-the-industry",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:37c3f6e1496e9820",
-    "title": "Indian Delegation To Discuss Rupee Trade In Russia Next Week",
-    "summary": "Rupee-denominated trade will be among discussion topics when a high-level delegation visits Russia next week, an Indian official told reporters, another sign that the South Asian nation is deepening ties with BRICS partners after US President Donald Trump’s p…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Ndtvprofit.com",
-    "url": "https://www.ndtvprofit.com/economy-finance/indian-delegation-to-discuss-rupee-trade-in-russia-next-week",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:330eb1d119126fac",
-    "title": "Advanced Flower Capital Inc. Announces Financial Results for the Second Quarter 2025",
-    "summary": "Second quarter 2025 GAAP net loss of $(13.2) million or $(0.60) per basic weighted average common share and  Distributable Earnings(1) of $3.4 million or $0.15 per basic weighted average common share",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133368/0/en/Advanced-Flower-Capital-Inc-Announces-Financial-Results-for-the-Second-Quarter-2025.html",
     "category": "Markets",
     "tags": []
   },
@@ -3124,195 +3715,6 @@
     "tags": [
       "$GDP",
       "$GDP"
-    ]
-  },
-  {
-    "id": "newsapi:b1e22270afae7074",
-    "title": "Stock Market Today: Dow Futures Waver Ahead of Wholesale Inflation Data - The Wall Street Journal",
-    "summary": "Stock Market Today: Dow Futures Waver Ahead of Wholesale Inflation DataThe Wall Street Journal S&P 500 futures fall slightly after two days of big gains, some weak earnings: Live updatesCNBC World equities hit record highs, US yields fall on optimism for Fed …",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Slashdot.org",
-    "url": "https://slashdot.org/firehose.pl?op=view&amp;id=178673192",
-    "category": "Inflation",
-    "tags": [
-      "Inflation",
-      "Fed",
-      "Equities",
-      "Rates"
-    ]
-  },
-  {
-    "id": "newsapi:a7026042f5a1d67a",
-    "title": "India Moves To Improve FTA Utilisation Rate In Bid To Soften US Tariff Hit",
-    "summary": "India is ramping up efforts to maximise the benefits of its free trade agreements as it braces for potential headwinds from higher US tariffs. The government is fast-tracking measures to improve FTA utilisation, aiming to ensure exporters and importers take f…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Ndtvprofit.com",
-    "url": "https://www.ndtvprofit.com/business/india-moves-to-improve-fta-utilisation-rate-in-bid-to-soften-us-tariff-hit",
-    "category": "Markets",
-    "tags": [
-      "$FTA",
-      "$US",
-      "$FTA",
-      "$US"
-    ]
-  },
-  {
-    "id": "newsapi:948bfc0ac062c72a",
-    "title": "Up 380% in 2025, Is It Too Late to Buy MP Materials Stock?",
-    "summary": "{ window.open(this.href, '_blank'); }, 200); return false;\"&gt;Why did Trump fire the Bureau of Labor Statistics head? { window.open(this.href, '_blank'); }, 200); return false;\"&gt;How will Trump-Pu… [+734 chars]",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/78d71174047a82a2",
-    "category": "Markets",
-    "tags": [
-      "$MP",
-      "$MP"
-    ]
-  },
-  {
-    "id": "newsapi:fb0d510accb32d6f",
-    "title": "Turkey Set to Supply Weapons to Syria With New Defense Pact",
-    "summary": "{ window.open(this.href, '_blank'); }, 200); return false;\"&gt;Why did Trump fire the Bureau of Labor Statistics head? { window.open(this.href, '_blank'); }, 200); return false;\"&gt;How will Trump-Pu… [+752 chars]",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/0e6ebda75e30e642",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:03d312fcdf030a92",
-    "title": "UK Battery Developer Aims to Raise Millions for Europe Expansion",
-    "summary": "{ window.open(this.href, '_blank'); }, 200); return false;\"&gt;Why did Trump fire the Bureau of Labor Statistics head? { window.open(this.href, '_blank'); }, 200); return false;\"&gt;How will Trump-Pu… [+757 chars]",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/4c6ecd2388dcf16b",
-    "category": "Markets",
-    "tags": [
-      "$UK",
-      "$UK"
-    ]
-  },
-  {
-    "id": "newsapi:e58b2275e73bd286",
-    "title": "Abeona Therapeutics® Reports Second Quarter 2025 Financial Results and Corporate Updates",
-    "summary": "- Received FDA approval for ZEVASKYN™ (prademagene zamikeracel), the first and only autologous cell-based gene therapy for the treatment of wounds in adult and pediatric patients with recessive dystrophic epidermolysis bullosa (RDEB) -",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133349/0/en/Abeona-Therapeutics-Reports-Second-Quarter-2025-Financial-Results-and-Corporate-Updates.html",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:345ade2e0fcded39",
-    "title": "Evaxion announces business update and second quarter 2025 financial results",
-    "summary": "COPENHAGEN, Denmark, August 14, 2025 - Evaxion A/S (NASDAQ: EVAX) (“Evaxion”), a clinical-stage TechBio company specializing in developing AI-Immunology™ powered vaccines, provides business update and announces second quarter 2025 financial results.",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133366/0/en/Evaxion-announces-business-update-and-second-quarter-2025-financial-results.html",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:8fe33cc2335b7afa",
-    "title": "Gaming and Leisure Properties Announces Pricing of $600,000,000 of 5.250% Senior Notes Due 2033 and $700,000,000 of 5.750% Senior Notes Due 2037",
-    "summary": "WYOMISSING, Pa., Aug. 14, 2025 (GLOBE NEWSWIRE) -- Gaming and Leisure Properties, Inc. (“GLPI”) (NASDAQ: GLPI) announced the pricing of a public offering of $1,300,000,000 aggregate principal amount of Notes (as defined below), to be issued by its operating p…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133359/29133/en/Gaming-and-Leisure-Properties-Announces-Pricing-of-600-000-000-of-5-250-Senior-Notes-Due-2033-and-700-000-000-of-5-750-Senior-Notes-Due-2037.html",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:a384c90aac1a89d4",
-    "title": "FUNDAMENTAL GLOBAL INC. STRENGTHENS BOARD OF DIRECTORS WITH APPOINTMENT OF BLOCKCHAIN PIONEER MAJA VUJINOVIC AND SUCESSFUL SERIAL ENTERPRENEUR & VENTURE CAPITALIST JOSE VARGAS",
-    "summary": "Strategic Leadership Additions Reinforce Company's Ethereum Treasury Strategy and Public Markets Expertise  Charlotte, NC, Aug.  14, 2025  (GLOBE...",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133358/0/en/FUNDAMENTAL-GLOBAL-INC-STRENGTHENS-BOARD-OF-DIRECTORS-WITH-APPOINTMENT-OF-BLOCKCHAIN-PIONEER-MAJA-VUJINOVIC-AND-SUCESSFUL-SERIAL-ENTERPRENEUR-VENTURE-CAPITALIST-JOSE-VARGAS.html",
-    "category": "Markets",
-    "tags": [
-      "GLOBAL",
-      "$INC",
-      "$BOARD",
-      "$OF",
-      "$MAJA",
-      "SERIAL"
-    ]
-  },
-  {
-    "id": "newsapi:c0e16f8f9322fd77",
-    "title": "Lexeo Therapeutics Reports Second Quarter 2025 Financial Results and Operational Highlights",
-    "summary": "Lexeo Therapeutics Reports Second Quarter 2025 Financial Results and Operational Highlights......",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133352/0/en/Lexeo-Therapeutics-Reports-Second-Quarter-2025-Financial-Results-and-Operational-Highlights.html",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:6f3b02ac981d924e",
-    "title": "LM Funding America, Inc. Reports Second Quarter 2025 Financial Results",
-    "summary": "- Definitive asset purchase agreement for 11 MW Bitcoin mining site in Mississippi- Direct mining margin improved to 41.0% from 38.5% in Q1 2025- $0.1 million GAAP net income and $2.6M Core EBITDA, up from sequential $5.4 million net loss and $2.8 million neg…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133356/0/en/LM-Funding-America-Inc-Reports-Second-Quarter-2025-Financial-Results.html",
-    "category": "Inflation",
-    "tags": [
-      "$LM",
-      "$LM"
-    ]
-  },
-  {
-    "id": "newsapi:2c9b07fff3fd333c",
-    "title": "Cannara Biotech Enhances Financial Flexibility Through Strategic Asset Sale",
-    "summary": "Cannara sells non-core Valleyfield building for $5.5M, applying proceeds to debt reduction to strengthen balance sheet and boost flexibility.......",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133351/0/en/Cannara-Biotech-Enhances-Financial-Flexibility-Through-Strategic-Asset-Sale.html",
-    "category": "Inflation",
-    "tags": []
-  },
-  {
-    "id": "newsapi:744a4208da389825",
-    "title": "Edible Garden Delivers Strong Performance Across Core and Key Segments, Driven by Strategic Portfolio Transformation",
-    "summary": "Company exits low-margin product lines, invests in higher-margin, innovative CEA-informed, better-for-you shelf-stable products, and expands global reach...",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133367/0/en/Edible-Garden-Delivers-Strong-Performance-Across-Core-and-Key-Segments-Driven-by-Strategic-Portfolio-Transformation.html",
-    "category": "Inflation",
-    "tags": []
-  },
-  {
-    "id": "newsapi:4ae8cae3c957f0d1",
-    "title": "NeuroOne® Reports Third Quarter Fiscal Year 2025 Financial Results; Revenue Increases 105% YoY and Gross Margin Expands to 53.9%",
-    "summary": "Completed Oversubscribed $8.2 Million Capital Raise; Funded Through At Least Fiscal Year 2026  EDEN PRAIRIE, Minn., Aug.  14, 2025  (GLOBE NEWSWIRE) --......",
-    "date": "2025-08-14",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/14/3133353/0/en/NeuroOne-Reports-Third-Quarter-Fiscal-Year-2025-Financial-Results-Revenue-Increases-105-YoY-and-Gross-Margin-Expands-to-53-9.html",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:9bf34328fe73e2af",
-    "title": "The art of climate protest",
-    "summary": "The art of climate protest\n\n \n Channel\r\n\n News\r\n\n \nbrendan\n14th August 2025\n\n\n \n Teaser Media",
-    "date": "2025-08-14",
-    "source": "NewsAPI: Theecologist.org",
-    "url": "https://theecologist.org/2025/aug/14/art-climate-protest",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:fea71d03f277eb5f",
-    "title": "AU Small Finance Bank to open 51 branches on Independence Day ahead of universal bank transition",
-    "summary": "AU Small Finance Bank to open 51 branches across India on August 15, 2025, as it gears up to become a Universal Bank after RBI’s in-principle approval.",
-    "date": "2025-08-14",
-    "source": "NewsAPI: BusinessLine",
-    "url": "https://www.thehindubusinessline.com/money-and-banking/au-small-finance-bank-to-open-51-branches-on-independence-day-ahead-of-universal-bank-transition/article69932581.ece",
-    "category": "Markets",
-    "tags": [
-      "$AU",
-      "$AU"
     ]
   },
   {
@@ -3335,54 +3737,8 @@
     "category": "Markets",
     "tags": [
       "$US",
+      "Geopolitics",
       "$US"
-    ]
-  },
-  {
-    "id": "newsapi:4f7af4dc93b4b362",
-    "title": "Elgethun Capital Management Buys 390 Shares of Alphabet Inc. (NASDAQ:GOOGL)",
-    "summary": "Elgethun Capital Management boosted its stake in shares of Alphabet Inc. (NASDAQ:GOOGL – Free Report) by 4.8% in the first quarter, according to the company in its most recent 13F filing with the Securities & Exchange Commission. The institutional investor ow…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: ETF Daily News",
-    "url": "https://www.etfdailynews.com/2025/08/14/elgethun-capital-management-buys-390-shares-of-alphabet-inc-nasdaqgoogl/",
-    "category": "Markets",
-    "tags": [
-      "Equities",
-      "NASDAQ",
-      "$GOOGL",
-      "$GOOGL"
-    ]
-  },
-  {
-    "id": "newsapi:5043020f277e0471",
-    "title": "1834 Investment Advisors Co. Sells 800 Shares of Alphabet Inc. (NASDAQ:GOOGL)",
-    "summary": "1834 Investment Advisors Co. lowered its stake in shares of Alphabet Inc. (NASDAQ:GOOGL – Free Report) by 1.7% during the 1st quarter, according to the company in its most recent Form 13F filing with the Securities and Exchange Commission (SEC). The fund owne…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: ETF Daily News",
-    "url": "https://www.etfdailynews.com/2025/08/14/1834-investment-advisors-co-sells-800-shares-of-alphabet-inc-nasdaqgoogl/",
-    "category": "Markets",
-    "tags": [
-      "Equities",
-      "NASDAQ",
-      "$GOOGL",
-      "$GOOGL"
-    ]
-  },
-  {
-    "id": "newsapi:7114fd2713c31b35",
-    "title": "Commonwealth Financial Services LLC Raises Stock Position in Alphabet Inc. (NASDAQ:GOOGL)",
-    "summary": "Commonwealth Financial Services LLC grew its holdings in Alphabet Inc. (NASDAQ:GOOGL – Free Report) by 14.6% during the first quarter, HoldingsChannel.com reports. The fund owned 8,686 shares of the information services provider’s stock after purchasing an ad…",
-    "date": "2025-08-14",
-    "source": "NewsAPI: ETF Daily News",
-    "url": "https://www.etfdailynews.com/2025/08/14/commonwealth-financial-services-llc-raises-stock-position-in-alphabet-inc-nasdaqgoogl/",
-    "category": "Markets",
-    "tags": [
-      "Equities",
-      "$LLC",
-      "NASDAQ",
-      "$GOOGL",
-      "$LLC",
-      "$GOOGL"
     ]
   },
   {
@@ -3596,7 +3952,8 @@
       "Inflation",
       "$GDP",
       "Equities",
-      "$GDP"
+      "$GDP",
+      "Tariffs"
     ]
   },
   {
@@ -3683,6 +4040,7 @@
     "category": "Markets",
     "tags": [
       "$CEO",
+      "Tariffs",
       "$CEO"
     ]
   },
@@ -3787,7 +4145,8 @@
     "url": "https://www.marketwatch.com/story/theres-no-evidence-of-tariff-inflation-top-trump-aide-says-is-he-right-9b87e9e1",
     "category": "Inflation",
     "tags": [
-      "Inflation"
+      "Inflation",
+      "Tariffs"
     ]
   },
   {
@@ -3896,6 +4255,7 @@
     "category": "Markets",
     "tags": [
       "$CEO",
+      "Government",
       "$CEO"
     ]
   },
@@ -3909,7 +4269,8 @@
     "category": "Inflation",
     "tags": [
       "Inflation",
-      "Fed"
+      "Fed",
+      "Tariffs"
     ]
   },
   {
@@ -4060,20 +4421,6 @@
     ]
   },
   {
-    "id": "alphav:1f2417cfa8388a28",
-    "title": "Ocugen, Inc. Announces Closing of $20 Million Registered Direct Offering of Common Stock and Warrants",
-    "summary": "MALVERN, Pa., Aug. 12, 2025 ( GLOBE NEWSWIRE ) -- Ocugen, Inc. ( Ocugen or the Company ) ( NASDAQ: OCGN ) , a pioneering biotechnology leader in gene therapies for blindness diseases, today announced the closing of its previously announced registered direct offering pursuant to a securities ...",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/12/3132070/0/en/Ocugen-Inc-Announces-Closing-of-20-Million-Registered-Direct-Offering-of-Common-Stock-and-Warrants.html",
-    "category": "Markets",
-    "tags": [
-      "Life Sciences",
-      "Finance",
-      "Financial Markets"
-    ]
-  },
-  {
     "id": "alphav:0bdbee46c4f3be5b",
     "title": "This Union Pacific Analyst Is No Longer Bullish; Here Are Top 5 Downgrades For Tuesday - Getty Images Holdings  ( NYSE:GETY ) , Cogent Comms Hldgs  ( NASDAQ:CCOI ) ",
     "summary": "Top Wall Street analysts changed their outlook on these top names. For a complete view of all analyst rating changes, including upgrades, downgrades and initiations, please see our analyst ratings page. Jefferies analyst Samad Samana downgraded Open Text Corporation OTEX from Buy to Hold and cut ...",
@@ -4088,19 +4435,6 @@
       "Technology",
       "Finance",
       "$NYSE"
-    ]
-  },
-  {
-    "id": "alphav:0bbc52988966eeda",
-    "title": "Ethereum ETFs Smash Daily Record With Over $1 Billion in Investments",
-    "summary": "The second biggest cryptocurrency is approaching a new all-time high as the coin finds new use cases.",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: Decrypt.co",
-    "url": "https://decrypt.co/334809/ethereum-etfs-break-daily-record-over-1-billion-investments",
-    "category": "Markets",
-    "tags": [
-      "Blockchain",
-      "Financial Markets"
     ]
   },
   {
@@ -4121,22 +4455,6 @@
     ]
   },
   {
-    "id": "alphav:60357609426d0442",
-    "title": "Archrock Announces Dual Listing on NYSE Texas",
-    "summary": "HOUSTON, Aug. 12, 2025 ( GLOBE NEWSWIRE ) -- Archrock, Inc. ( NYSE:AROC ) ( \"Archrock\" ) announced today the dual listing of its common stock on NYSE Texas, the newly launched fully electronic equities exchange headquartered in Dallas, Texas.",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/12/3132167/0/en/Archrock-Announces-Dual-Listing-on-NYSE-Texas.html",
-    "category": "Markets",
-    "tags": [
-      "Energy & Transportation",
-      "Financial Markets",
-      "Equities",
-      "$NYSE",
-      "$NYSE"
-    ]
-  },
-  {
     "id": "alphav:f3544aaa2a9d7b00",
     "title": "Toll Brothers Announces New Luxury Home Community Coming Soon to Eagle, Idaho - Toll Brothers  ( NYSE:TOL ) ",
     "summary": "EAGLE, Idaho, Aug. 12, 2025 ( GLOBE NEWSWIRE ) -- Toll Brothers, Inc. TOL, the nation's leading builder of luxury homes, is proud to announce its newest Boise-area community, Torrente, is coming soon to the highly desirable city of Eagle, Idaho.",
@@ -4151,19 +4469,6 @@
       "$TOL",
       "$NYSE",
       "$TOL"
-    ]
-  },
-  {
-    "id": "alphav:2195fbbca237fafe",
-    "title": "Toll Brothers Announces New Luxury Home Community Coming Soon to Eagle, Idaho",
-    "summary": "EAGLE, Idaho, Aug. 12, 2025 ( GLOBE NEWSWIRE ) -- Toll Brothers, Inc. ( NYSE:TOL ) , the nation's leading builder of luxury homes, is proud to announce its newest Boise-area community, Torrente, is coming soon to the highly desirable city of Eagle, Idaho.",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/12/3132069/1924/en/Toll-Brothers-Announces-New-Luxury-Home-Community-Coming-Soon-to-Eagle-Idaho.html",
-    "category": "Markets",
-    "tags": [
-      "Real Estate & Construction",
-      "Financial Markets"
     ]
   },
   {
@@ -4232,35 +4537,6 @@
       "$GDP",
       "$ETF",
       "$ARCA"
-    ]
-  },
-  {
-    "id": "alphav:cea905f2b460f78b",
-    "title": "Monero Crashes on 51% Attack Fears: Here's What the Charts Say Is Next for XMR",
-    "summary": "Fears of a network takeover have sent the price of Monero crashing down. And the XMR charts don't look pretty.",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: Decrypt.co",
-    "url": "https://decrypt.co/334814/monero-xmr-price-51-attack-whats-next",
-    "category": "Markets",
-    "tags": [
-      "Blockchain",
-      "Financial Markets",
-      "$XMR",
-      "$XMR"
-    ]
-  },
-  {
-    "id": "alphav:5fecf9de0fcbdf0a",
-    "title": "EMGS reports second quarter 2025 results",
-    "summary": "Electromagnetic Geoservices ASA's ( \"EMGS\" or the \"Company\" ) financial report and market presentation for the second quarter of 2025 are attached.",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/12/3132052/0/en/EMGS-reports-second-quarter-2025-results.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "$EMGS",
-      "$EMGS"
     ]
   },
   {
@@ -4383,20 +4659,6 @@
     ]
   },
   {
-    "id": "alphav:1e706b3ddfa73a66",
-    "title": "Ex-Binance dealmaker joins Hilbert Group to launch tokenized funds platform",
-    "summary": "Former Binance executive Ryan Horn joins Hilbert Group to advise on Syntetika, an onchain platform for tokenized funds, as global finance races to bring traditional assets to blockchain.",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: Cointelegraph",
-    "url": "https://cointelegraph.com/news/ex-binance-dealmaker-hilbert-group-tokenized-funds-platform",
-    "category": "Markets",
-    "tags": [
-      "Finance",
-      "Blockchain",
-      "Financial Markets"
-    ]
-  },
-  {
     "id": "alphav:c06e60cdeb8b80f0",
     "title": "This Assurant Analyst Begins Coverage On A Bullish Note; Here Are Top 3 Initiations For Tuesday - Assurant  ( NYSE:AIZ ) , GSR III Acquisition  ( NASDAQ:GSRT ) ",
     "summary": "Top Wall Street analysts changed their outlook on these top names. For a complete view of all analyst rating changes, including upgrades, downgrades and initiations, please see our analyst ratings page. BMO Capital analyst Charlie Lederer initiated coverage on Assurant, Inc.",
@@ -4448,20 +4710,6 @@
     ]
   },
   {
-    "id": "alphav:32fe29d7db02acbf",
-    "title": "Terrestrial Energy Selected for DOE Office of Nuclear Energy Advanced Reactor Pilot Program for Accelerated Development",
-    "summary": "Advanced Reactor Pilot Program launched by DOE to expedite authorization and commercialization of advanced nuclear reactor designs ...",
-    "date": "2025-08-12",
-    "source": "Alpha Vantage: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/12/3132063/0/en/Terrestrial-Energy-Selected-for-DOE-Office-of-Nuclear-Energy-Advanced-Reactor-Pilot-Program-for-Accelerated-Development.html",
-    "category": "Markets",
-    "tags": [
-      "Financial Markets",
-      "$DOE",
-      "$DOE"
-    ]
-  },
-  {
     "id": "alphav:ca19a074d4fc64f2",
     "title": "Window Replacement Expert Matt Edwards Explains How Home Window Upgrades Boost Curb Appeal and Appraised Value in HelloNation Magazine",
     "summary": "SAN DIEGO, Aug. 12, 2025 ( GLOBE NEWSWIRE ) -- What role can home window upgrades play in increasing a property's value? According to Matt Edwards of Genesis Home Improvements, thoughtful window replacement can do much more than improve how a home looks from the street.",
@@ -4471,165 +4719,6 @@
     "category": "Markets",
     "tags": [
       "Financial Markets"
-    ]
-  },
-  {
-    "id": "newsapi:0d59c8fa765cfa6d",
-    "title": "South Park: Kristi Noem Goes on Dog-Killing Frenzy in P+ End Credits",
-    "summary": "By now, we all know that Trey Parker and Matt Stone's South Park S27E02: \"Got a Nut\" went after U.S. Dept. of Homeland Security \"Cosplay Queen\" Kristi Noem and Vice-President JD Vance hard and didn't pull any punches along the way. Of course, that left the Tr…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Bleeding Cool News",
-    "url": "https://bleedingcool.com/tv/south-park-kristi-noem-goes-on-dog-killing-frenzy-in-p-end-credits/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:da4f4dfed5ed2a1b",
-    "title": "2007 BMW M6 Convertible 6-Speed",
-    "summary": "This 2007 BMW M6 convertible is powered by a 5.0-liter V10 paired with a six-speed manual transmission and is finished in Interlagos Blue Metallic over Black Merino leather. Equipment includes a black convertible soft top, 19\" Style 167M alloy wheels, Dynamic…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Bringatrailer.com",
-    "url": "https://bringatrailer.com/listing/2007-bmw-m6-convertible-52/",
-    "category": "Markets",
-    "tags": [
-      "$BMW",
-      "$BMW"
-    ]
-  },
-  {
-    "id": "newsapi:0f9e5ae1a7858ce4",
-    "title": "Ford says it will roll out a cheaper electric pickup truck",
-    "summary": "Ford announced that it will retool its Louisville Assembly plant in Kentucky to focus on electric trucks. Their goal: To bring down prices for US buyers and compete with Chinese EV makers on the global market.",
-    "date": "2025-08-11",
-    "source": "NewsAPI: NPR",
-    "url": "https://www.npr.org/2025/08/11/nx-s1-5496651/ford-cheap-electric-truck",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:5c4fdc7ac1812d64",
-    "title": "TPI Composites, Inc. Initiates Voluntary Chapter 11 Proceedings to Facilitate Restructuring to Position Company for Long-Term Success",
-    "summary": "Reaches Agreement with Senior Secured Lenders for Use of Cash Collateral and Up to $82.5 Million in Debtor-in-Possession Financing, Subject to Final Documentation and Court Approval",
-    "date": "2025-08-11",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/11/3131326/0/en/TPI-Composites-Inc-Initiates-Voluntary-Chapter-11-Proceedings-to-Facilitate-Restructuring-to-Position-Company-for-Long-Term-Success.html",
-    "category": "Markets",
-    "tags": [
-      "$TPI",
-      "$TPI"
-    ]
-  },
-  {
-    "id": "newsapi:c421e6a3ab595a7e",
-    "title": "Cardi B’s joke about plus-size fans sparks major drama",
-    "summary": "When Cardi B’s latest fashion collection sold out in record time, it should have been a straightforward success story. Instead, her response to the rapid sellout has ignited a firestorm across social media, highlighting deeper issues about respect, inclusion …",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Rolling Out",
-    "url": "https://rollingout.com/2025/08/11/cardi-bs-joke-about-plus-size-fans-spark/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:1ef3ef2c0ec600df",
-    "title": "Tesla stock price surges as popular analyst revamps target",
-    "summary": "Elon Musk has a big challenge on his hands. Fresh off his controversial stint as head of the Department of Government Efficiency, he's knee-deep in rolling out autonomous cars for ridesharing in key markets like Austin and San Francisco.\nThe ridesharing push …",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/d8922f322ce62da1",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:e4696abc2c5ac096",
-    "title": "Birkin bag maker raises red flag about a disruptive customer trend",
-    "summary": ", famous for its exclusive and expensive Birkin and Kelly handbags, is facing a growing threat. \nOver the past few years, the secondhand luxury market has been booming, as more consumers look to purchase luxury goods at lower prices while battling higher cost…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/563a8f5e0dcfe627",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:819aaabaecf6699b",
-    "title": "Venezuelan Comic Nacho Redondo Sets New Spanish-Language U.S. Dates",
-    "summary": "EXCLUSIVE: 38-year-old Venezuelan comic Nacho Redondo has set U.S. tour dates, serving as a continuation of Traumas, a tour he was on across Mexico, Europe and Latin America from April to July of this year. This new leg, dubbed Nacho Redondo En Vivo – Trae tu…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Deadline",
-    "url": "http://deadline.com/2025/08/nacho-redondo-us-tour-dates-2025-2026-1236481939/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:0f74cb620d742486",
-    "title": "Stocks Decline Ahead of US Inflation News",
-    "summary": "{ window.open(this.href, '_blank'); }, 200); return false;\"&gt;Why did Nvidia and AMD agree to pay US on China sales? { window.open(this.href, '_blank'); }, 200); return false;\"&gt;How will Ford's $5… [+795 chars]",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/5a4663aece7083bb",
-    "category": "Inflation",
-    "tags": [
-      "Inflation",
-      "Equities",
-      "$US",
-      "$US"
-    ]
-  },
-  {
-    "id": "newsapi:39be42913e52ec3f",
-    "title": "Tomorrow's consumer-price index could show that tariff inflation is finally here",
-    "summary": "{ window.open(this.href, '_blank'); }, 200); return false;\"&gt;Why did Nvidia and AMD agree to pay US on China sales? { window.open(this.href, '_blank'); }, 200); return false;\"&gt;How will Ford's $5… [+800 chars]",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/76977fd3334b28ca",
-    "category": "Inflation",
-    "tags": [
-      "Inflation"
-    ]
-  },
-  {
-    "id": "newsapi:b9f90a552c019264",
-    "title": "2008 Toyota Land Cruiser URJ200 at No Reserve",
-    "summary": "This 2008 Toyota Land Cruiser was sold new by Mike Johnson's Hickory Toyota in North Carolina, and it remained registered to the original owner until 2025 when it was acquired by the selling dealer who relocated it to New Jersey. The truck is finished in Sals…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Bringatrailer.com",
-    "url": "https://bringatrailer.com/listing/2008-toyota-land-cruiser-22/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:932ae2abf06b1c4a",
-    "title": "SPX Announces Proposed Public Offering of Common Stock",
-    "summary": "CHARLOTTE, N.C., Aug. 11, 2025 (GLOBE NEWSWIRE) -- SPX Technologies, Inc. (NYSE:SPXC) (“SPX”) announced today that it intends to offer and sell $500 million of shares of its common stock in an underwritten public offering. In addition, SPX intends to grant th…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/11/3131324/0/en/SPX-Announces-Proposed-Public-Offering-of-Common-Stock.html",
-    "category": "Markets",
-    "tags": [
-      "Equities",
-      "$SPX",
-      "$SPX"
-    ]
-  },
-  {
-    "id": "newsapi:5126cf6213152aa6",
-    "title": "Markets are still in the middle of the cycle, says Invesco's Brian Levitt",
-    "summary": "Invesco's Brian Levitt and Wealth Enhancement's Ayako Yoshioka join 'Closing Bell' to discuss the current market, if any market ...",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Biztoc.com",
-    "url": "https://biztoc.com/x/6052477af030f155",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:223116081e25c84b",
-    "title": "New all-time highs or $110,000 retest trigger: Bitcoin awaits CPI data release",
-    "summary": "Bitcoin (BTC) trades in a critical range ahead of the Consumer Price Index (CPI) release on Aug. 12. A recent “Bitfinex Alpha” report positioned BTC for either a breakout to new all-time highs or a retracement toward $110,000 support levels. The Aug. 12 infla…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: CryptoSlate",
-    "url": "https://cryptoslate.com/new-all-time-highs-or-110000-retest-trigger-bitcoin-awaits-cpi-data-release/",
-    "category": "Inflation",
-    "tags": [
-      "Inflation"
     ]
   },
   {
@@ -4644,55 +4733,6 @@
       "Equities",
       "$TLRY",
       "$TLRY"
-    ]
-  },
-  {
-    "id": "newsapi:46a46f0cbd760ceb",
-    "title": "45k-Mile 2014 Porsche Boxster S",
-    "summary": "This 2014 Porsche Boxster S is finished in Dark Blue Metallic over Luxor Beige leather and is powered by a 3.4-liter flat-six paired with a seven-speed PDK transaxle. Equipment includes the Premium Plus, Infotainment, and Sport Chrono packages as well as 20\" …",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Bringatrailer.com",
-    "url": "https://bringatrailer.com/listing/2014-porsche-boxster-s-27/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:a4dda98b6f58a1a3",
-    "title": "EPA: A bonfire of climate change regulations",
-    "summary": "The Environmental Protection Agency wants to roll back its 'endangerment finding,' a ruling that lets the agency regulate carbon emissions",
-    "date": "2025-08-11",
-    "source": "NewsAPI: The Week Magazine",
-    "url": "https://theweek.com/politics/epa-climate-change-regulations",
-    "category": "Markets",
-    "tags": [
-      "$EPA",
-      "$EPA"
-    ]
-  },
-  {
-    "id": "newsapi:33b061103217cd2a",
-    "title": "ATM businessman Daryl Heller hit with federal Securities and Exchange Commission claim",
-    "summary": "Another federal agency has staked a claim against embattled Lancaster County businessman Daryl Heller.",
-    "date": "2025-08-11",
-    "source": "NewsAPI: LancasterOnline",
-    "url": "https://lancasteronline.com/news/local/atm-businessman-daryl-heller-hit-with-federal-securities-and-exchange-commission-claim/article_150ac513-b099-4796-b3f0-be09f205934b.html",
-    "category": "Markets",
-    "tags": [
-      "$ATM",
-      "$ATM"
-    ]
-  },
-  {
-    "id": "newsapi:3c951cdbbf6d97e9",
-    "title": "ABC News Anchor Linsey Davis Reveals Secret Health Battle After Suffering 'In Silence'",
-    "summary": "ABC News Anchor Linsey Davis Reveals Secret Health Battle After Suffering 'In Silence'thedailybeast.com",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Daily Beast",
-    "url": "https://www.thedailybeast.com/abc-news-anchor-linsey-davis-reveals-secret-health-battle-after-suffering-in-silence/",
-    "category": "Markets",
-    "tags": [
-      "$ABC",
-      "$ABC"
     ]
   },
   {
@@ -4731,72 +4771,6 @@
     ]
   },
   {
-    "id": "newsapi:d7953939eb268529",
-    "title": "Where are Houthis? China's automakers taking shortcut to European markets",
-    "summary": "China News: Chinese automakers are shipping cars to Europe through the Red Sea and Suez Canal, nearly two years after the Iran-backed Houthi militia in Yemen star.",
-    "date": "2025-08-11",
-    "source": "NewsAPI: The Times of India",
-    "url": "https://timesofindia.indiatimes.com/world/china/where-are-houthis-chinas-automakers-taking-shortcut-to-european-markets/articleshow/123244828.cms",
-    "category": "Inflation",
-    "tags": []
-  },
-  {
-    "id": "newsapi:34472721964bf865",
-    "title": "Don’t Cook Steak Without This 1 Tool, Says Chef",
-    "summary": "Follow these tips from a seasoned chef for cooking a perfect steak, including using an instant-read thermometer and high-fat cooking oil or fat.",
-    "date": "2025-08-11",
-    "source": "NewsAPI: TODAY",
-    "url": "https://www.today.com/food/cook-smarter/tool-for-cooking-perfect-steak-rcna224285",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:10f57aa8359ba991",
-    "title": "24-Years-Owned 1969 Pontiac Tempest Custom Convertible",
-    "summary": "This Liberty Blue 1969 Pontiac Tempest Custom convertible was first owned in California, and it remained with its original family until 2001. The seller acquired the car later that year, and over the past 24 years, it has been refurbished and upgraded. The 35…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Bringatrailer.com",
-    "url": "https://bringatrailer.com/listing/1969-pontiac-tempest-custom-convertible/",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:077d73cb41582614",
-    "title": "Lamine Yamal close to Miami as La Liga, RFEF approve Villarreal-Barcelona despite captains’ opposition",
-    "summary": "Despite opposition from team representatives, Lamine Yamal moves closer to playing in Miami as La Liga and the RFEF approve Villarreal-Barcelona match in the USA.\n Lamine Yamal could soon make his first appearance in North America, as part of European soccer’…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Worldsoccertalk.com",
-    "url": "https://worldsoccertalk.com/news/lamine-yamal-close-to-miami-as-la-liga-rfef-approve-villarreal-barcelona-despite-captains-opposition/",
-    "category": "Markets",
-    "tags": [
-      "$RFEF",
-      "$RFEF"
-    ]
-  },
-  {
-    "id": "newsapi:4ff39e9857be1306",
-    "title": "Mediterranean Diet Tuscan Tuna & White Bean Salad Recipe Is High In Protein & Fiber (15 Minutes)",
-    "summary": "An array of simple summer salads are so great to have in your recipe rotation when things are busy or it is just too hot to cook. This summer Tuscan tuna salad recipe is prepped and ready to go in just 15 minutes. And if you don’t have to feed too many, you m…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: 30seconds.com",
-    "url": "https://30seconds.com/tip/89730",
-    "category": "Markets",
-    "tags": []
-  },
-  {
-    "id": "newsapi:b3eb39d0727b6708",
-    "title": "Sable Offshore Corp. (SOC) Hit With Lawsuit Over Alleged Misleading Statements on California Oil Restart – Hagens Berman",
-    "summary": "SAN FRANCISCO, Aug. 11, 2025 (GLOBE NEWSWIRE) -- Sable Offshore Corp. (NYSE: SOC) is now at the center of a securities class-action lawsuit, alleging that the company misled investors to inflate its stock price just before a major secondary offering. The dram…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: GlobeNewswire",
-    "url": "https://www.globenewswire.com/news-release/2025/08/11/3131323/32716/en/Sable-Offshore-Corp-SOC-Hit-With-Lawsuit-Over-Alleged-Misleading-Statements-on-California-Oil-Restart-Hagens-Berman.html",
-    "category": "Markets",
-    "tags": [
-      "$SOC",
-      "$SOC"
-    ]
-  },
-  {
     "id": "newsapi:c0f7a6707f5421ca",
     "title": "Home equity levels just hit a new high. Here's how to borrow yours now.",
     "summary": "Home equity levels hit a new high in the second quarter of 2025, a new report shows. Here's how to borrow yours now.",
@@ -4806,19 +4780,6 @@
     "category": "Markets",
     "tags": [
       "Equities"
-    ]
-  },
-  {
-    "id": "newsapi:ba2fac72b0c34ab5",
-    "title": "35k-Mile 2004 Chevrolet Silverado 2500HD LT Extended Cab 8.1 4×4",
-    "summary": "This 2004 Chevrolet Silverado 2500HD LT 4x4 pickup has remained registered in Oregon from new and was purchased by the seller and his wife in 2024. The truck now has 35k miles and has been modified with a Race Car Dynamics six-inch lift kit, black 17\" Fuel wh…",
-    "date": "2025-08-11",
-    "source": "NewsAPI: Bringatrailer.com",
-    "url": "https://bringatrailer.com/listing/2004-chevrolet-silverado-2500hd-14/",
-    "category": "Markets",
-    "tags": [
-      "$LT",
-      "$LT"
     ]
   }
 ]

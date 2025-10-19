@@ -4,18 +4,220 @@ from __future__ import annotations
 import json
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Any
+import re
 
 from services.providers import (
     fetch_marketaux,
     fetch_finnhub_general,
     fetch_alpha_vantage,
+    fetch_newsapi,
 )
 from services.news_repo import NewsRepo
 from services.tagger import auto_tags
 
 
 DATE_FMT = "%Y-%m-%d"
+
+SOURCE_ALLOWLIST = {
+    "reuters",
+    "bloomberg",
+    "wall street journal",
+    "wsj",
+    "financial times",
+    "ft.com",
+    "cnbc",
+    "marketwatch",
+    "yahoo finance",
+    "yahoo news",
+    "yahoo",
+    "barron",
+    "investing.com",
+    "investopedia",
+    "financial post",
+    "politico",
+    "associated press",
+    "ap news",
+    "apnews",
+    "the hill",
+    "washington post",
+    "new york times",
+    "nytimes",
+    "fortune",
+    "forbes",
+    "business insider",
+    "benzinga",
+    "motley fool",
+    "cnbc international",
+    "nikkei",
+    "ft advisor",
+    "economist",
+    "cbs news",
+    "abc news",
+    "bbc",
+    "guardian",
+    "axios",
+}
+
+FINANCE_KEYWORDS = {
+    "market",
+    "markets",
+    "stock",
+    "stocks",
+    "share",
+    "shares",
+    "equity",
+    "equities",
+    "earnings",
+    "profit",
+    "loss",
+    "outlook",
+    "forecast",
+    "revenue",
+    "ipo",
+    "merger",
+    "acquisition",
+    "deal",
+    "treasury",
+    "bond",
+    "bonds",
+    "yield",
+    "yields",
+    "spread",
+    "credit",
+    "bank",
+    "banks",
+    "loan",
+    "inflation",
+    "cpi",
+    "ppi",
+    "gdp",
+    "jobs",
+    "employment",
+    "labour",
+    "labor",
+    "unemployment",
+    "federal reserve",
+    "fed",
+    "interest rate",
+    "interest rates",
+    "rate hike",
+    "rate cut",
+    "monetary policy",
+    "currency",
+    "currencies",
+    "forex",
+    "fx",
+    "dollar",
+    "yen",
+    "yuan",
+    "euro",
+    "oil",
+    "energy",
+    "gas",
+    "commodity",
+    "commodities",
+    "metals",
+    "gold",
+    "silver",
+    "energy",
+    "petroleum",
+}
+
+POLICY_KEYWORDS = {
+    "policy",
+    "fiscal",
+    "budget",
+    "deficit",
+    "tariff",
+    "tariffs",
+    "sanction",
+    "sanctions",
+    "trade",
+    "trade policy",
+    "trade deal",
+    "geopolitic",
+    "geopolitical",
+    "diplomacy",
+    "diplomatic",
+    "parliament",
+    "congress",
+    "senate",
+    "house of representatives",
+    "white house",
+    "regulation",
+    "regulatory",
+    "legislation",
+    "bill",
+    "election",
+    "elections",
+    "campaign",
+    "coalition",
+    "summit",
+    "nato",
+    "war",
+    "conflict",
+    "ukraine",
+    "russia",
+    "china",
+    "taiwan",
+    "middle east",
+    "israel",
+    "sanctioned",
+}
+
+FINANCE_TAG_HINTS = {
+    "spy",
+    "qqq",
+    "iwm",
+    "sp500",
+    "s&p 500",
+    "nasdaq",
+    "dow",
+    "treasury",
+    "bonds",
+    "yields",
+    "inflation",
+    "fed",
+    "ecb",
+    "boe",
+    "boj",
+    "rates",
+    "energy",
+    "oil",
+    "gas",
+    "commodities",
+    "macro",
+    "finance",
+    "markets",
+}
+
+POLICY_TAG_HINTS = {
+    "policy",
+    "sanctions",
+    "tariffs",
+    "geopolitics",
+    "geopolitical",
+    "white house",
+    "congress",
+    "senate",
+    "regulation",
+    "legislation",
+    "election",
+    "war",
+    "nato",
+}
+
+CATEGORY_SIGNALS = {
+    "markets": "finance",
+    "inflation": "finance",
+    "oil": "finance",
+    "commodities": "finance",
+    "rates": "finance",
+    "macro": "finance",
+    "policy": "policy",
+    "geopolitics": "policy",
+}
 
 
 def _is_ticker_token(t: str) -> bool:
@@ -66,10 +268,81 @@ def _json_safe(row: dict) -> dict:
     return r
 
 
+def _normalize_source_name(source: str) -> str:
+    lowered = source.lower()
+    lowered = (
+        lowered.replace("newsapi:", "")
+        .replace("alphavantage:", "")
+        .replace("alpha vantage:", "")
+        .replace("finnhub:", "")
+        .replace("marketaux:", "")
+    )
+    return re.sub(r"[^a-z0-9]+", " ", lowered).strip()
+
+
+def _allowed_source(source: str | None) -> bool:
+    if not source:
+        return False
+    norm = _normalize_source_name(source)
+    return any(token in norm for token in SOURCE_ALLOWLIST)
+
+
+def _normalize_tags(tags: List[str] | None) -> List[str]:
+    out: List[str] = []
+    if not tags:
+        return out
+    for tag in tags:
+        if not isinstance(tag, str):
+            continue
+        cleaned = tag.lower().lstrip("#$")
+        if cleaned:
+            out.append(cleaned)
+    return out
+
+
+def _match_keywords(text: str, keywords: set[str]) -> bool:
+    return any(keyword in text for keyword in keywords)
+
+
+def _classify_article(article: Dict[str, Any]) -> str:
+    title = article.get("title") or ""
+    summary = article.get("summary") or ""
+    text = f"{title} {summary}".lower()
+    tags = _normalize_tags(article.get("tags"))
+    category = (article.get("category") or "").lower()
+
+    finance_hit = _match_keywords(text, FINANCE_KEYWORDS) or any(tag in FINANCE_TAG_HINTS for tag in tags)
+    policy_hit = _match_keywords(text, POLICY_KEYWORDS) or any(tag in POLICY_TAG_HINTS for tag in tags)
+
+    signal = CATEGORY_SIGNALS.get(category)
+    if signal == "finance":
+        finance_hit = True
+    elif signal == "policy":
+        policy_hit = True
+
+    if finance_hit and policy_hit:
+        return "mixed"
+    if finance_hit:
+        return "finance"
+    if policy_hit:
+        return "policy"
+    return "other"
+
+
+def _is_relevant_article(article: Dict[str, Any]) -> bool:
+    if (article.get("category") or "").lower() == "system":
+        return False
+    if not _allowed_source(article.get("source")):
+        return False
+    classification = _classify_article(article)
+    return classification in {"finance", "policy", "mixed"}
+
+
 def ingest_all(
     data_path: str | Path,
     limit_per_source: int = 30,
     include_alpha_vantage: bool = True,
+    include_newsapi: bool = True,
 ) -> int:
     """
     Fetch from providers, normalize, auto-tag, de-duplicate, and write to data/news.json.
@@ -80,46 +353,50 @@ def ingest_all(
       - Never writes invalid/empty JSON that would crash the site.
       - Fixes prior scoping bugs where tag post-processing ran outside loops.
     """
-    batches: List[List[Dict]] = []
+    provider_batches: List[tuple[str, List[Dict]]] = []
 
     # --- Providers (each guarded) -------------------------------------------
     try:
         # Marketaux free tier: small limits; keep group_similar to reduce dupes.
         items = fetch_marketaux(limit=min(limit_per_source, 3), language="en", group_similar=True)
-        batches.append(items or [])
+        provider_batches.append(("Marketaux", items or []))
     except Exception as e:
         print("[ingest] Marketaux error:", e)
-        batches.append([])
+        provider_batches.append(("Marketaux", []))
 
     try:
         items = fetch_finnhub_general()[:limit_per_source]
-        batches.append(items or [])
+        provider_batches.append(("Finnhub", items or []))
     except Exception as e:
         print("[ingest] Finnhub error:", e)
-        batches.append([])
+        provider_batches.append(("Finnhub", []))
 
     if include_alpha_vantage:
         try:
             items = fetch_alpha_vantage()[:limit_per_source]
-            batches.append(items or [])
+            provider_batches.append(("AlphaV", items or []))
         except Exception as e:
             print("[ingest] Alpha Vantage news error:", e)
-            batches.append([])
+            provider_batches.append(("AlphaV", []))
+
+    if include_newsapi:
+        try:
+            items = fetch_newsapi(page_size=min(limit_per_source, 60))
+            provider_batches.append(("NewsAPI", items or []))
+        except Exception as e:
+            print("[ingest] NewsAPI error:", e)
+            provider_batches.append(("NewsAPI", []))
 
     # Debug counts
     try:
-        counts = {
-            "Marketaux": len(batches[0]) if len(batches) > 0 else 0,
-            "Finnhub": len(batches[1]) if len(batches) > 1 else 0,
-            "AlphaV": len(batches[2]) if len(batches) > 2 else 0,
-        }
+        counts = {name: len(batch) for name, batch in provider_batches}
         print("[ingest] provider_counts:", counts)
     except Exception:
         pass
 
     # --- Merge by ID (provider prefix + URL hash), drop empties --------------
     merged: Dict[str, Dict] = {}
-    for batch in batches:
+    for _, batch in provider_batches:
         for item in batch:
             if not item:
                 continue
@@ -176,8 +453,23 @@ def ingest_all(
         e["tags"] = auto_tags(e.get("title", ""), e.get("summary", ""), base=ex, limit=6)
         e["tags"] = [f"${t.lstrip('$')}" if _is_ticker_token(t) else t for t in e["tags"]]
 
-    final_rows = list(existing_map.values())
+    final_rows = [row for row in existing_map.values() if _is_relevant_article(row)]
     final_rows.sort(key=lambda x: x.get("date", ""), reverse=True)
+
+    if not final_rows:
+        placeholder = [{
+            "id": "system:no-relevant-news",
+            "title": "No qualifying financial or policy headlines",
+            "summary": "Provider responses were filtered out by the finance/policy focus rules. Check source allowlist or keyword filters.",
+            "source": "FinPulse",
+            "date": datetime.utcnow().strftime(DATE_FMT),
+            "category": "System",
+            "tags": ["maintenance"],
+            "url": "#",
+        }]
+        Path(data_path).write_text(json.dumps(placeholder, ensure_ascii=False, indent=2), encoding="utf-8")
+        print("[ingest] wrote placeholder (no relevant articles after filtering)")
+        return len(placeholder)
 
     # --- Sanitize & write -----------------------------------------------------
     final_rows = [_json_safe(r) for r in final_rows]
