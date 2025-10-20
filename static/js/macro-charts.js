@@ -188,37 +188,63 @@
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    const canvases = Array.from(document.querySelectorAll('.macro-chart[data-history]'));
-    if (!canvases.length) return;
+    const registered = new Set();
+
+    const unregisterCanvas = (canvas) => {
+      if (!registered.has(canvas)) return;
+      if (canvas.__macroObserver) {
+        canvas.__macroObserver.disconnect();
+        delete canvas.__macroObserver;
+      }
+      registered.delete(canvas);
+    };
+
+    const registerCanvas = (canvas) => {
+      if (!canvas || registered.has(canvas)) return;
+      registered.add(canvas);
+
+      if ('ResizeObserver' in window) {
+        const observer = new ResizeObserver(() => {
+          if (!canvas.offsetParent) return;
+          renderChart(canvas);
+        });
+        observer.observe(canvas.parentElement || canvas);
+        Object.defineProperty(canvas, '__macroObserver', {
+          value: observer,
+          configurable: true,
+          enumerable: false,
+          writable: true,
+        });
+      }
+    };
+
+    const collectCanvases = (root = document) => {
+      const nodes = root.querySelectorAll('.macro-chart[data-history]');
+      nodes.forEach((canvas) => registerCanvas(canvas));
+      return nodes;
+    };
 
     const renderVisible = () => {
-      canvases.forEach((canvas) => {
+      registered.forEach((canvas) => {
+        if (!canvas.isConnected) {
+          unregisterCanvas(canvas);
+          return;
+        }
         if (!canvas.offsetParent) return;
         renderChart(canvas);
       });
     };
 
-    renderVisible();
+    collectCanvases();
+    if (registered.size) {
+      renderVisible();
+    }
 
     let resizeFrame = null;
     window.addEventListener('resize', () => {
       if (resizeFrame) cancelAnimationFrame(resizeFrame);
       resizeFrame = requestAnimationFrame(renderVisible);
     });
-
-    if ('ResizeObserver' in window) {
-      const observers = new Map();
-      canvases.forEach((canvas) => {
-        const container = canvas.parentElement;
-        if (!container || observers.has(container)) return;
-        const observer = new ResizeObserver(() => {
-          if (!canvas.offsetParent) return;
-          renderChart(canvas);
-        });
-        observer.observe(container);
-        observers.set(container, observer);
-      });
-    }
 
     const tabTriggers = Array.from(document.querySelectorAll('[data-bs-toggle="tab"][data-category]'));
     tabTriggers.forEach((trigger) => {
@@ -227,10 +253,22 @@
         if (!targetSelector) return;
         const pane = document.querySelector(targetSelector);
         if (!pane) return;
-        const paneCanvases = pane.querySelectorAll('.macro-chart[data-history]');
+        const paneCanvases = collectCanvases(pane);
         if (!paneCanvases.length) return;
         requestAnimationFrame(() => {
           paneCanvases.forEach((canvas) => renderChart(canvas));
+        });
+      });
+    });
+
+    document.addEventListener('macro:charts:refresh', (event) => {
+      const root = event.detail?.root || document;
+      const canvases = collectCanvases(root);
+      if (!canvases.length) return;
+      requestAnimationFrame(() => {
+        canvases.forEach((canvas) => {
+          if (!canvas.offsetParent) return;
+          renderChart(canvas);
         });
       });
     });
