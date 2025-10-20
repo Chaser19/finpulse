@@ -2389,34 +2389,56 @@ p, .text-muted, .text-white-50 {
   max-width: 48rem;
 }
 
-.macro-metric-grid {
+.macro-insight-stream {
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+  align-items: start;
+}
+
+.macro-stream-cards {
+  display: grid;
+  gap: 1rem;
 }
 
 .macro-metric-card {
   background-color: var(--fp-card-bg);
   border: 1px solid var(--fp-card-border);
   border-radius: 1.1rem;
-  padding: 1.5rem;
+  padding: 1.1rem 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  box-shadow: none;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.macro-metric-card:hover,
+.macro-metric-card:focus-visible {
+  border-color: var(--fp-card-border-active);
+  box-shadow: var(--fp-shadow-soft);
+}
+
+.macro-metric-card:focus-visible {
+  outline: none;
+}
+
+.macro-metric-card.is-active {
+  border-color: var(--fp-card-border-active);
+  box-shadow: var(--fp-shadow-soft);
+  transform: translateY(-2px);
 }
 
 .macro-metric-card.macro-metric-highlight {
   border-color: var(--fp-card-border-active);
-  box-shadow: none;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 0 0 0.25rem rgba(29, 233, 195, 0.18);
 }
 
 .macro-metric-head {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  align-items: flex-start;
 }
 
 .macro-metric-name {
@@ -2425,39 +2447,191 @@ p, .text-muted, .text-white-50 {
   color: var(--fp-text-primary);
 }
 
-.macro-metric-summary {
-  margin: 0.4rem 0 0;
-  font-size: 0.95rem;
+.macro-metric-cue {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-right: 2px solid rgba(148, 163, 184, 0.6);
+  border-bottom: 2px solid rgba(148, 163, 184, 0.6);
+  transform: rotate(-45deg);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.macro-metric-card.is-active .macro-metric-cue {
+  border-color: var(--fp-accent);
+  transform: rotate(45deg);
+}
+
+.macro-metric-snippet {
+  margin: 0;
+  font-size: 0.9rem;
   color: var(--fp-text-secondary);
+  line-height: 1.45;
+  max-width: 48ch;
 }
 
-.macro-metric-delta {
-  font-size: 0.8rem;
+.macro-metric-statbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.macro-stat-chip {
+  flex: 1 1 140px;
+  background: rgba(15, 31, 39, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 0.85rem;
+  padding: 0.6rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.macro-stat-chip:hover,
+.macro-stat-chip:focus-within {
+  border-color: var(--fp-card-border-active);
+}
+
+.macro-stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fp-text-muted);
+}
+
+.macro-stat-value {
+  font-size: 0.98rem;
   font-weight: 600;
-  color: var(--fp-accent);
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  background: transparent;
-  border: 1px solid var(--fp-card-border-active);
-  letter-spacing: 0.04em;
+  color: var(--fp-text-primary);
 }
 
-.macro-metric-body {
+.macro-stat-spark {
+  padding-right: 0.6rem;
+}
+
+.macro-stat-sparkline {
+  width: 100%;
+  min-height: 68px;
+}
+
+.macro-chart-inline {
+  width: 100%;
+  max-width: 100%;
+}
+
+.macro-stream-rail {
+  position: relative;
+}
+
+.macro-stream-rail-inner {
+  position: sticky;
+  top: 6.5rem;
+  background: rgba(9, 20, 26, 0.86);
+  border: 1px solid var(--fp-card-border);
+  border-radius: 1.25rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  max-height: calc(100vh - 7rem);
+  overflow: auto;
+  box-shadow: var(--fp-shadow-soft);
+}
+
+.macro-stream-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.macro-stream-placeholder-copy {
+  margin: 0;
+  color: var(--fp-text-muted);
+  font-size: 0.9rem;
+}
+
+.macro-stream-detail {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.macro-metric-chart {
-  background-color: var(--fp-card-bg);
+.macro-stream-detail-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.macro-stream-detail-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--fp-text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.macro-stream-detail-summary {
+  margin: 0;
+  font-size: 0.92rem;
+  color: var(--fp-text-secondary);
+}
+
+.macro-stream-detail-delta {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--fp-accent);
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--fp-card-border-active);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(29, 233, 195, 0.08);
+}
+
+.macro-stream-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.macro-stream-detail-chart {
+  background: var(--fp-card-bg);
   border: 1px solid var(--fp-card-border);
   border-radius: 1rem;
-  padding: 1.25rem;
-  position: relative;
-  width: min(100%, 520px);
-  margin: 0 auto;
-  align-self: center;
-  overflow: hidden;
+  padding: 1.3rem;
+}
+
+.macro-stream-detail-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.macro-stream-section {
+  background: rgba(12, 32, 40, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 1rem;
+  padding: 1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.macro-stream-section-title {
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fp-accent);
+  margin: 0;
+}
+
+.macro-stream-section-copy {
+  margin: 0;
+  color: var(--fp-text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.6;
 }
 
 .macro-chart-empty {
@@ -2467,35 +2641,6 @@ p, .text-muted, .text-white-50 {
   text-align: center;
   color: var(--fp-text-muted);
   font-size: 0.9rem;
-}
-
-.macro-metric-context {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.macro-callout {
-  background-color: var(--fp-card-bg);
-  border: 1px solid var(--fp-card-border);
-  border-radius: 0.95rem;
-  padding: 1rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.macro-callout-label {
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--fp-accent);
-}
-
-.macro-callout-text {
-  margin: 0;
-  color: var(--fp-text-secondary);
-  font-size: 0.92rem;
 }
 
 .macro-insight-grid {
@@ -2522,6 +2667,36 @@ p, .text-muted, .text-white-50 {
   margin: 0.35rem 0 0;
   color: var(--fp-text-secondary);
   font-size: 0.86rem;
+}
+
+@media (max-width: 992px) {
+  .macro-insight-stream {
+    grid-template-columns: 1fr;
+  }
+
+  .macro-stream-rail-inner {
+    position: relative;
+    top: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .macro-metric-card {
+    padding: 1rem;
+  }
+
+  .macro-stream-detail-title {
+    font-size: 1.1rem;
+  }
+
+  .macro-stream-detail-chart {
+    padding: 1.1rem;
+  }
+
+  .macro-stat-chip {
+    flex-basis: 100%;
+  }
 }
 
 .macro-chart {

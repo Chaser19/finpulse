@@ -3,6 +3,69 @@
 {% block title %}Macro Trends · FinPulse{% endblock %}
 
 {% block content %}
+  {% macro render_metric_detail(metric, insight, card_id) -%}
+    <article class="macro-stream-detail" data-metric="{{ card_id }}">
+      <header class="macro-stream-detail-header">
+        <div>
+          <h3 class="macro-stream-detail-title">{{ metric.name }}</h3>
+          {% if metric.summary %}
+            <p class="macro-stream-detail-summary">{{ metric.summary }}</p>
+          {% endif %}
+        </div>
+        {% if metric.delta %}
+          <span class="macro-stream-detail-delta">{{ metric.delta }}</span>
+        {% endif %}
+      </header>
+      <div class="macro-stream-detail-body">
+        <section class="macro-stream-detail-chart">
+          {% if metric.history %}
+            <canvas class="macro-chart" data-history='{{ metric.history | tojson | safe }}' data-chart-height="260"></canvas>
+          {% else %}
+            <div class="macro-chart-empty">Awaiting time series</div>
+          {% endif %}
+        </section>
+        <section class="macro-stream-detail-sections">
+          {% if metric.detail %}
+            <div class="macro-stream-section">
+              <h4 class="macro-stream-section-title">Why it matters</h4>
+              <p class="macro-stream-section-copy">{{ metric.detail }}</p>
+            </div>
+          {% endif %}
+          {% if insight %}
+            <div class="macro-stream-section">
+              <h4 class="macro-stream-section-title">Analyst lens</h4>
+              {% if insight.overview %}
+                <p class="macro-stream-section-copy">{{ insight.overview }}</p>
+              {% endif %}
+              {% if insight.high or insight.low or insight.range %}
+                <div class="macro-insight-grid">
+                  {% if insight.high %}
+                    <div class="macro-insight-item">
+                      <span class="macro-insight-label">Higher readings</span>
+                      <p class="macro-insight-note">{{ insight.high }}</p>
+                    </div>
+                  {% endif %}
+                  {% if insight.low %}
+                    <div class="macro-insight-item">
+                      <span class="macro-insight-label">Lower readings</span>
+                      <p class="macro-insight-note">{{ insight.low }}</p>
+                    </div>
+                  {% endif %}
+                  {% if insight.range %}
+                    <div class="macro-insight-item">
+                      <span class="macro-insight-label">Typical range</span>
+                      <p class="macro-insight-note">{{ insight.range }}</p>
+                    </div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </section>
+      </div>
+    </article>
+  {%- endmacro %}
+
   <section class="macro-hero mb-5">
     <div class="macro-hero-head">
       <div>
@@ -17,7 +80,7 @@
         </div>
       {% endif %}
     </div>
-    <p class="macro-hero-copy">Tabs group the core macro pillars. Each panel surfaces the latest datapoint, delta annotations, and an analyst callout so teams can brief in minutes.</p>
+    <p class="macro-hero-copy">Tabs group the core macro pillars. Each stream keeps the quick-scan cards on the left while the right rail expands the full narrative for the active signal.</p>
   </section>
 
   {% if macro_categories %}
@@ -25,7 +88,8 @@
       <div class="macro-tabs-shell">
         <ul class="macro-tablist nav nav-pills" id="macroTab" role="tablist">
           {% for category in macro_categories %}
-            {% set primary = category.metrics | first %}
+            {% set metrics = category.metrics or [] %}
+            {% set primary = metrics | first %}
             <li class="nav-item" role="presentation">
               <button class="macro-tab-link {% if loop.first %}active{% endif %}" id="macro-tab-{{ category.id }}"
                       data-bs-toggle="tab" data-bs-target="#macro-pane-{{ category.id }}" type="button" role="tab"
@@ -42,7 +106,8 @@
 
         <div class="macro-tab-content tab-content">
           {% for category in macro_categories %}
-            {% set primary = category.metrics | first %}
+            {% set metrics = category.metrics or [] %}
+            {% set primary = metrics | first %}
             <div class="tab-pane fade {% if loop.first %}show active{% endif %}" id="macro-pane-{{ category.id }}" role="tabpanel" aria-labelledby="macro-tab-{{ category.id }}">
               <section class="macro-category" data-category="{{ category.id }}" id="{{ category.id }}">
                 <header class="macro-category-header">
@@ -55,69 +120,62 @@
                   <a class="btn btn-outline-light btn-sm" href="{{ url_for('web.index') }}#macro-trends">Back to overview</a>
                 </header>
 
-                <div class="macro-metric-grid">
-                  {% for metric in category.metrics %}
-                    {% set insight = metric.insights or {} %}
-                    <article class="macro-metric-card" id="{{ category.id }}-{{ metric.id }}" data-category="{{ category.id }}">
-                      <div class="macro-metric-head">
-                        <div>
+                <div class="macro-insight-stream" data-category="{{ category.id }}">
+                  <div class="macro-stream-cards" role="list">
+                    {% for metric in metrics %}
+                      {% set insight = metric.insights or {} %}
+                      {% set card_id = category.id ~ '-' ~ metric.id %}
+                      <article class="macro-metric-card {% if loop.first %}is-active{% endif %}" id="{{ card_id }}"
+                               data-category="{{ category.id }}" data-metric="{{ card_id }}" role="button" tabindex="0"
+                               aria-pressed="{{ 'true' if loop.first else 'false' }}" aria-label="{{ metric.name }}">
+                        <header class="macro-metric-head">
                           <span class="macro-metric-name">{{ metric.name }}</span>
-                          {% if metric.summary %}
-                            <p class="macro-metric-summary">{{ metric.summary }}</p>
-                          {% endif %}
-                        </div>
-                        {% if metric.delta %}
-                          <span class="macro-metric-delta">{{ metric.delta }}</span>
+                          <span class="macro-metric-cue" aria-hidden="true"></span>
+                        </header>
+                        {% if metric.detail %}
+                          <p class="macro-metric-snippet">{{ metric.detail }}</p>
+                        {% elif metric.summary %}
+                          <p class="macro-metric-snippet">Latest reading: {{ metric.summary }}</p>
                         {% endif %}
-                      </div>
-
-                      <div class="macro-metric-body">
-                        <div class="macro-metric-chart">
-                          {% if metric.history %}
-                            <canvas class="macro-chart" data-history='{{ metric.history | tojson | safe }}' data-chart-height="220"></canvas>
-                          {% else %}
-                            <div class="macro-chart-empty">Awaiting time series</div>
-                          {% endif %}
-                        </div>
-                        <div class="macro-metric-context">
-                          {% if metric.detail %}
-                            <div class="macro-callout">
-                              <span class="macro-callout-label">Why it matters</span>
-                              <p class="macro-callout-text">{{ metric.detail }}</p>
+                        <div class="macro-metric-statbar">
+                          {% if metric.summary %}
+                            <div class="macro-stat-chip">
+                              <span class="macro-stat-label">Latest</span>
+                              <span class="macro-stat-value">{{ metric.summary }}</span>
                             </div>
                           {% endif %}
-                          {% if insight %}
-                            <div class="macro-callout">
-                              <span class="macro-callout-label">Analyst lens</span>
-                              {% if insight.overview %}
-                                <p class="macro-callout-text">{{ insight.overview }}</p>
-                              {% endif %}
-                              <div class="macro-insight-grid">
-                                {% if insight.high %}
-                                  <div class="macro-insight-item">
-                                    <span class="macro-insight-label">Higher readings</span>
-                                    <p class="macro-insight-note">{{ insight.high }}</p>
-                                  </div>
-                                {% endif %}
-                                {% if insight.low %}
-                                  <div class="macro-insight-item">
-                                    <span class="macro-insight-label">Lower readings</span>
-                                    <p class="macro-insight-note">{{ insight.low }}</p>
-                                  </div>
-                                {% endif %}
-                                {% if insight.range %}
-                                  <div class="macro-insight-item">
-                                    <span class="macro-insight-label">Typical range</span>
-                                    <p class="macro-insight-note">{{ insight.range }}</p>
-                                  </div>
-                                {% endif %}
+                          {% if metric.delta %}
+                            <div class="macro-stat-chip">
+                              <span class="macro-stat-label">Delta vs prior</span>
+                              <span class="macro-stat-value">{{ metric.delta }}</span>
+                            </div>
+                          {% endif %}
+                          {% if metric.history %}
+                            <div class="macro-stat-chip macro-stat-spark">
+                              <span class="macro-stat-label">Trend</span>
+                              <div class="macro-stat-sparkline">
+                                <canvas class="macro-chart macro-chart-inline" data-history='{{ metric.history | tojson | safe }}' data-chart-height="88"></canvas>
                               </div>
                             </div>
                           {% endif %}
                         </div>
-                      </div>
-                    </article>
-                  {% endfor %}
+                        <template class="macro-stream-detail-template">
+                          {{ render_metric_detail(metric, insight, card_id) }}
+                        </template>
+                      </article>
+                    {% endfor %}
+                  </div>
+                  <aside class="macro-stream-rail" aria-live="polite" aria-label="Metric detail">
+                    <div class="macro-stream-rail-inner">
+                      {% if primary %}
+                        {{ render_metric_detail(primary, (primary.insights or {}), category.id ~ '-' ~ primary.id) }}
+                      {% else %}
+                        <div class="macro-stream-placeholder">
+                          <p class="macro-stream-placeholder-copy">Select a metric to surface its chart and commentary.</p>
+                        </div>
+                      {% endif %}
+                    </div>
+                  </aside>
                 </div>
               </section>
             </div>
