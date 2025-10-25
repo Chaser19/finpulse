@@ -193,15 +193,15 @@ def get_user_tweets(data_dir: Path, username: str, *, limit: int = 5, cache_minu
         # limit may be smaller than cached size
         return items[:limit]
 
-    scraped = _fetch_with_twitter_api(token, username, limit=limit)
-    if scraped:
+    fetched = _fetch_with_twitter_api(token, username, limit=limit)
+    if fetched:
         payload = {
             "username": username,
             "fetched_at": now,
-            "items": [asdict(it) for it in scraped],
+            "items": [asdict(it) for it in fetched],
         }
         _save_cache(cache_file, payload)
-        return payload["items"]
+        return payload["items"][:limit]
 
     if cache:
         return cache.get("items", [])[:limit]

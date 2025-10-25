@@ -35,20 +35,20 @@ def ingest_social_cmd():
     from services.social_ingest import ingest_social
 
     cfg = current_app.config
-    symbols_raw = cfg.get("SOCIAL_SCRAPE_SYMBOLS", "")
+    symbols_raw = cfg.get("SOCIAL_TWITTER_SYMBOLS", "")
     symbols = [s.strip() for s in symbols_raw.split(",") if s.strip()]
     if not symbols:
-        click.echo("No symbols configured. Set SOCIAL_SCRAPE_SYMBOLS in .env")
+        click.echo("No symbols configured. Set SOCIAL_TWITTER_SYMBOLS in .env")
         return
 
     payload = ingest_social(
         cfg["SOCIAL_DATA_PATH"],
         symbols,
-        max_posts=cfg.get("SOCIAL_SCRAPE_MAX_POSTS", 50),
-        lookback_hours=cfg.get("SOCIAL_SCRAPE_LOOKBACK_HOURS", 12),
+        max_posts=cfg.get("SOCIAL_TWITTER_MAX_POSTS", 50),
+        lookback_hours=cfg.get("SOCIAL_TWITTER_LOOKBACK_HOURS", 12),
         twitter_bearer_token=cfg.get("SOCIAL_TWITTER_BEARER_TOKEN"),
     )
-    click.echo(f"Scraped social data for {len(payload['symbols'])} symbols")
+    click.echo(f"Fetched social data for {len(payload['symbols'])} symbols via the Twitter API")
 
 
 @click.command("diag-social")
@@ -62,9 +62,9 @@ def diag_social_cmd(symbol: str):
     if token:
         click.echo("Twitter API bearer token detected; testing official endpoint")
         try:
-            from services.social_ingest import scrape_x_symbol
+            from services.social_ingest import fetch_x_symbol_posts
 
-            posts = scrape_x_symbol(
+            posts = fetch_x_symbol_posts(
                 symbol.strip().lstrip("$").upper(),
                 limit=5,
                 lookback_hours=12,
@@ -166,19 +166,29 @@ def create_app(test_config: dict | None = None) -> Flask:
     load_dotenv()  # loads .env from project root
 
     app = Flask(__name__, instance_relative_config=False)
+
+    twitter_symbols = os.getenv("SOCIAL_TWITTER_SYMBOLS") or os.getenv("SOCIAL_SCRAPE_SYMBOLS", "SPY,QQQ,IWM")
+    twitter_max_posts = int(os.getenv("SOCIAL_TWITTER_MAX_POSTS") or os.getenv("SOCIAL_SCRAPE_MAX_POSTS", "40"))
+    twitter_lookback = int(os.getenv("SOCIAL_TWITTER_LOOKBACK_HOURS") or os.getenv("SOCIAL_SCRAPE_LOOKBACK_HOURS", "12"))
+    twitter_primary_user = os.getenv("SOCIAL_TWITTER_PRIMARY_USER") or os.getenv("SOCIAL_TWITTER_SCRAPE_USER", "")
+    twitter_timeline_cache = int(
+        os.getenv("SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES")
+        or os.getenv("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", "10")
+    )
+
     app.config.from_mapping({
         "DATA_PATH": str(BASE_DIR / "data" / "news.json"),
         "SOCIAL_DATA_PATH": str(BASE_DIR / "data" / "social.json"),
         # Comma-separated Twitter handles to embed (e.g. "WSJMarkets,CNBC,TheTerminal")
         "SOCIAL_TWITTER_ACCOUNTS": os.getenv("SOCIAL_TWITTER_ACCOUNTS", ""),
-        # Optional: user to scrape tweets from (without @). If empty, defaults to first SOCIAL_TWITTER_ACCOUNTS.
-        "SOCIAL_TWITTER_SCRAPE_USER": os.getenv("SOCIAL_TWITTER_SCRAPE_USER", ""),
-        # Cache duration for scraped tweets (minutes)
-        "SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES": int(os.getenv("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", "10")),
-        # Social ingest defaults
-        "SOCIAL_SCRAPE_SYMBOLS": os.getenv("SOCIAL_SCRAPE_SYMBOLS", "SPY,QQQ,IWM"),
-        "SOCIAL_SCRAPE_MAX_POSTS": int(os.getenv("SOCIAL_SCRAPE_MAX_POSTS", "40")),
-        "SOCIAL_SCRAPE_LOOKBACK_HOURS": int(os.getenv("SOCIAL_SCRAPE_LOOKBACK_HOURS", "12")),
+        # Preferred account to showcase in the UI / API when multiple handles exist (without @)
+        "SOCIAL_TWITTER_PRIMARY_USER": twitter_primary_user,
+        # Cache duration for API timeline fetches (minutes)
+        "SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES": twitter_timeline_cache,
+        # Social ingest defaults (Twitter API powered)
+        "SOCIAL_TWITTER_SYMBOLS": twitter_symbols,
+        "SOCIAL_TWITTER_MAX_POSTS": twitter_max_posts,
+        "SOCIAL_TWITTER_LOOKBACK_HOURS": twitter_lookback,
         "SOCIAL_TWITTER_BEARER_TOKEN": os.getenv("SOCIAL_TWITTER_BEARER_TOKEN", ""),
         "SOCIAL_FINNHUB_MAX_SYMBOLS": int(os.getenv("SOCIAL_FINNHUB_MAX_SYMBOLS", "25")),
         "SOCIAL_FINNHUB_RESOLUTION": os.getenv("SOCIAL_FINNHUB_RESOLUTION", "30"),
@@ -186,6 +196,13 @@ def create_app(test_config: dict | None = None) -> Flask:
         "FRED_API_KEY": os.getenv("FRED_API_KEY", ""),
         "EIA_API_KEY": os.getenv("EIA_API_KEY", ""),
     })
+
+    # Provide backward-compatible aliases for legacy config names until they are removed.
+    app.config.setdefault("SOCIAL_TWITTER_SCRAPE_USER", twitter_primary_user)
+    app.config.setdefault("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", twitter_timeline_cache)
+    app.config.setdefault("SOCIAL_SCRAPE_SYMBOLS", twitter_symbols)
+    app.config.setdefault("SOCIAL_SCRAPE_MAX_POSTS", twitter_max_posts)
+    app.config.setdefault("SOCIAL_SCRAPE_LOOKBACK_HOURS", twitter_lookback)
     if test_config:
         app.config.update(test_config)
 

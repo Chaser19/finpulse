@@ -252,7 +252,7 @@ def _query_posts_twitter_api(
     return posts[:limit]
 
 
-def scrape_x_symbol(
+def fetch_x_symbol_posts(
     symbol: str,
     *,
     limit: int = 50,
@@ -415,7 +415,7 @@ def ingest_social(
     for sym in normalized_symbols:
         if not sym:
             continue
-        posts = scrape_x_symbol(
+        posts = fetch_x_symbol_posts(
             sym,
             limit=max_posts,
             lookback_hours=lookback_hours,

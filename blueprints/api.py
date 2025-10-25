@@ -222,7 +222,7 @@ def api_social_tweets():
     """Return recent tweets for a user.
 
     Query params:
-      user: handle without @. If omitted, uses SOCIAL_TWITTER_SCRAPE_USER or first SOCIAL_TWITTER_ACCOUNTS.
+      user: handle without @. If omitted, uses SOCIAL_TWITTER_PRIMARY_USER or first SOCIAL_TWITTER_ACCOUNTS.
       limit: number of tweets (default 5, max 50).
     """
     token = (current_app.config.get("SOCIAL_TWITTER_BEARER_TOKEN") or "").strip()
@@ -239,7 +239,7 @@ def api_social_tweets():
 
     u = (request.args.get("user") or "").strip().lstrip("@")
     if not u:
-        cfg = (current_app.config.get("SOCIAL_TWITTER_SCRAPE_USER") or "").strip().lstrip("@")
+        cfg = (current_app.config.get("SOCIAL_TWITTER_PRIMARY_USER") or "").strip().lstrip("@")
         if cfg:
             u = cfg
         else:
@@ -250,7 +250,7 @@ def api_social_tweets():
                     u = t
                     break
     if not u:
-        return jsonify({"error": "no_user", "hint": "Provide ?user=handle or set SOCIAL_TWITTER_SCRAPE_USER"}), 400
+        return jsonify({"error": "no_user", "hint": "Provide ?user=handle or set SOCIAL_TWITTER_PRIMARY_USER"}), 400
 
     try:
         limit = max(1, min(50, int(request.args.get("limit", 5))))
@@ -258,7 +258,7 @@ def api_social_tweets():
         limit = 5
 
     data_dir = Path(current_app.config["DATA_PATH"]).parent
-    ttl = int(current_app.config.get("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", 10))
+    ttl = int(current_app.config.get("SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES", 10))
     items = get_user_tweets(data_dir, u, limit=limit, cache_minutes=ttl)
     return jsonify(items)
 

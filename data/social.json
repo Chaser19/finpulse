@@ -1,5 +1,5 @@
 {
-  "generated_at": "2025-10-06T18:42:26.177144+00:00",
+  "generated_at": "2025-10-25T12:59:07.682585+00:00",
   "symbols": {
     "IXHL": {
       "summary": {
@@ -760,9 +760,34 @@
           "change_pct": null,
           "close": null,
           "volume": null
+        },
+        {
+          "timestamp": "2025-10-25T12:03:57.974825+00:00",
+          "net_score": 92.75,
+          "bullish_score": 200.07,
+          "bearish_score": 107.32,
+          "posts": 30,
+          "change_pct": 2.49,
+          "close": 0.0,
+          "volume": 18002916.0
+        },
+        {
+          "timestamp": "2025-10-25T12:59:07.682585+00:00",
+          "net_score": 92.75,
+          "bullish_score": 200.07,
+          "bearish_score": 107.32,
+          "posts": 30,
+          "change_pct": 2.49,
+          "close": 0.0,
+          "volume": 18002916.0
         }
       ],
-      "price": {}
+      "price": {
+        "close": 0.0,
+        "change_pct": 2.49,
+        "change_abs": 0.01,
+        "volume": 18002916.0
+      }
     },
     "AAPL": {
       "summary": {
@@ -1523,9 +1548,34 @@
           "change_pct": null,
           "close": null,
           "volume": null
+        },
+        {
+          "timestamp": "2025-10-25T12:03:57.974825+00:00",
+          "net_score": 64.77,
+          "bullish_score": 151.71,
+          "bearish_score": 86.94,
+          "posts": 30,
+          "change_pct": 1.25,
+          "close": 2.63,
+          "volume": 38253480.0
+        },
+        {
+          "timestamp": "2025-10-25T12:59:07.682585+00:00",
+          "net_score": 64.77,
+          "bullish_score": 151.71,
+          "bearish_score": 86.94,
+          "posts": 30,
+          "change_pct": 1.25,
+          "close": 2.63,
+          "volume": 38253480.0
         }
       ],
-      "price": {}
+      "price": {
+        "close": 2.63,
+        "change_pct": 1.25,
+        "change_abs": 3.24,
+        "volume": 38253480.0
+      }
     },
     "ONDS": {
       "summary": {
@@ -2286,9 +2336,34 @@
           "change_pct": null,
           "close": null,
           "volume": null
+        },
+        {
+          "timestamp": "2025-10-25T12:03:57.974825+00:00",
+          "net_score": -30.56,
+          "bullish_score": 90.8,
+          "bearish_score": 121.36,
+          "posts": 30,
+          "change_pct": 5.67,
+          "close": 0.07,
+          "volume": 51304637.0
+        },
+        {
+          "timestamp": "2025-10-25T12:59:07.682585+00:00",
+          "net_score": -30.56,
+          "bullish_score": 90.8,
+          "bearish_score": 121.36,
+          "posts": 30,
+          "change_pct": 5.67,
+          "close": 0.07,
+          "volume": 51304637.0
         }
       ],
-      "price": {}
+      "price": {
+        "close": 0.07,
+        "change_pct": 5.67,
+        "change_abs": 0.4,
+        "volume": 51304637.0
+      }
     }
   },
   "history": {
@@ -2552,6 +2627,26 @@
         "change_pct": null,
         "close": null,
         "volume": null
+      },
+      {
+        "timestamp": "2025-10-25T12:03:57.974825+00:00",
+        "net_score": 92.75,
+        "bullish_score": 200.07,
+        "bearish_score": 107.32,
+        "posts": 30,
+        "change_pct": 2.49,
+        "close": 0.0,
+        "volume": 18002916.0
+      },
+      {
+        "timestamp": "2025-10-25T12:59:07.682585+00:00",
+        "net_score": 92.75,
+        "bullish_score": 200.07,
+        "bearish_score": 107.32,
+        "posts": 30,
+        "change_pct": 2.49,
+        "close": 0.0,
+        "volume": 18002916.0
       }
     ],
     "AAPL": [
@@ -2814,6 +2909,26 @@
         "change_pct": null,
         "close": null,
         "volume": null
+      },
+      {
+        "timestamp": "2025-10-25T12:03:57.974825+00:00",
+        "net_score": 64.77,
+        "bullish_score": 151.71,
+        "bearish_score": 86.94,
+        "posts": 30,
+        "change_pct": 1.25,
+        "close": 2.63,
+        "volume": 38253480.0
+      },
+      {
+        "timestamp": "2025-10-25T12:59:07.682585+00:00",
+        "net_score": 64.77,
+        "bullish_score": 151.71,
+        "bearish_score": 86.94,
+        "posts": 30,
+        "change_pct": 1.25,
+        "close": 2.63,
+        "volume": 38253480.0
       }
     ],
     "ONDS": [
@@ -3076,6 +3191,26 @@
         "change_pct": null,
         "close": null,
         "volume": null
+      },
+      {
+        "timestamp": "2025-10-25T12:03:57.974825+00:00",
+        "net_score": -30.56,
+        "bullish_score": 90.8,
+        "bearish_score": 121.36,
+        "posts": 30,
+        "change_pct": 5.67,
+        "close": 0.07,
+        "volume": 51304637.0
+      },
+      {
+        "timestamp": "2025-10-25T12:59:07.682585+00:00",
+        "net_score": -30.56,
+        "bullish_score": 90.8,
+        "bearish_score": 121.36,
+        "posts": 30,
+        "change_pct": 5.67,
+        "close": 0.07,
+        "volume": 51304637.0
       }
     ]
   }

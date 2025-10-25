@@ -67,20 +67,46 @@
   {%- endmacro %}
 
   <section class="macro-hero mb-5">
-    <div class="macro-hero-head">
-      <div>
-        <span class="macro-kicker text-uppercase">Macro dashboard</span>
-        <h1 class="display-6 mb-2">Macro Trends</h1>
-        <p class="macro-hero-subtitle">Stay on top of growth, inflation, and activity signals with annotated charts and curated context.</p>
-      </div>
-      {% if macro_updated %}
-        <div class="macro-stamp">
-          <span class="macro-stamp-label">Last updated</span>
-          <span class="macro-stamp-value">{{ macro_updated }}</span>
+    <div class="macro-hero-grid">
+      <div class="macro-hero-primary">
+        <div class="macro-hero-headline">
+          <div>
+            <span class="macro-kicker text-uppercase">Macro dashboard</span>
+            <h1 class="display-6 mb-2">Macro Trends</h1>
+          </div>
+          <div class="macro-hero-context text-end">
+            <span class="macro-heatmap-kicker text-uppercase">Market heatmap</span>
+            <p class="text-muted small mb-0">Powered by TradingView</p>
+          </div>
         </div>
-      {% endif %}
+        {% if macro_updated %}
+          <p class="macro-updated-subtext text-muted mb-3">Updated {{ macro_updated }}</p>
+        {% endif %}
+        <p class="macro-hero-subtitle">Stay on top of growth, inflation, and activity signals with annotated charts and curated context.</p>
+        <p class="macro-hero-copy">Tabs group the core macro pillars. Each stream keeps the quick-scan cards on the left while the right rail expands the full narrative for the active signal.</p>
+      </div>
+      <div class="macro-hero-heatmap">
+        <div class="tradingview-widget-container macro-heatmap-widget">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+{
+  "title": "Stocks heatmap",
+  "width": "100%",
+  "height": 440,
+  "colorTheme": "dark",
+  "dataSource": "S&P500",
+  "grouping": "sector",
+  "blockSize": "market_cap_basic",
+  "blockColor": "change",
+  "locale": "en",
+  "isTransparent": true,
+  "showSymbolLogo": true,
+  "showToolbar": true
+}
+        </script>
+        </div>
+      </div>
     </div>
-    <p class="macro-hero-copy">Tabs group the core macro pillars. Each stream keeps the quick-scan cards on the left while the right rail expands the full narrative for the active signal.</p>
   </section>
 
   {% if macro_categories %}

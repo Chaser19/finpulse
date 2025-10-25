@@ -128,19 +128,20 @@ The `/api/social` endpoints enrich dashboards with recent cashtag chatter, engag
 - Provision a Twitter v2 Project/App with Elevated (or Essential) access that allows recent search and user timeline endpoints.
 - Add to `.env`:
   - `SOCIAL_TWITTER_BEARER_TOKEN=<your v2 bearer token>` (omit to use sample data only)
-  - `SOCIAL_SCRAPE_SYMBOLS=IXHL,AAPL,ONDS` (comma-separated cashtags to ingest)
+  - `SOCIAL_TWITTER_SYMBOLS=IXHL,AAPL,ONDS` (comma-separated cashtags to ingest)
   - Optional macro keys if you want live trend bullets on the homepage:
     - `FRED_API_KEY=<your stlouisfed.org key>` (inflation/growth data)
     - `EIA_API_KEY=<your eia.gov key>` (energy/commodities data)
   - Optional tuning:
-    - `SOCIAL_SCRAPE_MAX_POSTS=30` (matches the bundled fixtures; increase carefully to stay inside rate limits)
-    - `SOCIAL_SCRAPE_LOOKBACK_HOURS=12`
-    - `SOCIAL_TWITTER_SCRAPE_USER=your_handle` (used by the social page timeline card)
+    - `SOCIAL_TWITTER_MAX_POSTS=30` (matches the bundled fixtures; increase carefully to stay inside rate limits)
+    - `SOCIAL_TWITTER_LOOKBACK_HOURS=12`
+    - `SOCIAL_TWITTER_PRIMARY_USER=your_handle` (used by the social page timeline card)
+    - `SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES=10` (server-side cache window for `/api/social/tweets`)
 - Run `flask ingest-social` to write `data/social.json` and populate the latest summaries. The command now also calls TradingView’s public scanner endpoint (`https://scanner.tradingview.com/america/scan`) to pull close/volume/change for the requested tickers.
 - Want historical trends while using sample data? After the first ingest, run `flask seed-social-history --points 24` to synthesize a day’s worth of history so the Social dashboard sparklines have signal immediately.
 - Diagnose connectivity with `flask diag-social --symbol SPY`.
 
-Rate limits: the free/essential tiers allow 450 requests per 15 minutes on the `recent search` endpoint. Reduce `SOCIAL_SCRAPE_MAX_POSTS` or lengthen `SOCIAL_SCRAPE_LOOKBACK_HOURS` if you encounter HTTP 429 responses.
+Rate limits: the free/essential tiers allow 450 requests per 15 minutes on the `recent search` endpoint. Reduce `SOCIAL_TWITTER_MAX_POSTS` or lengthen `SOCIAL_TWITTER_LOOKBACK_HOURS` if you encounter HTTP 429 responses.
 
 Working without Twitter API access? Leave the bearer token blank. The ingest falls back to `data/sample_twitter_posts.json` (or point `SOCIAL_TWITTER_SAMPLE_FILE` to your own fixture). The bundled sample provides 30 posts per ticker with uneven bullish/neutral/bearish mixes so the Social page still renders top posts, engagement tiers, and net-score trends.
 
@@ -169,7 +170,7 @@ pip install -r requirements.txt
 cp .env.example .env  # if present, else create .env with keys
 # Required for live news:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY / NEWSAPI_KEY (see services/providers.py)
 # Optional for macro dashboard: FRED_API_KEY, EIA_API_KEY
-# Optional for social sentiment: SOCIAL_TWITTER_BEARER_TOKEN, SOCIAL_SCRAPE_SYMBOLS, etc.
+# Optional for social sentiment: SOCIAL_TWITTER_BEARER_TOKEN, SOCIAL_TWITTER_SYMBOLS, etc.
 
 # 3) Ingest / refresh data
 export FLASK_APP=app:create_app
