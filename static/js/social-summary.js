@@ -235,6 +235,13 @@
     return `${Number(value).toFixed(0)}%`;
   }
 
+  function formatSigned(value, digits = 0) {
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return '0';
+    const num = Number(value);
+    const fixed = num.toFixed(digits);
+    return num > 0 ? `+${fixed}` : fixed;
+  }
+
   function formatChange(changePct, changeAbs) {
     const pct = Number(changePct);
     const abs = Number(changeAbs);
@@ -362,62 +369,152 @@
     return false;
   }
 
-  function buildSparkline(history) {
+  function describeMomentum(nets, vols) {
+    const firstNet = Number(nets[0] ?? 0);
+    const lastNet = Number(nets[nets.length - 1] ?? 0);
+    const netDelta = Number.isFinite(firstNet) && Number.isFinite(lastNet) ? lastNet - firstNet : 0;
+
+    const firstVol = Number(vols[0] ?? 0);
+    const lastVol = Number(vols[vols.length - 1] ?? 0);
+    let volumeDeltaPct = 0;
+    if (firstVol > 0 && Number.isFinite(lastVol)) {
+      volumeDeltaPct = ((lastVol - firstVol) / firstVol) * 100;
+    } else if (firstVol <= 0 && lastVol > 0) {
+      volumeDeltaPct = 100;
+    }
+
+    const peakVolume = Math.max(...vols, 0);
+
+    const trend = (() => {
+      if (netDelta >= 8 && volumeDeltaPct >= 25) {
+        return {
+          title: 'Bullish swarm',
+          detail: 'Net score and crowd attention climbed together.',
+        };
+      }
+      if (netDelta >= 8 && volumeDeltaPct <= -15) {
+        return {
+          title: 'Quiet accumulation',
+          detail: 'Conviction improved even as chatter cooled.',
+        };
+      }
+      if (netDelta <= -8 && volumeDeltaPct >= 25) {
+        return {
+          title: 'Bearish pile-on',
+          detail: 'Volume spiked while sentiment deteriorated.',
+        };
+      }
+      if (netDelta <= -8 && volumeDeltaPct <= -15) {
+        return {
+          title: 'Exhausted fade',
+          detail: 'Both attention and net score lost momentum.',
+        };
+      }
+      if (Math.abs(netDelta) <= 4 && Math.abs(volumeDeltaPct) >= 25) {
+        return {
+          title: 'Volume regime shift',
+          detail: 'Sentiment held steady but interest moved sharply.',
+        };
+      }
+      return {
+        title: 'Stable tape',
+        detail: 'No dramatic divergence between conviction and chatter.',
+      };
+    })();
+
+    const legendHtml = `
+      <div class="momentum-summary">
+        <strong>${trend.title}</strong>
+        <span>${trend.detail}</span>
+      </div>
+      <div class="momentum-badges">
+        <span class="momentum-chip ${netDelta >= 0 ? 'chip-up' : 'chip-down'}">Net ${formatSigned(netDelta, 1)} pts</span>
+        <span class="momentum-chip ${volumeDeltaPct >= 0 ? 'chip-up' : 'chip-down'}">Volume ${formatSigned(volumeDeltaPct, 0)}%</span>
+        <span class="momentum-chip chip-neutral">Peak ${formatInteger(peakVolume)} posts</span>
+      </div>
+    `;
+
+    return { legendHtml };
+  }
+
+  function buildMomentumChart(history) {
     if (!history || history.length < 2) return null;
-    const width = 240;
-    const height = 80;
-    const paddingX = 10;
-    const paddingY = 12;
-    const step = (width - paddingX * 2) / (history.length - 1);
+    const width = 320;
+    const height = 140;
+    const paddingX = 16;
+    const paddingY = 18;
+    const chartHeight = height - paddingY * 2;
+    const step = history.length > 1 ? (width - paddingX * 2) / (history.length - 1) : 0;
 
-    const nets = history.map((h) => Number(h.net_score || 0));
-    const vols = history.map((h) => Number(h.posts || 0));
+    const nets = history.map((h) => Number(h.net_score ?? 0));
+    const vols = history.map((h) => Math.max(0, Number(h.posts ?? 0)));
+    if (!nets.length || !vols.length) return null;
 
-    const netMin = Math.min(...nets);
-    const netMax = Math.max(...nets);
-    const volMin = Math.min(...vols);
-    const volMax = Math.max(...vols);
+    const maxVolume = Math.max(...vols, 1);
+    const barWidth = Math.max(2, (width - paddingX * 2) / history.length - 2);
 
-    const toY = (val, min, max) => {
-      if (max === min) return height / 2;
-      const ratio = (val - min) / (max - min);
-      return paddingY + (1 - ratio) * (height - paddingY * 2);
+    const netAbsMax = Math.max(...nets.map((n) => Math.abs(Number.isFinite(n) ? n : 0)), 1);
+    const toNetY = (value) => {
+      const val = Number.isFinite(value) ? value : 0;
+      const ratio = (val + netAbsMax) / (netAbsMax * 2);
+      return paddingY + (1 - ratio) * chartHeight;
     };
-
-    const buildPath = (values, min, max) => {
-      let d = '';
-      values.forEach((val, idx) => {
-        const x = paddingX + idx * step;
-        const y = toY(val, min, max);
-        d += idx === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
-      });
-      return d;
-    };
+    const zeroY = toNetY(0);
 
     const svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
     svg.setAttribute('preserveAspectRatio', 'none');
     svg.classList.add('sparkline');
 
-    const baseline = document.createElementNS(SVG_NS, 'line');
-    baseline.setAttribute('x1', String(paddingX));
-    baseline.setAttribute('y1', String(height - paddingY));
-    baseline.setAttribute('x2', String(width - paddingX));
-    baseline.setAttribute('y2', String(height - paddingY));
-    baseline.setAttribute('class', 'sparkline-baseline');
-    svg.appendChild(baseline);
+    const zeroLine = document.createElementNS(SVG_NS, 'line');
+    zeroLine.setAttribute('x1', String(paddingX));
+    zeroLine.setAttribute('x2', String(width - paddingX));
+    zeroLine.setAttribute('y1', String(zeroY));
+    zeroLine.setAttribute('y2', String(zeroY));
+    zeroLine.setAttribute('class', 'momentum-zero-line');
+    svg.appendChild(zeroLine);
 
-    const netPath = document.createElementNS(SVG_NS, 'path');
-    netPath.setAttribute('d', buildPath(nets, netMin, netMax));
-    netPath.setAttribute('class', 'sparkline-line net-line');
-    svg.appendChild(netPath);
+    const barGroup = document.createElementNS(SVG_NS, 'g');
+    vols.forEach((vol, idx) => {
+      const magnitude = Number.isFinite(vol) ? vol : 0;
+      const barHeight = (magnitude / maxVolume) * (chartHeight * 0.7);
+      const x = paddingX + idx * step - barWidth / 2;
+      const y = paddingY + chartHeight - barHeight;
+      const rect = document.createElementNS(SVG_NS, 'rect');
+      rect.setAttribute('x', String(x));
+      rect.setAttribute('y', String(y));
+      rect.setAttribute('width', String(barWidth));
+      rect.setAttribute('height', String(barHeight));
+      rect.setAttribute('class', 'momentum-volume-bar');
+      rect.setAttribute('opacity', (magnitude / maxVolume) * 0.5 + 0.2);
+      barGroup.appendChild(rect);
+    });
+    svg.appendChild(barGroup);
 
-    const volPath = document.createElementNS(SVG_NS, 'path');
-    volPath.setAttribute('d', buildPath(vols, volMin, volMax));
-    volPath.setAttribute('class', 'sparkline-line volume-line');
-    svg.appendChild(volPath);
+    const path = document.createElementNS(SVG_NS, 'path');
+    let d = '';
+    nets.forEach((val, idx) => {
+      const x = paddingX + idx * step;
+      const y = toNetY(val);
+      d += idx === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
+    });
+    path.setAttribute('d', d);
+    path.setAttribute('class', 'momentum-net-line');
+    const trendUp = nets[nets.length - 1] >= nets[0];
+    path.classList.add(trendUp ? 'trend-up' : 'trend-down');
+    svg.appendChild(path);
 
-    return svg;
+    const lastCircle = document.createElementNS(SVG_NS, 'circle');
+    lastCircle.setAttribute('cx', String(paddingX + (history.length - 1) * step));
+    lastCircle.setAttribute('cy', String(toNetY(nets[nets.length - 1])));
+    lastCircle.setAttribute('r', '3');
+    lastCircle.setAttribute('class', `momentum-net-node ${trendUp ? 'trend-up' : 'trend-down'}`);
+    svg.appendChild(lastCircle);
+
+    return {
+      chart: svg,
+      legend: describeMomentum(nets, vols).legendHtml,
+    };
   }
 
   function renderTopPosts(container, posts) {
@@ -633,20 +730,19 @@
       }
     }
 
+    const sparkSection = card.querySelector('.sparkline-container');
     const sparkHolder = card.querySelector('.sparkline-holder');
-    const spark = buildSparkline(historySeries);
-    if (spark) {
-      sparkHolder?.appendChild(spark);
+    const momentum = buildMomentumChart(historySeries);
+    if (sparkHolder && momentum) {
+      sparkHolder.innerHTML = '';
+      sparkHolder.appendChild(momentum.chart);
+      sparkSection?.classList.remove('d-none');
+      const legend = card.querySelector('.sparkline-legend');
+      if (legend) legend.innerHTML = momentum.legend;
     } else {
-      card.querySelector('.sparkline-container')?.classList.add('d-none');
-    }
-
-    const legend = card.querySelector('.sparkline-legend');
-    if (legend) {
-      legend.innerHTML = `
-        <span class="legend-dot net"></span> Net Score 
-        <span class="legend-dot volume"></span> Post Volume
-      `;
+      sparkSection?.classList.add('d-none');
+      const legend = card.querySelector('.sparkline-legend');
+      if (legend) legend.innerHTML = '';
     }
 
     renderTopPosts(card.querySelector('.top-posts'), topPosts);

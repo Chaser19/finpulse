@@ -16,6 +16,8 @@ print("[env] ALPHAVANTAGE_KEY set:", bool(os.getenv("ALPHAVANTAGE_KEY")))
 
 import click
 
+from services.twitter_auth import normalize_bearer_token
+
 BASE_DIR = Path(__file__).resolve().parent
 
 # 1) Define the CLI command first
@@ -175,6 +177,9 @@ def create_app(test_config: dict | None = None) -> Flask:
         os.getenv("SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES")
         or os.getenv("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", "10")
     )
+    twitter_bearer_token = normalize_bearer_token(
+        os.getenv("SOCIAL_TWITTER_BEARER_TOKEN") or os.getenv("TWITTER_BEARER_TOKEN")
+    )
 
     app.config.from_mapping({
         "DATA_PATH": str(BASE_DIR / "data" / "news.json"),
@@ -189,7 +194,7 @@ def create_app(test_config: dict | None = None) -> Flask:
         "SOCIAL_TWITTER_SYMBOLS": twitter_symbols,
         "SOCIAL_TWITTER_MAX_POSTS": twitter_max_posts,
         "SOCIAL_TWITTER_LOOKBACK_HOURS": twitter_lookback,
-        "SOCIAL_TWITTER_BEARER_TOKEN": os.getenv("SOCIAL_TWITTER_BEARER_TOKEN", ""),
+        "SOCIAL_TWITTER_BEARER_TOKEN": twitter_bearer_token or "",
         "SOCIAL_FINNHUB_MAX_SYMBOLS": int(os.getenv("SOCIAL_FINNHUB_MAX_SYMBOLS", "25")),
         "SOCIAL_FINNHUB_RESOLUTION": os.getenv("SOCIAL_FINNHUB_RESOLUTION", "30"),
         "SOCIAL_FINNHUB_LOOKBACK_HOURS": int(os.getenv("SOCIAL_FINNHUB_LOOKBACK_HOURS", "24")),

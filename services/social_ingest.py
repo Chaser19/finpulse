@@ -10,6 +10,7 @@ from typing import Any, Dict, Iterable, List, Sequence
 import requests
 
 from services.sample_social_data import get_sample_symbol_posts
+from services.twitter_auth import normalize_bearer_token
 
 MAX_HISTORY_POINTS = 60
 
@@ -95,9 +96,13 @@ def _top_posts(posts: Sequence[SocialPost], *, limit: int = 5) -> List[Dict[str,
     return top
 
 
-def _sample_social_posts(normalized_symbol: str, limit: int) -> List[SocialPost]:
+def _sample_social_posts(normalized_symbol: str, limit: int | None) -> List[SocialPost]:
+    raw_posts = get_sample_symbol_posts(normalized_symbol)
+    if limit and limit > 0:
+        raw_posts = raw_posts[:limit]
+
     posts: List[SocialPost] = []
-    for raw in get_sample_symbol_posts(normalized_symbol)[: max(0, limit)]:
+    for raw in raw_posts:
         try:
             posts.append(SocialPost(**raw))
         except TypeError:
@@ -260,14 +265,15 @@ def fetch_x_symbol_posts(
     bearer_token: str | None = None,
 ) -> List[SocialPost]:
     normalized_symbol = symbol.strip().lstrip("$").upper()
-    token = (
+    raw_token = (
         bearer_token
         or os.getenv("SOCIAL_TWITTER_BEARER_TOKEN")
         or os.getenv("TWITTER_BEARER_TOKEN")
     )
+    token = normalize_bearer_token(raw_token)
 
     if not token:
-        sample_posts = _sample_social_posts(normalized_symbol, limit)
+        sample_posts = _sample_social_posts(normalized_symbol, None)
         if sample_posts:
             print(f"[social] Using sample tweets for ${normalized_symbol}")
             return _annotate_posts(sample_posts)
@@ -286,7 +292,7 @@ def fetch_x_symbol_posts(
         print(f"[social] Twitter API returned {len(posts)} posts for ${normalized_symbol}")
         return _annotate_posts(posts)
 
-    sample_posts = _sample_social_posts(normalized_symbol, limit)
+    sample_posts = _sample_social_posts(normalized_symbol, None)
     if sample_posts:
         print(
             f"[social] Twitter API returned no posts for ${normalized_symbol}, using sample tweets"

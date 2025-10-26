@@ -10,6 +10,7 @@ import time
 import requests
 
 from services.sample_social_data import get_sample_user_tweets
+from services.twitter_auth import normalize_bearer_token
 
 
 @dataclass
@@ -50,10 +51,8 @@ def _now_epoch() -> int:
 
 
 def _twitter_bearer_token() -> str | None:
-    token = os.getenv("SOCIAL_TWITTER_BEARER_TOKEN") or os.getenv("TWITTER_BEARER_TOKEN")
-    if token:
-        return token.strip()
-    return None
+    raw = os.getenv("SOCIAL_TWITTER_BEARER_TOKEN") or os.getenv("TWITTER_BEARER_TOKEN")
+    return normalize_bearer_token(raw)
 
 def _sample_user_tweet_items(username: str, limit: int) -> list[TweetItem]:
     items: list[TweetItem] = []
