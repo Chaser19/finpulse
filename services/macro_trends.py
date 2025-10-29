@@ -20,7 +20,7 @@ log = logging.getLogger(__name__)
 _CACHE_LOCK = Lock()
 _CACHE_DATA: Dict[str, Any] | None = None
 _CACHE_TIMESTAMP: float = 0.0
-_CACHE_TTL_SECONDS = 15 * 60  # 15 minutes default
+_CACHE_TTL_SECONDS = 2 * 60 * 60  # 2 hours default
 _CACHE_THREAD_STARTED = False
 _CACHE_STOP_EVENT: Event | None = None
 
@@ -957,6 +957,22 @@ def _copy_payload(data: Dict[str, Any]) -> Dict[str, Any]:
     return copy.deepcopy(data)
 
 
+def _payload_has_timeseries(payload: Dict[str, Any]) -> bool:
+    """Return True if any metric has populated history."""
+    try:
+        categories = payload.get("categories") or []
+    except AttributeError:
+        return False
+
+    for category in categories:
+        metrics = (category or {}).get("metrics") or []
+        for metric in metrics:
+            history = (metric or {}).get("history")
+            if isinstance(history, (list, tuple)) and len(history) > 0:
+                return True
+    return False
+
+
 def _cache_expired(ttl_seconds: int | None) -> bool:
     ttl = _CACHE_TTL_SECONDS if ttl_seconds is None else max(ttl_seconds, 0)
     if ttl == 0:
@@ -992,6 +1008,10 @@ def get_macro_trends(
 ) -> Dict[str, Any]:
     """Fetch macro data, optionally reusing the module cache."""
 
+    # Guard against accidental whitespace in environment-provided keys.
+    fred_api_key = (fred_api_key or "").strip()
+    eia_api_key = (eia_api_key or "").strip()
+
     if not use_cache:
         payload = _build_macro_trends_payload(fred_api_key, eia_api_key)
         return _copy_payload(payload)
@@ -999,7 +1019,8 @@ def get_macro_trends(
     if not force_refresh:
         cached = _read_cache()
         if cached is not None and not _cache_expired(ttl_seconds):
-            return cached
+            if not (fred_api_key or eia_api_key) or _payload_has_timeseries(cached):
+                return cached
 
     payload = _build_macro_trends_payload(fred_api_key, eia_api_key)
     _write_cache(payload)
@@ -1009,7 +1030,7 @@ def get_macro_trends(
 def init_macro_trends_cache(
     app,
     *,
-    interval_seconds: int = 15 * 60,
+    interval_seconds: int = 2 * 60 * 60,
 ) -> None:
     """Warm the macro cache and keep it refreshed in the background."""
 

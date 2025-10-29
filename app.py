@@ -16,7 +16,17 @@ print("[env] ALPHAVANTAGE_KEY set:", bool(os.getenv("ALPHAVANTAGE_KEY")))
 
 import click
 
+from services.twitter_auth import normalize_bearer_token
+
 BASE_DIR = Path(__file__).resolve().parent
+
+
+def _env_flag(name: str, default: bool = True) -> bool:
+    raw = os.getenv(name)
+    if raw is None:
+        return default
+    return raw.strip().lower() in {"1", "true", "yes", "on"}
+
 
 # 1) Define the CLI command first
 @click.command("ingest-news")
@@ -35,20 +45,20 @@ def ingest_social_cmd():
     from services.social_ingest import ingest_social
 
     cfg = current_app.config
-    symbols_raw = cfg.get("SOCIAL_SCRAPE_SYMBOLS", "")
+    symbols_raw = cfg.get("SOCIAL_TWITTER_SYMBOLS", "")
     symbols = [s.strip() for s in symbols_raw.split(",") if s.strip()]
     if not symbols:
-        click.echo("No symbols configured. Set SOCIAL_SCRAPE_SYMBOLS in .env")
+        click.echo("No symbols configured. Set SOCIAL_TWITTER_SYMBOLS in .env")
         return
 
     payload = ingest_social(
         cfg["SOCIAL_DATA_PATH"],
         symbols,
-        max_posts=cfg.get("SOCIAL_SCRAPE_MAX_POSTS", 50),
-        lookback_hours=cfg.get("SOCIAL_SCRAPE_LOOKBACK_HOURS", 12),
+        max_posts=cfg.get("SOCIAL_TWITTER_MAX_POSTS", 50),
+        lookback_hours=cfg.get("SOCIAL_TWITTER_LOOKBACK_HOURS", 12),
         twitter_bearer_token=cfg.get("SOCIAL_TWITTER_BEARER_TOKEN"),
     )
-    click.echo(f"Scraped social data for {len(payload['symbols'])} symbols")
+    click.echo(f"Fetched social data for {len(payload['symbols'])} symbols via the Twitter API")
 
 
 @click.command("diag-social")
@@ -62,9 +72,9 @@ def diag_social_cmd(symbol: str):
     if token:
         click.echo("Twitter API bearer token detected; testing official endpoint")
         try:
-            from services.social_ingest import scrape_x_symbol
+            from services.social_ingest import fetch_x_symbol_posts
 
-            posts = scrape_x_symbol(
+            posts = fetch_x_symbol_posts(
                 symbol.strip().lstrip("$").upper(),
                 limit=5,
                 lookback_hours=12,
@@ -161,31 +171,85 @@ def seed_social_history_cmd(points: int):
 
     click.echo(f"Seeded synthetic history with {points} points per symbol.")
 
+
+@click.command("refresh-macro")
+@click.option("--dump", is_flag=True, help="Print the refreshed payload JSON")
+@with_appcontext
+def refresh_macro_cmd(dump: bool) -> None:
+    """Force-refresh the macro trends cache."""
+    from services.macro_trends import get_macro_trends
+
+    cfg = current_app.config
+    payload = get_macro_trends(
+        fred_api_key=cfg.get("FRED_API_KEY", ""),
+        eia_api_key=cfg.get("EIA_API_KEY", ""),
+        force_refresh=True,
+    )
+
+    categories = payload.get("categories") or []
+    category_count = len(categories)
+    metric_count = sum(len((cat or {}).get("metrics") or []) for cat in categories)
+    click.echo(f"Refreshed macro cache with {metric_count} metrics across {category_count} categories.")
+
+    updated = payload.get("updated")
+    if updated:
+        click.echo(f"Updated timestamp: {updated}")
+
+    if dump:
+        click.echo(json.dumps(payload, indent=2, sort_keys=True))
+
 # 2) App factory that registers the command
 def create_app(test_config: dict | None = None) -> Flask:
-    load_dotenv()  # loads .env from project root
+    # Attempt to load environment variables. Fall back to .env.gitignore when .env is absent
+    # so local sample keys are picked up during development.
+    if not load_dotenv():  # loads .env from project root
+        load_dotenv(".env.gitignore")
 
     app = Flask(__name__, instance_relative_config=False)
+
+    twitter_symbols = os.getenv("SOCIAL_TWITTER_SYMBOLS") or os.getenv("SOCIAL_SCRAPE_SYMBOLS", "SPY,QQQ,IWM")
+    twitter_max_posts = int(os.getenv("SOCIAL_TWITTER_MAX_POSTS") or os.getenv("SOCIAL_SCRAPE_MAX_POSTS", "40"))
+    twitter_lookback = int(os.getenv("SOCIAL_TWITTER_LOOKBACK_HOURS") or os.getenv("SOCIAL_SCRAPE_LOOKBACK_HOURS", "12"))
+    twitter_primary_user = os.getenv("SOCIAL_TWITTER_PRIMARY_USER") or os.getenv("SOCIAL_TWITTER_SCRAPE_USER", "")
+    twitter_timeline_cache = int(
+        os.getenv("SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES")
+        or os.getenv("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", "10")
+    )
+    twitter_bearer_token = normalize_bearer_token(
+        os.getenv("SOCIAL_TWITTER_BEARER_TOKEN") or os.getenv("TWITTER_BEARER_TOKEN")
+    )
+    news_refresh_interval = int(os.getenv("NEWS_REFRESH_INTERVAL_SECONDS", str(2 * 60 * 60)))
+
     app.config.from_mapping({
         "DATA_PATH": str(BASE_DIR / "data" / "news.json"),
         "SOCIAL_DATA_PATH": str(BASE_DIR / "data" / "social.json"),
         # Comma-separated Twitter handles to embed (e.g. "WSJMarkets,CNBC,TheTerminal")
         "SOCIAL_TWITTER_ACCOUNTS": os.getenv("SOCIAL_TWITTER_ACCOUNTS", ""),
-        # Optional: user to scrape tweets from (without @). If empty, defaults to first SOCIAL_TWITTER_ACCOUNTS.
-        "SOCIAL_TWITTER_SCRAPE_USER": os.getenv("SOCIAL_TWITTER_SCRAPE_USER", ""),
-        # Cache duration for scraped tweets (minutes)
-        "SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES": int(os.getenv("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", "10")),
-        # Social ingest defaults
-        "SOCIAL_SCRAPE_SYMBOLS": os.getenv("SOCIAL_SCRAPE_SYMBOLS", "SPY,QQQ,IWM"),
-        "SOCIAL_SCRAPE_MAX_POSTS": int(os.getenv("SOCIAL_SCRAPE_MAX_POSTS", "40")),
-        "SOCIAL_SCRAPE_LOOKBACK_HOURS": int(os.getenv("SOCIAL_SCRAPE_LOOKBACK_HOURS", "12")),
-        "SOCIAL_TWITTER_BEARER_TOKEN": os.getenv("SOCIAL_TWITTER_BEARER_TOKEN", ""),
+        # Preferred account to showcase in the UI / API when multiple handles exist (without @)
+        "SOCIAL_TWITTER_PRIMARY_USER": twitter_primary_user,
+        # Cache duration for API timeline fetches (minutes)
+        "SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES": twitter_timeline_cache,
+        # Social ingest defaults (Twitter API powered)
+        "SOCIAL_TWITTER_SYMBOLS": twitter_symbols,
+        "SOCIAL_TWITTER_MAX_POSTS": twitter_max_posts,
+        "SOCIAL_TWITTER_LOOKBACK_HOURS": twitter_lookback,
+        "SOCIAL_TWITTER_BEARER_TOKEN": twitter_bearer_token or "",
         "SOCIAL_FINNHUB_MAX_SYMBOLS": int(os.getenv("SOCIAL_FINNHUB_MAX_SYMBOLS", "25")),
         "SOCIAL_FINNHUB_RESOLUTION": os.getenv("SOCIAL_FINNHUB_RESOLUTION", "30"),
         "SOCIAL_FINNHUB_LOOKBACK_HOURS": int(os.getenv("SOCIAL_FINNHUB_LOOKBACK_HOURS", "24")),
         "FRED_API_KEY": os.getenv("FRED_API_KEY", ""),
         "EIA_API_KEY": os.getenv("EIA_API_KEY", ""),
+        "NEWS_REFRESH_INTERVAL_SECONDS": news_refresh_interval,
+        "NEWS_AUTO_INCLUDE_ALPHA_VANTAGE": _env_flag("NEWS_AUTO_INCLUDE_ALPHA_VANTAGE", True),
+        "NEWS_AUTO_INCLUDE_NEWSAPI": _env_flag("NEWS_AUTO_INCLUDE_NEWSAPI", True),
     })
+
+    # Provide backward-compatible aliases for legacy config names until they are removed.
+    app.config.setdefault("SOCIAL_TWITTER_SCRAPE_USER", twitter_primary_user)
+    app.config.setdefault("SOCIAL_TWITTER_SCRAPE_CACHE_MINUTES", twitter_timeline_cache)
+    app.config.setdefault("SOCIAL_SCRAPE_SYMBOLS", twitter_symbols)
+    app.config.setdefault("SOCIAL_SCRAPE_MAX_POSTS", twitter_max_posts)
+    app.config.setdefault("SOCIAL_SCRAPE_LOOKBACK_HOURS", twitter_lookback)
     if test_config:
         app.config.update(test_config)
 
@@ -200,6 +264,15 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.cli.add_command(ingest_social_cmd, name="ingest-social")
     app.cli.add_command(diag_social_cmd, name="diag-social")
     app.cli.add_command(seed_social_history_cmd, name="seed-social-history")
+    app.cli.add_command(refresh_macro_cmd, name="refresh-macro")
+
+    # Auto-ingest news on an interval so the dashboard stays fresh.
+    try:
+        from services.news_cache import init_news_cache
+
+        init_news_cache(app, interval_seconds=app.config.get("NEWS_REFRESH_INTERVAL_SECONDS"))
+    except Exception as exc:  # pragma: no cover - defensive
+        app.logger.warning("Unable to start news auto-ingest: %s", exc)
 
     # Warm macro trends cache so the dashboard loads instantly.
     try:

@@ -7,6 +7,9 @@
   };
 
   const numberFormatter = new Intl.NumberFormat('en-US');
+  const relativeFormatter = typeof Intl.RelativeTimeFormat === 'function'
+    ? new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
+    : null;
 
   const tvMountTimers = new Map();
 
@@ -19,6 +22,159 @@
       console.error('[social] fetch failed', err);
       return null;
     }
+  }
+
+  function toMillis(value) {
+    if (value === null || value === undefined) return null;
+    if (value instanceof Date) return value.getTime();
+    if (typeof value === 'number') {
+      if (value > 1e12) return value;
+      if (value > 1e9) return value * 1000;
+      return value;
+    }
+    if (typeof value === 'string') {
+      const num = Number(value);
+      if (!Number.isNaN(num)) {
+        return num > 1e12 ? num : num > 1e9 ? num * 1000 : num;
+      }
+      const parsed = Date.parse(value);
+      if (!Number.isNaN(parsed)) return parsed;
+    }
+    return null;
+  }
+
+  function normaliseHistory(history) {
+    if (!Array.isArray(history)) return [];
+    return history
+      .map((entry) => {
+        const ts = toMillis(entry.timestamp ?? entry.time ?? entry.ts);
+        if (!Number.isFinite(ts)) return null;
+        return { ...entry, __ts: ts };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.__ts - b.__ts);
+  }
+
+  function classifyTone(score) {
+    const value = Number(score);
+    if (!Number.isFinite(value)) return { label: 'Unrated', className: 'tone-neutral' };
+    if (value >= 35) return { label: 'High conviction bull', className: 'tone-bullish' };
+    if (value >= 10) return { label: 'Bullish', className: 'tone-bullish' };
+    if (value <= -35) return { label: 'High conviction bear', className: 'tone-bearish' };
+    if (value <= -10) return { label: 'Bearish', className: 'tone-bearish' };
+    return { label: 'Balanced', className: 'tone-neutral' };
+  }
+
+  function computeHistoryDelta(history, key) {
+    if (!history || history.length < 2) return null;
+    const first = history[0];
+    const last = history[history.length - 1];
+    const start = Number(first?.[key]);
+    const end = Number(last?.[key]);
+    if (!Number.isFinite(start) || !Number.isFinite(end)) return null;
+    return end - start;
+  }
+
+  function describePriceMeta(price) {
+    if (!price) return '';
+    const parts = [];
+    if (price.currency) parts.push(String(price.currency).toUpperCase());
+    const ts = toMillis(price.timestamp);
+    if (Number.isFinite(ts)) {
+      const dt = new Date(ts);
+      const human = dt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const rel = formatRelativeTime(dt);
+      parts.push(rel ? `Updated ${human} (${rel})` : `Updated ${human}`);
+    }
+    if (price.source) parts.push(String(price.source).toUpperCase());
+    return parts.join(' • ');
+  }
+
+  function formatRelativeTime(date) {
+    if (!(date instanceof Date) || Number.isNaN(date.getTime())) return '';
+    const now = Date.now();
+    const diffMs = date.getTime() - now;
+    const units = [
+      ['day', 86400000],
+      ['hour', 3600000],
+      ['minute', 60000],
+    ];
+    for (const [unit, ms] of units) {
+      if (Math.abs(diffMs) >= ms || unit === 'minute') {
+        const value = Math.round(diffMs / ms);
+        if (relativeFormatter) return relativeFormatter.format(value, unit);
+        return `${value < 0 ? Math.abs(value) : value} ${unit}${Math.abs(value) === 1 ? '' : 's'} ${value < 0 ? 'ago' : 'ahead'}`;
+      }
+    }
+    return '';
+  }
+
+  function buildSymbolInsights(summary, metrics, historySeries, price) {
+    const netScore = Number(summary?.net_score);
+    const tone = classifyTone(netScore);
+    const netDelta = computeHistoryDelta(historySeries, 'net_score');
+    const postDelta = computeHistoryDelta(historySeries, 'posts');
+    const posts = Number(summary?.posts);
+    const bullShare = Number.isFinite(metrics?.bullPct) ? metrics.bullPct : null;
+    const breakdown = summary?.engagement_breakdown || {};
+    const totalPosts = metrics?.total ?? posts ?? 0;
+    const highShare = totalPosts
+      ? ((Number(breakdown.high ?? 0) / Number(totalPosts)) * 100)
+      : null;
+    const changePct = Number(price?.change_pct);
+    const priceDelta = computeHistoryDelta(historySeries, 'close');
+
+    const pulseParts = [];
+    if (Number.isFinite(netScore)) {
+      pulseParts.push(`Net score ${netScore >= 0 ? '+' : ''}${netScore.toFixed(1)} (${tone.label.toLowerCase()}).`);
+    }
+    if (Number.isFinite(netDelta) && Math.abs(netDelta) >= 1) {
+      pulseParts.push(`${netDelta >= 0 ? 'Rising' : 'Fading'} ${Math.abs(netDelta).toFixed(1)} pts vs prior window.`);
+    }
+    if (!pulseParts.length) {
+      pulseParts.push('Waiting on fresh sentiment updates.');
+    }
+
+    const flowParts = [];
+    if (Number.isFinite(posts)) {
+      flowParts.push(`${formatInteger(posts)} posts this capture.`);
+    }
+    if (Number.isFinite(bullShare)) {
+      flowParts.push(`${bullShare.toFixed(0)}% bullish share.`);
+    }
+    if (Number.isFinite(highShare)) {
+      flowParts.push(`${Math.round(highShare)}% from high-engagement accounts.`);
+    }
+    if (Number.isFinite(postDelta) && Math.abs(postDelta) >= 1) {
+      flowParts.push(`${postDelta >= 0 ? '+' : ''}${postDelta.toFixed(0)} posts vs previous window.`);
+    }
+    if (!flowParts.length) {
+      flowParts.push('Chatter volume standing by for new ingest.');
+    }
+
+    const priceParts = [];
+    if (Number.isFinite(changePct)) {
+      priceParts.push(`${changePct >= 0 ? 'Up' : 'Down'} ${Math.abs(changePct).toFixed(2)}% on the session.`);
+    }
+    if (Number.isFinite(priceDelta) && Math.abs(priceDelta) >= 0.1) {
+      priceParts.push(`${priceDelta >= 0 ? 'Trending higher' : 'Drifting lower'} across the lookback.`);
+    }
+    if (!priceParts.length) {
+      priceParts.push('Waiting on live ticks from TradingView.');
+    }
+
+    const engagementText = Number.isFinite(highShare)
+      ? `${Math.round(highShare)}% of posts come from high-engagement accounts`
+      : 'Add more handles to unlock engagement mix';
+
+    return {
+      toneLabel: tone.label,
+      toneClass: tone.className,
+      pulseText: pulseParts.join(' '),
+      flowText: flowParts.join(' '),
+      priceText: priceParts.join(' '),
+      engagementText,
+    };
   }
 
   function makeBar(summary) {
@@ -77,6 +233,13 @@
   function formatPercent(value) {
     if (value === null || value === undefined || Number.isNaN(Number(value))) return '—';
     return `${Number(value).toFixed(0)}%`;
+  }
+
+  function formatSigned(value, digits = 0) {
+    if (value === null || value === undefined || Number.isNaN(Number(value))) return '0';
+    const num = Number(value);
+    const fixed = num.toFixed(digits);
+    return num > 0 ? `+${fixed}` : fixed;
   }
 
   function formatChange(changePct, changeAbs) {
@@ -206,62 +369,152 @@
     return false;
   }
 
-  function buildSparkline(history) {
+  function describeMomentum(nets, vols) {
+    const firstNet = Number(nets[0] ?? 0);
+    const lastNet = Number(nets[nets.length - 1] ?? 0);
+    const netDelta = Number.isFinite(firstNet) && Number.isFinite(lastNet) ? lastNet - firstNet : 0;
+
+    const firstVol = Number(vols[0] ?? 0);
+    const lastVol = Number(vols[vols.length - 1] ?? 0);
+    let volumeDeltaPct = 0;
+    if (firstVol > 0 && Number.isFinite(lastVol)) {
+      volumeDeltaPct = ((lastVol - firstVol) / firstVol) * 100;
+    } else if (firstVol <= 0 && lastVol > 0) {
+      volumeDeltaPct = 100;
+    }
+
+    const peakVolume = Math.max(...vols, 0);
+
+    const trend = (() => {
+      if (netDelta >= 8 && volumeDeltaPct >= 25) {
+        return {
+          title: 'Bullish swarm',
+          detail: 'Net score and crowd attention climbed together.',
+        };
+      }
+      if (netDelta >= 8 && volumeDeltaPct <= -15) {
+        return {
+          title: 'Quiet accumulation',
+          detail: 'Conviction improved even as chatter cooled.',
+        };
+      }
+      if (netDelta <= -8 && volumeDeltaPct >= 25) {
+        return {
+          title: 'Bearish pile-on',
+          detail: 'Volume spiked while sentiment deteriorated.',
+        };
+      }
+      if (netDelta <= -8 && volumeDeltaPct <= -15) {
+        return {
+          title: 'Exhausted fade',
+          detail: 'Both attention and net score lost momentum.',
+        };
+      }
+      if (Math.abs(netDelta) <= 4 && Math.abs(volumeDeltaPct) >= 25) {
+        return {
+          title: 'Volume regime shift',
+          detail: 'Sentiment held steady but interest moved sharply.',
+        };
+      }
+      return {
+        title: 'Stable tape',
+        detail: 'No dramatic divergence between conviction and chatter.',
+      };
+    })();
+
+    const legendHtml = `
+      <div class="momentum-summary">
+        <strong>${trend.title}</strong>
+        <span>${trend.detail}</span>
+      </div>
+      <div class="momentum-badges">
+        <span class="momentum-chip ${netDelta >= 0 ? 'chip-up' : 'chip-down'}">Net ${formatSigned(netDelta, 1)} pts</span>
+        <span class="momentum-chip ${volumeDeltaPct >= 0 ? 'chip-up' : 'chip-down'}">Volume ${formatSigned(volumeDeltaPct, 0)}%</span>
+        <span class="momentum-chip chip-neutral">Peak ${formatInteger(peakVolume)} posts</span>
+      </div>
+    `;
+
+    return { legendHtml };
+  }
+
+  function buildMomentumChart(history) {
     if (!history || history.length < 2) return null;
-    const width = 240;
-    const height = 80;
-    const paddingX = 10;
-    const paddingY = 12;
-    const step = (width - paddingX * 2) / (history.length - 1);
+    const width = 320;
+    const height = 140;
+    const paddingX = 16;
+    const paddingY = 18;
+    const chartHeight = height - paddingY * 2;
+    const step = history.length > 1 ? (width - paddingX * 2) / (history.length - 1) : 0;
 
-    const nets = history.map((h) => Number(h.net_score || 0));
-    const vols = history.map((h) => Number(h.posts || 0));
+    const nets = history.map((h) => Number(h.net_score ?? 0));
+    const vols = history.map((h) => Math.max(0, Number(h.posts ?? 0)));
+    if (!nets.length || !vols.length) return null;
 
-    const netMin = Math.min(...nets);
-    const netMax = Math.max(...nets);
-    const volMin = Math.min(...vols);
-    const volMax = Math.max(...vols);
+    const maxVolume = Math.max(...vols, 1);
+    const barWidth = Math.max(2, (width - paddingX * 2) / history.length - 2);
 
-    const toY = (val, min, max) => {
-      if (max === min) return height / 2;
-      const ratio = (val - min) / (max - min);
-      return paddingY + (1 - ratio) * (height - paddingY * 2);
+    const netAbsMax = Math.max(...nets.map((n) => Math.abs(Number.isFinite(n) ? n : 0)), 1);
+    const toNetY = (value) => {
+      const val = Number.isFinite(value) ? value : 0;
+      const ratio = (val + netAbsMax) / (netAbsMax * 2);
+      return paddingY + (1 - ratio) * chartHeight;
     };
-
-    const buildPath = (values, min, max) => {
-      let d = '';
-      values.forEach((val, idx) => {
-        const x = paddingX + idx * step;
-        const y = toY(val, min, max);
-        d += idx === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
-      });
-      return d;
-    };
+    const zeroY = toNetY(0);
 
     const svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
     svg.setAttribute('preserveAspectRatio', 'none');
     svg.classList.add('sparkline');
 
-    const baseline = document.createElementNS(SVG_NS, 'line');
-    baseline.setAttribute('x1', String(paddingX));
-    baseline.setAttribute('y1', String(height - paddingY));
-    baseline.setAttribute('x2', String(width - paddingX));
-    baseline.setAttribute('y2', String(height - paddingY));
-    baseline.setAttribute('class', 'sparkline-baseline');
-    svg.appendChild(baseline);
+    const zeroLine = document.createElementNS(SVG_NS, 'line');
+    zeroLine.setAttribute('x1', String(paddingX));
+    zeroLine.setAttribute('x2', String(width - paddingX));
+    zeroLine.setAttribute('y1', String(zeroY));
+    zeroLine.setAttribute('y2', String(zeroY));
+    zeroLine.setAttribute('class', 'momentum-zero-line');
+    svg.appendChild(zeroLine);
 
-    const netPath = document.createElementNS(SVG_NS, 'path');
-    netPath.setAttribute('d', buildPath(nets, netMin, netMax));
-    netPath.setAttribute('class', 'sparkline-line net-line');
-    svg.appendChild(netPath);
+    const barGroup = document.createElementNS(SVG_NS, 'g');
+    vols.forEach((vol, idx) => {
+      const magnitude = Number.isFinite(vol) ? vol : 0;
+      const barHeight = (magnitude / maxVolume) * (chartHeight * 0.7);
+      const x = paddingX + idx * step - barWidth / 2;
+      const y = paddingY + chartHeight - barHeight;
+      const rect = document.createElementNS(SVG_NS, 'rect');
+      rect.setAttribute('x', String(x));
+      rect.setAttribute('y', String(y));
+      rect.setAttribute('width', String(barWidth));
+      rect.setAttribute('height', String(barHeight));
+      rect.setAttribute('class', 'momentum-volume-bar');
+      rect.setAttribute('opacity', (magnitude / maxVolume) * 0.5 + 0.2);
+      barGroup.appendChild(rect);
+    });
+    svg.appendChild(barGroup);
 
-    const volPath = document.createElementNS(SVG_NS, 'path');
-    volPath.setAttribute('d', buildPath(vols, volMin, volMax));
-    volPath.setAttribute('class', 'sparkline-line volume-line');
-    svg.appendChild(volPath);
+    const path = document.createElementNS(SVG_NS, 'path');
+    let d = '';
+    nets.forEach((val, idx) => {
+      const x = paddingX + idx * step;
+      const y = toNetY(val);
+      d += idx === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
+    });
+    path.setAttribute('d', d);
+    path.setAttribute('class', 'momentum-net-line');
+    const trendUp = nets[nets.length - 1] >= nets[0];
+    path.classList.add(trendUp ? 'trend-up' : 'trend-down');
+    svg.appendChild(path);
 
-    return svg;
+    const lastCircle = document.createElementNS(SVG_NS, 'circle');
+    lastCircle.setAttribute('cx', String(paddingX + (history.length - 1) * step));
+    lastCircle.setAttribute('cy', String(toNetY(nets[nets.length - 1])));
+    lastCircle.setAttribute('r', '3');
+    lastCircle.setAttribute('class', `momentum-net-node ${trendUp ? 'trend-up' : 'trend-down'}`);
+    svg.appendChild(lastCircle);
+
+    return {
+      chart: svg,
+      legend: describeMomentum(nets, vols).legendHtml,
+    };
   }
 
   function renderTopPosts(container, posts) {
@@ -322,16 +575,21 @@
 
     const summary = symbolData.summary || {};
     const price = symbolData.price || {};
-    const history = symbolData.history || payload.history?.[sym] || [];
+    const historyRaw = symbolData.history || payload.history?.[sym] || [];
+    const historySeries = normaliseHistory(historyRaw);
     const topPosts = summary.top_posts || [];
     let priceHistory = Array.isArray(price.history) ? price.history : [];
-    if (!priceHistory.length && Array.isArray(history)) {
-      priceHistory = history
-        .map((entry) => ({
-          close: entry.close,
-          time: entry.timestamp || entry.time,
-        }))
-        .filter((pt) => Number.isFinite(Number(pt.close)));
+    if (!priceHistory.length && historySeries.length) {
+      priceHistory = historySeries
+        .map((entry) => {
+          const close = Number(entry.close ?? entry.price ?? entry.value);
+          if (!Number.isFinite(close)) return null;
+          return {
+            close,
+            time: entry.__ts ? Math.round(entry.__ts / 1000) : undefined,
+          };
+        })
+        .filter(Boolean);
     }
 
     const metrics = makeBar(summary);
@@ -339,52 +597,88 @@
     const changeAbs = price.change_abs;
     const changeClass = changePct > 0 ? 'text-success' : changePct < 0 ? 'text-danger' : 'text-muted';
     const breakdown = summary.engagement_breakdown || {};
+    const insights = buildSymbolInsights(summary, metrics, historySeries, price);
+    const exchangeLabel = String(price.exchange || 'Equity').toUpperCase();
+    const companyLine = price.company_name || price.tradingview_symbol || sym;
+    const priceMeta = describePriceMeta(price);
 
     const card = document.createElement('div');
     card.className = 'card shadow-sm social-card social-detail-card';
     card.innerHTML = `
       <div class="card-body">
-        <div class="d-flex justify-content-between align-items-start flex-wrap gap-2">
+        <div class="symbol-panel">
           <div>
+            <span class="symbol-chip">${exchangeLabel}</span>
             <div class="symbol-title">${sym}</div>
+            <div class="symbol-subtitle">${companyLine}</div>
+          </div>
+          <div class="symbol-price-block">
             <div class="price-line">
-              $${formatNumber(price.close)} <span class="${changeClass}">${formatChange(changePct, changeAbs)}</span>
+              <span class="price-value">$${formatNumber(price.close)}</span>
+            </div>
+            <div class="${changeClass}">${formatChange(changePct, changeAbs)}${price.currency ? ` · ${price.currency}` : ''}</div>
+            <div class="text-muted small">${priceMeta}</div>
+          </div>
+        </div>
+
+        <div class="symbol-chart-grid mt-4">
+          <div class="price-card">
+            <div class="panel-title">Price action</div>
+            <div class="price-chart mt-3">
+              <div class="price-chart-holder"></div>
+              <div class="price-chart-meta text-muted small mt-2"></div>
             </div>
           </div>
-          <div class="text-end">
-            <div class="net-score-value">${formatNumber(summary.net_score, 2)}</div>
-            <div class="text-muted small">Net Score</div>
+          <div class="insight-stack">
+            <div class="insight-chip ${insights.toneClass || 'tone-neutral'}">
+              <span>${insights.toneLabel}</span>
+              <strong>${formatNumber(summary.net_score, 2)}</strong>
+            </div>
+            <div class="insight-note">
+              <h6>Sentiment pulse</h6>
+              <p class="mb-0">${insights.pulseText}</p>
+            </div>
+            <div class="insight-note">
+              <h6>Flow of chatter</h6>
+              <p class="mb-0">${insights.flowText}</p>
+            </div>
+            <div class="insight-note">
+              <h6>Price alignment</h6>
+              <p class="mb-0">${insights.priceText}</p>
+            </div>
           </div>
         </div>
 
-        <div class="price-chart mt-3">
-          <div class="price-chart-holder"></div>
-          <div class="price-chart-meta text-muted small mt-2"></div>
-        </div>
-
-        <div class="mt-4 sentiment-section">
-          <h6 class="text-muted fw-semibold mb-2">Sentiment Breakdown</h6>
-          <div class="sentiment-bar-wrap"></div>
-          <div class="text-muted small mt-2">
-            Bullish ${metrics.bullPct}% (${metrics.bullPosts}) · Neutral ${metrics.neutralPct}% (${metrics.neutralPosts}) · Bearish ${metrics.bearPct}% (${metrics.bearPosts})
+        <div class="sentiment-engagement-grid mt-4">
+          <div class="card-panel">
+            <div class="panel-title">Sentiment mix</div>
+            <div class="sentiment-bar-wrap mt-3"></div>
+            <div class="text-muted small mt-2">
+              Bullish ${metrics.bullPct}% (${metrics.bullPosts}) · Neutral ${metrics.neutralPct}% (${metrics.neutralPosts}) · Bearish ${metrics.bearPct}% (${metrics.bearPosts})
+            </div>
+          </div>
+          <div class="card-panel">
+            <div class="panel-title">Engagement tiers</div>
+            <div class="engagement-breakdown mt-3 d-flex gap-2 flex-wrap">
+              <span class="badge badge-tier-high">High ${breakdown.high ?? 0}</span>
+              <span class="badge badge-tier-medium">Med ${breakdown.medium ?? 0}</span>
+              <span class="badge badge-tier-low">Low ${breakdown.low ?? 0}</span>
+              <span class="badge badge-tier-total">Posts ${metrics.total}</span>
+            </div>
+            <p class="text-muted small mt-2 mb-0">${insights.engagementText}</p>
           </div>
         </div>
 
-        <div class="engagement-breakdown mt-4 d-flex gap-2 flex-wrap">
-          <span class="badge badge-tier-high">High ${breakdown.high ?? 0}</span>
-          <span class="badge badge-tier-medium">Med ${breakdown.medium ?? 0}</span>
-          <span class="badge badge-tier-low">Low ${breakdown.low ?? 0}</span>
-          <span class="badge badge-tier-total">Posts ${metrics.total}</span>
-        </div>
-
-        <div class="sparkline-container mt-4">
-          <div class="sparkline-holder"></div>
-          <div class="sparkline-legend text-muted small"></div>
-        </div>
-
-        <div class="top-posts mt-4">
-          <h6 class="text-muted fw-semibold mb-2">Top Posts</h6>
-          <ul class="list-unstyled mb-0 top-posts-list"></ul>
+        <div class="symbol-lower-grid mt-4">
+          <div class="sparkline-container card-panel">
+            <div class="panel-title">Net score vs post volume</div>
+            <div class="sparkline-holder mt-3"></div>
+            <div class="sparkline-legend text-muted small"></div>
+          </div>
+          <div class="top-posts card-panel">
+            <div class="panel-title">Top posts</div>
+            <ul class="list-unstyled mb-0 top-posts-list mt-3"></ul>
+          </div>
         </div>
       </div>
     `;
@@ -393,16 +687,18 @@
 
     const chartHolder = card.querySelector('.price-chart-holder');
     const chartWrap = card.querySelector('.price-chart');
-    const priceChart = buildPriceChart(priceHistory);
     let chartMode = null;
-    if (priceChart && chartHolder) {
-      chartHolder.innerHTML = '';
-      chartHolder.appendChild(priceChart);
-      chartMode = 'inline';
-    } else if (chartHolder && price.tradingview_symbol) {
+    if (chartHolder && price.tradingview_symbol) {
       chartHolder.innerHTML = '';
       mountTradingViewChart(chartHolder, price.tradingview_symbol);
       chartMode = 'tradingview';
+    } else if (chartHolder) {
+      const priceChart = buildPriceChart(priceHistory);
+      if (priceChart) {
+        chartHolder.innerHTML = '';
+        chartHolder.appendChild(priceChart);
+        chartMode = 'inline';
+      }
     }
     if (!chartMode) {
       chartWrap?.classList.add('d-none');
@@ -418,7 +714,8 @@
         const parts = [];
         const resolution = describeResolution(price.history_resolution);
         const lookback = price.history_lookback_hours;
-        const updatedAt = price.timestamp ? new Date(Number(price.timestamp) * 1000) : null;
+        const ts = toMillis(price.timestamp);
+        const updatedAt = Number.isFinite(ts) ? new Date(ts) : null;
         if (resolution) parts.push(`${resolution} bars`);
         if (Number.isFinite(Number(lookback)) && lookback) parts.push(`~${lookback}h range`);
         if (updatedAt && !Number.isNaN(updatedAt.getTime())) {
@@ -433,20 +730,19 @@
       }
     }
 
+    const sparkSection = card.querySelector('.sparkline-container');
     const sparkHolder = card.querySelector('.sparkline-holder');
-    const spark = buildSparkline(history);
-    if (spark) {
-      sparkHolder?.appendChild(spark);
+    const momentum = buildMomentumChart(historySeries);
+    if (sparkHolder && momentum) {
+      sparkHolder.innerHTML = '';
+      sparkHolder.appendChild(momentum.chart);
+      sparkSection?.classList.remove('d-none');
+      const legend = card.querySelector('.sparkline-legend');
+      if (legend) legend.innerHTML = momentum.legend;
     } else {
-      card.querySelector('.sparkline-container')?.classList.add('d-none');
-    }
-
-    const legend = card.querySelector('.sparkline-legend');
-    if (legend) {
-      legend.innerHTML = `
-        <span class="legend-dot net"></span> Net Score 
-        <span class="legend-dot volume"></span> Post Volume
-      `;
+      sparkSection?.classList.add('d-none');
+      const legend = card.querySelector('.sparkline-legend');
+      if (legend) legend.innerHTML = '';
     }
 
     renderTopPosts(card.querySelector('.top-posts'), topPosts);

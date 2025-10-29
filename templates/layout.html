@@ -17,9 +17,11 @@
         <div class="utility-bar">
             <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
                 <div class="utility-status d-flex align-items-center gap-2">
-                    <span class="status-indicator" aria-hidden="true"></span>
+                    <span class="status-indicator {{ market_status.indicator_class | default('is-open') }}" aria-hidden="true"></span>
                     <span class="utility-label text-uppercase">US Markets</span>
-                    <span class="utility-meta text-white-50">Open · closes 4:00 PM ET</span>
+                    <span class="utility-meta text-white-50">
+                        {{ market_status.state_text | default('Open') }} · {{ market_status.descriptor | default('Closes 4:00 PM ET') }}
+                    </span>
                 </div>
                 <div class="utility-links d-flex align-items-center gap-3">
                     <a class="utility-link" href="{{ url_for('web.news_list') }}#on-the-radar">Market radar</a>

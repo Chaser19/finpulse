@@ -1,9 +1,10 @@
 from __future__ import annotations
 from collections import Counter, defaultdict
-from datetime import datetime
+from datetime import datetime, time, timedelta
 import math
 import re
 from typing import Any, Dict, Iterable, List
+from zoneinfo import ZoneInfo
 
 from flask import Blueprint, current_app, render_template, request, redirect, url_for
 from services.news_repo import NewsRepo
@@ -109,34 +110,137 @@ TAG_CONTEXT_HINTS: Dict[str, Dict[str, Any]] = {
 
 NEWS_FILTER_PRESETS: List[Dict[str, Any]] = [
     {
-        "label": "AI & Chips",
-        "description": "Semis, AI platforms, and compute buildout.",
-        "industries": [],
-        "tags": ["AI", "semiconductors", "chips"],
+        "id": "market-pulse",
+        "label": "Market Pulse",
+        "description": "Index moves, breadth, and flows.",
+        "industries": ["Markets"],
+        "tags": ["Financial Markets", "Equities", "NASDAQ", "$NYSE"],
         "tag_mode": "any",
     },
     {
+        "id": "earnings-guidance",
+        "label": "Earnings & Guidance",
+        "description": "Quarterly results and management outlooks.",
+        "industries": ["Markets"],
+        "tags": ["Earnings", "$CEO"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "tech-ai",
+        "label": "Tech & AI",
+        "description": "Enterprise AI, chips, and platform shifts.",
+        "industries": ["Markets"],
+        "tags": ["Technology", "$AI"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "energy-commodities",
         "label": "Energy & Commodities",
-        "description": "Oil, gas, metals, and supply trends.",
-        "industries": [],
-        "tags": ["oil", "gas", "energy", "commodities"],
+        "description": "Oil, transport, and resource supply.",
+        "industries": ["Markets"],
+        "tags": ["Energy & Transportation", "Oil"],
         "tag_mode": "any",
     },
     {
+        "id": "macro-rates",
         "label": "Macro & Rates",
-        "description": "Fed, inflation, growth, and FX.",
-        "industries": [],
-        "tags": ["inflation", "rates", "fed", "growth"],
+        "description": "Growth data, policy, and the curve.",
+        "industries": ["Markets"],
+        "tags": ["Economy - Monetary", "$GDP", "Rates", "Fed"],
         "tag_mode": "any",
     },
     {
-        "label": "ESG Watch",
-        "description": "Climate, sustainability, and governance.",
-        "industries": [],
-        "tags": ["esg", "sustainability", "climate"],
+        "id": "inflation-watch",
+        "label": "Inflation Watch",
+        "description": "Price pressures and cost dynamics.",
+        "industries": ["Markets"],
+        "tags": ["Inflation"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "policy-regulation",
+        "label": "Policy & Regulation",
+        "description": "Capitol Hill and rulemaking.",
+        "industries": ["Policy"],
+        "tags": ["Policy", "Government"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "geopolitics-trade",
+        "label": "Geopolitics & Trade",
+        "description": "Tariffs, alliances, and conflict risk.",
+        "industries": ["Policy", "Geopolitics"],
+        "tags": ["Geopolitics", "Tariffs"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "consumer-retail",
+        "label": "Consumer & Retail",
+        "description": "Household demand and retail trends.",
+        "industries": ["Markets"],
+        "tags": ["Retail & Wholesale"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "banking-credit",
+        "label": "Banking & Credit",
+        "description": "Banks, funding, and balance sheets.",
+        "industries": ["Markets"],
+        "tags": ["Finance"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "health-life-sciences",
+        "label": "Life Sciences & Healthcare",
+        "description": "Biotech breakthroughs and health policy.",
+        "industries": ["Markets"],
+        "tags": ["Life Sciences"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "real-assets-housing",
+        "label": "Real Assets & Housing",
+        "description": "Property markets and construction flows.",
+        "industries": ["Markets"],
+        "tags": ["Real Estate & Construction"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "global-equities",
+        "label": "Global Equities",
+        "description": "Regional benchmarks and cross-border moves.",
+        "industries": ["Markets"],
+        "tags": ["$US", "$UK", "$TSX"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "etf-passive",
+        "label": "ETFs & Passive",
+        "description": "Fund flows and product launches.",
+        "industries": ["Markets"],
+        "tags": ["$ETF"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "crypto-digital",
+        "label": "Crypto & Digital Assets",
+        "description": "Blockchain, tokens, and digital finance.",
+        "industries": ["Markets"],
+        "tags": ["Blockchain"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "manufacturing-industrials",
+        "label": "Manufacturing & Industrials",
+        "description": "Factories, logistics, and capex.",
+        "industries": ["Markets"],
+        "tags": ["Manufacturing", "Energy & Transportation"],
         "tag_mode": "any",
     },
 ]
+NEWS_FILTER_PRESET_INDEX: Dict[str, Dict[str, Any]] = {
+    preset["id"]: preset for preset in NEWS_FILTER_PRESETS
+}
 
 THEME_DESCRIPTIONS: Dict[str, str] = {
     "markets": "Broad market pulse & earnings",
@@ -149,6 +253,58 @@ THEME_DESCRIPTIONS: Dict[str, str] = {
     "geopolitics": "Diplomacy, conflict, & global risk",
     "finance": "Banking, deals, & capital markets",
 }
+
+MARKET_TZ = ZoneInfo("America/New_York")
+MARKET_OPEN_TIME = time(hour=9, minute=30)
+MARKET_CLOSE_TIME = time(hour=16, minute=0)
+
+
+def _next_trading_day(day):
+    next_day = day + timedelta(days=1)
+    while next_day.weekday() >= 5:  # Skip Saturday/Sunday
+        next_day += timedelta(days=1)
+    return next_day
+
+
+def _format_market_event(ts: datetime, current: datetime) -> str:
+    time_part = ts.strftime("%I:%M %p").lstrip("0")
+    if ts.date() == current.date():
+        return f"{time_part} ET"
+    return f"{ts.strftime('%a')} {time_part} ET"
+
+
+def compute_us_market_status(now: datetime | None = None) -> Dict[str, Any]:
+    current = now.astimezone(MARKET_TZ) if now else datetime.now(MARKET_TZ)
+    open_today = datetime.combine(current.date(), MARKET_OPEN_TIME, tzinfo=MARKET_TZ)
+    close_today = datetime.combine(current.date(), MARKET_CLOSE_TIME, tzinfo=MARKET_TZ)
+    trading_day = current.weekday() < 5
+
+    if trading_day and open_today <= current < close_today:
+        is_open = True
+        next_event = close_today
+        next_label = "Closes"
+    elif trading_day and current < open_today:
+        is_open = False
+        next_event = open_today
+        next_label = "Opens"
+    else:
+        is_open = False
+        next_day = _next_trading_day(current.date())
+        next_event = datetime.combine(next_day, MARKET_OPEN_TIME, tzinfo=MARKET_TZ)
+        next_label = "Opens"
+
+    descriptor = f"{next_label} {_format_market_event(next_event, current)}"
+    return {
+        "is_open": is_open,
+        "state_text": "Open" if is_open else "Closed",
+        "descriptor": descriptor,
+        "indicator_class": "is-open" if is_open else "is-closed",
+    }
+
+
+@web_bp.app_context_processor
+def inject_market_status():
+    return {"market_status": compute_us_market_status()}
 
 def estimate_read_time(text: str) -> int:
     tokens = re.findall(r"\w+", text or "")
@@ -435,8 +591,8 @@ def get_social_handles() -> list[str]:
             uniq.append(h)
     return uniq
 
-def get_scrape_user() -> str:
-    cfg = (current_app.config.get("SOCIAL_TWITTER_SCRAPE_USER") or "").strip().lstrip("@")
+def get_primary_social_user() -> str:
+    cfg = (current_app.config.get("SOCIAL_TWITTER_PRIMARY_USER") or "").strip().lstrip("@")
     if cfg:
         return cfg
     hs = get_social_handles()
@@ -446,8 +602,13 @@ def get_scrape_user() -> str:
 def index():
     categories = repo().list_categories()
     social_handles = get_social_handles()
-    scrape_user = get_scrape_user()
-    return render_template("index.html", categories=categories, social_handles=social_handles, scrape_user=scrape_user)
+    primary_handle = get_primary_social_user()
+    return render_template(
+        "index.html",
+        categories=categories,
+        social_handles=social_handles,
+        primary_handle=primary_handle,
+    )
 
 
 @web_bp.route("/news")
@@ -468,6 +629,13 @@ def news_list():
     selected_industries = request.args.getlist("industries")
     selected_tags = request.args.getlist("tags")
     tag_mode = request.args.get("tag_mode", "any") or "any"
+    preset_id = (request.args.get("preset") or "").strip()
+
+    preset_def = NEWS_FILTER_PRESET_INDEX.get(preset_id)
+    if preset_def:
+        selected_industries = list(preset_def.get("industries") or [])
+        selected_tags = list(preset_def.get("tags") or [])
+        tag_mode = preset_def.get("tag_mode", tag_mode)
 
     combined_industries: list[str] = []
     for value in selected_industries + ([active_tag] if active_tag else []):
@@ -687,37 +855,25 @@ def news_list():
         )
 
     preset_links = []
-    current_tags_normalised = {t.lower().lstrip("#") for t in selected_tags}
-    current_industries = {s.lower() for s in combined_industries}
     for preset in NEWS_FILTER_PRESETS:
-        kwargs: Dict[str, Any] = {}
-        if preset.get("industries"):
-            kwargs["industries"] = preset["industries"]
-        if preset.get("tags"):
-            kwargs["tags"] = preset["tags"]
-        if preset.get("tag_mode"):
-            kwargs["tag_mode"] = preset["tag_mode"]
-        if preset.get("q"):
-            kwargs["q"] = preset["q"]
-
-        href = build_news_url(**kwargs)
-
-        preset_tags_norm = {t.lower().lstrip("#") for t in (preset.get("tags") or [])}
-        preset_inds_norm = {s.lower() for s in (preset.get("industries") or [])}
-        is_active = False
-        if preset_tags_norm:
-            is_active = preset_tags_norm.issubset(current_tags_normalised)
-        if preset_inds_norm:
-            is_active = is_active or preset_inds_norm.issubset(current_industries)
+        href = build_news_url(
+            preset=preset["id"],
+            industries=preset.get("industries") or None,
+            tags=preset.get("tags") or None,
+            tag_mode=preset.get("tag_mode"),
+        )
 
         preset_links.append(
             {
+                "id": preset["id"],
                 "label": preset["label"],
                 "description": preset.get("description", ""),
                 "href": href,
-                "active": is_active,
+                "active": preset["id"] == preset_id,
             }
         )
+
+    active_preset = next((p for p in preset_links if p["active"]), None)
 
     theme_cards: List[Dict[str, Any]] = [
         {
@@ -769,6 +925,7 @@ def news_list():
         narratives=narratives,
         quick_tags=quick_tags,
         filter_presets=preset_links,
+        active_preset=active_preset,
         news_refreshed=refreshed_display,
         theme_cards=theme_cards,
     )
@@ -786,8 +943,8 @@ def curated():
 def social():
     """Social insights page (embeds timelines from configured accounts)."""
     handles = get_social_handles()
-    scrape_user = get_scrape_user()
-    return render_template("social.html", handles=handles, scrape_user=scrape_user)
+    primary_handle = get_primary_social_user()
+    return render_template("social.html", handles=handles, primary_handle=primary_handle)
 
 
 @web_bp.route("/macro-trends")

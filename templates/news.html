@@ -27,7 +27,7 @@
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#advancedFilters"
-        aria-expanded="{{ 'true' if selected_industries or selected_tags else 'false' }}"
+        aria-expanded="{{ 'true' if selected_industries or selected_tags or active_preset else 'false' }}"
         data-filter-toggle="advancedFilters"
         data-expanded-text="Hide filters"
         data-collapsed-text="Advanced filters"
@@ -36,6 +36,7 @@
       </button>
       <form class="news-search" action="{{ url_for('web.news_list') }}" method="get">
         {% if active_tag %}<input type="hidden" name="tag" value="{{ active_tag }}">{% endif %}
+        {% if active_preset %}<input type="hidden" name="preset" value="{{ active_preset.id }}">{% endif %}
         {% for ind in selected_industries %}<input type="hidden" name="industries" value="{{ ind }}">{% endfor %}
         {% for t in selected_tags %}<input type="hidden" name="tags" value="{{ t }}">{% endfor %}
         <input type="hidden" name="tag_mode" value="{{ tag_mode }}">
@@ -60,20 +61,13 @@
             </div>
           </div>
         {% endif %}
-        {% if quick_tags %}
-          <div class="news-filter-group">
-            <span class="news-filter-label text-white-50">Trending tags:</span>
-            <div class="news-filter-chip-list">
-              {% for tag in quick_tags %}
-                <a href="{{ tag.href }}" class="news-tag-chip">#{{ tag.tag }}</a>
-              {% endfor %}
-            </div>
-          </div>
-        {% endif %}
       </div>
     {% endif %}
-    {% if selected_industries or selected_tags or q %}
+    {% if selected_industries or selected_tags or q or active_preset %}
       <div class="news-active-filters">
+        {% if active_preset %}
+          <span class="news-active-chip">Preset: {{ active_preset.label }}</span>
+        {% endif %}
         {% for s in selected_industries %}
           <span class="news-active-chip">Industry: {{ s }}</span>
         {% endfor %}
@@ -86,22 +80,20 @@
         {% if q %}
           <span class="news-active-chip">Search: {{ q }}</span>
         {% endif %}
-        <a class="news-clear-link" href="{{ build_news_url(tag=active_tag, industries=None, tags=None, tag_mode=None, q=None) }}">Clear filters</a>
+        <a class="news-clear-link" href="{{ build_news_url(tag=active_tag, industries=None, tags=None, tag_mode=None, q=None, preset=None) }}">Clear filters</a>
       </div>
     {% endif %}
   </section>
 
-  <div class="collapse advanced-filters-wrap mb-3 {% if selected_industries or selected_tags %}show{% endif %}" id="advancedFilters">
-    <form class="card card-dark shadow-sm advanced-filter-card" action="{{ url_for('web.news_list') }}" method="get">
-      {% if active_tag %}<input type="hidden" name="tag" value="{{ active_tag }}">{% endif %}
-      <input type="hidden" name="q" value="{{ q }}">
+  <div class="collapse advanced-filters-wrap mb-3 {% if selected_industries or selected_tags or active_preset %}show{% endif %}" id="advancedFilters">
+    <div class="card card-dark shadow-sm advanced-filter-card">
       <div class="card-header d-flex align-items-center justify-content-between gap-3">
         <div>
           <span class="advanced-filter-kicker text-uppercase">Advanced filters</span>
-          <p class="advanced-filter-subtitle mb-0 text-white-50">Blend multiple themes and trending tags</p>
+          <p class="advanced-filter-subtitle mb-0 text-white-50">Choose a preset lens to reshape the feed</p>
         </div>
         <div class="d-flex align-items-center gap-2">
-          <a class="btn btn-outline-secondary btn-sm" href="{{ build_news_url(tag=active_tag, industries=None, tags=None, tag_mode=None) }}">Reset</a>
+          <a class="btn btn-outline-secondary btn-sm" href="{{ build_news_url(tag=active_tag, industries=None, tags=None, tag_mode=None, preset=None) }}">Reset</a>
           <button
             class="btn btn-outline-secondary btn-sm advanced-filter-toggle"
             type="button"
@@ -117,52 +109,15 @@
         </div>
       </div>
       <div class="card-body">
-        <div class="filter-section">
-          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-            <span class="filter-section-label">Themes</span>
-            <span class="filter-section-hint text-white-50 small">Select multiple to intersect focus areas</span>
-          </div>
-          <div class="filter-chip-grid">
-            {% for cat in categories %}
-              <div class="filter-chip-item">
-                <input class="btn-check filter-input" type="checkbox" name="industries" value="{{ cat }}" id="ind-{{ loop.index }}" {% if cat in selected_industries %}checked{% endif %}>
-                <label class="filter-chip" for="ind-{{ loop.index }}">
-                  <span class="filter-chip-label">{{ cat }}</span>
-                </label>
-              </div>
-            {% endfor %}
-          </div>
-        </div>
-
-        <div class="filter-section">
-          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2">
-            <span class="filter-section-label"># Tags</span>
-            <div class="d-flex align-items-center gap-2">
-              <label class="form-label mb-0 small">Match</label>
-              <select class="form-select form-select-sm" name="tag_mode">
-                <option value="any" {% if tag_mode != 'all' %}selected{% endif %}>Any</option>
-                <option value="all" {% if tag_mode == 'all' %}selected{% endif %}>All</option>
-              </select>
-            </div>
-          </div>
-          <div class="filter-chip-grid">
-            {% for tag, count in top_tags %}
-              <div class="filter-chip-item">
-                <input class="btn-check filter-input" type="checkbox" name="tags" value="{{ tag }}" id="tag-{{ loop.index }}" {% if tag in selected_tags or ('#' ~ tag) in selected_tags %}checked{% endif %}>
-                <label class="filter-chip" for="tag-{{ loop.index }}">
-                  <span class="filter-chip-label">#{{ tag }}</span>
-                  <span class="filter-chip-meta">{{ count }}</span>
-                </label>
-              </div>
-            {% endfor %}
-          </div>
+        <div class="filter-chip-grid presets-grid">
+          {% for preset in filter_presets %}
+            <a class="filter-chip filter-chip-link {% if preset.active %}active{% endif %}" href="{{ preset.href }}">
+              <span class="filter-chip-label">{{ preset.label }}</span>
+            </a>
+          {% endfor %}
         </div>
       </div>
-      <div class="card-footer d-flex flex-wrap gap-2">
-        <button class="btn btn-primary" type="submit">Apply filters</button>
-        <a class="btn btn-outline-secondary" href="{{ build_news_url(tag=active_tag, industries=None, tags=None, tag_mode=None) }}">Clear selection</a>
-      </div>
-    </form>
+    </div>
   </div>
 
 {% if hot_tags %}
