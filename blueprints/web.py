@@ -110,34 +110,137 @@ TAG_CONTEXT_HINTS: Dict[str, Dict[str, Any]] = {
 
 NEWS_FILTER_PRESETS: List[Dict[str, Any]] = [
     {
-        "label": "AI & Chips",
-        "description": "Semis, AI platforms, and compute buildout.",
-        "industries": [],
-        "tags": ["AI", "semiconductors", "chips"],
+        "id": "market-pulse",
+        "label": "Market Pulse",
+        "description": "Index moves, breadth, and flows.",
+        "industries": ["Markets"],
+        "tags": ["Financial Markets", "Equities", "NASDAQ", "$NYSE"],
         "tag_mode": "any",
     },
     {
+        "id": "earnings-guidance",
+        "label": "Earnings & Guidance",
+        "description": "Quarterly results and management outlooks.",
+        "industries": ["Markets"],
+        "tags": ["Earnings", "$CEO"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "tech-ai",
+        "label": "Tech & AI",
+        "description": "Enterprise AI, chips, and platform shifts.",
+        "industries": ["Markets"],
+        "tags": ["Technology", "$AI"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "energy-commodities",
         "label": "Energy & Commodities",
-        "description": "Oil, gas, metals, and supply trends.",
-        "industries": [],
-        "tags": ["oil", "gas", "energy", "commodities"],
+        "description": "Oil, transport, and resource supply.",
+        "industries": ["Markets"],
+        "tags": ["Energy & Transportation", "Oil"],
         "tag_mode": "any",
     },
     {
+        "id": "macro-rates",
         "label": "Macro & Rates",
-        "description": "Fed, inflation, growth, and FX.",
-        "industries": [],
-        "tags": ["inflation", "rates", "fed", "growth"],
+        "description": "Growth data, policy, and the curve.",
+        "industries": ["Markets"],
+        "tags": ["Economy - Monetary", "$GDP", "Rates", "Fed"],
         "tag_mode": "any",
     },
     {
-        "label": "ESG Watch",
-        "description": "Climate, sustainability, and governance.",
-        "industries": [],
-        "tags": ["esg", "sustainability", "climate"],
+        "id": "inflation-watch",
+        "label": "Inflation Watch",
+        "description": "Price pressures and cost dynamics.",
+        "industries": ["Markets"],
+        "tags": ["Inflation"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "policy-regulation",
+        "label": "Policy & Regulation",
+        "description": "Capitol Hill and rulemaking.",
+        "industries": ["Policy"],
+        "tags": ["Policy", "Government"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "geopolitics-trade",
+        "label": "Geopolitics & Trade",
+        "description": "Tariffs, alliances, and conflict risk.",
+        "industries": ["Policy", "Geopolitics"],
+        "tags": ["Geopolitics", "Tariffs"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "consumer-retail",
+        "label": "Consumer & Retail",
+        "description": "Household demand and retail trends.",
+        "industries": ["Markets"],
+        "tags": ["Retail & Wholesale"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "banking-credit",
+        "label": "Banking & Credit",
+        "description": "Banks, funding, and balance sheets.",
+        "industries": ["Markets"],
+        "tags": ["Finance"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "health-life-sciences",
+        "label": "Life Sciences & Healthcare",
+        "description": "Biotech breakthroughs and health policy.",
+        "industries": ["Markets"],
+        "tags": ["Life Sciences"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "real-assets-housing",
+        "label": "Real Assets & Housing",
+        "description": "Property markets and construction flows.",
+        "industries": ["Markets"],
+        "tags": ["Real Estate & Construction"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "global-equities",
+        "label": "Global Equities",
+        "description": "Regional benchmarks and cross-border moves.",
+        "industries": ["Markets"],
+        "tags": ["$US", "$UK", "$TSX"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "etf-passive",
+        "label": "ETFs & Passive",
+        "description": "Fund flows and product launches.",
+        "industries": ["Markets"],
+        "tags": ["$ETF"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "crypto-digital",
+        "label": "Crypto & Digital Assets",
+        "description": "Blockchain, tokens, and digital finance.",
+        "industries": ["Markets"],
+        "tags": ["Blockchain"],
+        "tag_mode": "any",
+    },
+    {
+        "id": "manufacturing-industrials",
+        "label": "Manufacturing & Industrials",
+        "description": "Factories, logistics, and capex.",
+        "industries": ["Markets"],
+        "tags": ["Manufacturing", "Energy & Transportation"],
         "tag_mode": "any",
     },
 ]
+NEWS_FILTER_PRESET_INDEX: Dict[str, Dict[str, Any]] = {
+    preset["id"]: preset for preset in NEWS_FILTER_PRESETS
+}
 
 THEME_DESCRIPTIONS: Dict[str, str] = {
     "markets": "Broad market pulse & earnings",
@@ -526,6 +629,13 @@ def news_list():
     selected_industries = request.args.getlist("industries")
     selected_tags = request.args.getlist("tags")
     tag_mode = request.args.get("tag_mode", "any") or "any"
+    preset_id = (request.args.get("preset") or "").strip()
+
+    preset_def = NEWS_FILTER_PRESET_INDEX.get(preset_id)
+    if preset_def:
+        selected_industries = list(preset_def.get("industries") or [])
+        selected_tags = list(preset_def.get("tags") or [])
+        tag_mode = preset_def.get("tag_mode", tag_mode)
 
     combined_industries: list[str] = []
     for value in selected_industries + ([active_tag] if active_tag else []):
@@ -745,37 +855,25 @@ def news_list():
         )
 
     preset_links = []
-    current_tags_normalised = {t.lower().lstrip("#") for t in selected_tags}
-    current_industries = {s.lower() for s in combined_industries}
     for preset in NEWS_FILTER_PRESETS:
-        kwargs: Dict[str, Any] = {}
-        if preset.get("industries"):
-            kwargs["industries"] = preset["industries"]
-        if preset.get("tags"):
-            kwargs["tags"] = preset["tags"]
-        if preset.get("tag_mode"):
-            kwargs["tag_mode"] = preset["tag_mode"]
-        if preset.get("q"):
-            kwargs["q"] = preset["q"]
-
-        href = build_news_url(**kwargs)
-
-        preset_tags_norm = {t.lower().lstrip("#") for t in (preset.get("tags") or [])}
-        preset_inds_norm = {s.lower() for s in (preset.get("industries") or [])}
-        is_active = False
-        if preset_tags_norm:
-            is_active = preset_tags_norm.issubset(current_tags_normalised)
-        if preset_inds_norm:
-            is_active = is_active or preset_inds_norm.issubset(current_industries)
+        href = build_news_url(
+            preset=preset["id"],
+            industries=preset.get("industries") or None,
+            tags=preset.get("tags") or None,
+            tag_mode=preset.get("tag_mode"),
+        )
 
         preset_links.append(
             {
+                "id": preset["id"],
                 "label": preset["label"],
                 "description": preset.get("description", ""),
                 "href": href,
-                "active": is_active,
+                "active": preset["id"] == preset_id,
             }
         )
+
+    active_preset = next((p for p in preset_links if p["active"]), None)
 
     theme_cards: List[Dict[str, Any]] = [
         {
@@ -827,6 +925,7 @@ def news_list():
         narratives=narratives,
         quick_tags=quick_tags,
         filter_presets=preset_links,
+        active_preset=active_preset,
         news_refreshed=refreshed_display,
         theme_cards=theme_cards,
     )

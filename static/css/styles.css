@@ -1913,6 +1913,31 @@ p, .text-muted, .text-white-50 {
   color: rgba(214, 255, 246, 0.8);
 }
 
+.filter-chip-link {
+  text-decoration: none;
+}
+
+.filter-chip-link.active {
+  border-color: var(--fp-card-border-active);
+  background-color: rgba(12, 78, 88, 0.75);
+  color: #d6fff6;
+  box-shadow: 0 0 0 1px rgba(29, 233, 195, 0.12);
+}
+
+.filter-chip-link.active .filter-chip-meta {
+  color: rgba(214, 255, 246, 0.8);
+}
+
+.filter-chip-grid.presets-grid {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+@media (max-width: 1400px) {
+  .filter-chip-grid.presets-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
 .advanced-filter-card select.form-select {
   min-width: 130px;
 }

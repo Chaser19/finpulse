@@ -100,8 +100,8 @@ The Macro Trends dashboard pulls directly from FRED (employment, inflation, spen
 
 - Request free API keys from https://fred.stlouisfed.org/ and https://www.eia.gov/opendata/.
 - Add them to `.env` as `FRED_API_KEY=<your fred key>` and `EIA_API_KEY=<your eia key>`.
-- Start the Flask app (or run any CLI command); the cache warm-up in `create_app()` fetches all series and keeps them refreshed every 15 minutes.
-- Need to force a refresh without running the server? Execute `flask shell -c "from services.macro_trends import get_macro_trends; get_macro_trends(force_refresh=True)"`.
+- Start the Flask app (or run any CLI command); the cache warm-up in `create_app()` fetches all series and keeps them refreshed every 2 hours.
+- Need to force a refresh without running the server? Execute `flask refresh-macro` (or `flask shell -c "from services.macro_trends import get_macro_trends; get_macro_trends(force_refresh=True)"`).
 
 Without keys the site continues to render using the curated fallback dataset, so development still works offline.
 
@@ -174,7 +174,7 @@ cp .env.example .env  # if present, else create .env with keys
 
 # 3) Ingest / refresh data
 export FLASK_APP=app:create_app
-# News (required for fresh headlines and the /news page)
+# News auto-refreshes every 2 hours in the background; run manually to force an update
 flask ingest-news
 
 # Social sentiment (optional dashboard)
