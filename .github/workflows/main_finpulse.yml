@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - finpulse
+name: Build and deploy Python app to Azure Web App - FinPulse
 
 on:
   push:
@@ -63,14 +63,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_FF22CB5288874D8782663A0E21C5FA81 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_FDF070E9A69C4EC98F9937A3A49848D1 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_806028AE1BDA47CE825462A51B114ECF }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_9CE47E7E5F1148A1A8E9762860C406D8 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2314E7501D5145259E38C2FBCBFFD8A4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3C2992F235F245D1927CB1316CAE4334 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'finpulse'
+          app-name: 'FinPulse'
           slot-name: 'Production'
           
