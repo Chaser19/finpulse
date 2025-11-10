@@ -9,7 +9,9 @@ from pathlib import Path
 from typing import Any, Dict, Iterable, List, Sequence
 import requests
 
+from services.alpha_vantage import fetch_daily_series_bulk
 from services.sample_social_data import get_sample_symbol_posts
+from services.tradingview import fetch_snapshots as fetch_tradingview_snapshots
 from services.twitter_auth import normalize_bearer_token
 
 MAX_HISTORY_POINTS = 60
@@ -109,52 +111,6 @@ def _sample_social_posts(normalized_symbol: str, limit: int | None) -> List[Soci
             # Skip malformed entries silently; fixtures may evolve.
             continue
     return posts
-
-
-def _fetch_tradingview_metrics(symbols: Sequence[str]) -> Dict[str, Dict[str, Any]]:
-    if not symbols:
-        return {}
-    tv_symbols = [f"NASDAQ:{sym.upper()}" for sym in symbols]
-    payload = {
-        "symbols": {"tickers": tv_symbols, "query": {"types": []}},
-        "columns": ["close", "pricescale", "volume", "change", "change_abs"],
-    }
-    try:
-        resp = requests.post(
-            "https://scanner.tradingview.com/america/scan",
-            json=payload,
-            timeout=6,
-        )
-        if resp.status_code != 200:
-            print(f"[social] TradingView snapshot HTTP {resp.status_code}")
-            return {}
-        data = resp.json().get("data", [])
-    except Exception as exc:
-        print(f"[social] TradingView snapshot failed: {exc}")
-        return {}
-
-    out: Dict[str, Dict[str, Any]] = {}
-    for item in data:
-        s = item.get("s") or ""
-        if not isinstance(s, str) or ":" not in s:
-            continue
-        symbol = s.split(":", 1)[1]
-        cols = item.get("d", []) or []
-        if len(cols) < 5:
-            continue
-        close, scale, volume, change_pct, change_abs = cols[:5]
-        price_scale = scale or 1
-        try:
-            close_price = float(close) / (price_scale if price_scale not in (0, None) else 1)
-        except Exception:
-            close_price = float(close) if close is not None else 0.0
-        out[symbol.upper()] = {
-            "close": round(close_price, 2),
-            "change_pct": round(float(change_pct or 0), 2),
-            "change_abs": round(float(change_abs or 0), 2),
-            "volume": float(volume or 0),
-        }
-    return out
 
 
 def _query_posts_twitter_api(
@@ -413,7 +369,8 @@ def ingest_social(
     history_map: Dict[str, List[Dict[str, Any]]] = existing_payload.get("history", {}) or {}
 
     normalized_symbols = [s.strip().lstrip("$") for s in symbols if s and s.strip()]
-    tv_metrics = _fetch_tradingview_metrics(normalized_symbols)
+    tv_metrics = fetch_tradingview_snapshots(normalized_symbols)
+    alpha_histories = fetch_daily_series_bulk(normalized_symbols, limit=90)
 
     results: Dict[str, dict] = {}
     now_iso = _iso_utc(datetime.utcnow())
@@ -442,7 +399,38 @@ def ingest_social(
 
         symbol_key = sym.upper()
 
-        price_snapshot = tv_metrics.get(symbol_key, {})
+        price_snapshot = dict(tv_metrics.get(symbol_key, {}))
+
+        alpha_payload = alpha_histories.get(symbol_key) or {}
+        alpha_history = alpha_payload.get("series") or []
+        alpha_meta = alpha_payload.get("meta") or {}
+        if alpha_history:
+            latest = alpha_history[-1]
+            prev = alpha_history[-2] if len(alpha_history) > 1 else None
+            close_val = latest.get("close")
+            if close_val is not None:
+                price_snapshot.setdefault("close", round(close_val, 2))
+            if prev and prev.get("close"):
+                delta = (close_val or 0) - prev["close"]
+                price_snapshot.setdefault("change_abs", round(delta, 2))
+                if prev["close"] != 0:
+                    pct = (delta / prev["close"]) * 100
+                    price_snapshot.setdefault("change_pct", round(pct, 2))
+            ts_candidate = latest.get("time")
+            if ts_candidate and not price_snapshot.get("timestamp"):
+                price_snapshot["timestamp"] = ts_candidate
+            price_snapshot["history"] = alpha_history
+            price_snapshot["history_resolution"] = "1d"
+            price_snapshot["history_source"] = "alphavantage"
+            price_snapshot["history_lookback_hours"] = len(alpha_history) * 24
+            price_snapshot.setdefault("currency", "USD")
+            price_snapshot.setdefault("source", "alphavantage")
+        if alpha_meta.get("note"):
+            price_snapshot["history_note"] = alpha_meta["note"]
+        if alpha_meta.get("error"):
+            price_snapshot["history_error"] = alpha_meta["error"]
+        if alpha_meta.get("last_refreshed"):
+            price_snapshot["history_last_refreshed"] = alpha_meta["last_refreshed"]
 
         history_entries = history_map.get(symbol_key, [])
         history_entries.append(
