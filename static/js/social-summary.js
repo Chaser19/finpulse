@@ -160,7 +160,7 @@
       priceParts.push(`${priceDelta >= 0 ? 'Trending higher' : 'Drifting lower'} across the lookback.`);
     }
     if (!priceParts.length) {
-      priceParts.push('Waiting on live ticks from TradingView.');
+      priceParts.push('Waiting on fresh price history.');
     }
 
     const engagementText = Number.isFinite(highShare)
@@ -259,55 +259,164 @@
     return String(resolution).toUpperCase();
   }
 
+  function formatProviderName(source, fallback = '') {
+    const raw = source || fallback;
+    if (!raw) return '';
+    return String(raw)
+      .replace(/[_-]+/g, ' ')
+      .replace(/\b\w/g, (ch) => ch.toUpperCase())
+      .trim();
+  }
+
   function buildPriceChart(history) {
-    if (!history || history.length < 2) return null;
+    if (!Array.isArray(history) || history.length < 2) return null;
 
-    const width = 360;
-    const height = 160;
-    const paddingX = 16;
-    const paddingY = 18;
-    const step = (width - paddingX * 2) / (history.length - 1);
+    const prepared = history
+      .map((entry) => {
+        const close = Number(entry.close ?? entry.price ?? entry.value);
+        if (!Number.isFinite(close)) return null;
+        const ts = toMillis(entry.time ?? entry.timestamp ?? entry.date);
+        const iso = Number.isFinite(ts) ? new Date(ts).toISOString().slice(0, 10) : '';
+        return { close, ts, iso };
+      })
+      .filter(Boolean);
 
-    const closes = history.map((pt) => Number(pt.close ?? pt.price ?? pt.value ?? 0));
-    if (closes.some((v) => !Number.isFinite(v))) return null;
+    if (prepared.length < 2) return null;
 
+    const limit = 60;
+    const points = prepared.slice(-limit);
+    const width = 720;
+    const height = 320;
+    const pad = { left: 48, right: 20, top: 24, bottom: 34 };
+    const chartWidth = width - pad.left - pad.right;
+    const chartHeight = height - pad.top - pad.bottom;
+    const n = points.length;
+
+    const xScale = (idx) => {
+      if (n <= 1) return pad.left;
+      return pad.left + (idx * chartWidth) / (n - 1);
+    };
+
+    const closes = points.map((pt) => pt.close);
     const minClose = Math.min(...closes);
     const maxClose = Math.max(...closes);
-    const range = maxClose - minClose || 1;
-
-    const toY = (value) => {
-      const ratio = (value - minClose) / range;
-      return paddingY + (1 - ratio) * (height - paddingY * 2);
+    const padY = (maxClose - minClose) * 0.08 || Math.max(1, minClose * 0.05);
+    const yMin = minClose - padY;
+    const yMax = maxClose + padY;
+    const yScale = (val) => {
+      if (yMax === yMin) return pad.top + chartHeight / 2;
+      return pad.top + chartHeight - ((val - yMin) * chartHeight) / (yMax - yMin);
     };
 
     const svg = document.createElementNS(SVG_NS, 'svg');
     svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
-    svg.setAttribute('preserveAspectRatio', 'none');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
     svg.classList.add('price-chart-svg');
 
-    const baseline = document.createElementNS(SVG_NS, 'line');
-    baseline.setAttribute('x1', String(paddingX));
-    baseline.setAttribute('y1', String(toY(closes[0])));
-    baseline.setAttribute('x2', String(width - paddingX));
-    baseline.setAttribute('y2', String(toY(closes[0])));
-    baseline.setAttribute('class', 'price-chart-baseline');
-    svg.appendChild(baseline);
+    const gridGroup = document.createElementNS(SVG_NS, 'g');
+    gridGroup.classList.add('price-chart-grid');
+    svg.appendChild(gridGroup);
 
+    const axisGroup = document.createElementNS(SVG_NS, 'g');
+    axisGroup.classList.add('price-chart-axes');
+    svg.appendChild(axisGroup);
+
+    const ticksGroup = document.createElementNS(SVG_NS, 'g');
+    ticksGroup.classList.add('price-chart-ticks');
+    svg.appendChild(ticksGroup);
+
+    // Horizontal grid + y ticks
+    const ySteps = 5;
+    for (let i = 0; i <= ySteps; i++) {
+      const value = yMin + (i * (yMax - yMin)) / ySteps;
+      const y = Math.round(yScale(value));
+      const hLine = document.createElementNS(SVG_NS, 'line');
+      hLine.setAttribute('x1', String(pad.left));
+      hLine.setAttribute('x2', String(width - pad.right));
+      hLine.setAttribute('y1', String(y));
+      hLine.setAttribute('y2', String(y));
+      hLine.classList.add('price-chart-grid-line');
+      gridGroup.appendChild(hLine);
+
+      const label = document.createElementNS(SVG_NS, 'text');
+      label.classList.add('price-chart-tick');
+      label.setAttribute('x', String(pad.left - 10));
+      label.setAttribute('y', String(y + 4));
+      label.setAttribute('text-anchor', 'end');
+      label.textContent = value.toFixed(2);
+      ticksGroup.appendChild(label);
+    }
+
+    // Vertical grid + x ticks
+    const tickCount = Math.min(6, n);
+    for (let i = 0; i < tickCount; i++) {
+      const idx = tickCount === 1 ? 0 : Math.round((i * (n - 1)) / (tickCount - 1));
+      const x = Math.round(xScale(idx));
+      const vLine = document.createElementNS(SVG_NS, 'line');
+      vLine.setAttribute('x1', String(x));
+      vLine.setAttribute('x2', String(x));
+      vLine.setAttribute('y1', String(pad.top));
+      vLine.setAttribute('y2', String(height - pad.bottom));
+      vLine.classList.add('price-chart-grid-line', 'vertical');
+      gridGroup.appendChild(vLine);
+
+      const tick = document.createElementNS(SVG_NS, 'text');
+      tick.classList.add('price-chart-tick');
+      tick.setAttribute('x', String(x));
+      tick.setAttribute('y', String(height - pad.bottom + 18));
+      tick.setAttribute('text-anchor', 'middle');
+      const rawLabel = points[idx].iso || '';
+      tick.textContent = rawLabel ? rawLabel.slice(5) : '';
+      ticksGroup.appendChild(tick);
+    }
+
+    // Axes
+    const xAxis = document.createElementNS(SVG_NS, 'line');
+    xAxis.setAttribute('x1', String(pad.left));
+    xAxis.setAttribute('x2', String(width - pad.right));
+    xAxis.setAttribute('y1', String(height - pad.bottom));
+    xAxis.setAttribute('y2', String(height - pad.bottom));
+    xAxis.classList.add('price-chart-axis');
+    axisGroup.appendChild(xAxis);
+
+    const yAxis = document.createElementNS(SVG_NS, 'line');
+    yAxis.setAttribute('x1', String(pad.left));
+    yAxis.setAttribute('x2', String(pad.left));
+    yAxis.setAttribute('y1', String(pad.top));
+    yAxis.setAttribute('y2', String(height - pad.bottom));
+    yAxis.classList.add('price-chart-axis');
+    axisGroup.appendChild(yAxis);
+
+    // Line path
     const path = document.createElementNS(SVG_NS, 'path');
     let d = '';
-    closes.forEach((val, idx) => {
-      const x = paddingX + idx * step;
-      const y = toY(val);
+    points.forEach((pt, idx) => {
+      const x = xScale(idx);
+      const y = yScale(pt.close);
       d += idx === 0 ? `M ${x} ${y}` : ` L ${x} ${y}`;
     });
     path.setAttribute('d', d);
     path.setAttribute('class', 'price-chart-line');
-    if (closes[closes.length - 1] >= closes[0]) {
+    if (points[n - 1].close >= points[0].close) {
       path.classList.add('up');
     } else {
       path.classList.add('down');
     }
     svg.appendChild(path);
+
+    // Dots
+    const dotsGroup = document.createElementNS(SVG_NS, 'g');
+    dotsGroup.classList.add('price-chart-dots');
+    points.forEach((pt, idx) => {
+      const dot = document.createElementNS(SVG_NS, 'circle');
+      dot.setAttribute('cx', String(xScale(idx)));
+      dot.setAttribute('cy', String(yScale(pt.close)));
+      dot.setAttribute('r', idx === n - 1 ? '3.2' : '2.2');
+      dot.classList.add('price-chart-dot');
+      if (idx === n - 1) dot.classList.add('latest');
+      dotsGroup.appendChild(dot);
+    });
+    svg.appendChild(dotsGroup);
 
     return svg;
   }
@@ -578,7 +687,8 @@
     const historyRaw = symbolData.history || payload.history?.[sym] || [];
     const historySeries = normaliseHistory(historyRaw);
     const topPosts = summary.top_posts || [];
-    let priceHistory = Array.isArray(price.history) ? price.history : [];
+    const rawPriceHistory = Array.isArray(price.history) ? price.history : [];
+    let priceHistory = rawPriceHistory.slice();
     if (!priceHistory.length && historySeries.length) {
       priceHistory = historySeries
         .map((entry) => {
@@ -627,6 +737,7 @@
             <div class="price-chart mt-3">
               <div class="price-chart-holder"></div>
               <div class="price-chart-meta text-muted small mt-2"></div>
+              <div class="price-chart-note text-warning small mt-1 d-none"></div>
             </div>
           </div>
           <div class="insight-stack">
@@ -688,17 +799,18 @@
     const chartHolder = card.querySelector('.price-chart-holder');
     const chartWrap = card.querySelector('.price-chart');
     let chartMode = null;
-    if (chartHolder && price.tradingview_symbol) {
-      chartHolder.innerHTML = '';
-      mountTradingViewChart(chartHolder, price.tradingview_symbol);
-      chartMode = 'tradingview';
-    } else if (chartHolder) {
+    const hasInlineHistory = priceHistory.length >= 2;
+    if (chartHolder && hasInlineHistory) {
       const priceChart = buildPriceChart(priceHistory);
       if (priceChart) {
         chartHolder.innerHTML = '';
         chartHolder.appendChild(priceChart);
         chartMode = 'inline';
       }
+    } else if (chartHolder && price.tradingview_symbol) {
+      chartHolder.innerHTML = '';
+      mountTradingViewChart(chartHolder, price.tradingview_symbol);
+      chartMode = 'tradingview';
     }
     if (!chartMode) {
       chartWrap?.classList.add('d-none');
@@ -707,26 +819,48 @@
     }
 
     const chartMeta = card.querySelector('.price-chart-meta');
+    const chartNote = card.querySelector('.price-chart-note');
     if (chartMeta) {
       if (!chartMode) {
         chartMeta.textContent = '';
       } else {
         const parts = [];
         const resolution = describeResolution(price.history_resolution);
-        const lookback = price.history_lookback_hours;
+        const lookback = Number(price.history_lookback_hours);
         const ts = toMillis(price.timestamp);
         const updatedAt = Number.isFinite(ts) ? new Date(ts) : null;
-        if (resolution) parts.push(`${resolution} bars`);
-        if (Number.isFinite(Number(lookback)) && lookback) parts.push(`~${lookback}h range`);
+        const refreshedAt = price.history_last_refreshed;
+        if (chartMode === 'inline') {
+          if (resolution) parts.push(`${resolution} bars`);
+          if (Number.isFinite(lookback) && lookback) {
+            const hoursLabel = lookback % 24 === 0 ? `${Math.round(lookback / 24)}d` : `${lookback}h`;
+            parts.push(`~${hoursLabel} range`);
+          }
+        }
         if (updatedAt && !Number.isNaN(updatedAt.getTime())) {
           parts.push(`Updated ${updatedAt.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`);
+        } else if (refreshedAt) {
+          parts.push(`Refreshed ${refreshedAt}`);
         }
         if (chartMode === 'inline') {
-          parts.push('Finnhub');
+          const provider = formatProviderName(price.history_source, 'Alpha Vantage');
+          if (provider) parts.push(provider);
         } else if (chartMode === 'tradingview') {
           parts.push('TradingView');
         }
         chartMeta.textContent = parts.join(' • ');
+      }
+    }
+    if (chartNote) {
+      const alerts = [];
+      if (price.history_error) alerts.push(price.history_error);
+      if (price.history_note && price.history_note !== price.history_error) alerts.push(price.history_note);
+      if (alerts.length) {
+        chartNote.textContent = alerts.join(' • ');
+        chartNote.classList.remove('d-none');
+      } else {
+        chartNote.textContent = '';
+        chartNote.classList.add('d-none');
       }
     }
 

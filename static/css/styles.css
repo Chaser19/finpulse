@@ -177,6 +177,19 @@ p, .text-muted, .text-white-50 {
 
 .main-nav .navbar-brand {
   padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.main-nav .navbar-collapse {
+  align-items: center;
+}
+
+.brand-logo {
+  height: 32px;
+  width: auto;
+  display: block;
 }
 
 .brand-wordmark {
@@ -945,7 +958,7 @@ p, .text-muted, .text-white-50 {
 
 .price-chart-svg {
   width: 100%;
-  height: 160px;
+  height: 220px;
 }
 
 .price-chart-tv {
@@ -967,6 +980,43 @@ p, .text-muted, .text-white-50 {
 .price-chart-line.down {
   stroke: rgba(239, 68, 68, 0.9);
   filter: drop-shadow(0 0 6px rgba(239, 68, 68, 0.25));
+}
+
+.price-chart-grid-line {
+  stroke: rgba(148, 163, 184, 0.18);
+  stroke-width: 1;
+}
+
+.price-chart-grid-line.vertical {
+  stroke-dasharray: 3 6;
+  opacity: 0.35;
+}
+
+.price-chart-axis {
+  stroke: rgba(148, 163, 184, 0.5);
+  stroke-width: 1.4;
+}
+
+.price-chart-tick {
+  fill: rgba(226, 232, 240, 0.9);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.price-chart-dot {
+  fill: rgba(148, 163, 184, 0.85);
+  stroke: rgba(15, 23, 42, 0.9);
+  stroke-width: 1;
+}
+
+.price-chart-dot.latest {
+  fill: rgba(34, 197, 94, 0.9);
+  stroke: rgba(15, 23, 42, 0.9);
+}
+
+.price-chart-note {
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
 }
 
 .social-hero .card,

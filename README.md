@@ -137,6 +137,7 @@ The `/api/social` endpoints enrich dashboards with recent cashtag chatter, engag
     - `SOCIAL_TWITTER_LOOKBACK_HOURS=12`
     - `SOCIAL_TWITTER_PRIMARY_USER=your_handle` (used by the social page timeline card)
     - `SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES=10` (server-side cache window for `/api/social/tweets`)
+- TradingView snapshots provide the latest close/change while Alpha Vantage TIME_SERIES_DAILY bars render the inline price charts (both rely on free tiers).
 - Run `flask ingest-social` to write `data/social.json` and populate the latest summaries. The command now also calls TradingView’s public scanner endpoint (`https://scanner.tradingview.com/america/scan`) to pull close/volume/change for the requested tickers.
 - Want historical trends while using sample data? After the first ingest, run `flask seed-social-history --points 24` to synthesize a day’s worth of history so the Social dashboard sparklines have signal immediately.
 - Diagnose connectivity with `flask diag-social --symbol SPY`.
@@ -168,7 +169,7 @@ pip install -r requirements.txt
 
 # 2) Set keys (.env)
 cp .env.example .env  # if present, else create .env with keys
-# Required for live news:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY / NEWSAPI_KEY (see services/providers.py)
+# Required for live news + social price charts:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY / NEWSAPI_KEY (see services/providers.py)
 # Optional for macro dashboard: FRED_API_KEY, EIA_API_KEY
 # Optional for social sentiment: SOCIAL_TWITTER_BEARER_TOKEN, SOCIAL_TWITTER_SYMBOLS, etc.
 
