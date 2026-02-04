@@ -1,15 +1,5 @@
 FinPulse
 
-FinPulse is a Flask web application that surfaces live market context alongside curated financial news. The goal is to provide a clean, dark-themed dashboard that’s reliable, lightweight on external APIs, and easy to extend. The homepage embeds live TradingView charts for major indexes, shows a market heatmap and daily movers, and lists current headlines. Dedicated pages let users browse and filter the full news corpus by category, tags, and free-text queries.
-
-On the homepage, FinPulse renders three live charts (SPY/QQQ/DIA) via TradingView embeds, a Stock Heatmap (S&P 500 by sector), a Top Movers widget, and a Headlines list. The headlines are produced by the project’s ingestion pipeline, which normalizes and tags articles from supported providers, then stores them in data/news.json. The News page supports category navigation plus an “Advanced Filters” panel for industries, hashtags (e.g., #AAPL, #oil), and keyword search—all in a consistent, accessible dark theme.
-
-Early iterations fetched index OHLC, heatmap tiles, and movers from live market APIs. In practice, free tiers and rate limits made the site brittle. I chose to embed TradingView for live visuals (indexes, heatmap, movers) so that the UI remains fast and reliable without constantly spending API quota. Meanwhile, the backend still manages news ingestion and search—where customization matters most. This split keeps the experience “live” for end-users while dramatically reducing backend complexity and operational risk.
-
-I also hardened the ingest pipeline so a provider outage never breaks the site: provider calls are wrapped in try/except, invalid responses are ignored, and the file is only overwritten with valid JSON. A small “system meta row” (filtered out from the UI) records when ingestion last ran, which is useful during development.
-
-The ingestion layer now applies a finance-and-policy focus: articles must come from an allowlisted desk (Reuters, Bloomberg, WSJ, Politico, etc.) and match curated macro/markets or policy keyword sets before they’re kept. A new NewsAPI adapter supplements Marketaux, Finnhub, and Alpha Vantage so you can blend a second source of wire copy while still filtering out lifestyle or entertainment noise.
-
 ----
 
 File guide
