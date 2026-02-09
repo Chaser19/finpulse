@@ -2,9 +2,8 @@
   <title id="title">FinPulse</title>
   <desc id="desc">FinPulse wordmark with accent bar</desc>
   <g fill="none" fill-rule="evenodd">
-    <text fill="#F8FAFC" font-family="Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.5">
-      <tspan x="0" y="24">Fin</tspan>
-      <tspan y="24" font-weight="500" fill="#9FB7FF">Pulse</tspan>
+    <text fill="#8B7C68" font-family="Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.5">
+      <tspan x="0" y="24">FinPulse</tspan>
     </text>
   </g>
 </svg>
