@@ -65,7 +65,7 @@
 body.theme-dark {
   background-color: var(--fp-bg-primary);
   background-image:
-    linear-gradient(rgba(248, 242, 232, 0.78), rgba(248, 242, 232, 0.74)),
+    linear-gradient(rgba(248, 242, 232, 0.62), rgba(248, 242, 232, 0.6)),
     url("../img/calacatta-gold.jpg");
   background-size: cover;
   background-position: center;
