@@ -4,7 +4,7 @@
     <section class="hero-section home-hero">
       <div class="home-hero-grid">
         <div class="home-hero-copy">
-          <span class="hero-kicker">Institutional market intelligence</span>
+          <span class="hero-kicker">Behavioural Market Signals</span>
           <h1 class="hero-title">Daily Market Pulse</h1>
           <p class="hero-subtitle">FinPulse integrates macroeconomic trends, curated news, and real-time social sentiment into a single platform, enabling investors to stay informed and make faster, more confident decisions.</p>
         <div class="hero-ctas">
@@ -46,6 +46,52 @@
                 </a>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-chart">
+      <div class="row g-3 align-items-stretch">
+        <div class="col-12 col-lg-7">
+          <div class="card h-100 home-chart-card">
+            <div class="card-body">
+              <div class="home-chart-header">
+                <div class="home-chart-title">Price vs. Engagement Index</div>
+                <svg class="home-chart-icon" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+                  <rect x="3" y="3" width="22" height="22" rx="6" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M8 18l4-5 4 3 4-7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="8" cy="18" r="1.3" fill="currentColor"/>
+                  <circle cx="12" cy="13" r="1.3" fill="currentColor"/>
+                  <circle cx="16" cy="16" r="1.3" fill="currentColor"/>
+                  <circle cx="20" cy="9" r="1.3" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="home-chart-canvas">
+                <canvas id="priceEngagementChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5">
+          <div class="card h-100 home-chart-copy">
+            <div class="card-body">
+              <span class="home-section-kicker">Signal overlay</span>
+              <h2 class="home-section-title">Price vs. Engagement Index</h2>
+              <p class="home-section-subtitle">
+                This view compares intraday price action with a normalized engagement index derived from cashtag attention.
+                The gold line tracks attention momentum, helping highlight divergences where sentiment shifts ahead of price.
+              </p>
+              <div class="home-chart-sentiment">
+                <div class="text-uppercase small text-muted fw-semibold">Sentiment mix (Sample)</div>
+                <div class="sentiment-bar" aria-label="Sentiment mix">
+                  <div class="sentiment-fill bull" style="width: 68%"></div>
+                  <div class="sentiment-fill neutral" style="width: 22%"></div>
+                  <div class="sentiment-fill bear" style="width: 10%"></div>
+                </div>
+              </div>
+              <p class="text-muted mb-0 small">Left axis shows price range; right axis shows engagement on a 0–100 scale.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -101,6 +147,27 @@
       </div>
       <div class="card shadow-sm">
         <div class="card-body macro-card">
+          <div class="macro-overlay" data-role="macro-overlay">
+            <div class="macro-overlay-header">
+              <div>
+                <span class="macro-overlay-kicker">Macro overlay</span>
+                <h3 class="macro-overlay-title">US economy cross-section</h3>
+                <p class="macro-overlay-subtitle">Indexed to 100 at the start of the window. Unemployment is inverted so higher reflects improvement.</p>
+              </div>
+              <div class="macro-overlay-legend">
+                <span class="macro-overlay-chip is-labor">Labor</span>
+                <span class="macro-overlay-chip is-inflation">Inflation</span>
+                <span class="macro-overlay-chip is-activity">Activity</span>
+              </div>
+            </div>
+            <div class="macro-overlay-chart" data-role="overlay-chart">
+              <div class="macro-overlay-placeholder">Awaiting macro overlay.</div>
+            </div>
+            <div class="macro-overlay-footnote">
+              <span class="macro-overlay-note">Series shown: unemployment (inverted), CPI YoY, industrial production.</span>
+              <span class="macro-overlay-updated text-muted small" data-role="overlay-updated">Loading…</span>
+            </div>
+          </div>
           <div class="macro-overview-grid" id="macro-trends" data-detail-url="{{ url_for('web.macro_trends') }}">
             <a class="macro-overview-card" data-category="job-market" href="{{ url_for('web.macro_trends') }}#job-market">
               <header class="macro-overview-header">
@@ -169,6 +236,9 @@
 {% endblock %}
 
 {% block scripts %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
+  <script src="{{ url_for('static', filename='js/home-chart.js') }}"></script>
   <!-- Macro trends script -->
   <script src="{{ url_for('static', filename='js/macro-trends.js') }}"></script>
   {# Social/Twitter scripts removed #}
