@@ -187,7 +187,8 @@ p, .text-muted, .text-white-50 {
   background: var(--fp-bg-primary);
   border-bottom: 1px solid var(--fp-card-border);
   box-shadow: none;
-  padding: 0.75rem 0;
+  padding: 0.35rem 0;
+  min-height: 56px;
 }
 
 .main-nav .navbar-brand {
@@ -195,6 +196,7 @@ p, .text-muted, .text-white-50 {
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  height: 56px;
 }
 
 .main-nav .navbar-collapse {
@@ -202,7 +204,7 @@ p, .text-muted, .text-white-50 {
 }
 
 .brand-logo {
-  height: 32px;
+  height: 100%;
   width: auto;
   display: block;
 }
@@ -211,6 +213,28 @@ p, .text-muted, .text-white-50 {
   height: 28px;
   width: auto;
   display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+  gap: 0.2rem;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--fp-text-primary);
+}
+
+.brand-subtitle {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--fp-text-muted);
 }
 
 .main-nav .navbar-nav .nav-link {
@@ -612,6 +636,14 @@ p, .text-muted, .text-white-50 {
 @media (max-width: 991px) {
   .utility-bar {
     display: none;
+  }
+
+  .main-nav {
+    min-height: 40px;
+  }
+
+  .main-nav .navbar-brand {
+    height: 40px;
   }
 
   .header-search {

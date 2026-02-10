@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f5f1e8">
     <title>{% block title %}FinPulse{% endblock %}</title>
+    <link rel="icon" type="image/png" sizes="1024x1536" href="{{ url_for('static', filename='img/FinPulse-NavBar.png') }}">
+    <link rel="apple-touch-icon" sizes="1024x1536" href="{{ url_for('static', filename='img/FinPulse-NavBar.png') }}">
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +36,10 @@
             <div class="container">
                 <a class="navbar-brand d-flex align-items-center gap-1" href="{{ url_for('web.index') }}">
                     <img src="{{ url_for('static', filename='img/FinPulse-NavBar.png') }}" alt="FinPulse logo" class="brand-logo">
-                    <img src="{{ url_for('static', filename='img/finpulse-wordmark.svg') }}" alt="FinPulse" class="brand-wordmark">
+                    <div class="brand-text">
+                        <span class="brand-name">FinPulse</span>
+                        <span class="brand-subtitle">Chase Karathanos</span>
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
                     <span class="navbar-toggler-icon"></span>
