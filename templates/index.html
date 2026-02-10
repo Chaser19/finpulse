@@ -1,156 +1,171 @@
 {% extends "layout.html" %}
 {% block content %}
-  <section class="hero-section mb-5">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <span class="hero-kicker">Institutional market intelligence</span>
-        <h1 class="hero-title">Daily Market Pulse</h1>
-        <p class="hero-subtitle">FinPulse integrates macroeconomic trends, curated news, and real-time social sentiment into a single platform, enabling investors to stay informed and make faster, more confident decisions.</p>
+  <div class="home-shell">
+    <section class="hero-section home-hero">
+      <div class="home-hero-grid">
+        <div class="home-hero-copy">
+          <span class="hero-kicker">Institutional market intelligence</span>
+          <h1 class="hero-title">Daily Market Pulse</h1>
+          <p class="hero-subtitle">FinPulse integrates macroeconomic trends, curated news, and real-time social sentiment into a single platform, enabling investors to stay informed and make faster, more confident decisions.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary btn-lg" href="{{ url_for('web.macro_trends') }}">Explore dashboard</a>
-          <a class="btn btn-outline-light btn-lg" href="mailto:hello@finpulse.ai">Request demo</a>
         </div>
-      </div>
-      <div class="hero-visual card highlight-card">
-        <div class="card-body">
-          <h2 class="h6 text-uppercase text-muted mb-3">Platform snapshot</h2>
-          <ul class="hero-signal-list">
-            <li>
-              <span class="signal-icon macro" aria-hidden="true"></span>
-              <div>
-                <strong>Macro radar</strong>
-                <small>40+ indicators tracking growth, inflation, and liquidity.</small>
-              </div>
-            </li>
-            <li>
-              <span class="signal-icon news" aria-hidden="true"></span>
-              <div>
-                <strong>Ranked newsfeed</strong>
-                <small>Credibility tiers, sentiment scoring, and narrative clusters.</small>
-              </div>
-            </li>
-            <li>
-              <span class="signal-icon social" aria-hidden="true"></span>
-              <div>
-                <strong>Social pulse</strong>
-                <small>Real-time chatter and synthetic history for coverage symbols.</small>
-              </div>
-            </li>
-          </ul>
-          <div class="hero-meta mt-4">
-            <span class="hero-meta-badge">Updated every 2 hours</span>
-            <span class="hero-meta-badge">API &amp; CSV export</span>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="hero-pillars mb-5">
-    <div class="row g-3">
-      <div class="col-12 col-md-4">
-        <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.macro_trends') }}">
-          <div class="card-body">
-            <div class="hero-pillar-icon macro" aria-hidden="true"></div>
-            <h3 class="hero-pillar-title">Macro dashboards</h3>
-            <p class="text-white-50 mb-0">Monitor employment, inflation, and activity trends with smart annotations and sparkline context.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-md-4">
-        <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.news_list') }}">
-          <div class="card-body">
-            <div class="hero-pillar-icon news" aria-hidden="true"></div>
-            <h3 class="hero-pillar-title">Signal-ranked news</h3>
-            <p class="text-white-50 mb-0">Surface the stories that matter with credibility labeling, sentiment tags, and ready-to-share briefs.</p>
-          </div>
-        </a>
-      </div>
-      <div class="col-12 col-md-4">
-        <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.social') }}">
-          <div class="card-body">
-            <div class="hero-pillar-icon social" aria-hidden="true"></div>
-            <h3 class="hero-pillar-title">Social intelligence</h3>
-            <p class="text-white-50 mb-0">Quantify chatter momentum, net sentiment, and influencer activity across watchlist symbols.</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Macro + Market overview -->
-  <section class="macro-overview mb-4">
-    <div class="card shadow-sm h-100">
-      <div class="card-body macro-card">
-        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
-          <h2 class="h6 mb-0">US Macro Trends</h2>
-          <span class="text-muted small macro-updated">Loading…</span>
-        </div>
-        <div class="macro-overview-grid" id="macro-trends" data-detail-url="{{ url_for('web.macro_trends') }}">
-          <a class="macro-overview-card" data-category="job-market" href="{{ url_for('web.macro_trends') }}#job-market">
-            <header class="macro-overview-header">
-              <div class="macro-overview-heading">
-                <span class="macro-overview-icon macro-icon-jobs" aria-hidden="true"></span>
-                <div>
-                  <h3 class="macro-overview-title mb-1">Job Market</h3>
-                  <p class="macro-overview-blurb text-muted mb-0" data-role="blurb">Tracking the labour pulse…</p>
-                </div>
-              </div>
-            </header>
-            <div class="macro-overview-body">
-              <div class="macro-overview-spark">
-                <div class="macro-spark-holder" data-role="spark"></div>
-                <div class="macro-overview-meta text-muted small" data-role="spark-meta"></div>
-              </div>
-              <ul class="macro-overview-stats list-unstyled mb-0" data-role="metrics"></ul>
+        <div class="home-hero-panels">
+          <div class="home-hero-panel">
+            <div class="home-panel-header">
+              <h2 class="h6 text-uppercase text-muted mb-0">Platform snapshot</h2>
+              <span class="home-panel-note">Live signal stack</span>
             </div>
-          </a>
+            <ul class="hero-signal-list home-snapshot-list">
+              <li>
+                <a class="home-snapshot-link" href="{{ url_for('web.macro_trends') }}">
+                  <span class="signal-icon macro" aria-hidden="true"></span>
+                  <div>
+                    <strong>Macro Dashboards</strong>
+                    <small>40+ indicators tracking growth, inflation, and liquidity.</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="home-snapshot-link" href="{{ url_for('web.news_list') }}">
+                  <span class="signal-icon news" aria-hidden="true"></span>
+                  <div>
+                    <strong>Ranked Newsfeed</strong>
+                    <small>Credibility tiers, sentiment scoring, and narrative clusters.</small>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a class="home-snapshot-link" href="{{ url_for('web.social') }}">
+                  <span class="signal-icon social" aria-hidden="true"></span>
+                  <div>
+                    <strong>Social Pulse</strong>
+                    <small>Real-time chatter and synthetic history for coverage symbols.</small>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <a class="macro-overview-card" data-category="inflation" href="{{ url_for('web.macro_trends') }}#inflation">
-            <header class="macro-overview-header">
-              <div class="macro-overview-heading">
-                <span class="macro-overview-icon macro-icon-inflation" aria-hidden="true"></span>
-                <div>
-                  <h3 class="macro-overview-title mb-1">Inflation</h3>
-                  <p class="macro-overview-blurb text-muted mb-0" data-role="blurb">Reading price pressures…</p>
-                </div>
-              </div>
-            </header>
-            <div class="macro-overview-body">
-              <div class="macro-overview-spark">
-                <div class="macro-spark-holder" data-role="spark"></div>
-                <div class="macro-overview-meta text-muted small" data-role="spark-meta"></div>
-              </div>
-              <ul class="macro-overview-stats list-unstyled mb-0" data-role="metrics"></ul>
-            </div>
-          </a>
-
-          <a class="macro-overview-card" data-category="economic-activities" href="{{ url_for('web.macro_trends') }}#economic-activities">
-            <header class="macro-overview-header">
-              <div class="macro-overview-heading">
-                <span class="macro-overview-icon macro-icon-growth" aria-hidden="true"></span>
-                <div>
-                  <h3 class="macro-overview-title mb-1">Economic Activities</h3>
-                  <p class="macro-overview-blurb text-muted mb-0" data-role="blurb">Growth and demand signals…</p>
-                </div>
-              </div>
-            </header>
-            <div class="macro-overview-body">
-              <div class="macro-overview-spark">
-                <div class="macro-spark-holder" data-role="spark"></div>
-                <div class="macro-overview-meta text-muted small" data-role="spark-meta"></div>
-              </div>
-              <ul class="macro-overview-stats list-unstyled mb-0" data-role="metrics"></ul>
+    <section class="hero-pillars home-pillars">
+      <div class="home-section-header">
+        <div>
+          <span class="home-section-kicker">Choose a lens</span>
+          <h2 class="home-section-title">Three signals, one pulse.</h2>
+          <p class="home-section-subtitle">Pick a perspective to dive straight into macro context, news intelligence, or social momentum.</p>
+        </div>
+      </div>
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.macro_trends') }}">
+            <div class="card-body">
+              <div class="signal-icon macro" aria-hidden="true"></div>
+              <h3 class="hero-pillar-title">Macro dashboards</h3>
+              <p class="text-white-50 mb-0">Monitor employment, inflation, and activity trends with smart annotations and sparkline context.</p>
             </div>
           </a>
         </div>
-        <div class="text-end mt-3">
-          <a class="btn btn-outline-light btn-sm" href="{{ url_for('web.macro_trends') }}">Open macro dashboard</a>
+        <div class="col-12 col-md-4">
+          <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.news_list') }}">
+            <div class="card-body">
+              <div class="signal-icon news" aria-hidden="true"></div>
+              <h3 class="hero-pillar-title">Signal-ranked news</h3>
+              <p class="text-white-50 mb-0">Surface the stories that matter with credibility labeling, sentiment tags, and ready-to-share briefs.</p>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-md-4">
+          <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.social') }}">
+            <div class="card-body">
+              <div class="signal-icon social" aria-hidden="true"></div>
+              <h3 class="hero-pillar-title">Social intelligence</h3>
+              <p class="text-white-50 mb-0">Quantify chatter momentum, net sentiment, and influencer activity across watchlist symbols.</p>
+            </div>
+          </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <section class="macro-overview home-overview">
+      <div class="home-section-header">
+        <div>
+          <span class="home-section-kicker">Macro pulse</span>
+          <h2 class="home-section-title">Global Macro Trends</h2>
+          <p class="home-section-subtitle">Scan jobs, inflation, and activity in one glance before diving into the full dashboard.</p>
+        </div>
+        <span class="text-muted small macro-updated">Loading…</span>
+      </div>
+      <div class="card shadow-sm">
+        <div class="card-body macro-card">
+          <div class="macro-overview-grid" id="macro-trends" data-detail-url="{{ url_for('web.macro_trends') }}">
+            <a class="macro-overview-card" data-category="job-market" href="{{ url_for('web.macro_trends') }}#job-market">
+              <header class="macro-overview-header">
+                <div class="macro-overview-heading">
+                  <span class="macro-overview-icon macro-icon-jobs" aria-hidden="true"></span>
+                  <div>
+                    <h3 class="macro-overview-title mb-1">Job Market</h3>
+                    <p class="macro-overview-blurb text-muted mb-0" data-role="blurb">Tracking the labour pulse…</p>
+                  </div>
+                </div>
+              </header>
+              <div class="macro-overview-body">
+                <div class="macro-overview-spark">
+                  <div class="macro-spark-holder" data-role="spark"></div>
+                  <div class="macro-overview-meta text-muted small" data-role="spark-meta"></div>
+                </div>
+                <ul class="macro-overview-stats list-unstyled mb-0" data-role="metrics"></ul>
+              </div>
+            </a>
+
+            <a class="macro-overview-card" data-category="inflation" href="{{ url_for('web.macro_trends') }}#inflation">
+              <header class="macro-overview-header">
+                <div class="macro-overview-heading">
+                  <span class="macro-overview-icon macro-icon-inflation" aria-hidden="true"></span>
+                  <div>
+                    <h3 class="macro-overview-title mb-1">Inflation</h3>
+                    <p class="macro-overview-blurb text-muted mb-0" data-role="blurb">Reading price pressures…</p>
+                  </div>
+                </div>
+              </header>
+              <div class="macro-overview-body">
+                <div class="macro-overview-spark">
+                  <div class="macro-spark-holder" data-role="spark"></div>
+                  <div class="macro-overview-meta text-muted small" data-role="spark-meta"></div>
+                </div>
+                <ul class="macro-overview-stats list-unstyled mb-0" data-role="metrics"></ul>
+              </div>
+            </a>
+
+            <a class="macro-overview-card" data-category="economic-activities" href="{{ url_for('web.macro_trends') }}#economic-activities">
+              <header class="macro-overview-header">
+                <div class="macro-overview-heading">
+                  <span class="macro-overview-icon macro-icon-growth" aria-hidden="true"></span>
+                  <div>
+                    <h3 class="macro-overview-title mb-1">Economic Activities</h3>
+                    <p class="macro-overview-blurb text-muted mb-0" data-role="blurb">Growth and demand signals…</p>
+                  </div>
+                </div>
+              </header>
+              <div class="macro-overview-body">
+                <div class="macro-overview-spark">
+                  <div class="macro-spark-holder" data-role="spark"></div>
+                  <div class="macro-overview-meta text-muted small" data-role="spark-meta"></div>
+                </div>
+                <ul class="macro-overview-stats list-unstyled mb-0" data-role="metrics"></ul>
+              </div>
+            </a>
+          </div>
+          <div class="text-end mt-3">
+            <a class="btn btn-outline-light btn-sm" href="{{ url_for('web.macro_trends') }}">Open macro dashboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 {% endblock %}
 
 {% block scripts %}
