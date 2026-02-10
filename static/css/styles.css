@@ -2606,7 +2606,7 @@ p, .text-muted, .text-white-50 {
 
 @media (min-width: 992px) {
   .macro-hero-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
   }
 }
 
@@ -2631,28 +2631,43 @@ p, .text-muted, .text-white-50 {
   align-items: flex-start;
 }
 
+.macro-hero-context {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.macro-hero-context .text-muted {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .macro-hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.12rem;
   color: var(--fp-text-secondary);
-  max-width: 30rem;
+  line-height: 1.6;
+  max-width: 34rem;
   margin: 0;
 }
 
 .macro-updated-subtext {
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: 0.82rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--fp-text-muted);
   margin: 0;
+  font-weight: 600;
 }
 
 .macro-hero-copy {
   position: relative;
   z-index: 1;
   margin-top: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--fp-text-secondary);
-  max-width: 46rem;
+  max-width: 50rem;
 }
 
 .macro-tabs {
@@ -2667,14 +2682,16 @@ p, .text-muted, .text-white-50 {
 }
 
 .macro-heatmap-kicker {
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
   color: var(--fp-text-muted);
 }
 
 .macro-heatmap-widget {
   width: 100%;
-  height: 440px;
+  height: 700px;
 }
 
 .macro-heatmap-widget .tradingview-widget-container__widget {
@@ -2764,16 +2781,17 @@ p, .text-muted, .text-white-50 {
 }
 
 .macro-category-lede {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--fp-text-secondary);
   margin: 0;
-  max-width: 48rem;
+  line-height: 1.6;
+  max-width: 52rem;
 }
 
 .macro-insight-stream {
   display: grid;
   gap: 1.75rem;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 380px);
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 520px);
   align-items: start;
 }
 
@@ -2844,10 +2862,10 @@ p, .text-muted, .text-white-50 {
 
 .macro-metric-snippet {
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   color: var(--fp-text-secondary);
-  line-height: 1.45;
-  max-width: 48ch;
+  line-height: 1.55;
+  max-width: 56ch;
 }
 
 .macro-metric-statbar {
@@ -2955,8 +2973,9 @@ p, .text-muted, .text-white-50 {
 
 .macro-stream-detail-summary {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   color: var(--fp-text-secondary);
+  line-height: 1.55;
 }
 
 .macro-stream-detail-delta {
@@ -2981,7 +3000,7 @@ p, .text-muted, .text-white-50 {
   background: var(--fp-card-bg);
   border: 1px solid var(--fp-card-border);
   border-radius: 1rem;
-  padding: 1.3rem;
+  padding: 1.5rem;
 }
 
 .macro-stream-detail-sections {
@@ -3011,8 +3030,8 @@ p, .text-muted, .text-white-50 {
 .macro-stream-section-copy {
   margin: 0;
   color: var(--fp-text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.98rem;
+  line-height: 1.65;
 }
 
 .macro-chart-empty {
@@ -3085,7 +3104,7 @@ p, .text-muted, .text-white-50 {
   width: 100% !important;
   max-width: 100%;
   margin: 0 auto;
-  height: 220px;
+  height: 300px;
 }
 
 @media (max-width: 768px) {

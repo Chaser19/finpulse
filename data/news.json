@@ -1,5 +1,39 @@
 [
   {
+    "id": "alphav:836b984d6dddd5d7",
+    "title": "Williams-Sonoma (WSM) Stock Sinks As Market Gains: What You Should Know",
+    "summary": "Williams-Sonoma (WSM) stock closed down 1.4% at $217.57, underperforming the broader market despite recent monthly gains. The company is expected to report a 12.2% EPS decrease to $2.88 and a 2.49% revenue decrease to $2.4 billion for its upcoming earnings, while full-year estimates predict a small earnings decline but revenue growth. WSM currently holds a Zacks Rank of #3 (Hold) and trades at a premium P/E ratio compared to its industry, with a PEG ratio of 3.31.",
+    "date": "2026-02-10",
+    "source": "Alpha Vantage: Yahoo Finance",
+    "url": "https://finance.yahoo.com/news/williams-sonoma-wsm-stock-sinks-225004088.html",
+    "category": "Markets",
+    "tags": [
+      "earnings",
+      "financial_markets",
+      "retail_wholesale",
+      "$GDP",
+      "$WSM",
+      "$GDP"
+    ]
+  },
+  {
+    "id": "alphav:97b3f6292080485d",
+    "title": "Kyndryl Holdings, Credo Technology Group, ON Semiconductor, AppLovin Corp And Oracle: Why These 5 Stocks Are On Investors' Radars Today",
+    "summary": "This article highlights five stocks that captured investor attention on Monday: Kyndryl Holdings, Credo Technology Group, ON Semiconductor, AppLovin Corp, and Oracle. Kyndryl Holdings saw a significant drop due to missed earnings, a trimmed outlook, and CFO departure. Credo Technology Group rallied on strong preliminary third-quarter results, while ON Semiconductor experienced a slight dip after mixed Q4 results. AppLovin Corp soared following a retraction of a damaging report, and Oracle rallied due to progress in its healthcare cloud strategy and an analyst upgrade.",
+    "date": "2026-02-10",
+    "source": "Alpha Vantage: Benzinga",
+    "url": "https://www.benzinga.com/news/26/02/50499753/kyndryl-holdings-credo-technology-group-on-semiconductor-applovin-corp-and-oracle-why-these-5-stocks-are-on-investors-radars-today",
+    "category": "Markets",
+    "tags": [
+      "earnings",
+      "financial_markets",
+      "technology",
+      "Equities",
+      "$ON",
+      "$ON"
+    ]
+  },
+  {
     "id": "finnhub:8c46023b1ce640d2",
     "title": "The stock market looks expensive — but this chart shows why AI bubble fears in tech may be overblown",
     "summary": "The S&P 500’s tech sector has seen the smallest increase of any group in its price-to-earnings ratio relative to its 10-year average, DataTrek found.",
@@ -528,6 +562,63 @@
       "financial_markets",
       "$GDP",
       "$CEO"
+    ]
+  },
+  {
+    "id": "newsapi:c84e48126710178c",
+    "title": "CNBC Daily Open: Watch Japan's yen and government bond yields as Takaichi storms to an election victory",
+    "summary": "Japan's Sanae Takaichi and her ruling Liberal Democratic Party overwhelmingly found the support of voters in a Sunday election, sweeping a supermajority.",
+    "date": "2026-02-09",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/02/09/cnbc-daily-open-watch-japans-yen-and-government-bond-yields-as-takaichi-storms-to-an-election-victory.html",
+    "category": "Markets",
+    "tags": [
+      "Rates",
+      "Elections",
+      "$CNBC",
+      "$CNBC"
+    ]
+  },
+  {
+    "id": "newsapi:23b7d14bc057a0fb",
+    "title": "Epstein's Silicon Valley connections went beyond Gates and Musk",
+    "summary": "The new Epstein files released by the DOJ show that the deceased financier was able to build relationships across Silicon Valley, from Bill Gates to Peter Thiel.",
+    "date": "2026-02-09",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/02/09/tech-leaders-epstein-records-silicon-valley-sergey-brin-thiel-sinofsky-reid-hoffman-musk-gates.html",
+    "category": "Markets",
+    "tags": [
+      "Policy"
+    ]
+  },
+  {
+    "id": "newsapi:f5f82ee0b28e3a05",
+    "title": "Japan’s Nikkei Surges as Takaichi Win Fuels Spending Hopes",
+    "summary": "Japanese stocks gained the most since April as Prime Minister Sanae Takaichi’s historic win in Sunday’s election ignited expectations of more government spending in key industries.",
+    "date": "2026-02-09",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/japans-nikkei-surges-as-takaichi-win-fuels-spending-hopes",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "Elections"
+    ]
+  },
+  {
+    "id": "alphav:f7beaca2dd59f53a",
+    "title": "Here's What Key Metrics Tell Us About Principal Financial (PFG) Q4 Earnings",
+    "summary": "Principal Financial (PFG) reported Q4 2025 revenue of $4.46 billion, up 9.2% year-over-year, and EPS of $2.19, surpassing revenue estimates but missing EPS expectations. The article details several key financial metrics, such as assets under management and various revenue streams across its segments, comparing reported figures to analyst estimates and year-ago performance. Principal Financial's shares have returned +7.8% over the past month, outperforming the S&P 500, and the stock currently holds a Zacks Rank #3 (Hold).",
+    "date": "2026-02-09",
+    "source": "Alpha Vantage: Yahoo Finance Australia",
+    "url": "https://au.finance.yahoo.com/news/heres-key-metrics-tell-us-233001352.html",
+    "category": "Markets",
+    "tags": [
+      "earnings",
+      "finance",
+      "financial_markets",
+      "Equities",
+      "$PFG",
+      "$PFG"
     ]
   },
   {

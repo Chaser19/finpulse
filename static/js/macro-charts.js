@@ -83,7 +83,7 @@
 
     ctx.clearRect(0, 0, width, height);
 
-    const padding = { top: 16, right: 12, bottom: 28, left: 52 };
+    const padding = { top: 18, right: 12, bottom: 36, left: 60 };
     const plotWidth = Math.max(width - padding.left - padding.right, 16);
     const plotHeight = Math.max(height - padding.top - padding.bottom, 16);
 
@@ -104,8 +104,8 @@
 
     // Y ticks
     const tickCount = 4;
-    ctx.fillStyle = 'rgba(191, 219, 254, 0.85)';
-    ctx.font = '10px "Inter", "Segoe UI", sans-serif';
+    ctx.fillStyle = 'rgba(191, 219, 254, 0.95)';
+    ctx.font = '12px "Inter", "Segoe UI", sans-serif';
     ctx.textAlign = 'right';
     ctx.textBaseline = 'middle';
     for (let i = 0; i < tickCount; i += 1) {
@@ -163,8 +163,8 @@
     ctx.stroke();
 
     // X labels
-    ctx.fillStyle = 'rgba(191, 219, 254, 0.85)';
-    ctx.font = '10px "Inter", "Segoe UI", sans-serif';
+    ctx.fillStyle = 'rgba(191, 219, 254, 0.95)';
+    ctx.font = '12px "Inter", "Segoe UI", sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     const labelIndexes = [0, Math.floor(series.length / 2), series.length - 1];
