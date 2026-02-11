@@ -947,6 +947,11 @@ def social():
     return render_template("social.html", handles=handles, primary_handle=primary_handle)
 
 
+@web_bp.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+
 @web_bp.route("/macro-trends")
 def macro_trends():
     cfg = current_app.config

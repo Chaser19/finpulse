@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+{% block title %}Contact | FinPulse{% endblock %}
+
+{% block content %}
+  <section class="hero-section contact-page">
+    <div class="d-flex flex-column gap-4">
+      <span class="hero-kicker">Contact</span>
+      <h1 class="hero-title mb-0">Get in Touch</h1>
+      <p class="hero-subtitle mb-0">
+        Reach the FinPulse team for partnerships, enterprise access, and product questions.
+      </p>
+
+      <div class="contact-grid">
+        <article class="card shadow-sm contact-card">
+          <div class="card-body">
+            <div class="contact-card-top">
+              <div class="contact-avatar-frame">
+                <img
+                  class="contact-avatar-img"
+                  src="{{ url_for('static', filename='img/chase.png') }}"
+                  alt="Portrait of Chase Baldwin"
+                  onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/chase.jpg') }}';"
+                >
+              </div>
+              <div>
+                <h2 class="contact-name">Chase Baldwin</h2>
+                <p class="contact-role mb-0">Co-founder</p>
+              </div>
+            </div>
+            <div class="contact-meta">
+              <div><strong>Email:</strong> <a href="mailto:baldw9616@yahoo.com">baldw9616@yahoo.com</a></div>
+              <div><strong>Mobile:</strong> <a href="tel:+447882703600">+44 7882703600</a></div>
+              <div>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/james-chase-baldwin-8a7323234/" target="_blank" rel="noopener noreferrer">
+                  james-chase-baldwin
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card shadow-sm contact-card">
+          <div class="card-body">
+            <div class="contact-card-top">
+              <div class="contact-avatar-frame">
+                <img
+                  class="contact-avatar-img"
+                  src="{{ url_for('static', filename='img/louis.png') }}"
+                  alt="Portrait of Louis Karathanos"
+                  onerror="this.onerror=null;this.src='{{ url_for('static', filename='img/louis.jpg') }}';"
+                >
+              </div>
+              <div>
+                <h2 class="contact-name">Louis Karathanos</h2>
+                <p class="contact-role mb-1">Co-founder</p>
+                <p class="contact-detail mb-0">Masters in Analytics and Management</p>
+              </div>
+            </div>
+            <p class="contact-detail mb-2">
+              London Business School | London NW1 4SA | UK
+            </p>
+            <div class="contact-meta">
+              <div><strong>Email:</strong> <a href="mailto:lkarathanos.mam2026@london.edu">lkarathanos.mam2026@london.edu</a></div>
+              <div><strong>Mobile:</strong> <a href="tel:+491629813195">+49 1629813195</a></div>
+              <div>
+                <strong>LinkedIn:</strong>
+                <a href="https://www.linkedin.com/in/louis-karathanos/" target="_blank" rel="noopener noreferrer">
+                  louis-karathanos
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="d-flex flex-wrap gap-2">
+        <a class="btn btn-primary" href="{{ url_for('web.index') }}">Back to Homepage</a>
+        <a class="btn btn-outline-light" href="mailto:hello@finpulse.ai">Send Email</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
