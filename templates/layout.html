@@ -35,6 +35,7 @@
         </div>
         <nav class="navbar navbar-expand-lg main-nav">
             <div class="container">
+                {% set endpoint = request.endpoint or '' %}
                 <a class="navbar-brand d-flex align-items-center gap-1" href="{{ url_for('web.index') }}">
                     <img src="{{ url_for('static', filename='img/FinPulse-NavBar.png') }}" alt="FinPulse logo" class="brand-logo">
                     <div class="brand-text">
@@ -42,11 +43,7 @@
                         <span class="brand-subtitle">Market Intelligence</span>
                     </div>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="collapse navbar-collapse" id="nav">
-                    {% set endpoint = request.endpoint or '' %}
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link {% if endpoint == 'web.index' %}active{% endif %}" href="{{ url_for('web.index') }}">Home</a></li>
                         <li class="nav-item"><a class="nav-link {% if endpoint == 'web.macro_trends' %}active{% endif %}" href="{{ url_for('web.macro_trends') }}">Trends</a></li>
@@ -61,6 +58,9 @@
                         <button class="btn btn-primary header-search-btn" type="submit">Search</button>
                     </form>
                 </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
             </div>
         </nav>
     </header>
