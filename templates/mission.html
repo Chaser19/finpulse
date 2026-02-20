@@ -104,6 +104,68 @@
         </article>
       </section>
 
+      <section class="mission-market-section" aria-label="Market opportunity sizing">
+        <article class="card shadow-sm mission-visual-card mission-market-card">
+          <div class="card-body">
+            <div class="mission-visual-head">
+              <h2 class="h5 mb-0">Market Opportunity Landscape</h2>
+              <span class="mission-visual-badge">Interactive view</span>
+            </div>
+            <div class="mission-opportunity-layout">
+              <div class="mission-market-viz-wrap">
+                <div class="mission-market-viz" aria-label="Nested TAM, SAM, and SOM market circles">
+                  <button
+                    type="button"
+                    class="market-circle market-circle-tam is-active"
+                    data-market-title="TAM (Narrow): ~$56B"
+                    data-market-copy="Defensible TAM for FinPulse: global market data and news spend (~$44.3B, 2024 estimate) plus global alternative data spend (~$11.65B, 2024 estimate) = ~$55.95B. Alternative-data estimates range from ~$3.3B to ~$15.4B in 2025 depending on methodology."
+                    aria-describedby="marketDetailTitle marketDetailCopy"
+                  >
+                    <span>TAM: ~$56B</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="market-circle market-circle-sam"
+                    data-market-title="SAM: Bottom-up ICP Slice"
+                    data-market-copy="Define SAM bottom-up for FinPulse: eligible buy-side firms in US/UK/EU with active public-markets exposure, multiplied by target intelligence seats per firm and annual price per seat."
+                    aria-describedby="marketDetailTitle marketDetailCopy"
+                  >
+                    <span>SAM: ICP Slice</span>
+                  </button>
+                  <button
+                    type="button"
+                    class="market-circle market-circle-som"
+                    data-market-title="SOM (24-36m): Achievable Share"
+                    data-market-copy="Model SOM as achievable penetration of SAM over 24 to 36 months, constrained by GTM capacity: sales coverage, onboarding throughput, customer success, and retention."
+                    aria-describedby="marketDetailTitle marketDetailCopy"
+                  >
+                    <span>SOM: 24-36m</span>
+                  </button>
+                </div>
+              </div>
+              <aside class="mission-market-detail" aria-live="polite">
+                <p class="mission-market-note mb-2">
+                  Use TAM as the outer market anchor, then derive SAM and SOM using explicit bottom-up assumptions.
+                  Hover or focus each circle for scope details.
+                </p>
+                <h3 class="h6 mb-2" id="marketDetailTitle">TAM (Narrow): ~$56B</h3>
+                <p class="mb-0" id="marketDetailCopy">
+                  Defensible TAM for FinPulse: global market data and news spend (~$44.3B, 2024 estimate) plus global
+                  alternative data spend (~$11.65B, 2024 estimate) = ~$55.95B.
+                </p>
+                <p class="mission-market-anchors-title mb-2">Market anchors used</p>
+                <ul class="mission-market-anchors mb-0">
+                  <li>Market data + news (2024 estimate): ~$44.3B</li>
+                  <li>Alternative data (2024 estimate): ~$11.65B</li>
+                  <li>Alternative-data range (2025 view): ~$3.3B to ~$15.4B</li>
+                  <li>FDMI industry revenue (2023): ~$278B (broad benchmark)</li>
+                </ul>
+              </aside>
+            </div>
+          </div>
+        </article>
+      </section>
+
       <section class="mission-grid" aria-label="Model focus and market interpretation">
         <article class="card shadow-sm mission-card">
           <div class="card-body">
@@ -163,4 +225,5 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
   <script src="{{ url_for('static', filename='js/home-chart.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/mission-market.js') }}"></script>
 {% endblock %}

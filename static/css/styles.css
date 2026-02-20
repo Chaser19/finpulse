@@ -4167,6 +4167,180 @@ p, .text-muted, .text-white-50 {
 .mission-bar.bar-4 { fill: rgba(178, 124, 70, 0.72); }
 .mission-bar.bar-5 { fill: rgba(104, 120, 89, 0.58); }
 
+.mission-market-section {
+  margin-top: 0.45rem;
+}
+
+.mission-market-card {
+  overflow: hidden;
+}
+
+.mission-opportunity-layout {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mission-market-viz-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.mission-market-viz {
+  width: min(100%, 360px);
+  aspect-ratio: 1 / 1;
+  position: relative;
+  opacity: 0;
+  transform: translateY(14px) scale(0.98);
+  animation: missionFadeIn 900ms ease forwards;
+  animation-delay: 120ms;
+}
+
+.market-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(183, 144, 84, 0.75);
+  background: transparent;
+  color: var(--fp-text-primary);
+  font: inherit;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  opacity: 0;
+  animation: missionCircleReveal 800ms ease forwards;
+}
+
+.market-circle span {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  font-size: clamp(0.9rem, 1.8vw, 1.14rem);
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0;
+  text-shadow: 0 1px 0 rgba(255, 251, 244, 0.55);
+}
+
+.market-circle-tam {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  z-index: 1;
+  animation-delay: 220ms;
+}
+
+.market-circle-tam span {
+  top: 16%;
+}
+
+.market-circle-sam {
+  width: 72%;
+  aspect-ratio: 1 / 1;
+  z-index: 2;
+  animation-delay: 330ms;
+}
+
+.market-circle-sam span {
+  top: 26%;
+}
+
+.market-circle-som {
+  width: 44%;
+  aspect-ratio: 1 / 1;
+  z-index: 3;
+  animation-delay: 440ms;
+}
+
+.market-circle-som span {
+  top: 43%;
+}
+
+.market-circle:hover,
+.market-circle:focus-visible,
+.market-circle.is-active {
+  border-color: rgba(183, 144, 84, 0.95);
+  background: rgba(183, 144, 84, 0.14);
+  box-shadow: 0 10px 26px rgba(68, 54, 36, 0.18);
+  transform: translateX(-50%) scale(1.01);
+  outline: none;
+}
+
+.mission-market-detail {
+  border: 1px solid var(--fp-card-border);
+  background: rgba(255, 251, 244, 0.6);
+  border-radius: 0.75rem;
+  padding: 0.85rem 0.95rem;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: missionFadeIn 860ms ease forwards;
+  animation-delay: 260ms;
+}
+
+.mission-market-note {
+  color: var(--fp-text-muted);
+  font-size: 0.82rem;
+}
+
+.mission-market-anchors-title {
+  margin-top: 0.85rem;
+  color: var(--fp-text-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.mission-market-anchors {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.mission-market-anchors li {
+  color: var(--fp-text-secondary);
+  font-size: 0.82rem;
+}
+
+#marketDetailCopy {
+  color: var(--fp-text-secondary);
+}
+
+@keyframes missionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes missionCircleReveal {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(10px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
 .mission-card {
   background: var(--fp-card-bg);
   border: 1px solid var(--fp-card-border);
@@ -4209,7 +4383,34 @@ p, .text-muted, .text-white-50 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .mission-opportunity-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(220px, 0.9fr);
+    gap: 1.2rem;
+  }
+
   .mission-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mission-market-viz,
+  .mission-market-detail {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .market-circle {
+    animation: none;
+    opacity: 1;
+    transform: translateX(-50%);
+    transition: none;
+  }
+
+  .market-circle:hover,
+  .market-circle:focus-visible,
+  .market-circle.is-active {
+    transform: translateX(-50%);
   }
 }
