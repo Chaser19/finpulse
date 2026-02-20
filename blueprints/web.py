@@ -952,6 +952,11 @@ def contact():
     return render_template("contact.html")
 
 
+@web_bp.route("/mission")
+def mission():
+    return render_template("mission.html")
+
+
 @web_bp.route("/macro-trends")
 def macro_trends():
     cfg = current_app.config

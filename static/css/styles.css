@@ -77,6 +77,57 @@ body.theme-dark {
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.01em;
+  position: relative;
+}
+
+/* Ambient marble-depth overlay: extremely subtle, slow drift for premium depth. */
+body.theme-dark::before {
+  content: "";
+  position: fixed;
+  inset: -2%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.06; /* Slightly stronger while remaining understated. */
+  background-image:
+    radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0) 48%),
+    radial-gradient(circle at 78% 72%, rgba(166, 142, 98, 0.2), rgba(166, 142, 98, 0) 52%),
+    repeating-linear-gradient(
+      118deg,
+      rgba(174, 148, 106, 0.16) 0 1px,
+      rgba(255, 255, 255, 0) 1px 12px,
+      rgba(153, 131, 96, 0.12) 12px 13px,
+      rgba(255, 255, 255, 0) 13px 24px
+    );
+  background-size: 125% 125%, 130% 130%, 700px 420px;
+  background-position: center;
+  background-repeat: no-repeat;
+  mix-blend-mode: soft-light;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  animation: marble-ambient-drift 95s linear infinite alternate;
+}
+
+/* Keep all page content above the ambient background overlay. */
+body.theme-dark > .site-header,
+body.theme-dark > main {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes marble-ambient-drift {
+  0% {
+    transform: translate3d(-1.8%, -1.2%, 0);
+  }
+  100% {
+    transform: translate3d(1.8%, 1.2%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.theme-dark::before {
+    animation: none;
+    transform: none;
+  }
 }
 
 h1, .display-1, .display-2, .display-3, .display-4, .display-5, .display-6 {
@@ -3902,5 +3953,257 @@ p, .text-muted, .text-white-50 {
 @media (min-width: 1280px) {
   .contact-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* === Mission page === */
+.mission-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+.mission-header {
+  max-width: 62rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  margin-bottom: 0.55rem;
+}
+
+.mission-eyebrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.mission-chip {
+  border-radius: 999px;
+  border: 1px solid var(--fp-card-border-active);
+  background: rgba(195, 160, 105, 0.15);
+  color: var(--fp-text-primary);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 0.2rem 0.7rem;
+}
+
+.mission-highlight {
+  position: relative;
+  background: linear-gradient(120deg, rgba(183, 144, 84, 0.26), rgba(183, 144, 84, 0.12));
+  padding: 0.02rem 0.3rem 0.08rem;
+  border-radius: 0.35rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.mission-highlight-inline {
+  background: linear-gradient(120deg, rgba(183, 144, 84, 0.24), rgba(183, 144, 84, 0.1));
+  padding: 0.02rem 0.24rem 0.08rem;
+  border-radius: 0.25rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.mission-core-card {
+  border: none;
+}
+
+.mission-core-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+}
+
+.mission-core {
+  margin-top: 0.35rem;
+  margin-bottom: 0.55rem;
+}
+
+.mission-metric-stack {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.mission-metric {
+  border: 1px solid var(--fp-card-border);
+  background: rgba(255, 251, 244, 0.65);
+  border-radius: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mission-metric span {
+  color: var(--fp-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.67rem;
+  font-weight: 600;
+}
+
+.mission-metric-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+}
+
+.mission-metric-label svg {
+  width: 13px;
+  height: 13px;
+  stroke: var(--fp-accent);
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: 0 0 auto;
+  transform: scale(1.18);
+  transform-origin: center;
+}
+
+.mission-metric strong {
+  color: var(--fp-text-primary);
+  font-size: 0.96rem;
+  letter-spacing: 0.02em;
+}
+
+.mission-visual-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+  margin-top: 0.45rem;
+}
+
+.mission-visual-card {
+  border: 1px solid var(--fp-card-border);
+}
+
+.mission-visual-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.mission-chart-heading {
+  color: var(--fp-text-primary);
+}
+
+.mission-visual-badge {
+  border: 1px solid var(--fp-card-border);
+  border-radius: 999px;
+  padding: 0.16rem 0.6rem;
+  font-size: 0.67rem;
+  color: var(--fp-text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.mission-svg {
+  width: 100%;
+  height: 185px;
+  display: block;
+  background: rgba(255, 251, 244, 0.48);
+  border: 1px solid rgba(167, 154, 129, 0.24);
+  border-radius: 0.75rem;
+}
+
+.mission-svg-tall {
+  height: 230px;
+}
+
+.mission-visual-card .home-chart-canvas {
+  min-height: 185px;
+  height: 185px;
+}
+
+.mission-axis {
+  stroke: rgba(167, 154, 129, 0.54);
+  stroke-width: 1.2;
+}
+
+.mission-line-primary {
+  fill: none;
+  stroke: url(#lineGold);
+  stroke-width: 2.9;
+}
+
+.mission-line-secondary {
+  fill: none;
+  stroke: rgba(127, 151, 111, 0.86);
+  stroke-width: 2;
+  stroke-dasharray: 5 5;
+}
+
+.mission-dot {
+  fill: #c8a96f;
+  stroke: rgba(255, 251, 244, 0.95);
+  stroke-width: 1.5;
+}
+
+.mission-svg-label {
+  font-size: 0.7rem;
+  fill: var(--fp-text-muted);
+  letter-spacing: 0.04em;
+}
+
+.mission-svg-label-center {
+  text-anchor: middle;
+}
+
+.mission-bar {
+  fill: rgba(183, 144, 84, 0.42);
+}
+
+.mission-bar.bar-1 { fill: rgba(121, 145, 106, 0.56); }
+.mission-bar.bar-2 { fill: rgba(198, 162, 99, 0.68); }
+.mission-bar.bar-3 { fill: rgba(154, 132, 96, 0.5); }
+.mission-bar.bar-4 { fill: rgba(178, 124, 70, 0.72); }
+.mission-bar.bar-5 { fill: rgba(104, 120, 89, 0.58); }
+
+.mission-card {
+  background: var(--fp-card-bg);
+  border: 1px solid var(--fp-card-border);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+}
+
+.mission-list {
+  display: grid;
+  gap: 0.55rem;
+  padding-left: 1rem;
+}
+
+.mission-list li {
+  color: var(--fp-text-secondary);
+}
+
+.mission-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+@media (min-width: 992px) {
+  .mission-core-grid {
+    grid-template-columns: minmax(0, 1.45fr) minmax(220px, 0.7fr);
+  }
+
+  .mission-visual-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mission-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
