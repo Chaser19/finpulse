@@ -4188,6 +4188,12 @@ p, .text-muted, .text-white-50 {
   color: var(--fp-text-secondary);
 }
 
+.mission-page p,
+.mission-page li {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .mission-actions {
   display: flex;
   flex-wrap: wrap;

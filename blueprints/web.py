@@ -600,6 +600,10 @@ def get_primary_social_user() -> str:
 
 @web_bp.route("/")
 def index():
+    return redirect(url_for("web.mission"))
+
+@web_bp.route("/home")
+def home():
     categories = repo().list_categories()
     social_handles = get_social_handles()
     primary_handle = get_primary_social_user()
