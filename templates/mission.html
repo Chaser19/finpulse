@@ -104,72 +104,174 @@
         </article>
       </section>
 
-      <section class="mission-market-section" aria-label="Market opportunity sizing">
-        <article class="card shadow-sm mission-visual-card mission-market-card">
-          <div class="card-body">
-            <div class="mission-visual-head">
-              <h2 class="h5 mb-0">Market Opportunity Landscape</h2>
-              <span class="mission-visual-badge">Interactive view</span>
+      <section class="mission-roadmap" aria-label="Execution timeline">
+        <div class="mission-roadmap-head">
+          <span class="mission-roadmap-kicker">Execution timeline</span>
+          <h3 class="h5 mb-0">Build Phases (Month 0–24)</h3>
+        </div>
+
+        <div class="mission-timeline-nav" role="tablist" aria-label="FinPulse roadmap phases">
+          <button
+            type="button"
+            class="mission-phase-chip is-active"
+            role="tab"
+            aria-selected="true"
+            aria-controls="missionTimelinePanel"
+            data-phase-id="phase-1"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">Data Infrastructure &amp; Architecture</span>
+            <span class="mission-phase-chip-meta">Month 0–3 · Current</span>
+          </button>
+          <button
+            type="button"
+            class="mission-phase-chip"
+            role="tab"
+            aria-selected="false"
+            aria-controls="missionTimelinePanel"
+            data-phase-id="phase-2"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">Research Framework</span>
+            <span class="mission-phase-chip-meta">Month 3–6</span>
+          </button>
+          <button
+            type="button"
+            class="mission-phase-chip"
+            role="tab"
+            aria-selected="false"
+            aria-controls="missionTimelinePanel"
+            data-phase-id="phase-3"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">Modelling &amp; Backtesting</span>
+            <span class="mission-phase-chip-meta">Month 6–9</span>
+          </button>
+          <button
+            type="button"
+            class="mission-phase-chip"
+            role="tab"
+            aria-selected="false"
+            aria-controls="missionTimelinePanel"
+            data-phase-id="phase-4"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">Signal Packaging &amp; Alpha Validation</span>
+            <span class="mission-phase-chip-meta">Month 9–12</span>
+          </button>
+          <button
+            type="button"
+            class="mission-phase-chip"
+            role="tab"
+            aria-selected="false"
+            aria-controls="missionTimelinePanel"
+            data-phase-id="phase-5"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">MVP Platform Deployment</span>
+            <span class="mission-phase-chip-meta">Month 12–15</span>
+          </button>
+          <button
+            type="button"
+            class="mission-phase-chip"
+            role="tab"
+            aria-selected="false"
+            aria-controls="missionTimelinePanel"
+            data-phase-id="phase-6"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">Soft Launch &amp; Early User Validation</span>
+            <span class="mission-phase-chip-meta">Month 15–18</span>
+          </button>
+          <button
+            type="button"
+            class="mission-phase-chip"
+            role="tab"
+            aria-selected="false"
+            aria-controls="missionTimelinePanel"
+            data-phase-id="phase-7"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">Commercialisation Strategy</span>
+            <span class="mission-phase-chip-meta">Month 18–24</span>
+          </button>
+        </div>
+
+        <div class="mission-timeline-layout">
+          <article class="mission-timeline-panel" id="missionTimelinePanel" role="tabpanel" aria-live="polite">
+            <div class="mission-phase-header">
+              <span class="mission-phase-range" id="missionPhaseRange">Month 0–3</span>
+              <span class="mission-phase-status" id="missionPhaseStatus">Current Phase</span>
             </div>
-            <div class="mission-opportunity-layout">
-              <div class="mission-market-viz-wrap">
-                <div class="mission-market-viz" aria-label="Nested TAM, SAM, and SOM market circles">
-                  <button
-                    type="button"
-                    class="market-circle market-circle-tam is-active"
-                    data-market-title="TAM (Narrow): ~$56B"
-                    data-market-copy="Defensible TAM for FinPulse: global market data and news spend (~$44.3B, 2024 estimate) plus global alternative data spend (~$11.65B, 2024 estimate) = ~$55.95B. Alternative-data estimates range from ~$3.3B to ~$15.4B in 2025 depending on methodology."
-                    aria-describedby="marketDetailTitle marketDetailCopy"
-                  >
-                    <span>TAM: ~$56B</span>
-                  </button>
-                  <button
-                    type="button"
-                    class="market-circle market-circle-sam"
-                    data-market-title="SAM: Bottom-up ICP Slice"
-                    data-market-copy="Define SAM bottom-up for FinPulse: eligible buy-side firms in US/UK/EU with active public-markets exposure, multiplied by target intelligence seats per firm and annual price per seat."
-                    aria-describedby="marketDetailTitle marketDetailCopy"
-                  >
-                    <span>SAM: ICP Slice</span>
-                  </button>
-                  <button
-                    type="button"
-                    class="market-circle market-circle-som"
-                    data-market-title="SOM (24-36m): Achievable Share"
-                    data-market-copy="Model SOM as achievable penetration of SAM over 24 to 36 months, constrained by GTM capacity: sales coverage, onboarding throughput, customer success, and retention."
-                    aria-describedby="marketDetailTitle marketDetailCopy"
-                  >
-                    <span>SOM: 24-36m</span>
-                  </button>
-                </div>
-              </div>
-              <aside class="mission-market-detail" aria-live="polite">
-                <p class="mission-market-note mb-2">
-                  Use TAM as the outer market anchor, then derive SAM and SOM using explicit bottom-up assumptions.
-                  Hover or focus each circle for scope details.
-                </p>
-                <h3 class="h6 mb-2" id="marketDetailTitle">TAM (Narrow): ~$56B</h3>
-                <p class="mb-0" id="marketDetailCopy">
-                  Defensible TAM for FinPulse: global market data and news spend (~$44.3B, 2024 estimate) plus global
-                  alternative data spend (~$11.65B, 2024 estimate) = ~$55.95B.
-                </p>
-                <p class="mission-market-anchors-title mb-2">Market anchors used</p>
-                <ul class="mission-market-anchors mb-0">
-                  <li>Market data + news (2024 estimate): ~$44.3B</li>
-                  <li>Alternative data (2024 estimate): ~$11.65B</li>
-                  <li>Alternative-data range (2025 view): ~$3.3B to ~$15.4B</li>
-                  <li>FDMI industry revenue (2023): ~$278B (broad benchmark)</li>
+            <h4 class="mission-phase-title" id="missionPhaseTitle">Phase 1 — Data Infrastructure &amp; Architecture</h4>
+            <p class="mission-phase-summary" id="missionPhaseSummary">
+              Build reliable ingestion, clean storage, and a repeatable refresh pipeline that can support downstream research and modelling.
+            </p>
+            <div class="mission-phase-grid" id="missionPhaseGroups">
+              <section class="mission-phase-group">
+                <h5>Objectives</h5>
+                <ul>
+                  <li>Reliable, automated data ingestion.</li>
+                  <li>Clean, normalised storage.</li>
+                  <li>Version-controlled pipeline.</li>
                 </ul>
-              </aside>
+              </section>
+              <section class="mission-phase-group">
+                <h5>Exit Criteria</h5>
+                <ul>
+                  <li>Fully automated pipeline.</li>
+                  <li>3–6 months of clean historical data.</li>
+                  <li>Repeatable refresh process.</li>
+                </ul>
+              </section>
             </div>
-          </div>
-        </article>
+          </article>
+
+          <aside class="mission-phase-visual-card" aria-live="polite">
+            <div class="mission-phase-visual-head">
+              <span class="mission-phase-visual-kicker" id="missionPhaseVisualTitle">Phase Visual</span>
+              <span class="mission-phase-visual-caption" id="missionPhaseVisualCaption">Data Pipeline Flow</span>
+            </div>
+            <div class="mission-phase-visual-canvas" id="missionPhaseVisualCanvas">
+              <svg viewBox="0 0 360 260" role="img" aria-label="Data pipeline architecture">
+                <rect x="20" y="108" width="92" height="48" rx="10" fill="rgba(198, 162, 99, 0.72)" />
+                <text x="66" y="136" text-anchor="middle" font-size="12" fill="#3f3324" font-family="Inter, sans-serif">Ingest</text>
+                <rect x="136" y="60" width="96" height="48" rx="10" fill="rgba(121, 145, 106, 0.72)" />
+                <text x="184" y="88" text-anchor="middle" font-size="12" fill="#2f3a2a" font-family="Inter, sans-serif">Normalize</text>
+                <rect x="136" y="160" width="96" height="48" rx="10" fill="rgba(154, 132, 96, 0.68)" />
+                <text x="184" y="188" text-anchor="middle" font-size="12" fill="#3b3023" font-family="Inter, sans-serif">Validate</text>
+                <rect x="258" y="108" width="82" height="48" rx="10" fill="rgba(178, 124, 70, 0.72)" />
+                <text x="299" y="136" text-anchor="middle" font-size="12" fill="#3f2d20" font-family="Inter, sans-serif">Store</text>
+                <path d="M112 132h20l4-4v8l-4-4" fill="rgba(136, 111, 76, 0.9)" />
+                <path d="M232 84h20l4-4v8l-4-4" fill="rgba(136, 111, 76, 0.9)" />
+                <path d="M232 184h20l4-4v8l-4-4" fill="rgba(136, 111, 76, 0.9)" />
+                <line x1="232" y1="84" x2="258" y2="132" stroke="rgba(136, 111, 76, 0.86)" stroke-width="2.8" />
+                <line x1="232" y1="184" x2="258" y2="132" stroke="rgba(136, 111, 76, 0.86)" stroke-width="2.8" />
+              </svg>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section class="mission-grid" aria-label="Model focus and market interpretation">
         <article class="card shadow-sm mission-card">
           <div class="card-body">
-            <h2 class="h5 mb-3">Model Development Focus</h2>
+            <div class="mission-card-graphic mission-card-graphic-focus" aria-hidden="true">
+              <svg viewBox="0 0 320 100" role="img">
+                <rect x="16" y="18" width="76" height="64" rx="10" fill="rgba(121, 145, 106, 0.3)"></rect>
+                <rect x="102" y="18" width="76" height="64" rx="10" fill="rgba(198, 162, 99, 0.3)"></rect>
+                <rect x="188" y="18" width="116" height="64" rx="10" fill="rgba(178, 124, 70, 0.26)"></rect>
+                <text x="54" y="40" text-anchor="middle">Intensity</text>
+                <text x="54" y="58" text-anchor="middle">0.82</text>
+                <text x="140" y="40" text-anchor="middle">Velocity</text>
+                <text x="140" y="58" text-anchor="middle">+1.7x</text>
+                <text x="246" y="40" text-anchor="middle">Persistence</text>
+                <text x="246" y="58" text-anchor="middle">6.2 days</text>
+                <line x1="52" y1="74" x2="268" y2="74" stroke="rgba(140, 116, 81, 0.56)" stroke-width="1.4"></line>
+                <path d="M52 74L96 68L140 70L184 62L228 58L268 50" fill="none" stroke="rgba(121, 145, 106, 0.86)" stroke-width="2.4"></path>
+              </svg>
+            </div>
+            <h2 class="h5 mb-0">Model Development Focus</h2>
             <ul class="mission-list mb-0">
               <li>Track <strong>intensity</strong>, <strong>velocity</strong>, and <strong>persistence</strong> of market-relevant engagement.</li>
               <li>Classify engagement by <strong>asset class</strong>, <strong>macro theme</strong>, and narrative structure.</li>
@@ -180,7 +282,24 @@
 
         <article class="card shadow-sm mission-card">
           <div class="card-body">
-            <h2 class="h5 mb-3">Why This Signal Matters</h2>
+            <div class="mission-card-graphic mission-card-graphic-signal" aria-hidden="true">
+              <svg viewBox="0 0 320 100" role="img">
+                <line x1="18" y1="72" x2="302" y2="72" stroke="rgba(140, 116, 81, 0.52)" stroke-width="1.4"></line>
+                <rect x="22" y="48" width="48" height="24" rx="8" fill="rgba(178, 124, 70, 0.3)"></rect>
+                <rect x="82" y="38" width="48" height="34" rx="8" fill="rgba(198, 162, 99, 0.34)"></rect>
+                <rect x="142" y="28" width="48" height="44" rx="8" fill="rgba(121, 145, 106, 0.34)"></rect>
+                <rect x="202" y="18" width="48" height="54" rx="8" fill="rgba(198, 162, 99, 0.34)"></rect>
+                <rect x="262" y="8" width="40" height="64" rx="8" fill="rgba(121, 145, 106, 0.38)"></rect>
+                <path d="M24 76C42 64, 58 64, 72 76" fill="none" stroke="rgba(178, 124, 70, 0.72)" stroke-width="2"></path>
+                <path d="M84 76C102 54, 116 54, 130 76" fill="none" stroke="rgba(178, 124, 70, 0.72)" stroke-width="2"></path>
+                <text x="24" y="90">Event</text>
+                <text x="92" y="90">Spread</text>
+                <text x="154" y="90">Reaction</text>
+                <text x="212" y="90">Positioning</text>
+                <text x="266" y="90">Flow</text>
+              </svg>
+            </div>
+            <h2 class="h5 mb-0">Why This Signal Matters</h2>
             <p class="mb-0">
               Social media increasingly operates as a real-time transmission layer for macro releases, geopolitical developments,
               corporate events, and trader positioning. Participation from analysts, journalists, policymakers, institutions,
@@ -192,7 +311,19 @@
 
         <article class="card shadow-sm mission-card">
           <div class="card-body">
-            <h2 class="h5 mb-3">Structured Indicators</h2>
+            <div class="mission-card-graphic mission-card-graphic-indicators" aria-hidden="true">
+              <svg viewBox="0 0 320 100" role="img">
+                <rect x="20" y="20" width="280" height="60" rx="10" fill="rgba(255, 251, 244, 0.5)" stroke="rgba(166, 141, 99, 0.32)"></rect>
+                <text x="34" y="37">Signal stack</text>
+                <rect x="34" y="46" width="78" height="10" rx="4" fill="rgba(121, 145, 106, 0.76)"></rect>
+                <text x="118" y="55">Surge</text>
+                <rect x="146" y="46" width="94" height="10" rx="4" fill="rgba(198, 162, 99, 0.78)"></rect>
+                <text x="246" y="55">Persistence</text>
+                <rect x="34" y="64" width="124" height="10" rx="4" fill="rgba(178, 124, 70, 0.78)"></rect>
+                <text x="164" y="73">Cross-asset sensitivity</text>
+              </svg>
+            </div>
+            <h2 class="h5 mb-0">Structured Indicators</h2>
             <ul class="mission-list mb-0">
               <li>Engagement surge flags and sentiment-adjusted momentum.</li>
               <li>Narrative persistence metrics for medium-term regime tracking.</li>
@@ -203,7 +334,23 @@
 
         <article class="card shadow-sm mission-card">
           <div class="card-body">
-            <h2 class="h5 mb-3">Positioning & Roadmap</h2>
+            <div class="mission-card-graphic mission-card-graphic-roadmap" aria-hidden="true">
+              <svg viewBox="0 0 320 100" role="img">
+                <line x1="26" y1="64" x2="294" y2="64" stroke="rgba(140, 116, 81, 0.56)" stroke-width="2"></line>
+                <circle cx="46" cy="64" r="8" fill="rgba(198, 162, 99, 0.9)"></circle>
+                <circle cx="116" cy="64" r="8" fill="rgba(198, 162, 99, 0.9)"></circle>
+                <circle cx="186" cy="64" r="8" fill="rgba(198, 162, 99, 0.9)"></circle>
+                <circle cx="256" cy="64" r="8" fill="rgba(121, 145, 106, 0.92)"></circle>
+                <text x="28" y="86">R&amp;D</text>
+                <text x="95" y="86">Validation</text>
+                <text x="174" y="86">Packaging</text>
+                <text x="243" y="86">Platform</text>
+                <rect x="32" y="24" width="240" height="22" rx="11" fill="rgba(121, 145, 106, 0.2)"></rect>
+                <rect x="32" y="24" width="148" height="22" rx="11" fill="rgba(198, 162, 99, 0.42)"></rect>
+                <text x="152" y="39" text-anchor="middle">Maturity progress</text>
+              </svg>
+            </div>
+            <h2 class="h5 mb-0">Positioning & Roadmap</h2>
             <p class="mb-0">
               FinPulse is currently a <strong>research-driven, non-commercial initiative</strong> prioritising rigorous data handling,
               transparent assumptions, and analytical discipline. Over time, the framework is intended to extend into advanced
