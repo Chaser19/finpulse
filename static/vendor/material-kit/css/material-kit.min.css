@@ -1,0 +1,59 @@
+/* FinPulse vendored Material Kit baseline (free-edition compatibility layer).
+   This local file is intentionally scoped to foundation primitives used by templates. */
+:root {
+  --mk-radius-sm: 0.5rem;
+  --mk-radius-md: 0.75rem;
+  --mk-radius-lg: 1rem;
+  --mk-shadow-sm: 0 8px 18px rgba(18, 14, 8, 0.08);
+  --mk-shadow-md: 0 16px 32px rgba(18, 14, 8, 0.12);
+  --mk-focus: 0 0 0 0.2rem rgba(183, 144, 84, 0.28);
+}
+
+.mk-page {
+  position: relative;
+  z-index: 1;
+}
+
+.mk-surface,
+.card {
+  border-radius: var(--mk-radius-lg);
+}
+
+.btn,
+.form-control,
+.badge,
+.nav-link,
+.dropdown-menu {
+  border-radius: var(--mk-radius-md);
+}
+
+.btn:focus-visible,
+.form-control:focus-visible,
+.nav-link:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  box-shadow: var(--mk-focus);
+  outline: 0;
+}
+
+.navbar .navbar-brand {
+  letter-spacing: 0.01em;
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+}
+
+.card {
+  box-shadow: var(--mk-shadow-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -182,3 +182,10 @@ Conda shortcuts
 
 - `make dev311` runs the app with the conda env
 - `make ingest311` runs the news ingestion command using the conda env
+
+## Frontend PR Checklist
+
+- Uses Material Kit/Bootstrap primitives first, custom styles second.
+- Adds stable `data-*` hooks for any new JS-bound UI.
+- Preserves existing Flask route and Jinja data contracts.
+- Verifies `prefers-reduced-motion` behavior for new motion effects.

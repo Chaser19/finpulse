@@ -589,6 +589,66 @@
     return `${shortened}...`;
   };
 
+  const STANDARD_PHASE_BLOCKS = [
+    {
+      title: "Objectives",
+      match: /objective/i,
+      fallback: "Define the primary objective and measurable outcomes for this phase."
+    },
+    {
+      title: "Key Workstreams",
+      match: /workstream|deliverable|component|step|approach|monetisation/i,
+      fallback: "Prioritise the core workstreams, owners, and delivery sequencing."
+    },
+    {
+      title: "Exit Criteria",
+      match: /exit|criteria/i,
+      fallback: "Document completion criteria and readiness checks before phase transition."
+    }
+  ];
+
+  const normalisePhaseSections = (phase) => {
+    const rawSections = Array.isArray(phase.sections) ? phase.sections : [];
+    const usedIndexes = new Set();
+
+    return STANDARD_PHASE_BLOCKS.map((block, blockIndex) => {
+      let sourceIndex = rawSections.findIndex((section, index) => {
+        if (usedIndexes.has(index)) {
+          return false;
+        }
+        return block.match.test(String(section?.title || ""));
+      });
+
+      if (sourceIndex === -1) {
+        sourceIndex = rawSections.findIndex((_, index) => !usedIndexes.has(index));
+      }
+
+      const sourceSection = sourceIndex >= 0 ? rawSections[sourceIndex] : null;
+      if (sourceIndex >= 0) {
+        usedIndexes.add(sourceIndex);
+      }
+
+      let items = (sourceSection?.items || [])
+        .map(compactBullet)
+        .filter(Boolean)
+        .slice(0, 3);
+
+      if (!items.length) {
+        items = [block.fallback];
+      }
+
+      // Keep consistent visual rhythm across phases.
+      while (items.length < 3) {
+        items.push(blockIndex === 2 ? "Readiness checkpoint pending definition." : "Additional detail to be confirmed.");
+      }
+
+      return {
+        title: block.title,
+        items
+      };
+    });
+  };
+
   const initRoadmapTimeline = () => {
     const chips = Array.from(document.querySelectorAll(".mission-phase-chip"));
     const timelineLayoutEl = document.querySelector(".mission-timeline-layout");
@@ -643,7 +703,7 @@
       visualCanvasEl.innerHTML = visual.svg;
 
       groupsEl.innerHTML = "";
-      (phase.sections || []).forEach((section) => {
+      normalisePhaseSections(phase).forEach((section) => {
         const wrapper = document.createElement("section");
         wrapper.className = "mission-phase-group";
 

@@ -1,0 +1,24 @@
+:root {
+  --mk-primary: var(--fp-accent, #b79054);
+  --mk-secondary: var(--fp-text-secondary, #5f5342);
+  --mk-surface: var(--fp-card-bg, rgba(255, 251, 244, 0.7));
+  --mk-surface-border: var(--fp-card-border, #dbcdb6);
+  --mk-text: var(--fp-text-primary, #2d2519);
+  --mk-muted: var(--fp-text-muted, #8b7c68);
+}
+
+body.theme-dark {
+  color: var(--mk-text);
+}
+
+.mk-pill {
+  border: 1px solid var(--mk-surface-border);
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  background: rgba(255, 251, 244, 0.52);
+  color: var(--mk-secondary);
+}
+
+.mk-section {
+  margin-bottom: clamp(1rem, 0.7rem + 1vw, 2rem);
+}
