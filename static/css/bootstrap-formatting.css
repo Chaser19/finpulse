@@ -1,0 +1,123 @@
+/* Bootstrap 5 formatting pass: visual polish only, no content/behavior changes. */
+
+:root {
+  --bs-border-radius: 0.75rem;
+  --bs-border-radius-sm: 0.6rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.25rem;
+  --bs-card-border-radius: 1rem;
+  --bs-card-border-color: rgba(191, 162, 112, 0.28);
+  --bs-box-shadow-sm: 0 0.35rem 1.1rem rgba(45, 37, 25, 0.08);
+  --bs-box-shadow: 0 0.65rem 1.65rem rgba(45, 37, 25, 0.12);
+}
+
+main > .container {
+  max-width: 1280px;
+}
+
+.mk-page {
+  width: 100%;
+}
+
+.hero-section,
+.news-toolbar,
+.macro-tabs-shell,
+.macro-hero,
+.social-panel,
+.social-mock-hero,
+.social-mock-status,
+.mission-roadmap,
+.contact-card,
+.card {
+  border-radius: var(--bs-card-border-radius);
+}
+
+.card {
+  border-color: var(--bs-card-border-color);
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.btn {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border-radius: 999px;
+}
+
+.btn-sm {
+  --bs-btn-padding-y: 0.35rem;
+  --bs-btn-padding-x: 0.8rem;
+}
+
+.form-control,
+.form-select {
+  border-radius: 0.7rem;
+  min-height: 42px;
+}
+
+.navbar .nav-link {
+  padding: 0.38rem 0.85rem;
+}
+
+.home-shell section,
+.news-page > section,
+.macro-page > section,
+.mission-shell > section,
+.social-mock-page > section {
+  margin-bottom: 0;
+}
+
+.home-hero,
+.news-toolbar,
+.macro-hero,
+.mission-page,
+.social-mock-hero,
+.contact-page {
+  box-shadow: var(--bs-box-shadow-sm);
+}
+
+.news-toolbar,
+.macro-tabs-shell,
+.mission-roadmap,
+.social-panel,
+.contact-card {
+  border: 1px solid rgba(191, 162, 112, 0.26);
+  background-color: rgba(255, 251, 244, 0.66);
+}
+
+.social-mock-page {
+  align-content: start;
+}
+
+/* Mission page: remove the outer hero card shell, keep nested cards/panels intact. */
+.mission-page.hero-section {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  overflow: visible;
+}
+
+@media (max-width: 991.98px) {
+  .header-search {
+    width: 100%;
+    margin-top: 0.6rem;
+  }
+
+  .header-search-input {
+    min-width: 0;
+  }
+
+  .news-toolbar-controls {
+    width: 100%;
+    gap: 0.6rem;
+  }
+
+  .news-search {
+    width: 100%;
+  }
+
+  .news-search-input {
+    flex: 1 1 auto;
+  }
+}
