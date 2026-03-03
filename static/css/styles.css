@@ -4403,7 +4403,7 @@ p, .text-muted, .text-white-50 {
 
 .mission-phase-visual-head {
   display: grid;
-  gap: 0.28rem;
+  gap: 0;
 }
 
 .mission-phase-visual-kicker {
@@ -4412,13 +4412,6 @@ p, .text-muted, .text-white-50 {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   font-weight: 700;
-}
-
-.mission-phase-visual-caption {
-  color: var(--fp-text-primary);
-  font-size: 0.86rem;
-  letter-spacing: 0.01em;
-  font-weight: 600;
 }
 
 .mission-phase-visual-canvas {
@@ -4436,6 +4429,116 @@ p, .text-muted, .text-white-50 {
   width: 100%;
   height: 272px;
   display: block;
+}
+
+.mission-phase-visual-canvas img {
+  width: 100%;
+  height: 272px;
+  object-fit: contain;
+  display: block;
+}
+
+.mission-phase-zoom {
+  position: relative;
+  width: 100%;
+  height: 272px;
+  border-radius: 0.56rem;
+  overflow: hidden;
+  background: rgba(255, 251, 244, 0.9);
+  cursor: zoom-in;
+  touch-action: none;
+}
+
+.mission-phase-zoom.is-zoomed {
+  cursor: grab;
+}
+
+.mission-phase-zoom.is-dragging {
+  cursor: grabbing;
+}
+
+.mission-phase-zoom .mission-phase-zoom-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transform-origin: center center;
+  transform: translate(0, 0) scale(1);
+  transition: transform 150ms ease;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
+}
+
+.mission-phase-zoom.is-dragging .mission-phase-zoom-image {
+  transition: none;
+}
+
+.mission-phase-zoom-controls {
+  position: absolute;
+  right: 0.45rem;
+  bottom: 0.45rem;
+  display: inline-flex;
+  gap: 0.3rem;
+  z-index: 2;
+}
+
+.mission-phase-zoom-btn {
+  border: 1px solid rgba(160, 133, 94, 0.55);
+  background: rgba(255, 251, 244, 0.92);
+  color: #5a4320;
+  border-radius: 0.4rem;
+  min-width: 2rem;
+  height: 1.7rem;
+  padding: 0 0.5rem;
+  font-size: 0.76rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-phase-zoom-btn:hover,
+.mission-phase-zoom-btn:focus-visible {
+  border-color: rgba(145, 113, 67, 0.75);
+  background: rgba(255, 249, 239, 0.98);
+  outline: none;
+}
+
+.mission-phase-zoom-btn:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.mission-phase-zoom-level {
+  position: absolute;
+  left: 0.45rem;
+  top: 0.45rem;
+  border: 1px solid rgba(160, 133, 94, 0.45);
+  border-radius: 999px;
+  background: rgba(255, 251, 244, 0.92);
+  color: #5a4320;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.12rem 0.45rem;
+  z-index: 2;
+}
+
+.mission-phase-visual-card.is-data-layout-focus {
+  gap: 0.4rem;
+  padding: 0.95rem 1rem;
+}
+
+.mission-phase-visual-card.is-data-layout-focus .mission-phase-visual-canvas {
+  min-height: 430px;
+}
+
+.mission-phase-visual-card.is-data-layout-focus .mission-phase-zoom,
+.mission-phase-visual-card.is-data-layout-focus .mission-phase-visual-canvas img,
+.mission-phase-visual-card.is-data-layout-focus .mission-phase-visual-canvas svg {
+  height: 416px;
 }
 
 .mission-phase-visual-canvas text {
@@ -4568,6 +4671,10 @@ p, .text-muted, .text-white-50 {
 
   .mission-timeline-layout {
     grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
+  }
+
+  .mission-timeline-layout.is-data-layout-focus {
+    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
   }
 
   .mission-grid {

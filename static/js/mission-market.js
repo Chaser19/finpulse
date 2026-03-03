@@ -2,198 +2,162 @@
   const roadmapPhases = [
     {
       id: "phase-1",
-      title: "Phase 1 — Data Infrastructure & Architecture",
-      range: "Month 0–3",
-      status: "Current Phase",
+      title: "Month 1 — Preliminary Tests & Planning",
+      range: "Month 1",
+      status: "Completed",
       summary:
-        "Build reliable ingestion, normalised storage, and a repeatable refresh process that supports downstream modelling.",
+        "Completed preliminary tests and aligned operating structure, priorities, and implementation sequence for the next four months.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Reliable, automated data ingestion.",
-            "Clean, normalised storage.",
-            "Version-controlled pipeline."
+            "Confirm technical feasibility through preliminary testing.",
+            "Align execution priorities and responsibilities.",
+            "Define month-by-month operating cadence."
           ]
         },
         {
-          title: "Deliverables",
+          title: "Key Workstreams",
           items: [
-            "Data ingestion layer: APIs (news, social, macro, market data), rate limit handling, retry logic, logging.",
-            "Database schema: time-series tables, event tagging layer, asset identifier mapping.",
-            "Data validation framework: missing value detection, duplicate removal, timestamp harmonisation.",
-            "Storage optimisation: cloud-based DB (Postgres, Snowflake, etc.), partitioning strategy for time-series."
+            "Run preliminary data and workflow tests on target sources.",
+            "Define execution owners and handoff checkpoints.",
+            "Document implementation plan for months 2 to 5."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "Fully automated pipeline.",
-            "3–6 months of clean historical data.",
-            "Repeatable refresh process."
+            "Preliminary tests signed off by the team.",
+            "Execution workflow documented and approved.",
+            "Month 2 data layout scope confirmed."
           ]
         }
       ]
     },
     {
       id: "phase-2",
-      title: "Phase 2 — Feature Engineering & Research Framework",
-      range: "Month 3–6",
+      title: "Month 2 — Data Layout Blueprint",
+      range: "Month 2",
+      status: "Next Up",
       summary:
-        "This is where many data start-ups fail due to overfitting and noise. Convert raw data into hypothesis-driven signal candidates.",
+        "Finalize the shared data layout specification and lock the structure before downstream pipeline implementation.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Translate raw data into structured signal candidates."
+            "Design and approve the canonical data layout."
           ]
         },
         {
-          title: "Core Workstreams",
+          title: "Key Workstreams",
           items: [
-            "Feature definition: engagement velocity, sentiment dispersion, topic clustering, information decay curves, cross-asset spillover metrics.",
-            "Signal framework: define target variables (returns, volatility, dislocation metrics), specify prediction horizon (1h, 1d, 5d, etc.).",
-            "Research environment: notebook-based backtesting framework, reproducible experiments, parameter sweep design.",
-            "Baseline benchmarking: compare against random model, momentum model, volatility breakout baseline."
+            "Map entities, fields, and required relationships across core datasets.",
+            "Define naming conventions, timestamps, and identifier standards.",
+            "Review and sign off the Data Layout diagram with implementation owners."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "10–20 engineered features.",
-            "Defined hypothesis-driven research roadmap.",
-            "First indication of predictive relationship."
+            "Data layout specification approved.",
+            "Schema contract shared with build owners.",
+            "Implementation backlog sequenced for month 3."
           ]
         }
       ]
     },
     {
       id: "phase-3",
-      title: "Phase 3 — Modelling & Backtesting",
-      range: "Month 6–9",
+      title: "Month 3 — Pipeline Build-Out",
+      range: "Month 3",
+      status: "Upcoming",
       summary:
-        "This is where core IP begins: build predictive models and evaluate robustness with strict leakage controls.",
+        "Implement ingestion and transformation layers based on the approved month 2 data layout.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Develop predictive models and evaluate robustness."
+            "Build ingest and transform stages against the agreed schema."
           ]
         },
         {
-          title: "Components",
+          title: "Key Workstreams",
           items: [
-            "Model development: linear regression baseline, regularised models (Lasso, Ridge), tree-based models (XGBoost / Random Forest), possibly LSTM for sequence analysis.",
-            "Backtesting engine: walk-forward validation, out-of-sample testing, train/validation/test separation.",
-            "Evaluation metrics: information ratio, hit rate, Sharpe ratio, max drawdown, turnover.",
-            "Overfitting defence: k-fold cross-validation (time-series adjusted), permutation testing, noise stress tests."
+            "Implement source adapters and unified ingest entrypoints.",
+            "Build transformation layer for normalisation and enrichment.",
+            "Enable scheduled refresh and run logging."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "At least one model with stable out-of-sample edge.",
-            "Understanding of regime sensitivity.",
-            "No obvious data leakage."
+            "Core sources flow end-to-end through pipeline.",
+            "Transformation outputs match schema requirements.",
+            "Scheduled refresh jobs complete without critical failure."
           ]
         }
       ]
     },
     {
       id: "phase-4",
-      title: "Phase 4 — Signal Packaging & Alpha Validation",
-      range: "Month 9–12",
+      title: "Month 4 — Validation & QA",
+      range: "Month 4",
+      status: "Upcoming",
       summary:
-        "Transition from research to product by testing realistic execution assumptions and forward signal stability.",
+        "Harden reliability with validation rules, QA checks, and quality monitoring across the new data pipeline.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Prove the framework works under realistic trading conditions."
+            "Raise confidence in data quality and operational reliability."
           ]
         },
         {
-          title: "Steps",
+          title: "Key Workstreams",
           items: [
-            "Paper trading: simulated trading environment, transaction cost modelling, slippage assumptions.",
-            "Risk overlay: position sizing rules, capital allocation logic, drawdown management.",
-            "Regime testing: high volatility periods, low liquidity environments, macro shock episodes.",
-            "Create metrics dashboard: model performance tracking, drift detection."
+            "Add validation checks for completeness, uniqueness, and timestamp consistency.",
+            "Create QA dashboards and alerting thresholds.",
+            "Run test cycles for edge cases and recovery behavior."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "3–6 months of simulated forward performance.",
-            "Stable alpha after transaction costs.",
-            "Defined deployment strategy."
+            "Validation suite passes expected quality thresholds.",
+            "Alerting catches known failure scenarios.",
+            "QA sign-off completed for month 5 integration."
           ]
         }
       ]
     },
     {
       id: "phase-5",
-      title: "Phase 5 — MVP Platform Deployment",
-      range: "Month 12–15",
+      title: "Month 5 — Integration & Review Readiness",
+      range: "Month 5",
+      status: "Upcoming",
       summary:
-        "Convert research output into a user-facing product that delivers usable, timely intelligence.",
+        "Integrate the validated data stack with mission-facing outputs and prepare a structured review checkpoint.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Deliver usable intelligence to users."
+            "Prepare integrated outputs for stakeholder review."
           ]
         },
         {
-          title: "Deliverables",
+          title: "Key Workstreams",
           items: [
-            "Dashboard interface: signal summary view, asset-level signal strength, historical performance chart.",
-            "Alert system: signal triggers, customisable user thresholds.",
-            "API layer: programmatic access for advanced users.",
-            "UX refinement: interaction polish, load time optimisation, mobile compatibility."
-          ]
-        }
-      ]
-    },
-    {
-      id: "phase-6",
-      title: "Phase 6 — Soft Launch & Validation with Early Users",
-      range: "Month 15–18",
-      summary:
-        "Validate product-market fit with high-signal early adopters and iterate on focus, horizon, and pricing.",
-      sections: [
-        {
-          title: "Objectives",
-          items: [
-            "Validate product-market fit."
+            "Connect validated data pipeline to mission timeline outputs.",
+            "Assemble review packet with status, risks, and next actions.",
+            "Define month 6 priorities based on review outcomes."
           ]
         },
         {
-          title: "Approach",
+          title: "Exit Criteria",
           items: [
-            "10–30 power users (traders, analysts, funds).",
-            "Gather usage data.",
-            "Track retention, engagement, and feedback loop.",
-            "Likely pivots: narrow asset focus, change horizon, modify pricing structure."
-          ]
-        }
-      ]
-    },
-    {
-      id: "phase-7",
-      title: "Phase 7 — Commercialisation Strategy",
-      range: "Month 18–24",
-      summary:
-        "Define the monetisation layer and align pricing with user segment, access model, and research depth.",
-      sections: [
-        {
-          title: "Monetisation Options",
-          items: [
-            "Subscription (Tiered).",
-            "Enterprise licensing.",
-            "API pricing.",
-            "Bespoke research products.",
-            "Signal feed to funds."
+            "Integrated mission output view ready.",
+            "Review checkpoint completed with agreed follow-ups.",
+            "Post-review roadmap approved."
           ]
         }
       ]
@@ -201,10 +165,34 @@
   ];
 
   const getPhaseVisual = (phaseId) => {
+    if (phaseId === "phase-2") {
+      return {
+        title: "Data Layout Blueprint",
+        caption: "",
+        svg: `
+          <div class="mission-phase-zoom" data-zoom-root>
+            <img
+              src="/static/img/Data%20Layout.png"
+              alt="Data layout diagram for month two execution"
+              loading="lazy"
+              class="mission-phase-zoom-image"
+              data-zoom-image
+            />
+            <span class="mission-phase-zoom-level" data-zoom-level aria-live="polite">100%</span>
+            <div class="mission-phase-zoom-controls" data-zoom-controls aria-label="Image zoom controls">
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="out" aria-label="Zoom out">-</button>
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="reset">Reset</button>
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
+        `
+      };
+    }
+
     const visuals = {
       "phase-1": {
-        title: "Ingestion Reliability Control Panel",
-        caption: "Source health, pipeline latency, and validation accuracy by rule family",
+        title: "Month 1 Recap Visual",
+        caption: "Preliminary test outcomes and planning alignment",
         svg: `
           <svg viewBox="0 0 420 280" role="img" aria-label="Ingestion reliability dashboard with latency trend and validation matrix">
             <defs>
@@ -318,8 +306,8 @@
         `
       },
       "phase-3": {
-        title: "Out-of-Sample Robustness Snapshot",
-        caption: "Leakage-safe walk-forward blocks, model spread, and stress-tested performance",
+        title: "Month 3 Build Progress View",
+        caption: "Ingestion and transformation implementation status against the approved layout",
         svg: `
           <svg viewBox="0 0 420 280" role="img" aria-label="Walk-forward validation blocks with out-of-sample equity and metrics">
             <rect x="16" y="16" width="388" height="248" rx="14" fill="rgba(255, 251, 244, 0.76)" stroke="rgba(168, 145, 105, 0.42)" />
@@ -355,8 +343,8 @@
         `
       },
       "phase-4": {
-        title: "Execution Reality Check",
-        caption: "P&L decomposition from research alpha to executable net alpha under friction",
+        title: "Month 4 Validation Dashboard",
+        caption: "Validation coverage, quality gates, and QA readiness signals",
         svg: `
           <svg viewBox="0 0 420 280" role="img" aria-label="Waterfall of gross to net alpha and regime sensitivity">
             <rect x="16" y="16" width="388" height="248" rx="14" fill="rgba(255, 251, 244, 0.76)" stroke="rgba(168, 145, 105, 0.42)" />
@@ -401,8 +389,8 @@
         `
       },
       "phase-5": {
-        title: "MVP Service Readiness Dashboard",
-        caption: "Operational SLOs for API, alerts, UX latency, and release reliability",
+        title: "Month 5 Integration Readiness",
+        caption: "Integrated status signals and review checkpoint preparation",
         svg: `
           <svg viewBox="0 0 420 280" role="img" aria-label="MVP service level dashboard with uptime and latency breakdown">
             <rect x="16" y="16" width="388" height="248" rx="14" fill="rgba(255, 251, 244, 0.76)" stroke="rgba(168, 145, 105, 0.42)" />
@@ -659,7 +647,6 @@
     const summaryEl = document.getElementById("missionPhaseSummary");
     const groupsEl = document.getElementById("missionPhaseGroups");
     const visualTitleEl = document.getElementById("missionPhaseVisualTitle");
-    const visualCaptionEl = document.getElementById("missionPhaseVisualCaption");
     const visualCanvasEl = document.getElementById("missionPhaseVisualCanvas");
 
     if (
@@ -671,7 +658,6 @@
       !summaryEl ||
       !groupsEl ||
       !visualTitleEl ||
-      !visualCaptionEl ||
       !visualCanvasEl
     ) {
       return;
@@ -682,6 +668,191 @@
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let swapTimer = null;
     let resizeTimer = null;
+    const ZOOM_MIN = 1;
+    const ZOOM_MAX = 4;
+    const ZOOM_STEP = 0.25;
+    const zoomStateMap = new WeakMap();
+    let activeZoomDrag = null;
+
+    const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+    const clearActiveZoomDrag = () => {
+      if (!activeZoomDrag) {
+        return;
+      }
+      activeZoomDrag.root.classList.remove("is-dragging");
+      activeZoomDrag = null;
+    };
+
+    const getZoomState = (zoomRoot) => {
+      const existing = zoomStateMap.get(zoomRoot);
+      if (existing) {
+        return existing;
+      }
+
+      const initial = { scale: ZOOM_MIN, x: 0, y: 0 };
+      zoomStateMap.set(zoomRoot, initial);
+      return initial;
+    };
+
+    const applyZoomState = (zoomRoot) => {
+      const imageEl = zoomRoot.querySelector("[data-zoom-image]");
+      if (!imageEl) {
+        return;
+      }
+
+      const state = getZoomState(zoomRoot);
+      const maxOffsetX = (zoomRoot.clientWidth * (state.scale - 1)) / 2;
+      const maxOffsetY = (zoomRoot.clientHeight * (state.scale - 1)) / 2;
+      state.x = clamp(state.x, -maxOffsetX, maxOffsetX);
+      state.y = clamp(state.y, -maxOffsetY, maxOffsetY);
+
+      imageEl.style.transform = `translate(${state.x.toFixed(1)}px, ${state.y.toFixed(1)}px) scale(${state.scale.toFixed(2)})`;
+      zoomRoot.classList.toggle("is-zoomed", state.scale > ZOOM_MIN + 0.001);
+
+      const levelEl = zoomRoot.querySelector("[data-zoom-level]");
+      if (levelEl) {
+        levelEl.textContent = `${Math.round(state.scale * 100)}%`;
+      }
+
+      const zoomOutBtn = zoomRoot.querySelector('[data-zoom-action="out"]');
+      const zoomInBtn = zoomRoot.querySelector('[data-zoom-action="in"]');
+      const resetBtn = zoomRoot.querySelector('[data-zoom-action="reset"]');
+      const isDefaultView =
+        state.scale <= ZOOM_MIN + 0.001 &&
+        Math.abs(state.x) < 0.1 &&
+        Math.abs(state.y) < 0.1;
+
+      if (zoomOutBtn) {
+        zoomOutBtn.disabled = state.scale <= ZOOM_MIN + 0.001;
+      }
+      if (zoomInBtn) {
+        zoomInBtn.disabled = state.scale >= ZOOM_MAX - 0.001;
+      }
+      if (resetBtn) {
+        resetBtn.disabled = isDefaultView;
+      }
+    };
+
+    const adjustZoom = (zoomRoot, nextScale) => {
+      const state = getZoomState(zoomRoot);
+      state.scale = clamp(nextScale, ZOOM_MIN, ZOOM_MAX);
+      if (state.scale <= ZOOM_MIN + 0.001) {
+        state.scale = ZOOM_MIN;
+        state.x = 0;
+        state.y = 0;
+      }
+      applyZoomState(zoomRoot);
+    };
+
+    const initPhaseVisualZoom = () => {
+      clearActiveZoomDrag();
+      const zoomRoot = visualCanvasEl.querySelector("[data-zoom-root]");
+      if (!zoomRoot) {
+        return;
+      }
+      getZoomState(zoomRoot);
+      applyZoomState(zoomRoot);
+    };
+
+    visualCanvasEl.addEventListener("click", (event) => {
+      const actionBtn = event.target.closest("[data-zoom-action]");
+      if (!actionBtn || !visualCanvasEl.contains(actionBtn)) {
+        return;
+      }
+
+      const zoomRoot = actionBtn.closest("[data-zoom-root]");
+      if (!zoomRoot) {
+        return;
+      }
+
+      const state = getZoomState(zoomRoot);
+      const action = actionBtn.dataset.zoomAction;
+      if (action === "in") {
+        adjustZoom(zoomRoot, state.scale + ZOOM_STEP);
+      } else if (action === "out") {
+        adjustZoom(zoomRoot, state.scale - ZOOM_STEP);
+      } else if (action === "reset") {
+        state.x = 0;
+        state.y = 0;
+        adjustZoom(zoomRoot, ZOOM_MIN);
+      }
+    });
+
+    visualCanvasEl.addEventListener(
+      "wheel",
+      (event) => {
+        const zoomRoot = event.target.closest("[data-zoom-root]");
+        if (!zoomRoot || !visualCanvasEl.contains(zoomRoot)) {
+          return;
+        }
+
+        event.preventDefault();
+        const state = getZoomState(zoomRoot);
+        const direction = event.deltaY < 0 ? 1 : -1;
+        adjustZoom(zoomRoot, state.scale + direction * ZOOM_STEP);
+      },
+      { passive: false }
+    );
+
+    visualCanvasEl.addEventListener("pointerdown", (event) => {
+      const zoomRoot = event.target.closest("[data-zoom-root]");
+      if (!zoomRoot || !visualCanvasEl.contains(zoomRoot)) {
+        return;
+      }
+      if (event.target.closest("[data-zoom-controls]")) {
+        return;
+      }
+
+      const state = getZoomState(zoomRoot);
+      if (state.scale <= ZOOM_MIN + 0.001) {
+        return;
+      }
+
+      activeZoomDrag = {
+        root: zoomRoot,
+        pointerId: event.pointerId,
+        startClientX: event.clientX,
+        startClientY: event.clientY,
+        startX: state.x,
+        startY: state.y
+      };
+      zoomRoot.classList.add("is-dragging");
+      if (typeof zoomRoot.setPointerCapture === "function") {
+        zoomRoot.setPointerCapture(event.pointerId);
+      }
+    });
+
+    visualCanvasEl.addEventListener("pointermove", (event) => {
+      if (!activeZoomDrag || activeZoomDrag.pointerId !== event.pointerId) {
+        return;
+      }
+
+      const state = getZoomState(activeZoomDrag.root);
+      state.x = activeZoomDrag.startX + (event.clientX - activeZoomDrag.startClientX);
+      state.y = activeZoomDrag.startY + (event.clientY - activeZoomDrag.startClientY);
+      applyZoomState(activeZoomDrag.root);
+    });
+
+    const endZoomDrag = (event) => {
+      if (!activeZoomDrag || activeZoomDrag.pointerId !== event.pointerId) {
+        return;
+      }
+
+      const { root } = activeZoomDrag;
+      root.classList.remove("is-dragging");
+      if (
+        typeof root.releasePointerCapture === "function" &&
+        typeof root.hasPointerCapture === "function" &&
+        root.hasPointerCapture(event.pointerId)
+      ) {
+        root.releasePointerCapture(event.pointerId);
+      }
+      activeZoomDrag = null;
+    };
+
+    visualCanvasEl.addEventListener("pointerup", endZoomDrag);
+    visualCanvasEl.addEventListener("pointercancel", endZoomDrag);
 
     const renderPhase = (phase) => {
       rangeEl.textContent = phase.range || "";
@@ -699,8 +870,17 @@
 
       const visual = getPhaseVisual(phase.id);
       visualTitleEl.textContent = visual.title;
-      visualCaptionEl.textContent = visual.caption;
       visualCanvasEl.innerHTML = visual.svg;
+
+      const isDataLayoutPhase = phase.id === "phase-2";
+      if (timelineLayoutEl) {
+        timelineLayoutEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
+      }
+      if (visualCardEl) {
+        visualCardEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
+      }
+
+      initPhaseVisualZoom();
 
       groupsEl.innerHTML = "";
       normalisePhaseSections(phase).forEach((section) => {
