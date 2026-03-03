@@ -246,7 +246,7 @@ p, .text-muted, .text-white-50 {
   padding: 0;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.6rem;
   height: auto;
   min-height: 56px;
 }
@@ -260,6 +260,9 @@ p, .text-muted, .text-white-50 {
   width: auto;
   display: block;
   object-fit: contain;
+  transform: scale(1.2);
+  transform-origin: left center;
+  margin-right: 0.55rem;
 }
 
 .brand-wordmark {
@@ -730,6 +733,8 @@ p, .text-muted, .text-white-50 {
 
   .brand-logo {
     height: 42px;
+    transform: scale(1.14);
+    margin-right: 0.4rem;
   }
 
   .main-nav .navbar-collapse {
