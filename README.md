@@ -84,17 +84,6 @@ The ingested news database (JSON array of article objects).
 .env
 API keys for news ingestion
 
-Macro trends data
-
-The Macro Trends dashboard pulls directly from FRED (employment, inflation, spending) and the EIA (energy). To serve live values instead of the bundled fallbacks:
-
-- Request free API keys from https://fred.stlouisfed.org/ and https://www.eia.gov/opendata/.
-- Add them to `.env` as `FRED_API_KEY=<your fred key>` and `EIA_API_KEY=<your eia key>`.
-- Start the Flask app (or run any CLI command); the cache warm-up in `create_app()` fetches all series and keeps them refreshed every 2 hours.
-- Need to force a refresh without running the server? Execute `flask refresh-macro` (or `flask shell -c "from services.macro_trends import get_macro_trends; get_macro_trends(force_refresh=True)"`).
-
-Without keys the site continues to render using the curated fallback dataset, so development still works offline.
-
 Social feeds
 
 You can surface selected social media accounts on the homepage and on a dedicated Social page.
@@ -119,9 +108,6 @@ The `/api/social` endpoints enrich dashboards with recent cashtag chatter, engag
 - Add to `.env`:
   - `SOCIAL_TWITTER_BEARER_TOKEN=<your v2 bearer token>` (omit to use sample data only)
   - `SOCIAL_TWITTER_SYMBOLS=IXHL,AAPL,ONDS` (comma-separated cashtags to ingest)
-  - Optional macro keys if you want live trend bullets on the homepage:
-    - `FRED_API_KEY=<your stlouisfed.org key>` (inflation/growth data)
-    - `EIA_API_KEY=<your eia.gov key>` (energy/commodities data)
   - Optional tuning:
     - `SOCIAL_TWITTER_MAX_POSTS=30` (matches the bundled fixtures; increase carefully to stay inside rate limits)
     - `SOCIAL_TWITTER_LOOKBACK_HOURS=12`
@@ -160,7 +146,6 @@ pip install -r requirements.txt
 # 2) Set keys (.env)
 cp .env.example .env  # if present, else create .env with keys
 # Required for live news + social price charts:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY / NEWSAPI_KEY (see services/providers.py)
-# Optional for macro dashboard: FRED_API_KEY, EIA_API_KEY
 # Optional for social sentiment: SOCIAL_TWITTER_BEARER_TOKEN, SOCIAL_TWITTER_SYMBOLS, etc.
 
 # 3) Ingest / refresh data
@@ -170,9 +155,6 @@ flask ingest-news
 
 # Social sentiment (optional dashboard)
 # flask ingest-social
-
-# Macro trends (auto-refreshes). To force an immediate refresh:
-# flask shell -c "from services.macro_trends import get_macro_trends; get_macro_trends(force_refresh=True)"
 
 # 4) Serve
 python app.py

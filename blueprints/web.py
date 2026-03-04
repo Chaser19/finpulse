@@ -9,7 +9,6 @@ from zoneinfo import ZoneInfo
 from flask import Blueprint, current_app, render_template, request, redirect, url_for
 from services.news_repo import NewsRepo
 from urllib.parse import urlencode
-from services.macro_trends import get_macro_trends
 
 web_bp = Blueprint("web", __name__)
 
@@ -72,7 +71,6 @@ TAG_CONTEXT_HINTS: Dict[str, Dict[str, Any]] = {
         "title": "Inflation lens",
         "insight": "Price pressures tie back to macro policy, so monitor CPI releases and Fed commentary.",
         "actions": [
-            {"type": "macro", "label": "Open inflation dashboard", "fragment": "#inflation"},
             {"type": "news", "label": "More inflation stories", "query": "#inflation"},
         ],
     },
@@ -81,14 +79,12 @@ TAG_CONTEXT_HINTS: Dict[str, Dict[str, Any]] = {
         "insight": "Crude swings spill into transport, energy equities, and headline inflation.",
         "actions": [
             {"type": "news", "label": "Energy coverage", "query": "#oil"},
-            {"type": "macro", "label": "Energy markets view", "fragment": "#energy"},
         ],
     },
     "jobs": {
         "title": "Labour watch",
         "insight": "Employment data anchors growth expectations and consumer confidence.",
         "actions": [
-            {"type": "macro", "label": "Job market dashboard", "fragment": "#job-market"},
             {"type": "news", "label": "Employment headlines", "query": "#jobs"},
         ],
     },
@@ -688,9 +684,6 @@ def news_list():
                 symbol = action.get("symbol")
                 if symbol:
                     href = f"{url_for('web.social')}?symbol={symbol}"
-            elif kind == "macro":
-                fragment = action.get("fragment") or ""
-                href = url_for("web.macro_trends") + fragment
             else:
                 href = action.get("href")
             if href:
@@ -959,29 +952,3 @@ def contact():
 @web_bp.route("/mission")
 def mission():
     return render_template("mission.html")
-
-
-@web_bp.route("/macro-trends")
-def macro_trends():
-    cfg = current_app.config
-    data = get_macro_trends(
-        fred_api_key=cfg.get("FRED_API_KEY", ""),
-        eia_api_key=cfg.get("EIA_API_KEY", ""),
-    )
-
-    updated_raw = data.get("updated")
-    updated_display: str | None = None
-    if updated_raw:
-        try:
-            updated_dt = datetime.fromisoformat(updated_raw)
-            updated_display = updated_dt.strftime("%b %d, %Y %I:%M %p")
-        except ValueError:
-            updated_display = updated_raw
-
-    categories = data.get("categories") or []
-
-    return render_template(
-        "macro_trends.html",
-        macro_categories=categories,
-        macro_updated=updated_display,
-    )

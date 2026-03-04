@@ -172,32 +172,6 @@ def seed_social_history_cmd(points: int):
     click.echo(f"Seeded synthetic history with {points} points per symbol.")
 
 
-@click.command("refresh-macro")
-@click.option("--dump", is_flag=True, help="Print the refreshed payload JSON")
-@with_appcontext
-def refresh_macro_cmd(dump: bool) -> None:
-    """Force-refresh the macro trends cache."""
-    from services.macro_trends import get_macro_trends
-
-    cfg = current_app.config
-    payload = get_macro_trends(
-        fred_api_key=cfg.get("FRED_API_KEY", ""),
-        eia_api_key=cfg.get("EIA_API_KEY", ""),
-        force_refresh=True,
-    )
-
-    categories = payload.get("categories") or []
-    category_count = len(categories)
-    metric_count = sum(len((cat or {}).get("metrics") or []) for cat in categories)
-    click.echo(f"Refreshed macro cache with {metric_count} metrics across {category_count} categories.")
-
-    updated = payload.get("updated")
-    if updated:
-        click.echo(f"Updated timestamp: {updated}")
-
-    if dump:
-        click.echo(json.dumps(payload, indent=2, sort_keys=True))
-
 # 2) App factory that registers the command
 def create_app(test_config: dict | None = None) -> Flask:
     # Attempt to load environment variables. Fall back to .env.gitignore when .env is absent
@@ -237,8 +211,6 @@ def create_app(test_config: dict | None = None) -> Flask:
         "SOCIAL_FINNHUB_MAX_SYMBOLS": int(os.getenv("SOCIAL_FINNHUB_MAX_SYMBOLS", "25")),
         "SOCIAL_FINNHUB_RESOLUTION": os.getenv("SOCIAL_FINNHUB_RESOLUTION", "30"),
         "SOCIAL_FINNHUB_LOOKBACK_HOURS": int(os.getenv("SOCIAL_FINNHUB_LOOKBACK_HOURS", "24")),
-        "FRED_API_KEY": os.getenv("FRED_API_KEY", ""),
-        "EIA_API_KEY": os.getenv("EIA_API_KEY", ""),
         "NEWS_REFRESH_INTERVAL_SECONDS": news_refresh_interval,
         "NEWS_AUTO_INCLUDE_ALPHA_VANTAGE": _env_flag("NEWS_AUTO_INCLUDE_ALPHA_VANTAGE", True),
         "NEWS_AUTO_INCLUDE_NEWSAPI": _env_flag("NEWS_AUTO_INCLUDE_NEWSAPI", True),
@@ -264,7 +236,6 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.cli.add_command(ingest_social_cmd, name="ingest-social")
     app.cli.add_command(diag_social_cmd, name="diag-social")
     app.cli.add_command(seed_social_history_cmd, name="seed-social-history")
-    app.cli.add_command(refresh_macro_cmd, name="refresh-macro")
 
     # Auto-ingest news on an interval so the dashboard stays fresh.
     try:
@@ -273,14 +244,6 @@ def create_app(test_config: dict | None = None) -> Flask:
         init_news_cache(app, interval_seconds=app.config.get("NEWS_REFRESH_INTERVAL_SECONDS"))
     except Exception as exc:  # pragma: no cover - defensive
         app.logger.warning("Unable to start news auto-ingest: %s", exc)
-
-    # Warm macro trends cache so the dashboard loads instantly.
-    try:
-        from services.macro_trends import init_macro_trends_cache
-
-        init_macro_trends_cache(app)
-    except Exception as exc:  # pragma: no cover - defensive
-        app.logger.warning("Unable to initialise macro cache: %s", exc)
 
     return app
 

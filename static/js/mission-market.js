@@ -191,71 +191,24 @@
 
     const visuals = {
       "phase-1": {
-        title: "Month 1 Recap Visual",
+        title: "initial project layout",
         caption: "Preliminary test outcomes and planning alignment",
         svg: `
-          <svg viewBox="0 0 420 280" role="img" aria-label="Ingestion reliability dashboard with latency trend and validation matrix">
-            <defs>
-              <linearGradient id="p1Bg" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="rgba(255, 251, 244, 0.82)" />
-                <stop offset="100%" stop-color="rgba(247, 238, 222, 0.68)" />
-              </linearGradient>
-            </defs>
-            <rect x="16" y="16" width="388" height="248" rx="14" fill="url(#p1Bg)" stroke="rgba(168, 145, 105, 0.42)" />
-
-            <text x="30" y="36" font-size="9.4" fill="#5b4e3d" font-family="Inter, sans-serif" textLength="170" lengthAdjust="spacingAndGlyphs">Pipeline stages (median latency, ms)</text>
-            <rect x="30" y="46" width="70" height="36" rx="8" fill="rgba(198, 162, 99, 0.72)" />
-            <rect x="116" y="46" width="78" height="36" rx="8" fill="rgba(121, 145, 106, 0.72)" />
-            <rect x="210" y="46" width="78" height="36" rx="8" fill="rgba(154, 132, 96, 0.72)" />
-            <rect x="304" y="46" width="86" height="36" rx="8" fill="rgba(178, 124, 70, 0.72)" />
-            <text x="65" y="61" text-anchor="middle" font-size="9" fill="#3f3324" font-family="Inter, sans-serif">Sources</text>
-            <text x="65" y="74" text-anchor="middle" font-size="9" fill="#3f3324" font-family="Inter, sans-serif">24 feeds</text>
-            <text x="155" y="61" text-anchor="middle" font-size="9" fill="#2f3a2a" font-family="Inter, sans-serif">Ingest</text>
-            <text x="155" y="74" text-anchor="middle" font-size="9" fill="#2f3a2a" font-family="Inter, sans-serif">112 ms</text>
-            <text x="249" y="61" text-anchor="middle" font-size="9" fill="#3b3023" font-family="Inter, sans-serif">Validate</text>
-            <text x="249" y="74" text-anchor="middle" font-size="9" fill="#3b3023" font-family="Inter, sans-serif">186 ms</text>
-            <text x="347" y="61" text-anchor="middle" font-size="9" fill="#3f2d20" font-family="Inter, sans-serif">Store</text>
-            <text x="347" y="74" text-anchor="middle" font-size="9" fill="#3f2d20" font-family="Inter, sans-serif">83 ms</text>
-            <line x1="100" y1="64" x2="116" y2="64" stroke="rgba(137, 112, 75, 0.88)" stroke-width="2.6" />
-            <line x1="194" y1="64" x2="210" y2="64" stroke="rgba(137, 112, 75, 0.88)" stroke-width="2.6" />
-            <line x1="288" y1="64" x2="304" y2="64" stroke="rgba(137, 112, 75, 0.88)" stroke-width="2.6" />
-
-            <rect x="30" y="98" width="176" height="152" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.32)" />
-            <text x="42" y="116" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Ingestion success rate (7d)</text>
-            <line x1="44" y1="232" x2="194" y2="232" stroke="rgba(167, 147, 112, 0.56)" stroke-width="1.4" />
-            <line x1="44" y1="126" x2="44" y2="232" stroke="rgba(167, 147, 112, 0.56)" stroke-width="1.4" />
-            <path d="M44 216L69 212L94 205L119 204L144 196L169 192L194 186" fill="none" stroke="rgba(121, 145, 106, 0.92)" stroke-width="3" />
-            <path d="M44 222L69 218L94 213L119 214L144 209L169 205L194 201" fill="none" stroke="rgba(178, 124, 70, 0.84)" stroke-width="2.2" stroke-dasharray="6 5" />
-            <text x="48" y="142" font-size="8" fill="#73624b" font-family="Inter, sans-serif">100%</text>
-            <text x="48" y="202" font-size="8" fill="#73624b" font-family="Inter, sans-serif">98%</text>
-            <text x="48" y="246" font-size="8" fill="#73624b" font-family="Inter, sans-serif">T-6 ... T0</text>
-
-            <rect x="216" y="98" width="174" height="152" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.32)" />
-            <text x="228" y="116" font-size="9.2" fill="#5b4e3d" font-family="Inter, sans-serif" textLength="150" lengthAdjust="spacingAndGlyphs">Validation pass rate by rule family</text>
-            <text x="228" y="132" font-size="8" fill="#776650" font-family="Inter, sans-serif">Schema</text>
-            <text x="228" y="154" font-size="8" fill="#776650" font-family="Inter, sans-serif">Timestamp</text>
-            <text x="228" y="176" font-size="8" fill="#776650" font-family="Inter, sans-serif">Duplicate</text>
-            <text x="228" y="198" font-size="8" fill="#776650" font-family="Inter, sans-serif">Missing</text>
-            <text x="228" y="220" font-size="8" fill="#776650" font-family="Inter, sans-serif">ID map</text>
-            <rect x="274" y="124" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.82)" />
-            <rect x="306" y="124" width="30" height="14" rx="3" fill="rgba(198, 162, 99, 0.8)" />
-            <rect x="338" y="124" width="30" height="14" rx="3" fill="rgba(178, 124, 70, 0.76)" />
-            <rect x="274" y="146" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.76)" />
-            <rect x="306" y="146" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.76)" />
-            <rect x="338" y="146" width="30" height="14" rx="3" fill="rgba(198, 162, 99, 0.76)" />
-            <rect x="274" y="168" width="30" height="14" rx="3" fill="rgba(198, 162, 99, 0.76)" />
-            <rect x="306" y="168" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.8)" />
-            <rect x="338" y="168" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.8)" />
-            <rect x="274" y="190" width="30" height="14" rx="3" fill="rgba(178, 124, 70, 0.78)" />
-            <rect x="306" y="190" width="30" height="14" rx="3" fill="rgba(198, 162, 99, 0.76)" />
-            <rect x="338" y="190" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.76)" />
-            <rect x="274" y="212" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.78)" />
-            <rect x="306" y="212" width="30" height="14" rx="3" fill="rgba(121, 145, 106, 0.78)" />
-            <rect x="338" y="212" width="30" height="14" rx="3" fill="rgba(198, 162, 99, 0.78)" />
-            <text x="275" y="242" font-size="8" fill="#776650" font-family="Inter, sans-serif">News</text>
-            <text x="308" y="242" font-size="8" fill="#776650" font-family="Inter, sans-serif">Social</text>
-            <text x="340" y="242" font-size="8" fill="#776650" font-family="Inter, sans-serif">Macro</text>
-          </svg>
+          <div class="mission-phase-zoom mission-phase-zoom-engine" data-zoom-root>
+            <img
+              src="/static/img/FinPulse%20Engine.png"
+              alt="FinPulse Engine diagram for month one execution timeline"
+              loading="lazy"
+              class="mission-phase-zoom-image mission-phase-engine-image"
+              data-zoom-image
+            />
+            <span class="mission-phase-zoom-level" data-zoom-level aria-live="polite">100%</span>
+            <div class="mission-phase-zoom-controls" data-zoom-controls aria-label="Image zoom controls">
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="out" aria-label="Zoom out">-</button>
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="reset">Reset</button>
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
         `
       },
       "phase-2": {
@@ -873,11 +826,13 @@
       visualCanvasEl.innerHTML = visual.svg;
 
       const isDataLayoutPhase = phase.id === "phase-2";
+      const isExpandedVisualPhase = phase.id === "phase-1" || isDataLayoutPhase;
       if (timelineLayoutEl) {
         timelineLayoutEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
       }
       if (visualCardEl) {
         visualCardEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
+        visualCardEl.classList.toggle("is-expanded-visual", isExpandedVisualPhase);
       }
 
       initPhaseVisualZoom();

@@ -1,5 +1,1941 @@
 [
   {
+    "id": "finnhub:702ffa06b50c701f",
+    "title": "Trump has an AI data center problem ahead of the midterms — with no easy solutions",
+    "summary": "Grassroots opposition to data centers is growing in communities across the U.S. as people blame the facilities for high utility bills.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/trump-faces-an-ai-data-center-power-dilemma-ahead-of-midterms.html",
+    "category": "Markets",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "finnhub:2c5bd9096dc408c8",
+    "title": "How do you know when to ring the register on a stock? The answer is more art than science",
+    "summary": "Whether a stock needs to stay or go requires holistic evaluation, not just short-term comparisons to the S&P 500.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/how-do-you-know-when-to-ring-the-register-on-a-stock-the-answer-is-more-art-than-science.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:ce3fcbadc372f862",
+    "title": "Trump sides with crypto firms in trillion-dollar battle with banks over stablecoin yield",
+    "summary": "The dispute centers on whether crypto firms like Coinbase can offer yields on stablecoins, which banks warn will siphon trillions of dollars from the industry.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/trump-crypto-banks-stablecoin-yield.html",
+    "category": "Geopolitics",
+    "tags": [
+      "Rates"
+    ]
+  },
+  {
+    "id": "finnhub:bf2c6d5b84d14d4c",
+    "title": "Jim Cramer's top 10 things to watch in the stock market Wednesday",
+    "summary": "Wall Street is on track for a higher open as oil prices decline. And CrowdStrike makes a great case that AI will help, not hurt, its business.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/jim-cramers-top-10-things-to-watch-in-the-stock-market-wednesday.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:1b8934eaa63bb840",
+    "title": "At least 80 killed in US strike on Iranian warship, Sri Lankan minister says - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQRzJHNmJUMDNtR1lpbWg4UGUydmtqOHcwRldsalR4M1d6d3k2REFtdUhqM0pHTjI4cEFVbDNLR1FZQ3g4R0RWdDZKNEFNSFBPa0JodGN0WkVVQ3lkcXRBNkkteFgtb3ExNTJYTWJBVlI5dWN1dXNsOVpsTzY1YTVvUkxsSkNjdGlRZ3dwYnRPeWp1eEZ6ZXk5NDRRR0NBUlYtMm9VMVFLcjd1Slg5YXQzNi11UFR2NENKeHRkRDJn?oc=5\" target=\"_blank\">At least 80 killed in US strike on Iranian warship, Sri Lankan minister says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQRzJHNmJUMDNtR1lpbWg4UGUydmtqOHcwRldsalR4M1d6d3k2REFtdUhqM0pHTjI4cEFVbDNLR1FZQ3g4R0RWdDZKNEFNSFBPa0JodGN0WkVVQ3lkcXRBNkkteFgtb3ExNTJYTWJBVlI5dWN1dXNsOVpsTzY1YTVvUkxsSkNjdGlRZ3dwYnRPeWp1eEZ6ZXk5NDRRR0NBUlYtMm9VMVFLcjd1Slg5YXQzNi11UFR2NENKeHRkRDJn?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:4f10337e30885af3",
+    "title": "Gulf shipping crisis deepens as tankers stranded for fifth day, US sinks Iranian warship - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMizAFBVV95cUxPMThwZWNtZkR0WFdaUmh4SUJGdVdISUJyZHFVSm1uczlIc3ZLVjBQVzB0Z2xLV0QzeEdTYmpQc28ybmR4ampoV3Zob0hPVWdWd2sxdTVVUG1pcnotaXF0dDduZ3ZCRkdCdWt5Yk9DalZvQXZDM2l3VzFCNU94ZFVueThmUmV0ZERRaEpWZ04tNUFUVnNROGpfQW9heHF6Y18xRkx1V0VyYzhNajZkTjFLdkU1TUtXNk5nTy1BQ2I2SmE5TDl2WDBjaC1xdGs?oc=5\" target=\"_blank\">Gulf shipping crisis deepens as tankers stranded for fifth day, US sinks Iranian warship</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPMThwZWNtZkR0WFdaUmh4SUJGdVdISUJyZHFVSm1uczlIc3ZLVjBQVzB0Z2xLV0QzeEdTYmpQc28ybmR4ampoV3Zob0hPVWdWd2sxdTVVUG1pcnotaXF0dDduZ3ZCRkdCdWt5Yk9DalZvQXZDM2l3VzFCNU94ZFVueThmUmV0ZERRaEpWZ04tNUFUVnNROGpfQW9heHF6Y18xRkx1V0VyYzhNajZkTjFLdkU1TUtXNk5nTy1BQ2I2SmE5TDl2WDBjaC1xdGs?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:043da57f8d2bb399",
+    "title": "Pentagon's Hegseth says Trump got 'last laugh' as US kills Iranian leader of Trump assassination plot - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiowFBVV95cUxPN2tzc0Y5WWdBNExlSkNjSnFtZVV4MWtWNDBBSWRlZUVvcm5BWmg5Ym9UVTRaazQxMVg3bmVuZ01qcTQwOTB4cDhuWkg3R3p2ZGNsSzBmV3Vid2lFcE1nZU1KcHpzWlRyNlFzMWpSVE0wRDJsSmo4UnFqXzBSMTdQSEc5cWNpLUl4Umh1eUdvdDBLT0poOXhFTGFOSTBrdWlCYlZR?oc=5\" target=\"_blank\">Pentagon's Hegseth says Trump got 'last laugh' as US kills Iranian leader of Trump assassination plot</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPN2tzc0Y5WWdBNExlSkNjSnFtZVV4MWtWNDBBSWRlZUVvcm5BWmg5Ym9UVTRaazQxMVg3bmVuZ01qcTQwOTB4cDhuWkg3R3p2ZGNsSzBmV3Vid2lFcE1nZU1KcHpzWlRyNlFzMWpSVE0wRDJsSmo4UnFqXzBSMTdQSEc5cWNpLUl4Umh1eUdvdDBLT0poOXhFTGFOSTBrdWlCYlZR?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:e9214f4e07d9b8cb",
+    "title": "U.S. crude oil retreats for the first session since Iran war began as Bessent pledges support",
+    "summary": "The oil market has calmed after President Donald Trump said the U.S. would insure tankers  and provide naval escorts if necessary.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/crude-oil-prices-today-iran-war.html",
+    "category": "Geopolitics",
+    "tags": [
+      "Oil",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:5cd25d21d4a640f3",
+    "title": "Iran war breaks UN Charter, strike on school shocking, UN probe says - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuAFBVV95cUxPb1YwUFdVYzZsV0hmT0xxYjVLUTNLbXBWOFN0bEJwaWZnbjRkc2N2RzdkWGp4RHJfR2tVbXQ4Z1AtcGxMUE5seVdRUVVKM1JtTXF6MnpJWFJ3ZDg0MXNLczluc01zMjZvcWw0U1k0bXAwMWRIX20xQjhBWDhPYXB4OUttT3pjeG1VeDAtX1d2RkxuOXpjc0kwNmt1TV9TMDdsc1FIRDBfR0tGZ2dWRHJDUjF5b0g3ZUt2?oc=5\" target=\"_blank\">Iran war breaks UN Charter, strike on school shocking, UN probe says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPb1YwUFdVYzZsV0hmT0xxYjVLUTNLbXBWOFN0bEJwaWZnbjRkc2N2RzdkWGp4RHJfR2tVbXQ4Z1AtcGxMUE5seVdRUVVKM1JtTXF6MnpJWFJ3ZDg0MXNLczluc01zMjZvcWw0U1k0bXAwMWRIX20xQjhBWDhPYXB4OUttT3pjeG1VeDAtX1d2RkxuOXpjc0kwNmt1TV9TMDdsc1FIRDBfR0tGZ2dWRHJDUjF5b0g3ZUt2?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$UN",
+      "$UN"
+    ]
+  },
+  {
+    "id": "finnhub:607753150a303fc3",
+    "title": "Malta-flagged container ship hit by projectile in Hormuz, vessel abandoned, sources say - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPdFBTWV9vbFJLTTRqV1VqdEpTUHdKUjl6Vng4cG9kSUk5Tnl2TThDY0lZNW5XRlJhYjZTdUVGUTJkNzB6RnRsWWkwRE1GbktmakVrMGR3c0xuQjJuUlZRZDBEa2RGQ3g1d0MzeUV1dXNjUWJmRUdjZzh0ZVNiLUliOXRERGlFWms4QlE0X0pENmdoWmR5R2JEZ3VzRlZ1dER2aE5BblhFWUJ4RmtzWnFpMjZEVURtbk9BWm9ZbW5tejhucUR4ZFE?oc=5\" target=\"_blank\">Malta-flagged container ship hit by projectile in Hormuz, vessel abandoned, sources say</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPdFBTWV9vbFJLTTRqV1VqdEpTUHdKUjl6Vng4cG9kSUk5Tnl2TThDY0lZNW5XRlJhYjZTdUVGUTJkNzB6RnRsWWkwRE1GbktmakVrMGR3c0xuQjJuUlZRZDBEa2RGQ3g1d0MzeUV1dXNjUWJmRUdjZzh0ZVNiLUliOXRERGlFWms4QlE0X0pENmdoWmR5R2JEZ3VzRlZ1dER2aE5BblhFWUJ4RmtzWnFpMjZEVURtbk9BWm9ZbW5tejhucUR4ZFE?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:7a495de54264e84e",
+    "title": "Exclusive: US carried out strike on Iranian warship off Sri Lanka coast, officials say - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixAFBVV95cUxNNi15blNOd080aURvM2hwLVlEWDVCa2hFVURjbTRDczZxeklkdjdTeGVrUm9raEJvNE1fSlBuM2RxOGZ1NHRhcl9ILWFVSjFEZDJUdlF3dDlhQnhSZFFuUkVZT3BVM3JhY1FXLWlnQkxXcWRVakU0cUFUdzlKZ183YUk2czhJTkhVTVpXaF85OEVMS2luOU84ZGduY29lcjhGTVg4SEItVWpsOWtXNVpaQ0tIY0xZeS1mNjJXUTA0cExSM3M1?oc=5\" target=\"_blank\">Exclusive: US carried out strike on Iranian warship off Sri Lanka coast, officials say</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxNNi15blNOd080aURvM2hwLVlEWDVCa2hFVURjbTRDczZxeklkdjdTeGVrUm9raEJvNE1fSlBuM2RxOGZ1NHRhcl9ILWFVSjFEZDJUdlF3dDlhQnhSZFFuUkVZT3BVM3JhY1FXLWlnQkxXcWRVakU0cUFUdzlKZ183YUk2czhJTkhVTVpXaF85OEVMS2luOU84ZGduY29lcjhGTVg4SEItVWpsOWtXNVpaQ0tIY0xZeS1mNjJXUTA0cExSM3M1?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:db441be67d4a61c8",
+    "title": "Treasury Secretary Bessent says U.S. will make 'series of announcements' to support oil trade in the Gulf",
+    "summary": "Bessent sought to calm concerns about a potential energy shock, arguing that oil markets are well supplied even as tensions escalate in the Middle East.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/treasury-secretary-bessent-says-us-will-make-series-of-announcements-to-support-oil-trade-in-the-gulf.html",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "finnhub:17f28180f8f17ee8",
+    "title": "Damage to Israeli economy from Iran war seen at about $3 billion a week - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMUx4ME15TDhybjRseU80VWo4YklKVms0WDZGRUhmNFZhS2lfcHBUSzg3T21nSFl3U1ZqdGhRTVlXM21JNzUta3RRTE1TUlNTZlhqTzg1aHR2ek0xNE1JMV9keXhHTmlGM1BOOGpmUzI3YjdGeUVrTkJSRzRkWHZvZE1MVnhPZDZDQWdWUVNwTVI5dVVqam9yQ0FZQnBSdXhBN1FIMjl2YVUzOGduNUFuNENoMVhEVFJKUEtINS1XOVF2R2M?oc=5\" target=\"_blank\">Damage to Israeli economy from Iran war seen at about $3 billion a week</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMUx4ME15TDhybjRseU80VWo4YklKVms0WDZGRUhmNFZhS2lfcHBUSzg3T21nSFl3U1ZqdGhRTVlXM21JNzUta3RRTE1TUlNTZlhqTzg1aHR2ek0xNE1JMV9keXhHTmlGM1BOOGpmUzI3YjdGeUVrTkJSRzRkWHZvZE1MVnhPZDZDQWdWUVNwTVI5dVVqam9yQ0FZQnBSdXhBN1FIMjl2YVUzOGduNUFuNENoMVhEVFJKUEtINS1XOVF2R2M?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:0a809bde7b26d026",
+    "title": "Turkey says NATO defences destroyed missile fired from Iran over Mediterranean - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMitgFBVV95cUxOcWlvZ0dwTnhWYVBCcTZKZF8tT2xWWUJ1cndvTmhTNFpKUDZmMUtHZzd4TkVqNGdtRVBSMjQ1bklQRXJMdmt6YnotaVFpTHRRUDRpdzdva0FvMkNDSTh4MUZzZFNsQmc4T0Y0dEc3RGo1dGdybkVkcUJoYW9QUVdmS2FJeVJZY3QtY21Tajg5NjJ2Tjh3aU00MUhUV1hDc0F0YWZueDNZTmZFM0lvTmx3Zk9Ea2xwdw?oc=5\" target=\"_blank\">Turkey says NATO defences destroyed missile fired from Iran over Mediterranean</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOcWlvZ0dwTnhWYVBCcTZKZF8tT2xWWUJ1cndvTmhTNFpKUDZmMUtHZzd4TkVqNGdtRVBSMjQ1bklQRXJMdmt6YnotaVFpTHRRUDRpdzdva0FvMkNDSTh4MUZzZFNsQmc4T0Y0dEc3RGo1dGdybkVkcUJoYW9QUVdmS2FJeVJZY3QtY21Tajg5NjJ2Tjh3aU00MUhUV1hDc0F0YWZueDNZTmZFM0lvTmx3Zk9Ea2xwdw?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$NATO",
+      "$NATO"
+    ]
+  },
+  {
+    "id": "finnhub:b0b088af81e72d9a",
+    "title": "Turkey says NATO defences destroyed Iran missile, risking war expansion - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxPSXVOUzZEcFo4ZXQ1MGpGWm1ONktneEgtTHdrU1UxRVFHTDROcjRqUHBxZWtXakZ6LXdodktSOXJJSEwzQWZKMWdKRTRUZFEzODhHNHpuTG50U2JST0JkemF0dWlDLW5Hb2FTUnBIaXU4YTdTNG9acFE5bHNKQTZKRlN4SWJ2UlNVcGZLRXFCN3BsVFllRV80VThGVUwzVDNfNklQMHBiaGVHalgybXpLcEFNWXhEdHJ0cUFqNW1KeG1XQ2JNZkE?oc=5\" target=\"_blank\">Turkey says NATO defences destroyed Iran missile, risking war expansion</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxPSXVOUzZEcFo4ZXQ1MGpGWm1ONktneEgtTHdrU1UxRVFHTDROcjRqUHBxZWtXakZ6LXdodktSOXJJSEwzQWZKMWdKRTRUZFEzODhHNHpuTG50U2JST0JkemF0dWlDLW5Hb2FTUnBIaXU4YTdTNG9acFE5bHNKQTZKRlN4SWJ2UlNVcGZLRXFCN3BsVFllRV80VThGVUwzVDNfNklQMHBiaGVHalgybXpLcEFNWXhEdHJ0cUFqNW1KeG1XQ2JNZkE?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$NATO",
+      "$NATO"
+    ]
+  },
+  {
+    "id": "finnhub:c20883d3d2c0022b",
+    "title": "Iran intelligence operatives signalled openness to talks with CIA to end war, NYT reports - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxPQ3B1YXhTRXZYdEhQNlJiZU8xM2xUZTRucUQ1Ym1IX21FVlBibXBqcU13eVZxNFlncVZobWIwdVh1dWEzMTdNUmVOMXBHQ0VKUG12RExjQ3dWb0wtb0h5OXdYZEFsSFRWejFMSzlHU2dBcjM5VVpWQ0k1M1B4ZnhkdWNsR05YU2dzNHoybm1YdnNXRHlpWjlYcTgxVkkyRFQzcjFMU2ZoNk1VSW50N2d1ay1zd0ZrdFJtV3h1Ri1WRXBqZ3R5UEZZ?oc=5\" target=\"_blank\">Iran intelligence operatives signalled openness to talks with CIA to end war, NYT reports</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPQ3B1YXhTRXZYdEhQNlJiZU8xM2xUZTRucUQ1Ym1IX21FVlBibXBqcU13eVZxNFlncVZobWIwdVh1dWEzMTdNUmVOMXBHQ0VKUG12RExjQ3dWb0wtb0h5OXdYZEFsSFRWejFMSzlHU2dBcjM5VVpWQ0k1M1B4ZnhkdWNsR05YU2dzNHoybm1YdnNXRHlpWjlYcTgxVkkyRFQzcjFMU2ZoNk1VSW50N2d1ay1zd0ZrdFJtV3h1Ri1WRXBqZ3R5UEZZ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$CIA",
+      "$NYT",
+      "$CIA",
+      "$NYT"
+    ]
+  },
+  {
+    "id": "finnhub:3d3a6c6a9874b08c",
+    "title": "Hezbollah's entry into Iran crisis deepens its isolation at home - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxORTdFSnctclo4eUZFOGhXTHYtbG10TDQzUG52RkREaTRNU2Q4LUlIR3A2aDRZb3V4VHV6MTFpRWxCZ1FzWk5qMWM1QUI5T2pVOTNUSjl2cExScDdsZ01wZUhlS2NfNGFzdFY1V2JMTU5hck9TcVFPR2RGOHg5d2JUSG43YUd1bDhsN0c1TkN4d3gtSmNFRHdnTUNVU2p2QVBEZFRTd1NkZjBxMFZhTjkyeWlOa0c?oc=5\" target=\"_blank\">Hezbollah's entry into Iran crisis deepens its isolation at home</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORTdFSnctclo4eUZFOGhXTHYtbG10TDQzUG52RkREaTRNU2Q4LUlIR3A2aDRZb3V4VHV6MTFpRWxCZ1FzWk5qMWM1QUI5T2pVOTNUSjl2cExScDdsZ01wZUhlS2NfNGFzdFY1V2JMTU5hck9TcVFPR2RGOHg5d2JUSG43YUd1bDhsN0c1TkN4d3gtSmNFRHdnTUNVU2p2QVBEZFRTd1NkZjBxMFZhTjkyeWlOa0c?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:c7055c8811d2484a",
+    "title": "Are the US attacks on Iran legal? - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMihgFBVV95cUxNNE96OWlKVkhEclVhSkJ1bnRnVFdMYlFxdnBqOXZUOWV5Z0NjTXMweHpZS2RWT3FxWUFYelZGbXVKV0xjQmlyWG9ab0lxV1ppem9EWVBxU19LNXhYNUxDNjBMQjhuUU1MOEpCSHYwcjZsSjYwTVBnQ1BSVEVoSDJnaDRWaHdsUQ?oc=5\" target=\"_blank\">Are the US attacks on Iran legal?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNNE96OWlKVkhEclVhSkJ1bnRnVFdMYlFxdnBqOXZUOWV5Z0NjTXMweHpZS2RWT3FxWUFYelZGbXVKV0xjQmlyWG9ab0lxV1ppem9EWVBxU19LNXhYNUxDNjBMQjhuUU1MOEpCSHYwcjZsSjYwTVBnQ1BSVEVoSDJnaDRWaHdsUQ?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:0ac803745db70a39",
+    "title": "US lawmakers set to vote on war powers as Iran conflict widens - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNNjRsZFMtZHhFRFRtdlprcldoLVE2eUlrSE9MdEZRNnJSUXExS3A2LTUwRHhyRnAzZWVvLTlURGVaazNjVDhzU0d1TXRTVDhKQXE5bWZaWjFYUmE3ZnlsQmtMWFRnOWxWOE1xTzBKY1NMUDJ1OFpmWVJxZ3ktVnpneV9wQmNTRy1lcmd5MVBLeGZobmNoZXh1aXZYUDVMU00?oc=5\" target=\"_blank\">US lawmakers set to vote on war powers as Iran conflict widens</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNNjRsZFMtZHhFRFRtdlprcldoLVE2eUlrSE9MdEZRNnJSUXExS3A2LTUwRHhyRnAzZWVvLTlURGVaazNjVDhzU0d1TXRTVDhKQXE5bWZaWjFYUmE3ZnlsQmtMWFRnOWxWOE1xTzBKY1NMUDJ1OFpmWVJxZ3ktVnpneV9wQmNTRy1lcmd5MVBLeGZobmNoZXh1aXZYUDVMU00?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:33a84446ef44edae",
+    "title": "US dollar surge since start of war on Iran unlikely to last, say FX strategists: Reuters poll - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxOY2NuUks5VGJEZzV5SFQ1T2Y3aG5ZMU4wZU9Kdm03NGhXOWVXN3hYckNVV2NHaWhWWVA0TDE0QllfeWRyVmw2NmQyakI2RVlxS2stbXZoVkFoczRtUmxuM0NqQkh0QWllcnRObm0xYTAtRDVNNldON2JJbUQzSXR5Q1JVNExTY1M3MlZTakZfODZSTU9VMS03R3ZQM0JFLTBRUjlBNHJ5cEJ1ZHpHc0c3c2tNUlQ?oc=5\" target=\"_blank\">US dollar surge since start of war on Iran unlikely to last, say FX strategists: Reuters poll</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOY2NuUks5VGJEZzV5SFQ1T2Y3aG5ZMU4wZU9Kdm03NGhXOWVXN3hYckNVV2NHaWhWWVA0TDE0QllfeWRyVmw2NmQyakI2RVlxS2stbXZoVkFoczRtUmxuM0NqQkh0QWllcnRObm0xYTAtRDVNNldON2JJbUQzSXR5Q1JVNExTY1M3MlZTakZfODZSTU9VMS03R3ZQM0JFLTBRUjlBNHJ5cEJ1ZHpHc0c3c2tNUlQ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "$FX",
+      "Geopolitics",
+      "$US",
+      "$FX",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:c86c02e6473d3e46",
+    "title": "More repatriation flights as Middle East airspace shutdown leaves thousands stranded - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxNQ2phVEQ0a2V1Mk9rSDlkZGlGMzBjM0lOZjVPT3hoVUQ5Ylg4YlI2MUlrYVFoVDlaWGRlMkZhcDNYeXRIcnJIQTgxZGJEVXdfUmp5MHJxWEQxVm1UMmZUZUJyTVVOemkxZHdtVHdJNTFTakRqWWduNWJNMnZON3ZaOFRWRndnZkMxeUhQWkYzQktlRVdIaFdMWmZ4VGxOMklzVGtfTHRQOXJybjVmWGdzQmcxbm1nVUljZUFpMC1MQ0lsZw?oc=5\" target=\"_blank\">More repatriation flights as Middle East airspace shutdown leaves thousands stranded</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNQ2phVEQ0a2V1Mk9rSDlkZGlGMzBjM0lOZjVPT3hoVUQ5Ylg4YlI2MUlrYVFoVDlaWGRlMkZhcDNYeXRIcnJIQTgxZGJEVXdfUmp5MHJxWEQxVm1UMmZUZUJyTVVOemkxZHdtVHdJNTFTakRqWWduNWJNMnZON3ZaOFRWRndnZkMxeUhQWkYzQktlRVdIaFdMWmZ4VGxOMklzVGtfTHRQOXJybjVmWGdzQmcxbm1nVUljZUFpMC1MQ0lsZw?oc=5",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "finnhub:db05ce3ba06b51fc",
+    "title": "Russia says US attacked Iran on false pretext, condemns call for Iranians to seize power - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRktld3MzelF4X2hUb3FmNFNPQW11RjhKdkxqWWZlU1lKOF9idl9kOGIxbkk3UGVSN1hXTW1TZnBNMVdPMUFNR0IwNlZUUERUTDlycGgtS29CaGV2aGp6QVpRMjBsT1lZaEVUUHVMb3JOQ2cyVmhtNk9MQjFaRzQyZmZSLWRrUWRrWURxWFJDZXprMlVHRjlmbEVUREtoNjBTS2FjUHJ4OUJ0bV81NFBOUkNmZTlpa2RJUDRB?oc=5\" target=\"_blank\">Russia says US attacked Iran on false pretext, condemns call for Iranians to seize power</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQRktld3MzelF4X2hUb3FmNFNPQW11RjhKdkxqWWZlU1lKOF9idl9kOGIxbkk3UGVSN1hXTW1TZnBNMVdPMUFNR0IwNlZUUERUTDlycGgtS29CaGV2aGp6QVpRMjBsT1lZaEVUUHVMb3JOQ2cyVmhtNk9MQjFaRzQyZmZSLWRrUWRrWURxWFJDZXprMlVHRjlmbEVUREtoNjBTS2FjUHJ4OUJ0bV81NFBOUkNmZTlpa2RJUDRB?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:53d7854995bc131b",
+    "title": "At least 101 people missing after submarine attack on Iranian ship off Sri Lanka, sources say - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeEJNa2t0eE5UaDlKZVRweWhLR2NqY21oSWRwQWxQUEZzWkhzRUt0TENfR2JZaTZRNjJ0b3llMXJCUUd3cUpHa3phMTlON1VoMXJEU3BqTWtwTFlURkdBblROMHNPNFltN1hRWVcwcGJmaThyb05Zc1dBNGVkNktHbUhwZElTdHBtN091RzEzSFVpdWQ2WU5pUThqdGtNeEJBVjNuZExWeTh0Zm5RT3NtenBFd2tTajVRaFVzeHktV1RfUnZpT3FEOA?oc=5\" target=\"_blank\">At least 101 people missing after submarine attack on Iranian ship off Sri Lanka, sources say</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOeEJNa2t0eE5UaDlKZVRweWhLR2NqY21oSWRwQWxQUEZzWkhzRUt0TENfR2JZaTZRNjJ0b3llMXJCUUd3cUpHa3phMTlON1VoMXJEU3BqTWtwTFlURkdBblROMHNPNFltN1hRWVcwcGJmaThyb05Zc1dBNGVkNktHbUhwZElTdHBtN091RzEzSFVpdWQ2WU5pUThqdGtNeEJBVjNuZExWeTh0Zm5RT3NtenBFd2tTajVRaFVzeHktV1RfUnZpT3FEOA?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:9e40673f256e74d9",
+    "title": "UN 'deeply disturbed' by strike on Iran school that killed 160 children - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiyAFBVV95cUxONXNGejNJMF90R3lrenJLZG5lUk4zbmlQUmRRWnpEajZBR1FfdEV5N0xnQi1JLUZxa3VFOGVrTTVIc1MzbEpiZFM5X0o3T2x2c2FTQml2a0MzZlcxMTRXZnZYOW5oVHFJMnF3aUFmX2lTM3VJYlotMTVDRm9pcUdwd0J2bHk2czBJblFUcml6OXhobnBwMGxIUWpPcHd2Z1dvRFliZ28tWWNLcF9oeXExdTRkZm1YTXhRM2EzWHZUcmQtX2hKZWxRTg?oc=5\" target=\"_blank\">UN 'deeply disturbed' by strike on Iran school that killed 160 children</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxONXNGejNJMF90R3lrenJLZG5lUk4zbmlQUmRRWnpEajZBR1FfdEV5N0xnQi1JLUZxa3VFOGVrTTVIc1MzbEpiZFM5X0o3T2x2c2FTQml2a0MzZlcxMTRXZnZYOW5oVHFJMnF3aUFmX2lTM3VJYlotMTVDRm9pcUdwd0J2bHk2czBJblFUcml6OXhobnBwMGxIUWpPcHd2Z1dvRFliZ28tWWNLcF9oeXExdTRkZm1YTXhRM2EzWHZUcmQtX2hKZWxRTg?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$UN",
+      "$UN"
+    ]
+  },
+  {
+    "id": "finnhub:8a5d53a404daba24",
+    "title": "Mojtaba Khamenei, seen as possible next Supreme Leader, has survived attacks on Iran, sources say - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxOaG8tdWNjcXlybzk0aFZ4UklEV1dmLWQzMFVtTkVBTFhIdXVMOWZiR0FsTUFNdzhrREFTZ1J4LTl5dzdfeVRuVW9rTmhSNzR5T1R1V0RpYmpfV1FPMnZ0VW92a1hoMjA5OFpaMEtUQThTTTcweTBTWDNrelRPV2ZMX3ZtNlRaNm9OUXZYd1VNamZHU3FoNmhhZnJqOGI4ak9DcjgxTXJlaHp2T2poSlNJWFJxSWtBelo4SldmaEVNTGV0WnYzcFc0QllR?oc=5\" target=\"_blank\">Mojtaba Khamenei, seen as possible next Supreme Leader, has survived attacks on Iran, sources say</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxOaG8tdWNjcXlybzk0aFZ4UklEV1dmLWQzMFVtTkVBTFhIdXVMOWZiR0FsTUFNdzhrREFTZ1J4LTl5dzdfeVRuVW9rTmhSNzR5T1R1V0RpYmpfV1FPMnZ0VW92a1hoMjA5OFpaMEtUQThTTTcweTBTWDNrelRPV2ZMX3ZtNlRaNm9OUXZYd1VNamZHU3FoNmhhZnJqOGI4ak9DcjgxTXJlaHp2T2poSlNJWFJxSWtBelo4SldmaEVNTGV0WnYzcFc0QllR?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:cbec824f6b8f1fbb",
+    "title": "Spain defies Trump's threats over stance on Iran war, says it 'won't be vassals' - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMi1AFBVV95cUxOR2w1NVg4VmdmOWRtVnk4NjMtMnVtSjhtZzJrVlNEb2lkeVhKRlZ1TTBpR19wVm5fQURmczYzekdjLW00aHZZUF85ejNwa2FPRzlYd2EtQTJPV3dkZE1kVWpXcGc3Qlc1NGZzZDJGZ2V1X0JSUTZ0MnRLNENUOGZNWEs1N1E5Ty11eW8wRWpqVmdCM1hXN3JGNWVONlQyc3ZzZXVKcTc0VmdyWVFqR2JhTVctY2RqNk1FVXpwVFg3YUI4eEVJVVRFTmd5X3o2Z0VDZ3ZQSA?oc=5\" target=\"_blank\">Spain defies Trump's threats over stance on Iran war, says it 'won't be vassals'</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOR2w1NVg4VmdmOWRtVnk4NjMtMnVtSjhtZzJrVlNEb2lkeVhKRlZ1TTBpR19wVm5fQURmczYzekdjLW00aHZZUF85ejNwa2FPRzlYd2EtQTJPV3dkZE1kVWpXcGc3Qlc1NGZzZDJGZ2V1X0JSUTZ0MnRLNENUOGZNWEs1N1E5Ty11eW8wRWpqVmdCM1hXN3JGNWVONlQyc3ZzZXVKcTc0VmdyWVFqR2JhTVctY2RqNk1FVXpwVFg3YUI4eEVJVVRFTmd5X3o2Z0VDZ3ZQSA?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:c5ad20896b4f6980",
+    "title": "S&P 500 edges up after report of Iran's secret outreach to U.S. - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPaTlrQnJhT1Q5UzctR2YybHEyUFZISGVPdmQyZ0JWQkxTV19zdE1tM2VXTldLckQ0eldSWnJ0R3lhcDRkSUhwMWJNR0pmQnhGME90MlVnblhkWkc4cUw5TlN4cHg1TENmRGExOC1SaTZCeHZiR2M2Rjhvc3pRb3NXWklsMmUwc3BjaHQ3ZndXLXJiNDRRelNHNkVST1d5ZzdtUU9GY1VTbDhiOV9oSFVFMEdGZWZpZGJleWRTaw?oc=5\" target=\"_blank\">S&P 500 edges up after report of Iran's secret outreach to U.S.</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPaTlrQnJhT1Q5UzctR2YybHEyUFZISGVPdmQyZ0JWQkxTV19zdE1tM2VXTldLckQ0eldSWnJ0R3lhcDRkSUhwMWJNR0pmQnhGME90MlVnblhkWkc4cUw5TlN4cHg1TENmRGExOC1SaTZCeHZiR2M2Rjhvc3pRb3NXWklsMmUwc3BjaHQ3ZndXLXJiNDRRelNHNkVST1d5ZzdtUU9GY1VTbDhiOV9oSFVFMEdGZWZpZGJleWRTaw?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:becc273478d4e73e",
+    "title": "U.S. sub sinks Iranian warship off Sri Lanka, at least 80 dead - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQVkt4SGR6TnNwWGYyck5MZEdmcXlfUDhTOWpRbmZadVF6U1dZWGhEZUtCczhPY3Z1cVlPNnlRR2V0OEFXRGFaR3JsRmRZemdHZE1NMHlSRk9oUThHX1JNQ0dyYU5Sb3l1VnVQVUhRNFNXQTk2UVZxQkNpanBiR2tvQ2ZYUmp6VF9QZ0V6Y3JjU18xOFRWekZwOTlwYk9MRl80V21uZFNxdU53SW8zUWN5RHhobGYzTExvVFZVZ2lWWEM2NFNoRHZsaG1ycTdheGc?oc=5\" target=\"_blank\">U.S. sub sinks Iranian warship off Sri Lanka, at least 80 dead</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQVkt4SGR6TnNwWGYyck5MZEdmcXlfUDhTOWpRbmZadVF6U1dZWGhEZUtCczhPY3Z1cVlPNnlRR2V0OEFXRGFaR3JsRmRZemdHZE1NMHlSRk9oUThHX1JNQ0dyYU5Sb3l1VnVQVUhRNFNXQTk2UVZxQkNpanBiR2tvQ2ZYUmp6VF9QZ0V6Y3JjU18xOFRWekZwOTlwYk9MRl80V21uZFNxdU53SW8zUWN5RHhobGYzTExvVFZVZ2lWWEM2NFNoRHZsaG1ycTdheGc?oc=5",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "finnhub:d1ad3feae8000d21",
+    "title": "Iran players focus on Asian Cup despite concern for families stuck in military conflict - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOOS1jckx2VEJtNHFjVHFnN3BmWGtSX0taUGF1ejNWbEVSZi0yMkNndmxHUDBOcm5tRmdfdWdTbXdRaUtDM2xFNGsxeG9Db0F0Z3laYzR1Znlpc3p3c3I0YjNBcUpIWWpEM0FuQjBkZGwzRkltS0lJeTBzNDExSmdpcm1zM3RFNEtSd0xiVjIwYk5mY3U5ZDZFOGVuQmR5b05ZT3lnQ3c1UmVqYlRacVVOcnVrb01ZQUJoMUFaVTljYzlnRnBqVFE?oc=5\" target=\"_blank\">Iran players focus on Asian Cup despite concern for families stuck in military conflict</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOOS1jckx2VEJtNHFjVHFnN3BmWGtSX0taUGF1ejNWbEVSZi0yMkNndmxHUDBOcm5tRmdfdWdTbXdRaUtDM2xFNGsxeG9Db0F0Z3laYzR1Znlpc3p3c3I0YjNBcUpIWWpEM0FuQjBkZGwzRkltS0lJeTBzNDExSmdpcm1zM3RFNEtSd0xiVjIwYk5mY3U5ZDZFOGVuQmR5b05ZT3lnQ3c1UmVqYlRacVVOcnVrb01ZQUJoMUFaVTljYzlnRnBqVFE?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:1e00f3699efe4068",
+    "title": "Oil seen elevated as Hormuz risks intensify amid Iran conflict, analysts say - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUGliSW5uQWRod05IdUJYUnhWcGpMMzc4RTVXZC1nR1NCLXNDZUozNW5XXy1Qb1RGRnFIYmRBOV9NbGlQdGg2MEJBRHhsRW5mRmQ2RWdUcUNINmVfZmp5d2x2Sk5PSjVxdFQtYXR2SzFwZ25ZQlMybndpU0ZiNkVnSExlbUI1YmZuYklLWk05bTVmblliaVM0VDJhVjFfZzQzQ3piQTF6d2ZOS3pTNnoxRmhid0tFNVZSM2t1RG41dGVxQQ?oc=5\" target=\"_blank\">Oil seen elevated as Hormuz risks intensify amid Iran conflict, analysts say</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQUGliSW5uQWRod05IdUJYUnhWcGpMMzc4RTVXZC1nR1NCLXNDZUozNW5XXy1Qb1RGRnFIYmRBOV9NbGlQdGg2MEJBRHhsRW5mRmQ2RWdUcUNINmVfZmp5d2x2Sk5PSjVxdFQtYXR2SzFwZ25ZQlMybndpU0ZiNkVnSExlbUI1YmZuYklLWk05bTVmblliaVM0VDJhVjFfZzQzQ3piQTF6d2ZOS3pTNnoxRmhid0tFNVZSM2t1RG41dGVxQQ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "alphav:478987979bc9edb7",
+    "title": "What's Going On With ServiceNow Stock Wednesday? - ServiceNow (NYSE:NOW), StarHub (OTC:SRHBF)",
+    "summary": "ServiceNow shares rose in premarket trading after the company announced a collaboration with NTT DOCOMO and StarHub to develop an AI-powered inter-carrier operational model. This initiative aims to resolve roaming issues faster, improving connectivity for global travelers, with a commercial launch targeted for the second half of the year. Despite the positive news, ServiceNow's stock faces short-term challenges, trading below its 20-day and 100-day SMAs, with mixed momentum indicated by its RSI and MACD.",
+    "date": "2026-03-04",
+    "source": "Alpha Vantage: Benzinga",
+    "url": "https://www.benzinga.com/trading-ideas/movers/26/03/51034266/servicenow-ntt-docomo-starhub-join-forces-to-end-roaming-nightmares-with-ai",
+    "category": "Markets",
+    "tags": [
+      "earnings",
+      "financial_markets",
+      "technology",
+      "finance",
+      "Equities",
+      "$NYSE"
+    ]
+  },
+  {
+    "id": "finnhub:8e1ed40a053578aa",
+    "title": "Iran could disrupt the Strait of Hormuz with drones for months - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxPZXlvWDN3QXVQYTVwbkd5cWd4VkhvX2w2bFhLMGRvLVZGcEVzMjNuTWN4U3otdGk5dUtOWUJfZHp5enY0WFRPSW1PdU1tcG9nUUk4OUUxeUxHWDkyZE0xM3JEU0lCZWFGd3RzelpNYnF0dzNiSVdNOEw2RG9uTXBES1lFNXZPbmlza0lGanQwbEJ6NzFBUHVJNzVuellpMV9tYV9qMGFjT1JpY1RSNkhtUDd2NXg?oc=5\" target=\"_blank\">Iran could disrupt the Strait of Hormuz with drones for months</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPZXlvWDN3QXVQYTVwbkd5cWd4VkhvX2w2bFhLMGRvLVZGcEVzMjNuTWN4U3otdGk5dUtOWUJfZHp5enY0WFRPSW1PdU1tcG9nUUk4OUUxeUxHWDkyZE0xM3JEU0lCZWFGd3RzelpNYnF0dzNiSVdNOEw2RG9uTXBES1lFNXZPbmlza0lGanQwbEJ6NzFBUHVJNzVuellpMV9tYV9qMGFjT1JpY1RSNkhtUDd2NXg?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:437f9688a86a7b60",
+    "title": "US says Iran firing fewer missiles, US strikes to expand inland - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxORFFsd3ZvMEx4eDZad0RMRVZKbUdLZjZVdVNJY2MwVk5XWmtwdkpuNWlybjJiRk5xZE9pSmRLMDRmYUlUcFdXM1B5S3ZDSnVTQkxWc1AxUk5zQmxPS1g5Qld2Mk5SaXhmUE1obF9RWGYyelJwVF9hZjdlTkI5cU53ajlXZkM5M1hwWnBuTjVwMzdMSy1yMTdTT2dfS0d6TEFDMEpTQWMtZG9jNHJfYWx6dnQ3V3M?oc=5\" target=\"_blank\">US says Iran firing fewer missiles, US strikes to expand inland</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxORFFsd3ZvMEx4eDZad0RMRVZKbUdLZjZVdVNJY2MwVk5XWmtwdkpuNWlybjJiRk5xZE9pSmRLMDRmYUlUcFdXM1B5S3ZDSnVTQkxWc1AxUk5zQmxPS1g5Qld2Mk5SaXhmUE1obF9RWGYyelJwVF9hZjdlTkI5cU53ajlXZkM5M1hwWnBuTjVwMzdMSy1yMTdTT2dfS0d6TEFDMEpTQWMtZG9jNHJfYWx6dnQ3V3M?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:f9bf61456bd85985",
+    "title": "Who is Mojtaba Khamenei, frontrunner to be Iran's supreme leader? - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiswFBVV95cUxONXRaejNQZlhQYnFkS2p6S09SakZYai1PNU5OajhtS3hUZ3NqUGhyWWxfaVdqMHdwUjhsTV9tWWNzdEphbjE4YTJVNl9sNTFCRTItcDJLU1hjM014NDJCbWZBRXZMMUhsTFU5WHk2SGJ3VFlKSWRrZVV5X2lYS3N2aXBiQVFqaUpZMlB6SFowRzRiQXBWYzQ3QlBMWkU0bFVKSWJGTXlqS2VDdkgxb1d6cWJodw?oc=5\" target=\"_blank\">Who is Mojtaba Khamenei, frontrunner to be Iran's supreme leader?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxONXRaejNQZlhQYnFkS2p6S09SakZYai1PNU5OajhtS3hUZ3NqUGhyWWxfaVdqMHdwUjhsTV9tWWNzdEphbjE4YTJVNl9sNTFCRTItcDJLU1hjM014NDJCbWZBRXZMMUhsTFU5WHk2SGJ3VFlKSWRrZVV5X2lYS3N2aXBiQVFqaUpZMlB6SFowRzRiQXBWYzQ3QlBMWkU0bFVKSWJGTXlqS2VDdkgxb1d6cWJodw?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:942030fe026447d8",
+    "title": "US says it is winning against Iran, can fight as long as needed - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxPZVd0OXhQUGpXTVAxaDczbi0ya19XNXM1ampKdHNUTVYxOWtZZFpoYlo5OTdoVUhVU2MtQ2tFQnBaTUp2eC1ZMjl6MzA0TzJmdVJrdUZ6blBKRnlKZ1dvWHhwUThYRzBRMGFGaVBranRoRHc0SW5Rd2VrczRlcEJ3M1VtZ3ZucjFTNnUwNjFkNEV2Snk4NGcwX3JSZ3lWSFRteFI3OFpqWQ?oc=5\" target=\"_blank\">US says it is winning against Iran, can fight as long as needed</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZVd0OXhQUGpXTVAxaDczbi0ya19XNXM1ampKdHNUTVYxOWtZZFpoYlo5OTdoVUhVU2MtQ2tFQnBaTUp2eC1ZMjl6MzA0TzJmdVJrdUZ6blBKRnlKZ1dvWHhwUThYRzBRMGFGaVBranRoRHc0SW5Rd2VrczRlcEJ3M1VtZ3ZucjFTNnUwNjFkNEV2Snk4NGcwX3JSZ3lWSFRteFI3OFpqWQ?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:fd5680634c5c949e",
+    "title": "ECB wary of Iran-war inflation spike after missing last 'transitory' surge - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxOWWVRbGNBd0NRbGFlNnNZRDE5Y3JhZGlUakdkMHo0dTJTTnVORks3X2FWWW91SUpERDIzUWFuYXRydERhWEl0M2VSOFNkZExNSzhLRUhHUFB4bVY4Y0tHdjlYNWZyaEJnM1M4T2x3SHpvOVFwVEl4ZHVoUXYzR3FjNjBDakpuNXNzeHN5S29mZkhRbGN2SEsxeXdqUk03OGZ6ejhFT0NXWTBFMVNRZU1nYWw0NWtZTElIcm4zWWNERQ?oc=5\" target=\"_blank\">ECB wary of Iran-war inflation spike after missing last 'transitory' surge</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOWWVRbGNBd0NRbGFlNnNZRDE5Y3JhZGlUakdkMHo0dTJTTnVORks3X2FWWW91SUpERDIzUWFuYXRydERhWEl0M2VSOFNkZExNSzhLRUhHUFB4bVY4Y0tHdjlYNWZyaEJnM1M4T2x3SHpvOVFwVEl4ZHVoUXYzR3FjNjBDakpuNXNzeHN5S29mZkhRbGN2SEsxeXdqUk03OGZ6ejhFT0NXWTBFMVNRZU1nYWw0NWtZTElIcm4zWWNERQ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Inflation",
+      "$ECB",
+      "Geopolitics",
+      "$ECB"
+    ]
+  },
+  {
+    "id": "finnhub:59715b07a55e1546",
+    "title": "Uncertainty faces China Inc's projects in Iran after US–Israeli strikes - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMitAFBVV95cUxQa25sd0lzMDY3RWxvUjV0c3NibGVOa2dlRlBYcGZ3dG90S1VNNjBtVU9JNUxoZ0VJTTQ4MFh2SGw4R1hzZ0FwR1hIeTdEWXVEYTJ3X1c2WHZnVXI4cGZzYlU5UmE3UXRVYTZuODg4QVR2T0Y1Tml4dC1SZnQ1UnJOdWZzU2cwRW5jRzVtVzY4eERXRkJPMkJkUEN3NzZOaGl6eEtjZ09PR2NuZTBIQUV2V3d6eFk?oc=5\" target=\"_blank\">Uncertainty faces China Inc's projects in Iran after US–Israeli strikes</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQa25sd0lzMDY3RWxvUjV0c3NibGVOa2dlRlBYcGZ3dG90S1VNNjBtVU9JNUxoZ0VJTTQ4MFh2SGw4R1hzZ0FwR1hIeTdEWXVEYTJ3X1c2WHZnVXI4cGZzYlU5UmE3UXRVYTZuODg4QVR2T0Y1Tml4dC1SZnQ1UnJOdWZzU2cwRW5jRzVtVzY4eERXRkJPMkJkUEN3NzZOaGl6eEtjZ09PR2NuZTBIQUV2V3d6eFk?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:4363e23a24eaa894",
+    "title": "A tech stock's long-awaited breakout — plus, our hopes for Broadcom's earnings",
+    "summary": "The Investing Club holds its \"Morning Meeting\" every weekday at 10:20 a.m. ET.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/a-tech-stocks-long-awaited-breakout-our-hopes-for-broadcoms-earnings.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:ac989bfeb2da2d8b",
+    "title": "Turkey has prepared plans for possible migrant flow from Iran, minister says - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMivAFBVV95cUxPMXVNLVp3V1hSaU9VNDctelJNU0pvb0FWdVRmcG9GbDVhWFp6alY0d3plcEx3TjY3bkc4UU40R3lWZ2p1bEtsWEFEd0hGLXBMVWhtMENvTEdlZkxRR1JITS04UWhFbWFuVWdoVUJ2RmVMQ3lOTmhnbkhqTk9KR2t0cGpocENxLTNwWk51a0JvUjF1VEJldzRzbXQ2Q21zWm1IeDhZVmVKZnZ0MVlEdGhmUUxFeTdtdmFXVFJXTg?oc=5\" target=\"_blank\">Turkey has prepared plans for possible migrant flow from Iran, minister says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPMXVNLVp3V1hSaU9VNDctelJNU0pvb0FWdVRmcG9GbDVhWFp6alY0d3plcEx3TjY3bkc4UU40R3lWZ2p1bEtsWEFEd0hGLXBMVWhtMENvTEdlZkxRR1JITS04UWhFbWFuVWdoVUJ2RmVMQ3lOTmhnbkhqTk9KR2t0cGpocENxLTNwWk51a0JvUjF1VEJldzRzbXQ2Q21zWm1IeDhZVmVKZnZ0MVlEdGhmUUxFeTdtdmFXVFJXTg?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:abf61f77333823a6",
+    "title": "Iran's Revolutionary Guards take wartime lead, ensuring harder line, sources say - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiywFBVV95cUxONlh4djNOUHN2RVZZMVVlN2lLVzVwaWdjQm9FMmh3RWU4aUJSYzZvQmtxMWlvclZXMG96dGI2c2piN1FjRHpfV1RrNE04NkdzeUpIUUFFYXZpMllCUVpQZEdMamRud0tNWGY4NHRlcGtnWDY5TjlWX0RUOWFRamIzdWREWXhkbWJUWlZQQzNvVE1mMk9pQ00xa2dWR3BMLWJzVWtrR1VwaVdTc2hrbXB3Wl9nV0FzS0k0YnV4TmxvSnJtd0taWmxiZFlNbw?oc=5\" target=\"_blank\">Iran's Revolutionary Guards take wartime lead, ensuring harder line, sources say</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxONlh4djNOUHN2RVZZMVVlN2lLVzVwaWdjQm9FMmh3RWU4aUJSYzZvQmtxMWlvclZXMG96dGI2c2piN1FjRHpfV1RrNE04NkdzeUpIUUFFYXZpMllCUVpQZEdMamRud0tNWGY4NHRlcGtnWDY5TjlWX0RUOWFRamIzdWREWXhkbWJUWlZQQzNvVE1mMk9pQ00xa2dWR3BMLWJzVWtrR1VwaVdTc2hrbXB3Wl9nV0FzS0k0YnV4TmxvSnJtd0taWmxiZFlNbw?oc=5",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "finnhub:c8eccade34ec9f5a",
+    "title": "US Treasury Secretary Bessent says oil market well supplied amid Iran war - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMWtMdUZnNERheHo0b1BLUl95UWZiVlVnOUpmVFhfcnFzRDhtT04xYnFQWkJIMzhIT01JcVJKYWpXd21ERTB4SE5XRkVBLWNjRlVpNW1IcG82X09ndFRZZ2FxZk8xaUx3VWZsVUxQU3hpMm8zcF9BbUxWbTdVTFdReDd5VUdQRWppRWZzN18tV1RpVzk2ZW5waUN5RENZbjB4SnY4Q3YwaTBNX2ZIZkdlNW4ta3NaS2EwcnRVb1I0X2FFcms?oc=5\" target=\"_blank\">US Treasury Secretary Bessent says oil market well supplied amid Iran war</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-04",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOMWtMdUZnNERheHo0b1BLUl95UWZiVlVnOUpmVFhfcnFzRDhtT04xYnFQWkJIMzhIT01JcVJKYWpXd21ERTB4SE5XRkVBLWNjRlVpNW1IcG82X09ndFRZZ2FxZk8xaUx3VWZsVUxQU3hpMm8zcF9BbUxWbTdVTFdReDd5VUdQRWppRWZzN18tV1RpVzk2ZW5waUN5RENZbjB4SnY4Q3YwaTBNX2ZIZkdlNW4ta3NaS2EwcnRVb1I0X2FFcms?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "alphav:3b691871fe8a6b47",
+    "title": "|‘Magnificent Seven’ stocks mostly climb, with big gains for Amazon and Tesla",
+    "summary": "|The \"Magnificent Seven\" tech stocks mostly saw gains on Wednesday, with Amazon and Tesla leading the way with significant climbs. The Roundhill Magnificent Seven ETF, which holds these stocks, was up 1.7%. This performance contributed to a broader market recovery with the Dow, S&P 500, and Nasdaq all bouncing back.",
+    "date": "2026-03-04",
+    "source": "Alpha Vantage: MarketWatch",
+    "url": "https://www.marketwatch.com/livecoverage/stock-market-today-dow-sp500-nasdaq-lower-oil-rises-iran-war-broadcom-earnings-korea-dives/card/-magnificent-seven-stocks-mostly-climb-with-big-gains-for-amazon-and-tesla-ztOJnoVs6UtbRp0cjavi?mod=mw_FV&gaa_at=eafs&gaa_n=AWEtsqfEX7Cja2MNJlGmonxnR17YiEuEHakXGBkxvRUSR6BcFVI-umjFMDF5&gaa_ts=69a8829b&gaa_sig=2NekgYJuHF3NHK8YHOXJHOCay5Z97HStFdZZ-a7S1DyUZ7JrzOfsrRNHgpvw1Crd_Ud4jsSEx4p3fHEpvKKTYA%3D%3D",
+    "category": "Markets",
+    "tags": [
+      "financial_markets",
+      "technology",
+      "Equities"
+    ]
+  },
+  {
+    "id": "alphav:be41beeeefa6637a",
+    "title": "Apollo’s Zito Sees Private Credit Pain Lasting Up to 18 Months",
+    "summary": "John Zito of Apollo Global Management Inc. anticipates that the current difficulties in private credit markets could persist for another 12 to 18 months. Despite this, Zito, co-president of Apollo's asset management arm, stated that he does not view the recent withdrawals from some private credit funds as a significant issue. He shared these insights during the Bloomberg Invest conference in New York.",
+    "date": "2026-03-04",
+    "source": "Alpha Vantage: Bloomberg.com",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-04/apollo-s-zito-sees-private-credit-pain-lasting-up-to-18-months",
+    "category": "Markets",
+    "tags": [
+      "finance",
+      "financial_markets"
+    ]
+  },
+  {
+    "id": "alphav:5c7d4acfbaca2827",
+    "title": "Looking Into Eversource Energy's Recent Short Interest",
+    "summary": "Eversource Energy (NYSE:ES) has seen a 33.14% increase in its short interest as a percent of float since its last report, with 6.60 million shares now sold short, representing 2.25% of its tradable shares. This trend suggests increased bearish sentiment among investors, though it doesn't guarantee a near-term stock decline. Compared to its peers, Eversource Energy has less short interest on average, with the peer group average at 4.36%.",
+    "date": "2026-03-04",
+    "source": "Alpha Vantage: Benzinga",
+    "url": "https://www.benzinga.com/insights/short-sellers/26/03/51044343/looking-into-eversource-energys-recent-short-interest",
+    "category": "Markets",
+    "tags": [
+      "financial_markets",
+      "energy_transportation",
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:c64a4511fcf084bb",
+    "title": "2 reasons why the market is rallying Wednesday and defying Iran war fears",
+    "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/these-are-2-reasons-why-stocks-are-rallying-wednesday-defying-iran-war-concerns.html",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:8a1929679a8995c4",
+    "title": "The quietly winning stock Jim Cramer says is on the verge of a big upward move",
+    "summary": "Strong quarterly results from Ross Stores reinforce that off-price retail is on fire.",
+    "date": "2026-03-04",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/04/the-quietly-winning-stock-cramer-says-is-on-verge-of-a-big-upward-move.html",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "alphav:31a738c6617f2360",
+    "title": "Western Gas Exporters Could Profit From War in Persian Gulf",
+    "summary": "The suspension of liquefied natural gas (LNG) exports from Qatar has caused gas prices to soar, creating a potential windfall for Western energy companies. Companies like Shell, TotalEnergies, ExxonMobil, and Cheniere are well-positioned to profit as alternative suppliers for countries previously reliant on Qatari gas. The article highlights the significant increase in Asian and European LNG price benchmarks, suggesting substantial financial gains for these Western firms.",
+    "date": "2026-03-04",
+    "source": "Alpha Vantage: The New York Times",
+    "url": "https://www.nytimes.com/2026/03/04/business/energy-environment/natural-gas-prices-lng-shell-exxon-war-iran.html",
+    "category": "Geopolitics",
+    "tags": [
+      "earnings",
+      "financial_markets",
+      "economy_macro",
+      "energy_transportation",
+      "NaturalGas",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:abe4690f90f8c42b",
+    "title": "Opendoor CEO says his firm is offering mortgages at 4.99%. Some are puzzled how.",
+    "summary": "The chief executive of Opendoor Technologies says his company is offering mortgages a full percentage point below the national average, a move that puzzles some observers wondering about its effect on the company’s business.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/opendoor-ceo-says-his-firm-is-offering-mortgages-at-4-99-some-are-puzzled-how-b5d75613",
+    "category": "Markets",
+    "tags": [
+      "$CEO",
+      "$CEO"
+    ]
+  },
+  {
+    "id": "finnhub:4a830276b7a8490c",
+    "title": "Facing backlash, OpenAI’s Sam Altman says he made a ‘sloppy’ mistake in Pentagon deal",
+    "summary": "The OpenAI CEO admits he came off as “opportunistic” in how he announced the company’s new government deal and says he will amend the language to emphasize restrictions",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/facing-backlash-openais-sam-altman-says-he-made-a-sloppy-mistake-in-pentagon-deal-cf8f3ad9",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:c8380de7a7ddc34e",
+    "title": "MongoDB’s stock sinks after earnings, signaling more tough times for the software sector",
+    "summary": "A “planned” transition involving the exits of two sales leaders is also rattling investors.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/mongodbs-stock-sinks-after-earnings-signaling-more-tough-times-for-the-software-sector-5dd37daa",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "finnhub:8a0aff62b512887b",
+    "title": "SoFi’s stock rises as CEO Anthony Noto reacts to recent selloff with a $1 million purchase",
+    "summary": "Noto, who already owns a SoFi stake worth about $215 million on paper, has been known to buy the dip before.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/sofis-stock-rises-as-ceo-anthony-noto-reacts-to-recent-selloff-with-a-1-million-purchase-d03ba5b6",
+    "category": "Markets",
+    "tags": [
+      "$CEO",
+      "$CEO"
+    ]
+  },
+  {
+    "id": "alphav:75b25a71068dc299",
+    "title": "Amazon Expands AI Footprint With $427 Million George Washington University Campus Acquisition As Data Center Arms Race Intensifies",
+    "summary": "Amazon, through its Amazon Data Services unit, is reportedly acquiring George Washington University's Virginia Science and Technology campus for $427 million. This acquisition is part of Amazon's larger cloud and AI expansion strategy, including a planned $35 billion investment in Virginia data centers by 2040. George Washington University is selling the campus to improve its financial stability and refocus on its academic mission.",
+    "date": "2026-03-03",
+    "source": "Alpha Vantage: Benzinga",
+    "url": "https://www.benzinga.com/markets/tech/26/03/50991510/amazon-expands-ai-footprint-with-427-million-george-washington-university-campus-acquisition-as-data-center-arms-race-intensifies",
+    "category": "Markets",
+    "tags": [
+      "mergers_and_acquisitions",
+      "technology",
+      "financial_markets",
+      "real_estate",
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "alphav:74b881ff3d579af0",
+    "title": "South Africa Stocks in Sweet Spot as Gold, Rand Gain, BofA Says",
+    "summary": "Bank of America Corp. predicts further gains for South African stocks, extending their record 12-month winning streak. This optimistic outlook is attributed to soaring metals prices and a strengthening rand. The South African benchmark index recently hit a new record high, driven by increases in gold and silver after geopolitical events.",
+    "date": "2026-03-03",
+    "source": "Alpha Vantage: Bloomberg.com",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-03/south-africa-stocks-in-sweet-spot-as-gold-rand-gain-bofa-says",
+    "category": "Geopolitics",
+    "tags": [
+      "financial_markets",
+      "economy_macro",
+      "Equities",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:4c626d84d33c4c39",
+    "title": "Energy investors go stock picking, benefiting Chevron over Exxon",
+    "summary": "Disruption to global energy supplies and the prospect of an ever-widening conflict in the Middle East has sent crude-oil and natural-gas futures higher — and exposed subtle differences on how investors treat the stocks of different energy companies.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/energy-investors-go-stock-picking-benefiting-chevron-over-exxon-bb36de39",
+    "category": "Geopolitics",
+    "tags": [
+      "Oil",
+      "Equities",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:84307e5864b82982",
+    "title": "Pinterest’s stock is rising. Here’s why investors are cheering a big boost to the buyback program.",
+    "summary": "Pinterest’s new share-repurchase authorization represents nearly a third of the company’s market cap and signals to one analyst that an activist is satisfied with the company’s strategic vision.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/pinterests-stock-is-rising-heres-why-investors-are-cheering-a-big-boost-to-the-buyback-program-e46ab090",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:cc2f2e60cb6e41f8",
+    "title": "We're exiting a financial already on its way out and adding again to our newest stock",
+    "summary": "These moves are helping us reposition the portfolio with a more defensive tilt, while preserving our sizable cash position.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/were-exiting-a-financial-already-on-its-way-out-and-adding-again-to-our-newest-stock.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:1fa3341caf72d6b0",
+    "title": "Micron and other memory stocks see outsized losses. What’s behind the big moves?",
+    "summary": "Analysts don’t see any negative shift in fundamentals for memory-chip stocks — and UBS offers a new highly upbeat earnings forecast for Micron specifically.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/micron-and-other-memory-stocks-see-outsized-losses-whats-behind-the-big-moves-c14882a0",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:82d86292cd8432ad",
+    "title": "Investors are now learning a painful lesson: Buying a dip driven by geopolitics isn’t a slam dunk.",
+    "summary": "Investors rushed to buy U.S. stocks on Monday after the U.S. and Israeli bombardment of Iran helped inspire a global selloff. That may have been short-sighted.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/investors-are-now-learning-a-painful-lesson-buying-a-dip-driven-by-geopolitics-isnt-a-slam-dunk-219d6bbe",
+    "category": "Geopolitics",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:3eb3605d63f7feab",
+    "title": "These S&P 500 stocks are falling the hardest on Tuesday",
+    "summary": "Stocks of gold miners and computer-memory makers were hit especially hard, while Best Buy led the S&P 500 with a gain after its earnings report.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/these-s-p-500-stocks-are-falling-the-hardest-on-tuesday-bedc2c07",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:4e0b93dfc800817f",
+    "title": "New York Fed's Williams says tariff burden falls 'overwhelmingly' on U.S. businesses and consumers",
+    "summary": "Williams said that not only were the tariffs being felt at home, but they also were keeping the Fed from reaching its 2% inflation goal.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/new-york-feds-williams-says-tariff-burden-falls-overwhelmingly-on-us-businesses-and-consumers.html",
+    "category": "Policy",
+    "tags": [
+      "Inflation",
+      "Fed",
+      "Tariffs"
+    ]
+  },
+  {
+    "id": "finnhub:3cd21ea377132912",
+    "title": "Palantir’s stock could surge almost 40% as Iran conflict dispels a big concern, analyst says",
+    "summary": "Palantir should be able to prove its growing value to the military and quell fears that it’s merely an AI “wrapper,” according to a Rosenblatt analyst.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/palantirs-stock-could-surge-almost-40-as-iran-conflict-dispels-a-big-concern-analyst-says-5ff1af36",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:131961041ea4fff2",
+    "title": "`Mistakes were made,' Grassley tells Noem about Trump's immigration crackdown",
+    "summary": "DHS Secretary Kristi Noem is testifying before the Senate Judiciary Committee after coming under fire for her leadership during a nationwide immigration sweep.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/dhs-noem-immigration-minneapolis-senate-judiciary-hearing.html",
+    "category": "Policy",
+    "tags": [
+      "Government"
+    ]
+  },
+  {
+    "id": "finnhub:5bf6a347b61d10d3",
+    "title": "I made a big mistake with my Roth IRA. Here’s how I fixed it.",
+    "summary": "Tips for investing in a Roth IRA if your earnings break the income cap, plus a bet on Polymarket that isn’t entirely what it seems.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/i-made-a-big-mistake-with-my-roth-ira-heres-how-i-fixed-it-f7213d47",
+    "category": "Markets",
+    "tags": [
+      "$IRA",
+      "$IRA"
+    ]
+  },
+  {
+    "id": "finnhub:afbbe92d98656318",
+    "title": "Google employees call for military limits on AI amid Iran strikes, Anthropic fallout",
+    "summary": "Employees at Alphabet and OpenAI are pushing for stricter limits on the military's use of AI, as tensions rise following the blacklisting of Anthropic's models.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/anthropic-fallout-iran-war-tech-military-ai.html",
+    "category": "Markets",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "finnhub:d288b32055e936d4",
+    "title": "Cigna’s longtime CEO to step down as health insurers face growing scrutiny",
+    "summary": "Cigna names company veteran Brian Evanko as CEO to succeed David Cordani, who has been in charge for 27 years.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/cignas-longtime-ceo-to-step-down-as-health-insurers-face-growing-scrutiny-436d5178",
+    "category": "Markets",
+    "tags": [
+      "$CEO",
+      "$CEO"
+    ]
+  },
+  {
+    "id": "finnhub:d839fd48e8562c5e",
+    "title": "Jim Cramer's top 10 things to watch in the stock market Tuesday",
+    "summary": "Wall Street is tracking for a sharply lower open, and oil prices are spiking on supply disruption concerns.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/jim-cramers-top-10-things-to-watch-in-the-stock-market-tuesday.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:eacac0e60607e013",
+    "title": "We're buying more of this megacap AI stock as the market heads for a lower open",
+    "summary": "This AI stock has a more visible path to victory than its hyperscaler peers.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/were-buying-more-of-this-ai-stock-as-the-market-indicates-a-lower-open.html",
+    "category": "Markets",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "finnhub:83fe0576221babf7",
+    "title": "Why Best Buy’s stock is soaring, even as sales and full-year outlook disappoint",
+    "summary": "Best Buy’s earnings beat was enough to please investors, who had low expectations ahead of the retailer’s quarterly results.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/why-best-buys-stock-is-soaring-even-as-sales-and-full-year-outlook-disappoint-bb68b2e4",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:d8ea2fb8277b1356",
+    "title": "Forget the oil spike — the Iran conflict could unlock a generational Middle East peace dividend",
+    "summary": "America’s attack supports the case for U.S. assets. It’s also bullish for Iran.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/forget-the-oil-spike-the-iran-conflict-could-unlock-a-generational-middle-east-peace-dividend-16fe67e4",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:b83220c0412642ba",
+    "title": "Trump has less than 30 days to end the Iran conflict or he’ll lose his inflation battle",
+    "summary": "Markets expect a “Venezuela II” scenario in which the bad guy falls, order returns and oil drifts lower.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/trump-has-less-than-30-days-to-end-the-iran-conflict-or-hell-lose-his-inflation-battle-7fed86f9",
+    "category": "Geopolitics",
+    "tags": [
+      "Inflation",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:d4154718b41b05ac",
+    "title": "Why Treasurys are failing their biggest test in decades — and what you should own instead",
+    "summary": "U.S. government bonds began losing their safe-haven status long before the attack on Iran.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/why-treasurys-are-failing-their-biggest-test-in-decades-and-what-you-should-own-instead-28176f9b",
+    "category": "Markets",
+    "tags": [
+      "Rates"
+    ]
+  },
+  {
+    "id": "finnhub:dc1695ff7e67a0f6",
+    "title": "SpaceX’s stock could trade like Tesla ‘on steroids’ after IPO, analyst says",
+    "summary": "SpaceX plans to go public this year. If it does, its stock could be even more volatile than Tesla’s.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/spacexs-stock-could-trade-like-tesla-on-steroids-after-ipo-analyst-says-6916bd55",
+    "category": "Markets",
+    "tags": [
+      "$IPO",
+      "$IPO"
+    ]
+  },
+  {
+    "id": "finnhub:c1121d2b7ef940f3",
+    "title": "Treasury yields rise as oil prices spike",
+    "summary": "U.S. borrowing costs have rebounded as the ongoing conflict in Iran is likely to worsen inflation",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/treasury-yields-rise-as-oil-prices-spike-54a4b9ff",
+    "category": "Geopolitics",
+    "tags": [
+      "Inflation",
+      "Rates",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:f31f2fe28b968f5d",
+    "title": "‘His children might resent her’: My widowed mother has a life estate. Does that override a prenup and will?",
+    "summary": "“She chose a lovely man whose family has a history of remarkable longevity.”",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/his-children-might-resent-her-my-widowed-mother-has-a-life-estate-does-that-override-a-prenup-and-will-0e217484",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:bf0abd2ecf6bb240",
+    "title": "Target expects sales to rebound this year, as the retailer tries to rally investors around its new CEO",
+    "summary": "Investors cheered Target’s quarterly results and outlook reported, with the stock surging toward a one-year high on Tuesday.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/target-expects-sales-to-rebound-this-year-as-the-retailer-tries-to-rally-investors-around-its-new-ceo-a7d434ef",
+    "category": "Geopolitics",
+    "tags": [
+      "$CEO",
+      "$CEO"
+    ]
+  },
+  {
+    "id": "finnhub:9a59a00fa53ab80c",
+    "title": "The global economy is facing untold damages even if the Iran war ends tomorrow, warns this energy expert",
+    "summary": "Investors are failing to grasp the enormity of the fallout from U.S. and Israel attacks on Iran, says this energy expert.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/the-global-economy-is-facing-untold-damages-even-if-the-iran-war-ends-tomorrow-warns-this-energy-expert-2b16270b",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:4857994e1947b0fa",
+    "title": "Blackstone said its flagship private-credit fund saw heavy outflows",
+    "summary": "Blackstone said it redeemed more investments than usual in its flagship private-credit fund, in another sign of the stress the industry is facing.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/blackstone-said-its-flagship-private-credit-fund-saw-heavy-outflows-21e53730",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:9f240572dd6f4c63",
+    "title": "Oil prices surge to highest in a year as fears of Middle East supply crunch grow",
+    "summary": "Oil prices rose to their highest in more than a year as traders continued to fret that supplies will be affected by conflict in the Middle East.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/oil-prices-surge-to-highest-in-a-year-as-fears-of-middle-east-supply-crunch-grow-0ac864f3",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:f68c8ae3ac8893d8",
+    "title": "My rude, ungrateful relative gave her lawyer power of attorney —and has lived to regret it. Should I get involved?",
+    "summary": "“A person who is used to controlling others does not like being controlled.”",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/my-rude-ungrateful-relative-gave-her-lawyer-power-of-attorney-and-has-lived-to-regret-it-should-i-get-involved-5db8088d",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:885b3f6e59869a39",
+    "title": "JPMorgan’s Jamie Dimon warns there’s too much complacency in markets",
+    "summary": "JPMorgan Chase Chief Executive Jamie Dimon warns the tepid stock-market reaction on Monday to the U.S. and Israeli attack on Iran was just another example of the complacency in markets.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/jpmorgans-jamie-dimon-warns-theres-too-much-complacency-in-markets-98739bad",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "finnhub:773863c1d4ea9897",
+    "title": "Former reality TV stars Heidi Montag and Spencer Pratt say they are still displaced by wildfires",
+    "summary": "Heidi Montag and Spencer Pratt have said that they still do not have a permanent place to live—more than a year after they lost their Pacific Palisades property in the California wildfires.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/former-reality-tv-stars-heidi-montag-and-spencer-pratt-say-they-are-still-displaced-by-wildfires-2a7a98fd",
+    "category": "Markets",
+    "tags": [
+      "$TV",
+      "$TV"
+    ]
+  },
+  {
+    "id": "finnhub:9027f993d1fd5677",
+    "title": "‘No toilets’? Civil trial over renovation work plays out in L.A. over Kanye West’s stripped Malibu beach house",
+    "summary": "A worker is seeking more than $1 million in damages from Kanye West over the renovation work of a Malibu home and has made some bizarre allegations.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/no-toilets-civil-trial-over-renovation-work-plays-out-in-l-a-over-kanye-wests-stripped-malibu-beach-house-b7d885a6",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:f0d5e4c3ace436ef",
+    "title": "Gold can be called many things — just don’t say it’s an inflation hedge",
+    "summary": "Gold’s been on a sensational run, but the one thing it can’t be described as is an inflation hedge.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/gold-can-be-called-many-things-just-dont-say-its-an-inflation-hedge-468ef2b2",
+    "category": "Inflation",
+    "tags": [
+      "Inflation"
+    ]
+  },
+  {
+    "id": "alphav:e24869bdfbecb31a",
+    "title": "David Tepper Meets 15% Yield: Inside VistaShares' New ETF",
+    "summary": "VistaShares has launched the VistaShares Target 15 TEPRTantrum Contrarian Distribution ETF (TPRY), which aims to deliver a 15% annual distribution. This new ETF combines an options-based income strategy with an equity portfolio mirroring Appaloosa Management's high-conviction U.S.-listed positions, inspired by billionaire investor David Tepper. TPRY is part of VistaShares' \"Legends + Income\" strategy, offering investors exposure to prominent investors' holdings and aggressive income generation.",
+    "date": "2026-03-03",
+    "source": "Alpha Vantage: Benzinga",
+    "url": "https://www.benzinga.com/etfs/new-etfs/26/03/51009814/david-tepper-meets-15-yield-inside-vistashares-new-etf",
+    "category": "Markets",
+    "tags": [
+      "financial_markets",
+      "finance",
+      "Equities",
+      "Rates",
+      "$ETF",
+      "$ETF"
+    ]
+  },
+  {
+    "id": "alphav:398a1a70ed3dd14e",
+    "title": "Blackstone, Carlyle, Hellman & Friedman Offer 75M Shares For Medline",
+    "summary": "A consortium of private equity firms, Blackstone, Carlyle Group, and Hellman & Friedman LLC, along with Abu Dhabi Investment Authority (ADIA), are offering 75 million shares of Medline Inc.'s Class A common stock. This secondary offering, valued at $3.4 billion, will not generate proceeds for Medline itself, but rather for the selling stockholders. Medline, a major provider of medical-surgical products, saw its stock decline 4.6% after the announcement, though it remains up nearly 7% year-to-date.",
+    "date": "2026-03-03",
+    "source": "Alpha Vantage: Benzinga",
+    "url": "https://www.benzinga.com/markets/private-markets/26/03/51009308/blackstone-carlyle-hellman-friedman-offer-75m-shares-for-medline",
+    "category": "Markets",
+    "tags": [
+      "ipo",
+      "financial_markets",
+      "life_sciences",
+      "Equities"
+    ]
+  },
+  {
+    "id": "alphav:991f04d2812a8b64",
+    "title": "Stocks making the biggest moves midday: MongoDB, Pinterest, NRG Energy, Kontoor Brands & more",
+    "summary": "This article details the biggest stock movers in midday trading, highlighting companies like Pinterest, AeroVironment, Kontoor Brands, and Ingram Micro which saw their shares rise due to positive news or better-than-expected earnings. Conversely, companies such as MongoDB, AutoZone, Surgery Partners, On Holding, and Archer Aviation experienced significant drops following disappointing guidance or results. The report provides a concise overview of key market movements impacting various sectors.",
+    "date": "2026-03-03",
+    "source": "Alpha Vantage: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/stocks-making-the-biggest-moves-midday-mdb-pins-nrg-ktb-more.html",
+    "category": "Markets",
+    "tags": [
+      "earnings",
+      "financial_markets",
+      "technology",
+      "retail_wholesale",
+      "life_sciences",
+      "Equities"
+    ]
+  },
+  {
+    "id": "newsapi:6890209c3ad1a91a",
+    "title": "TestMu AI Adds Samsung Galaxy S26 Series to Virtual and Real Device Cloud Ahead of Public Release",
+    "summary": "Developers and QA teams can validate apps on Samsung’s latest flagship devices weeks before they reach consumers San Francisco, CA, March 03, 2026 (GLOBE NEWSWIRE) — TestMu AI (Formerly LambdaTest), the world’s first full-stack Agentic AI Quality Engineering …",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/testmu-ai-adds-samsung-galaxy-s26-series-to-virtual-and-real-device-cloud-ahead-of-public-release",
+    "category": "Markets",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:0f6d09142f01a7b3",
+    "title": "TSX, Dow fall more than 1,100 points in Iran conflict fallout",
+    "summary": "Canada's S&P/TSX Composite Index and the Dow Jones Industrial Average are down more than 1,100 points in morning trading. Read more.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/investing/tsx-dow-fall-1100-points-iran-conflict-fallout",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics",
+      "$TSX",
+      "$TSX"
+    ]
+  },
+  {
+    "id": "newsapi:34c74e94e191bcc1",
+    "title": "Russia Sees War in Iran Squeezing Vital Air Defenses for Ukraine",
+    "summary": "Russia is dismayed by US and Israeli attacks on Iran but mostly powerless to aid its ally, and sees potential benefits for President Vladimir Putin’s war on Ukraine, according to five people familiar with the matter.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/russia-sees-war-in-iran-squeezing-vital-air-defenses-for-ukraine",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:c04058780c34390b",
+    "title": "Iraq Starts Massive Oil Cuts as Hormuz Tensions Fill Storage",
+    "summary": "Iraq started shutting oil production at its biggest fields as storage tanks fill up, and is poised to shutter about 3 million barrels a day of output if the Hormuz crisis persists, according to people familiar with the operations.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/iraq-starts-massive-oil-cuts-as-hormuz-tensions-fill-storage",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:4e0b93dfc800817f",
+    "title": "New York Fed's Williams says tariff burden falls 'overwhelmingly' on U.S. businesses and consumers",
+    "summary": "Williams said that not only were the tariffs being felt at home, but they also were keeping the Fed from reaching its 2% inflation goal.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/new-york-feds-williams-says-tariff-burden-falls-overwhelmingly-on-us-businesses-and-consumers.html",
+    "category": "Markets",
+    "tags": [
+      "Inflation",
+      "Fed",
+      "Tariffs"
+    ]
+  },
+  {
+    "id": "newsapi:1cdc778e80d55d0e",
+    "title": "ASA Safety Supply Announces Acquisition of Indiana Safety & Supply",
+    "summary": "LAWRENCEVILLE, Ga. — ASA Safety Supply (“ASA Safety”), a portfolio company of Trivest Partners LP (“Trivest”), today announced the acquisition of Indiana Safety & Supply (“ISS”). Based in Washington, Indiana, Indiana Safety & Supply is a well-established dist…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/asa-safety-supply-announces-acquisition-of-indiana-safety-supply",
+    "category": "Markets",
+    "tags": [
+      "$ASA",
+      "$ASA"
+    ]
+  },
+  {
+    "id": "newsapi:90663415b8a2342f",
+    "title": "Canada and India move to reset ties as trust in U.S. falters",
+    "summary": "India and Canada's relations have thawed with the two sides promising to deepen trade, but it is far from a complete reset.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/canada-india-modi-carney-relationship-trump.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:50e69973a4ed5f2f",
+    "title": "US Has No Immediate Plan to Tap Oil Reserve on Iran Concerns",
+    "summary": "The Trump administration has no immediate plans to release oil from the nation’s emergency reserve in response to surging crude and gasoline prices in the wake of the Iran conflict, according to a person familiar with the situation.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/us-has-no-immediate-plan-to-tap-oil-reserve-on-iran-concerns",
+    "category": "Markets",
+    "tags": [
+      "Oil",
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:9b2cc2afa99a92ce",
+    "title": "Investors Signal Strong Demand for Next‑Generation ETF Structures and Expanded Investment Strategies: BBH Investor Services 2026 Global ETF Investor Survey",
+    "summary": "Survey finds 98% of professional investors expect to increase active ETF allocations, while nearly all would consider private markets ETFs BOSTON — Brown Brothers Harriman (BBH) Investor Services’ 13th annual Global ETF Investor Survey of institutional invest…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/investors-signal-strong-demand-for-next‑generation-etf-structures-and-expanded-investment-strategies-bbh-investor-services-2026-global-etf-investor-survey",
+    "category": "Markets",
+    "tags": [
+      "$ETF",
+      "$BBH",
+      "$ETF",
+      "$BBH"
+    ]
+  },
+  {
+    "id": "newsapi:caaf26b7b145d637",
+    "title": "Wolters Kluwer New Global ‘Future Ready CFO Report’ Finds CFOs Have Stepped Into the Role of Orchestrator",
+    "summary": "New research shows CFOs owning digital transformation at 53%, capital allocation at 42%, and risk management at 40%, signaling a shift toward the CFO as enterprise performance orchestrator NEW YORK — A new global survey from Wolters Kluwer Corporate Performan…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/wolters-kluwer-new-global-future-ready-cfo-report-finds-cfos-have-stepped-into-the-role-of-orchestrator",
+    "category": "Markets",
+    "tags": [
+      "$CFO",
+      "$CFO"
+    ]
+  },
+  {
+    "id": "newsapi:8f6ff415deb731bf",
+    "title": "Zayo Strengthens Enterprise Growth Strategy with Appointment of Chris Ranalli as Chief Revenue Officer for Enterprise",
+    "summary": "Company evolves commercial leadership model to scale enterprise momentum and support next phase of growth DENVER — Zayo, a leading communications infrastructure provider, today announced the appointment of Chris Ranalli as Chief Revenue Officer for Enterprise…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/zayo-strengthens-enterprise-growth-strategy-with-appointment-of-chris-ranalli-as-chief-revenue-officer-for-enterprise",
+    "category": "Markets",
+    "tags": [
+      "$GDP",
+      "$GDP"
+    ]
+  },
+  {
+    "id": "newsapi:c2c65872395292cb",
+    "title": "Middle East war sends natural gas prices soaring, raising growth shock risk for Europe and Asia",
+    "summary": "Disruption to LNG supplies could dent European growth and harm reindustrialization ambitions.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/middle-east-war-gas-energy-lng-drone-qatar-strait-hormuz-price-shock.html",
+    "category": "Markets",
+    "tags": [
+      "$GDP",
+      "NaturalGas",
+      "Geopolitics",
+      "$GDP"
+    ]
+  },
+  {
+    "id": "newsapi:5c03532f356c42b6",
+    "title": "Luxury stocks slump as Middle East conflict risks one of the sector’s 'few bright spots’",
+    "summary": "The Middle East has been one of the few bright spots in a sector that is struggling to get sales back on track.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/luxury-stocks-iran-strikes-lvmh-kering-gucci-richemont.html",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:ad17e34173056f49",
+    "title": "Bora Pharmaceuticals to Present at the Life Sciences Investor Forum on March 12th",
+    "summary": "The Company invites individual and institutional investors, as well as advisors and analysts with an interest in the life sciences sector, to attend live, interactive presentations at VirtualInvestorConferences.com TAIPEI, Taiwan, March 03, 2026 (GLOBE NEWSWI…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/bora-pharmaceuticals-to-present-at-the-life-sciences-investor-forum-on-march-12th",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:3eafb01e07768d5d",
+    "title": "Clean Energy & Renewables Virtual Investor Conference Agenda Announced for March 5th",
+    "summary": "Company Executives Share Vision and Answer Questions Live at VirtualInvestorConferences.com NEW YORK, March 03, 2026 (GLOBE NEWSWIRE) — Virtual Investor Conferences, the leading proprietary investor conference series, announced the agenda for the Clean Energy…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/clean-energy-renewables-virtual-investor-conference-agenda-announced-for-march-5th",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:8f757cdf7bb65a0e",
+    "title": "Stardust Solar Energy to Present at the Clean Energy & Renewables Virtual Investor Conference on March 5th",
+    "summary": "The company invites individual and institutional investors, as well as advisors and analysts, to attend online at VirtualInvestorConferences.com VANCOUVER, British Columbia, March 03, 2026 (GLOBE NEWSWIRE) — Stardust Solar Energy (TSXV: SUN) (OTCQB: SUNXF) (F…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/stardust-solar-energy-to-present-at-the-clean-energy-renewables-virtual-investor-conference-on-march-5th",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:a7dccddb5734bdd6",
+    "title": "Birchtech Issues Shareholder Letter and Provides Corporate Update",
+    "summary": "CORSICANA, Texas, March 03, 2026 (GLOBE NEWSWIRE) — Birchtech Corp. (NYSE American: BCHT) (TSX: BCHT) (“Birchtech” or the “Company”), a leader in specialty activated carbon technologies for sustainable air and water treatment, today issued the following lette…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/birchtech-issues-shareholder-letter-and-provides-corporate-update",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:20d6bec2ac138775",
+    "title": "Leef Brands to Host Fourth Quarter 2025 Earnings Conference Call on March 25, 2026",
+    "summary": "VANCOUVER, British Columbia, March 03, 2026 (GLOBE NEWSWIRE) — LEEF Brands Inc. (CSE: LEEF) (OTCQB: LEEEF), a leading multi-state operator, today announced that it will release its financial results for the fourth quarter ended December 31, 2025, after market…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/leef-brands-to-host-fourth-quarter-2025-earnings-conference-call-on-march-25-2026",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:4ae7708fbf450e99",
+    "title": "Versus Systems Extends Texas Rangers Partnership, Debuting the Next-Generation of the Company’s Innovative Filter Fan Cam",
+    "summary": "Enhancements in Versus’ Proprietary Technology are Expected to Drive Increased Audience Engagement and Generate Scalable Revenue Expansion MIAMI, March 03, 2026 (GLOBE NEWSWIRE) — Versus Systems Inc. (“Versus” or the “Company”) (Nasdaq: VS) today announced th…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/versus-systems-extends-texas-rangers-partnership-debuting-the-next-generation-of-the-companys-innovative-filter-fan-cam",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:8ccd7bc1509a730b",
+    "title": "Q4 Launches AEO for IR Web to Help Public Companies Stand Out in AI-Generated Answers",
+    "summary": "New capabilities make investor-facing materials easier to find; harder to misinterpret; and more likely to be cited across ChatGPT, Gemini, Perplexity and other GenAI tools TORONTO — Q4 Inc., the leading provider of AI-driven IR Ops software, today unveiled A…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/q4-launches-aeo-for-ir-web-to-help-public-companies-stand-out-in-ai-generated-answers",
+    "category": "Markets",
+    "tags": [
+      "$AEO",
+      "$IR",
+      "$AI",
+      "$AEO",
+      "$IR",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:3fe6ae8239e57d4e",
+    "title": "Dollar Set for Biggest Surge in a Year as Inflation Fears Mount",
+    "summary": "The dollar headed for its biggest two-day rally in almost a year as the deepening war in Iran stoked inflation fears and spurred demand for havens.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/dollar-set-for-biggest-surge-in-a-year-as-inflation-fears-mount",
+    "category": "Markets",
+    "tags": [
+      "Inflation",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:2125cc7aea9c17a7",
+    "title": "Oil prices, Target earnings, the new iPhone and more in Morning Squawk",
+    "summary": "Here are five key things investors need to know to start the trading day.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/5-things-to-know-before-the-market-opens.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:99ef16bb7e3b1674",
+    "title": "Pinterest shares pop 8% as activist Elliott Management takes $1 billion stake",
+    "summary": "Pinterest's stock jumped 8% after Elliott Investment Management made a $1 billion investment in the social media company.\r\nThe company said it plans to use the investment to buy back stock as part of… [+659 chars]",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/pinterest-pins-elliott-management.html",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "newsapi:0c1e87fef7cec1ca",
+    "title": "Global Diesel Prices Surge Higher as Iran War Disrupts Supplies",
+    "summary": "Diesel’s premium to crude oil surged to its highest since the summer of 2023, as the conflict in the Middle East threatens global supplies.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/global-diesel-prices-surge-higher-as-iran-war-disrupts-supplies",
+    "category": "Markets",
+    "tags": [
+      "Oil",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:67793cb2aaa6d61d",
+    "title": "Reeves Says UK Expects Slower 2026 Growth Even Before Iran War",
+    "summary": "Chancellor of the Exchequer Rachel Reeves unveiled new forecasts for the UK economy that predicted lower borrowing and inflation but also weaker near-term growth even before any fallout from war breaking out in the Middle East.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/reeves-says-uk-expects-slower-2026-growth-even-before-iran-war",
+    "category": "Markets",
+    "tags": [
+      "Inflation",
+      "$GDP",
+      "Geopolitics",
+      "$UK",
+      "$GDP",
+      "$UK"
+    ]
+  },
+  {
+    "id": "newsapi:5b221082db243315",
+    "title": "Rocket Doctor Signs New Contract with Major U.S. Insurer, Expanding Access to an Additional 2.4 Million Members Across New York State",
+    "summary": "Rocket Doctor is now in-network with another major New York insurer, providing eligible members across the state with in-network access to services through its digital health platform. The agreement covers a wide range of government and individual plans, incl…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/rocket-doctor-signs-new-contract-with-major-u-s-insurer-expanding-access-to-an-additional-2-4-million-members-across-new-york-state",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:1fedaae78c2d98fb",
+    "title": "Posthaste: Canadians are paying more than lip service to Buy Canada — and now the numbers prove it",
+    "summary": "Bank of Canada study confirms that Canadians are spending more on domestic travel and grocery products and less on U.S. goods. Read more",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/news/buy-canadian-not-just-talk-data-proof",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:bfe0c6e7ba13d6f7",
+    "title": "Bragg Strengthens Executive Team for Enhanced Content Strategy, North American Growth, and AI-First Transformation",
+    "summary": "TORONTO — Bragg Gaming Group ( NASDAQ: BRAG, TSX: BRAG) (“Bragg” or the “Company”), a leading iGaming content and platform technology solutions provider, is pleased to announce the appointment of Morten Tonnesen as its new Chief Operating Officer and the prom…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/bragg-strengthens-executive-team-for-enhanced-content-strategy-north-american-growth-and-ai-first-transformation",
+    "category": "Markets",
+    "tags": [
+      "$GDP",
+      "$AI",
+      "$GDP",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:77a0d074c37c9983",
+    "title": "ZenaTech’s ZenaDrone Advances U.S. Defense and Congressional Engagement with Blue UAS-Aligned Drone Development",
+    "summary": "VANCOUVER, British Columbia, March 03, 2026 (GLOBE NEWSWIRE) — In light of current international events, ZenaTech, Inc. (Nasdaq: ZENA) (FSE: 49Q) (BMV: ZENA) (“ZenaTech”), a technology solution provider specializing in AI (Artificial Intelligence) drone, Dron…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/zenatechs-zenadrone-advances-u-s-defense-and-congressional-engagement-with-blue-uas-aligned-drone-development",
+    "category": "Markets",
+    "tags": [
+      "$UAS",
+      "$UAS"
+    ]
+  },
+  {
+    "id": "newsapi:c5abdddc081e7428",
+    "title": "Olenox Industries Kicks Off 2026 with 10-Well Drilling Program",
+    "summary": "Relicensing of Company’s 162-mile pipe is also proceeding CONROE, Texas, March 03, 2026 (GLOBE NEWSWIRE) — via IBN — Olenox Industries Inc. (NASDAQ: OLOX) (“Olenox” or the “Company”), a multifaceted energy company, is pleased to announce its 2026 drilling pro…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/olenox-industries-kicks-off-2026-with-10-well-drilling-program",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:056ed415fe842cb4",
+    "title": "As Iran crisis upends oil and gas, clean energy gets complicated",
+    "summary": "Qatar shut down the world’s largest LNG export facility, Saudi Arabia suspended operations at its biggest oil refinery and tanker traffic through the crucial Strait of Hormuz has all but halted",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-02/middle-east-conflict-what-it-means-for-the-green-energy-transition",
+    "category": "Policy",
+    "tags": [
+      "NaturalGas"
+    ]
+  },
+  {
+    "id": "newsapi:290b45bb66921729",
+    "title": "Trump vows ‘whatever it takes’ on Iran as conflict widens",
+    "summary": "Trump commits to a prolonged response to Iran amid escalating conflict, while the State Department warns Americans to evacuate West Asia.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-02/us-insists-iran-war-won-t-be-endless-as-strikes-engulf-region",
+    "category": "Policy",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:62f1275014125592",
+    "title": "Xsolla Expands Global Payment Coverage Across 18 Markets With 6 Trusted Local Payment Methods to Help Developers Reach New Players Worldwide",
+    "summary": "Amazon Pay Japan, Zain Cash, Tamara, M-Pesa, Zamtel, and the Aircash app and vouchers are now available through Xsolla LOS ANGELES — Xsolla, a global video game commerce company that helps developers launch, grow, and monetize their games, today announced a m…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/xsolla-expands-global-payment-coverage-across-18-markets-with-6-trusted-local-payment-methods-to-help-developers-reach-new-players-worldwide",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:d2538a14b23a97d3",
+    "title": "RCS Real Estate Advisors to Market 170+ Eddie Bauer Store Leases Across the U.S. and Canada",
+    "summary": "Robust portfolio spans approximately 1.08 million square feet in premier retail corridors NEW YORK — RCS Real Estate Advisors, a leading national retail real estate advisory firm, today announced it has been retained to market a substantial portfolio of Eddie…",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/rcs-real-estate-advisors-to-market-170-eddie-bauer-store-leases-across-the-u-s-and-canada",
+    "category": "Markets",
+    "tags": [
+      "$RCS",
+      "$RCS"
+    ]
+  },
+  {
+    "id": "newsapi:1ab7bd7bd2d6555d",
+    "title": "Banking, payments services disrupted after Amazon UAE data centers hit in drone strikes",
+    "summary": "U.S. and Israeli strikes on Iran have prompted a wave of retaliatory attacks across the Middle East.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/iran-war-uae-drone-strikes-aws-data-centers.html",
+    "category": "Markets",
+    "tags": [
+      "$UAE",
+      "$UAE"
+    ]
+  },
+  {
+    "id": "newsapi:caec6a000e01037d",
+    "title": "Blackstone’s Gray: Market ‘noise’ fueled record redemptions from world’s largest private credit fund",
+    "summary": "Blackstone president Jon Gray defended the quality of loans within the firm's flagship private credit fund.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/blackstone-private-credit-fund.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:6a4f835e844882c7",
+    "title": "Milei’s Expanded Incentive Plan Set to Draw Shale Oil Investors",
+    "summary": "President Javier Milei’s marquee program for luring investment into Argentina is poised to attract a new round of applications from crude producers after his administration broadened it to include shale oil wells.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/mileis-expanded-incentive-plan-set-to-draw-shale-oil-investors",
+    "category": "Markets",
+    "tags": [
+      "Oil"
+    ]
+  },
+  {
+    "id": "finnhub:8ce20a0082b0f77a",
+    "title": "Saudi Arabia to take all necessary measures to defend its security, cabinet says - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxOZDFMRHQ2dmQtei1Na0twZHdOVGxCcndOSzZmRzNKcjY0VUYwY1FKNEZVaFYyQkxScTJrd3l1aVZkdnZaM1B1amJCeUxJOVh6UEZKMmQwUWYzbXJnUVlid0xwSjJ2aXFvQ3RCVVVBRGFGSzJyVmQ1el9zNHU1WXI0dDZiVmlzUU9lVEFtc00wN05Na3BaRk0xYUN2MkljdGs4MkRMbHlzbEd3THBGaDVTSE9yVk5BWWlQaGsyQ3RlYnpzaWIzY0E?oc=5\" target=\"_blank\">Saudi Arabia to take all necessary measures to defend its security, cabinet says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOZDFMRHQ2dmQtei1Na0twZHdOVGxCcndOSzZmRzNKcjY0VUYwY1FKNEZVaFYyQkxScTJrd3l1aVZkdnZaM1B1amJCeUxJOVh6UEZKMmQwUWYzbXJnUVlid0xwSjJ2aXFvQ3RCVVVBRGFGSzJyVmQ1el9zNHU1WXI0dDZiVmlzUU9lVEFtc00wN05Na3BaRk0xYUN2MkljdGs4MkRMbHlzbEd3THBGaDVTSE9yVk5BWWlQaGsyQ3RlYnpzaWIzY0E?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:90f12405b818a496",
+    "title": "CIA station in Saudi Arabia struck by suspected Iranian drone, source says - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwgFBVV95cUxPb3lhYkVEZW1GX3lWb3ZGZkJ6aXo1dXh6dEFISkg1Vm9CVngxZ3dfeEItc2xBNmtnM2ZFbVJOWWUzeWNMWUFMVGtucHQ1TFJORTV1Mjlid0ZXY2xoSDNqbmE4XzZQT0o5TTBTNjFaWFZnSEkxd2lMUG1UNmo5UVY2OFdJWlFtM2VRbXgwRjE0TTN1ckluQkxXejJUWXZaYmZ0bktHMThPRklwTEt4dkZ3a3o0Wm5kRE9aUWlzNDBrQmZ1Zw?oc=5\" target=\"_blank\">CIA station in Saudi Arabia struck by suspected Iranian drone, source says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPb3lhYkVEZW1GX3lWb3ZGZkJ6aXo1dXh6dEFISkg1Vm9CVngxZ3dfeEItc2xBNmtnM2ZFbVJOWWUzeWNMWUFMVGtucHQ1TFJORTV1Mjlid0ZXY2xoSDNqbmE4XzZQT0o5TTBTNjFaWFZnSEkxd2lMUG1UNmo5UVY2OFdJWlFtM2VRbXgwRjE0TTN1ckluQkxXejJUWXZaYmZ0bktHMThPRklwTEt4dkZ3a3o0Wm5kRE9aUWlzNDBrQmZ1Zw?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$CIA",
+      "$CIA"
+    ]
+  },
+  {
+    "id": "finnhub:6556188e30172c0e",
+    "title": "Pentagon identifies first US soldiers killed in Iran war - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxPRWluZE1MZDBwVnZfZ29maFVjellXZWl4a0hfdDZvN3BBb1NFdll0dzhnZFc4d1hDMWdpUURablVfRjRUZC0wY1lud0RsYmVZVWhBQWd1MDNCZ21DZktUYWJHS2FDTS1haTBDTDFrQnZhaEM3bkFaZGZKUG1HZWhzY0laNHQ2a0pMaENNYUQzdTBqUnhOSHBDcE42Mzh6cjQ?oc=5\" target=\"_blank\">Pentagon identifies first US soldiers killed in Iran war</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRWluZE1MZDBwVnZfZ29maFVjellXZWl4a0hfdDZvN3BBb1NFdll0dzhnZFc4d1hDMWdpUURablVfRjRUZC0wY1lud0RsYmVZVWhBQWd1MDNCZ21DZktUYWJHS2FDTS1haTBDTDFrQnZhaEM3bkFaZGZKUG1HZWhzY0laNHQ2a0pMaENNYUQzdTBqUnhOSHBDcE42Mzh6cjQ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:d0d9aefc86c4e42a",
+    "title": "Sam Altman tells OpenAI staffers that military's 'operational decisions' are up to the government",
+    "summary": "In an all-hands meetings with OpenAI employees on Tuesday, CEO Sam Altman said his company doesn't get to choose how the military uses its technology.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/sam-altman-tells-openai-staff-operational-decisions-up-to-government.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:98f1192d73805b4d",
+    "title": "Investors brace for energy shock, inflation fears from prolonged Iran conflict - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxPb2o1dzlPVnJZVk9CajBfUkJRYUxBZ21aUTI1UjgtRUs5NXJVNzJmcHFELUxQWTJ3UVp0NGZIYXk2Ykk2VEpMSXRrMk4ydzNEVUtFVzVNcWl3enVzejAwemhfelV2Wkk1c0kwR29TUC13VzRKaGI3SHphaFVNbTFDTS1pdGtHMnFTRUI1ZHYyTG1Jc1ZJcFMwYkZHbFFDR3gtODBnbzQySGh2RjRhc3N2TjZndjdHczVaMUlMd0dxRQ?oc=5\" target=\"_blank\">Investors brace for energy shock, inflation fears from prolonged Iran conflict</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPb2o1dzlPVnJZVk9CajBfUkJRYUxBZ21aUTI1UjgtRUs5NXJVNzJmcHFELUxQWTJ3UVp0NGZIYXk2Ykk2VEpMSXRrMk4ydzNEVUtFVzVNcWl3enVzejAwemhfelV2Wkk1c0kwR29TUC13VzRKaGI3SHphaFVNbTFDTS1pdGtHMnFTRUI1ZHYyTG1Jc1ZJcFMwYkZHbFFDR3gtODBnbzQySGh2RjRhc3N2TjZndjdHczVaMUlMd0dxRQ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Inflation",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:0a0e707d7623459c",
+    "title": "Amazon cloud unit's data centers in UAE, Bahrain damaged in drone strikes - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixgFBVV95cUxObEZGODhUazJocmh0R05fQTZQbjMxS01KYXJITXhFX2lJTGdVSEF2aDdHMTFqemVTOHlscUFNaHBkMFBSR1YzZEtETzZ1Y2EzdWVoZW11UkFvOTNGUFlkVURwcGJ4bkxBTjZMSmpPRm4yUjhna2o4dUc0MWUyWnEteE1aWk9MN0UySUV4Y0ZBUTllQXIyNTFFOUlyWU5vZkRULWFLVWtyRzlIWjV4aHduRE5uU2dwUUdJUHgtVmdtdDFlWTBMVkE?oc=5\" target=\"_blank\">Amazon cloud unit's data centers in UAE, Bahrain damaged in drone strikes</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxObEZGODhUazJocmh0R05fQTZQbjMxS01KYXJITXhFX2lJTGdVSEF2aDdHMTFqemVTOHlscUFNaHBkMFBSR1YzZEtETzZ1Y2EzdWVoZW11UkFvOTNGUFlkVURwcGJ4bkxBTjZMSmpPRm4yUjhna2o4dUc0MWUyWnEteE1aWk9MN0UySUV4Y0ZBUTllQXIyNTFFOUlyWU5vZkRULWFLVWtyRzlIWjV4aHduRE5uU2dwUUdJUHgtVmdtdDFlWTBMVkE?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$UAE",
+      "$UAE"
+    ]
+  },
+  {
+    "id": "finnhub:8da791ccd37e868d",
+    "title": "Canada PM Carney says Iran conflict a failure of the international order - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMilAFBVV95cUxQVlJGLUl4a2tXSVVPbWFnYjdfRGtMTS05NndYTy1uVm5GdkdJcjBxa3JjUU9VaHhfV1ZQMGl0NG11cEl0SEhnRm5ZdTVzQ2tNaGtiSHhyZnRwVnZ5QW96dW9tZHZyNWtjUEdYZmE0SDlDWkU5a244OEhpbl8wWUwzY08xSDdLT2FOYlduZDhGYjZGRkVR?oc=5\" target=\"_blank\">Canada PM Carney says Iran conflict a failure of the international order</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQVlJGLUl4a2tXSVVPbWFnYjdfRGtMTS05NndYTy1uVm5GdkdJcjBxa3JjUU9VaHhfV1ZQMGl0NG11cEl0SEhnRm5ZdTVzQ2tNaGtiSHhyZnRwVnZ5QW96dW9tZHZyNWtjUEdYZmE0SDlDWkU5a244OEhpbl8wWUwzY08xSDdLT2FOYlduZDhGYjZGRkVR?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$PM",
+      "$PM"
+    ]
+  },
+  {
+    "id": "finnhub:de522c4887d436aa",
+    "title": "Israel, US control almost all Iranian airspace, Israel's UN envoy says - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMivgFBVV95cUxQN2ZvVE5yUDFVaGU1OWpJdWd2bXdKeTNwNnZhX0J1NlhhaWd0MHJJdUxIMlpkSGZUQVBwTnhEOVRzdW9USU5BZ1pvYVJwOHFONWJBdTlRbkRHekFHa1MxRTYxcFNXejFVVjVQUlJsTVlRczVPaFN4cmFXNV9CTnNPUjdTVzVWUjNfLUNzeEtJUEpsQU80YVYwMDRkY2hLSWRJM0c1eDh0Y0RyX3BkcEljbzBnOUttYjNHRlVPQ3lR?oc=5\" target=\"_blank\">Israel, US control almost all Iranian airspace, Israel's UN envoy says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQN2ZvVE5yUDFVaGU1OWpJdWd2bXdKeTNwNnZhX0J1NlhhaWd0MHJJdUxIMlpkSGZUQVBwTnhEOVRzdW9USU5BZ1pvYVJwOHFONWJBdTlRbkRHekFHa1MxRTYxcFNXejFVVjVQUlJsTVlRczVPaFN4cmFXNV9CTnNPUjdTVzVWUjNfLUNzeEtJUEpsQU80YVYwMDRkY2hLSWRJM0c1eDh0Y0RyX3BkcEljbzBnOUttYjNHRlVPQ3lR?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "$US",
+      "$UN",
+      "$US",
+      "$UN"
+    ]
+  },
+  {
+    "id": "finnhub:d3357a8e7cae4ac1",
+    "title": "How many people have been killed in the US-Israel war on Iran? - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxOT3hFeXhjM3hLZ0JKcEhqbFlNMFg2MDdKa1IxVW91SnJSZExiamoxRldNd1kyM1lENU5xQ0JPeDVERWQyYW9xMFpwNUF5WW9XRjk5eG1YY29vVXpZWkZVSmVFN1NVT2ZPLUl0LWtoVjBKWUc0VzlXTjN5ZEhvOUV4cm45S2NaVHJZQzJmX2dpUzBvcGtZN0dvOHlfNkxOMEtxVjBvRkFFd3Y?oc=5\" target=\"_blank\">How many people have been killed in the US-Israel war on Iran?</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOT3hFeXhjM3hLZ0JKcEhqbFlNMFg2MDdKa1IxVW91SnJSZExiamoxRldNd1kyM1lENU5xQ0JPeDVERWQyYW9xMFpwNUF5WW9XRjk5eG1YY29vVXpZWkZVSmVFN1NVT2ZPLUl0LWtoVjBKWUc0VzlXTjN5ZEhvOUV4cm45S2NaVHJZQzJmX2dpUzBvcGtZN0dvOHlfNkxOMEtxVjBvRkFFd3Y?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:8360b2b088fc3d75",
+    "title": "Trump's national security team pushes war on Iran in Congress - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMisgFBVV95cUxPc21xeXB4a19IZEZzMWVYOUx2MGVuakNHekV5MFpOc1Q3MlRWNWRJSTVkTWdINHNlQ3NfSHBUa05SdWNyQUY1Qzl5THhReXZ4elVSdlVTSEozWHpFVWtiOFd6YmZ0cWNNeWJTQVJfTnhJSzhnbHJ0aVFEb2J2WUI5SGpsYjVoTllOMDBZOEt1a05RSUtQaDRjYVFGanZ2Q1ZfVWZtZmRmNWZ4TW5sV25XUm1B?oc=5\" target=\"_blank\">Trump's national security team pushes war on Iran in Congress</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPc21xeXB4a19IZEZzMWVYOUx2MGVuakNHekV5MFpOc1Q3MlRWNWRJSTVkTWdINHNlQ3NfSHBUa05SdWNyQUY1Qzl5THhReXZ4elVSdlVTSEozWHpFVWtiOFd6YmZ0cWNNeWJTQVJfTnhJSzhnbHJ0aVFEb2J2WUI5SGpsYjVoTllOMDBZOEt1a05RSUtQaDRjYVFGanZ2Q1ZfVWZtZmRmNWZ4TW5sV25XUm1B?oc=5",
+    "category": "Policy",
+    "tags": [
+      "Government",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:ee0bcb16bd12b608",
+    "title": "Why stocks moved off their worst levels — plus, a step forward in Honeywell's split",
+    "summary": "Every weekday, the Investing Club releases the Homestretch; an actionable afternoon update just in time for the last hour of trading.",
+    "date": "2026-03-03",
+    "source": "Finnhub: CNBC",
+    "url": "https://www.cnbc.com/2026/03/03/why-stocks-moved-off-their-worst-levels-plus-a-step-forward-in-honeywells-split.html",
+    "category": "Geopolitics",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:95ebeb6d742c0394",
+    "title": "US banks on high alert for cyberattacks as Iran war escalates - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMipwFBVV95cUxNSl95VFFLa2Z5ZFVzRm04NWFadV85T3Q5VmJRMEczY2toajh3RVo3V0JpUGVZZGhTTHh0ZmttcEIyY3VuSVR3a0FKUV81THo1RUFZUEdKWFVKYlZ0a2Y0bkNtZy1ScXRMMWYxZU13SWN0RWt2ZENKcndIcUN2V1ZfYW1VbUZwbzd3dUF5TnoyZko4YVlfWnRhZDBCbF90Q2h4RVo3NUFfMA?oc=5\" target=\"_blank\">US banks on high alert for cyberattacks as Iran war escalates</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNSl95VFFLa2Z5ZFVzRm04NWFadV85T3Q5VmJRMEczY2toajh3RVo3V0JpUGVZZGhTTHh0ZmttcEIyY3VuSVR3a0FKUV81THo1RUFZUEdKWFVKYlZ0a2Y0bkNtZy1ScXRMMWYxZU13SWN0RWt2ZENKcndIcUN2V1ZfYW1VbUZwbzd3dUF5TnoyZko4YVlfWnRhZDBCbF90Q2h4RVo3NUFfMA?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:5533b9774fef597c",
+    "title": "Authorities put down limited fire in vicinity of US consulate in Dubai after drone strike, media office says - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMizwFBVV95cUxQdlZjWG5Bd0pYZmEwcFFBWlVjRGpxemZIU1VkTldQNEp5ZlBuaG8zUGo5MFdmT3lBVklDOWp1d1R6T2l4dDhXbXN4ZVdKTUhkWHh2OC14TFVkMUZmRDVkWGdNOEtITmp1NGxwT18zaXppdjhuUkdTX282Yl9CZDVYT0taTTFUZnlYS0RuVU9mOXBaMG02LWR1NU1yYmVBd2VETVE1bS1aek9HNjAtd2trZ2JYS0w2MTZPVmFhS3RzeXJoaUt3VXF6LUpMWjFpMWs?oc=5\" target=\"_blank\">Authorities put down limited fire in vicinity of US consulate in Dubai after drone strike, media office says</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxQdlZjWG5Bd0pYZmEwcFFBWlVjRGpxemZIU1VkTldQNEp5ZlBuaG8zUGo5MFdmT3lBVklDOWp1d1R6T2l4dDhXbXN4ZVdKTUhkWHh2OC14TFVkMUZmRDVkWGdNOEtITmp1NGxwT18zaXppdjhuUkdTX282Yl9CZDVYT0taTTFUZnlYS0RuVU9mOXBaMG02LWR1NU1yYmVBd2VETVE1bS1aek9HNjAtd2trZ2JYS0w2MTZPVmFhS3RzeXJoaUt3VXF6LUpMWjFpMWs?oc=5",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:ab7e99cf6843258f",
+    "title": "Can Broadcom’s stock break the software curse after earnings? Here’s what Wall Street is saying.",
+    "summary": "Best known for its chip business, Broadcom has seen its stock get weighed down by concerns over exposure to software sales.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/can-broadcoms-stock-break-the-software-curse-after-earnings-heres-what-wall-street-is-saying-e4845949",
+    "category": "Geopolitics",
+    "tags": []
+  },
+  {
+    "id": "finnhub:5254a0cdad676538",
+    "title": "Investors make a dash for cash as Iran crisis upends markets - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiqAFBVV95cUxPczBHWGd1amZaOGx2Um4wd0pqZUhYMDZLQjlsMXpqdHpJR3pjMVhhSGZacUZYel9KaExiZ3ExOXpnOTQ5N2MzVkREMWQ0bmRBOWZicmlJRXR5N3NWb2RUekMxM1ZEMzNlMTljb1kwdVZQZUtyOHpPSEFLWTdWNkxmVmh1Z1JXLWVPSUlZNzZGX1R1UW0zUzduTFdONlJwQjFpaV9wTlp4dHU?oc=5\" target=\"_blank\">Investors make a dash for cash as Iran crisis upends markets</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPczBHWGd1amZaOGx2Um4wd0pqZUhYMDZLQjlsMXpqdHpJR3pjMVhhSGZacUZYel9KaExiZ3ExOXpnOTQ5N2MzVkREMWQ0bmRBOWZicmlJRXR5N3NWb2RUekMxM1ZEMzNlMTljb1kwdVZQZUtyOHpPSEFLWTdWNkxmVmh1Z1JXLWVPSUlZNzZGX1R1UW0zUzduTFdONlJwQjFpaV9wTlp4dHU?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:3627da8a489111d6",
+    "title": "Get ready for Trump to chicken out on Iran as markets fall and gas prices rise",
+    "summary": "Financial markets are now pricing in months of higher gasoline prices, and panic is spreading.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/get-ready-for-trump-to-chicken-out-on-iran-as-markets-fall-and-gas-prices-rise-52f09fb7",
+    "category": "Oil",
+    "tags": []
+  },
+  {
+    "id": "finnhub:853cf46318522b34",
+    "title": "Why Blue Owl’s private-credit shocker has investors seeing shadows of Bear Stearns",
+    "summary": "This is not yet a repeat of 2008. But dismissing it as a nonevent would be a mistake.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/why-blue-owls-private-credit-shocker-has-investors-seeing-shadows-of-bear-stearns-45506299",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:be3bbec95eae856e",
+    "title": "Trump's Iran attack rattles Russian hardliners who call for Putin to double down on war in Ukraine - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiwwFBVV95cUxObFFydk1RWXRPMENKOURKM1ZPQzkweFFVSDBsdVNQXzdzbHZmU0lmTHJDNXJmc2R5TFdfWmx3OG9oZXJnSW5BODBhWExsd0JyNzVDVG9qZnRTYzdZT1pVaDNoSExCUTZscUJ5V19XTVFBRzh0TTNEbjQ0aWdLc1c0ZkNBTU0xTi1jZjlqNHlid0txU0FLazEweTcxbzZpbERBNFNlbWVLbWptUW5QNFV1c1lvRUh1ekM2cV9fampIc2djN1U?oc=5\" target=\"_blank\">Trump's Iran attack rattles Russian hardliners who call for Putin to double down on war in Ukraine</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxObFFydk1RWXRPMENKOURKM1ZPQzkweFFVSDBsdVNQXzdzbHZmU0lmTHJDNXJmc2R5TFdfWmx3OG9oZXJnSW5BODBhWExsd0JyNzVDVG9qZnRTYzdZT1pVaDNoSExCUTZscUJ5V19XTVFBRzh0TTNEbjQ0aWdLc1c0ZkNBTU0xTi1jZjlqNHlid0txU0FLazEweTcxbzZpbERBNFNlbWVLbWptUW5QNFV1c1lvRUh1ekM2cV9fampIc2djN1U?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:edb6e253c42c91dc",
+    "title": "Fed's Kashkari says Iran war obscures monetary policy outlook - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMi0gFBVV95cUxQeXBWY0pGS195Mk1SOC1vNWlRZVNYaThKMWZ3Uk8zM2RwVkQxREZNdGtzNzlqNG84NVBQSk9YQXFzODJnaEhpSGZaM0h6WmRWeWtSMUNRcWdPRmtYQ1RCa1ZTOTVvU0pJNkxSUm0tZlRiQklsNXMtbk91S2dZWVBhc185UExzeUdabThFWlBOM0k3YmdwLXdWd05sR3A3UjdkVGoxYTJFcjZ3R0toNHBhZGVLcWdvQ0lraTFYWmI4NFdTQXBvUk5ac0lRSnZhaG5jV1E?oc=5\" target=\"_blank\">Fed's Kashkari says Iran war obscures monetary policy outlook</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQeXBWY0pGS195Mk1SOC1vNWlRZVNYaThKMWZ3Uk8zM2RwVkQxREZNdGtzNzlqNG84NVBQSk9YQXFzODJnaEhpSGZaM0h6WmRWeWtSMUNRcWdPRmtYQ1RCa1ZTOTVvU0pJNkxSUm0tZlRiQklsNXMtbk91S2dZWVBhc185UExzeUdabThFWlBOM0k3YmdwLXdWd05sR3A3UjdkVGoxYTJFcjZ3R0toNHBhZGVLcWdvQ0lraTFYWmI4NFdTQXBvUk5ac0lRSnZhaG5jV1E?oc=5",
+    "category": "Policy",
+    "tags": [
+      "Fed",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:70b2647e2f9b6dc6",
+    "title": "Iran conflict threatens Gulf tourism, undermining years of investment - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdUtwWGtwVV95UEh2NHhvODJybEZDRVBoRW1BdFFGY0lLRnVFdlB3NzRHTGpabkFJVlB3c2xmaEx2OXpfa24xYUdvcmt6bUtJVGVCVS1NRmVrSmtYaExGLUZ5VEVhQm9pRVdnZS1WVmJNcnQ1M0NDZ0VkQVBIbUxCOFM3Ymppa3NVMDQ5TjUxcmlGNFJIZm5MbU4tUU5fbmx0VEkyckpncmdDRFhxcEJaZklETDhEYjNYNDJN?oc=5\" target=\"_blank\">Iran conflict threatens Gulf tourism, undermining years of investment</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPdUtwWGtwVV95UEh2NHhvODJybEZDRVBoRW1BdFFGY0lLRnVFdlB3NzRHTGpabkFJVlB3c2xmaEx2OXpfa24xYUdvcmt6bUtJVGVCVS1NRmVrSmtYaExGLUZ5VEVhQm9pRVdnZS1WVmJNcnQ1M0NDZ0VkQVBIbUxCOFM3Ymppa3NVMDQ5TjUxcmlGNFJIZm5MbU4tUU5fbmx0VEkyckpncmdDRFhxcEJaZklETDhEYjNYNDJN?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:cc257a38fe9c2ffa",
+    "title": "Trump says when he’s done with Iran, oil prices will drop even lower than they were before",
+    "summary": "High oil prices can be expected for “a little while,” President Donald Trump said Tuesday, as he predicted a significant fall for crude when the U.S. operation against Iran ends.",
+    "date": "2026-03-03",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/trump-says-when-hes-done-with-iran-oil-prices-will-drop-even-lower-than-they-were-before-bcfefe9b",
+    "category": "Oil",
+    "tags": [
+      "Oil"
+    ]
+  },
+  {
+    "id": "finnhub:f29f9ddca84a909c",
+    "title": "No easy way out for tens of thousands looking to leave Gulf amid Iran conflict - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMivwFBVV95cUxNRTZ4ZDlqR3k4dFk0b0pPSGx4Y0hBa3RndjRzY2txWmlHMXBnNFRVdkdVSkZjcTlOVlc2RVdkWGkwT2M0ZlhRSDJldUcwel9qVWxSYWpJX2pBamxhcUZkNjJDa09objRLQ0xRX3BxWmlZRm83dkZUTWNsck8tTEpjVC03N01MMnpJYy1nVkNmNkhaTENmekphMUdPMkRMaFVMZE92Ump0ajAyWlRzdmJEZW94MTByWWhIVGxnOTM4QQ?oc=5\" target=\"_blank\">No easy way out for tens of thousands looking to leave Gulf amid Iran conflict</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNRTZ4ZDlqR3k4dFk0b0pPSGx4Y0hBa3RndjRzY2txWmlHMXBnNFRVdkdVSkZjcTlOVlc2RVdkWGkwT2M0ZlhRSDJldUcwel9qVWxSYWpJX2pBamxhcUZkNjJDa09objRLQ0xRX3BxWmlZRm83dkZUTWNsck8tTEpjVC03N01MMnpJYy1nVkNmNkhaTENmekphMUdPMkRMaFVMZE92Ump0ajAyWlRzdmJEZW94MTByWWhIVGxnOTM4QQ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:183d4889af38423c",
+    "title": "Number of Iranian missiles and drones fired at Gulf countries - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMinwFBVV95cUxNUExaTnkzNmZVdlF2N2ZCV1dHUG02RHB5b3gxVThRSGhIbjJkREJaTHJOTmctRjhNOERldHgxUl90Z0pLSXM1MWpOb082STJkQ2FEc0pMczVZLXNFX1p3LWxjWVRWSTNjcXQxWmtISzNxMHpDTlh3WnNIcWdoSHFMekVEbURrU2VLYVR4OVhPX195V01rWXh0THJNMnpTUDQ?oc=5\" target=\"_blank\">Number of Iranian missiles and drones fired at Gulf countries</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNUExaTnkzNmZVdlF2N2ZCV1dHUG02RHB5b3gxVThRSGhIbjJkREJaTHJOTmctRjhNOERldHgxUl90Z0pLSXM1MWpOb082STJkQ2FEc0pMczVZLXNFX1p3LWxjWVRWSTNjcXQxWmtISzNxMHpDTlh3WnNIcWdoSHFMekVEbURrU2VLYVR4OVhPX195V01rWXh0THJNMnpTUDQ?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:d31046b8a11a9261",
+    "title": "Millions of dollars in crypto left Iranian exchanges after strikes, researchers say - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMiygFBVV95cUxQM0ptNENGWHRYQngxLXM5d0pENWo0ZUM5bzVLZV9IcWNMSkh4LTVma0lOX3dZMlhPT2VzUnRSTmdIUFVKcEZXQzM3a1hlMDQzbXB6MTQ1UE5IZkZTRnY0TXRrWFhWWlpjOVEyakZDRmhwdDc2bVJjNWhlZlZQQ1hsYUl0ZEtGYUFZYkd4MXBsSzhKbWNFZWtUb0h5OWdYSVc5a0hRanlRakpmdGJtM0REcTlvUS0zZWtnY21WTy12d0R5TF80UDNBQXZB?oc=5\" target=\"_blank\">Millions of dollars in crypto left Iranian exchanges after strikes, researchers say</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQM0ptNENGWHRYQngxLXM5d0pENWo0ZUM5bzVLZV9IcWNMSkh4LTVma0lOX3dZMlhPT2VzUnRSTmdIUFVKcEZXQzM3a1hlMDQzbXB6MTQ1UE5IZkZTRnY0TXRrWFhWWlpjOVEyakZDRmhwdDc2bVJjNWhlZlZQQ1hsYUl0ZEtGYUFZYkd4MXBsSzhKbWNFZWtUb0h5OWdYSVc5a0hRanlRakpmdGJtM0REcTlvUS0zZWtnY21WTy12d0R5TF80UDNBQXZB?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:0cf75ace09dbfc77",
+    "title": "Trump orders oil tanker insurance support, says Navy could escort ships in Gulf - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMixwFBVV95cUxOU3ZOT0o3R2ozb013akFlRjIxVVpsUWZrOXJKQW5xZWVYMDlVZTczVkYybERVbXpzZUNXa0VocWMxbWNDQnFOR051XzR3SnY0ZXg4dFBIdHo0T21xanJXX1g4dDU2SmNXTXdEU1RwaVhDYU1XVFZlR204anFYUzZQUWR1Rlp3OU8yNnBLcndPX2pNTXB0Q2ZoczljaDRIdXVsaW1oRkt2OTB1TVNZdFNiQmJ5OE9VMV96cDVUR2Y0NE1lOTRIZk5r?oc=5\" target=\"_blank\">Trump orders oil tanker insurance support, says Navy could escort ships in Gulf</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOU3ZOT0o3R2ozb013akFlRjIxVVpsUWZrOXJKQW5xZWVYMDlVZTczVkYybERVbXpzZUNXa0VocWMxbWNDQnFOR051XzR3SnY0ZXg4dFBIdHo0T21xanJXX1g4dDU2SmNXTXdEU1RwaVhDYU1XVFZlR204anFYUzZQUWR1Rlp3OU8yNnBLcndPX2pNTXB0Q2ZoczljaDRIdXVsaW1oRkt2OTB1TVNZdFNiQmJ5OE9VMV96cDVUR2Y0NE1lOTRIZk5r?oc=5",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:fac92cbe801fd5ef",
+    "title": "US stocks pull back as Iran war concerns deepen - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMikgFBVV95cUxPcHE5WG5fQnFxcnljNXhQZWpGNDJvS1QzR2toYTlQbmlfZW5PeEVBa2dVVmpzWEVFNGJHczMzUk1TTHZ2M1BDbUpPRXFjY05zUVhOam9EQk1fWFJkcmtFTWcxWV9QZVhYcU1WY0ZyNGZ1d1JQckVTTHhvbjliQ3BsbzFGQy14bUIzZDFlWWJIMHVUQQ?oc=5\" target=\"_blank\">US stocks pull back as Iran war concerns deepen</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPcHE5WG5fQnFxcnljNXhQZWpGNDJvS1QzR2toYTlQbmlfZW5PeEVBa2dVVmpzWEVFNGJHczMzUk1TTHZ2M1BDbUpPRXFjY05zUVhOam9EQk1fWFJkcmtFTWcxWV9QZVhYcU1WY0ZyNGZ1d1JQckVTTHhvbjliQ3BsbzFGQy14bUIzZDFlWWJIMHVUQQ?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Equities",
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "finnhub:68724efb6274b0cf",
+    "title": "Trump, Rubio offer conflicting reasons for US entry into Iran war - Reuters",
+    "summary": "<a href=\"https://news.google.com/rss/articles/CBMirgFBVV95cUxQd2ZwSXpmeDVSbTJGdTFyT1hiLXFMUC1sdERsZTlNZkllOURQalJmVTRIQWZsVHMtMXFsMHZnMGl5Umx5bm94S283cklJOTJQRHJOWjhvSEMycFQ3ZjZKTV9HSEhwUUxTYWhVQjI4UjFVeEV3bTNqdk9YRDZXc2lCSWtwZDNybHFhSGphNmFiNWdCa01CN3VvMjNLZ3IzQnB3aVRRZnlocFZKc2VwQkE?oc=5\" target=\"_blank\">Trump, Rubio offer conflicting reasons for US entry into Iran war</a>&nbsp;&nbsp;<font color=\"#6f6f6f\">Reuters</font>",
+    "date": "2026-03-03",
+    "source": "Finnhub: Reuters",
+    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxQd2ZwSXpmeDVSbTJGdTFyT1hiLXFMUC1sdERsZTlNZkllOURQalJmVTRIQWZsVHMtMXFsMHZnMGl5Umx5bm94S283cklJOTJQRHJOWjhvSEMycFQ3ZjZKTV9HSEhwUUxTYWhVQjI4UjFVeEV3bTNqdk9YRDZXc2lCSWtwZDNybHFhSGphNmFiNWdCa01CN3VvMjNLZ3IzQnB3aVRRZnlocFZKc2VwQkE?oc=5",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:9edd1d0149d3a178",
+    "title": "Merz to Discuss ‘Day After’ in Iran, Push Trump on Trade",
+    "summary": "German Chancellor Friedrich Merz said he intended to discuss with President Donald Trump the next steps in the war on Iran amid questions about the US administration’s endgame after it launched strikes on the Islamic Republic.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/merz-to-discuss-day-after-in-iran-push-trump-on-trade",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:b72cfbec9896a42d",
+    "title": "Why the Canadian dollar is bearing up as surging greenback punches a hole through other G10 currencies",
+    "summary": "Canada's status as a major energy exporter is currently shielding the Canadian dollar from a surging US dollar. Find out more.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/news/economy/canadian-dollar-bearing-up-against-us-dollar",
+    "category": "Markets",
+    "tags": [
+      "$FX",
+      "$FX"
+    ]
+  },
+  {
+    "id": "newsapi:5ec82737a4cec65c",
+    "title": "Canadian Stocks Sink Most Since Tariff Chaos as Miners Sell Off",
+    "summary": "Canadian equities stumbled on Tuesday, by the most since April’s tariff-fueled market rout, as an escalating war in the Middle East unnerved investors who exited even traditional safe havens like gold and energy stocks.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/canadian-stocks-sink-most-since-tariff-chaos-as-miners-sell-off",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "Tariffs",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:4eb997c59399be19",
+    "title": "Aspen Pharmacare Eyes Canada GLP-1 Generic Approval by September",
+    "summary": "Africa’s largest drugmaker expects to get approval in Canada for its generic GLP-1 obesity treatment by September, potentially giving it an early start in a key market after Novo Nordisk A/S’s Ozempic patent expired.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/aspen-pharmacare-eyes-canada-glp-1-generic-approval-by-september",
+    "category": "Markets",
+    "tags": [
+      "$GLP",
+      "$GLP"
+    ]
+  },
+  {
+    "id": "newsapi:052110c239399f1c",
+    "title": "Kohlberg and Riveron Announce Strategic Investment in Cuesta Partners to Expand into AI and Data Advisory Services",
+    "summary": "CHICAGO — Riveron, a leading national business advisory firm backed by Kohlberg, today announced a strategic investment and growth partnership with Cuesta Partners (“Cuesta”), a Chicago-based AI & Data technology firm. The partnership combines Riveron’s deep …",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/kohlberg-and-riveron-announce-strategic-investment-in-cuesta-partners-to-expand-into-ai-and-data-advisory-services",
+    "category": "Markets",
+    "tags": [
+      "$GDP",
+      "$AI",
+      "$GDP",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:aab071c768e3e783",
+    "title": "SpaceX’s US$1.75-trillion valuation is ‘justifiable,’ PitchBook says",
+    "summary": "A $1.75 trillion valuation for billionaire Elon Musk’s SpaceX in an IPO would be 'justifiable,' according to a PitchBook analyst. Read more.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/investing/spacex-1-75-trillion-valuation-justifiable-pitchbook",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:b2b9e3fb1b5f6dbe",
+    "title": "Fed’s Williams, Kashkari Point to New Uncertainty From Iran War",
+    "summary": "Two Federal Reserve officials on Tuesday said the US-Israeli attacks on Iran had introduced another element of uncertainty for policymakers, with the most important question centering on how long energy prices might remain elevated.",
+    "date": "2026-03-03",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/feds-williams-kashkari-point-to-new-uncertainty-from-iran-war",
+    "category": "Markets",
+    "tags": [
+      "Fed",
+      "Geopolitics"
+    ]
+  },
+  {
     "id": "finnhub:dde05c7fcf8be5f1",
     "title": "Iran war prediction market bets draw heat: 'Insane this is legal'",
     "summary": "Wagers were placed over the weekend about the fate of Iranian leader Ayatollah Ali Khamenei who was killed in the bombardment.",
@@ -589,6 +2525,791 @@
     ]
   },
   {
+    "id": "finnhub:9fad576321aeba7f",
+    "title": "How this under-the-radar U.S. natural-gas exporter could capitalize on a potential shortage in Europe",
+    "summary": "The U.S. is the world’s largest exporter of liquefied natural gas, and one relatively obscure U.S. company seems ready to reap the benefits of a surge in global natural-gas prices following the U.S. and Israel’s attacks on Iran and the widening conflict in the Middle East.",
+    "date": "2026-03-02",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/how-this-under-the-radar-u-s-natural-gas-exporter-could-capitalize-on-a-potential-shortage-in-europe-c6938bab",
+    "category": "Geopolitics",
+    "tags": [
+      "NaturalGas",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:86cbc910a7ac4d0f",
+    "title": "The smartest money moves to make as the Iran conflict rattles markets",
+    "summary": "You may have opportunities to optimize for short-term volatility, financial planners told MarketWatch.",
+    "date": "2026-03-02",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/the-smartest-money-moves-to-make-as-the-iran-conflict-rattles-markets-d8e57ef3",
+    "category": "Geopolitics",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:8cbb22dbb0113c15",
+    "title": "As global markets tanked over Iran, U.S. stocks were mostly unscathed. Here’s why.",
+    "summary": "There is an old saying in markets: Buy when the bullets (or bombs or missiles) fly.",
+    "date": "2026-03-02",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/as-global-markets-tanked-over-iran-u-s-stocks-were-mostly-unscathed-heres-why-92dc87c5",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "finnhub:fadae27f266c9db5",
+    "title": "Gold just passed its stress test — what happens next will tell investors if they’re right",
+    "summary": "Gold did exactly what it was supposed to after the Iran strike. Is the spike temporary or a new era for the safe-haven trade?",
+    "date": "2026-03-02",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/gold-just-passed-its-stress-test-what-happens-next-will-tell-investors-if-theyre-right-35de6d2f",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "finnhub:f38112f1f97decf6",
+    "title": "Iran conflict unlikely to hurt U.S. economy or boost inflation — but the Fed won’t be quick to cut rates",
+    "summary": "The U.S. attack on Iran won’t boost U.S. inflation or harm the economy in a major way, analysts say, unless in the unlikely case that the conflict drags on for months and sharply raises the price of oil.",
+    "date": "2026-03-02",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/iran-conflict-unlikely-to-hurt-u-s-economy-or-boost-inflation-but-the-fed-wont-be-quick-to-cut-rates-6e7d315a",
+    "category": "Geopolitics",
+    "tags": [
+      "Inflation",
+      "Fed",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "finnhub:d3be976948e87469",
+    "title": "Trump’s war on Iran could make many things more expensive, despite his affordability promises",
+    "summary": "How do you campaign on “affordability” if you just pushed up prices?",
+    "date": "2026-03-02",
+    "source": "Finnhub: MarketWatch",
+    "url": "https://www.marketwatch.com/story/trumps-war-on-iran-could-make-many-things-more-expensive-despite-his-affordability-promises-66060ea4",
+    "category": "Geopolitics",
+    "tags": [
+      "Elections",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:eb0cee8390edfa18",
+    "title": "Middle East Oil Faces Pricing Confusion as Hormuz Traffic Halted",
+    "summary": "The halt to energy shipments through the Strait of Hormuz is disrupting how some of the world’s major oil grades are priced.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/middle-east-oil-faces-pricing-confusion-as-hormuz-traffic-halted",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:78e3316fd0023dad",
+    "title": "Turkey Defends Lira as Iran War Puts Markets Under Pressure",
+    "summary": "Turkish assets came under pressure Monday as escalating tensions in Iran triggered a broader regional selloff and prompted the central bank to support the lira.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/turkey-defends-lira-as-iran-war-puts-markets-under-pressure",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:4ca71c1141580d11",
+    "title": "Global Power Solutions Corp. Executes Definitive Agreement to Jointly Develop and Commercialize Modular Hydrogen-Based Power System",
+    "summary": "Vancouver, BC, Canada, March 02, 2026 (GLOBE NEWSWIRE) — Global Power Solutions Corp. (TSX Venture Exchange: PWER; Berlin and Frankfurt Stock Exchanges: NJA) (“Global Power” or the “Company”) is pleased to announce that it has executed a definitive joint deve…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/global-power-solutions-corp-executes-definitive-agreement-to-jointly-develop-and-commercialize-modular-hydrogen-based-power-system",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:de599fcaae57ef30",
+    "title": "AMD Gives Consumers and Businesses More AI PC Options with Expanded Ryzen™ AI 400 Series Portfolio",
+    "summary": "News Summary AMD expands its Ryzen AI portfolio with new Ryzen AI 400 Series and Ryzen AI PRO 400 Series desktop processors, the world’s first for next-gen AI PC applications with support for Copilot+ PC experiences. OEM partners announce new AI PC offerings …",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/amd-gives-consumers-and-businesses-more-ai-pc-options-with-expanded-ryzen-ai-400-series-portfolio",
+    "category": "Markets",
+    "tags": [
+      "$AMD",
+      "$AI",
+      "$PC",
+      "$AMD",
+      "$AI",
+      "$PC"
+    ]
+  },
+  {
+    "id": "newsapi:641fa81bc9d51491",
+    "title": "How Iran chooses its supreme leader, and who could be next?",
+    "summary": "Ayatollah Khamenei's death following the joint U.S.-Israeli airstrikes has compelled country's leadership to confront the task of selecting a new supreme leader.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/iran-ayatollah-trump-supreme-leader.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:86eba393b228b1e6",
+    "title": "European Gas Jumps 25% as Iranian Crisis Threatens Global Flows",
+    "summary": "European natural gas prices surged after fighting across the Middle East raised fears of a major disruption to global energy supplies.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/european-gas-jumps-25-as-iranian-crisis-threatens-global-flows",
+    "category": "Markets",
+    "tags": [
+      "NaturalGas"
+    ]
+  },
+  {
+    "id": "newsapi:d8932b62edb923ea",
+    "title": "Global markets after Iran strikes: oil surges, airlines sink, bonds defy safe-haven playbook",
+    "summary": "Asian markets started the day lower across the board, with major markets in the region in negative territory.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/global-markets-after-iran-strikes-oil-surges-airlines-sink-bonds-defy-safe-haven-playbook.html",
+    "category": "Markets",
+    "tags": [
+      "Rates"
+    ]
+  },
+  {
+    "id": "newsapi:b3f4f62743924781",
+    "title": "Quectel Expands Mid-tier 5G Portfolio with New RedCap 3GPP Release 17 Variants",
+    "summary": "BARCELONA, Spain — Quectel Wireless Solutions, a global end-to-end IoT solutions provider, today announces the expansion of its 5G RedCap portfolio with the launch of the RM255C-GL for global markets and the RG255C-NA for the North America market, further str…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/quectel-expands-mid-tier-5g-portfolio-with-new-redcap-3gpp-release-17-variants",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:8ce98813bbbaf4d1",
+    "title": "Hedge Funds, Insurers Rush to Gauge Exposure as Iran Spirals",
+    "summary": "Hedge funds, banks and insurers rushed to size up their exposure to the Middle East after weekend attacks on Iran fueled chaos across the region.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/hedge-funds-insurers-rush-to-gauge-exposure-as-iran-spirals",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:e28e70aa25513d16",
+    "title": "European stocks set to slump as markets react to U.S., Israeli strikes on Iran",
+    "summary": "European stocks are expected to start the new trading week firmly in negative territory.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/european-markets-stoxx-600-ftse-dax-cac-iran-strikes-reaction.html",
+    "category": "Markets",
+    "tags": [
+      "Equities"
+    ]
+  },
+  {
+    "id": "newsapi:ed5a3f1d515c18c7",
+    "title": "NTT DOCOMO BUSINESS and Airlinq Form Strategic Partnership for Global IoT",
+    "summary": "TOKYO — NTT DOCOMO BUSINESS, Inc. (formerly NTT Communications Corporation; Headquarters: Chiyoda-ku, Tokyo; President and CEO: Katsushige Kojima; “NTT DOCOMO BUSINESS”) and Airlinq Inc. (Headquarters: California, USA; CEO: Sunil Kaul; “Airlinq”), a global pr…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/ntt-docomo-business-and-airlinq-form-strategic-partnership-for-global-iot",
+    "category": "Markets",
+    "tags": [
+      "$NTT",
+      "DOCOMO",
+      "$NTT"
+    ]
+  },
+  {
+    "id": "newsapi:4b3400017c6e9d2a",
+    "title": "Soy Oil Hits Two-Year High as Crude Rallies After Iran Strikes",
+    "summary": "Soybean oil jumped to the highest level in more than two years, tracking crude prices higher after strikes by the US and Israel on Iran over the weekend.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/soy-oil-hits-two-year-high-as-crude-rallies-after-iran-strikes",
+    "category": "Markets",
+    "tags": [
+      "Oil",
+      "Ags"
+    ]
+  },
+  {
+    "id": "newsapi:6f8ca48d8b1f5db6",
+    "title": "U.S.-Iran news today: Live updates",
+    "summary": "Follow the latest news after the U.S. and Israel launched a massive attack on Iran that killed Iran's Supreme Leader Ayatollah Ali Khamenei.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/us-iran-live-updates-trump-oil-gold.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:0963d6367057939e",
+    "title": "Indian Stocks Erase US Trade Deal Gains on Middle East Conflict",
+    "summary": "Indian equities tumbled on Monday, tracking declines across most Asian peers, as escalating conflict in the Middle East dented investor sentiment.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/indian-stocks-erase-us-trade-deal-gains-on-middle-east-conflict",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:382a063a9822be60",
+    "title": "Bitget Publishes February 2026 Proof of Reserves, Maintaining 169% Total Reserve Ratio",
+    "summary": "VICTORIA, Seychelles, March 01, 2026 (GLOBE NEWSWIRE) — Bitget, the world’s largest Universal Exchange (UEX), has released its February 2026 Proof of Reserves (PoR), reaffirming full backing of user assets amid continued market volatility and cautious investo…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/bitget-publishes-february-2026-proof-of-reserves-maintaining-169-total-reserve-ratio",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:d758fd44ca30183d",
+    "title": "Crypto traders on tenterhooks as oil prices signal risks",
+    "summary": "Crypto traders brace for potential risks as rising oil prices impact market sentiment amid US-Iran tensions.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-02/crypto-traders-on-tenterhooks-as-oil-prices-signal-risks",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:020acf1852a764bf",
+    "title": "Crypto Traders on Tenterhooks as Oil Prices Signal Risks",
+    "summary": "With 24/7 crypto markets having already digested US-Iran tensions over the weekend, digital-asset traders are on the defensive as they assess potential contagion risks from crude oil prices when US markets open on Monday.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/crypto-traders-on-tenterhooks-as-oil-prices-signal-risks",
+    "category": "Markets",
+    "tags": [
+      "Oil"
+    ]
+  },
+  {
+    "id": "newsapi:fc7ae3f55a3395af",
+    "title": "Emerging market currencies, stocks fall on Iran-Israel conflict worries",
+    "summary": "A gauge of developing nations’ currencies dropped 0.5%, declining for a second session in a row as the dollar strengthened.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-02/emerging-market-currencies-stocks-fall-on-iran-conflict-worries",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$FX",
+      "Geopolitics",
+      "$FX"
+    ]
+  },
+  {
+    "id": "newsapi:a864b4e18691e8d3",
+    "title": "Bitget and Obside Partner to Launch Live AI Trading Arena for Copy Trading",
+    "summary": "VICTORIA, Seychelles, March 01, 2026 (GLOBE NEWSWIRE) — Bitget, the world’s largest Universal Exchange (UEX), today announced a partnership with Obside, bringing the AI Trading Arena to Bitget through copy trading. Developed by Obside, the AI Trading Arena is…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/bitget-and-obside-partner-to-launch-live-ai-trading-arena-for-copy-trading",
+    "category": "Markets",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:178a8806dcc8da61",
+    "title": "West Asia war to weigh heavily on China, Europe and India, economists say",
+    "summary": "Economists warn the West Asia conflict will impact oil importers like China, Europe, and India, benefiting exporters like Russia.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-02/economists-gauge-hit-from-mideast-war-as-china-seen-among-losers",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:1e4115789acc28bd",
+    "title": "Emerging Market Currencies, Stocks Fall on Iran Conflict Worries",
+    "summary": "Emerging-market currencies and stocks slumped in Asia trading on Monday as worries over Iran conflict and surging oil prices weigh on sentiment for risky assets.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/emerging-market-currencies-stocks-fall-on-iran-conflict-worries",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$FX",
+      "Geopolitics",
+      "$FX"
+    ]
+  },
+  {
+    "id": "newsapi:b5e36f2df12e8b68",
+    "title": "Aluminum Rises as Middle East War Threatens Supply Disruptions",
+    "summary": "Aluminum climbed on concerns that critical supply routes for Middle Eastern producers will be disrupted by conflict in a region responsible for a significant chunk of global output.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/aluminum-rises-as-middle-east-war-threatens-supply-disruptions",
+    "category": "Markets",
+    "tags": [
+      "BaseMetals",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:d531095e85ff92c5",
+    "title": "Rising Oil Prices Threaten Takaichi’s Agenda, Says Monex’s Koll",
+    "summary": "Rising oil prices risk delivering a fresh inflation shock to Japan, complicating Prime Minister Sanae Takaichi’s efforts to ease cost-of-living pressures, according to Monex Group’s Jesper Koll.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/rising-oil-prices-threaten-takaichis-agenda-says-monexs-koll",
+    "category": "Markets",
+    "tags": [
+      "Inflation"
+    ]
+  },
+  {
+    "id": "newsapi:7b83d890667df545",
+    "title": "Oil Prices Could Rise Further on Hormuz Delays, Analysts Say",
+    "summary": "Brent jumped by as much as 13% to above $82 a barrel at the open on Monday, and oil markets are now bracing for prolonged volatility and sustained disruptions in the Strait of Hormuz.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/oil-prices-could-rise-further-on-hormuz-delays-analysts-say",
+    "category": "Markets",
+    "tags": [
+      "Oil"
+    ]
+  },
+  {
+    "id": "newsapi:9e944faa98d09201",
+    "title": "Economists Gauge Hit From Mideast War as China Seen Among Losers",
+    "summary": "For the past year, economists have modeled the impact of US President Donald Trump’s chaotic trade war. Now, it’s a real war they’re assessing.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/economists-gauge-hit-from-mideast-war-as-china-seen-among-losers",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:7ca56df52a7e19c4",
+    "title": "CNBC Daily Open: Markets brace for impact of U.S.-Iran conflict as shockwaves begin to spread",
+    "summary": "A prolonged closure of the Strait of Hormuz, a critical transit route for global crude, could lead to a 1970s-style energy shock.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/cnbc-daily-open-markets-brace-impact-us-iran-conflict-shockwaves-begin-spread.html",
+    "category": "Markets",
+    "tags": [
+      "Oil",
+      "Geopolitics",
+      "$CNBC",
+      "$CNBC"
+    ]
+  },
+  {
+    "id": "newsapi:bfbf003373a4e4df",
+    "title": "Smith+Nephew to feature leading rotator cuff repair portfolio including new Tendon Seam™ Repair System and REGENETEN◊ Bioinductive Implant at AAOS 2026",
+    "summary": "Uniting the most advanced technologies for biomechanical repair and biological augmentation  Smith+Nephew (LSE:SN, NYSE:SNN), the global medical technology company, today announces it will showcase its unrivalled portfolio for rotator cuff repair (RCR) during…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/smithnephew-to-feature-leading-rotator-cuff-repair-portfolio-including-new-tendon-seam-repair-system-and-regeneten◊-bioinductive-implant-at-aaos-2026",
+    "category": "Markets",
+    "tags": [
+      "$AAOS",
+      "$AAOS"
+    ]
+  },
+  {
+    "id": "newsapi:101e4e51f73dbbb6",
+    "title": "Crypto's 24-hour promise gets a geopolitical reality check",
+    "summary": "Bitcoin has long been promoted as offering something other markets cannot: a 24-hour, real-time read on global risk. Find out more here",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/fp-finance/cryptocurrency/cryptos-24-hour-promise-reality-check",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:44837d2f4b1e884c",
+    "title": "Crypto’s 24-Hour Promise Gets a Geopolitical Reality Check",
+    "summary": "Bitcoin has long been promoted as offering something other markets cannot: a 24-hour, real-time read on global risk.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/cryptos-24-hour-promise-gets-a-geopolitical-reality-check",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:d87e9475555a9e33",
+    "title": "Berkshire Hathaway shares drop more than 4% after poor fourth-quarter results, no bold moves by new CEO Abel",
+    "summary": "Some had hoped for more aggressive signals on capital deployment given the company's swelling cash balance.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/berkshire-hathaway-shares-drop-4percent-after-poor-fourth-quarter-results.html",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "$CEO",
+      "$CEO"
+    ]
+  },
+  {
+    "id": "newsapi:eb75a6b69c54b503",
+    "title": "Paramount to combine HBO Max and Paramount+ to challenge Netflix",
+    "summary": "Paramount Skydance Corp. said Monday that it will combine the Paramount+ and HBO Max streaming services into a single platform. Read on",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/news/retail-marketing/paramount-combine-hbo-max-challenge-netflix",
+    "category": "Markets",
+    "tags": [
+      "$HBO",
+      "$HBO"
+    ]
+  },
+  {
+    "id": "newsapi:c27a8c4d09520a45",
+    "title": "Trump’s Iran War Adds New Potential Shock for US Economy, Voters",
+    "summary": "President Donald Trump’s war against Iran risks delivering another shock to an economy that voters are already disenchanted with, just eight months out from mid-term elections.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/trumps-iran-war-adds-new-potential-shock-for-us-economy-voters",
+    "category": "Markets",
+    "tags": [
+      "Elections",
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:2186dca12bb847d7",
+    "title": "Venezuela’s Crude Exports Double in February Under US Oversight",
+    "summary": "Venezuela sharply increased its oil exports in February, sending roughly twice as many barrels abroad compared with the previous month, when the Trump administration first exerted control of the country’s crude sales.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/venezuelas-crude-exports-double-in-february-under-us-oversight",
+    "category": "Markets",
+    "tags": [
+      "Oil",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:98f4eb1eb37add89",
+    "title": "Shocks can force Bank of Canada to hike rates even when economy weak, says deputy",
+    "summary": "Bank of Canada looking at non-traditional data such as credit card transactions and border traffic to help decide monetary policy. Read more",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/news/economy/bank-of-canada-ai-trade-shift-changing-economy",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:134d8311382fc4cf",
+    "title": "As Iran Crisis Upends Oil and Gas, Clean Energy Gets Complicated",
+    "summary": "Higher fossil fuel prices could make green alternatives more attractive, but harder to deploy.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/as-iran-crisis-upends-oil-and-gas-clean-energy-gets-complicated",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:d8234053d6f46281",
+    "title": "Caisse markets head says private credit concerns are overblown",
+    "summary": "Pension manager Caisse de Depot et Placement du Quebec missed many of its return benchmarks last year, but not in private credit. Read here",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/investing/caisse-markets-private-credit-concerns-overblown",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:0a2c58adf905f4e2",
+    "title": "Greenland Resources Conditionally Approved for up to $7 Million From the Government of Canada",
+    "summary": "TORONTO — Greenland Resources Inc. (TSX:MOLY | FSE: M0LY) (“Greenland Resources” or the “Company”) is pleased to announce that the Government of Canada has conditionally approved the Company for a non-repayable contribution of up to $7,000,000 for the advance…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/greenland-resources-conditionally-approved-for-up-to-7-million-from-the-government-of-canada",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:bd642cfd4e7c1dd3",
+    "title": "As East-West pipeline divide persists, Atlantic Canada’s energy isolation is only getting worse",
+    "summary": "Atlantic Canada risks losing guaranteed pipeline access to Western Canadian energy while still relying heavily on overseas fuel. Read more.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/commodities/energy/oil-gas/atlantic-canada-energy-isolation-getting-worse-pipeline",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:dde05c7fcf8be5f1",
+    "title": "Iran war prediction market bets draw heat: 'Insane this is legal'",
+    "summary": "Wagers were placed over the weekend about the fate of Iranian leader Ayatollah Ali Khamenei who was killed in the bombardment.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/prediction-markets-iran-strikes-khamenei.html",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:fc14cd61f7ac17cc",
+    "title": "Apple debuts iPhone 17e and M4 iPad Air, starting product wave",
+    "summary": "Apple unveiled the iPhone 17e, the latest version of its lower-end smartphone, and a faster version of the iPad Air. Read more.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/news/retail-marketing/apple-iphone-17e-m4-ipad-air-product-wave",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:a782072b81fb6e68",
+    "title": "US Insists Iran War Won’t Be Endless as Strikes Engulf Region",
+    "summary": "US Defense Secretary Pete Hegseth rejected the idea of an “endless” war with Iran as airstrikes continued for a third day, with the conflict reverberating across the Middle East and upending energy markets.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/us-insists-iran-war-wont-be-endless-as-strikes-engulf-region",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:0b2f84a987fe7c02",
+    "title": "JPMorgan’s Bearish Dollar Stance Challenged by Iran Oil Shock",
+    "summary": "A sustained oil price shock as conflict between the US and Iran escalates and snarls tanker traffic across the Middle East is the biggest threat to JPMorgan Chase & Co’s view that the dollar will weaken this year, according to the bank’s foreign-exchange stra…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/jpmorgans-bearish-dollar-stance-challenged-by-iran-oil-shock",
+    "category": "Markets",
+    "tags": [
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:f16ce178bbfdbacf",
+    "title": "Op-ed: What China is probably thinking about U.S. strikes against Iran",
+    "summary": "Military strikes on Iran following the Venezuela actions hit two of China's key oil suppliers. The US rival has been preparing for this moment for a long time.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/iran-strikes-oil-energy-china.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:c4d55dd3bb842879",
+    "title": "Stocks drop, volatility spikes as traders weigh Iran war risks",
+    "summary": "Stocks fell as traders reacted to escalating Iran conflict, with volatility rising and energy sector showing resilience amid market turmoil.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-02/stocks-drop-volatility-spikes-as-traders-weigh-iran-war-risks",
+    "category": "Policy",
+    "tags": [
+      "Equities",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:534c2e35e01c80e0",
+    "title": "Citadel’s various hedge funds rise in February, beating the S&P 500 in a choppy month",
+    "summary": "The firm's flagship multistrategy Wellington fund rose 1.9% in February, bringing its year-to-date gain to 2.9%.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/citadels-various-hedge-funds-rise-in-february-beating-the-sp-500-in-a-choppy-month.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:12b61c2d4b5ea51e",
+    "title": "US Manufacturing Grew, Input Costs Soared Before Iran Attack",
+    "summary": "US manufacturing expanded in February but input prices soared at the fastest pace since 2022, stoking fears of an inflation resurgence even before this weekend’s attacks on Iran.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/us-manufacturing-grew-input-costs-soared-before-iran-attack",
+    "category": "Markets",
+    "tags": [
+      "Inflation",
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:03708beaa5f086ee",
+    "title": "People are complacent about risk of financial crisis, says Lloyd Blankfein",
+    "summary": "Lloyd Blankfein has one piece of advice for anyone fearing that a financial reckoning is on the horizon: plan like it is coming. Read more.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/financial-times/people-complacent-risk-financial-crisis-lloyd-blankfein",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:ae95e79b17523e8a",
+    "title": "Stocks Drop, Volatility Spikes as Traders Weigh Iran War Risks",
+    "summary": "Stocks dropped Monday morning as traders weighed the market risks from an escalating conflict in the Middle East, with oil spiking and President Donald Trump saying the US and Israeli strikes on Iran may last weeks.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/stocks-drop-volatility-spikes-as-traders-weigh-iran-war-risks",
+    "category": "Markets",
+    "tags": [
+      "Equities",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:056d6983691f166f",
+    "title": "Tilray Brands Acquires BrewDog, a Leading Global Craft Brand, Creating a ~$500 Million Global Craft Beer and Beverage Platform",
+    "summary": "Accretive Acquisition of Select Assets Includes Global Brand, UK Brewing Operations and 11 Strategic Brewpubs  Expected to Generate ~$200 Million in Annual Net Revenue and ~$6 – $8 Million of Adjusted EBITDA in Fiscal 2027 Tilray’s Global Consolidated Net Rev…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/tilray-brands-acquires-brewdog-a-leading-global-craft-brand-creating-a-500-million-global-craft-beer-and-beverage-platform",
+    "category": "Markets",
+    "tags": [
+      "Fiscal"
+    ]
+  },
+  {
+    "id": "newsapi:fc42b7ec7d0ffdd5",
+    "title": "AI to Transform How Credit Market Works, JPMorgan Banker Says",
+    "summary": "Generative AI is set to transform the way credit traders do their jobs, as the technology is well suited to handling the unstructured data produced by the asset class, according to JPMorgan Chase & Co.’s global head of credit trading.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/ai-to-transform-how-credit-market-works-jpmorgan-banker-says",
+    "category": "Markets",
+    "tags": [
+      "$AI",
+      "$AI"
+    ]
+  },
+  {
+    "id": "newsapi:8fc454a44cf5ee5c",
+    "title": "Versant is about to test Wall Street’s appetite for cable TV in its first earnings report as a public company",
+    "summary": "Versant, the portfolio of pay-TV networks previously owned by Comcast, will release its first earnings report since going public earlier this year.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/versant-earnings-report-test-wall-street-cable-tv.html",
+    "category": "Markets",
+    "tags": [
+      "$TV",
+      "$TV"
+    ]
+  },
+  {
+    "id": "newsapi:5bb935874804b840",
+    "title": "Visionary Doubles Down on High-Margin Medical Aesthetics with US$12 Million Exclusive Agreement, Initiates Strategic Exit from Non-Core Businesses",
+    "summary": "HONG KONG, March 02, 2026 (GLOBE NEWSWIRE) — Visionary Holdings Inc. (NASDAQ: GV) (“the Company”), a technology-driven multinational and biotechnology and healthcare-focused company, today announced that its wholly owned subsidiary, Visionary Health Technolog…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/visionary-doubles-down-on-high-margin-medical-aesthetics-with-us12-million-exclusive-agreement-initiates-strategic-exit-from-non-core-businesses",
+    "category": "Markets",
+    "tags": [
+      "$US",
+      "$US"
+    ]
+  },
+  {
+    "id": "newsapi:d44f75d03c314e79",
+    "title": "HPQ Silicon Closed $3.0 Million Non-Brokered Private Placement",
+    "summary": "MONTREAL, March 02, 2026 (GLOBE NEWSWIRE) — HPQ Silicon Inc. (“HPQ” or the “Company”) (“HPQ” or the “Company”) (TSX-V: HPQ, OTCQB: HPQFF, FRA: O08), an advanced materials technology company developing innovative, low-emission processes for the production of h…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/globe-newswire/hpq-silicon-closed-3-0-million-non-brokered-private-placement",
+    "category": "Markets",
+    "tags": [
+      "$HPQ",
+      "$HPQ"
+    ]
+  },
+  {
+    "id": "newsapi:c51a439531fb87c3",
+    "title": "AllianzGI Eyes Dollar as Mideast Conflict Revives Haven Wagers",
+    "summary": "Allianz Global Investors is considering purchasing dollars after months betting against the US currency as the war in the Middle East revives its status as a haven asset.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/allianzgi-eyes-dollar-as-mideast-conflict-revives-haven-wagers",
+    "category": "Markets",
+    "tags": [
+      "$FX",
+      "Geopolitics",
+      "$FX"
+    ]
+  },
+  {
+    "id": "newsapi:8facb283d1169249",
+    "title": "3650 Capital Wins PERE Credit Alternative Lender of the Year Award",
+    "summary": "Recognition highlights firm’s innovative business model and exceptional performance across its portfolio MIAMI — 3650 Capital (“3650”), a nationwide alternative commercial real estate lender, special servicer and solutions provider focused on originating, ser…",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-wire-news-releases-pmn/3650-capital-wins-pere-credit-alternative-lender-of-the-year-award",
+    "category": "Markets",
+    "tags": [
+      "$PERE",
+      "$PERE"
+    ]
+  },
+  {
+    "id": "newsapi:003d48725cc655c8",
+    "title": "BlackRock’s GIP and EQT to Buy AES for $10.7 Billion",
+    "summary": "BlackRock Inc.’s Global Infrastructure Partners LP and EQT AB agreed to buy AES Corp. for about $10.7 billion in cash as the market heats up for power plant developers that can provide electricity for energy-hungry AI data centers.",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/blackrocks-gip-and-eqt-to-buy-aes-for-10-7-billion",
+    "category": "Markets",
+    "tags": [
+      "$GIP",
+      "$EQT",
+      "$AES",
+      "$GIP",
+      "$EQT",
+      "$AES"
+    ]
+  },
+  {
+    "id": "newsapi:a8cc99671ac8f559",
+    "title": "Oil prices surge as Strait of Hormuz tanker disruptions rattle global supply",
+    "summary": "European natural gas futures are spiking 42% in the wake of the shutdown of a major supplier of ship-born gas due to the fighting in the Middle East. The futures contract for April delivery shot up to 45.46 euros ($53.26) on the ICE commodities exchange. The …",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Associated Press",
+    "url": "https://apnews.com/article/oil-prices-iran-us-hormuz-tanker-8a6d6fb35c89d9b0db4c4846f290c2c3",
+    "category": "Policy",
+    "tags": [
+      "NaturalGas"
+    ]
+  },
+  {
+    "id": "newsapi:6e06f0ac13173a78",
+    "title": "Middle East oil faces pricing confusion as Hormuz traffic halted",
+    "summary": "The pause comes as the crisis in the Middle East widens and vessels stop crossing Hormuz, leaving crude and fuel markets at risk of dislocation",
+    "date": "2026-03-02",
+    "source": "NewsAPI: Bloomberg",
+    "url": "https://www.bloomberg.com/news/articles/2026-03-02/middle-east-oil-faces-pricing-muddle-as-hormuz-traffic-halted",
+    "category": "Policy",
+    "tags": [
+      "Oil"
+    ]
+  },
+  {
     "id": "finnhub:51ce6fdc2d501e09",
     "title": "How to think about everything presumably wrong with stocks and what to do about it",
     "summary": "So, what's the plan?",
@@ -890,6 +3611,61 @@
     "tags": [
       "Geopolitics"
     ]
+  },
+  {
+    "id": "newsapi:0411f051611bfdbe",
+    "title": "Asia-Pacific markets set to plunge after Iran strikes, oil futures spike by over 8%",
+    "summary": "Oil futures on Monday jumped by over 8%, with West Texas Intermediate futures and Brent trading at $72.52 and $79.04 per barrel respectively.",
+    "date": "2026-03-01",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/asia-markets-live-trump-iran-oil-prices-nikkei-hang-seng-us-israel-strikes-oil.html",
+    "category": "Markets",
+    "tags": [
+      "Oil"
+    ]
+  },
+  {
+    "id": "newsapi:781b561960b6fcd3",
+    "title": "China’s Five-Year Plan to Target Fixes to Commodities Supply",
+    "summary": "Chinese leaders will launch a pivotal five-year plan this week that’ll help shape global commodities markets through the end of the decade. Their fixes targeting supply will be as important as the impact of their decisions on demand.",
+    "date": "2026-03-01",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/chinas-five-year-plan-to-target-fixes-to-commodities-supply",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:6b57f4d6339619a7",
+    "title": "Oil Spikes as Widening Iran Crisis Disrupts Flows Through Hormuz",
+    "summary": "Oil surged by the most in four years, as the US-Israeli war against Iran plunged the global crude market into turmoil, with the effective closure of the Strait of Hormuz.",
+    "date": "2026-03-01",
+    "source": "NewsAPI: Financial Post",
+    "url": "https://financialpost.com/pmn/business-pmn/oil-spikes-as-widening-iran-crisis-disrupts-flows-through-hormuz",
+    "category": "Markets",
+    "tags": [
+      "Oil",
+      "Geopolitics"
+    ]
+  },
+  {
+    "id": "newsapi:c18155b950d9fcff",
+    "title": "Global week ahead: Operation Epic Fury means new risks for markets",
+    "summary": "Investors will grapple with how to trade the fallout of the U.S. and Israel's joint action in Iran.",
+    "date": "2026-03-01",
+    "source": "NewsAPI: CNBC",
+    "url": "https://www.cnbc.com/2026/03/02/global-week-ahead-operation-epic-fury-us-israel-iran-strikes-oil-shipping-markets-volatility.html",
+    "category": "Markets",
+    "tags": []
+  },
+  {
+    "id": "newsapi:f93392ae52100625",
+    "title": "One early risk of Trump's Iran strategy is already emerging",
+    "summary": "President Donald Trump’s decision to topple the Iranian regime is threatening to torch an oil market his administration has been at pains to keep cool since ...",
+    "date": "2026-03-01",
+    "source": "NewsAPI: Politico",
+    "url": "https://www.politico.com/news/2026/03/01/oil-prices-energy-iran-trump-00806537",
+    "category": "Policy",
+    "tags": []
   },
   {
     "id": "newsapi:73e1f080389ed1b9",

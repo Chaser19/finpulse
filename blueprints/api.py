@@ -19,7 +19,6 @@ from services.finnhub_live import (
     get_quote as finnhub_get_quote,
     get_profile as finnhub_get_profile,
 )
-from services.macro_trends import get_macro_trends
 from services.tradingview import fetch_snapshots as tradingview_snapshots
 
 api_bp = Blueprint("api", __name__)
@@ -299,13 +298,3 @@ def api_social_tweets():
     ttl = int(current_app.config.get("SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES", 10))
     items = get_user_tweets(data_dir, u, limit=limit, cache_minutes=ttl)
     return jsonify(items)
-
-
-@api_bp.get("/macro/trends")
-def api_macro_trends():
-    cfg = current_app.config
-    data = get_macro_trends(
-        fred_api_key=cfg.get("FRED_API_KEY", ""),
-        eia_api_key=cfg.get("EIA_API_KEY", ""),
-    )
-    return jsonify(data)
