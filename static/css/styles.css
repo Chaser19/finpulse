@@ -4862,6 +4862,10 @@ p, .text-muted, .text-white-50 {
   object-position: 50% 50%;
 }
 
+.mission-phase-validation-image {
+  object-position: 50% 50%;
+}
+
 .mission-phase-zoom.is-dragging .mission-phase-zoom-image {
   transition: none;
 }
@@ -4924,6 +4928,11 @@ p, .text-muted, .text-white-50 {
   padding: 0.95rem 1rem;
 }
 
+.mission-phase-visual-card.is-model-validation-focus {
+  gap: 0.25rem;
+  padding: 0.66rem 0.74rem;
+}
+
 .mission-phase-visual-card.is-data-layout-focus .mission-phase-visual-canvas,
 .mission-phase-visual-card.is-expanded-visual .mission-phase-visual-canvas {
   min-height: 430px;
@@ -4938,9 +4947,61 @@ p, .text-muted, .text-white-50 {
   height: 416px;
 }
 
+.mission-phase-visual-card.is-model-validation-focus .mission-phase-visual-canvas {
+  min-height: 298px;
+  padding: 0.24rem;
+}
+
+.mission-phase-visual-card.is-model-validation-focus .mission-phase-zoom,
+.mission-phase-visual-card.is-model-validation-focus .mission-phase-visual-canvas img,
+.mission-phase-visual-card.is-model-validation-focus .mission-phase-visual-canvas svg {
+  height: 286px;
+}
+
 .mission-phase-visual-canvas text {
   color: var(--fp-text-muted);
   text-rendering: geometricPrecision;
+}
+
+.mission-timeline-panel.is-model-validation-focus {
+  padding: 0.72rem 0.78rem;
+  gap: 0.5rem;
+}
+
+.mission-timeline-panel.is-model-validation-focus .mission-phase-grid {
+  gap: 0.42rem;
+}
+
+.mission-timeline-panel.is-model-validation-focus .mission-phase-group {
+  margin: 0;
+  padding: 0.42rem 0.56rem;
+  border: 1px solid rgba(171, 152, 121, 0.35);
+  border-radius: 0.6rem;
+  background: rgba(255, 251, 244, 0.66);
+  display: grid;
+  grid-template-columns: minmax(116px, 0.25fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 0.4rem;
+}
+
+.mission-timeline-panel.is-model-validation-focus .mission-phase-group:first-child {
+  border-top: 1px solid rgba(171, 152, 121, 0.35);
+  padding-top: 0.42rem;
+}
+
+.mission-timeline-panel.is-model-validation-focus .mission-phase-group h5 {
+  margin: 0;
+  padding-top: 0.1rem;
+}
+
+.mission-timeline-panel.is-model-validation-focus .mission-phase-group ul {
+  padding-left: 0.88rem;
+  gap: 0.18rem;
+}
+
+.mission-timeline-panel.is-model-validation-focus .mission-phase-group li {
+  font-size: 0.79rem;
+  line-height: 1.33;
 }
 
 .mission-phase-group h5 {
@@ -5089,6 +5150,15 @@ p, .text-muted, .text-white-50 {
     grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
   }
 
+  .mission-timeline-layout.is-model-validation-focus {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.54rem;
+  }
+
+  .mission-timeline-layout.is-model-validation-focus .mission-phase-visual-card {
+    order: 2;
+  }
+
   .mission-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -5098,6 +5168,10 @@ p, .text-muted, .text-white-50 {
   .mission-title-row {
     grid-template-columns: 84px minmax(0, 1fr);
     gap: 0.55rem;
+  }
+
+  .mission-timeline-panel.is-model-validation-focus .mission-phase-group {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 

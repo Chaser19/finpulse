@@ -68,32 +68,37 @@
     },
     {
       id: "phase-3",
-      title: "Month 3 — Pipeline Build-Out",
+      title: "Month 3 — Pipeline Build-Out (Operational Signal)",
       range: "Month 3",
       status: "Upcoming",
       summary:
-        "Implement ingestion and transformation layers based on the approved month 2 data layout.",
+        "Implement ingestion, transformation, and reproducible training/backtest runs against the approved schema.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Build ingest and transform stages against the agreed schema."
+            "Convert the Month 2 model into a v1 candidate via systematic tuning and pruning.",
+            "Make walk-forward evaluation the default and publish a single truth pack of results.",
+            "Ensure model outputs are reproducible (dataset snapshot + feature version + model version) across reruns."
           ]
         },
         {
           title: "Key Workstreams",
           items: [
-            "Implement source adapters and unified ingest entrypoints.",
-            "Build transformation layer for normalisation and enrichment.",
-            "Enable scheduled refresh and run logging."
+            "Source adapters + canonical schema: Finalise connectors (X/Reddit/news/macro) with idempotent loads, dedupe, and rate-limit handling.",
+            "Transformation + feature layer: Normalisation, entity resolution (tickers, topics), timezone alignment, and missingness rules.",
+            "Training + backtest harness: Walk-forward folds, baseline comparisons, leakage tests, and metrics suite.",
+            "Model registry + versioning: Dataset version, feature version, model artefact version, and reproducible runs.",
+            "Operational readiness: Scheduled runs, run logging, failure modes, fallbacks, and alert thresholds."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "Core sources flow end-to-end through pipeline.",
-            "Transformation outputs match schema requirements.",
-            "Scheduled refresh jobs complete without critical failure."
+            "Core sources run end-to-end on schedule for >= 14 days with no critical failure.",
+            "Feature set is stable and documented (definition + lineage + missingness handling).",
+            "Walk-forward backtest produces consistent metrics vs baseline, with no leakage flags.",
+            "Each run produces a versioned artefact (data snapshot + features + model output) that can be replayed."
           ]
         }
       ]
@@ -259,40 +264,24 @@
         `
       },
       "phase-3": {
-        title: "Month 3 Build Progress View",
-        caption: "Ingestion and transformation implementation status against the approved layout",
+        title: "Model Validation and Tuning",
+        caption: "Model tuning workflow and validation checkpoints",
         svg: `
-          <svg viewBox="0 0 420 280" role="img" aria-label="Walk-forward validation blocks with out-of-sample equity and metrics">
-            <rect x="16" y="16" width="388" height="248" rx="14" fill="rgba(255, 251, 244, 0.76)" stroke="rgba(168, 145, 105, 0.42)" />
-
-            <rect x="30" y="28" width="360" height="58" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="42" y="45" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Walk-forward folds (train/validate/test)</text>
-            <rect x="44" y="56" width="88" height="14" rx="4" fill="rgba(121, 145, 106, 0.72)" />
-            <rect x="136" y="56" width="34" height="14" rx="4" fill="rgba(198, 162, 99, 0.72)" />
-            <rect x="174" y="56" width="30" height="14" rx="4" fill="rgba(178, 124, 70, 0.74)" />
-            <rect x="216" y="56" width="88" height="14" rx="4" fill="rgba(121, 145, 106, 0.72)" />
-            <rect x="308" y="56" width="34" height="14" rx="4" fill="rgba(198, 162, 99, 0.72)" />
-            <rect x="346" y="56" width="30" height="14" rx="4" fill="rgba(178, 124, 70, 0.74)" />
-
-            <rect x="30" y="96" width="232" height="156" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="42" y="114" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Out-of-sample cumulative return</text>
-            <line x1="46" y1="236" x2="246" y2="236" stroke="rgba(165, 144, 109, 0.58)" stroke-width="1.4" />
-            <line x1="46" y1="126" x2="46" y2="236" stroke="rgba(165, 144, 109, 0.58)" stroke-width="1.4" />
-            <path d="M46 224L70 220L94 210L118 202L142 190L166 182L190 168L214 156L238 146" fill="none" stroke="rgba(178, 124, 70, 0.9)" stroke-width="3.2" />
-            <path d="M46 226L70 224L94 220L118 214L142 207L166 202L190 196L214 190L238 186" fill="none" stroke="rgba(121, 145, 106, 0.88)" stroke-width="2.5" stroke-dasharray="6 5" />
-            <text x="52" y="140" font-size="8.5" fill="#72614b" font-family="Inter, sans-serif">Model ensemble</text>
-            <text x="52" y="153" font-size="8.5" fill="#72614b" font-family="Inter, sans-serif">Momentum baseline</text>
-
-            <rect x="272" y="96" width="118" height="156" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="284" y="114" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Robustness checks</text>
-            <text x="284" y="136" font-size="10.5" fill="#3f3324" font-family="Inter, sans-serif">IR: 0.84</text>
-            <text x="284" y="154" font-size="10.5" fill="#3f3324" font-family="Inter, sans-serif">Sharpe: 1.31</text>
-            <text x="284" y="172" font-size="10.5" fill="#3f3324" font-family="Inter, sans-serif">Hit rate: 57%</text>
-            <text x="284" y="190" font-size="10.5" fill="#3f3324" font-family="Inter, sans-serif">Max DD: 6.8%</text>
-            <text x="284" y="208" font-size="10.5" fill="#3f3324" font-family="Inter, sans-serif">Turnover: 0.42</text>
-            <rect x="284" y="220" width="94" height="18" rx="5" fill="rgba(121, 145, 106, 0.28)" />
-            <text x="331" y="232" text-anchor="middle" font-size="8.5" fill="#2f3a2a" font-family="Inter, sans-serif">No leakage flags</text>
-          </svg>
+          <div class="mission-phase-zoom mission-phase-zoom-validation" data-zoom-root>
+            <img
+              src="/static/img/Model%20Validation%20and%20Tuning.png"
+              alt="Model validation and tuning workflow for month three execution"
+              loading="lazy"
+              class="mission-phase-zoom-image mission-phase-validation-image"
+              data-zoom-image
+            />
+            <span class="mission-phase-zoom-level" data-zoom-level aria-live="polite">100%</span>
+            <div class="mission-phase-zoom-controls" data-zoom-controls aria-label="Image zoom controls">
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="out" aria-label="Zoom out">-</button>
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="reset">Reset</button>
+              <button type="button" class="mission-phase-zoom-btn" data-zoom-action="in" aria-label="Zoom in">+</button>
+            </div>
+          </div>
         `
       },
       "phase-4": {
@@ -826,12 +815,16 @@
       visualCanvasEl.innerHTML = visual.svg;
 
       const isDataLayoutPhase = phase.id === "phase-2";
-      const isExpandedVisualPhase = phase.id === "phase-1" || isDataLayoutPhase;
+      const isModelValidationPhase = phase.id === "phase-3";
+      const isExpandedVisualPhase = phase.id === "phase-1" || isDataLayoutPhase || isModelValidationPhase;
       if (timelineLayoutEl) {
         timelineLayoutEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
+        timelineLayoutEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
       }
+      panelEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
       if (visualCardEl) {
         visualCardEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
+        visualCardEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
         visualCardEl.classList.toggle("is-expanded-visual", isExpandedVisualPhase);
       }
 
