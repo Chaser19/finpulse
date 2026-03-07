@@ -13,7 +13,7 @@
           >
           <div class="mission-title-copy">
             <p class="mission-title-pretitle mb-0">FinPulse Market Intelligence</p>
-            <h1 class="hero-title mb-0">
+            <h1 id="mission-signal-headline" class="hero-title mb-0">
               Transforming unstructured market information into
               <span class="mission-highlight">decision-grade signals</span>
             </h1>
@@ -463,4 +463,5 @@
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
   <script src="{{ url_for('static', filename='js/mission-engagement-chart.js') }}"></script>
   <script src="{{ url_for('static', filename='js/mission-market.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='js/mission-title-split.js') }}"></script>
 {% endblock %}

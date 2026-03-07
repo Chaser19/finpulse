@@ -7,7 +7,7 @@
         <div class="home-hero-copy">
           <span class="hero-kicker">Behavioural Market Signals</span>
           <h1 class="hero-title">Daily Market Pulse</h1>
-          <p class="hero-subtitle">FinPulse integrates curated news and real-time social sentiment into a single platform, enabling investors to stay informed and make faster, more confident decisions.</p>
+          <p class="hero-subtitle">FinPulse integrates curated market news and structured analytics into a single platform, enabling investors to stay informed and make faster, more confident decisions.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary btn-lg" href="{{ url_for('web.news_list') }}">Explore dashboard</a>
         </div>
@@ -34,15 +34,6 @@
                   <div>
                     <strong>Ranked Newsfeed</strong>
                     <small>Credibility tiers, sentiment scoring, and narrative clusters.</small>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a class="home-snapshot-link" href="{{ url_for('web.social') }}">
-                  <span class="signal-icon social" aria-hidden="true"></span>
-                  <div>
-                    <strong>Social Pulse</strong>
-                    <small>Real-time chatter and synthetic history for coverage symbols.</small>
                   </div>
                 </a>
               </li>
@@ -102,12 +93,12 @@
       <div class="home-section-header">
         <div>
           <span class="home-section-kicker">Choose a lens</span>
-          <h2 class="home-section-title">Three signals, one pulse.</h2>
-          <p class="home-section-subtitle">Pick a perspective to dive straight into mission context, news intelligence, or social momentum.</p>
+          <h2 class="home-section-title">Two signals, one pulse.</h2>
+          <p class="home-section-subtitle">Pick a perspective to dive straight into mission context or news intelligence.</p>
         </div>
       </div>
       <div class="row g-3">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.mission') }}">
             <div class="card-body">
               <div class="signal-icon macro" aria-hidden="true"></div>
@@ -116,21 +107,12 @@
             </div>
           </a>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.news_list') }}">
             <div class="card-body">
               <div class="signal-icon news" aria-hidden="true"></div>
               <h3 class="hero-pillar-title">Signal-ranked news</h3>
               <p class="text-white-50 mb-0">Surface the stories that matter with credibility labeling, sentiment tags, and ready-to-share briefs.</p>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-md-4">
-          <a class="hero-pillar card h-100 text-decoration-none text-reset" href="{{ url_for('web.social') }}">
-            <div class="card-body">
-              <div class="signal-icon social" aria-hidden="true"></div>
-              <h3 class="hero-pillar-title">Social intelligence</h3>
-              <p class="text-white-50 mb-0">Quantify chatter momentum, net sentiment, and influencer activity across watchlist symbols.</p>
             </div>
           </a>
         </div>
@@ -147,5 +129,4 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
   <script src="{{ url_for('static', filename='js/home-chart.js') }}"></script>
-  {# Social/Twitter scripts removed #}
 {% endblock %}

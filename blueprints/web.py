@@ -351,7 +351,6 @@ def derive_context(tags: Iterable[str]) -> Dict[str, Any] | None:
             "ticker": ticker,
             "actions": [
                 {"type": "news", "label": f"More news on {ticker}", "query": f"#{ticker}"},
-                {"type": "social", "label": "Check social pulse", "symbol": ticker},
             ],
         }
 
@@ -568,32 +567,6 @@ def compute_quick_tags(items: Iterable[Dict[str, Any]], limit: int = 8) -> List[
 def repo() -> NewsRepo:
     return NewsRepo(current_app.config["DATA_PATH"])  # lightweight per-request helper
 
-def get_social_handles() -> list[str]:
-    raw = (current_app.config.get("SOCIAL_TWITTER_ACCOUNTS") or "").strip()
-    if not raw:
-        return []
-    # Support comma or whitespace separated
-    parts: list[str] = []
-    for token in raw.replace("\n", ",").replace(" ", ",").split(","):
-        h = token.strip().lstrip("@")
-        if h:
-            parts.append(h)
-    # de-duplicate preserving order
-    seen = set()
-    uniq = []
-    for h in parts:
-        if h not in seen:
-            seen.add(h)
-            uniq.append(h)
-    return uniq
-
-def get_primary_social_user() -> str:
-    cfg = (current_app.config.get("SOCIAL_TWITTER_PRIMARY_USER") or "").strip().lstrip("@")
-    if cfg:
-        return cfg
-    hs = get_social_handles()
-    return hs[0] if hs else ""
-
 @web_bp.route("/")
 def index():
     return redirect(url_for("web.mission"))
@@ -601,13 +574,9 @@ def index():
 @web_bp.route("/home")
 def home():
     categories = repo().list_categories()
-    social_handles = get_social_handles()
-    primary_handle = get_primary_social_user()
     return render_template(
         "index.html",
         categories=categories,
-        social_handles=social_handles,
-        primary_handle=primary_handle,
     )
 
 
@@ -680,10 +649,6 @@ def news_list():
             href = None
             if kind == "news":
                 href = build_news_url(q=action.get("query"))
-            elif kind == "social":
-                symbol = action.get("symbol")
-                if symbol:
-                    href = f"{url_for('web.social')}?symbol={symbol}"
             else:
                 href = action.get("href")
             if href:
@@ -934,14 +899,6 @@ def curated():
     if query:
         target = f"{target}?{query}"
     return redirect(target)
-
-
-@web_bp.route("/social")
-def social():
-    """Social insights page (embeds timelines from configured accounts)."""
-    handles = get_social_handles()
-    primary_handle = get_primary_social_user()
-    return render_template("social.html", handles=handles, primary_handle=primary_handle)
 
 
 @web_bp.route("/contact")

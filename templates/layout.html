@@ -17,6 +17,42 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
 </head>
 <body class="theme-dark">
+    <div class="signal-veins-bg" aria-hidden="true">
+        <div class="signal-veins-panel">
+            <div class="signal-veins-base"></div>
+
+            <svg
+                class="signal-veins-svg"
+                viewBox="0 0 1200 700"
+                preserveAspectRatio="none"
+            >
+                <path d="M0 140 C190 80, 240 210, 430 180 S760 80, 1200 170" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="8 18">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-140" dur="18s" repeatCount="indefinite" />
+                </path>
+                <path d="M0 320 C160 250, 250 390, 460 360 S830 250, 1200 350" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="8 18">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-140" dur="22s" repeatCount="indefinite" />
+                </path>
+                <path d="M0 520 C220 450, 310 610, 570 550 S900 470, 1200 560" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="8 18">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-140" dur="26s" repeatCount="indefinite" />
+                </path>
+
+                <path d="M80 150 C240 110, 330 220, 520 195" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="10 28">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-180" dur="10s" repeatCount="indefinite" />
+                </path>
+                <path d="M460 355 C620 318, 760 320, 980 345" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="10 28">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-180" dur="13s" repeatCount="indefinite" />
+                </path>
+                <path d="M620 560 C790 535, 940 500, 1140 548" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="10 28">
+                    <animate attributeName="stroke-dashoffset" from="0" to="-180" dur="16s" repeatCount="indefinite" />
+                </path>
+            </svg>
+
+            <div class="signal-veins-orb signal-veins-orb-a"></div>
+            <div class="signal-veins-orb signal-veins-orb-b"></div>
+            <div class="signal-veins-vignette"></div>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="utility-bar">
             <div class="container-fluid px-3 px-lg-4 d-flex flex-wrap justify-content-between align-items-center gap-3">
@@ -48,7 +84,6 @@
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link {% if endpoint == 'web.mission' %}active{% endif %}" href="{{ url_for('web.mission') }}">Mission</a></li>
                         <li class="nav-item"><a class="nav-link {% if endpoint == 'web.home' %}active{% endif %}" href="{{ url_for('web.home') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link {% if endpoint == 'web.social' %}active{% endif %}" href="{{ url_for('web.social') }}">Social</a></li>
                         <li class="nav-item"><a class="nav-link {% if endpoint == 'web.news_list' %}active{% endif %}" href="{{ url_for('web.news_list') }}">News</a></li>
                     </ul>
                     <form class="header-search ms-lg-auto" role="search" action="{{ url_for('web.news_list') }}" method="get">
@@ -66,7 +101,7 @@
         </nav>
     </header>
 
-    <main class="py-4 py-lg-5">
+    <main class="site-main py-4 py-lg-5">
         <div class="container container-xl px-3 px-lg-4">
             {% block content %}{% endblock %}
         </div>

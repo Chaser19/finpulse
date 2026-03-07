@@ -59,22 +59,13 @@ Macro snapshot stack, TradingView Stock Heatmap, Hotlists (Top Movers), and home
 templates/news.html
 Category selector, quick “lenses” presets, trending tag chips, an “On the radar” category pulse, story clusters, and enriched article cards (credibility, read-time, sentiment, context links). Filters out any internal “System” entries so users only see real news.
 
-templates/social.html
-Embeds timelines from selected social media accounts (currently X/Twitter). Handles are configured via the SOCIAL_TWITTER_ACCOUNTS environment variable.
-
 Static assets
 
 static/js/home.js
 Minimal JS that fetches /api/market/headlines and renders the homepage headlines list. (Heatmap and movers are now pure TradingView embeds and need no JS.)
 
-static/js/tv-charts.js
-Legacy helper that mounted TradingView “advanced chart” widgets for AMEX:SPY, NASDAQ:QQQ, and AMEX:DIA (kept for reference; homepage now relies on heatmap + movers only).
-
 static/css/styles.css
 Dark theme, card styling, TradingView iframe sizing (fill parent), dark list items for headlines, and legible dark form controls for the News advanced filters.
-
-static/js/social.js
-Optional client script that fetches `/api/social/tweets` (when the Twitter API integration is configured) and renders a small tweet list.
 
 Data + config
 
@@ -83,51 +74,6 @@ The ingested news database (JSON array of article objects).
 
 .env
 API keys for news ingestion
-
-Social feeds
-
-You can surface selected social media accounts on the homepage and on a dedicated Social page.
-
-- Variable: SOCIAL_TWITTER_ACCOUNTS
-- Type: comma-separated list of X/Twitter handles (without @)
-- Example: SOCIAL_TWITTER_ACCOUNTS=WSJMarkets,CNBC,TheTerminal
-
-Behavior
-
-- Home page shows a "Social Pulse" section rendering up to two configured accounts with recent posts.
-- The Social page (/social) renders all configured accounts in a responsive grid.
-- Embeds use the official Twitter widgets script and do not require API keys.
-
-Note: If no handles are configured, the UI shows a helpful message with setup instructions instead of embeds.
-
-Server-side social sentiment (optional)
-
-The `/api/social` endpoints enrich dashboards with recent cashtag chatter, engagement-weighted sentiment, and cached user timelines. Under the hood the ingest can talk to the Twitter v2 API and fetch a TradingView market snapshot so the web UI can plot sentiment vs. price/volume.
-
-- Provision a Twitter v2 Project/App with Elevated (or Essential) access that allows recent search and user timeline endpoints.
-- Add to `.env`:
-  - `SOCIAL_TWITTER_BEARER_TOKEN=<your v2 bearer token>` (omit to use sample data only)
-  - `SOCIAL_TWITTER_SYMBOLS=IXHL,AAPL,ONDS` (comma-separated cashtags to ingest)
-  - Optional tuning:
-    - `SOCIAL_TWITTER_MAX_POSTS=30` (matches the bundled fixtures; increase carefully to stay inside rate limits)
-    - `SOCIAL_TWITTER_LOOKBACK_HOURS=12`
-    - `SOCIAL_TWITTER_PRIMARY_USER=your_handle` (used by the social page timeline card)
-    - `SOCIAL_TWITTER_TIMELINE_CACHE_MINUTES=10` (server-side cache window for `/api/social/tweets`)
-- TradingView snapshots provide the latest close/change while Alpha Vantage TIME_SERIES_DAILY bars render the inline price charts (both rely on free tiers).
-- Run `flask ingest-social` to write `data/social.json` and populate the latest summaries. The command now also calls TradingView’s public scanner endpoint (`https://scanner.tradingview.com/america/scan`) to pull close/volume/change for the requested tickers.
-- Want historical trends while using sample data? After the first ingest, run `flask seed-social-history --points 24` to synthesize a day’s worth of history so the Social dashboard sparklines have signal immediately.
-- Diagnose connectivity with `flask diag-social --symbol SPY`.
-
-Rate limits: the free/essential tiers allow 450 requests per 15 minutes on the `recent search` endpoint. Reduce `SOCIAL_TWITTER_MAX_POSTS` or lengthen `SOCIAL_TWITTER_LOOKBACK_HOURS` if you encounter HTTP 429 responses.
-
-Working without Twitter API access? Leave the bearer token blank. The ingest falls back to `data/sample_twitter_posts.json` (or point `SOCIAL_TWITTER_SAMPLE_FILE` to your own fixture). The bundled sample provides 30 posts per ticker with uneven bullish/neutral/bearish mixes so the Social page still renders top posts, engagement tiers, and net-score trends.
-
-**What the Social page now shows**
-
-- Engagement-weighted net score and bullish/neutral/bearish bar with counts.
-- Top weighted posts (weight = naïve sentiment × likes/reposts amplification) per symbol.
-- Engagement tier badges (high/medium/low) based on likes/reposts.
-- Sparkline trends for net score vs. post volume alongside the latest price/percent-change snapshot from TradingView.
 
 ----
 
@@ -145,16 +91,12 @@ pip install -r requirements.txt
 
 # 2) Set keys (.env)
 cp .env.example .env  # if present, else create .env with keys
-# Required for live news + social price charts:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY / NEWSAPI_KEY (see services/providers.py)
-# Optional for social sentiment: SOCIAL_TWITTER_BEARER_TOKEN, SOCIAL_TWITTER_SYMBOLS, etc.
+# Required for live news and market charts:  MARKETAUX_KEY / FINNHUB_KEY / ALPHAVANTAGE_KEY / NEWSAPI_KEY (see services/providers.py)
 
 # 3) Ingest / refresh data
 export FLASK_APP=app:create_app
 # News auto-refreshes every 2 hours in the background; run manually to force an update
 flask ingest-news
-
-# Social sentiment (optional dashboard)
-# flask ingest-social
 
 # 4) Serve
 python app.py

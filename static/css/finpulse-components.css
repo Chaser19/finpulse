@@ -87,8 +87,7 @@ body.theme-dark::before {
 .mk-card,
 .hero-section,
 .mission-card,
-.news-card,
-.social-panel {
+.news-card {
   border-color: var(--mk-surface-border);
 }
 

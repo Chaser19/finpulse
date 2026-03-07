@@ -23,9 +23,6 @@ main > .container {
 .news-toolbar,
 .macro-tabs-shell,
 .macro-hero,
-.social-panel,
-.social-mock-hero,
-.social-mock-status,
 .mission-roadmap,
 .contact-card,
 .card {
@@ -61,8 +58,7 @@ main > .container {
 .home-shell section,
 .news-page > section,
 .macro-page > section,
-.mission-shell > section,
-.social-mock-page > section {
+.mission-shell > section {
   margin-bottom: 0;
 }
 
@@ -70,7 +66,6 @@ main > .container {
 .news-toolbar,
 .macro-hero,
 .mission-page,
-.social-mock-hero,
 .contact-page {
   box-shadow: var(--bs-box-shadow-sm);
 }
@@ -78,14 +73,9 @@ main > .container {
 .news-toolbar,
 .macro-tabs-shell,
 .mission-roadmap,
-.social-panel,
 .contact-card {
   border: 1px solid rgba(191, 162, 112, 0.26);
   background-color: rgba(255, 251, 244, 0.66);
-}
-
-.social-mock-page {
-  align-content: start;
 }
 
 /* Mission page: remove the outer hero card shell, keep nested cards/panels intact. */
