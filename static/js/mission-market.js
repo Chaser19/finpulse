@@ -109,28 +109,32 @@
       range: "Month 4",
       status: "Upcoming",
       summary:
-        "Harden reliability with validation rules, QA checks, and quality monitoring across the new data pipeline.",
+        "Prove data quality, pipeline resilience, and output credibility. Confirm dashboard correctness across core workflows. Put monitoring and escalation in place before integration.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Raise confidence in data quality and operational reliability."
+            "Prove data quality, pipeline resilience, and output credibility.",
+            "Confirm dashboard correctness across core workflows.",
+            "Put monitoring and escalation in place before integration."
           ]
         },
         {
           title: "Key Workstreams",
           items: [
-            "Add validation checks for completeness, uniqueness, and timestamp consistency.",
-            "Create QA dashboards and alerting thresholds.",
-            "Run test cycles for edge cases and recovery behavior."
+            "Validation rules: completeness, uniqueness, schema, freshness.",
+            "Pipeline QA: reruns, retries, backfills, recovery behaviour.",
+            "Signal QA: sanity checks, drift tests, baseline comparisons.",
+            "Product QA: charts, filters, watchlists, empty/error states.",
+            "Monitoring: alerts for failures, stale data, and anomalous outputs."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "Validation suite passes expected quality thresholds.",
-            "Alerting catches known failure scenarios.",
-            "QA sign-off completed for month 5 integration."
+            "Validation suite passes agreed thresholds.",
+            "No critical defects remain in core workflows.",
+            "Monitoring is live and QA sign-off is complete."
           ]
         }
       ]
@@ -285,49 +289,10 @@
         `
       },
       "phase-4": {
-        title: "Month 4 Validation Dashboard",
-        caption: "Validation coverage, quality gates, and QA readiness signals",
+        title: "Validation Event Gates",
+        caption: "Scroll-linked checkpoints for schema quality, pipeline resilience, signal integrity, and alert readiness",
         svg: `
-          <svg viewBox="0 0 420 280" role="img" aria-label="Waterfall of gross to net alpha and regime sensitivity">
-            <rect x="16" y="16" width="388" height="248" rx="14" fill="rgba(255, 251, 244, 0.76)" stroke="rgba(168, 145, 105, 0.42)" />
-
-            <rect x="30" y="30" width="226" height="220" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="42" y="48" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Alpha waterfall (% annualised)</text>
-            <line x1="44" y1="226" x2="242" y2="226" stroke="rgba(165, 144, 109, 0.58)" stroke-width="1.4" />
-            <rect x="56" y="136" width="28" height="90" rx="4" fill="rgba(121, 145, 106, 0.84)" />
-            <text x="70" y="128" text-anchor="middle" font-size="8.5" fill="#2f3a2a" font-family="Inter, sans-serif">+14.8</text>
-            <rect x="96" y="136" width="28" height="26" rx="4" fill="rgba(178, 124, 70, 0.82)" />
-            <text x="110" y="128" text-anchor="middle" font-size="8.5" fill="#3f2d20" font-family="Inter, sans-serif">-2.1</text>
-            <rect x="136" y="162" width="28" height="18" rx="4" fill="rgba(198, 162, 99, 0.82)" />
-            <text x="150" y="154" text-anchor="middle" font-size="8.5" fill="#4d3f2d" font-family="Inter, sans-serif">-1.4</text>
-            <rect x="176" y="180" width="28" height="16" rx="4" fill="rgba(154, 132, 96, 0.82)" />
-            <text x="190" y="172" text-anchor="middle" font-size="8.5" fill="#4d3f2d" font-family="Inter, sans-serif">-1.7</text>
-            <rect x="216" y="168" width="28" height="58" rx="4" fill="rgba(121, 145, 106, 0.88)" />
-            <text x="230" y="160" text-anchor="middle" font-size="8.5" fill="#2f3a2a" font-family="Inter, sans-serif">9.6 net</text>
-            <line x1="84" y1="136" x2="96" y2="136" stroke="rgba(126, 106, 79, 0.85)" stroke-width="1.4" />
-            <line x1="124" y1="162" x2="136" y2="162" stroke="rgba(126, 106, 79, 0.85)" stroke-width="1.4" />
-            <line x1="164" y1="180" x2="176" y2="180" stroke="rgba(126, 106, 79, 0.85)" stroke-width="1.4" />
-            <line x1="204" y1="196" x2="216" y2="196" stroke="rgba(126, 106, 79, 0.85)" stroke-width="1.4" />
-            <text x="56" y="244" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Gross</text>
-            <text x="95" y="244" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Slip</text>
-            <text x="138" y="244" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Fees</text>
-            <text x="174" y="244" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Impact</text>
-            <text x="214" y="244" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Net</text>
-
-            <rect x="266" y="30" width="124" height="220" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="278" y="48" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Regime sensitivity</text>
-            <line x1="280" y1="226" x2="376" y2="226" stroke="rgba(165, 144, 109, 0.58)" stroke-width="1.4" />
-            <rect x="286" y="184" width="18" height="42" rx="4" fill="rgba(121, 145, 106, 0.82)" />
-            <rect x="312" y="170" width="18" height="56" rx="4" fill="rgba(198, 162, 99, 0.82)" />
-            <rect x="338" y="196" width="18" height="30" rx="4" fill="rgba(178, 124, 70, 0.82)" />
-            <text x="286" y="238" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Low vol</text>
-            <text x="312" y="238" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Normal</text>
-            <text x="338" y="238" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Shock</text>
-            <text x="278" y="102" font-size="9.5" fill="#3f3324" font-family="Inter, sans-serif">Sharpe by regime</text>
-            <text x="278" y="122" font-size="9.2" fill="#3f3324" font-family="Inter, sans-serif">Low vol: 1.48</text>
-            <text x="278" y="138" font-size="9.2" fill="#3f3324" font-family="Inter, sans-serif">Normal: 1.12</text>
-            <text x="278" y="154" font-size="9.2" fill="#3f3324" font-family="Inter, sans-serif">Shock: 0.71</text>
-          </svg>
+          <div class="month4-visual-placeholder" aria-hidden="true"></div>
         `
       },
       "phase-5": {
@@ -561,7 +526,7 @@
       let items = (sourceSection?.items || [])
         .map(compactBullet)
         .filter(Boolean)
-        .slice(0, 3);
+        .slice(0, 5);
 
       if (!items.length) {
         items = [block.fallback];
@@ -579,6 +544,145 @@
     });
   };
 
+  const escapeHtml = (value) =>
+    String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const getRawPhaseItems = (phase, titlePattern) => {
+    const section = (phase.sections || []).find((entry) => titlePattern.test(String(entry?.title || "")));
+    return (section?.items || []).map((item) => String(item || "").trim()).filter(Boolean);
+  };
+
+  const buildMonth4SlideMarkup = (phase) => {
+    const objectives = getRawPhaseItems(phase, /objective/i);
+    const workstreams = getRawPhaseItems(phase, /workstream/i);
+    const exitCriteria = getRawPhaseItems(phase, /exit|criteria/i);
+
+    const toItems = (items) => items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+
+    return `
+      <div class="month4-validation-preview month4-validation-preview-full" data-month4-validation>
+        <span class="month4-validation-kicker">Month 4 Actual Content Redo</span>
+        <div class="month4-hero-row">
+          <div class="month4-hero-copy">
+            <h5 class="month4-validation-title">Validation Event Gates</h5>
+            <p class="month4-validation-subtitle">
+              This keeps the exact Month 4 content already defined: Objectives, Key Workstreams, and Exit Criteria.
+              Only styling and spacing are upgraded to the same visual language as your reference.
+            </p>
+          </div>
+          <span class="month4-hero-badge">Content unchanged</span>
+        </div>
+
+        <section class="month4-stage">
+          <div class="month4-stage-head">
+            <span class="month4-stage-label">Validation &amp; QA Workflow</span>
+            <span class="month4-stage-progress">100%</span>
+          </div>
+
+          <article class="month4-layout-card">
+            <div class="month4-layout-inner">
+              <div class="month4-validation-shell-head">
+                <div>
+                  <span class="month4-shell-kicker">Validation Scroll Observer</span>
+                  <h6 class="month4-shell-title">Month 4 - Validation &amp; QA Trigger Map</h6>
+                </div>
+                <div class="month4-shell-badges">
+                  <span>enter: 80% 20%</span>
+                  <span>debug: true</span>
+                </div>
+              </div>
+
+              <div class="month4-gate-track" aria-hidden="true">
+                <article class="month4-gate-node is-pass" style="--gate-delay: 0ms;">
+                  <span class="month4-gate-dot">OK</span>
+                  <span class="month4-gate-name">Schema &amp; Completeness</span>
+                  <span class="month4-gate-id">Gate 01</span>
+                </article>
+                <article class="month4-gate-node is-pass" style="--gate-delay: 120ms;">
+                  <span class="month4-gate-dot">OK</span>
+                  <span class="month4-gate-name">Pipeline Reliability</span>
+                  <span class="month4-gate-id">Gate 02</span>
+                </article>
+                <article class="month4-gate-node is-review" style="--gate-delay: 240ms;">
+                  <span class="month4-gate-dot">RV</span>
+                  <span class="month4-gate-name">Signal Integrity</span>
+                  <span class="month4-gate-id">Gate 03</span>
+                </article>
+                <article class="month4-gate-node is-ready" style="--gate-delay: 360ms;">
+                  <span class="month4-gate-dot">RD</span>
+                  <span class="month4-gate-name">Monitoring &amp; Alerts</span>
+                  <span class="month4-gate-id">Gate 04</span>
+                </article>
+              </div>
+
+              <div class="month4-gate-grid" data-month4-scroll>
+                <article class="month4-gate-card is-pass" style="--gate-delay: 0ms;">
+                  <div class="month4-gate-card-top">
+                    <span class="month4-gate-icon">DB</span>
+                    <span class="month4-gate-status">Pass</span>
+                  </div>
+                  <h6>Schema &amp; Completeness</h6>
+                  <p>Required fields, types, and missingness thresholds.</p>
+                  <div class="month4-gate-metric">99.3% fields valid</div>
+                </article>
+
+                <article class="month4-gate-card is-pass" style="--gate-delay: 120ms;">
+                  <div class="month4-gate-card-top">
+                    <span class="month4-gate-icon">PL</span>
+                    <span class="month4-gate-status">Pass</span>
+                  </div>
+                  <h6>Pipeline Reliability</h6>
+                  <p>Retries, backfills, reruns, and recovery behaviour.</p>
+                  <div class="month4-gate-metric">14-day stable run</div>
+                </article>
+
+                <article class="month4-gate-card is-review" style="--gate-delay: 240ms;">
+                  <div class="month4-gate-card-top">
+                    <span class="month4-gate-icon">SG</span>
+                    <span class="month4-gate-status">Review</span>
+                  </div>
+                  <h6>Signal Integrity</h6>
+                  <p>Baseline checks, regime sensitivity, and drift review.</p>
+                  <div class="month4-gate-metric">Drift within band</div>
+                </article>
+
+                <article class="month4-gate-card is-ready" style="--gate-delay: 360ms;">
+                  <div class="month4-gate-card-top">
+                    <span class="month4-gate-icon">AL</span>
+                    <span class="month4-gate-status">Ready</span>
+                  </div>
+                  <h6>Monitoring &amp; Alerts</h6>
+                  <p>Freshness, anomaly, and failure escalation rules.</p>
+                  <div class="month4-gate-metric">8 alert rules live</div>
+                </article>
+              </div>
+
+              <div class="month4-content-grid">
+                <article class="month4-content-card">
+                  <h6>Objectives</h6>
+                  <ul>${toItems(objectives)}</ul>
+                </article>
+                <article class="month4-content-card">
+                  <h6>Key Workstreams</h6>
+                  <ul>${toItems(workstreams)}</ul>
+                </article>
+                <article class="month4-content-card">
+                  <h6>Exit Criteria</h6>
+                  <ul>${toItems(exitCriteria)}</ul>
+                </article>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    `;
+  };
+
   const initRoadmapTimeline = () => {
     const chips = Array.from(document.querySelectorAll(".mission-phase-chip"));
     const timelineLayoutEl = document.querySelector(".mission-timeline-layout");
@@ -590,6 +694,7 @@
     const groupsEl = document.getElementById("missionPhaseGroups");
     const visualTitleEl = document.getElementById("missionPhaseVisualTitle");
     const visualCanvasEl = document.getElementById("missionPhaseVisualCanvas");
+    const phaseHeaderEl = panelEl?.querySelector(".mission-phase-header");
 
     if (
       !chips.length ||
@@ -615,6 +720,7 @@
     const ZOOM_STEP = 0.25;
     const zoomStateMap = new WeakMap();
     let activeZoomDrag = null;
+    let destroyPhaseVisualEnhancements = () => {};
 
     const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
@@ -695,6 +801,42 @@
       }
       getZoomState(zoomRoot);
       applyZoomState(zoomRoot);
+    };
+
+    const initMonth4ValidationVisual = () => {
+      const month4Root =
+        groupsEl.querySelector("[data-month4-validation]") ||
+        visualCanvasEl.querySelector("[data-month4-validation]");
+      if (!month4Root) {
+        return () => {};
+      }
+
+      const activationTarget = month4Root.querySelector("[data-month4-scroll]") || month4Root;
+      const reveal = () => {
+        month4Root.classList.add("is-visible");
+      };
+
+      if (prefersReducedMotion || typeof IntersectionObserver === "undefined") {
+        reveal();
+        return () => {};
+      }
+
+      let revealed = false;
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const [entry] = entries;
+          if (!entry || !entry.isIntersecting || revealed) {
+            return;
+          }
+          revealed = true;
+          reveal();
+          observer.disconnect();
+        },
+        { threshold: 0.24 }
+      );
+
+      observer.observe(activationTarget);
+      return () => observer.disconnect();
     };
 
     visualCanvasEl.addEventListener("click", (event) => {
@@ -813,47 +955,65 @@
       const visual = getPhaseVisual(phase.id);
       visualTitleEl.textContent = visual.title;
       visualCanvasEl.innerHTML = visual.svg;
+      destroyPhaseVisualEnhancements();
+      destroyPhaseVisualEnhancements = () => {};
 
       const isDataLayoutPhase = phase.id === "phase-2";
       const isModelValidationPhase = phase.id === "phase-3";
+      const isMonth4ValidationPhase = phase.id === "phase-4";
       const isExpandedVisualPhase = phase.id === "phase-1" || isDataLayoutPhase || isModelValidationPhase;
       if (timelineLayoutEl) {
         timelineLayoutEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
         timelineLayoutEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
+        timelineLayoutEl.classList.toggle("is-month4-validation-focus", isMonth4ValidationPhase);
       }
       panelEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
+      panelEl.classList.toggle("is-month4-full-slide", isMonth4ValidationPhase);
+      groupsEl.classList.toggle("is-month4-full-slide", isMonth4ValidationPhase);
+      if (phaseHeaderEl) {
+        phaseHeaderEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
+      }
+      titleEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
+      summaryEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
       if (visualCardEl) {
         visualCardEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
         visualCardEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
+        visualCardEl.classList.toggle("is-month4-validation-focus", isMonth4ValidationPhase);
         visualCardEl.classList.toggle("is-expanded-visual", isExpandedVisualPhase);
+        visualCardEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
       }
 
       initPhaseVisualZoom();
-
       groupsEl.innerHTML = "";
-      normalisePhaseSections(phase).forEach((section) => {
-        const wrapper = document.createElement("section");
-        wrapper.className = "mission-phase-group";
+      if (isMonth4ValidationPhase) {
+        groupsEl.innerHTML = buildMonth4SlideMarkup(phase);
+      } else {
+        normalisePhaseSections(phase).forEach((section) => {
+          const wrapper = document.createElement("section");
+          wrapper.className = "mission-phase-group";
 
-        const heading = document.createElement("h5");
-        heading.textContent = section.title || "";
-        wrapper.appendChild(heading);
+          const heading = document.createElement("h5");
+          heading.textContent = section.title || "";
+          wrapper.appendChild(heading);
 
-        const list = document.createElement("ul");
-        const conciseItems = (section.items || [])
-          .map(compactBullet)
-          .filter(Boolean)
-          .slice(0, 3);
+          const list = document.createElement("ul");
+          const maxItems = section.title === "Key Workstreams" ? 5 : 3;
+          const conciseItems = (section.items || [])
+            .map(compactBullet)
+            .filter(Boolean)
+            .slice(0, maxItems);
 
-        conciseItems.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          list.appendChild(li);
+          conciseItems.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            list.appendChild(li);
+          });
+          wrapper.appendChild(list);
+
+          groupsEl.appendChild(wrapper);
         });
-        wrapper.appendChild(list);
-
-        groupsEl.appendChild(wrapper);
-      });
+      }
+      destroyPhaseVisualEnhancements = initMonth4ValidationVisual();
     };
 
     const swapPhaseContent = (phase, skipTransition) => {
