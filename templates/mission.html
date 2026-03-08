@@ -169,13 +169,13 @@
           </p>
           <p class="mission-signals-quip mb-0">Listen for the whisper before the market calls it fact.</p>
         </div>
-        <article class="card shadow-sm mission-visual-card home-chart-card" data-scroll-item="engagement">
+        <article class="card shadow-sm mission-visual-card mission-engagement-card" data-scroll-item="engagement">
           <div class="card-body">
-            <div class="home-chart-header mission-engagement-header">
+            <div class="mission-engagement-header">
               <h2 class="h5 mb-0">Engagement Intensity vs Price Reaction</h2>
               <span class="mission-engagement-hint">Scroll to zoom • Drag to pan • Hover for insight</span>
             </div>
-            <div class="home-chart-canvas mission-engagement-chart-wrap">
+            <div class="mission-engagement-chart-wrap">
               <canvas id="priceEngagementChart" aria-label="Price versus engagement chart"></canvas>
               <div id="fpTooltip" class="fp-tooltip" role="status" aria-live="polite" style="opacity:0;"></div>
             </div>
@@ -444,7 +444,7 @@
 
         <section class="mission-cta-band" aria-label="Mission actions">
           <div class="mission-cta-actions">
-            <a class="btn btn-primary" href="{{ url_for('web.home') }}">Back to Homepage</a>
+            <a class="btn btn-primary" href="#mission-signal-headline">Back to Top</a>
             <a class="btn btn-outline-light" href="{{ url_for('web.contact') }}">Contact Team</a>
           </div>
         </section>

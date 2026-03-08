@@ -54,14 +54,12 @@ main > .container {
   padding: 0.38rem 0.85rem;
 }
 
-.home-shell section,
 .news-page > section,
 .macro-page > section,
 .mission-shell > section {
   margin-bottom: 0;
 }
 
-.home-hero,
 .news-toolbar,
 .macro-hero,
 .mission-page,

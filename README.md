@@ -11,8 +11,7 @@ Flask app factory (`create_app()`), loads `.env`, and registers the web/api blue
 web.py
 “Pages” blueprint. Routes:
 
-/ – homepage redirect
-/home – homepage
+/ – redirect to mission
 /mission – mission page
 /contact – contact page
 
@@ -43,13 +42,7 @@ Templates
 templates/layout.html
 Dark navbar + search; includes Bootstrap, global CSS/JS; sets page blocks.
 
-templates/index.html
-Homepage with chart components and marketing content.
-
 Static assets
-
-`static/js/home-chart.js`
-Homepage chart interactions.
 
 static/css/styles.css
 Global theme and component styling.

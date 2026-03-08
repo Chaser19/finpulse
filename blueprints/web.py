@@ -66,11 +66,6 @@ def index():
     return redirect(url_for("web.mission"))
 
 
-@web_bp.route("/home")
-def home():
-    return render_template("index.html")
-
-
 @web_bp.route("/contact")
 def contact():
     return render_template("contact.html")

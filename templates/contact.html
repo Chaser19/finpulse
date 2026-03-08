@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% block title %}Contact | Finpulse{% endblock %}
+{% block body_class %} contact-body{% endblock %}
 
 {% block content %}
   <section class="hero-section contact-page mk-page mk-page-contact" data-page="contact">
@@ -111,7 +112,7 @@
       </div>
 
       <div class="d-flex flex-wrap gap-2 contact-actions">
-        <a class="btn btn-primary" href="{{ url_for('web.home') }}">Back to Homepage</a>
+        <a class="btn btn-primary" href="{{ url_for('web.mission') }}">Back to Mission</a>
         <a class="btn btn-outline-light" href="mailto:hello@finpulse.ai">Send Email</a>
       </div>
     </div>

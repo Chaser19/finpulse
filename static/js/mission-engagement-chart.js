@@ -62,13 +62,6 @@
   };
 
   const ENG_JOLT = 7.5;
-  const PRICE_JOLT = 1.2;
-  const isNotableIndex = (i) => {
-    if (i <= 0) return false;
-    const dE = engagementData[i] - engagementData[i - 1];
-    const dP = priceData[i] - priceData[i - 1];
-    return Math.abs(dE) >= ENG_JOLT || Math.abs(dP) >= PRICE_JOLT;
-  };
 
   const engagementUnderlay = {
     id: "engagementUnderlay",
@@ -136,7 +129,7 @@
           borderWidth: 2.4,
           tension: 0.35,
           yAxisID: "y",
-          pointRadius: (ctx) => (isNotableIndex(ctx.dataIndex) ? 2.5 : 0),
+          pointRadius: 0,
           pointHoverRadius: 5,
           pointHitRadius: 16,
           fill: false
@@ -156,7 +149,7 @@
           borderDash: [6, 6],
           tension: 0.35,
           yAxisID: "y1",
-          pointRadius: (ctx) => (isNotableIndex(ctx.dataIndex) ? 2.5 : 0),
+          pointRadius: 0,
           pointHoverRadius: 5,
           pointHitRadius: 16,
           fill: true
