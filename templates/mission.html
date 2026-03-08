@@ -1,75 +1,175 @@
 {% extends "layout.html" %}
 {% block title %}Mission | Finpulse{% endblock %}
+{% block body_class %} mission-body{% endblock %}
 
 {% block content %}
   <section class="hero-section mission-page mk-page mk-page-mission" data-page="mission">
-    <div class="mission-shell d-grid gap-4 gap-lg-5">
-      <header class="mission-header">
-        <div class="mission-title-row">
-          <img
-            src="{{ url_for('static', filename='img/NavBar(new).png') }}"
-            alt="FinPulse brand mark"
-            class="mission-title-logo"
-          >
-          <div class="mission-title-copy">
-            <p class="mission-title-pretitle mb-0">FinPulse Market Intelligence</p>
-            <h1 id="mission-signal-headline" class="hero-title mb-0">
-              Transforming unstructured market information into
-              <span class="mission-highlight">decision-grade signals</span>
-            </h1>
-          </div>
-        </div>
-      </header>
+    <nav class="mission-section-slider" aria-label="Mission section progress">
+      <button type="button" class="mission-section-dot is-active" data-section-nav="intro" aria-label="Section 1: Thesis" aria-current="true"></button>
+      <button type="button" class="mission-section-dot" data-section-nav="cards" aria-label="Section 2: Model Cards" aria-current="false"></button>
+      <button type="button" class="mission-section-dot" data-section-nav="signals" aria-label="Section 3: Signal Visuals" aria-current="false"></button>
+      <button type="button" class="mission-section-dot" data-section-nav="timeline" aria-label="Section 4: Execution Window" aria-current="false"></button>
+    </nav>
 
-      <section class="mission-core">
-        <div class="mission-core-grid">
-          <div>
-            <h2 class="h4 mb-2">Core Thesis</h2>
-            <p class="mb-0">
-            FinPulse is built on the thesis that <strong class="mission-highlight-inline">information flow</strong> and <strong class="mission-highlight-inline">engagement dynamics</strong> increasingly drive price
-              formation across equities, cryptocurrencies, and commodities. In markets defined by real-time news and narrative-driven positioning,
-              price-and-fundamentals-only models are often insufficient for explaining short-horizon dislocations and regime transitions.
-            </p>
-          </div>
-          <div class="mission-metric-stack" aria-label="Signal objectives">
-            <div class="mission-metric">
-              <span class="mission-metric-label">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8"></circle>
-                  <path d="M12 8v4l3 2"></path>
-                </svg>
-                Signal latency
-              </span>
-              <strong>Reduced</strong>
-            </div>
-            <div class="mission-metric">
-              <span class="mission-metric-label">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M4 6h16v9H8l-4 3z"></path>
-                  <path d="M9 10h6M9 13h4"></path>
-                </svg>
-                Narrative clarity
-              </span>
-              <strong>Increased</strong>
-            </div>
-            <div class="mission-metric">
-              <span class="mission-metric-label">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <circle cx="6.5" cy="8" r="2"></circle>
-                  <circle cx="17.5" cy="8" r="2"></circle>
-                  <circle cx="12" cy="16" r="2"></circle>
-                  <path d="M8.2 9.1l2.9 5.2M15.8 9.1l-2.9 5.2M8.4 8h7.2"></path>
-                </svg>
-                Cross-asset context
-              </span>
-              <strong>Unified</strong>
+    <div class="mission-shell">
+      <section class="mission-scroll-section mission-scroll-section-intro mission-scroll-stage" data-scroll-section="intro">
+        <header class="mission-header">
+          <div class="mission-title-row">
+            <p class="mission-title-pretitle mb-0">FinPulse Market Intelligence</p>
+            <img
+              src="{{ asset_url('img/NavBar(new).png') }}"
+              alt="FinPulse brand mark"
+              class="mission-title-logo"
+            >
+            <div class="mission-title-copy">
+              <h1 id="mission-signal-headline" class="hero-title mb-0">
+                Transforming unstructured social media engagment into
+                <span class="mission-highlight">decision-grade signals</span>
+              </h1>
             </div>
           </div>
-        </div>
+        </header>
+
+        <section class="mission-core">
+          <div class="mission-core-grid">
+            <div>
+              <h2 class="h4 mb-2">Core Thesis</h2>
+              <p class="mb-0">
+              FinPulse is built on the thesis that <strong class="mission-highlight-inline">information flow</strong> and <strong class="mission-highlight-inline">engagement dynamics</strong> increasingly drive price
+                formation across equities, cryptocurrencies, and commodities. In markets defined by real-time news and narrative-driven positioning,
+                price-and-fundamentals-only models are often insufficient for explaining short-horizon dislocations and regime transitions.
+              </p>
+            </div>
+            <div class="mission-metric-stack" aria-label="Signal objectives">
+              <div class="mission-metric">
+                <span class="mission-metric-label">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="8"></circle>
+                    <path d="M12 8v4l3 2"></path>
+                  </svg>
+                  Signal latency
+                </span>
+                <strong>Reduced</strong>
+              </div>
+              <div class="mission-metric">
+                <span class="mission-metric-label">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 6h16v9H8l-4 3z"></path>
+                    <path d="M9 10h6M9 13h4"></path>
+                  </svg>
+                  Narrative clarity
+                </span>
+                <strong>Increased</strong>
+              </div>
+              <div class="mission-metric">
+                <span class="mission-metric-label">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="6.5" cy="8" r="2"></circle>
+                    <circle cx="17.5" cy="8" r="2"></circle>
+                    <circle cx="12" cy="16" r="2"></circle>
+                    <path d="M8.2 9.1l2.9 5.2M15.8 9.1l-2.9 5.2M8.4 8h7.2"></path>
+                  </svg>
+                  Cross-asset context
+                </span>
+                <strong>Unified</strong>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
 
-      <section class="mission-visual-grid" aria-label="Dummy thesis visualisations">
-        <article class="card shadow-sm mission-visual-card home-chart-card">
+      <section class="mission-framework mission-scroll-stage" aria-label="Model focus and market interpretation" data-scroll-section="cards">
+        <div class="mission-framework-head">
+          <span class="mission-roadmap-kicker">Signal framework</span>
+          <h3 class="h5 mb-0">How we Convert Attention into Actionable Intelligence</h3>
+        </div>
+
+        <div class="mission-framework-shell">
+          <div class="mission-framework-rail" role="tablist" aria-label="Signal framework pillars">
+            <button type="button" class="mission-framework-step is-active" role="tab" aria-selected="true" data-framework-step="focus">
+              <span class="mission-framework-step-index" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <path d="M12 3v3M12 18v3M3 12h3M18 12h3"></path>
+                </svg>
+              </span>
+              <span class="mission-framework-step-copy">
+                <strong>Model Development Focus</strong>
+                <span>What we measure and why the feature space matters.</span>
+              </span>
+            </button>
+            <button type="button" class="mission-framework-step" role="tab" aria-selected="false" data-framework-step="signal">
+              <span class="mission-framework-step-index" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 14c2-2.6 4-2.6 6 0s4 2.6 6 0 4-2.6 6 0"></path>
+                  <path d="M4 10c2-2.6 4-2.6 6 0s4 2.6 6 0 4-2.6 6 0"></path>
+                </svg>
+              </span>
+              <span class="mission-framework-step-copy">
+                <strong>Why This Signal Matters</strong>
+                <span>How social flow can reflect and amplify positioning.</span>
+              </span>
+            </button>
+            <button type="button" class="mission-framework-step" role="tab" aria-selected="false" data-framework-step="indicators">
+              <span class="mission-framework-step-index" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20h16"></path>
+                  <path d="M7 20V12M12 20V8M17 20V5"></path>
+                </svg>
+              </span>
+              <span class="mission-framework-step-copy">
+                <strong>Structured Indicators</strong>
+                <span>The concrete outputs used to monitor regimes.</span>
+              </span>
+            </button>
+            <button type="button" class="mission-framework-step" role="tab" aria-selected="false" data-framework-step="roadmap">
+              <span class="mission-framework-step-index" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 21V4"></path>
+                  <path d="M6 5h9l-1.8 3L15 11H6"></path>
+                  <circle cx="16.5" cy="16.5" r="2.5"></circle>
+                </svg>
+              </span>
+              <span class="mission-framework-step-copy">
+                <strong>Positioning &amp; Roadmap</strong>
+                <span>Current status and intended extension path.</span>
+              </span>
+            </button>
+          </div>
+
+          <article class="mission-framework-panel" role="tabpanel" aria-live="polite">
+            <div class="mission-framework-panel-top">
+              <span class="mission-framework-panel-kicker" id="missionFrameworkKicker">Pillar 01</span>
+              <span class="mission-framework-panel-count" id="missionFrameworkCount">01 / 04</span>
+            </div>
+            <h2 class="h5 mb-0" id="missionFrameworkTitle">Model Development Focus</h2>
+            <p class="mb-0" id="missionFrameworkSummary">
+              FinPulse structures market attention into measurable components before any predictive interpretation is attempted.
+            </p>
+            <ul class="mission-framework-list mb-0" id="missionFrameworkList">
+              <li>Track <strong>intensity</strong>, <strong>velocity</strong>, and <strong>persistence</strong> of market-relevant engagement.</li>
+              <li>Classify engagement by <strong>asset class</strong>, <strong>macro theme</strong>, and narrative structure.</li>
+              <li>Evaluate relationships with <strong>price</strong>, <strong>volatility</strong>, <strong>volume</strong>, and <strong>liquidity</strong>.</li>
+            </ul>
+            <div class="mission-framework-meter" aria-hidden="true">
+              <span class="mission-framework-meter-fill" id="missionFrameworkMeterFill"></span>
+            </div>
+          </article>
+        </div>
+
+      </section>
+
+      <section class="mission-visual-grid mission-scroll-stage" aria-label="Dummy thesis visualisations" data-scroll-section="signals">
+        <div class="mission-signals-brief" role="note" aria-label="Signals vision brief">
+          <span class="mission-signals-kicker">Vision</span>
+          <p class="mission-signals-support mb-0">
+            <span class="mission-signals-lead">These views represent working hypotheses, not fixed truths.</span>
+            <span>We believe attention shifts often precede price adjustment, and that persistent narratives can outlive the initial news cycle and shape positioning across assets.</span>
+            <span>The first chart tests where engagement leads or diverges from price; the second tracks which themes endure versus decay.</span>
+          </p>
+          <p class="mission-signals-quip mb-0">Listen for the whisper before the market calls it fact.</p>
+        </div>
+        <article class="card shadow-sm mission-visual-card home-chart-card" data-scroll-item="engagement">
           <div class="card-body">
             <div class="home-chart-header mission-engagement-header">
               <h2 class="h5 mb-0">Engagement Intensity vs Price Reaction</h2>
@@ -82,7 +182,7 @@
           </div>
         </article>
 
-        <article class="card shadow-sm mission-visual-card">
+        <article class="card shadow-sm mission-visual-card" data-scroll-item="narrative">
           <div class="card-body">
             <div class="mission-visual-head">
               <h2 class="h5 mb-0">Narrative Persistence by Theme</h2>
@@ -229,10 +329,10 @@
         </article>
       </section>
 
-      <section class="mission-roadmap" aria-label="Execution timeline">
+      <section class="mission-roadmap mission-scroll-stage" aria-label="Execution timeline" data-scroll-section="timeline">
         <div class="mission-roadmap-head">
           <span class="mission-roadmap-kicker">Execution timeline</span>
-          <h3 class="h5 mb-0">Execution Window </h3>
+          <h3 class="h5 mb-0">Execution Window</h3>
         </div>
 
         <div class="mission-timeline-nav" role="tablist" aria-label="FinPulse roadmap phases">
@@ -341,119 +441,14 @@
             </div>
           </aside>
         </div>
+
+        <section class="mission-cta-band" aria-label="Mission actions">
+          <div class="mission-cta-actions">
+            <a class="btn btn-primary" href="{{ url_for('web.home') }}">Back to Homepage</a>
+            <a class="btn btn-outline-light" href="{{ url_for('web.contact') }}">Contact Team</a>
+          </div>
+        </section>
       </section>
-
-      <section class="mission-grid" aria-label="Model focus and market interpretation">
-        <article class="card shadow-sm mission-card">
-          <div class="card-body">
-            <div class="mission-card-graphic mission-card-graphic-focus" aria-hidden="true">
-              <svg viewBox="0 0 320 100" role="img">
-                <rect x="16" y="18" width="76" height="64" rx="10" fill="rgba(121, 145, 106, 0.3)"></rect>
-                <rect x="102" y="18" width="76" height="64" rx="10" fill="rgba(198, 162, 99, 0.3)"></rect>
-                <rect x="188" y="18" width="116" height="64" rx="10" fill="rgba(178, 124, 70, 0.26)"></rect>
-                <text x="54" y="40" text-anchor="middle">Intensity</text>
-                <text x="54" y="58" text-anchor="middle">0.82</text>
-                <text x="140" y="40" text-anchor="middle">Velocity</text>
-                <text x="140" y="58" text-anchor="middle">+1.7x</text>
-                <text x="246" y="40" text-anchor="middle">Persistence</text>
-                <text x="246" y="58" text-anchor="middle">6.2 days</text>
-                <line x1="52" y1="74" x2="268" y2="74" stroke="rgba(140, 116, 81, 0.56)" stroke-width="1.4"></line>
-                <path d="M52 74L96 68L140 70L184 62L228 58L268 50" fill="none" stroke="rgba(121, 145, 106, 0.86)" stroke-width="2.4"></path>
-              </svg>
-            </div>
-            <h2 class="h5 mb-0">Model Development Focus</h2>
-            <ul class="mission-list mb-0">
-              <li>Track <strong>intensity</strong>, <strong>velocity</strong>, and <strong>persistence</strong> of market-relevant engagement.</li>
-              <li>Classify engagement by <strong>asset class</strong>, <strong>macro theme</strong>, and narrative structure.</li>
-              <li>Evaluate relationships with <strong>price</strong>, <strong>volatility</strong>, <strong>volume</strong>, and <strong>liquidity</strong>.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card shadow-sm mission-card">
-          <div class="card-body">
-            <div class="mission-card-graphic mission-card-graphic-signal" aria-hidden="true">
-              <svg viewBox="0 0 320 100" role="img">
-                <line x1="18" y1="72" x2="302" y2="72" stroke="rgba(140, 116, 81, 0.52)" stroke-width="1.4"></line>
-                <rect x="22" y="48" width="48" height="24" rx="8" fill="rgba(178, 124, 70, 0.3)"></rect>
-                <rect x="82" y="38" width="48" height="34" rx="8" fill="rgba(198, 162, 99, 0.34)"></rect>
-                <rect x="142" y="28" width="48" height="44" rx="8" fill="rgba(121, 145, 106, 0.34)"></rect>
-                <rect x="202" y="18" width="48" height="54" rx="8" fill="rgba(198, 162, 99, 0.34)"></rect>
-                <rect x="262" y="8" width="40" height="64" rx="8" fill="rgba(121, 145, 106, 0.38)"></rect>
-                <path d="M24 76C42 64, 58 64, 72 76" fill="none" stroke="rgba(178, 124, 70, 0.72)" stroke-width="2"></path>
-                <path d="M84 76C102 54, 116 54, 130 76" fill="none" stroke="rgba(178, 124, 70, 0.72)" stroke-width="2"></path>
-                <text x="24" y="90">Event</text>
-                <text x="92" y="90">Spread</text>
-                <text x="154" y="90">Reaction</text>
-                <text x="212" y="90">Positioning</text>
-                <text x="266" y="90">Flow</text>
-              </svg>
-            </div>
-            <h2 class="h5 mb-0">Why This Signal Matters</h2>
-            <p class="mb-0">
-              Social media increasingly operates as a real-time transmission layer for macro releases, geopolitical developments,
-              corporate events, and trader positioning. Participation from analysts, journalists, policymakers, institutions,
-              and retail cohorts means engagement can both <span class="mission-highlight-inline">reflect expectations</span> and
-              <span class="mission-highlight-inline">amplify them</span>.
-            </p>
-          </div>
-        </article>
-
-        <article class="card shadow-sm mission-card">
-          <div class="card-body">
-            <div class="mission-card-graphic mission-card-graphic-indicators" aria-hidden="true">
-              <svg viewBox="0 0 320 100" role="img">
-                <rect x="20" y="20" width="280" height="60" rx="10" fill="rgba(255, 251, 244, 0.5)" stroke="rgba(166, 141, 99, 0.32)"></rect>
-                <text x="34" y="37">Signal stack</text>
-                <rect x="34" y="46" width="78" height="10" rx="4" fill="rgba(121, 145, 106, 0.76)"></rect>
-                <text x="118" y="55">Surge</text>
-                <rect x="146" y="46" width="94" height="10" rx="4" fill="rgba(198, 162, 99, 0.78)"></rect>
-                <text x="246" y="55">Persistence</text>
-                <rect x="34" y="64" width="124" height="10" rx="4" fill="rgba(178, 124, 70, 0.78)"></rect>
-                <text x="164" y="73">Cross-asset sensitivity</text>
-              </svg>
-            </div>
-            <h2 class="h5 mb-0">Structured Indicators</h2>
-            <ul class="mission-list mb-0">
-              <li>Engagement surge flags and sentiment-adjusted momentum.</li>
-              <li>Narrative persistence metrics for medium-term regime tracking.</li>
-              <li>Cross-asset information-sensitivity diagnostics.</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="card shadow-sm mission-card">
-          <div class="card-body">
-            <div class="mission-card-graphic mission-card-graphic-roadmap" aria-hidden="true">
-              <svg viewBox="0 0 320 100" role="img">
-                <line x1="26" y1="64" x2="294" y2="64" stroke="rgba(140, 116, 81, 0.56)" stroke-width="2"></line>
-                <circle cx="46" cy="64" r="8" fill="rgba(198, 162, 99, 0.9)"></circle>
-                <circle cx="116" cy="64" r="8" fill="rgba(198, 162, 99, 0.9)"></circle>
-                <circle cx="186" cy="64" r="8" fill="rgba(198, 162, 99, 0.9)"></circle>
-                <circle cx="256" cy="64" r="8" fill="rgba(121, 145, 106, 0.92)"></circle>
-                <text x="28" y="86">R&amp;D</text>
-                <text x="95" y="86">Validation</text>
-                <text x="174" y="86">Packaging</text>
-                <text x="243" y="86">Platform</text>
-                <rect x="32" y="24" width="240" height="22" rx="11" fill="rgba(121, 145, 106, 0.2)"></rect>
-                <rect x="32" y="24" width="148" height="22" rx="11" fill="rgba(198, 162, 99, 0.42)"></rect>
-                <text x="152" y="39" text-anchor="middle">Maturity progress</text>
-              </svg>
-            </div>
-            <h2 class="h5 mb-0">Positioning & Roadmap</h2>
-            <p class="mb-0">
-              FinPulse is currently a <strong>research-driven, non-commercial initiative</strong> prioritising rigorous data handling,
-              transparent assumptions, and analytical discipline. Over time, the framework is intended to extend into advanced
-              alternative data analysis, macro-thematic research, and cross-asset monitoring applications.
-            </p>
-          </div>
-        </article>
-      </section>
-
-      <div class="mission-actions">
-        <a class="btn btn-primary" href="{{ url_for('web.home') }}">Back to Homepage</a>
-        <a class="btn btn-outline-light" href="{{ url_for('web.contact') }}">Contact Team</a>
-      </div>
     </div>
   </section>
 {% endblock %}
@@ -461,7 +456,8 @@
 {% block scripts %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="{{ url_for('static', filename='js/mission-engagement-chart.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/mission-market.js') }}"></script>
-  <script type="module" src="{{ url_for('static', filename='js/mission-title-split.js') }}"></script>
+  <script src="{{ asset_url('js/mission-engagement-chart.js') }}"></script>
+  <script src="{{ asset_url('js/mission-market.js') }}"></script>
+  <script type="module" src="{{ asset_url('js/mission-title-split.js') }}"></script>
+  <script type="module" src="{{ asset_url('js/mission-scroll-sections.js') }}"></script>
 {% endblock %}

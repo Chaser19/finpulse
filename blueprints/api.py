@@ -1,64 +1,20 @@
 from __future__ import annotations
 
-from pathlib import Path
-
-from flask import Blueprint, abort, jsonify, request
+from flask import Blueprint
 
 from services.market_live import (
     live_energy_weekly,
     live_heatmap,
     live_index_ohlc,
     live_top_movers,
-    todays_headlines_from_repo,
 )
-from services.market_repo import MarketRepo
-from services.news_repo import NewsRepo
 
 api_bp = Blueprint("api", __name__)
-
-
-def repo() -> NewsRepo:
-    from flask import current_app
-
-    return NewsRepo(current_app.config["DATA_PATH"])
-
-
-def market_repo() -> MarketRepo:
-    from flask import current_app
-
-    data_dir = Path(current_app.config["DATA_PATH"]).parent
-    return MarketRepo(data_dir / "market.json")
-
-
-@api_bp.get("/news")
-def api_news_list():
-    """List news with optional filtering: /api/news?tag=Oil&q=OPEC"""
-    tag = request.args.get("tag")
-    q = request.args.get("q", "").strip()
-    items = repo().query_news(tag=tag, q=q)
-    for it in items:
-        it.pop("_date", None)
-    return jsonify(items)
-
-
-@api_bp.get("/news/<news_id>")
-def api_news_detail(news_id: str):
-    item = repo().get_by_id(news_id)
-    if not item:
-        abort(404)
-    item.pop("_date", None)
-    return jsonify(item)
 
 
 @api_bp.get("/market/indexes")
 def api_market_indexes():
     return live_index_ohlc()
-
-
-@api_bp.get("/market/headlines")
-def api_market_headlines():
-    items = repo().list_all()
-    return todays_headlines_from_repo(items, limit=5)
 
 
 @api_bp.get("/market/energy_weekly")

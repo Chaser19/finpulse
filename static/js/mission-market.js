@@ -715,6 +715,8 @@
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let swapTimer = null;
     let resizeTimer = null;
+    let isMeasuringHeights = false;
+    const measuredHeightsByPhase = new Map();
     const ZOOM_MIN = 1;
     const ZOOM_MAX = 4;
     const ZOOM_STEP = 0.25;
@@ -938,6 +940,26 @@
     visualCanvasEl.addEventListener("pointerup", endZoomDrag);
     visualCanvasEl.addEventListener("pointercancel", endZoomDrag);
 
+    const applyMeasuredHeights = (phaseId) => {
+      const measured = measuredHeightsByPhase.get(phaseId);
+      if (!measured) {
+        panelEl.style.minHeight = "";
+        if (visualCardEl) {
+          visualCardEl.style.minHeight = "";
+        }
+        return;
+      }
+
+      panelEl.style.minHeight = `${measured.panel}px`;
+      if (visualCardEl) {
+        if (measured.visual > 0) {
+          visualCardEl.style.minHeight = `${measured.visual}px`;
+        } else {
+          visualCardEl.style.minHeight = "";
+        }
+      }
+    };
+
     const renderPhase = (phase) => {
       rangeEl.textContent = phase.range || "";
       titleEl.textContent = phase.title || "";
@@ -981,6 +1003,10 @@
         visualCardEl.classList.toggle("is-month4-validation-focus", isMonth4ValidationPhase);
         visualCardEl.classList.toggle("is-expanded-visual", isExpandedVisualPhase);
         visualCardEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
+      }
+
+      if (!isMeasuringHeights) {
+        applyMeasuredHeights(phase.id);
       }
 
       initPhaseVisualZoom();
@@ -1039,29 +1065,27 @@
 
     const lockTimelineHeights = (activePhaseId) => {
       const activePhase = roadmapPhases.find((phase) => phase.id === activePhaseId) || roadmapPhases[0];
-      let maxPanelHeight = 0;
-      let maxVisualHeight = 0;
 
       if (timelineLayoutEl) {
         timelineLayoutEl.classList.add("is-measuring");
       }
 
+      isMeasuringHeights = true;
+      measuredHeightsByPhase.clear();
       roadmapPhases.forEach((phase) => {
         renderPhase(phase);
-        maxPanelHeight = Math.max(maxPanelHeight, panelEl.scrollHeight);
-        if (visualCardEl) {
-          maxVisualHeight = Math.max(maxVisualHeight, visualCardEl.scrollHeight);
-        }
+        measuredHeightsByPhase.set(phase.id, {
+          panel: Math.ceil(panelEl.scrollHeight),
+          visual:
+            visualCardEl && !visualCardEl.classList.contains("is-hidden")
+              ? Math.ceil(visualCardEl.scrollHeight)
+              : 0
+        });
       });
-
-      if (maxPanelHeight) {
-        panelEl.style.minHeight = `${Math.ceil(maxPanelHeight)}px`;
-      }
-      if (visualCardEl && maxVisualHeight) {
-        visualCardEl.style.minHeight = `${Math.ceil(maxVisualHeight)}px`;
-      }
+      isMeasuringHeights = false;
 
       renderPhase(activePhase);
+      applyMeasuredHeights(activePhase.id);
       if (timelineLayoutEl) {
         timelineLayoutEl.classList.remove("is-measuring");
       }

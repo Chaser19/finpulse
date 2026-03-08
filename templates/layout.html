@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#f5f1e8">
     <title>{% block title %}Finpulse{% endblock %}</title>
-    <link rel="icon" type="image/png" sizes="1024x1536" href="{{ url_for('static', filename='img/FinPulse-NavBar.png') }}">
-    <link rel="apple-touch-icon" sizes="1024x1536" href="{{ url_for('static', filename='img/FinPulse-NavBar.png') }}">
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="1024x1536" href="{{ asset_url('img/FinPulse-NavBar.png') }}">
+    <link rel="apple-touch-icon" sizes="1024x1536" href="{{ asset_url('img/FinPulse-NavBar.png') }}">
+    <link rel="icon" href="{{ asset_url('favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-formatting.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ asset_url('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset_url('css/bootstrap-formatting.css') }}">
+    <link rel="stylesheet" href="{{ asset_url('css/responsive.css') }}">
 </head>
-<body class="theme-dark">
+<body class="theme-dark{% block body_class %}{% endblock %}">
     <div class="signal-veins-bg" aria-hidden="true">
         <div class="signal-veins-panel">
             <div class="signal-veins-base"></div>
@@ -26,24 +26,30 @@
                 viewBox="0 0 1200 700"
                 preserveAspectRatio="none"
             >
-                <path d="M0 140 C190 80, 240 210, 430 180 S760 80, 1200 170" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="8 18">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-140" dur="18s" repeatCount="indefinite" />
+                <path d="M0 120 C170 70, 230 185, 400 162 S730 66, 1200 156" fill="none" stroke="rgba(120,95,60,0.17)" stroke-width="1.9" stroke-linecap="round">
                 </path>
-                <path d="M0 320 C160 250, 250 390, 460 360 S830 250, 1200 350" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="8 18">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-140" dur="22s" repeatCount="indefinite" />
+                <path d="M0 185 C190 132, 270 245, 448 218 S780 130, 1200 212" fill="none" stroke="rgba(120,95,60,0.16)" stroke-width="1.9" stroke-linecap="round">
                 </path>
-                <path d="M0 520 C220 450, 310 610, 570 550 S900 470, 1200 560" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="8 18">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-140" dur="26s" repeatCount="indefinite" />
+                <path d="M0 252 C200 185, 290 300, 470 278 S815 188, 1200 268" fill="none" stroke="rgba(120,95,60,0.15)" stroke-width="1.9" stroke-linecap="round">
+                </path>
+                <path d="M0 322 C168 258, 258 372, 456 346 S828 252, 1200 336" fill="none" stroke="rgba(120,95,60,0.14)" stroke-width="1.9" stroke-linecap="round">
+                </path>
+                <path d="M0 394 C182 330, 282 442, 500 418 S852 336, 1200 420" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="1.9" stroke-linecap="round">
+                </path>
+                <path d="M0 468 C210 402, 302 530, 552 498 S886 418, 1200 502" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="1.9" stroke-linecap="round">
+                </path>
+                <path d="M0 548 C232 482, 328 622, 592 576 S918 488, 1200 578" fill="none" stroke="rgba(120,95,60,0.13)" stroke-width="1.9" stroke-linecap="round">
                 </path>
 
-                <path d="M80 150 C240 110, 330 220, 520 195" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="10 28">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-180" dur="10s" repeatCount="indefinite" />
+                <path d="M70 132 C226 96, 320 204, 505 180" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.4" stroke-linecap="round">
                 </path>
-                <path d="M460 355 C620 318, 760 320, 980 345" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="10 28">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-180" dur="13s" repeatCount="indefinite" />
+                <path d="M164 214 C332 182, 478 222, 706 206" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.4" stroke-linecap="round">
                 </path>
-                <path d="M620 560 C790 535, 940 500, 1140 548" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.8" stroke-linecap="round" stroke-dasharray="10 28">
-                    <animate attributeName="stroke-dashoffset" from="0" to="-180" dur="16s" repeatCount="indefinite" />
+                <path d="M328 302 C502 266, 646 274, 872 302" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.4" stroke-linecap="round">
+                </path>
+                <path d="M456 410 C636 384, 776 378, 1024 414" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.4" stroke-linecap="round">
+                </path>
+                <path d="M582 512 C756 486, 910 456, 1144 510" fill="none" stroke="rgba(196,158,87,0.46)" stroke-width="2.4" stroke-linecap="round">
                 </path>
             </svg>
 
@@ -64,41 +70,12 @@
                     </span>
                 </div>
                 <div class="utility-links d-flex align-items-center gap-3">
-                    <a class="utility-link" href="{{ url_for('web.news_list') }}#on-the-radar">Market radar</a>
+                    <a class="utility-link" href="{{ url_for('web.mission') }}">Mission</a>
                     <a class="utility-link" href="{{ url_for('web.contact') }}">Contact</a>
                     <a class="utility-link" href="{{ url_for('web.home') }}">Home</a>
                 </div>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg main-nav">
-            <div class="container-fluid px-3 px-lg-4">
-                {% set endpoint = request.endpoint or '' %}
-                <a class="navbar-brand d-flex align-items-center gap-1" href="{{ url_for('web.home') }}">
-                    <img src="{{ url_for('static', filename='img/NavBar(new).png') }}" alt="FinPulse logo" class="brand-logo">
-                    <div class="brand-text">
-                        <span class="brand-name">FinPulse</span>
-                        <span class="brand-subtitle">Market Intelligence</span>
-                    </div>
-                </a>
-                <div class="collapse navbar-collapse" id="nav">
-                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link {% if endpoint == 'web.mission' %}active{% endif %}" href="{{ url_for('web.mission') }}">Mission</a></li>
-                        <li class="nav-item"><a class="nav-link {% if endpoint == 'web.home' %}active{% endif %}" href="{{ url_for('web.home') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link {% if endpoint == 'web.news_list' %}active{% endif %}" href="{{ url_for('web.news_list') }}">News</a></li>
-                    </ul>
-                    <form class="header-search ms-lg-auto" role="search" action="{{ url_for('web.news_list') }}" method="get">
-                        {% if active_tag %}
-                            <input type="hidden" name="tag" value="{{ active_tag }}">
-                        {% endif %}
-                        <input class="form-control header-search-input" type="search" placeholder="Search news &amp; tags" name="q" value="{{ q | default('') }}">
-                        <button class="btn btn-primary header-search-btn" type="submit">Search</button>
-                    </form>
-                </div>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </nav>
     </header>
 
     <main class="site-main py-4 py-lg-5">
@@ -108,7 +85,8 @@
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ asset_url('js/signal-veins.js') }}"></script>
+    <script src="{{ asset_url('js/main.js') }}"></script>
     {% block scripts %}{% endblock %}
 </body>
 </html>

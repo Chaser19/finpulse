@@ -23,7 +23,6 @@ main > .container {
 .news-toolbar,
 .macro-tabs-shell,
 .macro-hero,
-.mission-roadmap,
 .contact-card,
 .card {
   border-radius: var(--bs-card-border-radius);
@@ -72,7 +71,6 @@ main > .container {
 
 .news-toolbar,
 .macro-tabs-shell,
-.mission-roadmap,
 .contact-card {
   border: 1px solid rgba(191, 162, 112, 0.26);
   background-color: rgba(255, 251, 244, 0.66);
@@ -86,6 +84,14 @@ main > .container {
   box-shadow: none;
   padding: 0;
   overflow: visible;
+}
+
+/* Mission page: timeline wrapper should sit directly on the page background. */
+.mission-roadmap {
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 @media (max-width: 991.98px) {
