@@ -109,32 +109,32 @@
       range: "Month 4",
       status: "Upcoming",
       summary:
-        "Prove data quality, pipeline resilience, and output credibility. Confirm dashboard correctness across core workflows. Put monitoring and escalation in place before integration.",
+        "Run four explicit go/no-go gates across data quality, pipeline resilience, signal credibility, and product readiness before Month 5 integration.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Prove data quality, pipeline resilience, and output credibility.",
-            "Confirm dashboard correctness across core workflows.",
-            "Put monitoring and escalation in place before integration."
+            "Validate that core data, pipelines, and signals meet reliability thresholds.",
+            "Find and resolve critical defects before integration work begins.",
+            "Confirm product workflows and monitoring are production-ready."
           ]
         },
         {
           title: "Key Workstreams",
           items: [
-            "Validation rules: completeness, uniqueness, schema, freshness.",
-            "Pipeline QA: reruns, retries, backfills, recovery behaviour.",
-            "Signal QA: sanity checks, drift tests, baseline comparisons.",
-            "Product QA: charts, filters, watchlists, empty/error states.",
-            "Monitoring: alerts for failures, stale data, and anomalous outputs."
+            "Gate 1 (Data Contract): completeness, uniqueness, schema, and freshness checks.",
+            "Gate 2 (Pipeline Reliability): reruns, retries, backfills, and recovery drills.",
+            "Gate 3 (Signal Credibility): sanity checks, drift tests, and baseline comparisons.",
+            "Gate 4 (Product Readiness): chart/filter/watchlist QA and empty/error states.",
+            "Monitoring handoff: failure, stale data, and anomalous output alerts with escalation routing."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "Validation suite passes agreed thresholds.",
-            "No critical defects remain in core workflows.",
-            "Monitoring is live and QA sign-off is complete."
+            "All four gates pass with evidence recorded in the QA log.",
+            "No unresolved critical defects remain in core workflows.",
+            "Monitoring, alerts, and escalation ownership are live and signed off."
           ]
         }
       ]
@@ -145,28 +145,32 @@
       range: "Month 5",
       status: "Upcoming",
       summary:
-        "Integrate the validated data stack with mission-facing outputs and prepare a structured review checkpoint.",
+        "Integrate validated systems into mission-facing workflows, run end-to-end release rehearsal, and complete a review-ready handoff pack for Month 6 decisions.",
       sections: [
         {
           title: "Objectives",
           items: [
-            "Prepare integrated outputs for stakeholder review."
+            "Ship an integrated mission view backed by validated data and signal logic.",
+            "Prove release readiness through a full dry run across core user and ops workflows.",
+            "Deliver a concise review pack that drives clear Month 6 decisions."
           ]
         },
         {
           title: "Key Workstreams",
           items: [
-            "Connect validated data pipeline to mission timeline outputs.",
-            "Assemble review packet with status, risks, and next actions.",
-            "Define month 6 priorities based on review outcomes."
+            "Integration cutover: connect validated pipeline outputs to mission-facing views and APIs.",
+            "Release rehearsal: execute full end-to-end runbook including rollback and incident paths.",
+            "Readiness QA: verify core journeys, SLA checkpoints, and data freshness/service health.",
+            "Review pack assembly: status snapshot, KPI trends, open risks, and decision asks.",
+            "Month 6 planning: convert review outcomes into sequenced priorities with owners."
           ]
         },
         {
           title: "Exit Criteria",
           items: [
-            "Integrated mission output view ready.",
-            "Review checkpoint completed with agreed follow-ups.",
-            "Post-review roadmap approved."
+            "Integrated mission output is live and stable across agreed critical workflows.",
+            "End-to-end rehearsal completes with no unresolved critical issues.",
+            "Review checkpoint closes with approved Month 6 priorities, owners, and timelines."
           ]
         }
       ]
@@ -296,45 +300,10 @@
         `
       },
       "phase-5": {
-        title: "Month 5 Integration Readiness",
-        caption: "Integrated status signals and review checkpoint preparation",
+        title: "Month 5 Integration Command View",
+        caption: "Integration cutover, release rehearsal, and review readiness",
         svg: `
-          <svg viewBox="0 0 420 280" role="img" aria-label="MVP service level dashboard with uptime and latency breakdown">
-            <rect x="16" y="16" width="388" height="248" rx="14" fill="rgba(255, 251, 244, 0.76)" stroke="rgba(168, 145, 105, 0.42)" />
-
-            <rect x="30" y="30" width="174" height="220" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="42" y="48" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Release readiness</text>
-            <rect x="44" y="62" width="146" height="26" rx="7" fill="rgba(121, 145, 106, 0.3)" />
-            <rect x="44" y="98" width="146" height="26" rx="7" fill="rgba(198, 162, 99, 0.3)" />
-            <rect x="44" y="134" width="146" height="26" rx="7" fill="rgba(154, 132, 96, 0.3)" />
-            <rect x="44" y="170" width="146" height="26" rx="7" fill="rgba(178, 124, 70, 0.3)" />
-            <text x="54" y="79" font-size="9.5" fill="#2f3a2a" font-family="Inter, sans-serif">Signal dashboard: 96%</text>
-            <text x="54" y="115" font-size="9.5" fill="#4d3f2d" font-family="Inter, sans-serif">Alert workflow: 94%</text>
-            <text x="54" y="151" font-size="9.5" fill="#4d3f2d" font-family="Inter, sans-serif">API contract: 98%</text>
-            <text x="54" y="187" font-size="9.5" fill="#4d3f2d" font-family="Inter, sans-serif">Mobile QA: 92%</text>
-            <text x="44" y="220" font-size="8.4" fill="#72614b" font-family="Inter, sans-serif" textLength="146" lengthAdjust="spacingAndGlyphs">Freeze breaches (30d): 0</text>
-
-            <rect x="216" y="30" width="174" height="106" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="228" y="48" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Service reliability</text>
-            <circle cx="264" cy="84" r="24" fill="none" stroke="rgba(167, 147, 112, 0.36)" stroke-width="8" />
-            <circle cx="264" cy="84" r="24" fill="none" stroke="rgba(121, 145, 106, 0.88)" stroke-width="8" stroke-dasharray="138 13" transform="rotate(-90 264 84)" />
-            <text x="264" y="87" text-anchor="middle" font-size="10" fill="#2f3a2a" font-family="Inter, sans-serif">99.2%</text>
-            <text x="302" y="76" font-size="9.2" fill="#4d3f2d" font-family="Inter, sans-serif">Error budget</text>
-            <text x="302" y="92" font-size="9.2" fill="#4d3f2d" font-family="Inter, sans-serif">consumed: 41%</text>
-            <text x="302" y="108" font-size="9.2" fill="#4d3f2d" font-family="Inter, sans-serif">SLO breaches: 2</text>
-
-            <rect x="216" y="144" width="174" height="106" rx="10" fill="rgba(255, 251, 244, 0.64)" stroke="rgba(168, 145, 105, 0.3)" />
-            <text x="228" y="162" font-size="10" fill="#5b4e3d" font-family="Inter, sans-serif">Latency p95 (ms)</text>
-            <line x1="228" y1="236" x2="378" y2="236" stroke="rgba(165, 144, 109, 0.58)" stroke-width="1.4" />
-            <rect x="238" y="204" width="20" height="32" rx="4" fill="rgba(121, 145, 106, 0.84)" />
-            <rect x="270" y="188" width="20" height="48" rx="4" fill="rgba(198, 162, 99, 0.84)" />
-            <rect x="302" y="176" width="20" height="60" rx="4" fill="rgba(154, 132, 96, 0.84)" />
-            <rect x="334" y="196" width="20" height="40" rx="4" fill="rgba(178, 124, 70, 0.84)" />
-            <text x="238" y="248" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">UI</text>
-            <text x="270" y="248" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">API</text>
-            <text x="302" y="248" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Alerts</text>
-            <text x="334" y="248" font-size="8.2" fill="#72614b" font-family="Inter, sans-serif">Auth</text>
-          </svg>
+          <div class="month5-visual-placeholder" aria-hidden="true"></div>
         `
       },
       "phase-6": {
@@ -562,123 +531,164 @@
     const workstreams = getRawPhaseItems(phase, /workstream/i);
     const exitCriteria = getRawPhaseItems(phase, /exit|criteria/i);
 
-    const toItems = (items) => items.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    const toItems = (items, fallback) => {
+      const source = items.length ? items : fallback;
+      return source.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    };
 
     return `
-      <div class="month4-validation-preview month4-validation-preview-full" data-month4-validation>
-        <span class="month4-validation-kicker">Month 4 Actual Content Redo</span>
-        <div class="month4-hero-row">
-          <div class="month4-hero-copy">
-            <h5 class="month4-validation-title">Validation Event Gates</h5>
-            <p class="month4-validation-subtitle">
-              This keeps the exact Month 4 content already defined: Objectives, Key Workstreams, and Exit Criteria.
-              Only styling and spacing are upgraded to the same visual language as your reference.
-            </p>
-          </div>
-          <span class="month4-hero-badge">Content unchanged</span>
-        </div>
+      <div class="month4-validation-preview month4-validation-preview-redesign" data-month4-validation>
+        <header class="month4-redesign-head">
+          <span class="month4-redesign-kicker">Month 4 - Validation &amp; QA</span>
+          <h5 class="month4-redesign-title">Single goal: prove the stack is trustworthy before integration.</h5>
+          <p class="month4-redesign-subtitle">
+            Month 4 now follows a strict gate sequence. Each gate has a clear test focus and an explicit pass condition.
+            This makes progress intuitive: pass all gates, close critical defects, and hand off with live monitoring.
+          </p>
+        </header>
 
-        <section class="month4-stage">
-          <div class="month4-stage-head">
-            <span class="month4-stage-label">Validation &amp; QA Workflow</span>
-            <span class="month4-stage-progress">100%</span>
-          </div>
-
-          <article class="month4-layout-card">
-            <div class="month4-layout-inner">
-              <div class="month4-validation-shell-head">
-                <div>
-                  <span class="month4-shell-kicker">Validation Scroll Observer</span>
-                  <h6 class="month4-shell-title">Month 4 - Validation &amp; QA Trigger Map</h6>
-                </div>
-                <div class="month4-shell-badges">
-                  <span>enter: 80% 20%</span>
-                  <span>debug: true</span>
-                </div>
-              </div>
-
-              <div class="month4-gate-track" aria-hidden="true">
-                <article class="month4-gate-node is-pass" style="--gate-delay: 0ms;">
-                  <span class="month4-gate-dot">OK</span>
-                  <span class="month4-gate-name">Schema &amp; Completeness</span>
-                  <span class="month4-gate-id">Gate 01</span>
-                </article>
-                <article class="month4-gate-node is-pass" style="--gate-delay: 120ms;">
-                  <span class="month4-gate-dot">OK</span>
-                  <span class="month4-gate-name">Pipeline Reliability</span>
-                  <span class="month4-gate-id">Gate 02</span>
-                </article>
-                <article class="month4-gate-node is-review" style="--gate-delay: 240ms;">
-                  <span class="month4-gate-dot">RV</span>
-                  <span class="month4-gate-name">Signal Integrity</span>
-                  <span class="month4-gate-id">Gate 03</span>
-                </article>
-                <article class="month4-gate-node is-ready" style="--gate-delay: 360ms;">
-                  <span class="month4-gate-dot">RD</span>
-                  <span class="month4-gate-name">Monitoring &amp; Alerts</span>
-                  <span class="month4-gate-id">Gate 04</span>
-                </article>
-              </div>
-
-              <div class="month4-gate-grid" data-month4-scroll>
-                <article class="month4-gate-card is-pass" style="--gate-delay: 0ms;">
-                  <div class="month4-gate-card-top">
-                    <span class="month4-gate-icon">DB</span>
-                    <span class="month4-gate-status">Pass</span>
-                  </div>
-                  <h6>Schema &amp; Completeness</h6>
-                  <p>Required fields, types, and missingness thresholds.</p>
-                  <div class="month4-gate-metric">99.3% fields valid</div>
-                </article>
-
-                <article class="month4-gate-card is-pass" style="--gate-delay: 120ms;">
-                  <div class="month4-gate-card-top">
-                    <span class="month4-gate-icon">PL</span>
-                    <span class="month4-gate-status">Pass</span>
-                  </div>
-                  <h6>Pipeline Reliability</h6>
-                  <p>Retries, backfills, reruns, and recovery behaviour.</p>
-                  <div class="month4-gate-metric">14-day stable run</div>
-                </article>
-
-                <article class="month4-gate-card is-review" style="--gate-delay: 240ms;">
-                  <div class="month4-gate-card-top">
-                    <span class="month4-gate-icon">SG</span>
-                    <span class="month4-gate-status">Review</span>
-                  </div>
-                  <h6>Signal Integrity</h6>
-                  <p>Baseline checks, regime sensitivity, and drift review.</p>
-                  <div class="month4-gate-metric">Drift within band</div>
-                </article>
-
-                <article class="month4-gate-card is-ready" style="--gate-delay: 360ms;">
-                  <div class="month4-gate-card-top">
-                    <span class="month4-gate-icon">AL</span>
-                    <span class="month4-gate-status">Ready</span>
-                  </div>
-                  <h6>Monitoring &amp; Alerts</h6>
-                  <p>Freshness, anomaly, and failure escalation rules.</p>
-                  <div class="month4-gate-metric">8 alert rules live</div>
-                </article>
-              </div>
-
-              <div class="month4-content-grid">
-                <article class="month4-content-card">
-                  <h6>Objectives</h6>
-                  <ul>${toItems(objectives)}</ul>
-                </article>
-                <article class="month4-content-card">
-                  <h6>Key Workstreams</h6>
-                  <ul>${toItems(workstreams)}</ul>
-                </article>
-                <article class="month4-content-card">
-                  <h6>Exit Criteria</h6>
-                  <ul>${toItems(exitCriteria)}</ul>
-                </article>
-              </div>
-            </div>
+        <section class="month4-redesign-flow" data-month4-scroll aria-label="Month 4 validation gates">
+          <article class="month4-flow-step" style="--month4-step-delay: 0ms;">
+            <span class="month4-flow-week">Week 1</span>
+            <h6>Gate 1: Data Contract</h6>
+            <p>Prove data completeness, uniqueness, schema alignment, and freshness.</p>
+          </article>
+          <article class="month4-flow-step" style="--month4-step-delay: 100ms;">
+            <span class="month4-flow-week">Week 2</span>
+            <h6>Gate 2: Pipeline Reliability</h6>
+            <p>Stress reruns, retries, backfills, and recovery behavior until stable.</p>
+          </article>
+          <article class="month4-flow-step" style="--month4-step-delay: 200ms;">
+            <span class="month4-flow-week">Week 3</span>
+            <h6>Gate 3: Signal Credibility</h6>
+            <p>Validate signal sanity, drift controls, and baseline comparisons.</p>
+          </article>
+          <article class="month4-flow-step" style="--month4-step-delay: 300ms;">
+            <span class="month4-flow-week">Week 4</span>
+            <h6>Gate 4: Product Readiness</h6>
+            <p>QA core UX paths and complete monitoring plus escalation handoff.</p>
           </article>
         </section>
+
+        <section class="month4-redesign-grid" aria-label="Month 4 execution details">
+          <article class="month4-redesign-card">
+            <h6>Objectives</h6>
+            <ul>${toItems(objectives, [
+              "Validate data, pipeline, and signal reliability against agreed thresholds.",
+              "Resolve critical issues before integration starts.",
+              "Ensure product workflows and operations monitoring are ready."
+            ])}</ul>
+          </article>
+          <article class="month4-redesign-card">
+            <h6>Key Workstreams</h6>
+            <ul>${toItems(workstreams, [
+              "Run data contract checks for completeness, uniqueness, schema, and freshness.",
+              "Execute pipeline resilience drills including reruns, retries, and backfills.",
+              "Perform signal quality checks, drift review, and baseline comparisons.",
+              "Validate product flows and finalize alert routing and escalation ownership."
+            ])}</ul>
+          </article>
+          <article class="month4-redesign-card">
+            <h6>Exit Criteria (Go/No-Go)</h6>
+            <ul>${toItems(exitCriteria, [
+              "All four validation gates pass with evidence logged.",
+              "No unresolved critical defects remain in core workflows.",
+              "Monitoring and escalation are live with final sign-off."
+            ])}</ul>
+          </article>
+        </section>
+
+        <aside class="month4-redesign-callout" role="note">
+          <strong>Decision rule:</strong> Month 4 is complete only when every gate passes and no critical risk remains open.
+        </aside>
+      </div>
+    `;
+  };
+
+  const buildMonth5SlideMarkup = (phase) => {
+    const objectives = getRawPhaseItems(phase, /objective/i);
+    const workstreams = getRawPhaseItems(phase, /workstream/i);
+    const exitCriteria = getRawPhaseItems(phase, /exit|criteria/i);
+
+    const toItems = (items, fallback) => {
+      const source = items.length ? items : fallback;
+      return source.map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+    };
+
+    return `
+      <div class="month5-integration-preview" data-month5-integration>
+        <header class="month5-integration-head">
+          <span class="month5-integration-kicker">Month 5 - Integration &amp; Review Readiness</span>
+          <h5 class="month5-integration-title">Single goal: integrate, rehearse, and close with an executable review outcome.</h5>
+          <p class="month5-integration-subtitle">
+            Month 5 is structured as a handoff sprint. Integration ships first, release rehearsal validates operational readiness,
+            and the cycle closes with a decision-grade review pack that sets Month 6 priorities.
+          </p>
+        </header>
+
+        <section class="month5-track" data-month5-scroll aria-label="Month 5 integration sequence">
+          <article class="month5-track-step" style="--month5-step-delay: 0ms;">
+            <span class="month5-track-week">Week 1</span>
+            <h6>Integration Cutover</h6>
+            <p>Connect validated data and signal outputs into mission-facing product paths.</p>
+          </article>
+          <article class="month5-track-step" style="--month5-step-delay: 100ms;">
+            <span class="month5-track-week">Week 2</span>
+            <h6>Release Rehearsal</h6>
+            <p>Run full end-to-end rehearsal, including rollback and incident handling drills.</p>
+          </article>
+          <article class="month5-track-step" style="--month5-step-delay: 200ms;">
+            <span class="month5-track-week">Week 3</span>
+            <h6>Readiness Validation</h6>
+            <p>Confirm critical user journeys, SLA checks, and service/data health signals.</p>
+          </article>
+          <article class="month5-track-step" style="--month5-step-delay: 300ms;">
+            <span class="month5-track-week">Week 4</span>
+            <h6>Review &amp; Month 6 Plan</h6>
+            <p>Finalize decision pack and convert outcomes into owned priorities and timelines.</p>
+          </article>
+        </section>
+
+        <section class="month5-grid" aria-label="Month 5 integration details">
+          <article class="month5-card">
+            <h6>Objectives</h6>
+            <ul>${toItems(objectives, [
+              "Ship integrated mission outputs with validated upstream dependencies.",
+              "Prove operational readiness with a complete release rehearsal.",
+              "Deliver a concise review package for Month 6 decisions."
+            ])}</ul>
+          </article>
+          <article class="month5-card">
+            <h6>Key Workstreams</h6>
+            <ul>${toItems(workstreams, [
+              "Complete integration cutover across mission-facing data and signal surfaces.",
+              "Run end-to-end release rehearsal with rollback and incident scenarios.",
+              "Assemble review packet with KPIs, risks, dependencies, and asks.",
+              "Convert approved outcomes into sequenced Month 6 work with owners."
+            ])}</ul>
+          </article>
+          <article class="month5-card">
+            <h6>Review Pack Contents</h6>
+            <ul>
+              <li>Integrated status snapshot across product, data, and operations.</li>
+              <li>KPI trend summary with variance and risk annotations.</li>
+              <li>Outstanding dependencies and decisions required from stakeholders.</li>
+              <li>Proposed Month 6 plan with scope, owners, and timing.</li>
+            </ul>
+          </article>
+          <article class="month5-card">
+            <h6>Exit Criteria (Go/No-Go)</h6>
+            <ul>${toItems(exitCriteria, [
+              "Integrated output is stable in all agreed critical workflows.",
+              "Release rehearsal completes without unresolved critical defects.",
+              "Month 6 priorities, owners, and timelines are approved in review."
+            ])}</ul>
+          </article>
+        </section>
+
+        <aside class="month5-decision-callout" role="note">
+          <strong>Decision rule:</strong> Month 5 closes only when integration is stable and the review checkpoint yields an approved Month 6 execution plan.
+        </aside>
       </div>
     `;
   };
@@ -805,17 +815,18 @@
       applyZoomState(zoomRoot);
     };
 
-    const initMonth4ValidationVisual = () => {
-      const month4Root =
-        groupsEl.querySelector("[data-month4-validation]") ||
-        visualCanvasEl.querySelector("[data-month4-validation]");
-      if (!month4Root) {
+    const initTimelineSlideReveal = () => {
+      const timelineSlideRoot =
+        groupsEl.querySelector("[data-month4-validation], [data-month5-integration]") ||
+        visualCanvasEl.querySelector("[data-month4-validation], [data-month5-integration]");
+      if (!timelineSlideRoot) {
         return () => {};
       }
 
-      const activationTarget = month4Root.querySelector("[data-month4-scroll]") || month4Root;
+      const activationTarget =
+        timelineSlideRoot.querySelector("[data-month4-scroll], [data-month5-scroll]") || timelineSlideRoot;
       const reveal = () => {
-        month4Root.classList.add("is-visible");
+        timelineSlideRoot.classList.add("is-visible");
       };
 
       if (prefersReducedMotion || typeof IntersectionObserver === "undefined") {
@@ -983,26 +994,32 @@
       const isDataLayoutPhase = phase.id === "phase-2";
       const isModelValidationPhase = phase.id === "phase-3";
       const isMonth4ValidationPhase = phase.id === "phase-4";
+      const isMonth5IntegrationPhase = phase.id === "phase-5";
+      const isSpecialTimelineSlide = isMonth4ValidationPhase || isMonth5IntegrationPhase;
       const isExpandedVisualPhase = phase.id === "phase-1" || isDataLayoutPhase || isModelValidationPhase;
       if (timelineLayoutEl) {
         timelineLayoutEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
         timelineLayoutEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
         timelineLayoutEl.classList.toggle("is-month4-validation-focus", isMonth4ValidationPhase);
+        timelineLayoutEl.classList.toggle("is-month5-integration-focus", isMonth5IntegrationPhase);
       }
       panelEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
       panelEl.classList.toggle("is-month4-full-slide", isMonth4ValidationPhase);
+      panelEl.classList.toggle("is-month5-full-slide", isMonth5IntegrationPhase);
       groupsEl.classList.toggle("is-month4-full-slide", isMonth4ValidationPhase);
+      groupsEl.classList.toggle("is-month5-full-slide", isMonth5IntegrationPhase);
       if (phaseHeaderEl) {
-        phaseHeaderEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
+        phaseHeaderEl.classList.toggle("is-hidden", isSpecialTimelineSlide);
       }
-      titleEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
-      summaryEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
+      titleEl.classList.toggle("is-hidden", isSpecialTimelineSlide);
+      summaryEl.classList.toggle("is-hidden", isSpecialTimelineSlide);
       if (visualCardEl) {
         visualCardEl.classList.toggle("is-data-layout-focus", isDataLayoutPhase);
         visualCardEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
         visualCardEl.classList.toggle("is-month4-validation-focus", isMonth4ValidationPhase);
+        visualCardEl.classList.toggle("is-month5-integration-focus", isMonth5IntegrationPhase);
         visualCardEl.classList.toggle("is-expanded-visual", isExpandedVisualPhase);
-        visualCardEl.classList.toggle("is-hidden", isMonth4ValidationPhase);
+        visualCardEl.classList.toggle("is-hidden", isSpecialTimelineSlide);
       }
 
       if (!isMeasuringHeights) {
@@ -1013,6 +1030,8 @@
       groupsEl.innerHTML = "";
       if (isMonth4ValidationPhase) {
         groupsEl.innerHTML = buildMonth4SlideMarkup(phase);
+      } else if (isMonth5IntegrationPhase) {
+        groupsEl.innerHTML = buildMonth5SlideMarkup(phase);
       } else {
         normalisePhaseSections(phase).forEach((section) => {
           const wrapper = document.createElement("section");
@@ -1039,7 +1058,7 @@
           groupsEl.appendChild(wrapper);
         });
       }
-      destroyPhaseVisualEnhancements = initMonth4ValidationVisual();
+      destroyPhaseVisualEnhancements = initTimelineSlideReveal();
     };
 
     const swapPhaseContent = (phase, skipTransition) => {
