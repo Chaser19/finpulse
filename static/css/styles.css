@@ -3497,7 +3497,7 @@ body.mission-scroll-mode .mission-scroll-stage.mission-grid {
   display: flex;
   flex-direction: column;
   gap: 1.05rem;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.78rem;
 }
 
 .mission-title-row {
@@ -3595,6 +3595,8 @@ body.mission-scroll-mode .mission-scroll-stage.mission-grid {
 }
 
 .mission-core {
+  max-width: 62rem;
+  margin-inline: auto;
   margin-top: 0.35rem;
   margin-bottom: 0.55rem;
 }
@@ -3775,7 +3777,7 @@ body.mission-scroll-mode .mission-scroll-stage.mission-grid {
 .mission-narrative-panel {
   height: auto;
   flex: 1;
-  min-height: 180px;
+  min-height: 168px;
   display: grid;
   grid-template-rows: minmax(0, 1fr) auto;
   gap: 0.32rem;
@@ -3970,7 +3972,7 @@ body.mission-scroll-mode .mission-scroll-stage.mission-grid {
 .mission-engagement-chart-wrap {
   position: relative;
   flex: 1 1 auto;
-  min-height: 268px;
+  min-height: 248px;
   overflow: visible;
   border: 1px solid rgba(60, 44, 28, 0.1);
   border-radius: 0.78rem;
@@ -4072,7 +4074,7 @@ body.mission-scroll-mode .mission-scroll-stage.mission-grid {
 }
 
 .mission-visual-card .mission-engagement-chart-wrap {
-  min-height: 268px;
+  min-height: 248px;
   height: auto;
 }
 
@@ -5403,17 +5405,35 @@ body.mission-body.mission-scroll-mode .mission-framework.mission-scroll-stage {
 
 @media (max-width: 575px) {
   .mission-title-row {
-    grid-template-columns: 92px minmax(0, 1fr);
-    gap: 0.55rem;
+    display: block;
+  }
+
+  .mission-title-row::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .mission-title-pretitle {
     font-size: clamp(0.95rem, 0.86rem + 1.1vw, 1.18rem);
     letter-spacing: 0.07em;
+    margin-bottom: 0.26rem;
   }
 
   .mission-title-logo {
-    transform: translateY(-0.16rem);
+    width: 82px;
+    float: left;
+    margin: 0.04rem 0.5rem 0.15rem 0;
+    transform: none;
+  }
+
+  .mission-title-copy {
+    display: block;
+  }
+
+  .mission-title-copy .hero-title {
+    margin-top: 0;
+    line-height: 1.14;
   }
 
   .mission-roadmap {
@@ -5444,7 +5464,7 @@ body.mission-body.mission-scroll-mode .mission-framework.mission-scroll-stage {
   }
 
   .mission-engagement-chart-wrap {
-    min-height: 230px;
+    min-height: 210px;
   }
 
   .mission-timeline-panel.is-model-validation-focus .mission-phase-group {
