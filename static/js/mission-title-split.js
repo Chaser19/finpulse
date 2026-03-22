@@ -1,13 +1,11 @@
-const MISSION_HEADLINE_SELECTOR = "#mission-signal-headline";
-
-const initMissionHeadlineSplit = async () => {
-  const headline = document.querySelector(MISSION_HEADLINE_SELECTOR);
+export const initMissionHeadlineSplit = async (root) => {
+  const headline = root?.querySelector("[data-mission-headline]");
   if (!headline) {
-    return;
+    return () => {};
   }
 
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
+    return () => {};
   }
 
   try {
@@ -43,10 +41,6 @@ const initMissionHeadlineSplit = async () => {
   } catch (error) {
     console.warn("Mission headline split animation failed to load.", error);
   }
-};
 
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initMissionHeadlineSplit, { once: true });
-} else {
-  initMissionHeadlineSplit();
-}
+  return () => {};
+};

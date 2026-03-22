@@ -2,462 +2,70 @@
 {% block title %}Mission | Finpulse{% endblock %}
 {% block body_class %} mission-body{% endblock %}
 
+{% set mission_narratives = [
+  {
+    "name": "NVDA",
+    "rank": "#1 by persistence",
+    "score": 85,
+    "delta": "↑ +12",
+    "delta_class": "is-up",
+    "strength": "85%",
+    "dominant": "Dominant",
+    "bars": ["9px", "12px", "15px", "19px", "22px"]
+  },
+  {
+    "name": "WMT",
+    "rank": "#2 by persistence",
+    "score": 72,
+    "delta": "↓ -5",
+    "delta_class": "is-down",
+    "strength": "72%",
+    "bars": ["18px", "17px", "15px", "13px", "12px"]
+  },
+  {
+    "name": "XOM",
+    "rank": "#3 by persistence",
+    "score": 63,
+    "delta": "↑ +8",
+    "delta_class": "is-up",
+    "strength": "63%",
+    "bars": ["6px", "9px", "12px", "15px", "17px"]
+  },
+  {
+    "name": "AAPL",
+    "rank": "#4 by persistence",
+    "score": 60,
+    "delta": "→ 0",
+    "delta_class": "is-flat",
+    "strength": "60%",
+    "bars": ["12px", "14px", "14px", "14px", "14px"]
+  },
+  {
+    "name": "JPM",
+    "rank": "#5 by persistence",
+    "score": 55,
+    "delta": "↓ -3",
+    "delta_class": "is-down",
+    "strength": "55%",
+    "bars": ["15px", "14px", "13px", "12px", "11px"]
+  }
+] %}
+
+{% block extra_head %}
+  <link rel="stylesheet" href="{{ asset_url('css/mission.css') }}">
+  <link rel="stylesheet" href="{{ asset_url('css/mission-desktop.css') }}">
+  <link rel="stylesheet" href="{{ asset_url('css/mission-mobile.css') }}">
+{% endblock %}
+
 {% block content %}
-  <section class="hero-section mission-page mk-page mk-page-mission" data-page="mission">
-    <nav class="mission-section-slider" aria-label="Mission section progress">
-      <button type="button" class="mission-section-dot is-active" data-section-nav="intro" aria-label="Section 1: Thesis" aria-current="true"></button>
-      <button type="button" class="mission-section-dot" data-section-nav="cards" aria-label="Section 2: Model Cards" aria-current="false"></button>
-      <button type="button" class="mission-section-dot" data-section-nav="signals" aria-label="Section 3: Signal Visuals" aria-current="false"></button>
-      <button type="button" class="mission-section-dot" data-section-nav="timeline" aria-label="Section 4: Execution Window" aria-current="false"></button>
-    </nav>
-
-    <div class="mission-shell">
-      <section class="mission-scroll-section mission-scroll-section-intro mission-scroll-stage" data-scroll-section="intro">
-        <header class="mission-header">
-          <div class="mission-title-row">
-            <p class="mission-title-pretitle mb-0">FinPulse Market Intelligence</p>
-            <img
-              src="{{ asset_url('img/NavBar(new).png') }}"
-              alt="FinPulse brand mark"
-              class="mission-title-logo"
-            >
-            <div class="mission-title-copy">
-              <h1 id="mission-signal-headline" class="hero-title mb-0">
-                Transforming unstructured social media engagment into
-                <span class="mission-highlight">decision-grade signals</span>
-              </h1>
-            </div>
-          </div>
-        </header>
-
-        <section class="mission-core">
-          <div class="mission-core-grid">
-            <div>
-              <h2 class="h4 mb-2">Core Thesis</h2>
-              <p class="mb-0">
-              FinPulse is built on the thesis that <strong class="mission-highlight-inline">information flow</strong> and <strong class="mission-highlight-inline">engagement dynamics</strong> increasingly drive price
-                formation across equities, cryptocurrencies, and commodities. In markets defined by real-time news and narrative-driven positioning,
-                price-and-fundamentals-only models are often insufficient for explaining short-horizon dislocations and regime transitions.
-              </p>
-            </div>
-            <div class="mission-metric-stack" aria-label="Signal objectives">
-              <div class="mission-metric">
-                <span class="mission-metric-label">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="12" cy="12" r="8"></circle>
-                    <path d="M12 8v4l3 2"></path>
-                  </svg>
-                  Signal latency
-                </span>
-                <strong>Reduced</strong>
-              </div>
-              <div class="mission-metric">
-                <span class="mission-metric-label">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M4 6h16v9H8l-4 3z"></path>
-                    <path d="M9 10h6M9 13h4"></path>
-                  </svg>
-                  Narrative clarity
-                </span>
-                <strong>Increased</strong>
-              </div>
-              <div class="mission-metric">
-                <span class="mission-metric-label">
-                  <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <circle cx="6.5" cy="8" r="2"></circle>
-                    <circle cx="17.5" cy="8" r="2"></circle>
-                    <circle cx="12" cy="16" r="2"></circle>
-                    <path d="M8.2 9.1l2.9 5.2M15.8 9.1l-2.9 5.2M8.4 8h7.2"></path>
-                  </svg>
-                  Cross-asset context
-                </span>
-                <strong>Unified</strong>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <section class="mission-framework mission-scroll-stage" aria-label="Model focus and market interpretation" data-scroll-section="cards">
-        <div class="mission-framework-head">
-          <span class="mission-roadmap-kicker">Signal framework</span>
-          <h3 class="h5 mb-0">How we Convert Attention into Actionable Intelligence</h3>
-        </div>
-
-        <div class="mission-framework-shell">
-          <div class="mission-framework-rail" role="tablist" aria-label="Signal framework pillars">
-            <button type="button" class="mission-framework-step is-active" role="tab" aria-selected="true" data-framework-step="focus">
-              <span class="mission-framework-step-index" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <circle cx="12" cy="12" r="6"></circle>
-                  <path d="M12 3v3M12 18v3M3 12h3M18 12h3"></path>
-                </svg>
-              </span>
-              <span class="mission-framework-step-copy">
-                <strong>Model Development Focus</strong>
-                <span>What we measure and why the feature space matters.</span>
-              </span>
-            </button>
-            <button type="button" class="mission-framework-step" role="tab" aria-selected="false" data-framework-step="signal">
-              <span class="mission-framework-step-index" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 14c2-2.6 4-2.6 6 0s4 2.6 6 0 4-2.6 6 0"></path>
-                  <path d="M4 10c2-2.6 4-2.6 6 0s4 2.6 6 0 4-2.6 6 0"></path>
-                </svg>
-              </span>
-              <span class="mission-framework-step-copy">
-                <strong>Why This Signal Matters</strong>
-                <span>How social flow can reflect and amplify positioning.</span>
-              </span>
-            </button>
-            <button type="button" class="mission-framework-step" role="tab" aria-selected="false" data-framework-step="indicators">
-              <span class="mission-framework-step-index" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4 20h16"></path>
-                  <path d="M7 20V12M12 20V8M17 20V5"></path>
-                </svg>
-              </span>
-              <span class="mission-framework-step-copy">
-                <strong>Structured Indicators</strong>
-                <span>The concrete outputs used to monitor regimes.</span>
-              </span>
-            </button>
-            <button type="button" class="mission-framework-step" role="tab" aria-selected="false" data-framework-step="roadmap">
-              <span class="mission-framework-step-index" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 21V4"></path>
-                  <path d="M6 5h9l-1.8 3L15 11H6"></path>
-                  <circle cx="16.5" cy="16.5" r="2.5"></circle>
-                </svg>
-              </span>
-              <span class="mission-framework-step-copy">
-                <strong>Positioning &amp; Roadmap</strong>
-                <span>Current status and intended extension path.</span>
-              </span>
-            </button>
-          </div>
-
-          <article class="mission-framework-panel" role="tabpanel" aria-live="polite">
-            <div class="mission-framework-panel-top">
-              <span class="mission-framework-panel-kicker" id="missionFrameworkKicker">Pillar 01</span>
-              <span class="mission-framework-panel-count" id="missionFrameworkCount">01 / 04</span>
-            </div>
-            <h2 class="h5 mb-0" id="missionFrameworkTitle">Model Development Focus</h2>
-            <p class="mb-0" id="missionFrameworkSummary">
-              FinPulse structures market attention into measurable components before any predictive interpretation is attempted.
-            </p>
-            <ul class="mission-framework-list mb-0" id="missionFrameworkList">
-              <li>Track <strong>intensity</strong>, <strong>velocity</strong>, and <strong>persistence</strong> of market-relevant engagement.</li>
-              <li>Classify engagement by <strong>asset class</strong>, <strong>macro theme</strong>, and narrative structure.</li>
-              <li>Evaluate relationships with <strong>price</strong>, <strong>volatility</strong>, <strong>volume</strong>, and <strong>liquidity</strong>.</li>
-            </ul>
-            <div class="mission-framework-meter" aria-hidden="true">
-              <span class="mission-framework-meter-fill" id="missionFrameworkMeterFill"></span>
-            </div>
-          </article>
-        </div>
-
-      </section>
-
-      <section class="mission-visual-grid mission-scroll-stage" aria-label="Dummy thesis visualisations" data-scroll-section="signals">
-        <div class="mission-signals-brief" role="note" aria-label="Signals vision brief">
-          <span class="mission-signals-kicker">Vision</span>
-          <p class="mission-signals-support mb-0">
-            <span class="mission-signals-lead">These views represent working hypotheses, not fixed truths.</span>
-            <span>We believe attention shifts often precede price adjustment, and that persistent narratives can outlive the initial news cycle and shape positioning across assets.</span>
-            <span>The first chart tests where engagement leads or diverges from price; the second tracks which themes endure versus decay.</span>
-          </p>
-          <p class="mission-signals-quip mb-0">Listen for the whisper before the market calls it fact.</p>
-        </div>
-        <article class="card shadow-sm mission-visual-card mission-engagement-card" data-scroll-item="engagement">
-          <div class="card-body">
-            <div class="mission-engagement-header">
-              <h2 class="h5 mb-0">Engagement Intensity vs Price Reaction</h2>
-              <span class="mission-engagement-hint">Scroll to zoom • Drag to pan • Hover for insight</span>
-            </div>
-            <div class="mission-engagement-chart-wrap">
-              <canvas id="priceEngagementChart" aria-label="Price versus engagement chart"></canvas>
-              <div id="fpTooltip" class="fp-tooltip" role="status" aria-live="polite" style="opacity:0;"></div>
-            </div>
-          </div>
-        </article>
-
-        <article class="card shadow-sm mission-visual-card" data-scroll-item="narrative">
-          <div class="card-body">
-            <div class="mission-visual-head">
-              <h2 class="h5 mb-0">Narrative Persistence by Theme</h2>
-              <span class="mission-visual-badge">Dummy view</span>
-            </div>
-            <p class="mission-narrative-subtitle">
-              Composite discourse index across social media, news, and search. Mini bars show the last 5 periods of narrative activity.
-            </p>
-            <div class="mission-narrative-panel" role="img" aria-label="Narrative persistence score table by theme">
-              <div class="mission-narrative-table-wrap">
-                <div class="mission-narrative-table">
-                  <div class="mission-narrative-colheads">
-                    <span>Theme</span>
-                    <span>Recent</span>
-                    <span>Strength</span>
-                    <span class="is-right">Score</span>
-                    <span class="is-right">Delta</span>
-                  </div>
-
-                  <div class="mission-narrative-rows">
-                    <div class="mission-narrative-row">
-                      <div class="mission-theme-cell">
-                        <div class="mission-theme-topline">
-                          <span class="mission-theme-name">NVDA</span>
-                          <span class="mission-dominant-badge">Dominant</span>
-                        </div>
-                        <span class="mission-theme-rank">#1 by persistence</span>
-                      </div>
-                      <div class="mission-mini-chart" aria-hidden="true">
-                        <span style="--h: 9px"></span>
-                        <span style="--h: 12px"></span>
-                        <span style="--h: 15px"></span>
-                        <span style="--h: 19px"></span>
-                        <span style="--h: 22px"></span>
-                      </div>
-                      <div class="mission-strength-track" aria-hidden="true">
-                        <span style="width: 85%"></span>
-                      </div>
-                      <div class="mission-score-cell">85</div>
-                      <div class="mission-delta-cell">
-                        <span class="mission-delta-badge is-up">↑ +12</span>
-                      </div>
-                    </div>
-
-                    <div class="mission-narrative-row">
-                      <div class="mission-theme-cell">
-                        <div class="mission-theme-topline">
-                          <span class="mission-theme-name">WMT</span>
-                        </div>
-                        <span class="mission-theme-rank">#2 by persistence</span>
-                      </div>
-                      <div class="mission-mini-chart" aria-hidden="true">
-                        <span style="--h: 18px"></span>
-                        <span style="--h: 17px"></span>
-                        <span style="--h: 15px"></span>
-                        <span style="--h: 13px"></span>
-                        <span style="--h: 12px"></span>
-                      </div>
-                      <div class="mission-strength-track" aria-hidden="true">
-                        <span style="width: 72%"></span>
-                      </div>
-                      <div class="mission-score-cell">72</div>
-                      <div class="mission-delta-cell">
-                        <span class="mission-delta-badge is-down">↓ -5</span>
-                      </div>
-                    </div>
-
-                    <div class="mission-narrative-row">
-                      <div class="mission-theme-cell">
-                        <div class="mission-theme-topline">
-                          <span class="mission-theme-name">XOM</span>
-                        </div>
-                        <span class="mission-theme-rank">#3 by persistence</span>
-                      </div>
-                      <div class="mission-mini-chart" aria-hidden="true">
-                        <span style="--h: 6px"></span>
-                        <span style="--h: 9px"></span>
-                        <span style="--h: 12px"></span>
-                        <span style="--h: 15px"></span>
-                        <span style="--h: 17px"></span>
-                      </div>
-                      <div class="mission-strength-track" aria-hidden="true">
-                        <span style="width: 63%"></span>
-                      </div>
-                      <div class="mission-score-cell">63</div>
-                      <div class="mission-delta-cell">
-                        <span class="mission-delta-badge is-up">↑ +8</span>
-                      </div>
-                    </div>
-
-                    <div class="mission-narrative-row">
-                      <div class="mission-theme-cell">
-                        <div class="mission-theme-topline">
-                          <span class="mission-theme-name">AAPL</span>
-                        </div>
-                        <span class="mission-theme-rank">#4 by persistence</span>
-                      </div>
-                      <div class="mission-mini-chart" aria-hidden="true">
-                        <span style="--h: 12px"></span>
-                        <span style="--h: 14px"></span>
-                        <span style="--h: 14px"></span>
-                        <span style="--h: 14px"></span>
-                        <span style="--h: 14px"></span>
-                      </div>
-                      <div class="mission-strength-track" aria-hidden="true">
-                        <span style="width: 60%"></span>
-                      </div>
-                      <div class="mission-score-cell">60</div>
-                      <div class="mission-delta-cell">
-                        <span class="mission-delta-badge is-flat">→ 0</span>
-                      </div>
-                    </div>
-
-                    <div class="mission-narrative-row">
-                      <div class="mission-theme-cell">
-                        <div class="mission-theme-topline">
-                          <span class="mission-theme-name">JPM</span>
-                        </div>
-                        <span class="mission-theme-rank">#5 by persistence</span>
-                      </div>
-                      <div class="mission-mini-chart" aria-hidden="true">
-                        <span style="--h: 15px"></span>
-                        <span style="--h: 14px"></span>
-                        <span style="--h: 13px"></span>
-                        <span style="--h: 12px"></span>
-                        <span style="--h: 11px"></span>
-                      </div>
-                      <div class="mission-strength-track" aria-hidden="true">
-                        <span style="width: 55%"></span>
-                      </div>
-                      <div class="mission-score-cell">55</div>
-                      <div class="mission-delta-cell">
-                        <span class="mission-delta-badge is-down">↓ -3</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <p class="mission-narrative-footnote">
-                Sources: X, Reddit, curated news feeds, search trends • Updated: 15:30 GMT
-              </p>
-            </div>
-          </div>
-        </article>
-      </section>
-
-      <section class="mission-roadmap mission-scroll-stage" aria-label="Execution timeline" data-scroll-section="timeline">
-        <div class="mission-roadmap-head">
-          <span class="mission-roadmap-kicker">Execution timeline</span>
-          <h3 class="h5 mb-0">Execution Window</h3>
-        </div>
-
-        <div class="mission-timeline-nav" role="tablist" aria-label="FinPulse roadmap phases">
-          <button
-            type="button"
-            class="mission-phase-chip is-active"
-            role="tab"
-            aria-selected="true"
-            aria-controls="missionTimelinePanel"
-            data-phase-id="phase-1"
-          >
-            <span class="mission-phase-node" aria-hidden="true"></span>
-            <span class="mission-phase-chip-title">Preliminary Tests &amp; Planning</span>
-            <span class="mission-phase-chip-meta">February</span>
-          </button>
-          <button
-            type="button"
-            class="mission-phase-chip"
-            role="tab"
-            aria-selected="false"
-            aria-controls="missionTimelinePanel"
-            data-phase-id="phase-2"
-          >
-            <span class="mission-phase-node" aria-hidden="true"></span>
-            <span class="mission-phase-chip-title">Data Layout Blueprint</span>
-            <span class="mission-phase-chip-meta">March</span>
-          </button>
-          <button
-            type="button"
-            class="mission-phase-chip"
-            role="tab"
-            aria-selected="false"
-            aria-controls="missionTimelinePanel"
-            data-phase-id="phase-3"
-          >
-            <span class="mission-phase-node" aria-hidden="true"></span>
-            <span class="mission-phase-chip-title">Pipeline Build-Out</span>
-            <span class="mission-phase-chip-meta">April</span>
-          </button>
-          <button
-            type="button"
-            class="mission-phase-chip"
-            role="tab"
-            aria-selected="false"
-            aria-controls="missionTimelinePanel"
-            data-phase-id="phase-4"
-          >
-            <span class="mission-phase-node" aria-hidden="true"></span>
-            <span class="mission-phase-chip-title">Validation &amp; QA</span>
-            <span class="mission-phase-chip-meta">May</span>
-          </button>
-          <button
-            type="button"
-            class="mission-phase-chip"
-            role="tab"
-            aria-selected="false"
-            aria-controls="missionTimelinePanel"
-            data-phase-id="phase-5"
-          >
-            <span class="mission-phase-node" aria-hidden="true"></span>
-            <span class="mission-phase-chip-title">Integration &amp; Review Readiness</span>
-            <span class="mission-phase-chip-meta">June</span>
-          </button>
-        </div>
-
-        <div class="mission-timeline-layout">
-          <article class="mission-timeline-panel" id="missionTimelinePanel" role="tabpanel" aria-live="polite">
-            <div class="mission-phase-header">
-              <span class="mission-phase-range" id="missionPhaseRange">Month 1</span>
-              <span class="mission-phase-status" id="missionPhaseStatus">Completed</span>
-            </div>
-            <h4 class="mission-phase-title" id="missionPhaseTitle">Month 1 — Preliminary Tests &amp; Planning</h4>
-            <p class="mission-phase-summary" id="missionPhaseSummary">
-              Preliminary tests were completed and the team aligned on delivery approach, ownership, and sequencing for the next four months.
-            </p>
-            <div class="mission-phase-grid" id="missionPhaseGroups">
-              <section class="mission-phase-group">
-                <h5>Objectives</h5>
-                <ul>
-                  <li>Establish initial technical feasibility.</li>
-                  <li>Agree on execution scope and priorities.</li>
-                  <li>Set up month-by-month work cadence.</li>
-                </ul>
-              </section>
-              <section class="mission-phase-group">
-                <h5>Exit Criteria</h5>
-                <ul>
-                  <li>Preliminary tests signed off.</li>
-                  <li>Execution workflow documented.</li>
-                  <li>Month 2 data layout scope approved.</li>
-                </ul>
-              </section>
-            </div>
-          </article>
-
-          <aside class="mission-phase-visual-card is-expanded-visual" aria-live="polite">
-            <div class="mission-phase-visual-head">
-              <span class="mission-phase-visual-kicker" id="missionPhaseVisualTitle">initial project layout</span>
-            </div>
-            <div class="mission-phase-visual-canvas" id="missionPhaseVisualCanvas">
-              <img
-                src="{{ url_for('static', filename='img/FinPulse Engine.png') }}"
-                alt="FinPulse Engine diagram for month one execution timeline"
-                loading="lazy"
-              >
-            </div>
-          </aside>
-        </div>
-
-        <section class="mission-cta-band" aria-label="Mission actions">
-          <div class="mission-cta-actions">
-            <a class="btn btn-primary" href="#mission-signal-headline">Back to Top</a>
-            <a class="btn btn-outline-light" href="{{ url_for('web.contact') }}">Contact Team</a>
-          </div>
-        </section>
-      </section>
-    </div>
-  </section>
+  <div class="mission-page-shell" data-page="mission">
+    {% include "mission/_desktop.html" %}
+    {% include "mission/_mobile.html" %}
+  </div>
 {% endblock %}
 
 {% block scripts %}
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@2.0.1/dist/chartjs-plugin-zoom.min.js"></script>
-  <script src="{{ asset_url('js/mission-engagement-chart.js') }}"></script>
-  <script src="{{ asset_url('js/mission-market.js') }}"></script>
-  <script type="module" src="{{ asset_url('js/mission-title-split.js') }}"></script>
-  <script type="module" src="{{ asset_url('js/mission-scroll-sections.js') }}"></script>
+  <script type="module" src="{{ asset_url('js/mission-page.js') }}"></script>
 {% endblock %}

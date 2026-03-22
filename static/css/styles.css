@@ -4160,49 +4160,54 @@ body.mission-body.mission-scroll-mode .mission-roadmap.mission-scroll-stage {
   font-weight: 600;
 }
 
+.mission-timeline-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+}
+
 .mission-timeline-nav {
   position: relative;
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(122px, 1fr);
-  gap: 0.45rem;
-  overflow-x: auto;
-  padding: 0.52rem 0 0.12rem;
-  scrollbar-width: thin;
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(0, auto);
+  gap: 0.7rem;
+  padding: 0.36rem 0 0.12rem;
+}
+
+.mission-timeline-nav::before {
+  content: "";
+  position: absolute;
+  left: calc(0.3rem + 8px - 1px);
+  top: 1rem;
+  bottom: 0.55rem;
+  width: 2px;
+  background: rgba(176, 151, 113, 0.48);
+  pointer-events: none;
+  z-index: 0;
 }
 
 .mission-phase-chip {
   appearance: none;
   -webkit-appearance: none;
-  border: 0;
-  background: transparent;
+  border: 1px solid rgba(176, 151, 113, 0.28);
+  background: rgba(255, 251, 244, 0.72);
   color: var(--fp-text-primary);
-  border-radius: 0.5rem;
-  padding: 0 0.4rem 0.24rem;
-  text-align: center;
+  border-radius: 0.66rem;
+  padding: 0.54rem 0.62rem 0.54rem 1.72rem;
+  text-align: left;
   display: grid;
-  justify-items: center;
+  justify-items: start;
   align-content: start;
-  gap: 0.2rem;
-  min-height: 92px;
+  gap: 0.12rem;
+  min-height: 0;
   position: relative;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   z-index: 1;
 }
 
 .mission-phase-chip::after {
-  content: "";
-  position: absolute;
-  top: 8px;
-  left: calc(50% + 8px);
-  width: calc(100% + 0.45rem);
-  height: 2px;
-  background: rgba(176, 151, 113, 0.5);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.mission-phase-chip:last-child::after {
   display: none;
 }
 
@@ -4213,19 +4218,29 @@ body.mission-body.mission-scroll-mode .mission-roadmap.mission-scroll-stage {
   background: rgba(255, 251, 244, 0.98);
   border: 2px solid rgba(166, 141, 99, 0.76);
   box-shadow: 0 0 0 4px rgba(255, 251, 244, 0.7);
-  margin-bottom: 0.18rem;
+  position: absolute;
+  left: 0.3rem;
+  top: 50%;
+  margin: 0;
+  transform: translateY(-50%);
   transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .mission-phase-chip:hover,
 .mission-phase-chip:focus-visible {
   color: var(--fp-text-primary);
+  border-color: rgba(183, 144, 84, 0.72);
+  background: rgba(255, 252, 248, 0.94);
+  box-shadow: 0 4px 12px rgba(89, 64, 34, 0.08);
   transform: none;
   outline: none;
 }
 
 .mission-phase-chip.is-active {
   color: #6e4d1f;
+  border-color: rgba(154, 116, 60, 0.75);
+  background: linear-gradient(140deg, rgba(251, 243, 229, 0.98), rgba(242, 228, 199, 0.9));
+  box-shadow: inset 0 0 0 1px rgba(255, 247, 232, 0.7);
 }
 
 .mission-phase-chip:hover .mission-phase-node,
@@ -4237,23 +4252,33 @@ body.mission-body.mission-scroll-mode .mission-roadmap.mission-scroll-stage {
 .mission-phase-chip.is-active .mission-phase-node {
   background: linear-gradient(145deg, #cfad72, #af864b);
   border-color: #9a743c;
-  box-shadow: 0 0 0 6px rgba(225, 199, 153, 0.65), 0 4px 10px rgba(83, 62, 35, 0.22);
-  transform: scale(1.06);
+  box-shadow: none;
+  transform: translateY(-50%);
+}
+
+.mission-phase-chip.is-active:hover .mission-phase-node,
+.mission-phase-chip.is-active:focus-visible .mission-phase-node {
+  border-color: #9a743c;
+  box-shadow: none;
 }
 
 .mission-phase-chip-title {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.01em;
-  line-height: 1.2;
-  text-wrap: balance;
+  line-height: 1.25;
+  text-wrap: pretty;
 }
 
 .mission-phase-chip-meta {
   font-size: 0.67rem;
   color: var(--fp-text-muted);
   letter-spacing: 0.04em;
-  line-height: 1.1;
+  line-height: 1.2;
+}
+
+.mission-phase-chip.is-active .mission-phase-chip-meta {
+  color: #705634;
 }
 
 .mission-timeline-panel {
@@ -4327,6 +4352,25 @@ body.mission-body.mission-scroll-mode .mission-roadmap.mission-scroll-stage {
   display: grid;
   gap: 0.48rem;
   grid-template-columns: minmax(0, 1fr);
+}
+
+.mission-phase-grid.is-data-points-list {
+  display: block;
+}
+
+.mission-phase-points-list {
+  margin: 0;
+  padding-left: 1rem;
+  list-style: disc;
+  display: grid;
+  gap: 0.26rem;
+}
+
+.mission-phase-points-list li {
+  color: #564a39;
+  font-size: 0.82rem;
+  line-height: 1.42;
+  text-align: left;
 }
 
 .mission-phase-group {
@@ -5732,12 +5776,43 @@ body.mission-body.mission-scroll-mode .mission-framework.mission-scroll-stage {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .mission-timeline-shell {
+    grid-template-columns: minmax(220px, 0.35fr) minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .mission-timeline-nav {
+    padding-top: 0.08rem;
+    padding-bottom: 0.08rem;
+  }
+
   .mission-timeline-layout {
     grid-template-columns: minmax(0, 1.18fr) minmax(280px, 0.82fr);
   }
 
   .mission-timeline-layout.is-data-layout-focus {
-    grid-template-columns: minmax(0, 0.65fr) minmax(0, 1.35fr);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.62rem;
+  }
+
+  .mission-timeline-layout.is-data-layout-focus .mission-phase-summary {
+    max-width: none;
+  }
+
+  .mission-timeline-layout.is-data-layout-focus .mission-phase-points-list {
+    gap: 0.32rem;
+  }
+
+  .mission-timeline-layout.is-data-layout-focus .mission-phase-visual-card {
+    order: 2;
+  }
+
+  .mission-timeline-layout.is-model-validation-focus .mission-phase-summary {
+    max-width: none;
+  }
+
+  .mission-timeline-layout.is-model-validation-focus .mission-phase-points-list {
+    gap: 0.32rem;
   }
 
   .mission-timeline-layout.is-model-validation-focus {
@@ -5808,17 +5883,14 @@ body.mission-body.mission-scroll-mode .mission-framework.mission-scroll-stage {
   }
 
   .mission-timeline-nav {
-    grid-auto-columns: minmax(172px, 78vw);
-    gap: 0.4rem;
-    padding-top: 0.48rem;
-    padding-bottom: 0.2rem;
-    scroll-snap-type: x mandatory;
+    gap: 0.52rem;
+    padding-top: 0.24rem;
+    padding-bottom: 0.1rem;
   }
 
   .mission-phase-chip {
-    min-height: 94px;
-    scroll-snap-align: start;
-    padding-bottom: 0.26rem;
+    min-height: 0;
+    padding: 0.52rem 0.58rem 0.52rem 1.62rem;
   }
 
   .mission-phase-chip-title {

@@ -1,181 +1,4 @@
-(function () {
-  const roadmapPhases = [
-    {
-      id: "phase-1",
-      title: "Month 1 — Preliminary Tests & Planning",
-      range: "Month 1",
-      status: "Completed",
-      summary:
-        "Completed preliminary tests and aligned operating structure, priorities, and implementation sequence for the next four months.",
-      sections: [
-        {
-          title: "Objectives",
-          items: [
-            "Confirm technical feasibility through preliminary testing.",
-            "Align execution priorities and responsibilities.",
-            "Define month-by-month operating cadence."
-          ]
-        },
-        {
-          title: "Key Workstreams",
-          items: [
-            "Run preliminary data and workflow tests on target sources.",
-            "Define execution owners and handoff checkpoints.",
-            "Document implementation plan for months 2 to 5."
-          ]
-        },
-        {
-          title: "Exit Criteria",
-          items: [
-            "Preliminary tests signed off by the team.",
-            "Execution workflow documented and approved.",
-            "Month 2 data layout scope confirmed."
-          ]
-        }
-      ]
-    },
-    {
-      id: "phase-2",
-      title: "Month 2 — Data Layout Blueprint",
-      range: "Month 2",
-      status: "Next Up",
-      summary:
-        "Finalize the shared data layout specification and lock the structure before downstream pipeline implementation.",
-      sections: [
-        {
-          title: "Objectives",
-          items: [
-            "Design and approve the canonical data layout."
-          ]
-        },
-        {
-          title: "Key Workstreams",
-          items: [
-            "Map entities, fields, and required relationships across core datasets.",
-            "Define naming conventions, timestamps, and identifier standards.",
-            "Review and sign off the Data Layout diagram with implementation owners."
-          ]
-        },
-        {
-          title: "Exit Criteria",
-          items: [
-            "Data layout specification approved.",
-            "Schema contract shared with build owners.",
-            "Implementation backlog sequenced for month 3."
-          ]
-        }
-      ]
-    },
-    {
-      id: "phase-3",
-      title: "Month 3 — Pipeline Build-Out (Operational Signal)",
-      range: "Month 3",
-      status: "Upcoming",
-      summary:
-        "Implement ingestion, transformation, and reproducible training/backtest runs against the approved schema.",
-      sections: [
-        {
-          title: "Objectives",
-          items: [
-            "Convert the Month 2 model into a v1 candidate via systematic tuning and pruning.",
-            "Make walk-forward evaluation the default and publish a single truth pack of results.",
-            "Ensure model outputs are reproducible (dataset snapshot + feature version + model version) across reruns."
-          ]
-        },
-        {
-          title: "Key Workstreams",
-          items: [
-            "Source adapters + canonical schema: Finalise connectors (X/Reddit/news/macro) with idempotent loads, dedupe, and rate-limit handling.",
-            "Transformation + feature layer: Normalisation, entity resolution (tickers, topics), timezone alignment, and missingness rules.",
-            "Training + backtest harness: Walk-forward folds, baseline comparisons, leakage tests, and metrics suite.",
-            "Model registry + versioning: Dataset version, feature version, model artefact version, and reproducible runs.",
-            "Operational readiness: Scheduled runs, run logging, failure modes, fallbacks, and alert thresholds."
-          ]
-        },
-        {
-          title: "Exit Criteria",
-          items: [
-            "Core sources run end-to-end on schedule for >= 14 days with no critical failure.",
-            "Feature set is stable and documented (definition + lineage + missingness handling).",
-            "Walk-forward backtest produces consistent metrics vs baseline, with no leakage flags.",
-            "Each run produces a versioned artefact (data snapshot + features + model output) that can be replayed."
-          ]
-        }
-      ]
-    },
-    {
-      id: "phase-4",
-      title: "Month 4 — Validation & QA",
-      range: "Month 4",
-      status: "Upcoming",
-      summary:
-        "Run four explicit go/no-go gates across data quality, pipeline resilience, signal credibility, and product readiness before Month 5 integration.",
-      sections: [
-        {
-          title: "Objectives",
-          items: [
-            "Validate that core data, pipelines, and signals meet reliability thresholds.",
-            "Find and resolve critical defects before integration work begins.",
-            "Confirm product workflows and monitoring are production-ready."
-          ]
-        },
-        {
-          title: "Key Workstreams",
-          items: [
-            "Gate 1 (Data Contract): completeness, uniqueness, schema, and freshness checks.",
-            "Gate 2 (Pipeline Reliability): reruns, retries, backfills, and recovery drills.",
-            "Gate 3 (Signal Credibility): sanity checks, drift tests, and baseline comparisons.",
-            "Gate 4 (Product Readiness): chart/filter/watchlist QA and empty/error states.",
-            "Monitoring handoff: failure, stale data, and anomalous output alerts with escalation routing."
-          ]
-        },
-        {
-          title: "Exit Criteria",
-          items: [
-            "All four gates pass with evidence recorded in the QA log.",
-            "No unresolved critical defects remain in core workflows.",
-            "Monitoring, alerts, and escalation ownership are live and signed off."
-          ]
-        }
-      ]
-    },
-    {
-      id: "phase-5",
-      title: "Month 5 — Integration & Review Readiness",
-      range: "Month 5",
-      status: "Upcoming",
-      summary:
-        "Integrate validated systems into mission-facing workflows, run end-to-end release rehearsal, and complete a review-ready handoff pack for Month 6 decisions.",
-      sections: [
-        {
-          title: "Objectives",
-          items: [
-            "Ship an integrated mission view backed by validated data and signal logic.",
-            "Prove release readiness through a full dry run across core user and ops workflows.",
-            "Deliver a concise review pack that drives clear Month 6 decisions."
-          ]
-        },
-        {
-          title: "Key Workstreams",
-          items: [
-            "Integration cutover: connect validated pipeline outputs to mission-facing views and APIs.",
-            "Release rehearsal: execute full end-to-end runbook including rollback and incident paths.",
-            "Readiness QA: verify core journeys, SLA checkpoints, and data freshness/service health.",
-            "Review pack assembly: status snapshot, KPI trends, open risks, and decision asks.",
-            "Month 6 planning: convert review outcomes into sequenced priorities with owners."
-          ]
-        },
-        {
-          title: "Exit Criteria",
-          items: [
-            "Integrated mission output is live and stable across agreed critical workflows.",
-            "End-to-end rehearsal completes with no unresolved critical issues.",
-            "Review checkpoint closes with approved Month 6 priorities, owners, and timelines."
-          ]
-        }
-      ]
-    }
-  ];
+import { roadmapPhases } from "./mission-content.js";
 
   const getPhaseVisual = (phaseId) => {
     if (phaseId === "phase-2") {
@@ -693,17 +516,48 @@
     `;
   };
 
-  const initRoadmapTimeline = () => {
-    const chips = Array.from(document.querySelectorAll(".mission-phase-chip"));
-    const timelineLayoutEl = document.querySelector(".mission-timeline-layout");
-    const panelEl = document.getElementById("missionTimelinePanel");
-    const rangeEl = document.getElementById("missionPhaseRange");
-    const statusEl = document.getElementById("missionPhaseStatus");
-    const titleEl = document.getElementById("missionPhaseTitle");
-    const summaryEl = document.getElementById("missionPhaseSummary");
-    const groupsEl = document.getElementById("missionPhaseGroups");
-    const visualTitleEl = document.getElementById("missionPhaseVisualTitle");
-    const visualCanvasEl = document.getElementById("missionPhaseVisualCanvas");
+  const renderTimelineNav = (root) => {
+    const nav = root.querySelector("[data-mission-timeline-nav]");
+    if (!nav) {
+      return [];
+    }
+
+    nav.innerHTML = roadmapPhases
+      .map(
+        (phase, index) => `
+          <button
+            type="button"
+            class="mission-phase-chip${index === 0 ? " is-active" : ""}"
+            role="tab"
+            aria-selected="${index === 0 ? "true" : "false"}"
+            data-phase-id="${phase.id}"
+          >
+            <span class="mission-phase-node" aria-hidden="true"></span>
+            <span class="mission-phase-chip-title">${phase.navTitle}</span>
+            <span class="mission-phase-chip-meta">${phase.navMeta}</span>
+          </button>
+        `
+      )
+      .join("");
+
+    return Array.from(nav.querySelectorAll(".mission-phase-chip"));
+  };
+
+  export const initMissionRoadmapTimeline = (root) => {
+    if (!root) {
+      return;
+    }
+
+    const chips = renderTimelineNav(root);
+    const timelineLayoutEl = root.querySelector(".mission-timeline-layout");
+    const panelEl = root.querySelector("[data-mission-timeline-panel]");
+    const rangeEl = root.querySelector("[data-mission-phase-range]");
+    const statusEl = root.querySelector("[data-mission-phase-status]");
+    const titleEl = root.querySelector("[data-mission-phase-title]");
+    const summaryEl = root.querySelector("[data-mission-phase-summary]");
+    const groupsEl = root.querySelector("[data-mission-phase-groups]");
+    const visualTitleEl = root.querySelector("[data-mission-phase-visual-title]");
+    const visualCanvasEl = root.querySelector("[data-mission-phase-visual-canvas]");
     const phaseHeaderEl = panelEl?.querySelector(".mission-phase-header");
 
     if (
@@ -720,7 +574,7 @@
       return;
     }
 
-    const visualCardEl = visualCanvasEl.closest(".mission-phase-visual-card");
+    const visualCardEl = root.querySelector("[data-mission-phase-visual-card]");
     const phaseSwapTargets = [panelEl, visualCardEl].filter(Boolean);
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     let swapTimer = null;
@@ -993,6 +847,7 @@
 
       const isDataLayoutPhase = phase.id === "phase-2";
       const isModelValidationPhase = phase.id === "phase-3";
+      const useImportantPointsList = isDataLayoutPhase || isModelValidationPhase;
       const isMonth4ValidationPhase = phase.id === "phase-4";
       const isMonth5IntegrationPhase = phase.id === "phase-5";
       const isSpecialTimelineSlide = isMonth4ValidationPhase || isMonth5IntegrationPhase;
@@ -1006,6 +861,7 @@
       panelEl.classList.toggle("is-model-validation-focus", isModelValidationPhase);
       panelEl.classList.toggle("is-month4-full-slide", isMonth4ValidationPhase);
       panelEl.classList.toggle("is-month5-full-slide", isMonth5IntegrationPhase);
+      groupsEl.classList.toggle("is-data-points-list", useImportantPointsList);
       groupsEl.classList.toggle("is-month4-full-slide", isMonth4ValidationPhase);
       groupsEl.classList.toggle("is-month5-full-slide", isMonth5IntegrationPhase);
       if (phaseHeaderEl) {
@@ -1032,6 +888,25 @@
         groupsEl.innerHTML = buildMonth4SlideMarkup(phase);
       } else if (isMonth5IntegrationPhase) {
         groupsEl.innerHTML = buildMonth5SlideMarkup(phase);
+      } else if (useImportantPointsList) {
+        const list = document.createElement("ul");
+        list.className = "mission-phase-points-list";
+        const importantPoints = [
+          ...new Set(
+            normalisePhaseSections(phase)
+              .flatMap((section) => section.items || [])
+              .map(compactBullet)
+              .filter(Boolean)
+          )
+        ].slice(0, isModelValidationPhase ? 9 : 7);
+
+        importantPoints.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          list.appendChild(li);
+        });
+
+        groupsEl.appendChild(list);
       } else {
         normalisePhaseSections(phase).forEach((section) => {
           const wrapper = document.createElement("section");
@@ -1146,18 +1021,23 @@
 
     chips.forEach((chip, index) => {
       if (!chip.id) {
-        chip.id = `missionPhaseTab${index + 1}`;
+        chip.id = `missionDesktopPhaseTab${index + 1}`;
       }
       chip.addEventListener("click", () => setActiveChip(chip, false));
       chip.addEventListener("focus", () => setActiveChip(chip, false));
 
       chip.addEventListener("keydown", (event) => {
-        if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") {
+        if (
+          event.key !== "ArrowRight" &&
+          event.key !== "ArrowLeft" &&
+          event.key !== "ArrowDown" &&
+          event.key !== "ArrowUp"
+        ) {
           return;
         }
 
         event.preventDefault();
-        const direction = event.key === "ArrowRight" ? 1 : -1;
+        const direction = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : -1;
         const nextIndex = (index + direction + chips.length) % chips.length;
         setActiveChip(chips[nextIndex], true);
       });
@@ -1175,6 +1055,3 @@
     lockTimelineHeights(defaultChip.dataset.phaseId);
     window.addEventListener("resize", scheduleHeightLock);
   };
-
-  initRoadmapTimeline();
-})();

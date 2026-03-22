@@ -1,0 +1,140 @@
+body.mission-body .site-header {
+  display: none;
+}
+
+body.mission-body .site-main {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.mission-page-shell {
+  position: relative;
+}
+
+.mission-view-root[hidden] {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .mission-view-desktop {
+    display: block;
+  }
+
+  .mission-view-mobile {
+    display: none;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .mission-view-desktop {
+    display: none;
+  }
+
+  .mission-view-mobile {
+    display: block;
+  }
+}
+
+.mission-highlight {
+  position: relative;
+  background: linear-gradient(120deg, rgba(183, 144, 84, 0.26), rgba(183, 144, 84, 0.12));
+  padding: 0.02rem 0.3rem 0.08rem;
+  border-radius: 0.35rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.mission-highlight-inline {
+  background: linear-gradient(120deg, rgba(183, 144, 84, 0.24), rgba(183, 144, 84, 0.1));
+  padding: 0.02rem 0.24rem 0.08rem;
+  border-radius: 0.25rem;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.mission-dominant-badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.05rem 0.32rem 0.08rem;
+  font-size: 0.5rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(161, 120, 61, 0.95);
+  border: 1px solid rgba(122, 88, 39, 0.44);
+}
+
+.mission-strength-track {
+  height: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(176, 151, 113, 0.42);
+  background: rgba(215, 201, 177, 0.52);
+  overflow: hidden;
+}
+
+.mission-strength-track span {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #b79054, #996f37);
+}
+
+.mission-delta-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  border-radius: 999px;
+  padding: 0.08rem 0.34rem;
+  font-size: 0.56rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.mission-delta-badge.is-up {
+  background: rgba(93, 128, 81, 0.94);
+  border-color: rgba(63, 95, 54, 0.45);
+}
+
+.mission-delta-badge.is-down {
+  background: rgba(148, 89, 85, 0.94);
+  border-color: rgba(113, 61, 57, 0.45);
+}
+
+.mission-delta-badge.is-flat {
+  background: rgba(111, 101, 84, 0.9);
+  border-color: rgba(81, 73, 61, 0.45);
+}
+
+.mission-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.82rem;
+}
+
+.mission-cta-actions .btn {
+  min-width: 12.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 1.2rem;
+  text-align: center;
+}
+
+@media (max-width: 767.98px) {
+  .mission-cta-actions {
+    width: 100%;
+    gap: 0.6rem;
+  }
+
+  .mission-cta-actions .btn {
+    width: 100%;
+    min-width: 0;
+  }
+}

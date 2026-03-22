@@ -1,0 +1,15 @@
+.mission-view-desktop {
+  position: relative;
+}
+
+@media (max-width: 767.98px) {
+  .mission-view-desktop {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mission-view-desktop {
+    display: block;
+  }
+}

@@ -1,0 +1,726 @@
+.mission-view-mobile {
+  height: 100dvh;
+  padding: max(0.75rem, env(safe-area-inset-top)) 0.85rem max(0.85rem, env(safe-area-inset-bottom));
+  overflow: hidden;
+}
+
+.mission-mobile-shell {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.75rem;
+}
+
+.mission-mobile-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.48rem;
+  padding: 0.15rem 0;
+}
+
+.mission-mobile-nav-dot {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0.4rem;
+  height: 0.4rem;
+  min-width: 0;
+  min-height: 0;
+  border: 1px solid rgba(166, 141, 99, 0.68);
+  border-radius: 999px;
+  background: rgba(255, 251, 244, 0.9);
+  padding: 0;
+  flex: 0 0 auto;
+  transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+
+.mission-mobile-nav-dot.is-active {
+  border-color: #9a743c;
+  background: linear-gradient(145deg, #cfad72, #af864b);
+}
+
+.mission-mobile-nav-dot:focus-visible {
+  outline: 2px solid rgba(159, 122, 69, 0.42);
+  outline-offset: 2px;
+}
+
+.mission-mobile-slider {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 0.85rem;
+  min-width: 0;
+  min-height: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  overscroll-behavior-y: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x pinch-zoom;
+}
+
+.mission-mobile-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.mission-mobile-slide {
+  min-width: 0;
+  min-height: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.mission-mobile-slide-scroll {
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+  padding-right: 0.08rem;
+  touch-action: pan-y pinch-zoom;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.mission-mobile-slide-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.mission-mobile-hero,
+.mission-mobile-section,
+.mission-mobile-cta {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.mission-mobile-hero {
+  padding: 0.75rem 0 1.1rem;
+  display: grid;
+  gap: 1.1rem;
+}
+
+.mission-mobile-pretitle,
+.mission-mobile-kicker {
+  color: #7a6040;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-brand {
+  display: grid;
+  grid-template-columns: 108px minmax(0, 1fr);
+  gap: 0.95rem;
+  align-items: center;
+}
+
+.mission-mobile-logo {
+  width: 108px;
+  height: auto;
+  display: block;
+}
+
+.mission-mobile-headline {
+  margin: 0;
+  color: var(--fp-text-primary);
+  font-family: var(--fp-font-display);
+  font-size: clamp(1.55rem, 6vw, 2.05rem);
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+.mission-mobile-summary,
+.mission-mobile-section-copy {
+  color: var(--fp-text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+.mission-mobile-intro-points {
+  display: grid;
+  gap: 0.82rem;
+}
+
+.mission-mobile-intro-point {
+  border-left: 2px solid rgba(183, 144, 84, 0.38);
+  padding-left: 0.72rem;
+  display: grid;
+  gap: 0.18rem;
+}
+
+.mission-mobile-intro-point p {
+  color: var(--fp-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.48;
+  text-align: left;
+}
+
+.mission-mobile-intro-label {
+  color: #7a6040;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-metric-stack {
+  display: grid;
+  gap: 0.68rem;
+}
+
+.mission-mobile-metric {
+  border: 1px solid rgba(170, 149, 113, 0.22);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.46);
+  padding: 0.72rem 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mission-mobile-metric-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: #7a6040;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mission-mobile-metric-label svg {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mission-mobile-metric strong {
+  color: var(--fp-text-primary);
+  font-size: 0.92rem;
+}
+
+.mission-mobile-section {
+  padding: 0.35rem 0 0.8rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.mission-mobile-section-head {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.mission-mobile-section-title {
+  margin: 0;
+  color: var(--fp-text-primary);
+  font-size: 1.18rem;
+  line-height: 1.18;
+}
+
+.mission-mobile-framework-shell,
+.mission-mobile-roadmap-shell,
+.mission-mobile-theme-stack,
+.mission-mobile-roadmap-stack {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.mission-mobile-framework-panel,
+.mission-mobile-roadmap-panel,
+.mission-mobile-theme-card,
+.mission-mobile-roadmap-card {
+  border: 1px solid rgba(170, 149, 113, 0.26);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.52);
+  padding: 0.85rem 0.9rem;
+}
+
+.mission-mobile-framework-shell {
+  gap: 0.68rem;
+}
+
+.mission-mobile-roadmap-shell {
+  gap: 0.68rem;
+}
+
+.mission-mobile-framework-rail,
+.mission-mobile-roadmap-rail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.5rem;
+}
+
+.mission-mobile-framework-tab,
+.mission-mobile-roadmap-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(171, 152, 121, 0.35);
+  border-radius: 0.9rem;
+  background: rgba(255, 251, 244, 0.5);
+  padding: 0.62rem 0.68rem;
+  text-align: left;
+  display: grid;
+  gap: 0.18rem;
+  min-width: 0;
+  min-height: 0;
+}
+
+.mission-mobile-framework-tab.is-active,
+.mission-mobile-roadmap-tab.is-active {
+  border-color: rgba(155, 118, 62, 0.72);
+  background: linear-gradient(145deg, rgba(249, 241, 228, 0.95), rgba(240, 229, 207, 0.82));
+  box-shadow: 0 10px 22px rgba(90, 66, 34, 0.08);
+}
+
+.mission-mobile-framework-tab:focus-visible,
+.mission-mobile-roadmap-tab:focus-visible {
+  outline: 2px solid rgba(159, 122, 69, 0.28);
+  outline-offset: 2px;
+}
+
+.mission-mobile-framework-tab-step,
+.mission-mobile-roadmap-tab-step {
+  color: #7a6040;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-framework-tab-title,
+.mission-mobile-roadmap-tab-title {
+  color: var(--fp-text-primary);
+  font-size: 0.84rem;
+  line-height: 1.24;
+  font-weight: 700;
+}
+
+.mission-mobile-framework-panel,
+.mission-mobile-roadmap-panel {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.mission-mobile-framework-panel {
+  height: 20rem;
+  grid-template-rows: auto auto auto minmax(0, 1fr) auto;
+}
+
+.mission-mobile-framework-panel-top,
+.mission-mobile-roadmap-panel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.mission-mobile-framework-kicker,
+.mission-mobile-framework-count,
+.mission-mobile-roadmap-kicker,
+.mission-mobile-roadmap-count {
+  color: #7a6040;
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-framework-title,
+.mission-mobile-roadmap-title {
+  margin: 0;
+  color: var(--fp-text-primary);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.mission-mobile-framework-summary,
+.mission-mobile-roadmap-summary {
+  margin: 0;
+  color: var(--fp-text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.mission-mobile-framework-list,
+.mission-mobile-roadmap-list {
+  margin: 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.34rem;
+}
+
+.mission-mobile-framework-list {
+  align-content: start;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 0.18rem;
+}
+
+.mission-mobile-framework-list li,
+.mission-mobile-roadmap-list li {
+  color: #564a39;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.mission-mobile-framework-meter {
+  height: 0.42rem;
+  border-radius: 999px;
+  border: 1px solid rgba(170, 149, 113, 0.32);
+  background: rgba(255, 251, 244, 0.7);
+  overflow: hidden;
+}
+
+.mission-mobile-roadmap-meter {
+  height: 0.42rem;
+  border-radius: 999px;
+  border: 1px solid rgba(170, 149, 113, 0.32);
+  background: rgba(255, 251, 244, 0.7);
+  overflow: hidden;
+}
+
+.mission-mobile-framework-meter-fill {
+  display: block;
+  height: 100%;
+  width: 25%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c8a96f, #9f7a45);
+  transition: width 220ms ease;
+}
+
+.mission-mobile-roadmap-meter-fill {
+  display: block;
+  height: 100%;
+  width: 20%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #c8a96f, #9f7a45);
+  transition: width 220ms ease;
+}
+
+.mission-mobile-chart-card {
+  border: 1px solid rgba(170, 149, 113, 0.26);
+}
+
+.mission-mobile-chart-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.mission-mobile-chart-hint {
+  color: var(--fp-text-muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.mission-mobile-chart-wrap {
+  position: relative;
+  min-height: 240px;
+  margin-top: 0.8rem;
+}
+
+.mission-mobile-chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.mission-mobile-theme-card {
+  display: grid;
+  gap: 0.58rem;
+}
+
+.mission-mobile-theme-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.mission-mobile-theme-name-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.mission-mobile-theme-name {
+  color: #3d3123;
+  font-size: 0.96rem;
+  line-height: 1.1;
+}
+
+.mission-mobile-theme-rank {
+  margin-top: 0.18rem;
+  color: #816f56;
+  font-size: 0.72rem;
+  line-height: 1.2;
+}
+
+.mission-mobile-theme-score {
+  display: grid;
+  gap: 0.28rem;
+  justify-items: end;
+  color: #4d3f2d;
+  font-weight: 700;
+}
+
+.mission-mobile-theme-bars {
+  height: 22px;
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.mission-mobile-theme-bars span {
+  width: 9px;
+  height: var(--h, 4px);
+  min-height: 4px;
+  border-radius: 999px;
+  background: rgba(143, 123, 92, 0.7);
+}
+
+.mission-mobile-theme-table {
+  border: 1px solid rgba(170, 149, 113, 0.24);
+  border-radius: 0.92rem;
+  background: rgba(255, 255, 255, 0.48);
+  padding: 0.62rem 0.68rem;
+  display: grid;
+  gap: 0.44rem;
+}
+
+.mission-mobile-theme-table-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 52px 62px;
+  gap: 0.42rem;
+  color: #7a6040;
+  font-size: 0.56rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-theme-table-head .is-right {
+  text-align: right;
+}
+
+.mission-mobile-theme-table-body {
+  display: grid;
+  gap: 0.34rem;
+}
+
+.mission-mobile-theme-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 52px 62px;
+  gap: 0.42rem;
+  align-items: center;
+  border: 1px solid rgba(191, 162, 112, 0.2);
+  border-radius: 0.72rem;
+  background: rgba(255, 255, 255, 0.42);
+  padding: 0.42rem 0.48rem;
+}
+
+.mission-mobile-theme-row-main {
+  min-width: 0;
+  display: grid;
+  gap: 0.16rem;
+}
+
+.mission-mobile-theme-row-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+}
+
+.mission-mobile-theme-score-cell {
+  text-align: right;
+  color: #4d3f2d;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.mission-mobile-theme-delta-cell {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.mission-mobile-signals-section {
+  padding: 0.2rem 0 0.45rem;
+  gap: 0.56rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-section-head {
+  gap: 0.24rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-section-title {
+  font-size: 1.02rem;
+  line-height: 1.12;
+}
+
+.mission-mobile-signals-section .mission-mobile-section-copy {
+  font-size: 0.79rem;
+  line-height: 1.36;
+}
+
+.mission-mobile-signals-section .mission-mobile-chart-card .card-body {
+  padding: 0.58rem 0.62rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-chart-head {
+  gap: 0.4rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-chart-head .h6 {
+  font-size: 0.82rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-chart-hint {
+  font-size: 0.56rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-chart-wrap {
+  min-height: 200px;
+  margin-top: 0.42rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-table {
+  padding: 0.48rem 0.54rem;
+  gap: 0.3rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-table-head {
+  grid-template-columns: minmax(0, 1fr) 46px 54px;
+  gap: 0.32rem;
+  font-size: 0.5rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-table-body {
+  gap: 0.24rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-row {
+  grid-template-columns: minmax(0, 1fr) 46px 54px;
+  gap: 0.32rem;
+  border-radius: 0.62rem;
+  padding: 0.28rem 0.34rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-row-main {
+  gap: 0.1rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-name {
+  font-size: 0.72rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-rank {
+  font-size: 0.6rem;
+  margin-top: 0;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-score-cell {
+  font-size: 0.72rem;
+}
+
+.mission-mobile-signals-section .mission-delta-badge {
+  min-width: 34px;
+  padding: 0.04rem 0.24rem;
+  font-size: 0.46rem;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-bars {
+  height: 13px;
+  gap: 2px;
+}
+
+.mission-mobile-signals-section .mission-mobile-theme-bars span {
+  width: 4px;
+  min-height: 2px;
+}
+
+.mission-mobile-roadmap-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.mission-mobile-roadmap-range {
+  color: #7a6040;
+  font-size: 0.7rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-roadmap-status {
+  border: 1px solid rgba(183, 144, 84, 0.38);
+  border-radius: 999px;
+  background: rgba(198, 162, 99, 0.16);
+  color: var(--fp-text-primary);
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0.18rem 0.5rem;
+}
+
+.mission-mobile-roadmap-group {
+  display: grid;
+  gap: 0.32rem;
+}
+
+.mission-mobile-roadmap-group-title {
+  color: #7a6040;
+  font-size: 0.68rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-cta {
+  padding: 0.35rem 0 0.4rem;
+}
+
+.mission-cta-actions-mobile {
+  justify-content: stretch;
+}
+
+@media (max-width: 420px) {
+  .mission-view-mobile {
+    padding-inline: 0.7rem;
+  }
+
+  .mission-mobile-brand {
+    grid-template-columns: 88px minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .mission-mobile-logo {
+    width: 88px;
+  }
+
+  .mission-mobile-headline {
+    font-size: 1.42rem;
+  }
+}
