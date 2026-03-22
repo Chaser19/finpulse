@@ -1,3 +1,31 @@
+export const missionFrameworkStepIcons = {
+  focus: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="6"></circle>
+      <path d="M12 3v3M12 18v3M3 12h3M18 12h3"></path>
+    </svg>
+  `,
+  signal: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 14c2-2.6 4-2.6 6 0s4 2.6 6 0 4-2.6 6 0"></path>
+      <path d="M4 10c2-2.6 4-2.6 6 0s4 2.6 6 0 4-2.6 6 0"></path>
+    </svg>
+  `,
+  indicators: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 20h16"></path>
+      <path d="M7 20V12M12 20V8M17 20V5"></path>
+    </svg>
+  `,
+  roadmap: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6 21V4"></path>
+      <path d="M6 5h9l-1.8 3L15 11H6"></path>
+      <circle cx="16.5" cy="16.5" r="2.5"></circle>
+    </svg>
+  `
+};
+
 export const missionFrameworkSteps = [
   {
     id: "focus",

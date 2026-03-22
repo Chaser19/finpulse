@@ -1,4 +1,4 @@
-import { missionFrameworkSteps, roadmapPhases } from "./mission-content.js";
+import { missionFrameworkStepIcons, missionFrameworkSteps, roadmapPhases } from "./mission-content.js";
 
 const renderFrameworkRail = (root) => {
   const rail = root.querySelector("[data-mission-mobile-framework-rail]");
@@ -16,8 +16,13 @@ const renderFrameworkRail = (root) => {
           aria-selected="${index === 0 ? "true" : "false"}"
           data-mission-mobile-framework-step="${step.id}"
         >
-          <span class="mission-mobile-framework-tab-step">${step.count}</span>
-          <span class="mission-mobile-framework-tab-title">${step.tabTitle}</span>
+          <span class="mission-mobile-framework-tab-icon" aria-hidden="true">
+            ${missionFrameworkStepIcons[step.id] || missionFrameworkStepIcons.focus}
+          </span>
+          <span class="mission-mobile-framework-tab-copy">
+            <span class="mission-mobile-framework-tab-step">${step.count}</span>
+            <span class="mission-mobile-framework-tab-title">${step.tabTitle}</span>
+          </span>
         </button>
       `
     )
