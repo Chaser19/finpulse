@@ -227,12 +227,14 @@ const initRoadmapInteraction = (root) => {
 const initSlideNavigation = (root) => {
   const slider = root.querySelector("[data-mission-mobile-slider]");
   const slides = Array.from(root.querySelectorAll("[data-mobile-section]"));
+  const slideScrolls = Array.from(root.querySelectorAll(".mission-mobile-slide-scroll"));
   const navButtons = Array.from(root.querySelectorAll("[data-mobile-section-nav]"));
   if (!slider || !slides.length || !navButtons.length) {
     return;
   }
 
   const sectionIds = slides.map((slide) => slide.dataset.mobileSection);
+  let activeTouchGesture = null;
 
   const setActiveSection = (sectionId) => {
     navButtons.forEach((button) => {
@@ -242,16 +244,26 @@ const initSlideNavigation = (root) => {
     });
   };
 
-  const scrollToSection = (sectionId) => {
+  const getNearestSlide = () =>
+    slides.reduce((closest, slide) => {
+      if (!closest) {
+        return slide;
+      }
+
+      const closestDistance = Math.abs(closest.offsetLeft - slider.scrollLeft);
+      const slideDistance = Math.abs(slide.offsetLeft - slider.scrollLeft);
+      return slideDistance < closestDistance ? slide : closest;
+    }, null);
+
+  const scrollToSection = (sectionId, behavior = "smooth") => {
     const target = slides.find((slide) => slide.dataset.mobileSection === sectionId);
     if (!target) {
       return;
     }
 
-    target.scrollIntoView({
-      behavior: "smooth",
-      inline: "start",
-      block: "nearest"
+    slider.scrollTo({
+      left: target.offsetLeft,
+      behavior
     });
     setActiveSection(sectionId);
   };
@@ -260,6 +272,76 @@ const initSlideNavigation = (root) => {
     button.addEventListener("click", () => {
       scrollToSection(button.dataset.mobileSectionNav);
     });
+  });
+
+  const ignoreSwipeTarget = (target) =>
+    Boolean(target.closest("a, button, input, textarea, select, option, label"));
+
+  const handleTouchStart = (event) => {
+    if (event.touches.length !== 1 || ignoreSwipeTarget(event.target)) {
+      activeTouchGesture = null;
+      return;
+    }
+
+    const touch = event.touches[0];
+    activeTouchGesture = {
+      startX: touch.clientX,
+      startY: touch.clientY,
+      startScrollLeft: slider.scrollLeft,
+      lock: ""
+    };
+    slider.style.scrollBehavior = "auto";
+  };
+
+  const handleTouchMove = (event) => {
+    if (!activeTouchGesture || event.touches.length !== 1) {
+      return;
+    }
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - activeTouchGesture.startX;
+    const deltaY = touch.clientY - activeTouchGesture.startY;
+
+    if (!activeTouchGesture.lock) {
+      if (Math.abs(deltaX) < 10 && Math.abs(deltaY) < 10) {
+        return;
+      }
+
+      activeTouchGesture.lock = Math.abs(deltaX) > Math.abs(deltaY) ? "x" : "y";
+    }
+
+    if (activeTouchGesture.lock !== "x") {
+      return;
+    }
+
+    event.preventDefault();
+    slider.scrollLeft = activeTouchGesture.startScrollLeft - deltaX;
+  };
+
+  const handleTouchEnd = () => {
+    if (!activeTouchGesture) {
+      return;
+    }
+
+    const didSwipeHorizontally = activeTouchGesture.lock === "x";
+    activeTouchGesture = null;
+    slider.style.scrollBehavior = "";
+
+    if (!didSwipeHorizontally) {
+      return;
+    }
+
+    const nearestSlide = getNearestSlide();
+    if (nearestSlide?.dataset?.mobileSection) {
+      scrollToSection(nearestSlide.dataset.mobileSection);
+    }
+  };
+
+  slideScrolls.forEach((slideScroll) => {
+    slideScroll.addEventListener("touchstart", handleTouchStart, { passive: true });
+    slideScroll.addEventListener("touchmove", handleTouchMove, { passive: false });
+    slideScroll.addEventListener("touchend", handleTouchEnd, { passive: true });
+    slideScroll.addEventListener("touchcancel", handleTouchEnd, { passive: true });
   });
 
   if (typeof IntersectionObserver === "function") {
