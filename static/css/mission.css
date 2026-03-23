@@ -138,3 +138,53 @@ body.mission-body .site-main {
     min-width: 0;
   }
 }
+
+body.mission-body .mission-view-root,
+body.mission-body .mission-view-root :where(p, li, span, strong, button, a, div) {
+  font-family: "Inter", "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+}
+
+body.mission-body .mission-view-root h1,
+body.mission-body .mission-view-root h2,
+body.mission-body .mission-view-root h3,
+body.mission-body .mission-view-root h4,
+body.mission-body .mission-title-copy .hero-title,
+body.mission-body .mission-title-copy .hero-title *,
+body.mission-body .mission-mobile-headline,
+body.mission-body .mission-mobile-headline *,
+body.mission-body .mission-phase-title,
+body.mission-body .mission-framework-head .h5,
+body.mission-body .mission-roadmap-head .h5,
+body.mission-body .mission-engagement-header .h5,
+body.mission-body .mission-visual-head .h5,
+body.mission-body .mission-mobile-section-title,
+body.mission-body .mission-mobile-framework-title,
+body.mission-body .mission-mobile-roadmap-title,
+body.mission-body .mission-mobile-chart-head .h6,
+body.mission-body .mission-section-title {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: -0.025em;
+}
+
+body.mission-body .mission-signals-kicker {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+body.mission-body .mission-title-pretitle,
+body.mission-body .mission-roadmap-kicker,
+body.mission-body .mission-mobile-pretitle,
+body.mission-body .mission-mobile-kicker,
+body.mission-body .mission-framework-panel-kicker,
+body.mission-body .mission-framework-panel-count,
+body.mission-body .mission-phase-range,
+body.mission-body .mission-mobile-framework-kicker,
+body.mission-body .mission-mobile-framework-count,
+body.mission-body .mission-mobile-roadmap-kicker,
+body.mission-body .mission-mobile-roadmap-count,
+body.mission-body .mission-mobile-roadmap-range,
+body.mission-body .mission-mobile-intro-label,
+body.mission-body .mission-metric-label,
+body.mission-body .mission-mobile-metric-label {
+  font-family: "Inter", "Space Grotesk", "Avenir Next", "Segoe UI", sans-serif;
+}

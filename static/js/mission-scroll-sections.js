@@ -1,4 +1,4 @@
-import { missionFrameworkStepIcons, missionFrameworkSteps } from "./mission-content.js";
+import { missionFrameworkStepIcons, missionFrameworkSteps, missionMarketSegmentIcons, missionMarketSegments } from "./mission-content.js";
 
 const renderFrameworkRail = (root) => {
   const rail = root.querySelector("[data-mission-framework-rail]");
@@ -29,6 +29,44 @@ const renderFrameworkRail = (root) => {
     .join("");
 
   return Array.from(rail.querySelectorAll(".mission-framework-step[data-framework-step]"));
+};
+
+const renderMarketRail = (root) => {
+  const rail = root.querySelector("[data-mission-market-rail]");
+  if (!rail) {
+    return [];
+  }
+
+  rail.innerHTML = missionMarketSegments
+    .map(
+      (segment, index) => `
+        <button
+          type="button"
+          class="mission-market-step${index === 0 ? " is-active" : ""}"
+          role="tab"
+          aria-selected="${index === 0 ? "true" : "false"}"
+          data-market-segment-step="${segment.id}"
+        >
+          <span class="mission-market-step-index" aria-hidden="true">
+            ${missionMarketSegmentIcons[segment.id] || missionMarketSegmentIcons.b2c}
+          </span>
+          <span class="mission-market-step-copy">
+            <strong>${segment.kicker}</strong>
+            <span>${segment.audience}</span>
+          </span>
+        </button>
+      `
+    )
+    .join("");
+
+  return Array.from(rail.querySelectorAll(".mission-market-step[data-market-segment-step]"));
+};
+
+const resetAnimatedInlineStyles = (elements) => {
+  elements.filter(Boolean).forEach((element) => {
+    element.style.opacity = "";
+    element.style.transform = "";
+  });
 };
 
 export const initMissionScrollSections = async (root) => {
@@ -118,7 +156,6 @@ export const initMissionScrollSections = async (root) => {
   const frameworkRailButtons = cardsSection ? renderFrameworkRail(cardsSection) : [];
   const frameworkById = new Map(missionFrameworkSteps.map((step) => [step.id, step]));
   const frameworkKickerEl = cardsSection?.querySelector("[data-mission-framework-kicker]");
-  const frameworkCountEl = cardsSection?.querySelector("[data-mission-framework-count]");
   const frameworkTitleEl = cardsSection?.querySelector("[data-mission-framework-title]");
   const frameworkSummaryEl = cardsSection?.querySelector("[data-mission-framework-summary]");
   const frameworkListEl = cardsSection?.querySelector("[data-mission-framework-list]");
@@ -142,9 +179,8 @@ export const initMissionScrollSections = async (root) => {
 
     if (frameworkKickerEl) {
       frameworkKickerEl.textContent = step.kicker;
-    }
-    if (frameworkCountEl) {
-      frameworkCountEl.textContent = step.count;
+      frameworkKickerEl.style.opacity = "";
+      frameworkKickerEl.style.transform = "";
     }
     if (frameworkTitleEl) {
       frameworkTitleEl.textContent = step.title;
@@ -158,6 +194,13 @@ export const initMissionScrollSections = async (root) => {
     if (frameworkMeterFillEl) {
       frameworkMeterFillEl.style.width = `${step.meter}%`;
     }
+
+    resetAnimatedInlineStyles([
+      frameworkKickerEl,
+      frameworkTitleEl,
+      frameworkSummaryEl,
+      frameworkListEl
+    ]);
   };
 
   let applyFrameworkStep = (stepId) => {
@@ -181,6 +224,79 @@ export const initMissionScrollSections = async (root) => {
     setFrameworkState(activeFrameworkStepId);
   }
 
+  const marketSection = root.querySelector('[data-scroll-section="market"]');
+  const marketRailButtons = marketSection ? renderMarketRail(marketSection) : [];
+  const marketById = new Map(missionMarketSegments.map((segment) => [segment.id, segment]));
+  const marketKickerEl = marketSection?.querySelector("[data-mission-market-kicker]");
+  const marketTitleEl = marketSection?.querySelector("[data-mission-market-title]");
+  const marketValueEl = marketSection?.querySelector("[data-mission-market-value]");
+  const marketPainPointsEl = marketSection?.querySelector("[data-mission-market-pain-points]");
+  const marketUseCasesEl = marketSection?.querySelector("[data-mission-market-use-cases]");
+
+  let activeMarketSegmentId = missionMarketSegments[0]?.id || "";
+
+  const setMarketState = (segmentId) => {
+    const segment = marketById.get(segmentId);
+    if (!segment) {
+      return;
+    }
+
+    activeMarketSegmentId = segmentId;
+
+    marketRailButtons.forEach((button) => {
+      const isActive = button.dataset.marketSegmentStep === segmentId;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", isActive ? "true" : "false");
+    });
+
+    if (marketKickerEl) {
+      marketKickerEl.textContent = segment.kicker;
+      marketKickerEl.style.opacity = "";
+      marketKickerEl.style.transform = "";
+    }
+    if (marketTitleEl) {
+      marketTitleEl.textContent = segment.title;
+    }
+    if (marketValueEl) {
+      marketValueEl.textContent = segment.value;
+    }
+    if (marketPainPointsEl) {
+      marketPainPointsEl.innerHTML = segment.painPoints.map((item) => `<li>${item}</li>`).join("");
+    }
+    if (marketUseCasesEl) {
+      marketUseCasesEl.innerHTML = segment.useCases.map((item) => `<li>${item}</li>`).join("");
+    }
+
+    resetAnimatedInlineStyles([
+      marketKickerEl,
+      marketTitleEl,
+      marketValueEl,
+      marketPainPointsEl,
+      marketUseCasesEl
+    ]);
+  };
+
+  let applyMarketSegment = (segmentId) => {
+    if (segmentId === activeMarketSegmentId) {
+      return;
+    }
+    setMarketState(segmentId);
+  };
+
+  marketRailButtons.forEach((button) => {
+    const onClick = () => {
+      const segmentId = button.dataset.marketSegmentStep;
+      applyMarketSegment(segmentId);
+    };
+
+    button.addEventListener("click", onClick);
+    cleanupFns.push(() => button.removeEventListener("click", onClick));
+  });
+
+  if (marketSection && missionMarketSegments.length) {
+    setMarketState(activeMarketSegmentId);
+  }
+
   if (!reducedMotion) {
     try {
       const { animate, onScroll, stagger } = await import("https://cdn.jsdelivr.net/npm/animejs/+esm");
@@ -200,6 +316,27 @@ export const initMissionScrollSections = async (root) => {
             target: introSection,
             enter: "top 88%",
             leave: "bottom 48%",
+            sync: true
+          })
+        });
+      }
+
+      if (marketSection) {
+        const marketTargets = [
+          marketSection.querySelector(".mission-market-head"),
+          marketSection.querySelector(".mission-market-rail"),
+          marketSection.querySelector(".mission-market-panel")
+        ].filter(Boolean);
+
+        animate(marketTargets, {
+          y: [38, 0],
+          duration: 1200,
+          delay: stagger(110),
+          ease: "out(3)",
+          autoplay: onScroll({
+            target: marketSection,
+            enter: "top 84%",
+            leave: "bottom 34%",
             sync: true
           })
         });
@@ -266,13 +403,6 @@ export const initMissionScrollSections = async (root) => {
         const frameworkRail = cardsSection.querySelector(".mission-framework-rail");
         const frameworkPanel = cardsSection.querySelector(".mission-framework-panel");
         const frameworkStepsEls = Array.from(cardsSection.querySelectorAll(".mission-framework-step"));
-        const panelTargets = [
-          frameworkKickerEl,
-          frameworkCountEl,
-          frameworkTitleEl,
-          frameworkSummaryEl,
-          frameworkListEl
-        ].filter(Boolean);
 
         animate([frameworkHead, frameworkRail, frameworkPanel].filter(Boolean), {
           y: [30, 0],
@@ -287,7 +417,7 @@ export const initMissionScrollSections = async (root) => {
           })
         });
 
-        if (frameworkStepsEls.length && panelTargets.length) {
+        if (frameworkStepsEls.length) {
           let isFrameworkAnimating = false;
           applyFrameworkStep = (stepId) => {
             if (!frameworkById.has(stepId) || stepId === activeFrameworkStepId || isFrameworkAnimating) {
@@ -299,41 +429,53 @@ export const initMissionScrollSections = async (root) => {
             const toWidth = `${step.meter}%`;
             isFrameworkAnimating = true;
 
-            animate(panelTargets, {
-              opacity: [1, 0],
-              y: [0, 12],
-              duration: 170,
-              ease: "in(3)",
-              complete: () => {
-                setFrameworkState(stepId);
+            setFrameworkState(stepId);
 
-                animate(panelTargets, {
-                  opacity: [0, 1],
-                  y: [12, 0],
-                  duration: 340,
-                  delay: stagger(40),
-                  ease: "out(3)"
-                });
+            if (frameworkMeterFillEl) {
+              animate(frameworkMeterFillEl, {
+                width: [fromWidth, toWidth],
+                duration: 520,
+                ease: "out(3)"
+              });
+            }
 
-                if (frameworkMeterFillEl) {
-                  animate(frameworkMeterFillEl, {
-                    width: [fromWidth, toWidth],
-                    duration: 520,
-                    ease: "out(3)"
-                  });
-                }
-
-                animate(frameworkStepsEls, {
-                  scale: (el) => (el.dataset.frameworkStep === stepId ? 1.01 : 1),
-                  duration: 220,
-                  ease: "out(2)"
-                });
-
-                window.setTimeout(() => {
-                  isFrameworkAnimating = false;
-                }, 360);
-              }
+            animate(frameworkStepsEls, {
+              scale: (el) => (el.dataset.frameworkStep === stepId ? 1.01 : 1),
+              duration: 220,
+              ease: "out(2)"
             });
+
+            window.setTimeout(() => {
+              isFrameworkAnimating = false;
+            }, 240);
+          };
+        }
+      }
+
+      if (marketSection) {
+        const marketRail = marketSection.querySelector(".mission-market-rail");
+        const marketPanel = marketSection.querySelector(".mission-market-panel");
+        const marketSegmentEls = Array.from(marketSection.querySelectorAll(".mission-market-step"));
+
+        if (marketRail && marketPanel && marketSegmentEls.length) {
+          let isMarketAnimating = false;
+          applyMarketSegment = (segmentId) => {
+            if (!marketById.has(segmentId) || segmentId === activeMarketSegmentId || isMarketAnimating) {
+              return;
+            }
+
+            isMarketAnimating = true;
+            setMarketState(segmentId);
+
+            animate(marketSegmentEls, {
+              scale: (el) => (el.dataset.marketSegmentStep === segmentId ? 1.01 : 1),
+              duration: 220,
+              ease: "out(2)"
+            });
+
+            window.setTimeout(() => {
+              isMarketAnimating = false;
+            }, 240);
           };
         }
       }

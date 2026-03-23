@@ -1,4 +1,4 @@
-import { missionFrameworkStepIcons, missionFrameworkSteps, roadmapPhases } from "./mission-content.js";
+import { missionFrameworkStepIcons, missionFrameworkSteps, missionMarketSegmentIcons, missionMarketSegments, roadmapPhases } from "./mission-content.js";
 
 const renderFrameworkRail = (root) => {
   const rail = root.querySelector("[data-mission-mobile-framework-rail]");
@@ -40,7 +40,6 @@ const initFrameworkInteraction = (root) => {
   const buttons = renderFrameworkRail(container);
   const frameworkById = new Map(missionFrameworkSteps.map((step) => [step.id, step]));
   const kickerEl = container.querySelector("[data-mission-mobile-framework-kicker]");
-  const countEl = container.querySelector("[data-mission-mobile-framework-count]");
   const titleEl = container.querySelector("[data-mission-mobile-framework-title]");
   const summaryEl = container.querySelector("[data-mission-mobile-framework-summary]");
   const listEl = container.querySelector("[data-mission-mobile-framework-list]");
@@ -61,9 +60,6 @@ const initFrameworkInteraction = (root) => {
 
     if (kickerEl) {
       kickerEl.textContent = step.kicker;
-    }
-    if (countEl) {
-      countEl.textContent = step.count;
     }
     if (titleEl) {
       titleEl.textContent = step.title;
@@ -103,6 +99,107 @@ const initFrameworkInteraction = (root) => {
   });
 
   applyStep(missionFrameworkSteps[0]?.id || "");
+};
+
+const renderMarketRail = (root) => {
+  const rail = root.querySelector("[data-mission-mobile-market-rail]");
+  if (!rail) {
+    return [];
+  }
+
+  rail.innerHTML = missionMarketSegments
+    .map(
+      (segment, index) => `
+        <button
+          type="button"
+          class="mission-mobile-market-tab${index === 0 ? " is-active" : ""}"
+          role="tab"
+          aria-selected="${index === 0 ? "true" : "false"}"
+          data-mission-mobile-market-segment="${segment.id}"
+        >
+          <span class="mission-mobile-market-tab-icon" aria-hidden="true">
+            ${missionMarketSegmentIcons[segment.id] || missionMarketSegmentIcons.b2c}
+          </span>
+          <span class="mission-mobile-market-tab-copy">
+            <span class="mission-mobile-market-tab-step">${segment.kicker}</span>
+            <span class="mission-mobile-market-tab-title">${segment.audience}</span>
+          </span>
+        </button>
+      `
+    )
+    .join("");
+
+  return Array.from(rail.querySelectorAll("[data-mission-mobile-market-segment]"));
+};
+
+const initMarketInteraction = (root) => {
+  const container = root.querySelector("[data-mission-mobile-market]");
+  if (!container) {
+    return;
+  }
+
+  const buttons = renderMarketRail(container);
+  const marketById = new Map(missionMarketSegments.map((segment) => [segment.id, segment]));
+  const kickerEl = container.querySelector("[data-mission-mobile-market-kicker]");
+  const titleEl = container.querySelector("[data-mission-mobile-market-title]");
+  const valueEl = container.querySelector("[data-mission-mobile-market-value]");
+  const painPointsEl = container.querySelector("[data-mission-mobile-market-pain-points]");
+  const useCasesEl = container.querySelector("[data-mission-mobile-market-use-cases]");
+
+  const applySegment = (segmentId) => {
+    const segment = marketById.get(segmentId);
+    if (!segment) {
+      return;
+    }
+
+    buttons.forEach((button) => {
+      const isActive = button.dataset.missionMobileMarketSegment === segmentId;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-selected", isActive ? "true" : "false");
+      button.tabIndex = isActive ? 0 : -1;
+    });
+
+    if (kickerEl) {
+      kickerEl.textContent = segment.kicker;
+    }
+    if (titleEl) {
+      titleEl.textContent = segment.title;
+    }
+    if (valueEl) {
+      valueEl.textContent = segment.value;
+    }
+    if (painPointsEl) {
+      painPointsEl.innerHTML = segment.painPoints.map((item) => `<li>${item}</li>`).join("");
+    }
+    if (useCasesEl) {
+      useCasesEl.innerHTML = segment.useCases.map((item) => `<li>${item}</li>`).join("");
+    }
+  };
+
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      applySegment(button.dataset.missionMobileMarketSegment);
+    });
+
+    button.addEventListener("keydown", (event) => {
+      if (
+        event.key !== "ArrowRight" &&
+        event.key !== "ArrowLeft" &&
+        event.key !== "ArrowDown" &&
+        event.key !== "ArrowUp"
+      ) {
+        return;
+      }
+
+      event.preventDefault();
+      const direction = event.key === "ArrowRight" || event.key === "ArrowDown" ? 1 : -1;
+      const nextIndex = (index + direction + buttons.length) % buttons.length;
+      buttons[nextIndex].focus();
+      applySegment(buttons[nextIndex].dataset.missionMobileMarketSegment);
+    });
+  });
+
+  applySegment(missionMarketSegments[0]?.id || "");
 };
 
 const renderRoadmapRail = (root) => {
@@ -387,6 +484,7 @@ export const initMissionMobileView = (root) => {
   }
 
   initFrameworkInteraction(root);
+  initMarketInteraction(root);
   initRoadmapInteraction(root);
   initSlideNavigation(root);
 };

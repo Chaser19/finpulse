@@ -7,8 +7,9 @@
   <nav class="mission-section-slider" aria-label="Mission section progress">
     <button type="button" class="mission-section-dot is-active" data-section-nav="intro" aria-label="Section 1: Thesis" aria-current="true"></button>
     <button type="button" class="mission-section-dot" data-section-nav="cards" aria-label="Section 2: Model Cards" aria-current="false"></button>
-    <button type="button" class="mission-section-dot" data-section-nav="signals" aria-label="Section 3: Signal Visuals" aria-current="false"></button>
-    <button type="button" class="mission-section-dot" data-section-nav="timeline" aria-label="Section 4: Execution Window" aria-current="false"></button>
+    <button type="button" class="mission-section-dot" data-section-nav="market" aria-label="Section 3: Market Analysis" aria-current="false"></button>
+    <button type="button" class="mission-section-dot" data-section-nav="signals" aria-label="Section 4: Signal Visuals" aria-current="false"></button>
+    <button type="button" class="mission-section-dot" data-section-nav="timeline" aria-label="Section 5: Execution Window" aria-current="false"></button>
   </nav>
 
   <div class="mission-shell">
@@ -90,7 +91,6 @@
         <article class="mission-framework-panel" role="tabpanel" aria-live="polite">
           <div class="mission-framework-panel-top">
             <span class="mission-framework-panel-kicker" data-mission-framework-kicker>Pillar 01</span>
-            <span class="mission-framework-panel-count" data-mission-framework-count>01 / 04</span>
           </div>
           <h2 class="h5 mb-0" data-mission-framework-title>Model Development Focus</h2>
           <p class="mb-0" data-mission-framework-summary>
@@ -103,6 +103,43 @@
           </ul>
           <div class="mission-framework-meter" aria-hidden="true">
             <span class="mission-framework-meter-fill" data-mission-framework-meter></span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="mission-market mission-scroll-stage" aria-label="Market analysis" data-scroll-section="market">
+      <div class="mission-market-head">
+        <div class="mission-market-head-copy">
+          <span class="mission-roadmap-kicker">Market analysis</span>
+          <h3 class="h5 mb-0">Two customer workflows, one intelligence layer</h3>
+        </div>
+      </div>
+
+      <div class="mission-market-shell" data-mission-market>
+        <div class="mission-market-rail" role="tablist" aria-label="Market segments" data-mission-market-rail></div>
+
+        <article class="mission-market-panel" role="tabpanel" aria-live="polite">
+          <div class="mission-market-panel-top">
+            <span class="mission-market-eyebrow" data-mission-market-kicker>B2C</span>
+          </div>
+
+          <h4 class="mission-market-card-title mb-0" data-mission-market-title>Clarity and speed for active investors</h4>
+
+          <p class="mission-market-value mb-0" data-mission-market-value>
+            FinPulse helps active investors cut through market noise by turning sentiment, narrative, and event data into clear, actionable monitoring tools.
+          </p>
+
+          <div class="mission-market-columns">
+            <section class="mission-market-column">
+              <span class="mission-market-column-label">Pain points</span>
+              <ul class="mission-market-list mb-0" data-mission-market-pain-points></ul>
+            </section>
+
+            <section class="mission-market-column">
+              <span class="mission-market-column-label">Use cases</span>
+              <ul class="mission-market-list mb-0" data-mission-market-use-cases></ul>
+            </section>
           </div>
         </article>
       </div>

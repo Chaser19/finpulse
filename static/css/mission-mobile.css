@@ -447,6 +447,187 @@
   transition: width 220ms ease;
 }
 
+.mission-mobile-market-section {
+  padding: 0.2rem 0 0.4rem;
+  gap: 0.68rem;
+}
+
+.mission-mobile-market-shell {
+  display: grid;
+  gap: 0.52rem;
+}
+
+.mission-mobile-market-rail {
+  display: grid;
+  gap: 0.38rem;
+}
+
+.mission-mobile-market-tab {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(171, 152, 121, 0.35);
+  border-radius: 0.78rem;
+  background: rgba(255, 251, 244, 0.5);
+  padding: 0.48rem 0.54rem;
+  text-align: left;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.44rem;
+  min-width: 0;
+  min-height: 0;
+}
+
+.mission-mobile-market-tab.is-active {
+  border-color: rgba(155, 118, 62, 0.72);
+  background: linear-gradient(145deg, rgba(249, 241, 228, 0.95), rgba(240, 229, 207, 0.82));
+  box-shadow: 0 8px 18px rgba(90, 66, 34, 0.06);
+}
+
+.mission-mobile-market-tab:focus-visible {
+  outline: 2px solid rgba(159, 122, 69, 0.28);
+  outline-offset: 2px;
+}
+
+.mission-mobile-market-tab-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.42rem;
+  border: 1px solid rgba(171, 152, 121, 0.24);
+  background: rgba(255, 251, 244, 0.78);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #7a6040;
+  flex: 0 0 auto;
+}
+
+.mission-mobile-market-tab-icon svg {
+  width: 0.8rem;
+  height: 0.8rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.mission-mobile-market-tab-copy {
+  min-width: 0;
+  display: grid;
+  gap: 0.08rem;
+}
+
+.mission-mobile-market-tab-step {
+  color: #7a6040;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-market-tab-title {
+  color: var(--fp-text-primary);
+  font-size: 0.76rem;
+  line-height: 1.18;
+  font-weight: 700;
+}
+
+.mission-mobile-market-card {
+  border: 1px solid rgba(170, 149, 113, 0.26);
+  border-radius: 0.9rem;
+  background: rgba(255, 255, 255, 0.52);
+  padding: 0.68rem 0.72rem;
+  display: grid;
+  gap: 0.46rem;
+}
+
+.mission-mobile-market-top {
+  display: grid;
+  gap: 0.22rem;
+}
+
+.mission-mobile-market-eyebrow {
+  color: #7a6040;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-market-title {
+  margin: 0;
+  color: var(--fp-text-primary);
+  font-size: 0.9rem;
+  line-height: 1.16;
+}
+
+.mission-mobile-market-audience {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid rgba(183, 144, 84, 0.26);
+  background: rgba(255, 251, 244, 0.72);
+  color: #6b5638;
+  padding: 0.16rem 0.42rem;
+  font-size: 0.58rem;
+  line-height: 1.22;
+}
+
+.mission-mobile-market-value {
+  color: #403328;
+  font-size: 0.76rem;
+  line-height: 1.36;
+}
+
+.mission-mobile-market-columns {
+  display: grid;
+  gap: 0.48rem;
+}
+
+.mission-mobile-market-column {
+  display: grid;
+  gap: 0.24rem;
+}
+
+.mission-mobile-market-label {
+  color: #7a6040;
+  font-size: 0.58rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.mission-mobile-market-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.22rem;
+}
+
+.mission-mobile-market-list li {
+  position: relative;
+  padding-left: 0.76rem;
+  color: #564a39;
+  font-size: 0.72rem;
+  line-height: 1.3;
+  text-align: left;
+}
+
+.mission-mobile-market-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  width: 0.24rem;
+  height: 0.24rem;
+  border-radius: 999px;
+  background: linear-gradient(145deg, #cfad72, #a37a43);
+  box-shadow: 0 0 0 1px rgba(225, 199, 153, 0.18);
+}
+
 .mission-mobile-chart-card {
   border: 1px solid rgba(170, 149, 113, 0.26);
 }

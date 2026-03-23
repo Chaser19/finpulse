@@ -15,15 +15,47 @@
     return;
   }
 
-  const rand = (min, max) => min + Math.random() * (max - min);
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
   const TAU = Math.PI * 2;
+  const HORIZONTAL_OVERSCAN = Math.max(120, width * 0.14);
+  const VERTICAL_OVERSCAN = Math.max(72, height * 0.14);
+  const PANEL_OVERSCAN = 44;
+  const BASE_WAVE = {
+    freqA: 1.02,
+    freqB: 2.02,
+    speedA: 0.35,
+    speedB: 0.22,
+    amplitudeMin: 24,
+    amplitudeSpread: 9,
+    amplitudeBScale: 0.2,
+    phaseSpread: 0.52
+  };
+  const MID_WAVE = {
+    freqA: 1.12,
+    freqB: 2.18,
+    speedA: 0.39,
+    speedB: 0.25,
+    amplitudeMin: 28,
+    amplitudeSpread: 10,
+    amplitudeBScale: 0.23,
+    phaseSpread: 0.6
+  };
+  const ACCENT_WAVE = {
+    freqA: 1.22,
+    freqB: 2.34,
+    speedA: 0.44,
+    speedB: 0.29,
+    amplitudeMin: 32,
+    amplitudeSpread: 11,
+    amplitudeBScale: 0.26,
+    phaseSpread: 0.68
+  };
 
   // Keep wave math light to avoid frame spikes while sections snap/animate.
   const WAVE_SEGMENTS = 12;
   const SAMPLE_COUNT = WAVE_SEGMENTS + 1;
   const sampleProgress = Array.from({ length: SAMPLE_COUNT }, (_, i) => i / WAVE_SEGMENTS);
-  const sampleX = sampleProgress.map((progress) => progress * width);
+  const sampleX = sampleProgress.map((progress) => -HORIZONTAL_OVERSCAN + progress * (width + HORIZONTAL_OVERSCAN * 2));
   const sampleXFixed = sampleX.map((x) => x.toFixed(1));
   const sampleMidXFixed = sampleX.map((x, i) =>
     i < SAMPLE_COUNT - 1 ? ((x + sampleX[i + 1]) / 2).toFixed(1) : "0.0"
@@ -39,8 +71,8 @@
       const waveB = Math.sin(progress * TAU * model.freqB - timeSec * model.speedB + model.phaseB);
       ys[i] = clamp(
         model.baseY + model.amplitudeA * envelope * waveA + model.amplitudeB * envelope * waveB,
-        24,
-        height - 24
+        -VERTICAL_OVERSCAN,
+        height + VERTICAL_OVERSCAN
       );
     }
 
@@ -58,21 +90,33 @@
 
   const laneCount = paths.length;
   const waveModels = paths.map((path, index) => {
-    const isPrimaryBand = index < Math.ceil(laneCount / 2);
+    const strokeWidth = Number.parseFloat(path.getAttribute("stroke-width") || "0");
+    const isAccentBand = strokeWidth >= 2.25;
+    const isMidBand = strokeWidth >= 2.0 && strokeWidth < 2.25;
+    const groupModel = isAccentBand ? ACCENT_WAVE : isMidBand ? MID_WAVE : BASE_WAVE;
     const laneY = ((index + 1) / (laneCount + 1)) * height;
-    const amplitude = isPrimaryBand ? rand(40, 58) : rand(26, 42);
+    const laneProgress = laneCount > 1 ? index / (laneCount - 1) : 0;
+    const accentBias = isAccentBand ? 0.7 : isMidBand ? 0.56 : 0.45;
+    const amplitude =
+      groupModel.amplitudeMin +
+      Math.sin(laneProgress * Math.PI) * groupModel.amplitudeSpread +
+      Math.cos((index + 1) * 1.13) * accentBias;
+    const lanePhase =
+      (laneProgress - 0.5) * groupModel.phaseSpread +
+      Math.sin((index + 1) * 0.91) * 0.08;
+    const laneVariance = Math.cos((index + 1) * 0.77) * 0.035;
 
     const model = {
       path,
       baseY: laneY,
       amplitudeA: amplitude,
-      amplitudeB: amplitude * rand(0.18, 0.32),
-      freqA: rand(0.95, 1.5),
-      freqB: rand(1.8, 2.8),
-      speedA: rand(0.47, 0.78),
-      speedB: rand(0.3, 0.54),
-      phaseA: rand(0, TAU),
-      phaseB: rand(0, TAU),
+      amplitudeB: amplitude * groupModel.amplitudeBScale,
+      freqA: groupModel.freqA + laneVariance,
+      freqB: groupModel.freqB + laneVariance * 1.4,
+      speedA: groupModel.speedA + laneVariance * 0.08,
+      speedB: groupModel.speedB + laneVariance * 0.06,
+      phaseA: lanePhase,
+      phaseB: lanePhase * 0.72 + laneVariance * 0.8,
       sampleY: new Float32Array(SAMPLE_COUNT)
     };
 
@@ -114,8 +158,8 @@
   }
 
   const clamp01 = (value) => Math.min(1, Math.max(0, value));
-  const MAX_X_OFFSET = 10;
-  const MAX_Y_OFFSET = 7;
+  const MAX_X_OFFSET = 8;
+  const MAX_Y_OFFSET = 6;
   const EASE = 0.08;
 
   let currentX = 0;
@@ -161,8 +205,8 @@
 
     const nx = clamp01(event.clientX / window.innerWidth);
     const ny = clamp01(event.clientY / window.innerHeight);
-    targetX = (nx - 0.5) * 2 * MAX_X_OFFSET;
-    targetY = (ny - 0.5) * 2 * MAX_Y_OFFSET;
+    targetX = clamp((nx - 0.5) * 2 * MAX_X_OFFSET, -PANEL_OVERSCAN, PANEL_OVERSCAN);
+    targetY = clamp((ny - 0.5) * 2 * MAX_Y_OFFSET, -PANEL_OVERSCAN, PANEL_OVERSCAN);
     scheduleTick();
   };
 

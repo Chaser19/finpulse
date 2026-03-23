@@ -89,6 +89,75 @@ export const missionFrameworkSteps = [
   }
 ];
 
+export const missionMarketSegmentIcons = {
+  b2c: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 16c2-2.4 4-2.4 6 0s4 2.4 6 0 4-2.4 6 0"></path>
+      <circle cx="8" cy="9" r="1.7"></circle>
+      <circle cx="16" cy="9" r="1.7"></circle>
+    </svg>
+  `,
+  b2b: `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="8" width="5" height="8" rx="1.2"></rect>
+      <rect x="10" y="5" width="5" height="11" rx="1.2"></rect>
+      <rect x="16" y="10" width="4" height="6" rx="1.2"></rect>
+      <path d="M3 19h18"></path>
+    </svg>
+  `
+};
+
+export const missionMarketSegments = [
+  {
+    id: "b2c",
+    kicker: "B2C",
+    meter: 50,
+    tabTitle: "Clarity and speed",
+    tabSummary: "Real-time monitoring for active investors and traders.",
+    title: "Clarity and speed for active investors",
+    audience: "Retail investors, traders, and finance prosumers",
+    value: "FinPulse helps active investors cut through market noise by turning sentiment, narrative, and event data into clear, actionable monitoring tools.",
+    painPoints: [
+      "Too much noisy information.",
+      "Fragmented workflow across multiple platforms.",
+      "Difficulty identifying what actually matters.",
+      "Late interpretation of market moves.",
+      "Weak confidence distinguishing real shifts from hype."
+    ],
+    useCases: [
+      "Understand what is moving and why.",
+      "Monitor watchlists without constantly checking X or Twitter.",
+      "Detect rising crowd attention early.",
+      "Judge whether a move is noise or a genuine shift.",
+      "Improve event-driven trading and investing workflow."
+    ]
+  },
+  {
+    id: "b2b",
+    kicker: "B2B",
+    meter: 100,
+    tabTitle: "Workflow efficiency",
+    tabSummary: "Explainable research support for lean professional teams.",
+    title: "Workflow efficiency and repeatable team decisions",
+    audience: "Funds, research teams, advisors, IR, risk, and intelligence desks",
+    value: "FinPulse helps investment and research teams monitor market narratives, alternative signals, and event-driven shifts in one explainable workflow.",
+    painPoints: [
+      "Fragmented data sources.",
+      "High integration and cleaning costs.",
+      "Inefficient research workflows.",
+      "Poor explainability and low transparency in alternative data.",
+      "Collaboration friction across teams."
+    ],
+    useCases: [
+      "Morning research triage.",
+      "Narrative monitoring.",
+      "Signal overlays on existing workflows.",
+      "Event response across earnings, macro, policy, and geopolitical developments.",
+      "Team dashboards and client-ready monitoring."
+    ]
+  }
+];
+
 export const roadmapPhases = [
   {
     id: "phase-1",
