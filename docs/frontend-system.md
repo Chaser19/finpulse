@@ -2,14 +2,13 @@
 
 ## Stack Order
 1. Bootstrap (single source)
-2. Material Kit local vendor assets (`static/vendor/material-kit/`)
-3. `static/css/finpulse-theme-map.css`
-4. `static/css/finpulse-components.css`
-5. `static/css/styles.css` (legacy transition layer)
+2. `static/css/styles.css`
+3. `static/css/bootstrap-formatting.css`
+4. `static/css/responsive.css`
 
 ## Design Tokens
 - Use existing FinPulse palette tokens (`--fp-*`) as source.
-- Map component-level values through `finpulse-theme-map.css` only.
+- Define shared values in `static/css/styles.css`.
 - Avoid hardcoding colors in templates.
 
 ## Spacing Scale

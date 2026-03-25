@@ -32,25 +32,17 @@ Backend Logic
 services/market_live.py
 Live market adapters for indexes, movers, heatmap, and weekly energy snapshots.
 
-services/market_repo.py
-Local `data/market.json` loader.
-
 ----
 
 Templates
 
 templates/layout.html
-Dark navbar + search; includes Bootstrap, global CSS/JS; sets page blocks.
+Global shell with the utility bar, shared CSS, and page blocks.
 
 Static assets
 
 static/css/styles.css
 Global theme and component styling.
-
-Data + config
-
-data/market.json
-Local market snapshot data.
 
 .env
 Environment variables for live market integrations.

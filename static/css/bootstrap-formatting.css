@@ -20,9 +20,6 @@ main > .container {
 }
 
 .hero-section,
-.news-toolbar,
-.macro-tabs-shell,
-.macro-hero,
 .contact-card,
 .card {
   border-radius: var(--bs-card-border-radius);
@@ -54,21 +51,15 @@ main > .container {
   padding: 0.38rem 0.85rem;
 }
 
-.news-page > section,
-.macro-page > section,
 .mission-shell > section {
   margin-bottom: 0;
 }
 
-.news-toolbar,
-.macro-hero,
 .mission-page,
 .contact-page {
   box-shadow: var(--bs-box-shadow-sm);
 }
 
-.news-toolbar,
-.macro-tabs-shell,
 .contact-card {
   border: 1px solid rgba(191, 162, 112, 0.26);
   background-color: rgba(255, 251, 244, 0.66);
@@ -90,28 +81,4 @@ main > .container {
   background: transparent !important;
   box-shadow: none !important;
   border-radius: 0 !important;
-}
-
-@media (max-width: 991.98px) {
-  .header-search {
-    width: 100%;
-    margin-top: 0.6rem;
-  }
-
-  .header-search-input {
-    min-width: 0;
-  }
-
-  .news-toolbar-controls {
-    width: 100%;
-    gap: 0.6rem;
-  }
-
-  .news-search {
-    width: 100%;
-  }
-
-  .news-search-input {
-    flex: 1 1 auto;
-  }
 }

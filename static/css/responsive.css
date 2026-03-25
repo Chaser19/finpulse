@@ -68,32 +68,12 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .hero-ctas,
-  .header-search,
-  .news-toolbar-controls {
+  .hero-ctas {
     flex-direction: column;
     align-items: stretch;
   }
 
-  .news-search-input {
-    min-width: 0;
-    width: 100%;
-  }
-
-  .macro-hero-grid,
-  .macro-insight-stream,
-  .macro-overview-grid,
-  .news-radar-strip,
-  .hotlist-grid,
-  .symbol-chart-grid,
-  .sentiment-engagement-grid,
-  .symbol-lower-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-section,
-  .macro-hero,
-  .news-toolbar {
+  .hero-section {
     padding: 1.25rem;
   }
 
@@ -138,9 +118,7 @@ h2 {
 }
 
 @media (max-width: 480px) {
-  .hero-section,
-  .macro-hero,
-  .news-toolbar {
+  .hero-section {
     padding: 1rem;
   }
 

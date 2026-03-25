@@ -1,9 +1,7 @@
 from __future__ import annotations
 import os, time, requests
-from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
-DATE_FMT = "%Y-%m-%d"
 AV_BASE = "https://www.alphavantage.co/query"
 AV_KEY = lambda: os.getenv("ALPHAVANTAGE_KEY") or ""
 
@@ -207,8 +205,3 @@ def live_energy_weekly() -> List[Dict[str, Any]]:
         if pct is not None:
             rows.append({"name": name, "symbol": fn, "pct": round(pct, 2)})
     return rows
-
-def todays_headlines_from_repo(news_items: List[Dict[str, Any]], limit: int = 5) -> List[Dict[str, str]]:
-    today = datetime.utcnow().strftime(DATE_FMT)
-    todays = [n for n in news_items if n.get("date") == today] or news_items[:limit]
-    return [{"title": n.get("title", ""), "url": n.get("url") or "#"} for n in todays[:limit]]

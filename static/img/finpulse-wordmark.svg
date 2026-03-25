@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="132" height="28" viewBox="0 0 132 28" role="img" aria-labelledby="title desc">
-  <title id="title">FinPulse</title>
-  <desc id="desc">FinPulse wordmark with accent bar</desc>
-  <g fill="none" fill-rule="evenodd">
-    <text fill="#8B7C68" font-family="Inter, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="0.5">
-      <tspan x="0" y="24">FinPulse</tspan>
-    </text>
-  </g>
-</svg>
